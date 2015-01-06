@@ -1,0 +1,2 @@
+php_flag zlib.output_compression on
+php_value zlib.output_compression_level 2
