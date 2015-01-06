@@ -3,15 +3,15 @@ OpenSencillo
 
 OpenSencillo PHP framework
 
-Name: Sencillo
-Licence: GNU/GPL
-Type: Framework
-Category: LightWeight
-Year: 2015
-Build: 002
-Rev: 2015.002
-Date: 01 February 2015
-By: Bc. Peter Horváth
+Name: Sencillo;
+Licence: GNU/GPL;
+Type: Framework;
+Category: LightWeight;
+Year: 2015;
+Build: 002;
+Rev: 2015.002;
+Date: 01 February 2015;
+By: Bc. Peter Horváth;
 
 *********** 2015.002
 
