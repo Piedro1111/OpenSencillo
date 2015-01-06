@@ -14,6 +14,14 @@ Date: 01 February 2015;
 By: Bc. Peter Horváth;
 Homepage: http://opensencillo.com
 
+How to Install
+============
+Check: http://www.opensencillo.com/installation/
+
+
+Version info
+============
+
 *********** 2015.002
 
 1. Add mysql core function: uniqueKey
