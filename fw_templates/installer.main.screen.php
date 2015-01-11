@@ -1,6 +1,6 @@
 <!--------------------------------------------------------------------------.
 |  Software: Sencillo Default Theme                                         |
-|   Version: 2015.001                                                       |
+|   Version: 2015.002                                                       |
 |   Contact: ph@mastery.sk                                                  |
 | ------------------------------------------------------------------------- |
 |    Author: Bc. Peter Horváth (original founder)                           |
@@ -18,26 +18,34 @@ echo("<body><form method='post' action='http://".$_SERVER['SERVER_NAME'].$_SERVE
 echo("<tr><td><b>System:</b></td><td>".$afterBootUp[0]->info['FWK']."</td></tr>");
 echo("<tr><td><b>Installation mode:</b></td><td>default</td></tr>");
 echo("<tr><td><b>By:</b></td><td>".$afterBootUp[0]->info['CPY']."</td></tr>");
-echo("<tr><td><b>PHP:</b></td><td>".$PHPversion."</td></tr>");
+echo("<tr><td><b>PHP:</b></td><td>".$PHPversion[0].".".$PHPversion[1]."</td></tr>");
 echo("<tr><td><b>DB charset:</b></td><td>UTF-8</td></tr>");
 echo("<tr><td><b>System charset:</b></td><td>UTF-8</td></tr>");
 echo("<tr><td><b>Database</b></td><td></td></tr>");
-if(($_GET['install']!='true')&&($PHPversion[0]>=5))
+if($_GET['install']!='true')
 {
-	echo("<tr><td><b>Host:</b></td><td><input type='text' name='host'></td></tr>");
-	echo("<tr><td><b>Name:</b></td><td><input type='text' name='name'></td></tr>");
-	echo("<tr><td><b>User:</b></td><td><input type='text' name='user'></td></tr>");
-	echo("<tr><td><b>Pass:</b></td><td><input type='text' name='pass'></td></tr>");
-	echo("<tr><td><b>SQL type:</b></td><td><select name='type'>
-                                                <option value='mysql' selected>MySQL</option>
-                                                <option value='mariasql'>MariaSQL</option>
-                                                <option value='pgsql'>PgSQL</option>
-                                           </select></td></tr>");
-	echo("<tr><td><b>Cache:</b></td><td><select name='cache'>
-                                                <option value='1' selected>Allow</option>
-                                                <option value='0'>Disallow</option>
-                                           </select></td></tr>");
-	echo("<tr><td></td><td><input type='submit' value='Install'></td></tr>");
+	if(($PHPversion[0]>=5)&&($PHPversion[1]>=3))
+	{
+		echo("<tr><td><b>Host:</b></td><td><input type='text' name='host'></td></tr>");
+		echo("<tr><td><b>Name:</b></td><td><input type='text' name='name'></td></tr>");
+		echo("<tr><td><b>User:</b></td><td><input type='text' name='user'></td></tr>");
+		echo("<tr><td><b>Pass:</b></td><td><input type='text' name='pass'></td></tr>");
+		echo("<tr><td><b>SQL type:</b></td><td><select name='type'>
+	                                                <option value='mysql' selected>MySQL</option>
+	                                                <option value='mariasql'>MariaSQL</option>
+	                                                <option value='pgsql'>PgSQL</option>
+													<option value='none'>none</option>
+	                                           </select></td></tr>");
+		echo("<tr><td><b>Cache:</b></td><td><select name='cache'>
+	                                                <option value='1' selected>Allow</option>
+	                                                <option value='0'>Disallow</option>
+	                                           </select></td></tr>");
+		echo("<tr><td></td><td><input type='submit' value='Install'></td></tr>");
+	}
+	else
+	{
+		echo("</table><p class='error'>PHP must be in version >= 5.3!</p><table>");
+	}
 }
 else
 {

@@ -15,34 +15,10 @@
 | FITNESS FOR A PARTICULAR PURPOSE.                                         |
 '---------------------------------------------------------------------------'
 ~*/
-// if((isset($cookie1))&&(isset($cookie2))&&(isset($LoginExp))&&($LoginExp>3600))
-// {
-// 	setcookie("ulid", $cookie1, $LoginExp);
-// 	setcookie("uid", $cookie2, $LoginExp);
-// }
-// $SiteStatusMessage=null;
-// //OAKEY subsystem
-// if($SiteOnlyAdmin==1)
-// {
-// 	if(($SiteOAkey==$_GET['oakey']) || ($_COOKIE['oakey']==$SiteOAkey))
-// 	{
-// 		if(($SiteOAKcookies==1) && ($_COOKIE['oakey']!=$SiteOAkey)){setcookie("oakey", $_GET['oakey'], $OAkeyexpire);}
-// 		$SiteStatusMessage="<span class='oakeyunlock'>Access granted by OAKEY=$SiteOAkey. Access only for you!</span><br>";
-// 	}
-// 	else
-// 	{
-// 		$SiteOffLine=1;
-// 	}
-// }
-// if($SiteOffLine==1)
-// {
-// 	die("<html>$SiteOffMessage $footbox</html>");
-// }
-
 /**
  * Cookies manipulation class
  * @name Sencillo Cookies
- * @version 2014.002
+ * @version 2015.002
  * @category accessories
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth

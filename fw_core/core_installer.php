@@ -18,7 +18,7 @@
 /**
  * Core installer
  * @name Sencillo SQL Installer
- * @version 2015.001
+ * @version 2015.002
  * @category core
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth
@@ -30,7 +30,7 @@ $afterBootUp=array();
 $afterBootUp[$i++]=new coreSencillo;
 $seo=new headerSeo;
 $seo->encode();
-$seo->title('LightWeight Sencillo - Install');
+$seo->title('Sencillo - Installer');
 $seo->owner('Bc. Peter Horváth');
 $seo->save();
 echo $seo->seo;
@@ -78,6 +78,9 @@ $QUICKCACHE_ON = '.$_POST['cache'].';
 		$file->write('<?php
 	//write your PHP code here
 ?>');
+		$file = new fileSystem('../firststart.json');
+		$json = json_encode(array(''));
+		$file->write($json);
 	}
 	$file = new fileSystem('../.htaccess');
 	$file->write('# Create with '.$afterBootUp[0]->info['FWK'].'.
@@ -114,7 +117,6 @@ RewriteRule ^(.*)$ http://'.$_SERVER['SERVER_NAME'].'/$1 [L,R=301]');
 	chmod("../fw_libraries/", 0700);
 	chmod("../fw_script/", 0700);
 	chmod("../", 0700);
-	usleep(1000000);
 	require("../fw_headers/mysql-config.php");
 	require("../fw_headers/main-config.php");
 	require("./core_sql.php");
