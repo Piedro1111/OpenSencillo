@@ -79,7 +79,11 @@ $QUICKCACHE_ON = '.$_POST['cache'].';
 	//write your PHP code here
 ?>');
 		$file = new fileSystem('../firststart.json');
-		$json = json_encode(array(''));
+		$json = json_encode(array(	'time'=>date("H:i:s"),
+									'date'=>date("Y-m-d"),
+									'PHP' =>phpversion(),
+									'SYSTEM'=>'OpenSencillo 2015'
+		));
 		$file->write($json);
 	}
 	$file = new fileSystem('../.htaccess');
