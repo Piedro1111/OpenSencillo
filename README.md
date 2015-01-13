@@ -3,18 +3,20 @@
 
 ##OpenSencillo PHP framework
 
-Help with programming OpenSencillo PHP Framework. We are looking for you!
+Help with programming OpenSencillo PHP Framework. _We are looking for you!_
 
-> * Name: Sencillo;
+> * Name: OpenSencillo;
 > * Licence: GNU/GPL;
 > * Type: Framework;
-> * Category: LightWeight;
+> * Category: OpenSource;
+> * Language: PHP 5.3+, JQUERY, HTML5
 > * Year: 2015;
 > * Build: 002;
 > * Rev: 2015.002;
 > * Date: 01 February 2015;
 > * By: Bc. Peter Horváth;
 > * Homepage: http://opensencillo.com
+> * Features: File management, File Convertors, Database management, SEO, Session & Cookies management, Hash subsystem, Translates JSON file, Unit Testing, ...
 
 ##How to Install
 ============
