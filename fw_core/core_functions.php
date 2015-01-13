@@ -250,12 +250,18 @@ class coreSencillo
 	 */
 	public function __construct()
 	{
-		$this->info=array('CMS'=>'Sencillo',
-						  'FWK'=>'Sencillo v15.002',
-						  'ARN'=>'Bc.Peter Horváth, Mastery s.r.o. CEO and FOUNDER',
-						  'CPY'=>'(c)COPYRIGHT 2011-'.date('Y').' Bc.Peter Horváth',
-						  'DTC'=>'01.02.2015:00.00:00.002',
-						  'PID'=>'ILLEGAL LICENCE! PLEASE CONTACT ph@mastery.sk');
+		$version = '2015';
+		$layout	 = '0';
+		$build	 = '02';
+		$this->info=array(	'CMS'=>'OpenSencillo',
+							'NME'=>'OpenSencillo',
+							'VSN'=>$version.'.'.$layout.$build,
+							'FWK'=>'OpenSencillo '.$version.'.'.$layout.$build,
+							'ARN'=>'Bc.Peter Horváth, Mastery s.r.o. CEO and FOUNDER',
+							'CPY'=>'(c)COPYRIGHT 2011-'.date('Y').' Bc.Peter Horváth',
+							'HPE'=>'http://www.opensencillo.com',
+							'DTC'=>'01.'.$build.'.'.$version.':00.00:00.'.$layout.$build,
+							'PID'=>'PLEASE CONTACT info@opensencillo.com');
 	}
 	
 	/**
