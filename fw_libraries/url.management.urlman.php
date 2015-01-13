@@ -1,4 +1,14 @@
 <?php 
+/**
+ * Url extension
+ * @todo continue creating new method for manipulate with URL
+ * @name url
+ * @version 2015.002
+ * @category Sencillo Library
+ * @see http://www.opensencillo.com
+ * @author Bc. Peter Horváth
+ * @license Distributed under the General Public License (GPL) http://www.gnu.org/copyleft/gpl.html This program is distributed in the hope that it will be useful - WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ */
 class url
 {
 	protected $data;

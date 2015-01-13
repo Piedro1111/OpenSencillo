@@ -2,11 +2,11 @@
 /*~ core_installer.php
 .---------------------------------------------------------------------------.
 |  Software: Sencillo SQL Installer                                         |
-|   Version: 2015.001                                                       |
+|   Version: 2015.003                                                       |
 |   Contact: ph@mastery.sk                                                  |
 | ------------------------------------------------------------------------- |
 |    Author: Bc. Peter Horváth (original founder)                           |
-| Copyright (c) 2014, Bc. Peter Horváth. All Rights Reserved.               |
+| Copyright (c) 2015, Bc. Peter Horváth. All Rights Reserved.               |
 | ------------------------------------------------------------------------- |
 |   License: Distributed under the General Public License (GPL)             |
 |            http://www.gnu.org/copyleft/gpl.html                           |
@@ -18,7 +18,7 @@
 /**
  * Core installer
  * @name Sencillo SQL Installer
- * @version 2015.001
+ * @version 2015.003
  * @category core
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth
@@ -30,7 +30,7 @@ $afterBootUp=array();
 $afterBootUp[$i++]=new coreSencillo;
 $seo=new headerSeo;
 $seo->encode();
-$seo->title('LightWeight Sencillo - Install');
+$seo->title($afterBootUp[0]->info['FWK'].' - Installer');
 $seo->owner('Bc. Peter Horváth');
 $seo->save();
 echo $seo->seo;
@@ -45,11 +45,11 @@ if(($_GET['install']=='true')&&($PHPversion[0]>=5))
 /*~ mysql-config.php
 .---------------------------------------------------------------------------.
 |  Software: Sencillo SQL Config                                            |
-|   Version: 2015.002                                                       |
+|   Version: '.$afterBootUp[0]->info['VSN'].'                                                       |
 |   Contact: ph@mastery.sk                                                  |
 | ------------------------------------------------------------------------- |
 |    Author: Bc. Peter Horváth (original founder)                           |
-| Copyright (c) 2014, Bc. Peter Horváth. All Rights Reserved.               |
+| Copyright (c) 2015, Bc. Peter Horváth. All Rights Reserved.               |
 | ------------------------------------------------------------------------- |
 |   License: Distributed under the General Public License (GPL)             |
 |            http://www.gnu.org/copyleft/gpl.html                           |
@@ -78,6 +78,13 @@ $QUICKCACHE_ON = '.$_POST['cache'].';
 		$file->write('<?php
 	//write your PHP code here
 ?>');
+		$file = new fileSystem('../firststart.json');
+		$json = json_encode(array(	'time'=>date("H:i:s"),
+									'date'=>date("Y-m-d"),
+									'PHP' =>phpversion(),
+									'SYSTEM'=>$afterBootUp[0]->info['FWK']
+		));
+		$file->write($json);
 	}
 	$file = new fileSystem('../.htaccess');
 	$file->write('# Create with '.$afterBootUp[0]->info['FWK'].'.
@@ -114,7 +121,6 @@ RewriteRule ^(.*)$ http://'.$_SERVER['SERVER_NAME'].'/$1 [L,R=301]');
 	chmod("../fw_libraries/", 0700);
 	chmod("../fw_script/", 0700);
 	chmod("../", 0700);
-	usleep(1000000);
 	require("../fw_headers/mysql-config.php");
 	require("../fw_headers/main-config.php");
 	require("./core_sql.php");

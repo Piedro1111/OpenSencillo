@@ -17,10 +17,9 @@
 ~*/
 /**
  * Create connection to library
- * @todo Test needed
- * @name modules
+ * @name modules and library loader
  * @version 2014.011
- * @category libraries
+ * @category Sencillo Library
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth
  * @license Distributed under the General Public License (GPL) http://www.gnu.org/copyleft/gpl.html This program is distributed in the hope that it will be useful - WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.

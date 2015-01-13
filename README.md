@@ -1,28 +1,32 @@
-OpenSencillo
+#OpenSencillo
 ============
 
-OpenSencillo PHP framework
+##OpenSencillo PHP framework
 
-Name: Sencillo;
-Licence: GNU/GPL;
-Type: Framework;
-Category: LightWeight;
-Year: 2015;
-Build: 002;
-Rev: 2015.002;
-Date: 01 February 2015;
-By: Bc. Peter Horváth;
-Homepage: http://opensencillo.com
+Help with programming OpenSencillo PHP Framework. _We are looking for you!_
 
-How to Install
+> * Name: OpenSencillo;
+> * Licence: GNU/GPL;
+> * Type: Framework;
+> * Category: OpenSource;
+> * Language: PHP 5.3+, JQUERY, HTML5
+> * Year: 2015;
+> * Build: 002;
+> * Rev: 2015.002;
+> * Date: 01 February 2015;
+> * By: Bc. Peter Horváth;
+> * Homepage: http://opensencillo.com
+> * Features: File management, File Convertors, Database management, SEO, Session & Cookies management, Hash subsystem, Translates JSON file, Unit Testing, ...
+
+##How to Install
 ============
 Check: http://www.opensencillo.com/installation/
 
 
-Version info
+##Version info
 ============
 
-*********** 2015.002
+###2015.002
 
 1. Add mysql core function: uniqueKey
 2. Add mysql core function: prepareTable
@@ -31,8 +35,9 @@ Version info
 5. Removed nonobject files
 6. Comment old cookie system and old session system (as depecrated)
 7. Full comment main config (as depecrated)
+8. Fix #1 Installer problem: Problem 1,3 solved
 
-*********** 2015.001
+###2015.001
 
 1. Add default login template
 2. Add default registration template
@@ -40,7 +45,7 @@ Version info
 4. Add installer main screen template
 5. Add logman default login function
 
-*********** 2014.012
+###2014.012
 
 1. Add library support system lib_identificator
 2. Add exception for load lib_identification
@@ -58,16 +63,16 @@ Version info
 14. Add create translate 
 15. Add cache allow / disallow
 
-*********** 2014.011
+###2014.011
 
 1. Repair install path
 2. Add PDF2JPG support
 3. Add prebuild path to jquery
 4. Add translate library
 
-*********** 2014.010
-*********** 2014.009
-*********** 2014.008
+###2014.010
+###2014.009
+###2014.008
 
 1. Add back compatible mode
 2. Upgrade installer from version 2014.005 to 2014.008
@@ -79,7 +84,7 @@ Version info
 8. Add database select
 9. Add GNU GPL terms
 
-*********** 2014.007
+###2014.007
 
 1. Rename folders cms_* to fw_*
 2. Merged developer version to version 2014.007
@@ -87,7 +92,10 @@ Version info
 4. Add default libraries
 5. Rename root folder "cms" to root folder "framework"
 
-*********** OBSOLETE 2014.006 AND OLDER
+##Older
+============
+
+###OBSOLETE 2014.006 AND OLDER
 
 1. Minimal support for modules 2014.007 and up
 2. Not support library
