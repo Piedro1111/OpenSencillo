@@ -1,6 +1,6 @@
 <!--------------------------------------------------------------------------.
 |  Software: Sencillo Default Theme                                         |
-|   Version: 2015.002                                                       |
+|   Version: 2015.003                                                       |
 |   Contact: ph@mastery.sk                                                  |
 | ------------------------------------------------------------------------- |
 |    Author: Bc. Peter Horváth (original founder)                           |
@@ -16,7 +16,6 @@
 $PHPversion=explode(".",phpversion());
 echo("<body><form method='post' action='http://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']."?install=true'><table>");
 echo("<tr><td><b>System:</b></td><td>".$afterBootUp[0]->info['FWK']."</td></tr>");
-echo("<tr><td><b>Installation mode:</b></td><td>default</td></tr>");
 echo("<tr><td><b>By:</b></td><td>".$afterBootUp[0]->info['CPY']."</td></tr>");
 echo("<tr><td><b>PHP:</b></td><td>".$PHPversion[0].".".$PHPversion[1]."</td></tr>");
 echo("<tr><td><b>DB charset:</b></td><td>UTF-8</td></tr>");
