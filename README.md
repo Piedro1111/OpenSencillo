@@ -33,6 +33,7 @@ Check: http://www.opensencillo.com/installation/
 5. Removed nonobject files
 6. Comment old cookie system and old session system (as depecrated)
 7. Full comment main config (as depecrated)
+8. Fix #1 Installer problem: Problem 1,3 solved
 
 ###2015.001
 

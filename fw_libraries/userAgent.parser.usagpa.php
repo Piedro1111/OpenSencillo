@@ -1,6 +1,6 @@
 <?php
 /**
-* Copyright 2009, 2010 Matthieu Aubry & Piwik team
+* @author Copyright 2009, 2010 Matthieu Aubry & Piwik team
 * All rights reserved.
 *
 * @link https://github.com/piwik/piwik/tree/master/libs/UserAgentParser
@@ -32,9 +32,8 @@
 * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
-/**
-* Example usage
+* 
+* @example Example usage
 *
 * Browser info:
 * var_dump(UserAgentParser::getBrowser($_SERVER['HTTP_USER_AGENT']));

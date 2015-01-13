@@ -1,4 +1,14 @@
 <?php 
+/**
+ * Simple make form
+ * @name formCreator
+ * @version 2015.002
+ * @category Sencillo Library
+ * @see http://www.opensencillo.com
+ * @author Bc. Peter Horváth
+ * @license Distributed under the General Public License (GPL) http://www.gnu.org/copyleft/gpl.html This program is distributed in the hope that it will be useful - WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * @todo Bad comment on method getById() and groupToLines()
+ */
 class formCreator
 {
     protected $form=array();
@@ -6,15 +16,18 @@ class formCreator
     /**
      * Create input
      * 
-     * @param string $type (HTML5 types)
-     * @param string $id (unique identification)
-     * @param string $name (unique name)
-     * @param string $value (sending value)
-     * @param string $class (classes)
-     * @param string $param (other parameters)
+     * @example Usable parameter type: sstring $type (HTML5 types)
+     * @example Usable parameter type: string $id (unique identification)
+     * @example Usable parameter type: string $name (unique name)
+     * @example Usable parameter type: string $value (sending value)
+     * @example Usable parameter type: string $class (classes)
+     * @example Usable parameter type: string $param (other parameters)
      * 
-     * @return false (if notype)
-     * @return string (if generating process is ok)
+     * @param array $type (content type)
+     * @param array $params (html parameter in attribute)
+     * 
+     * @return bool (if notype)
+     * @return array (if generating process is ok)
      */
     public function create($type,$params)
     {
