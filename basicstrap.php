@@ -16,7 +16,7 @@
 '---------------------------------------------------------------------------'
 ~*/
 include("./fw_headers/mysql-config.php");
-//include("./fw_headers/main-config.php");
+include("./fw_headers/main-config.php");
 require("./fw_core/core_sql.php");
 require("./fw_headers/session.php");
 require("./cache.php");
