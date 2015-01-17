@@ -33,12 +33,13 @@ Check: http://www.opensencillo.com/installation/
 1. New structure for module:
 ```example
 [type]_[module-name].php
+
+Type:
+* module
+* info
+* install
+* update
 ```
-####Type:
-	* module
-	* info
-	* install
-	* update
 2. Fix #5 lib_identificator is used for read modules.
 
 ###2015.002
