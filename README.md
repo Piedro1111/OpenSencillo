@@ -3,7 +3,9 @@
 
 ##OpenSencillo PHP framework
 
-Help with programming OpenSencillo PHP Framework. _We are looking for you!_
+> Help with programming OpenSencillo PHP Framework. _We are looking for you!_
+
+###About Stable version
 
 > * Name: OpenSencillo;
 > * Licence: GNU/GPL;
@@ -25,6 +27,17 @@ Check: http://www.opensencillo.com/installation/
 
 ##Version info
 ============
+
+### ON BUILD 2015.003
+
+1. New structure for module:
+```[type]_[module-name].php```
+	####Type:
+	* module
+	* info
+	* install
+	* update
+2. Fix #5 lib_identificator is used for read modules.
 
 ###2015.002
 
