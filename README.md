@@ -45,6 +45,7 @@ It is special modules contains system´s classes.
 
 1. New structure for module: [type]_[module-name].php
 2. Fix #5 lib_identificator is used for read modules.
+3. Add bootstrap for CSS3
 
 ###2015.002
 
