@@ -31,7 +31,9 @@ Check: http://www.opensencillo.com/installation/
 ### ON BUILD 2015.003
 
 1. New structure for module:
-```[type]_[module-name].php```
+```example
+[type]_[module-name].php
+```
 	####Type:
 	* module
 	* info
