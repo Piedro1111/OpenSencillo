@@ -32,6 +32,7 @@ $seo=new headerSeo;
 $seo->encode();
 $seo->title($afterBootUp[0]->info['FWK'].' - Installer');
 $seo->owner('Bc. Peter Horváth');
+$seo->bootstrapDefs();
 $seo->save();
 echo $seo->seo;
 $PHPversion=explode(".",phpversion());

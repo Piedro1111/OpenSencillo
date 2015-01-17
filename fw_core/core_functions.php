@@ -149,7 +149,15 @@ class headerSeo
 	 */
 	public function encode($ec='UTF-8')
 	{
-		$this->header['charset-def'] = '<meta http-equiv="content-type" content="text/html; charset='.$ec.'" />';
+		$this->header['charset-def'] = '<meta charset='.$ec.'" />';
+	}
+	
+	/**
+	 * Enabled responsive page
+	 */
+	public function responsive()
+	{
+		$this->header['responsive-def'] = '<meta name="viewport" content="width=device-width, initial-scale=1">';
 	}
 	
 	/**
@@ -230,14 +238,36 @@ class headerSeo
 	{
 		$this->seo = $this->header['doctype-def'];
 		$this->seo .= $this->header['html-def'];
+		$this->seo .= $this->header['charset-def'];
+		$this->seo .= $this->header['responsive-def'];
+		$this->seo .= $this->header['title-def'];
+		$this->seo .= $this->header['description-def'];
+		$this->generator();
 		
-		unset($this->header['html-def'],$this->header['doctype-def']);
-		
+		unset($this->header['html-def']);
+		unset($this->header['doctype-def']);
+		unset($this->header['charset-def']);
+		unset($this->header['responsive-def']);
+		unset($this->header['title-def']);
+		unset($this->header['description-def']);
+				
 		foreach($this->header as $key => $val)
 		{
-			$this->seo .= $val;
-			$this->info['head'][] = $key;
+			if(!is_array($val))
+			{
+				$this->seo .= $val;
+				$this->info['head'][] = $key;
+			}
+			else 
+			{
+				foreach($this->header['custom'] as $key => $val)
+				{
+					$this->seo .= $val;
+					$this->info['head'][] = $key;
+				}
+			}
 		}
+		
 		$this->seo .= $this->body;
 		return $this->seo;
 	}
