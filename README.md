@@ -28,13 +28,13 @@ Check: http://www.opensencillo.com/installation/
 ##Version info
 ============
 
-### ON BUILD 2015.003
+###ON BUILD 2015.003
 
 1. New structure for module:
 ```example
 [type]_[module-name].php
 ```
-	####Type:
+####Type:
 	* module
 	* info
 	* install
