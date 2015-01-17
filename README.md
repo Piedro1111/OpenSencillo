@@ -24,22 +24,26 @@
 ============
 Check: http://www.opensencillo.com/installation/
 
+##Module types
+###Name structure
+In version >= 2015.003
+> [type]_[module-name].php
 
-##Version info
-============
-
-###ON BUILD 2015.003
-
-1. New structure for module:
-```example
-[type]_[module-name].php
-
-Type:
+####Types:
 * module
 * info
 * install
 * update
-```
+
+##Library files
+It is special modules contains system´s classes.
+
+##Changes log
+============
+
+###ON BUILD 2015.003
+
+1. New structure for module: [type]_[module-name].php
 2. Fix #5 lib_identificator is used for read modules.
 
 ###2015.002
