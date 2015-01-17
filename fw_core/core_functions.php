@@ -2,11 +2,11 @@
 /*~ core_functions.php
 .---------------------------------------------------------------------------.
 |  Software: Sencillo Core                                                  |
-|   Version: 2015.001                                                       |
+|   Version: 2015.003                                                       |
 |   Contact: ph@mastery.sk                                                  |
 | ------------------------------------------------------------------------- |
 |    Author: Bc. Peter Horváth (original founder)                           |
-| Copyright (c) 2014, Bc. Peter Horváth. All Rights Reserved.               |
+| Copyright (c) 2015, Bc. Peter Horváth. All Rights Reserved.               |
 | ------------------------------------------------------------------------- |
 |   License: Distributed under the General Public License (GPL)             |
 |            http://www.gnu.org/copyleft/gpl.html                           |
@@ -252,7 +252,7 @@ class coreSencillo
 	{
 		$version = '2015';
 		$layout	 = '0';
-		$build	 = '02';
+		$build	 = '03';
 		$this->info=array(	'CMS'=>'OpenSencillo',
 							'NME'=>'OpenSencillo',
 							'VSN'=>$version.'.'.$layout.$build,
@@ -264,6 +264,10 @@ class coreSencillo
 							'PID'=>'PLEASE CONTACT info@opensencillo.com');
 	}
 	
+	public function version_info()
+	{
+		return $this->info;
+	}
 	/**
 	 * Run basic authentification script
 	 * @param $domains array
@@ -297,12 +301,4 @@ class coreSencillo
 $i=0;
 $afterBootUp=array();
 $afterBootUp[$i++]=new coreSencillo;
-/* AFTER BOOTUP CODE
- * *****************/
-
-//TODO
-
-/* KILL ALL EXIST "AFTER BOOTUP" OBJECTS
- * *************************************/
-unset($afterBootUp);
 ?>

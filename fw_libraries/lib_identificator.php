@@ -18,7 +18,7 @@
 /**
  * Create connection to library
  * @name modules and library loader
- * @version 2014.011
+ * @version 2015.003
  * @category Sencillo Library
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth
@@ -30,6 +30,7 @@ class library
 	public $lib;
 	protected $readsql;
 	protected $files;
+	protected $modules;
 	
 	/**
 	 * Create complet data structure
@@ -47,10 +48,11 @@ class library
 	                                   "admin"=>array());
 	    $this->readsql="SELECT * FROM cms_boxid";
 	    $this->files = scandir('./fw_libraries/');
+	    $this->modules = scandir('./fw_modules/');
 	}
 	
 	/**
-	 * Open modules
+	 * Open libraries
 	 */
 	private function openFiles()
 	{
@@ -85,12 +87,48 @@ class library
 	}
 	
 	/**
+	 * Open modules
+	 */
+	private function openModules()
+	{
+		foreach($this->modules as $value)
+		{
+			$test=(($value!='.')&&($value!='..')&&($value!='lib_identificator.php')&&($value!='examples')?true:false);
+	
+			if(($value!='.')&&($value!='..')&&($value!='lib_identificator.php')&&($value!='examples'))
+			{
+				$this->lib['id'][]=$value;
+			}
+		}
+	
+		foreach($this->lib['id'] as $value)
+		{
+			try
+			{
+				$this->lib['name'][]=$value;
+				$this->lib['function'][]='custom_module';
+				$this->lib['status'][]='OK:'.$value;
+				$this->lib['path'][]="./fw_modules/".$value."/info_".$value.".php";//information about module
+				$this->lib['path'][]="./fw_modules/".$value."/update_".$value.".php";//update database for module
+				$this->lib['path'][]="./fw_modules/".$value."/install_".$value.".php";//installer
+				$this->lib['path'][]="./fw_modules/".$value."/main_".$value.".php";//main module
+				$this->lib['path'][]="./fw_modules/".$value."/".$value.".php";//basic module
+			}
+			catch(Exception $e)
+			{
+				$this->lib['status'][]='ERROR:'.$value.':'.$e;
+			}
+		}
+	}
+	
+	/**
 	 * Start main mod_id proces
 	 */
 	public function start()
 	{
 	    $this->createStructure();
 	    $this->openFiles();
+	    $this->openModules();
 	}
 	
 	/**
