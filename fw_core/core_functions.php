@@ -149,7 +149,7 @@ class headerSeo
 	 */
 	public function encode($ec='UTF-8')
 	{
-		$this->header['charset-def'] = '<meta charset='.$ec.'" />';
+		$this->header['charset-def'] = '<meta charset="'.$ec.'" />';
 	}
 	
 	/**
@@ -332,7 +332,7 @@ class coreSencillo
 							'VSN'=>$version.'.'.$layout.$build,
 							'FWK'=>'OpenSencillo '.$version.'.'.$layout.$build,
 							'ARN'=>'Bc.Peter Horváth, Mastery s.r.o. CEO and FOUNDER',
-							'CPY'=>'(c)COPYRIGHT 2011-'.date('Y').' Bc.Peter Horváth',
+							'CPY'=>'&copy; COPYRIGHT 2011-'.date('Y').' Bc.Peter Horváth',
 							'HPE'=>'http://www.opensencillo.com',
 							'DTC'=>'01.'.$build.'.'.$version.':00.00:00.'.$layout.$build,
 							'PID'=>'PLEASE CONTACT info@opensencillo.com');

@@ -14,7 +14,7 @@
 '--------------------------------------------------------------------------->
 <?php
 $PHPversion=explode(".",phpversion());
-echo("<body><div class='container'><form method='post' action='http://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']."?install=true'><table class='table table-striped'>");
+echo("<body><div class='container' style='width:600px;border:1px solid gray;padding:0px;'><form method='post' action='http://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']."?install=true'><table class='table table-striped'>");
 echo("<tr><td><span class='glyphicons glyphicons-circle-info'></span><kbd>About ".$afterBootUp[0]->info['FWK']."</kbd></td><td></td></tr>");
 echo("<tr><td><b>System:</b></td><td>".$afterBootUp[0]->info['FWK']."</td></tr>");
 echo("<tr><td><b>By:</b></td><td>".$afterBootUp[0]->info['CPY']."</td></tr>");
