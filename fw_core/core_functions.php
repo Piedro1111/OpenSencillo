@@ -275,7 +275,6 @@ class headerSeo
 	/**
 	 * Add lang attribute to html
 	 * @param string
-	 * @example headerSeo::lang('SK_sk');
 	 * @example headerSeo::lang('SK');
 	 */
 	public function lang($lang)
