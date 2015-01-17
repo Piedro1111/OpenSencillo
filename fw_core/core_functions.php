@@ -118,6 +118,7 @@ class file extends fileSystem
 class headerSeo
 {
 	public $seo;
+	public $info;
 
 	private $header;
 	private $body;
@@ -128,7 +129,8 @@ class headerSeo
 	 */
 	public function __construct()
 	{
-		$this->header='<!DOCTYPE html><html lang="{htmlLang}"><head>';
+		$this->header['doctype-def']='<!DOCTYPE html>';
+		$this->header['html-def']='<html><head>';
 		$this->body='</head>';
 	}
 	
@@ -138,7 +140,7 @@ class headerSeo
 	 */
 	public function keywords($kw)
 	{
-		$this->header .= '<meta name="keywords" content="'.$kw.'" />';
+		$this->header['keywords-def'] = '<meta name="keywords" content="'.$kw.'" />';
 	}
 	
 	/**
@@ -147,7 +149,7 @@ class headerSeo
 	 */
 	public function encode($ec='UTF-8')
 	{
-		$this->header .= '<meta http-equiv="content-type" content="text/html; charset='.$ec.'" />';
+		$this->header['charset-def'] = '<meta http-equiv="content-type" content="text/html; charset='.$ec.'" />';
 	}
 	
 	/**
@@ -160,7 +162,7 @@ class headerSeo
 		{
 			$t = substr($t,0,66).'...';
 		}
-		$this->header .= '<title>'.$t.'</title>';
+		$this->header['title-def'] = '<title>'.$t.'</title>';
 	}
 	
 	/**
@@ -173,7 +175,7 @@ class headerSeo
 		{
 			$data = substr($data,0,155).'...';
 		}
-		$this->header .= '<meta name="description" content="'.$data.'">';
+		$this->header['description-def'] = '<meta name="description" content="'.$data.'">';
 	}
 	
 	/**
@@ -181,16 +183,24 @@ class headerSeo
 	 */
 	public function robots()
 	{
-		$this->header .= '<meta name="ROBOTS" content="NOODP"><meta name="Slurp" content="NOYDIR">';
+		$this->header['robots-def'] = '<meta name="ROBOTS" content="NOODP"><meta name="Slurp" content="NOYDIR">';
 	}
 	
 	/**
-	 * Add page owner and generator meta tag
+	 * Add page owner meta tag
 	 * @param string $author
 	 */
 	public function owner($author)
 	{
-		$this->header .= '<meta name="author" content="'.$author.'"><meta name="generator" content="Sencillo Framework (www.opensencillo.com)">';
+		$this->header['owner-def'] = '<meta name="author" content="'.$author.'">';
+	}
+	
+	/**
+	 * Add page generator meta tag
+	 */
+	public function generator()
+	{
+		$this->header['generator-def'] = '<meta name="generator" content="OpenSencillo Framework (www.opensencillo.com)">';
 	}
 	
 	/**
@@ -199,7 +209,17 @@ class headerSeo
 	 */
 	public function custom($code)
 	{
-		$this->header .= $code;
+		$this->header['custom'][] = $code;
+	}
+	
+	/**
+	 * Add custom link to javascript
+	 * @param string $code link
+	 * @example headerSeo::script('//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js');
+	 */
+	public function script($code)
+	{
+		$this-custom('<script type="text/javascript" src="'.$code.'"></script>');
 	}
 	
 	/**
@@ -208,16 +228,30 @@ class headerSeo
 	 */
 	public function save()
 	{
-		$this->seo = $this->header.$this->body;
+		$this->seo = $this->header['doctype-def'];
+		$this->seo .= $this->header['html-def'];
+		
+		unset($this->header['html-def'],$this->header['doctype-def']);
+		
+		foreach($this->header as $key => $val)
+		{
+			$this->seo .= $val;
+			$this->info['head'][] = $key;
+		}
+		$this->seo .= $this->body;
 		return $this->seo;
 	}
 	
 	/**
 	 * Add lang attribute to html
+	 * @param string
+	 * @example headerSeo::lang('SK_sk');
+	 * @example headerSeo::lang('SK');
 	 */
 	public function lang($lang)
 	{
-		$this->header = str_replace('{htmlLang}', $lang, $this->header);
+		unset($this->header['html-def']);
+		$this->header['html-def']='<html lang="'.$lang.'"><head>';
 	}
 	
 	/**
@@ -225,8 +259,18 @@ class headerSeo
 	 */
 	public function googleLoad()
 	{
-		$this->header.='<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>';
-		$this->header.='<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>';
+		$this->header['jquery-js']='<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>';
+		$this->header['jqueryui-js']='<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>';
+	}
+	
+	/**
+	 * Add bootstrap call
+	 */
+	public function bootstrapDefs()
+	{
+		$this->header['bootstrap-css']='<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">';
+		$this->header['jquery-js']='<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>';
+		$this->header['bootstrap-js']='<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>';
 	}
 }
 
