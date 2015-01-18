@@ -18,6 +18,7 @@ echo("<body><div class='container' style='width:600px;border:1px solid gray;padd
 echo("<tr><td><span class='glyphicons glyphicons-circle-info'></span><kbd>About ".$afterBootUp[0]->info['FWK']."</kbd></td><td></td></tr>");
 echo("<tr><td><b>System:</b></td><td>".$afterBootUp[0]->info['FWK']."</td></tr>");
 echo("<tr><td><b>By:</b></td><td>".$afterBootUp[0]->info['CPY']."</td></tr>");
+echo("<tr><td><b>Homepage:</b></td><td><a href='http://www.opensencillo.com' target='_blank'>opensencillo.com</a></td></tr>");
 echo("<tr><td><b>PHP:</b></td><td>".$PHPversion[0].".".$PHPversion[1]."</td></tr>");
 echo("<tr><td><b>DB charset:</b></td><td>UTF-8</td></tr>");
 echo("<tr><td><b>System charset:</b></td><td>UTF-8</td></tr>");

@@ -15,6 +15,13 @@
 | FITNESS FOR A PARTICULAR PURPOSE.                                         |
 '---------------------------------------------------------------------------'
 ~*/
-require('basicstrap.php');
-include('yourcode.php');
+if(file_exists('yourcode.php'))
+{
+	require('basicstrap.php');
+	require('yourcode.php');
+}
+else 
+{
+	header('Location: http://'.$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'].'fw_core/core_installer.php');
+}
 ?>
