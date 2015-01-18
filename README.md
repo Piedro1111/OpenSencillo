@@ -44,8 +44,10 @@ It is special modules contains system´s classes.
 ###ON BUILD 2015.003
 
 1. New structure for module: [type]_[module-name].php
-2. Fix #5 lib_identificator is used for read modules.
+2. Fix #5 lib_identificator is used for read modules
 3. Add bootstrap for CSS3
+4. Add bootstrap pretty installer
+5. Add relcation installer if sencillo not installed
 
 ###2015.002
 
