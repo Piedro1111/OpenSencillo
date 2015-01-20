@@ -272,5 +272,235 @@ class mysqlEdit extends mysql
 		return $this->out;
 	}
 }
+
+/**
+ * @TODO test need
+ */
+class mysqlInterface extends mysqlEdit
+{
+	protected $save;
+	protected $mysqli;
+	protected $connect;
+	
+	/**
+	 *	Create table
+	 *	@example SQL array construction:
+	 *	array(
+	 *		'table'=>array(
+	 *			'col1'=>array(
+	 *				'type'=>'int',
+	 *				'primary_key'=>true,
+	 *				'FOREGIN_key'=>'cudzia_tabulka(stlpec)',
+	 *				'unique'=>true,
+	 *				'auto_increment'=>true,
+	 *				'null'=>true
+	 *			),
+	 *			'col2'=>array(
+	 *				'type'=>'int',
+	 *				'primary_key'=>true,
+	 *				'FOREGIN_key'=>'cudzia_tabulka(stlpec)',
+	 *				'unique'=>true,
+	 *				'auto_increment'=>true,
+	 *				'null'=>true
+	 *			),
+	 *			'col3'=>array(
+	 *				'type'=>'int',
+	 *				'primary_key'=>true,
+	 *				'FOREGIN_key'=>'cudzia_tabulka(stlpec)',
+	 *				'unique'=>true,
+	 *				'auto_increment'=>true,
+	 *				'null'=>true
+	 *			)
+	 *		)
+	 *	)
+	 *	@example $this->dbCreateTable(array([...]))
+	 *	@param array $array
+	 */
+	public function dbCreateTable($array)
+	{
+		foreach($array as $key=>$val)
+		{
+			foreach($val as $key_col=>$val_col)
+			{
+				$data=null;
+				
+				foreach($val_col as $key_att=>$val_att)
+				{
+					switch(strtlower($key_att))
+					{
+						case 'type':
+							$data.=strtoupper($val_col[$key_att]);
+							break;
+						case 'null':
+							$data.=($val_col[$key_att]===false ? ' NOT NULL' : '');
+							break;
+						case 'auto_increment':
+							$data.=($val_col[$key_att]===false ? '' : ' AUTO_INCREMENT');
+							break;
+						case 'primary_key':
+							$data.=($val_col[$key_att]===false ? '' : ',PRIMARY KEY ('.$key_col.')');
+							break;
+						case 'foregin_key':
+							$data.=($val_col[$key_att]===false ? '' : ',FOREGIN KEY ('.$key_col.') REFERENCES '.$val_att);
+							break;
+						case 'unique':
+							$data.=($val_col[$key_att]===false ? '' : ',UNIQUE ('.$key_col.')');
+							break;
+					}
+				}
+				$this->construct .= ',`'.$key_col.'` '.$data.'';
+			}
+			$this->save .= 'CREATE TABLE IF NOT EXISTS `'.$key.'` ('.substr($this->construct,1).');';
+		}
+	}
+	
+	/**
+	 * Select by array structure
+	 * 
+	 * @example array structure:
+	 * array(
+	 * 	'table'=>array(
+	 *		'condition'=>array(
+	 *			'`id`<4000',
+	 *			'`data`=1',
+	 * 			'or'=>'`data2`=2'
+	 *		),
+	 *		'sort'=>array(
+	 *			'asc'=>'`id`',
+	 *			'desc'=>'`id`'
+	 *		),
+	 *		'start'=>2000,
+	 *		'limit'=>1000,
+	 *		'ignore_first'=>100,
+	 *		'ignore_last'=>200
+	 *	)
+	 * );
+	 * 
+	 * @param array $array
+	 */
+	public function select($array)
+	{
+		foreach($array as $key=>$val)
+		{
+			
+			foreach($val as $key_col=>$val_col)
+			{
+				$this->save.='SELECT * FROM '.$key_col.' ';
+				$data=null;
+		
+				foreach($val_col as $key_att=>$val_att)
+				{
+					switch(strtlower($key_col))
+					{
+						case 'condition':
+							switch(strtlower($key_att))
+							{
+								case 0:
+									$data.=' WHERE '.$val_att;
+									break;
+								default:
+									$data.=' AND '.$val_att;
+									break;
+								case 'or':
+									$data.=' OR '.$val_att;
+									break;
+							}
+						break;
+						case 'sort':
+							switch(strtlower($key_att))
+							{
+								case 'asc':
+									$data.=' ORDER BY '.$val_att.' ASC';
+									break;
+								case 'desc':
+									$data.=' ORDER BY '.$val_att.' DESC';
+									break;
+							}
+						break;
+						case 'start':
+							/**
+							 * @TODO start limit
+							 */
+						break;
+						case 'limit':
+							/**
+							 * @TODO max limit
+							 */
+						break;
+						case 'ignore_first':
+							/**
+							 * @TODO ignore first N items
+							 */
+						break;
+						case 'ignore_last':
+							/**
+							 * @TODO ignore last N items
+							 */
+						break;
+					}
+				}
+				/**
+				 * @TODO failcode
+				 */
+				$this->construct .= ',`'.$key_col.'` '.$data.'';
+			}
+			/**
+			 * @TODO failcode
+			 */
+			$this->save .= 'CREATE TABLE IF NOT EXISTS `'.$key.'` ('.substr($this->construct,1).');';
+		}
+		/**
+		 * @TODO failcode
+		 */
+		$select = $this->output("`id`<4000","`id` DESC",2000)
+		return $select;
+	}
+	
+	/**
+	 * Create database protected configuration arrray
+	 */
+	public function config()
+	{
+		$this->mysqli=array(
+			'dbhost'=>$this->$DBHost,
+			'dbname'=>$this->$DBName,
+			'dbuser'=>$this->$DBUser,
+			'dbpass'=>$this->$DBPass
+		);
+	}
+	
+	/**
+	 * Create database connection
+	 */
+	public function connect()
+	{
+		$this->connect = new mysqli($this->mysqli['dbhost'], $this->mysqli['dbuser'], $this->mysqli['dbpass'], $this->mysqli['dbname']);
+		if($this->connect->connect_errno)
+		{
+			$this->mysqli['dberror'] = "Failed to connect to MySQL: (" . $this->connect->connect_errno . ") " . $this->connect->connect_error;
+		}
+	}
+	
+	/**
+	 * Execute database multiline query
+	 */
+	public function execute()
+	{
+		if(!$this->connect->multi_query($this->save))
+		{
+			$this->mysqli['dberror'] = "Multi query failed: (" . $this->connect->errno . ") " . $this->connect->error;
+		}
+		
+		do 
+		{
+			if ($res = $this->connect->store_result())
+			{
+				$res->fetch_all(MYSQLI_ASSOC);
+				$res->free();
+			}
+		}
+		while ($this->connect->more_results() && $this->connect->next_result());
+	}
+}
 $mysql = new mysqlEdit($DBHost,$DBName,$DBUser,$DBPass);
 ?>
