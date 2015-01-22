@@ -396,13 +396,13 @@ class mysqlInterface extends mysqlEdit
 							switch(strtlower($key_att))
 							{
 								case 0:
-									$data.=' WHERE '.$val_att;
+									$data_condition='WHERE '.$val_att;
 									break;
 								default:
-									$data.=' AND '.$val_att;
+									$data_condition.=' AND '.$val_att;
 									break;
 								case 'or':
-									$data.=' OR '.$val_att;
+									$data_condition.=' OR '.$val_att;
 									break;
 							}
 						break;
@@ -410,22 +410,18 @@ class mysqlInterface extends mysqlEdit
 							switch(strtlower($key_att))
 							{
 								case 'asc':
-									$data.=' ORDER BY '.$val_att.' ASC';
+									$data_sort=' ORDER BY '.$val_att.' ASC';
 									break;
 								case 'desc':
-									$data.=' ORDER BY '.$val_att.' DESC';
+									$data_sort=' ORDER BY '.$val_att.' DESC';
 									break;
 							}
 						break;
 						case 'start':
-							/**
-							 * @TODO start limit
-							 */
+							$data_limit_start=$val_att.',';
 						break;
 						case 'limit':
-							/**
-							 * @TODO max limit
-							 */
+							$data_limit_max=' '.$val_att;
 						break;
 						case 'ignore_first':
 							/**
@@ -439,20 +435,13 @@ class mysqlInterface extends mysqlEdit
 						break;
 					}
 				}
-				/**
-				 * @TODO failcode
-				 */
-				$this->construct .= ',`'.$key_col.'` '.$data.'';
+				$this->save.=$data_condition.$data_sort.(isset($data_limit_max)? ' LIMIT '.$data_limit_start.$data_limit_max : '').';';
 			}
-			/**
-			 * @TODO failcode
-			 */
-			$this->save .= 'CREATE TABLE IF NOT EXISTS `'.$key.'` ('.substr($this->construct,1).');';
 		}
 		/**
-		 * @TODO failcode
+		 * @TODO out - addcode
 		 */
-		$select = $this->output("`id`<4000","`id` DESC",2000)
+		
 		return $select;
 	}
 	
