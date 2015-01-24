@@ -25,7 +25,8 @@ require("./fw_core/core_functions.php");
 require("./fw_libraries/lib_identificator.php");
 $inc=new library;
 $inc->start();
-foreach($inc->lib['path'] as $val)
+$paths = $inc->exportPath();
+foreach($paths as $val)
 {
 	require_once("$val");
 }

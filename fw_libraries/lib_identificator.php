@@ -27,10 +27,11 @@
 class library
 {
 	protected $all_data_sencillo;
-	public $lib;
 	protected $readsql;
 	protected $files;
 	protected $modules;
+	
+	public $lib;
 	
 	/**
 	 * Create complet data structure
@@ -48,7 +49,10 @@ class library
 	                                   "admin"=>array());
 	    $this->readsql="SELECT * FROM cms_boxid";
 	    $this->files = scandir('./fw_libraries/');
-	    $this->modules = scandir('./fw_modules/');
+	    if(file_exists("./fw_modules/"))
+	    {
+	    	$this->modules = scandir('./fw_modules/');
+	    }
 	}
 	
 	/**
@@ -93,9 +97,9 @@ class library
 	{
 		foreach($this->modules as $value)
 		{
-			$test=(($value!='.')&&($value!='..')&&($value!='lib_identificator.php')&&($value!='examples')?true:false);
+			$test=((file_exists("./fw_modules/".$value."/"))&&($value!='.')&&($value!='..')&&($value!='lib_identificator.php')&&($value!='examples')?true:false);
 	
-			if(($value!='.')&&($value!='..')&&($value!='lib_identificator.php')&&($value!='examples'))
+			if((file_exists("./fw_modules/".$value."/"))&&($value!='.')&&($value!='..')&&($value!='lib_identificator.php')&&($value!='examples'))
 			{
 				$this->lib['id'][]=$value;
 			}
@@ -147,6 +151,15 @@ class library
 	public function status()
 	{
 		return $this->lib;
+	}
+	
+	/**
+	 * Return array with unique path for class loader
+	 * @return arrray
+	 */
+	public function exportPath()
+	{
+		return array_unique($inc->lib['path']);
 	}
 }
 ?>

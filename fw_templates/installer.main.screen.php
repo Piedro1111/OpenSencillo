@@ -38,8 +38,8 @@ if($_GET['install']!='true')
 													<option value='none'>none</option>
 	                                           </select></td></tr>");
 		echo("<tr><td><span class='halflings halflings-compressed'></span><b>Cache:</b></td><td><select name='cache'>
-	                                                <option value='1' selected>Allow</option>
-	                                                <option value='0'>Disallow</option>
+	                                                <option value='1'>Allow</option>
+	                                                <option value='0' selected>Disallow</option>
 	                                           </select></td></tr>");
 		echo("<tr><td></td><td><input class='btn btn-success' type='submit' value='Install'></td></tr>");
 	}
@@ -57,5 +57,5 @@ else
 	echo("<tr><td><b>SQL type:</b></td><td>".$_POST['type']."</td></tr>");
 	echo("<tr><td></td><td><span class='glyphicons glyphicons-circle-ok'></span><p class='text-success'><b>Success</b></p></td></tr>");
 }
-echo("</table></form></div></body>");
+echo("</table></form></div></body></html>");
 ?>

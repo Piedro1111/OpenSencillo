@@ -98,7 +98,10 @@ require $includedir . "/cache_main.php";
 require $includedir . "/type/" . $QUICKCACHE_TYPE . ".php";
 
 // Start caching
-quickcache_start();
+if($QUICKCACHE_ON===1)
+{
+	quickcache_start();
+}
 
 /* function to determine if PHP is loaded as a CGI-PHP or as an Apache module */
 function isCGI() {
