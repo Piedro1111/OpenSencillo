@@ -466,29 +466,62 @@ class mysqlInterface extends mysqlEdit
 		$this->connect = new mysqli($this->mysqli['dbhost'], $this->mysqli['dbuser'], $this->mysqli['dbpass'], $this->mysqli['dbname']);
 		if($this->connect->connect_errno)
 		{
-			$this->mysqli['dberror'] = "Failed to connect to MySQL: (" . $this->connect->connect_errno . ") " . $this->connect->connect_error;
+			$this->mysqli['dberror']['message'] = "Failed to connect to MySQL: (" . $this->connect->connect_errno . ") " . $this->connect->connect_error;
+			$this->mysqli['dberror']['code']	= 'mysqlInterface:001';
+			try 
+			{
+				log::vd($this->mysqli);
+			} 
+			catch(Exception $e) 
+			{
+				var_dump($this->mysqli);
+			}
+			
+			die();
 		}
 	}
 	
 	/**
 	 * Execute database multiline query
+	 * @return array[group_id][line_id][row_name]
 	 */
 	public function execute()
 	{
 		if(!$this->connect->multi_query($this->save))
 		{
-			$this->mysqli['dberror'] = "Multi query failed: (" . $this->connect->errno . ") " . $this->connect->error;
-		}
-		
-		do 
-		{
-			if ($res = $this->connect->store_result())
+			$this->mysqli['dberror']['message']	= "Multi query failed: (" . $this->connect->errno . ") " . $this->connect->error;
+			$this->mysqli['dberror']['code']	= 'mysqlInterface:002';
+			try 
 			{
-				$res->fetch_all(MYSQLI_ASSOC);
-				$res->free();
+				log::vd($this->mysqli);
+			} 
+			catch(Exception $e) 
+			{
+				var_dump($this->mysqli);
 			}
 		}
-		while ($this->connect->more_results() && $this->connect->next_result());
+		else 
+		{
+			$this->save = null;
+		}
+		
+		$result=array();
+		$i=0;
+		do 
+		{
+			if($res = $this->connect->store_result())
+			{
+				while ($row = $res->fetch_row())
+				{
+					$result[$i][] = $row;
+				}
+				$res->free();
+				$i++;
+			}
+		}
+		while($this->connect->more_results() && $this->connect->next_result());
+		
+		return $result;
 	}
 }
 $mysql = new mysqlEdit($DBHost,$DBName,$DBUser,$DBPass);
