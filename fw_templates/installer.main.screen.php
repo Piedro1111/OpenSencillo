@@ -34,8 +34,7 @@ if($_GET['install']!='true')
 		echo("<tr><td><span class='halflings halflings-transfer'></span><b>SQL type:</b></td><td><select name='type'>
 	                                                <option value='mysql' selected>MySQL</option>
 	                                                <option value='mariasql'>MariaSQL</option>
-	                                                <option value='pgsql'>PgSQL</option>
-													<option value='none'>none</option>
+													<option value='othersql'>Other SQL</option>
 	                                           </select></td></tr>");
 		echo("<tr><td><span class='halflings halflings-compressed'></span><b>Cache:</b></td><td><select name='cache'>
 	                                                <option value='1'>Allow</option>
