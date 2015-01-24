@@ -482,7 +482,7 @@ class mysqlInterface extends mysqlEdit
 	}
 	
 	/**
-	 * Execute database multiline query
+	 * Execute database multiline query and return result
 	 * @return array[group_id][line_id][row_name]
 	 */
 	public function execute()
