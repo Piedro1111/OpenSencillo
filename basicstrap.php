@@ -26,9 +26,15 @@ require("./fw_libraries/lib_identificator.php");
 $inc=new library;
 $inc->start();
 $paths = $inc->exportPath();
+$realPath = array();
 foreach($paths as $val)
 {
-	require_once("$val");
+	if(file_exists($val))
+	{
+		require_once("$val");
+		$realPath[] = $val;
+	}
 }
+unset($paths);
 
 ?>
