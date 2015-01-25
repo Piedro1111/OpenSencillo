@@ -47,7 +47,10 @@ It is special modules contains system´s classes.
 2. Fix #5 lib_identificator is used for read modules
 3. Add bootstrap for CSS3
 4. Add bootstrap pretty installer
-5. Add relcation installer if sencillo not installed
+5. Add relocation installer if sencillo not installed
+6. Add new MySQL Interface
+7. Cache defaults OFF
+8. Gzip cache if allow
 
 ###2015.002
 
