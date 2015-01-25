@@ -15,6 +15,7 @@
 | FITNESS FOR A PARTICULAR PURPOSE.                                         |
 '---------------------------------------------------------------------------'
 ~*/
+error_reporting(E_ERROR | E_PARSE);
 include("./fw_headers/mysql-config.php");
 include("./fw_headers/main-config.php");
 require("./fw_core/core_sql.php");
