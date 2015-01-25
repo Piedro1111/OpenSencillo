@@ -281,6 +281,7 @@ class mysqlInterface extends mysqlEdit
 	protected $save;
 	protected $mysqli;
 	protected $connect;
+	private $default;
 	
 	/**
 	 *	Create table
@@ -355,6 +356,26 @@ class mysqlInterface extends mysqlEdit
 	}
 	
 	/**
+	 * Prepare join before using select
+	 * array(
+	 * 	'table'=>array(
+	 * 	 col1,col2,col3
+	 * 	)
+	 * )
+	 */
+	public function join($def)
+	{
+		foreach($def as $key=>$val)
+		{
+			foreach($val as $sub_key=>$sub_val)
+			{
+				$this->default.=$val.'.'.$sub_val.',';
+			}
+		}
+		$this->default=substr($this->default,0,-1);
+	}
+	
+	/**
 	 * Select by array structure
 	 * 
 	 * @example array structure:
@@ -371,6 +392,9 @@ class mysqlInterface extends mysqlEdit
 	 *		),
 	 *		'start'=>2000,
 	 *		'limit'=>1000,
+	 *		'join'=>array(
+	 *			'table'=>array('colA','colB')
+	 *		),
 	 *		'ignore_first'=>100,
 	 *		'ignore_last'=>200
 	 *	)
@@ -380,12 +404,16 @@ class mysqlInterface extends mysqlEdit
 	 */
 	public function select($array)
 	{
+		if(empty($this->default))
+		{
+			$this->default='*';
+		}
 		foreach($array as $key=>$val)
 		{
 			
 			foreach($val as $key_col=>$val_col)
 			{
-				$this->save.='SELECT * FROM '.$key_col.' ';
+				$this->save.='SELECT '.$this->default.' FROM '.$key_col.' ';
 				$data=null;
 		
 				foreach($val_col as $key_att=>$val_att)
@@ -417,12 +445,18 @@ class mysqlInterface extends mysqlEdit
 									break;
 							}
 						break;
+						case 'like':
+							$data_like=' LIKE '.$val_att;
+						break;
 						case 'start':
 							$data_limit_start=$val_att.',';
 						break;
 						case 'limit':
 							$data_limit_max=' '.$val_att;
 						break;
+						case 'fulljoin':
+						case 'join':
+							$data_join.=' FULL OUTER JOIN '.$key_att.' ON '.$key.'.'.$val_att[0].'='.$key_att.'.'.$val_att[1];
 						case 'ignore_first':
 							/**
 							 * @TODO ignore first N items
@@ -435,7 +469,7 @@ class mysqlInterface extends mysqlEdit
 						break;
 					}
 				}
-				$this->save.=$data_condition.$data_sort.(isset($data_limit_max)? ' LIMIT '.$data_limit_start.$data_limit_max : '').';';
+				$this->save.=$data_condition.$data_like.$data_sort.(isset($data_limit_max)? ' LIMIT '.$data_limit_start.$data_limit_max : '').';';
 			}
 		}
 		/**
