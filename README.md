@@ -51,6 +51,13 @@ It is special modules contains system´s classes.
 6. Add new MySQL Interface
 7. Cache defaults OFF
 8. Gzip cache if allow
+9. Add mysql full outer join
+10. Add mysql left join
+11. Add mysql right join
+12. Add mysql inner join
+13. Add action aliases
+14. Add mysqli update
+15. Add mysqli insert
 
 ###2015.002
 
