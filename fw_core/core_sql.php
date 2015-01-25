@@ -2,11 +2,11 @@
 /*~ core_sql.php
 .---------------------------------------------------------------------------.
 |  Software: Sencillo Core                                                  |
-|   Version: 2014.012                                                       |
+|   Version: 2015.003                                                       |
 |   Contact: ph@mastery.sk                                                  |
 | ------------------------------------------------------------------------- |
 |    Author: Bc. Peter Horváth (original founder)                           |
-| Copyright (c) 2014, Bc. Peter Horváth. All Rights Reserved.               |
+| Copyright (c) 2015, Bc. Peter Horváth. All Rights Reserved.               |
 | ------------------------------------------------------------------------- |
 |   License: Distributed under the General Public License (GPL)             |
 |            http://www.gnu.org/copyleft/gpl.html                           |
@@ -356,14 +356,46 @@ class mysqlInterface extends mysqlEdit
 	}
 	
 	/**
+	 * Insert data
+	 * @param array
+	 * @example array(
+	 * 	'table'=>array(
+	 *   'col'=>'data',
+	 *   'col'=>'data',
+	 *  )
+	 * )
+	 */
+	public function insert($array)
+	{
+		foreach($array as $key=>$val)
+		{
+			$this->save.='INSERT INTO '.$key;
+			$col=' (';
+			$values=' VALUES (';
+			foreach($val as $sub_key=>$sub_val)
+			{
+				$col.=$sub_key.',';
+				$values.=$sub_val.',';
+			}
+			$col=substr($col, 0, -1);
+			$values=substr($values, 0, -1);
+			$col.=$col.')';
+			$values.=$values.')';
+			$this->save.=$col.$values.';';
+		}
+	}
+	
+	/**
 	 * Prepare join before using select
+	 * @param array
+	 * @example array input:
 	 * array(
 	 * 	'table'=>array(
 	 * 	 col1,col2,col3
 	 * 	)
 	 * )
 	 */
-	public function join($def)
+	public function filter($def)
 	{
 		foreach($def as $key=>$val)
 		{
@@ -373,6 +405,31 @@ class mysqlInterface extends mysqlEdit
 			}
 		}
 		$this->default=substr($this->default,0,-1);
+	}
+	
+	/**
+	 * Select by array structure
+	 *
+	 * @example array structure:
+	 * array(
+	 * 	'table'=>array(
+	 *		'where'=>array(
+	 *			'`id`<4000',
+	 *			'`data`=1',
+	 * 			'or'=>'`data2`=2'
+	 *		),
+	 *		'set'=>array(
+	 *			'col1'=>'data',
+	 *			'col2'=>'data'
+	 *		)
+	 *	)
+	 * );
+	 *
+	 * @param array $array
+	 */
+	public function update($array)
+	{
+		$this->select($array,true);
 	}
 	
 	/**
@@ -401,8 +458,9 @@ class mysqlInterface extends mysqlEdit
 	 * );
 	 * 
 	 * @param array $array
+	 * @param bool
 	 */
-	public function select($array)
+	public function select($array,$update=false)
 	{
 		if(empty($this->default))
 		{
@@ -413,18 +471,27 @@ class mysqlInterface extends mysqlEdit
 			
 			foreach($val as $key_col=>$val_col)
 			{
-				$this->save.='SELECT '.$this->default.' FROM '.$key_col.' ';
+				if($update)
+				{
+					$this->save.='UPDATE '.$key_col.' ';
+				}
+				else
+				{
+					$this->save.='SELECT '.$this->default.' FROM '.$key_col.' ';
+				}
 				$data=null;
 		
 				foreach($val_col as $key_att=>$val_att)
 				{
 					switch(strtlower($key_col))
 					{
+						case 'if':
+						case 'where':
 						case 'condition':
 							switch(strtlower($key_att))
 							{
 								case 0:
-									$data_condition='WHERE '.$val_att;
+									$data_condition=' WHERE '.$val_att;
 									break;
 								default:
 									$data_condition.=' AND '.$val_att;
@@ -433,6 +500,12 @@ class mysqlInterface extends mysqlEdit
 									$data_condition.=' OR '.$val_att;
 									break;
 							}
+						break;
+						case 'between':
+							$data_condition.=' BETWEEN '.$key_att.' AND '.$val_att;
+						break;
+						case 'set':
+							$data_set.=$key_att.'='.$val_att.',';
 						break;
 						case 'sort':
 							switch(strtlower($key_att))
@@ -455,8 +528,26 @@ class mysqlInterface extends mysqlEdit
 							$data_limit_max=' '.$val_att;
 						break;
 						case 'fulljoin':
-						case 'join':
+						case 'fjoin':
+						case 'full':
 							$data_join.=' FULL OUTER JOIN '.$key_att.' ON '.$key.'.'.$val_att[0].'='.$key_att.'.'.$val_att[1];
+						break;
+						case 'innerjoin':
+						case 'ijoin':
+						case 'join':
+						case 'inner':
+							$data_join.=' INNER JOIN '.$key_att.' ON '.$key.'.'.$val_att[0].'='.$key_att.'.'.$val_att[1];
+						break;
+						case 'leftjoin':
+						case 'ljoin':
+						case 'left':
+							$data_join.=' INNER JOIN '.$key_att.' ON '.$key.'.'.$val_att[0].'='.$key_att.'.'.$val_att[1];
+						break;
+						case 'rightjoin':
+						case 'rjoin':
+						case 'right':
+							$data_join.=' INNER JOIN '.$key_att.' ON '.$key.'.'.$val_att[0].'='.$key_att.'.'.$val_att[1];
+						break;
 						case 'ignore_first':
 							/**
 							 * @TODO ignore first N items
@@ -469,7 +560,7 @@ class mysqlInterface extends mysqlEdit
 						break;
 					}
 				}
-				$this->save.=$data_condition.$data_like.$data_sort.(isset($data_limit_max)? ' LIMIT '.$data_limit_start.$data_limit_max : '').';';
+				$this->save.=(isset($data_set)?' SET '.substr($data_set,0,-1):'').$data_condition.$data_like.$data_sort.(isset($data_limit_max)? ' LIMIT '.$data_limit_start.$data_limit_max : '').';';
 			}
 		}
 		/**
