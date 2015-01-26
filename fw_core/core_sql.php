@@ -327,7 +327,7 @@ class mysqlInterface extends mysqlEdit
 				
 				foreach($val_col as $key_att=>$val_att)
 				{
-					switch(strtlower($key_att))
+					switch(strtolower($key_att))
 					{
 						case 'type':
 							$data.=strtoupper($val_col[$key_att]);
@@ -483,12 +483,12 @@ class mysqlInterface extends mysqlEdit
 		
 				foreach($val_col as $key_att=>$val_att)
 				{
-					switch(strtlower($key_col))
+					switch(strtolower($key_col))
 					{
 						case 'if':
 						case 'where':
 						case 'condition':
-							switch(strtlower($key_att))
+							switch(strtolower($key_att))
 							{
 								case 0:
 									$data_condition=' WHERE '.$val_att;
@@ -508,7 +508,7 @@ class mysqlInterface extends mysqlEdit
 							$data_set.=$key_att.'='.$val_att.',';
 						break;
 						case 'sort':
-							switch(strtlower($key_att))
+							switch(strtolower($key_att))
 							{
 								case 'asc':
 									$data_sort=' ORDER BY '.$val_att.' ASC';
@@ -576,10 +576,10 @@ class mysqlInterface extends mysqlEdit
 	public function config()
 	{
 		$this->mysqli=array(
-			'dbhost'=>$this->$DBHost,
-			'dbname'=>$this->$DBName,
-			'dbuser'=>$this->$DBUser,
-			'dbpass'=>$this->$DBPass
+			'dbhost'=>$this->DBHost,
+			'dbname'=>$this->DBName,
+			'dbuser'=>$this->DBUser,
+			'dbpass'=>$this->DBPass
 		);
 	}
 	
@@ -612,6 +612,7 @@ class mysqlInterface extends mysqlEdit
 	 */
 	public function execute()
 	{
+		//var_dump($this->connect);
 		if(!$this->connect->multi_query($this->save))
 		{
 			$this->mysqli['dberror']['message']	= "Multi query failed: (" . $this->connect->errno . ") " . $this->connect->error;

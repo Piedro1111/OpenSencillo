@@ -159,7 +159,7 @@ class library
 	 */
 	public function exportPath()
 	{
-		return array_unique($inc->lib['path']);
+		return array_unique($this->lib['path']);
 	}
 }
 ?>
