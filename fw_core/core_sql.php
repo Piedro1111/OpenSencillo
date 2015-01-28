@@ -369,7 +369,7 @@ class mysqlInterface extends mysqlEdit
 	{
 		foreach($array as $key=>$val)
 		{
-			$this->save.='INSERT INTO '.$key;
+			$this->save.='INSERT INTO `'.$key.'`';
 			$col=' (';
 			$values=' VALUES (';
 			foreach($val as $sub_key=>$sub_val)
@@ -379,8 +379,8 @@ class mysqlInterface extends mysqlEdit
 			}
 			$col=substr($col, 0, -1);
 			$values=substr($values, 0, -1);
-			$col.=$col.')';
-			$values.=$values.')';
+			$col=$col.')';
+			$values=$values.')';
 			$this->save.=$col.$values.';';
 		}
 	}
