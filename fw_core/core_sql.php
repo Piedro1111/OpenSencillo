@@ -468,100 +468,105 @@ class mysqlInterface extends mysqlEdit
 		}
 		foreach($array as $key=>$val)
 		{
+			if($update)
+			{
+				$this->save.='UPDATE `'.$key.'` ';
+			}
+			else
+			{
+				$this->save.='SELECT '.$this->default.' FROM `'.$key.'` ';
+			}
 			
 			foreach($val as $key_col=>$val_col)
 			{
-				if($update)
-				{
-					$this->save.='UPDATE '.$key_col.' ';
-				}
-				else
-				{
-					$this->save.='SELECT '.$this->default.' FROM '.$key_col.' ';
-				}
 				$data=null;
 		
-				foreach($val_col as $key_att=>$val_att)
+				switch(strtolower($key_col))
 				{
-					switch(strtolower($key_col))
-					{
-						case 'if':
-						case 'where':
-						case 'condition':
+					case 'if':
+					case 'where':
+					case 'condition':
+						$data_condition.=' WHERE ';
+						foreach($val_col as $key_att=>$val_att)
+						{
 							switch(strtolower($key_att))
 							{
-								case 0:
-									$data_condition=' WHERE '.$val_att;
-									break;
-								default:
-									$data_condition.=' AND '.$val_att;
+								case '0':
+									$data_condition.=$val_att;
 									break;
 								case 'or':
 									$data_condition.=' OR '.$val_att;
 									break;
+								default:
+									$data_condition.=' AND '.$val_att;
+									break;
 							}
-						break;
-						case 'between':
-							$data_condition.=' BETWEEN '.$key_att.' AND '.$val_att;
-						break;
-						case 'set':
-							$data_set.=$key_att.'='.$val_att.',';
-						break;
-						case 'sort':
+						}
+					break;
+					case 'between':
+						$data_condition.=' BETWEEN '.$key_att.' AND '.$val_att;
+					break;
+					case 'set':
+						$data_set.=$key_att.'='.$val_att.',';
+					break;
+					case 'sort':
+						$data_sort=' ORDER BY ';
+						foreach($val_col as $key_att=>$val_att)
+						{
 							switch(strtolower($key_att))
 							{
 								case 'asc':
-									$data_sort=' ORDER BY '.$val_att.' ASC';
+									$data_sort.=$val_att.' ASC';
 									break;
 								case 'desc':
-									$data_sort=' ORDER BY '.$val_att.' DESC';
+									$data_sort.=$val_att.' DESC';
 									break;
 							}
-						break;
-						case 'like':
-							$data_like=' LIKE '.$val_att;
-						break;
-						case 'start':
-							$data_limit_start=$val_att.',';
-						break;
-						case 'limit':
-							$data_limit_max=' '.$val_att;
-						break;
-						case 'fulljoin':
-						case 'fjoin':
-						case 'full':
-							$data_join.=' FULL OUTER JOIN '.$key_att.' ON '.$key.'.'.$val_att[0].'='.$key_att.'.'.$val_att[1];
-						break;
-						case 'innerjoin':
-						case 'ijoin':
-						case 'join':
-						case 'inner':
-							$data_join.=' INNER JOIN '.$key_att.' ON '.$key.'.'.$val_att[0].'='.$key_att.'.'.$val_att[1];
-						break;
-						case 'leftjoin':
-						case 'ljoin':
-						case 'left':
-							$data_join.=' INNER JOIN '.$key_att.' ON '.$key.'.'.$val_att[0].'='.$key_att.'.'.$val_att[1];
-						break;
-						case 'rightjoin':
-						case 'rjoin':
-						case 'right':
-							$data_join.=' INNER JOIN '.$key_att.' ON '.$key.'.'.$val_att[0].'='.$key_att.'.'.$val_att[1];
-						break;
-						case 'ignore_first':
-							/**
-							 * @TODO ignore first N items
-							 */
-						break;
-						case 'ignore_last':
-							/**
-							 * @TODO ignore last N items
-							 */
-						break;
-					}
+						}
+					break;
+					case 'like':
+						$data_like=' LIKE '.$val_att;
+					break;
+					case 'start':
+						$data_limit_start=$val_att.',';
+					break;
+					case 'limit':
+						$data_limit_max=' '.$val_att;
+					break;
+					case 'fulljoin':
+					case 'fjoin':
+					case 'full':
+						$data_join.=' FULL OUTER JOIN '.$key_att.' ON '.$key.'.'.$val_att[0].'='.$key_att.'.'.$val_att[1];
+					break;
+					case 'innerjoin':
+					case 'ijoin':
+					case 'join':
+					case 'inner':
+						$data_join.=' INNER JOIN '.$key_att.' ON '.$key.'.'.$val_att[0].'='.$key_att.'.'.$val_att[1];
+					break;
+					case 'leftjoin':
+					case 'ljoin':
+					case 'left':
+						$data_join.=' INNER JOIN '.$key_att.' ON '.$key.'.'.$val_att[0].'='.$key_att.'.'.$val_att[1];
+					break;
+					case 'rightjoin':
+					case 'rjoin':
+					case 'right':
+						$data_join.=' INNER JOIN '.$key_att.' ON '.$key.'.'.$val_att[0].'='.$key_att.'.'.$val_att[1];
+					break;
+					case 'ignore_first':
+						/**
+						 * @TODO ignore first N items
+						 */
+					break;
+					case 'ignore_last':
+						/**
+						 * @TODO ignore last N items
+						 */
+					break;
 				}
-				$this->save.=(isset($data_set)?' SET '.substr($data_set,0,-1):'').$data_condition.$data_like.$data_sort.(isset($data_limit_max)? ' LIMIT '.$data_limit_start.$data_limit_max : '').';';
 			}
+			$this->save.=(isset($data_set)?' SET '.substr($data_set,0,-1):'').$data_condition.$data_like.$data_sort.(isset($data_limit_max)? ' LIMIT '.$data_limit_start.$data_limit_max : '').';';
 		}
 		/**
 		 * @TODO out - addcode
@@ -607,12 +612,37 @@ class mysqlInterface extends mysqlEdit
 	}
 	
 	/**
+	 * Check SQL code for error
+	 * @return bool
+	 */
+	public function validator()
+	{
+		if(!$this->connect->multi_query($this->save))
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
+	
+	/**
+	 * Write query error log
+	 * @see validator()
+	 * @return string
+	 */
+	public function debug()
+	{
+		return ($this->validator()? $this->connect->errno : 'Query is OK');
+	}
+	
+	/**
 	 * Execute database multiline query and return result
 	 * @return array[group_id][line_id][row_name]
 	 */
 	public function execute()
 	{
-		//var_dump($this->connect);
 		if(!$this->connect->multi_query($this->save))
 		{
 			$this->mysqli['dberror']['message']	= "Multi query failed: (" . $this->connect->errno . ") " . $this->connect->error;
