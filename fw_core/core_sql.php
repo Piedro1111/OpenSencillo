@@ -572,7 +572,7 @@ class mysqlInterface extends mysqlEdit
 		 * @TODO out - addcode
 		 */
 		
-		return $select;
+		return $this->save;
 	}
 	
 	/**
@@ -593,6 +593,7 @@ class mysqlInterface extends mysqlEdit
 	 */
 	public function connect()
 	{
+		$this->config();
 		$this->connect = new mysqli($this->mysqli['dbhost'], $this->mysqli['dbuser'], $this->mysqli['dbpass'], $this->mysqli['dbname']);
 		if($this->connect->connect_errno)
 		{
@@ -662,17 +663,15 @@ class mysqlInterface extends mysqlEdit
 		}
 		
 		$result=array();
-		$i=0;
 		do 
 		{
 			if($res = $this->connect->store_result())
 			{
-				while ($row = $res->fetch_row())
+				while ($row = $res->fetch_array())
 				{
-					$result[$i][] = $row;
+					$result[] = $row;
 				}
 				$res->free();
-				$i++;
 			}
 		}
 		while($this->connect->more_results() && $this->connect->next_result());
