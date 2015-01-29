@@ -2,11 +2,11 @@
 /*~ core_sql.php
 .---------------------------------------------------------------------------.
 |  Software: Sencillo Core                                                  |
-|   Version: 2014.012                                                       |
+|   Version: 2015.003                                                       |
 |   Contact: ph@mastery.sk                                                  |
 | ------------------------------------------------------------------------- |
 |    Author: Bc. Peter Horváth (original founder)                           |
-| Copyright (c) 2014, Bc. Peter Horváth. All Rights Reserved.               |
+| Copyright (c) 2015, Bc. Peter Horváth. All Rights Reserved.               |
 | ------------------------------------------------------------------------- |
 |   License: Distributed under the General Public License (GPL)             |
 |            http://www.gnu.org/copyleft/gpl.html                           |
@@ -270,6 +270,413 @@ class mysqlEdit extends mysql
 			}
 		}
 		return $this->out;
+	}
+}
+
+/**
+ * @TODO test need
+ */
+class mysqlInterface extends mysqlEdit
+{
+	protected $save;
+	protected $mysqli;
+	protected $connect;
+	private $default;
+	
+	/**
+	 *	Create table
+	 *	@example SQL array construction:
+	 *	array(
+	 *		'table'=>array(
+	 *			'col1'=>array(
+	 *				'type'=>'int',
+	 *				'primary_key'=>true,
+	 *				'FOREGIN_key'=>'cudzia_tabulka(stlpec)',
+	 *				'unique'=>true,
+	 *				'auto_increment'=>true,
+	 *				'null'=>true
+	 *			),
+	 *			'col2'=>array(
+	 *				'type'=>'int',
+	 *				'primary_key'=>true,
+	 *				'FOREGIN_key'=>'cudzia_tabulka(stlpec)',
+	 *				'unique'=>true,
+	 *				'auto_increment'=>true,
+	 *				'null'=>true
+	 *			),
+	 *			'col3'=>array(
+	 *				'type'=>'int',
+	 *				'primary_key'=>true,
+	 *				'FOREGIN_key'=>'cudzia_tabulka(stlpec)',
+	 *				'unique'=>true,
+	 *				'auto_increment'=>true,
+	 *				'null'=>true
+	 *			)
+	 *		)
+	 *	)
+	 *	@example $this->dbCreateTable(array([...]))
+	 *	@param array $array
+	 */
+	public function dbCreateTable($array)
+	{
+		foreach($array as $key=>$val)
+		{
+			foreach($val as $key_col=>$val_col)
+			{
+				$data=null;
+				
+				foreach($val_col as $key_att=>$val_att)
+				{
+					switch(strtolower($key_att))
+					{
+						case 'type':
+							$data.=strtoupper($val_col[$key_att]);
+							break;
+						case 'null':
+							$data.=($val_col[$key_att]===false ? ' NOT NULL' : '');
+							break;
+						case 'auto_increment':
+							$data.=($val_col[$key_att]===false ? '' : ' AUTO_INCREMENT');
+							break;
+						case 'primary_key':
+							$data.=($val_col[$key_att]===false ? '' : ',PRIMARY KEY ('.$key_col.')');
+							break;
+						case 'foregin_key':
+							$data.=($val_col[$key_att]===false ? '' : ',FOREGIN KEY ('.$key_col.') REFERENCES '.$val_att);
+							break;
+						case 'unique':
+							$data.=($val_col[$key_att]===false ? '' : ',UNIQUE ('.$key_col.')');
+							break;
+					}
+				}
+				$this->construct .= ',`'.$key_col.'` '.$data.'';
+			}
+			$this->save .= 'CREATE TABLE IF NOT EXISTS `'.$key.'` ('.substr($this->construct,1).');';
+		}
+	}
+	
+	/**
+	 * Insert data
+	 * @param array
+	 * @example array(
+	 * 	'table'=>array(
+	 *   'col'=>'data',
+	 *   'col'=>'data',
+	 *  )
+	 * )
+	 */
+	public function insert($array)
+	{
+		foreach($array as $key=>$val)
+		{
+			$this->save.='INSERT INTO `'.$key.'`';
+			$col=' (';
+			$values=' VALUES (';
+			foreach($val as $sub_key=>$sub_val)
+			{
+				$col.=$sub_key.',';
+				$values.=$sub_val.',';
+			}
+			$col=substr($col, 0, -1);
+			$values=substr($values, 0, -1);
+			$col=$col.')';
+			$values=$values.')';
+			$this->save.=$col.$values.';';
+		}
+	}
+	
+	/**
+	 * Prepare join before using select
+	 * @param array
+	 * @example array input:
+	 * array(
+	 * 	'table'=>array(
+	 * 	 col1,col2,col3
+	 * 	)
+	 * )
+	 */
+	public function filter($def)
+	{
+		foreach($def as $key=>$val)
+		{
+			foreach($val as $sub_key=>$sub_val)
+			{
+				$this->default.=$val.'.'.$sub_val.',';
+			}
+		}
+		$this->default=substr($this->default,0,-1);
+	}
+	
+	/**
+	 * Select by array structure
+	 *
+	 * @example array structure:
+	 * array(
+	 * 	'table'=>array(
+	 *		'where'=>array(
+	 *			'`id`<4000',
+	 *			'`data`=1',
+	 * 			'or'=>'`data2`=2'
+	 *		),
+	 *		'set'=>array(
+	 *			'col1'=>'data',
+	 *			'col2'=>'data'
+	 *		)
+	 *	)
+	 * );
+	 *
+	 * @param array $array
+	 */
+	public function update($array)
+	{
+		$this->select($array,true);
+	}
+	
+	/**
+	 * Select by array structure
+	 * 
+	 * @example array structure:
+	 * array(
+	 * 	'table'=>array(
+	 *		'condition'=>array(
+	 *			'`id`<4000',
+	 *			'`data`=1',
+	 * 			'or'=>'`data2`=2'
+	 *		),
+	 *		'sort'=>array(
+	 *			'asc'=>'`id`',
+	 *			'desc'=>'`id`'
+	 *		),
+	 *		'start'=>2000,
+	 *		'limit'=>1000,
+	 *		'join'=>array(
+	 *			'table'=>array('colA','colB')
+	 *		),
+	 *		'ignore_first'=>100,
+	 *		'ignore_last'=>200
+	 *	)
+	 * );
+	 * 
+	 * @param array $array
+	 * @param bool
+	 */
+	public function select($array,$update=false)
+	{
+		if(empty($this->default))
+		{
+			$this->default='*';
+		}
+		foreach($array as $key=>$val)
+		{
+			if($update)
+			{
+				$this->save.='UPDATE `'.$key.'` ';
+			}
+			else
+			{
+				$this->save.='SELECT '.$this->default.' FROM `'.$key.'` ';
+			}
+			
+			foreach($val as $key_col=>$val_col)
+			{
+				$data=null;
+		
+				switch(strtolower($key_col))
+				{
+					case 'if':
+					case 'where':
+					case 'condition':
+						$data_condition.=' WHERE ';
+						foreach($val_col as $key_att=>$val_att)
+						{
+							switch(strtolower($key_att))
+							{
+								case '0':
+									$data_condition.=$val_att;
+									break;
+								case 'or':
+									$data_condition.=' OR '.$val_att;
+									break;
+								default:
+									$data_condition.=' AND '.$val_att;
+									break;
+							}
+						}
+					break;
+					case 'between':
+						$data_condition.=' BETWEEN '.$key_att.' AND '.$val_att;
+					break;
+					case 'set':
+						$data_set.=$key_att.'='.$val_att.',';
+					break;
+					case 'sort':
+						$data_sort=' ORDER BY ';
+						foreach($val_col as $key_att=>$val_att)
+						{
+							switch(strtolower($key_att))
+							{
+								case 'asc':
+									$data_sort.=$val_att.' ASC';
+									break;
+								case 'desc':
+									$data_sort.=$val_att.' DESC';
+									break;
+							}
+						}
+					break;
+					case 'like':
+						$data_like=' LIKE '.$val_att;
+					break;
+					case 'start':
+						$data_limit_start=$val_att.',';
+					break;
+					case 'limit':
+						$data_limit_max=' '.$val_att;
+					break;
+					case 'fulljoin':
+					case 'fjoin':
+					case 'full':
+						$data_join.=' FULL OUTER JOIN '.$key_att.' ON '.$key.'.'.$val_att[0].'='.$key_att.'.'.$val_att[1];
+					break;
+					case 'innerjoin':
+					case 'ijoin':
+					case 'join':
+					case 'inner':
+						$data_join.=' INNER JOIN '.$key_att.' ON '.$key.'.'.$val_att[0].'='.$key_att.'.'.$val_att[1];
+					break;
+					case 'leftjoin':
+					case 'ljoin':
+					case 'left':
+						$data_join.=' INNER JOIN '.$key_att.' ON '.$key.'.'.$val_att[0].'='.$key_att.'.'.$val_att[1];
+					break;
+					case 'rightjoin':
+					case 'rjoin':
+					case 'right':
+						$data_join.=' INNER JOIN '.$key_att.' ON '.$key.'.'.$val_att[0].'='.$key_att.'.'.$val_att[1];
+					break;
+					case 'ignore_first':
+						/**
+						 * @TODO ignore first N items
+						 */
+					break;
+					case 'ignore_last':
+						/**
+						 * @TODO ignore last N items
+						 */
+					break;
+				}
+			}
+			$this->save.=(isset($data_set)?' SET '.substr($data_set,0,-1):'').$data_condition.$data_like.$data_sort.(isset($data_limit_max)? ' LIMIT '.$data_limit_start.$data_limit_max : '').';';
+		}
+		/**
+		 * @TODO out - addcode
+		 */
+		
+		return $this->save;
+	}
+	
+	/**
+	 * Create database protected configuration arrray
+	 */
+	public function config()
+	{
+		$this->mysqli=array(
+			'dbhost'=>$this->DBHost,
+			'dbname'=>$this->DBName,
+			'dbuser'=>$this->DBUser,
+			'dbpass'=>$this->DBPass
+		);
+	}
+	
+	/**
+	 * Create database connection
+	 */
+	public function connect()
+	{
+		$this->config();
+		$this->connect = new mysqli($this->mysqli['dbhost'], $this->mysqli['dbuser'], $this->mysqli['dbpass'], $this->mysqli['dbname']);
+		if($this->connect->connect_errno)
+		{
+			$this->mysqli['dberror']['message'] = "Failed to connect to MySQL: (" . $this->connect->connect_errno . ") " . $this->connect->connect_error;
+			$this->mysqli['dberror']['code']	= 'mysqlInterface:001';
+			try 
+			{
+				log::vd($this->mysqli);
+			} 
+			catch(Exception $e) 
+			{
+				var_dump($this->mysqli);
+			}
+			
+			die();
+		}
+	}
+	
+	/**
+	 * Check SQL code for error
+	 * @return bool
+	 */
+	public function validator()
+	{
+		if(!$this->connect->multi_query($this->save))
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
+	
+	/**
+	 * Write query error log
+	 * @see validator()
+	 * @return string
+	 */
+	public function debug()
+	{
+		return ($this->validator()? $this->connect->errno : 'Query is OK');
+	}
+	
+	/**
+	 * Execute database multiline query and return result
+	 * @return array[group_id][line_id][row_name]
+	 */
+	public function execute()
+	{
+		if(!$this->connect->multi_query($this->save))
+		{
+			$this->mysqli['dberror']['message']	= "Multi query failed: (" . $this->connect->errno . ") " . $this->connect->error;
+			$this->mysqli['dberror']['code']	= 'mysqlInterface:002';
+			try 
+			{
+				log::vd($this->mysqli);
+			} 
+			catch(Exception $e) 
+			{
+				var_dump($this->mysqli);
+			}
+		}
+		else 
+		{
+			$this->save = null;
+		}
+		
+		$result=array();
+		do 
+		{
+			if($res = $this->connect->store_result())
+			{
+				while ($row = $res->fetch_array())
+				{
+					$result[] = $row;
+				}
+				$res->free();
+			}
+		}
+		while($this->connect->more_results() && $this->connect->next_result());
+		
+		return $result;
 	}
 }
 $mysql = new mysqlEdit($DBHost,$DBName,$DBUser,$DBPass);

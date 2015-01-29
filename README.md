@@ -3,7 +3,9 @@
 
 ##OpenSencillo PHP framework
 
-Help with programming OpenSencillo PHP Framework. _We are looking for you!_
+> Help with programming OpenSencillo PHP Framework. _We are looking for you!_
+
+###About Stable version
 
 > * Name: OpenSencillo;
 > * Licence: GNU/GPL;
@@ -22,9 +24,40 @@ Help with programming OpenSencillo PHP Framework. _We are looking for you!_
 ============
 Check: http://www.opensencillo.com/installation/
 
+##Module types
+###Name structure
+In version >= 2015.003
+> [type]_[module-name].php
 
-##Version info
+####Types:
+* module
+* info
+* install
+* update
+
+##Library files
+It is special modules contains system´s classes.
+
+##Changes log
 ============
+
+###ON BUILD 2015.003
+
+1. New structure for module: [type]_[module-name].php
+2. Fix #5 lib_identificator is used for read modules
+3. Add bootstrap for CSS3
+4. Add bootstrap pretty installer
+5. Add relocation installer if sencillo not installed
+6. Add new MySQL Interface
+7. Cache defaults OFF
+8. Gzip cache if allow
+9. Add mysql full outer join
+10. Add mysql left join
+11. Add mysql right join
+12. Add mysql inner join
+13. Add action aliases
+14. Add mysqli update
+15. Add mysqli insert
 
 ###2015.002
 

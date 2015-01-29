@@ -2,11 +2,11 @@
 /*~ cache.php
 .---------------------------------------------------------------------------.
 |  Software: SencilloCache                                                  |
-|   Version: 2014.012                                                       |
+|   Version: 2015.003                                                       |
 |   Contact: ph@mastery.sk                                                  |
 | ------------------------------------------------------------------------- |
 |    Author: Bc. Peter Horváth (original founder)                           |
-| Copyright (c) 2014, Bc. Peter Horváth. All Rights Reserved.               |
+| Copyright (c) 2015, Bc. Peter Horváth. All Rights Reserved.               |
 | ------------------------------------------------------------------------- |
 |   License: Distributed under the General Public License (GPL)             |
 |            http://www.gnu.org/copyleft/gpl.html                           |
@@ -98,7 +98,10 @@ require $includedir . "/cache_main.php";
 require $includedir . "/type/" . $QUICKCACHE_TYPE . ".php";
 
 // Start caching
-quickcache_start();
+if($QUICKCACHE_ON===1)
+{
+	quickcache_start();
+}
 
 /* function to determine if PHP is loaded as a CGI-PHP or as an Apache module */
 function isCGI() {

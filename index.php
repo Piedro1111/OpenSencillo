@@ -1,12 +1,12 @@
 <?php
 /*~ index.php
 .---------------------------------------------------------------------------.
-|  Software: SencilloCache                                                  |
-|   Version: 2014.005                                                       |
+|  Software: Sencillo Index                                                 |
+|   Version: 2015.003                                                       |
 |   Contact: ph@mastery.sk                                                  |
 | ------------------------------------------------------------------------- |
 |    Author: Bc. Peter Horváth (original founder)                           |
-| Copyright (c) 2014, Bc. Peter Horváth. All Rights Reserved.               |
+| Copyright (c) 2015, Bc. Peter Horváth. All Rights Reserved.               |
 | ------------------------------------------------------------------------- |
 |   License: Distributed under the General Public License (GPL)             |
 |            http://www.gnu.org/copyleft/gpl.html                           |
@@ -15,6 +15,13 @@
 | FITNESS FOR A PARTICULAR PURPOSE.                                         |
 '---------------------------------------------------------------------------'
 ~*/
-require('basicstrap.php');
-include('yourcode.php');
+if(file_exists('yourcode.php'))
+{
+	require('basicstrap.php');
+	require('yourcode.php');
+}
+else 
+{
+	header('Location: http://'.$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'].'fw_core/core_installer.php');
+}
 ?>
