@@ -9,7 +9,7 @@
 | Copyright (c) 2015, Bc. Peter Horváth. All Rights Reserved.               |
 | ------------------------------------------------------------------------- |
 |   License: Distributed under the General Public License (GPL)             |
-|            http://www.gnu.org/copyleft/gpl.html                           |
+|            http://www.gnu.org/licenses/gpl-3.0.html                       |
 | This program is distributed in the hope that it will be useful - WITHOUT  |
 | ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or     |
 | FITNESS FOR A PARTICULAR PURPOSE.                                         |
@@ -22,7 +22,7 @@
  *     QuickCache        <andy.prevost@worxteam.com> (http://sourceforge.net/projects/quickcache)
  */
 
-$QUICKCACHE_VERSION="v2014.012";
+$QUICKCACHE_VERSION="v2015.003";
 
 // Set the includedir to the quickcache-directory
 $includedir     = "./fw_cache";
