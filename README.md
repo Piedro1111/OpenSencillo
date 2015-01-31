@@ -58,6 +58,9 @@ It is special modules contains system´s classes.
 13. Add action aliases
 14. Add mysqli update
 15. Add mysqli insert
+16. Convert to GPL3
+17. Add security hash
+18. Add INSERT to SQL installer
 
 ###2015.002
 

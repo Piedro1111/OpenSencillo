@@ -196,6 +196,42 @@ RewriteRule ^(.*)$ http://'.$_SERVER['SERVER_NAME'].'/$1 [L,R=301]');
 	) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=0 ;
 	';
 	$mysql->write($delinsql);
+	
+	$delinsql='
+	INSERT INTO `virtual_system_config` (`id`,`function`,`command`,`commander`) VALUES (``,`superuser`,`'.$_POST['user-new-name'].'`,0);
+	';
+	$mysql->write($delinsql);
+	
+	$delinsql='
+	INSERT INTO `virtual_system_config` (`id`,`function`,`command`,`commander`) VALUES (``,`superpass`,`'.$_POST['user-new-pass'].'`,0);
+	';
+	$mysql->write($delinsql);
+
+	$delinsql='
+	INSERT INTO `virtual_system_config` (`id`,`function`,`command`,`commander`) VALUES (``,`superemail`,`'.$_POST['user-new-mail'].'`,0);
+	';
+	$mysql->write($delinsql);
+	
+	$delinsql='
+	INSERT INTO `virtual_system_config` (`id`,`function`,`command`,`commander`) VALUES (``,`systemhash`,`'.$hash.'`,0);
+	';
+	$mysql->write($delinsql);
+	
+	$delinsql='
+	INSERT INTO `virtual_system_config` (`id`,`function`,`command`,`commander`) VALUES (``,`servername`,`'.$_SERVER['SERVER_NAME'].'`,0);
+	';
+	$mysql->write($delinsql);
+	
+	$delinsql='
+	INSERT INTO `virtual_system_config` (`id`,`function`,`command`,`commander`) VALUES (``,`htaccess_config`,`default`,0);
+	';
+	$mysql->write($delinsql);
+	
+	$delinsql='
+	INSERT INTO `virtual_system_config` (`id`,`function`,`command`,`commander`) VALUES (``,`phpversion`,`'.phpversion().'`,0);
+	';
+	$mysql->write($delinsql);
+	
 	$mysql->close();
 }
 require_once '../fw_templates/installer.main.screen.php';
