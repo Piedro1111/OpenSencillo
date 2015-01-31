@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ERROR | E_PARSE);
 session_start();
 require("./basicstrap.php");
 require("./fw_libraries/login.management.logman.php");

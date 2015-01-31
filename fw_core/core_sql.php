@@ -103,6 +103,23 @@ class mysql
 			}
 		}
 	}
+	
+	/**
+	 * Integrity check
+	 * @param string database type
+	 */
+	final public function integrity($type)
+	{
+		$handle = fopen("firststart.json", "r");
+		$contents = fread($handle, filesize($filename));
+		fclose($handle);
+		$contents = json_decode($contents,false);
+		if(md5($_SERVER['SERVER_NAME'].$_SERVER['SERVER_ADDR'].$this->DBHost.$this->DBUser.$type)!=$contents->hash)
+		{
+			die('Integrity_Error: Illegal system operation!');
+		}
+		return true;
+	}
 }
 
 /**
