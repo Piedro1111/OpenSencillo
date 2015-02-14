@@ -61,6 +61,7 @@ It is special modules contains system´s classes.
 16. Convert to GPL3
 17. Add security hash
 18. Add INSERT to SQL installer
+19. Add SimpleImage library
 
 ###2015.002
 
