@@ -13,12 +13,12 @@
 > * Category: OpenSource;
 > * Language: PHP 5.3+, JQUERY, HTML5
 > * Year: 2015;
-> * Build: 002;
-> * Rev: 2015.002;
+> * Build: 003;
+> * Rev: 2015.003;
 > * Date: 01 February 2015;
 > * By: Bc. Peter Horváth;
 > * Homepage: http://opensencillo.com
-> * Features: File management, File Convertors, Database management, SEO, Session & Cookies management, Hash subsystem, Translates JSON file, Unit Testing, ...
+> * Features: File management, File Convertors, Database management, SEO, Session & Cookies management, Hash subsystem, Translates JSON file, Unit Testing, Htaccess generator, Simple image tool ...
 
 ##How to Install
 ============
@@ -62,6 +62,7 @@ It is special modules contains system´s classes.
 17. Add security hash
 18. Add INSERT to SQL installer
 19. Add SimpleImage library
+20. Close issue #2 - add new htaccess generator (library only; test need)
 
 ###2015.002
 
