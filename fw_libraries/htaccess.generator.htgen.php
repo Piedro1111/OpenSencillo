@@ -28,7 +28,7 @@ class htgen
 		foreach($type as $key => $value)
 		{
 			$generator .= '
-	ExpiresByType '.$type.' "access plus '.$days.' days"
+	ExpiresByType '.$value.' "access plus '.$days.' days"
 ';
 		}
 		$generator.='
@@ -86,12 +86,113 @@ RewriteRule ^(.*)$ '.$file.'?'.$get.'=$1 [L,QSA]
 	public function toWww()
 	{
 		$generator = '
-# opensencillo.com -> www.opensencillo.com
+# Sencillo HTACCESS opensencillo.com -> www.opensencillo.com
 RewriteCond %{HTTP_HOST} !^'.$_SERVER['SERVER_NAME'].'$ [NC]
 RewriteRule ^(.*)$ http://'.$_SERVER['SERVER_NAME'].'/$1 [L,R=301]
 ';
 		$this->gen[3]=$generator;
 		return array(3=>$generator);
+	}
+	
+	/**
+	 * Hide htaccess
+	 * @return array
+	 */
+	public function preventView()
+	{
+		$generator = '
+# Sencillo HTACCESS Prevent viewing of .htaccess file
+<Files .htaccess>
+	order allow,deny
+	deny from all
+</Files>
+';
+		$this->gen[4]=$generator;
+		return array(4=>$generator);
+	}
+	
+	/**
+	 * Prevent directory listings
+	 * @return array
+	 */
+	public function preventDir()
+	{
+		$generator = '
+# Sencillo HTACCESS Prevent directory listings
+Options All -Indexes
+';
+		$this->gen[5]=$generator;
+		return array(5=>$generator);
+	}
+	
+	/**
+	 * Change default directory page
+	 * @param string
+	 * @return array
+	 */
+	public function directory($dir='index.php')
+	{
+		$generator = '
+# Sencillo HTACCESS Change default directory page
+DirectoryIndex '.$dir.'
+';
+		$this->gen[6]=$generator;
+		return array(6=>$generator);
+	}
+	
+	/**
+	 * Error pages path
+	 * @param array error pages paths
+	 * @return array
+	 */
+	public function errorPages($errpages)
+	{
+		$generator = '
+# Sencillo HTACCESS Custom 400 errors
+ErrorDocument 400 '.$errpages[400].'
+
+# Sencillo HTACCESS Custom 401 errors
+ErrorDocument 401 '.$errpages[401].'
+
+# Sencillo HTACCESS Custom 403 errors
+ErrorDocument 403 '.$errpages[403].'
+
+# Sencillo HTACCESS Custom 404 errors
+ErrorDocument 404 '.$errpages[404].'
+
+# Sencillo HTACCESS Custom 500 errors
+ErrorDocument 500 '.$errpages[500].'
+';
+		$this->gen[7]=$generator;
+		return array(7=>$generator);
+	}
+	
+	/**
+	 * Block/Allow users by IP
+	 * @param array banned ip
+	 * @param array allowed ip
+	 * @return array
+	 */
+	public function perm($banlist,$allowlist=null)
+	{
+		$generator = '
+# Block users by IP
+order allow,deny
+';
+		foreach($banlist as $key => $value)
+		{
+			$generator .= '
+	deny from '.$value.'
+';
+		}
+		foreach($allowlist as $key => $value)
+		{
+			$generator .= '
+	allow from '.$value.'
+';
+		}
+		$this->gen[8]=$generator;
+		return array(8=>$generator);
 	}
 	
 	/**
@@ -108,12 +209,16 @@ RewriteRule ^(.*)$ http://'.$_SERVER['SERVER_NAME'].'/$1 [L,R=301]
 		return $generator;
 	}
 	
+	/**
+	 * Default htaccess configuration
+	 */
 	public function installerScheme()
 	{
 		self::cache(array('image/jpg','image/jpeg','image/gif','image/png'),30);
 		self::rewrite();
 		self::prettyUrl();
 		self::toWww();
+		return self::prepare();
 	}
 }
 ?>
