@@ -2,7 +2,7 @@
 /**
  * Error Log class
  * @name log
- * @version 2015.002
+ * @version 2015.003
  * @category Sencillo Library
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth
@@ -123,7 +123,7 @@ class log
 /**
  * Testing tool - unit testing extension
  * @name unitTest
- * @version 2015.002
+ * @version 2015.003
  * @category Sencillo Library
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth
@@ -146,8 +146,9 @@ class unitTest extends log
 		if($public===false)
 		{
 			print "<script type='text/javascript'>console.log('<<< Sencillo Testing Tool >>>');</script>";
+			error_reporting(E_ALL);
+			print "<script type='text/javascript'>console.log('<<< DEVEL MODE ON >>>');</script>";
 		}
-
 		return $public;
 	}
 	
