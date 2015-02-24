@@ -27,7 +27,7 @@ require("./fw_libraries/lib_identificator.php");
 $inc=new library;
 $inc->start();
 $paths = $inc->exportPath();
-$realPath = array();
+$realPath = array();*/
 foreach($paths as $val)
 {
 	if(file_exists($val))
@@ -38,4 +38,8 @@ foreach($paths as $val)
 }
 unset($paths);
 
+if(PAGE=='admin')
+{
+	require_once("./fw_core/core_admin.php");
+}
 ?>
