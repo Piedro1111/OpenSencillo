@@ -64,6 +64,10 @@ class logMan extends mysqlEdit
 			$this->newColumn("date","VARCHAR(20)");
 			$this->newColumn("time","VARCHAR(20)");
 			$this->createTable("users");
+			$email=$this->output("`function`='superemail'","`id` ASC",1);
+			$name=$this->output("`function`='superuser'","`id` ASC",1);
+			$pass=$this->output("`function`='superpass'","`id` ASC",1);
+			$this->createSuperUser($email['line'][0][0],$name['line'][0][0],$pass['line'][0][0]);
 			return true;
 		}
 		catch(Exception $e)
@@ -112,6 +116,47 @@ class logMan extends mysqlEdit
 	final public function getPerm()
 	{
 		return $this->log['perm'];
+	}
+	
+	/**
+	 * Create admin user in database
+	 *
+	 * @param array $_POST
+	 *
+	 * @return array $this->status
+	 */
+	final public function createSuperUser($email,$name,$pass)
+	{
+		$this->openTable('users');
+		if(filter_var($email,FILTER_VALIDATE_EMAIL))
+		{
+			$user=$this->output("`login`='".$name."'","`id` ASC",1);
+			if($user['line'][1][0]==null)
+			{
+				try
+				{
+					$this->insert("'first_use',0,'".strtolower($name)."','".$pass."','".strtolower($email)."','','',1111,'".$this->log['external_ip'].":".$this->log['port']."','".$this->log['agent']."',DATE(NOW()),TIME(NOW())");
+					$this->status['status']='ok';
+					$this->status['code']=200;
+				}
+				catch(Exception $e)
+				{
+					$this->status['status']='failed';
+					$this->status['code']=417;
+				}
+			}
+			else
+			{
+				$this->status['status']='exist';
+				$this->status['code']=409;
+			}
+		}
+		else
+		{
+			$this->status['status']='invalid';
+			$this->status['code']=403;
+		}
+		return $this->status;
 	}
 	
 	/**
@@ -278,6 +323,51 @@ class logMan extends mysqlEdit
 					define('LOGIN_ERRMSG',$status['code'].":ereg");
 					echo $seo->save();
 					require_once 'fw_templates/ereg.default.screen.php';
+					break;
+			}
+			return $status['code'];
+		}
+		else 
+		{
+			return 500;
+		}
+	}
+	
+	/**
+	 * Create default admin login system
+	 * @param object $translate
+	 * @param object $seo
+	 * @return number
+	 */
+	public function adminLogin($translate,$seo)
+	{
+		$this->createSession();
+		if((is_object($translate))&&(is_object($seo)))
+		{
+			switch($_GET['p'])
+			{
+				case 'logout':
+					$this->destroySession();
+				case 'admin':
+					$status = $this->checkSession(true);
+					$seo->custom('<script type="text/javascript">console.log("Login status:'.$status["code"].'");</script>');
+					switch($status['code'])
+					{
+						case 200:
+						case 202:
+							//login success
+							define('LOGIN_ERRMSG',$status['code'].":".$_SESSION['sessionid'].":ok:user:".$this->getSessionData('userid'));
+							echo $seo->save();
+							require_once 'fw_templates/account.dafault.screen.php';
+							break;
+						default:
+							//login failed
+							$this->destroySession();
+							define('LOGIN_ERRMSG',$status['code'].":".$_SESSION['sessionid'].":failed");
+							define('LOGIN_ACTION','/login');
+							echo $seo->save();
+							require_once 'fw_templates/login.default.screen.php';
+					}
 					break;
 			}
 			return $status['code'];
