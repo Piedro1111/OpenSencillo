@@ -27,7 +27,7 @@ require("./fw_libraries/lib_identificator.php");
 $inc=new library;
 $inc->start();
 $paths = $inc->exportPath();
-$realPath = array();*/
+$realPath = array();
 foreach($paths as $val)
 {
 	if(file_exists($val))
