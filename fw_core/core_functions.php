@@ -227,7 +227,7 @@ class headerSeo
 	 */
 	public function script($code)
 	{
-		$this-custom('<script type="text/javascript" src="'.$code.'"></script>');
+		$this->custom('<script type="text/javascript" src="'.$code.'"></script>');
 	}
 	
 	/**
@@ -258,14 +258,11 @@ class headerSeo
 				$this->seo .= $val;
 				$this->info['head'][] = $key;
 			}
-			else 
-			{
-				foreach($this->header['custom'] as $key => $val)
-				{
-					$this->seo .= $val;
-					$this->info['head'][] = $key;
-				}
-			}
+		}
+		foreach($this->header['custom'] as $key => $val)
+		{
+			$this->seo .= $val;
+			$this->info['head'][] = $key;
 		}
 		
 		$this->seo .= $this->body;
