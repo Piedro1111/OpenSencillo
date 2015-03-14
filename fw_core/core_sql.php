@@ -361,8 +361,9 @@ class mysqlInterface extends mysqlEdit
 						case 'foregin_key':
 							$data.=($val_col[$key_att]===false ? '' : ',FOREGIN KEY ('.$key_col.') REFERENCES '.$val_att);
 							break;
+						case 'unique_key':
 						case 'unique':
-							$data.=($val_col[$key_att]===false ? '' : ',UNIQUE ('.$key_col.')');
+							$data.=($val_col[$key_att]===false ? '' : ',UNIQUE KEY ('.$key_col.')');
 							break;
 					}
 				}
