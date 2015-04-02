@@ -2,11 +2,11 @@
 /**
  * Error Log class
  * @name log
- * @version 2015.002
+ * @version 2015.003
  * @category Sencillo Library
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth
- * @license Distributed under the General Public License (GPL) http://www.gnu.org/copyleft/gpl.html This program is distributed in the hope that it will be useful - WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * @license Distributed under the General Public License (GPL) http://www.gnu.org/licenses/gpl-3.0.html This program is distributed in the hope that it will be useful - WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
 class log
 {
@@ -123,7 +123,7 @@ class log
 /**
  * Testing tool - unit testing extension
  * @name unitTest
- * @version 2015.002
+ * @version 2015.003
  * @category Sencillo Library
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth
@@ -146,8 +146,9 @@ class unitTest extends log
 		if($public===false)
 		{
 			print "<script type='text/javascript'>console.log('<<< Sencillo Testing Tool >>>');</script>";
+			error_reporting(E_ALL);
+			print "<script type='text/javascript'>console.log('<<< DEVEL MODE ON >>>');</script>";
 		}
-
 		return $public;
 	}
 	

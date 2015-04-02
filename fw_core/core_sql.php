@@ -9,7 +9,7 @@
 | Copyright (c) 2015, Bc. Peter Horváth. All Rights Reserved.               |
 | ------------------------------------------------------------------------- |
 |   License: Distributed under the General Public License (GPL)             |
-|            http://www.gnu.org/copyleft/gpl.html                           |
+|            http://www.gnu.org/licenses/gpl-3.0.html                       |
 | This program is distributed in the hope that it will be useful - WITHOUT  |
 | ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or     |
 | FITNESS FOR A PARTICULAR PURPOSE.                                         |
@@ -102,6 +102,23 @@ class mysql
 				return true;
 			}
 		}
+	}
+	
+	/**
+	 * Integrity check
+	 * @param string database type
+	 */
+	final public function integrity($type)
+	{
+		$handle = fopen("firststart.json", "r");
+		$contents = fread($handle, filesize($filename));
+		fclose($handle);
+		$contents = json_decode($contents,false);
+		if(md5($_SERVER['SERVER_NAME'].$_SERVER['SERVER_ADDR'].$this->DBHost.$this->DBUser.$type)!=$contents->hash)
+		{
+			die('Integrity_Error: Illegal system operation!');
+		}
+		return true;
 	}
 }
 
@@ -344,8 +361,9 @@ class mysqlInterface extends mysqlEdit
 						case 'foregin_key':
 							$data.=($val_col[$key_att]===false ? '' : ',FOREGIN KEY ('.$key_col.') REFERENCES '.$val_att);
 							break;
+						case 'unique_key':
 						case 'unique':
-							$data.=($val_col[$key_att]===false ? '' : ',UNIQUE ('.$key_col.')');
+							$data.=($val_col[$key_att]===false ? '' : ',UNIQUE KEY ('.$key_col.')');
 							break;
 					}
 				}
@@ -525,13 +543,13 @@ class mysqlInterface extends mysqlEdit
 						}
 					break;
 					case 'like':
-						$data_like=' LIKE '.$val_att;
+						$data_like=' LIKE '.$val_col;
 					break;
 					case 'start':
-						$data_limit_start=$val_att.',';
+						$data_limit_start=$val_col.',';
 					break;
 					case 'limit':
-						$data_limit_max=' '.$val_att;
+						$data_limit_max=' '.$val_col;
 					break;
 					case 'fulljoin':
 					case 'fjoin':

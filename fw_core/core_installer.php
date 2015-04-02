@@ -9,7 +9,7 @@
 | Copyright (c) 2015, Bc. Peter Horváth. All Rights Reserved.               |
 | ------------------------------------------------------------------------- |
 |   License: Distributed under the General Public License (GPL)             |
-|            http://www.gnu.org/copyleft/gpl.html                           |
+|            http://www.gnu.org/licenses/gpl-3.0.html                       |
 | This program is distributed in the hope that it will be useful - WITHOUT  |
 | ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or     |
 | FITNESS FOR A PARTICULAR PURPOSE.                                         |
@@ -17,7 +17,7 @@
 ~*/
 /**
  * Core installer
- * @name Sencillo SQL Installer
+ * @name OpenSencillo SQL Installer
  * @version 2015.003
  * @category core
  * @see http://www.opensencillo.com
@@ -42,19 +42,20 @@ if(($_GET['install']=='true')&&($PHPversion[0]>=5))
 	chmod("../fw_headers/", 0777);
 	if(($_POST['host']!="")&&($_POST['user']!="")&&($_POST['name']!="")&&($_POST['pass']!=""))
 	{
+		$hash = md5($_SERVER['SERVER_NAME'].$_SERVER['SERVER_ADDR'].$_POST['host'].$_POST['user'].$_POST['type']);
 		$file = new fileSystem('../fw_headers/mysql-config.php');
 		$file->write('<?php
 /*~ mysql-config.php
 .---------------------------------------------------------------------------.
-|  Software: Sencillo SQL Config                                            |
+|  Software: OpenSencillo SQL Config                                        |
 |   Version: '.$afterBootUp[0]->info['VSN'].'                                                       |
-|   Contact: ph@mastery.sk                                                  |
+|   Contact: mail@phorvath.com                                              |
 | ------------------------------------------------------------------------- |
 |    Author: Bc. Peter Horváth (original founder)                           |
 | Copyright (c) 2015, Bc. Peter Horváth. All Rights Reserved.               |
 | ------------------------------------------------------------------------- |
 |   License: Distributed under the General Public License (GPL)             |
-|            http://www.gnu.org/copyleft/gpl.html                           |
+|            http://www.gnu.org/licenses/gpl-3.0.html                       |
 | This program is distributed in the hope that it will be useful - WITHOUT  |
 | ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or     |
 | FITNESS FOR A PARTICULAR PURPOSE.                                         |
@@ -68,6 +69,8 @@ $DBName = "'.$_POST['name'].'";
 $DBPass = "'.$_POST['pass'].'";
 //SQL type
 $DBType = "'.$_POST['type'].'";
+//Hash
+define("SENCILLO_CONFIG","'.$hash.'");
 //Cache
 $QUICKCACHE_ON = '.$_POST['cache'].';
 ?>');
@@ -83,8 +86,10 @@ $QUICKCACHE_ON = '.$_POST['cache'].';
 		$file = new fileSystem('../firststart.json');
 		$json = json_encode(array(	'time'=>date("H:i:s"),
 									'date'=>date("Y-m-d"),
+									'email'=>$_POST['user-new-mail'],
 									'PHP' =>phpversion(),
-									'SYSTEM'=>$afterBootUp[0]->info['FWK']
+									'SYSTEM'=>$afterBootUp[0]->info['FWK'],
+									'hash'=>$hash
 		));
 		$file->write($json);
 	}
@@ -191,6 +196,42 @@ RewriteRule ^(.*)$ http://'.$_SERVER['SERVER_NAME'].'/$1 [L,R=301]');
 	) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=0 ;
 	';
 	$mysql->write($delinsql);
+	
+	$delinsql='
+	INSERT INTO `virtual_system_config` (`id`,`function`,`command`,`commander`) VALUES (``,`superuser`,`'.$_POST['user-new-name'].'`,0);
+	';
+	$mysql->write($delinsql);
+	
+	$delinsql='
+	INSERT INTO `virtual_system_config` (`id`,`function`,`command`,`commander`) VALUES (``,`superpass`,`'.$_POST['user-new-pass'].'`,0);
+	';
+	$mysql->write($delinsql);
+
+	$delinsql='
+	INSERT INTO `virtual_system_config` (`id`,`function`,`command`,`commander`) VALUES (``,`superemail`,`'.$_POST['user-new-mail'].'`,0);
+	';
+	$mysql->write($delinsql);
+	
+	$delinsql='
+	INSERT INTO `virtual_system_config` (`id`,`function`,`command`,`commander`) VALUES (``,`systemhash`,`'.$hash.'`,0);
+	';
+	$mysql->write($delinsql);
+	
+	$delinsql='
+	INSERT INTO `virtual_system_config` (`id`,`function`,`command`,`commander`) VALUES (``,`servername`,`'.$_SERVER['SERVER_NAME'].'`,0);
+	';
+	$mysql->write($delinsql);
+	
+	$delinsql='
+	INSERT INTO `virtual_system_config` (`id`,`function`,`command`,`commander`) VALUES (``,`htaccess_config`,`default`,0);
+	';
+	$mysql->write($delinsql);
+	
+	$delinsql='
+	INSERT INTO `virtual_system_config` (`id`,`function`,`command`,`commander`) VALUES (``,`phpversion`,`'.phpversion().'`,0);
+	';
+	$mysql->write($delinsql);
+	
 	$mysql->close();
 }
 require_once '../fw_templates/installer.main.screen.php';

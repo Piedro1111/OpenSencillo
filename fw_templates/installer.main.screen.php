@@ -7,7 +7,7 @@
 | Copyright (c) 2015, Bc. Peter Horváth. All Rights Reserved.               |
 | ------------------------------------------------------------------------- |
 |   License: Distributed under the General Public License (GPL)             |
-|            http://www.gnu.org/copyleft/gpl.html                           |
+|            http://www.gnu.org/licenses/gpl-3.0.html                       |
 | This program is distributed in the hope that it will be useful - WITHOUT  |
 | ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or     |
 | FITNESS FOR A PARTICULAR PURPOSE.                                         |
@@ -22,15 +22,24 @@ echo("<tr><td><b>Homepage:</b></td><td><a href='http://www.opensencillo.com' tar
 echo("<tr><td><b>PHP:</b></td><td>".$PHPversion[0].".".$PHPversion[1]."</td></tr>");
 echo("<tr><td><b>DB charset:</b></td><td>UTF-8</td></tr>");
 echo("<tr><td><b>System charset:</b></td><td>UTF-8</td></tr>");
-echo("<tr><td><span class='glyphicons glyphicons-database'></span><kbd>Database</kbd></td><td></td></tr>");
-if($_GET['install']!='true')
+if(($_GET['install']!='true')||($_POST['user-new-pass']!=$_POST['user-rtp-pass'])||(empty($_POST['user-new-pass'])))
 {
 	if(($PHPversion[0]>=5)&&($PHPversion[1]>=3))
 	{
-		echo("<tr><td><span class='halflings halflings-hdd'></span><b>Host:</b></td><td><input type='text' name='host'></td></tr>");
-		echo("<tr><td><span class='halflings halflings-tag'></span><b>Name:</b></td><td><input type='text' name='name'></td></tr>");
-		echo("<tr><td><span class='halflings halflings-user'></span><b>User:</b></td><td><input type='text' name='user'></td></tr>");
-		echo("<tr><td><span class='halflings halflings-glyph-lock'></span><b>Pass:</b></td><td><input type='text' name='pass'></td></tr>");
+		echo("<tr><td><span class='glyphicons glyphicons-old-man'></span><kbd>Superuser</kbd></td><td></td></tr>");
+		echo("<tr><td><b>User:</b></td><td><input type='text' value='".$_POST['user-new-name']."' name='user-new-name' required></td></tr>");
+		echo("<tr><td><b>Email:</b></td><td><input type='email' value='".$_POST['user-new-mail']."' name='user-new-mail' required></td></tr>");
+		echo("<tr><td><b>Pass:</b></td><td><input type='password' value='password1' name='user-new-pass' required></td></tr>");
+		echo("<tr><td><b>Retype pass:</b></td><td><input type='password' value='password2' name='user-rtp-pass' required></td></tr>");
+		echo("<tr><td><b>Permission:</b></td><td><select name='perm' disabled>
+	                                                <option value='admin' selected>Admin</option>
+	                                           </select></td></tr>");
+		
+		echo("<tr><td><span class='glyphicons glyphicons-database'></span><kbd>Database</kbd></td><td></td></tr>");
+		echo("<tr><td><span class='halflings halflings-hdd'></span><b>Host:</b></td><td><input type='text' value='".$_POST['host']."' name='host' required></td></tr>");
+		echo("<tr><td><span class='halflings halflings-tag'></span><b>Name:</b></td><td><input type='text' value='".$_POST['name']."' name='name' required></td></tr>");
+		echo("<tr><td><span class='halflings halflings-user'></span><b>User:</b></td><td><input type='text' value='".$_POST['user']."' name='user' required></td></tr>");
+		echo("<tr><td><span class='halflings halflings-glyph-lock'></span><b>Pass:</b></td><td><input type='text' name='pass' required></td></tr>");
 		echo("<tr><td><span class='halflings halflings-transfer'></span><b>SQL type:</b></td><td><select name='type'>
 	                                                <option value='mysql' selected>MySQL</option>
 	                                                <option value='mariasql'>MariaDB</option>
@@ -49,6 +58,12 @@ if($_GET['install']!='true')
 }
 else
 {
+	echo("<tr><td><span class='glyphicons glyphicons-old-man'></span><kbd>Super user</kbd></td><td></td></tr>");
+	echo("<tr><td><b>User:</b></td><td>".$_POST['user-new-name']."</td></tr>");
+	echo("<tr><td><b>Email:</b></td><td>".$_POST['user-new-mail']."</td></tr>");
+	echo("<tr><td><b>Pass:</b></td><td>****</td></tr>");
+	echo("<tr><td><b>Retype pass:</b></td><td>****</td></tr>");
+
 	echo("<tr><td><b>Host:</b></td><td>".$_POST['host']."</td></tr>");
 	echo("<tr><td><b>Name:</b></td><td>".$_POST['name']."</td></tr>");
 	echo("<tr><td><b>User:</b></td><td>".$_POST['user']."</td></tr>");
