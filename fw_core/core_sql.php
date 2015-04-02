@@ -543,13 +543,13 @@ class mysqlInterface extends mysqlEdit
 						}
 					break;
 					case 'like':
-						$data_like=' LIKE '.$val_att;
+						$data_like=' LIKE '.$val_col;
 					break;
 					case 'start':
-						$data_limit_start=$val_att.',';
+						$data_limit_start=$val_col.',';
 					break;
 					case 'limit':
-						$data_limit_max=' '.$val_att;
+						$data_limit_max=' '.$val_col;
 					break;
 					case 'fulljoin':
 					case 'fjoin':
