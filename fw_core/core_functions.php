@@ -1,20 +1,4 @@
 <?php
-/*~ core_functions.php
-.---------------------------------------------------------------------------.
-|  Software: Sencillo Core                                                  |
-|   Version: 2015.003                                                       |
-|   Contact: ph@mastery.sk                                                  |
-| ------------------------------------------------------------------------- |
-|    Author: Bc. Peter Horváth (original founder)                           |
-| Copyright (c) 2015, Bc. Peter Horváth. All Rights Reserved.               |
-| ------------------------------------------------------------------------- |
-|   License: Distributed under the General Public License (GPL)             |
-|            http://www.gnu.org/licenses/gpl-3.0.html                       |
-| This program is distributed in the hope that it will be useful - WITHOUT  |
-| ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or     |
-| FITNESS FOR A PARTICULAR PURPOSE.                                         |
-'---------------------------------------------------------------------------'
-~*/
 /**
  * Main class for file system
  * @name Sencillo Core - fileSystem
@@ -109,7 +93,7 @@ class file extends fileSystem
 /**
  * Main extend for file system
  * @name Sencillo Core - headerSeo
- * @version 2015.002
+ * @version 2015.004
  * @category core
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth

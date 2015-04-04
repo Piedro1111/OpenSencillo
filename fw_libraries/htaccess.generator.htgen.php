@@ -147,22 +147,13 @@ DirectoryIndex '.$dir.'
 	 */
 	public function errorPages($errpages)
 	{
-		$generator = '
-# Sencillo HTACCESS Custom 400 errors
-ErrorDocument 400 '.$errpages[400].'
-
-# Sencillo HTACCESS Custom 401 errors
-ErrorDocument 401 '.$errpages[401].'
-
-# Sencillo HTACCESS Custom 403 errors
-ErrorDocument 403 '.$errpages[403].'
-
-# Sencillo HTACCESS Custom 404 errors
-ErrorDocument 404 '.$errpages[404].'
-
-# Sencillo HTACCESS Custom 500 errors
-ErrorDocument 500 '.$errpages[500].'
-';
+		$generator = array();
+		foreach($errpages as $key=>$val)
+		{
+			$generator[] ='# Sencillo HTACCESS Custom '.$key.' errors';
+			$generator[] ='ErrorDocument '.$key.' '.$val.'';
+		}
+		$generator = implode(PHP_EOL,$generator);
 		$this->gen[7]=$generator;
 		return array(7=>$generator);
 	}
