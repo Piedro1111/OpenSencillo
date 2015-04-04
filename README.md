@@ -41,7 +41,10 @@ It is special modules contains system´s classes.
 ##Changes log
 ============
 
-###ON BUILD 2015.003
+###ON BUILD 2015.004
+1. Fix #9 add io_validator in to Sencillo CORE
+
+###2015.003
 
 1. New structure for module: [type]_[module-name].php
 2. Fix #5 lib_identificator is used for read modules
