@@ -1,20 +1,4 @@
 <?php
-/*~ core_functions.php
-.---------------------------------------------------------------------------.
-|  Software: Sencillo Core                                                  |
-|   Version: 2015.003                                                       |
-|   Contact: ph@mastery.sk                                                  |
-| ------------------------------------------------------------------------- |
-|    Author: Bc. Peter Horváth (original founder)                           |
-| Copyright (c) 2015, Bc. Peter Horváth. All Rights Reserved.               |
-| ------------------------------------------------------------------------- |
-|   License: Distributed under the General Public License (GPL)             |
-|            http://www.gnu.org/licenses/gpl-3.0.html                       |
-| This program is distributed in the hope that it will be useful - WITHOUT  |
-| ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or     |
-| FITNESS FOR A PARTICULAR PURPOSE.                                         |
-'---------------------------------------------------------------------------'
-~*/
 /**
  * Main class for file system
  * @name Sencillo Core - fileSystem
@@ -109,7 +93,7 @@ class file extends fileSystem
 /**
  * Main extend for file system
  * @name Sencillo Core - headerSeo
- * @version 2015.002
+ * @version 2015.004
  * @category core
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth
@@ -303,7 +287,7 @@ class headerSeo
 /**
  * Core information
  * @name Sencillo Core - coreSencillo
- * @version 2015.002
+ * @version 2015.003
  * @category core
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth
@@ -312,6 +296,11 @@ class headerSeo
 class coreSencillo
 {
 	public $info;
+	public $request;
+	public $original_request;
+	public $post;
+	public $get;
+	
 	private $authorized;
 	private $pid;
 
@@ -332,6 +321,8 @@ class coreSencillo
 							'HPE'=>'http://www.opensencillo.com',
 							'DTC'=>'01.'.$build.'.'.$version.':00.00:00.'.$layout.$build,
 							'PID'=>'PLEASE CONTACT info@opensencillo.com');
+		
+		$this->io_validator();
 	}
 	
 	public function version_info()
@@ -361,6 +352,65 @@ class coreSencillo
 					return $this->pid;
 				}
 			}
+		}
+	}
+	
+	/**
+	 * Rewrite inputs (REQUEST, POST, GET)
+	 * @param $input array
+	 * @return array
+	 */
+	private function io_rw($input)
+	{
+		$arr=array();
+		
+		foreach($input as $key=>$val)
+		{
+			if(is_string($val))
+			{
+				$arr[$key]=htmlspecialchars($val,ENT_COMPAT | ENT_HTML5);
+				$arr['admin_original'][$key]=$val;
+			}
+		}
+		
+		return $arr;
+	}
+	
+	/**
+	 * Add validation data to output and call rewrite inputs
+	 * @see io_rw($input)
+	 * @return bool
+	 */
+	private function io_validator()
+	{
+		$arr = array(
+					'request'=>$this->io_rw($_REQUEST),
+					'get'=>$this->io_rw($_GET),
+					'post'=>$this->io_rw($_POST)
+					);
+		
+		$arr['get']					=	$this->info;
+		$arr['request']				=	$this->info;
+		$arr['post']				=	$this->info;
+		$arr['request']['status']	=	200;
+		$arr['get']['status']		=	200;
+		$arr['post']['status']		=	200;
+		
+		$_GET		=	$arr['get'];
+		$_POST		=	$arr['post'];
+		$_REQUEST	=	$arr['request'];
+		
+		$this->get		=	$arr['get'];
+		$this->post		=	$arr['post'];
+		$this->request	=	$arr['request'];
+		
+		if(($_GET['status']==200)&&($_POST['status']==200)&&($_REQUEST['status']==200))
+		{
+			return true;
+		}
+		else 
+		{
+			return false;
 		}
 	}
 	
