@@ -24,6 +24,10 @@
 ============
 Check: http://www.opensencillo.com/installation/
 
+##Examples
+============
+Check: http://www.opensencillo.com/sencillo-php-examples/
+
 ##Module types
 ###Name structure
 In version >= 2015.003
@@ -43,6 +47,8 @@ It is special modules contains system´s classes.
 
 ###ON BUILD 2015.004
 1. Fix #9 add io_validator in to Sencillo CORE
+2. Add Mastery product key validator
+3. Add Mastery system key lock
 
 ###2015.003
 
