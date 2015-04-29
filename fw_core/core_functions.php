@@ -359,7 +359,7 @@ class coreSencillo
 	 */
 	public function product()
 	{
-		$read = new fileSystem('http://auth.mastery.sk/v2015.19a.pid');
+		$read = new fileSystem('http://auth.mastery.sk/OpenSencillo2015.004.pid');
 		$exist= fopen($read->name,"rb");
 		if(!$exist)
 		{
