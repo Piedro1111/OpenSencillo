@@ -329,6 +329,7 @@ class coreSencillo
 	{
 		return $this->info;
 	}
+	
 	/**
 	 * Run basic authentification script
 	 * @param $domains array
@@ -343,16 +344,45 @@ class coreSencillo
 			{
 				if($_SERVER['SERVER_NAME']==$value)
 				{
-					$this->pid=true;
-					return $this->pid;
+					$this->pid[$value]=true;
 				}
 				else
 				{
-					$this->pid=false;
-					return $this->pid;
+					$this->pid[$value]=false;
 				}
 			}
 		}
+	}
+	
+	/**
+	 * Check product key
+	 */
+	public function product()
+	{
+		$read = new fileSystem('http://auth.mastery.sk/v2015.19a.pid');
+		$exist= fopen($read->name,"rb");
+		if(!$exist)
+		{
+			die($this->info['PID']);
+		}
+		else
+		{
+			return $read->read();
+		}
+	}
+	
+	/**
+	 * Pay lock
+	 */
+	public function payLock()
+	{
+		$json=json_decode(self::product(),true);
+		$this->authorized($json['domains']);
+		if($this->pid[$_SERVER['SERVER_NAME']]!==true)
+		{
+			die($this->info['PID']);
+		}
+		$this->info['product']=$json;
 	}
 	
 	/**
