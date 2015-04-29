@@ -16,8 +16,8 @@
 > * Build: 003;
 > * Rev: 2015.003;
 > * Date: 01 February 2015;
-> * By: Bc. Peter Horváth;
-> * Homepage: http://opensencillo.com
+> * By: [Bc. Peter Horváth](http://phorvath.com);
+> * Homepage: [Open Sencillo](http://opensencillo.com);
 > * Features: File management, File Convertors, Database management, SEO, Session & Cookies management, Hash subsystem, Translates JSON file, Unit Testing, Htaccess generator, Simple image tool ...
 
 ##How to Install
