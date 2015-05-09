@@ -359,7 +359,7 @@ class coreSencillo implements coreInterface
 	 */
 	public function product()
 	{
-		$read = new fileSystem('http://auth.mastery.sk/OpenSencillo2015.004.pid');
+		$read = new fileSystem('http://auth.mastery.sk/OpenSencillo'.$this->info['VSN'].'.pid');
 		$exist= fopen($read->name,"rb");
 		if(!$exist)
 		{
