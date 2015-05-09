@@ -293,7 +293,7 @@ class headerSeo
  * @author Bc. Peter Horváth
  * @license Distributed under the General Public License (GPL) http://www.gnu.org/copyleft/gpl.html This program is distributed in the hope that it will be useful - WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
-class coreSencillo
+class coreSencillo implements coreInterface
 {
 	public $info;
 	public $request;
@@ -311,7 +311,7 @@ class coreSencillo
 	{
 		$version = '2015';
 		$layout	 = '0';
-		$build	 = '03';
+		$build	 = '04';
 		$this->info=array(	'CMS'=>'OpenSencillo',
 							'NME'=>'OpenSencillo',
 							'VSN'=>$version.'.'.$layout.$build,
@@ -359,7 +359,7 @@ class coreSencillo
 	 */
 	public function product()
 	{
-		$read = new fileSystem('http://auth.mastery.sk/OpenSencillo2015.004.pid');
+		$read = new fileSystem('http://auth.mastery.sk/OpenSencillo'.$this->info['VSN'].'.pid');
 		$exist= fopen($read->name,"rb");
 		if(!$exist)
 		{
