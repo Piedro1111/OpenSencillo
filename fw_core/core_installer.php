@@ -18,13 +18,14 @@
 /**
  * Core installer
  * @name OpenSencillo SQL Installer
- * @version 2015.003
+ * @version 2015.004
  * @category core
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth
  * @license Distributed under the General Public License (GPL) http://www.gnu.org/copyleft/gpl.html This program is distributed in the hope that it will be useful - WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
 error_reporting(E_ERROR | E_PARSE);
+require_once("./core_interface.php");
 require_once("./core_functions.php");
 $i=0;
 $afterBootUp=array();

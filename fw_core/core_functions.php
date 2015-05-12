@@ -419,9 +419,9 @@ class coreSencillo implements coreInterface
 					'post'=>$this->io_rw($_POST)
 					);
 		
-		$arr['get']					=	$this->info;
-		$arr['request']				=	$this->info;
-		$arr['post']				=	$this->info;
+		$arr['get']['core_info']	=	$this->info;
+		$arr['request']['core_info']=	$this->info;
+		$arr['post']['core_info']	=	$this->info;
 		$arr['request']['status']	=	200;
 		$arr['get']['status']		=	200;
 		$arr['post']['status']		=	200;
