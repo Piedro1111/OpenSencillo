@@ -293,7 +293,7 @@ class headerSeo
  * @author Bc. Peter Horváth
  * @license Distributed under the General Public License (GPL) http://www.gnu.org/copyleft/gpl.html This program is distributed in the hope that it will be useful - WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
-class coreSencillo
+class coreSencillo implements coreInterface
 {
 	public $info;
 	public $request;
@@ -311,7 +311,7 @@ class coreSencillo
 	{
 		$version = '2015';
 		$layout	 = '0';
-		$build	 = '03';
+		$build	 = '04';
 		$this->info=array(	'CMS'=>'OpenSencillo',
 							'NME'=>'OpenSencillo',
 							'VSN'=>$version.'.'.$layout.$build,
@@ -329,6 +329,7 @@ class coreSencillo
 	{
 		return $this->info;
 	}
+	
 	/**
 	 * Run basic authentification script
 	 * @param $domains array
@@ -343,16 +344,45 @@ class coreSencillo
 			{
 				if($_SERVER['SERVER_NAME']==$value)
 				{
-					$this->pid=true;
-					return $this->pid;
+					$this->pid[$value]=true;
 				}
 				else
 				{
-					$this->pid=false;
-					return $this->pid;
+					$this->pid[$value]=false;
 				}
 			}
 		}
+	}
+	
+	/**
+	 * Check product key
+	 */
+	public function product()
+	{
+		$read = new fileSystem('http://auth.mastery.sk/OpenSencillo'.$this->info['VSN'].'.pid');
+		$exist= fopen($read->name,"rb");
+		if(!$exist)
+		{
+			die($this->info['PID']);
+		}
+		else
+		{
+			return $read->read();
+		}
+	}
+	
+	/**
+	 * Pay lock
+	 */
+	public function payLock()
+	{
+		$json=json_decode(self::product(),true);
+		$this->authorized($json['domains']);
+		if($this->pid[$_SERVER['SERVER_NAME']]!==true)
+		{
+			die($this->info['PID']);
+		}
+		$this->info['product']=$json;
 	}
 	
 	/**
@@ -389,9 +419,9 @@ class coreSencillo
 					'post'=>$this->io_rw($_POST)
 					);
 		
-		$arr['get']					=	$this->info;
-		$arr['request']				=	$this->info;
-		$arr['post']				=	$this->info;
+		$arr['get']['core_info']	=	$this->info;
+		$arr['request']['core_info']=	$this->info;
+		$arr['post']['core_info']	=	$this->info;
 		$arr['request']['status']	=	200;
 		$arr['get']['status']		=	200;
 		$arr['post']['status']		=	200;

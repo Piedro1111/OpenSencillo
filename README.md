@@ -16,13 +16,17 @@
 > * Build: 003;
 > * Rev: 2015.003;
 > * Date: 01 February 2015;
-> * By: Bc. Peter Horváth;
-> * Homepage: http://opensencillo.com
+> * By: [Bc. Peter Horváth](http://phorvath.com);
+> * Homepage: [Open Sencillo](http://opensencillo.com);
 > * Features: File management, File Convertors, Database management, SEO, Session & Cookies management, Hash subsystem, Translates JSON file, Unit Testing, Htaccess generator, Simple image tool ...
 
 ##How to Install
 ============
 Check: http://www.opensencillo.com/installation/
+
+##Examples
+============
+Check: http://www.opensencillo.com/sencillo-php-examples/
 
 ##Module types
 ###Name structure
@@ -43,6 +47,10 @@ It is special modules contains system´s classes.
 
 ###ON BUILD 2015.004
 1. Fix #9 add io_validator in to Sencillo CORE
+2. Add Mastery product key validator
+3. Add Mastery system key lock
+4. Add float parser
+5. Add object interface for core
 
 ###2015.003
 

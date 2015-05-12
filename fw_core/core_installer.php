@@ -1,30 +1,15 @@
 <?php
-/*~ core_installer.php
-.---------------------------------------------------------------------------.
-|  Software: Sencillo SQL Installer                                         |
-|   Version: 2015.003                                                       |
-|   Contact: ph@mastery.sk                                                  |
-| ------------------------------------------------------------------------- |
-|    Author: Bc. Peter Horváth (original founder)                           |
-| Copyright (c) 2015, Bc. Peter Horváth. All Rights Reserved.               |
-| ------------------------------------------------------------------------- |
-|   License: Distributed under the General Public License (GPL)             |
-|            http://www.gnu.org/licenses/gpl-3.0.html                       |
-| This program is distributed in the hope that it will be useful - WITHOUT  |
-| ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or     |
-| FITNESS FOR A PARTICULAR PURPOSE.                                         |
-'---------------------------------------------------------------------------'
-~*/
 /**
  * Core installer
  * @name OpenSencillo SQL Installer
- * @version 2015.003
+ * @version 2015.004
  * @category core
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth
  * @license Distributed under the General Public License (GPL) http://www.gnu.org/copyleft/gpl.html This program is distributed in the hope that it will be useful - WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
 error_reporting(E_ERROR | E_PARSE);
+require_once("./core_interface.php");
 require_once("./core_functions.php");
 $i=0;
 $afterBootUp=array();
@@ -81,8 +66,21 @@ $QUICKCACHE_ON = '.$_POST['cache'].';
 		$file = new fileSystem('../yourcode.php');
 	
 		$file->write('<?php
-	//write your PHP code here
-?>');
+	$seo = new headerSeo;
+	$seo->encode();
+	$seo->title($afterBootUp[0]->info["FWK"]." - Example page");
+	$seo->owner("'.$_POST['user-new-name'].', '.$_POST['user-new-mail'].'");
+	$seo->bootstrapDefs();
+	echo $seo->save();
+?>
+	<body>
+		<h1>It works</h1>
+		<div class="alert alert-success">
+			<strong>Success!</strong> Write your PHP code to file yourcode.php.
+		</div>
+	</body>
+</html>');
+
 		$file = new fileSystem('../firststart.json');
 		$json = json_encode(array(	'time'=>date("H:i:s"),
 									'date'=>date("Y-m-d"),

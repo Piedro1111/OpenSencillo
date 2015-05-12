@@ -18,6 +18,7 @@
 error_reporting(E_ERROR | E_PARSE);
 include("./fw_headers/mysql-config.php");
 include("./fw_headers/main-config.php");
+require_once("./fw_core/core_interface.php");
 require("./fw_core/core_sql.php");
 require("./fw_headers/session.php");
 require("./fw_headers/cookies.php");
