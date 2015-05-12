@@ -13,8 +13,8 @@
 > * Category: OpenSource;
 > * Language: PHP 5.3+, JQUERY, HTML5
 > * Year: 2015;
-> * Build: 003;
-> * Rev: 2015.003;
+> * Build: 004;
+> * Rev: 2015.004;
 > * Date: 01 February 2015;
 > * By: [Bc. Peter Horváth](http://phorvath.com);
 > * Homepage: [Open Sencillo](http://opensencillo.com);
@@ -45,12 +45,16 @@ It is special modules contains system´s classes.
 ##Changes log
 ============
 
-###ON BUILD 2015.004
+###ON BUILD 2015.005
+
+###2015.004
 1. Fix #9 add io_validator in to Sencillo CORE
 2. Add Mastery product key validator
 3. Add Mastery system key lock
 4. Add float parser
 5. Add object interface for core
+6. Add welcome page (in yourcode.php)
+7. Fix installation bug
 
 ###2015.003
 
