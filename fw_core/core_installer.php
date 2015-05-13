@@ -72,14 +72,10 @@ $QUICKCACHE_ON = '.$_POST['cache'].';
 	$seo->owner("'.$_POST['user-new-name'].', '.$_POST['user-new-mail'].'");
 	$seo->bootstrapDefs();
 	echo $seo->save();
-?>
-	<body>
-		<h1>It works</h1>
-		<div class="alert alert-success">
-			<strong>Success!</strong> Write your PHP code to file yourcode.php.
-		</div>
-	</body>
-</html>');
+
+	$translate = new translate("translate.json","en");
+	require_once("./fw_templates/welcome.default.screen.php");
+?>');
 
 		$file = new fileSystem('../firststart.json');
 		$json = json_encode(array(	'time'=>date("H:i:s"),

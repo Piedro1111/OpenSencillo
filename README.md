@@ -8,14 +8,13 @@
 ###About Stable version
 
 > * Name: OpenSencillo;
-> * Licence: GNU/GPL;
+> * Licence: [GNU/GPL](http://www.gnu.org/licenses/gpl-3.0.html);
 > * Type: Framework;
 > * Category: OpenSource;
 > * Language: PHP 5.3+, JQUERY, HTML5
 > * Year: 2015;
 > * Build: 004;
 > * Rev: 2015.004;
-> * Date: 01 February 2015;
 > * By: [Bc. Peter Horváth](http://phorvath.com);
 > * Homepage: [Open Sencillo](http://opensencillo.com);
 > * Features: File management, File Convertors, Database management, SEO, Session & Cookies management, Hash subsystem, Translates JSON file, Unit Testing, Htaccess generator, Simple image tool ...
