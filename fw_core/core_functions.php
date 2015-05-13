@@ -310,8 +310,8 @@ class coreSencillo implements coreInterface
 	public function __construct()
 	{
 		$version = '2015';
-		$layout	 = '0';
-		$build	 = '04';
+		$layout	 = '1';
+		$build	 = '05';
 		$this->info=array(	'CMS'=>'OpenSencillo',
 							'NME'=>'OpenSencillo',
 							'VSN'=>$version.'.'.$layout.$build,

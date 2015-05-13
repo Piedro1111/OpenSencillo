@@ -45,6 +45,7 @@ It is special modules contains system´s classes.
 ============
 
 ###ON BUILD 2015.005
+1. New welcome page
 
 ###2015.004
 1. Fix #9 add io_validator in to Sencillo CORE
