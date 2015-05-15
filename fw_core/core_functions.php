@@ -278,9 +278,9 @@ class headerSeo
 	 */
 	public function bootstrapDefs()
 	{
-		$this->header['bootstrap-css']='<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">';
+		$this->header['bootstrap-css']='<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">';
 		$this->header['jquery-js']='<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>';
-		$this->header['bootstrap-js']='<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>';
+		$this->header['bootstrap-js']='<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>';
 	}
 }
 
@@ -307,7 +307,7 @@ class coreSencillo implements coreInterface
 	/**
 	 * Add default information about Sencillo
 	 */
-	public function __construct()
+	public function __construct($sum=null)
 	{
 		$version = '2015';
 		$layout	 = '1';
@@ -320,7 +320,8 @@ class coreSencillo implements coreInterface
 							'CPY'=>'&copy; COPYRIGHT 2011-'.date('Y').' Bc.Peter Horváth',
 							'HPE'=>'http://www.opensencillo.com',
 							'DTC'=>'01.'.$build.'.'.$version.':00.00:00.'.$layout.$build,
-							'PID'=>'PLEASE CONTACT info@opensencillo.com');
+							'PID'=>'PLEASE CONTACT info@opensencillo.com',
+							'SUM'=>$sum);
 		
 		$this->io_validator();
 	}
@@ -357,9 +358,16 @@ class coreSencillo implements coreInterface
 	/**
 	 * Check product key
 	 */
-	public function product()
+	public function product($path=false)
 	{
-		$read = new fileSystem('http://auth.mastery.sk/OpenSencillo'.$this->info['VSN'].'.pid');
+		if($path==false)
+		{
+			$read = new fileSystem('http://auth.mastery.sk/action.php');
+		}
+		else
+		{
+			$read = new fileSystem('key.pid');
+		}
 		$exist= fopen($read->name,"rb");
 		if(!$exist)
 		{
@@ -368,6 +376,43 @@ class coreSencillo implements coreInterface
 		else
 		{
 			return $read->read();
+		}
+	}
+	
+	/**
+	 * Check product key
+	 */
+	public function payLock()
+	{
+		if(!file_exists("key.pid"))
+		{
+			$json=json_decode(self::product(false),true);
+			$this->authorized($json['domains']);
+			if($this->pid[$_SERVER['SERVER_NAME']]!==true)
+			{
+				die($this->info['PID']);
+			}
+			$this->info['product']=$json;
+			if(($json['sum']!='none')&&(!empty($this->info['SUM']))&&($json['sum']==$this->info['SUM']))
+			{
+				$write = new fileSystem('key.pid');
+				$json['expired']=md5(date('Ym'));
+				$write->write(json_encode($json));
+			}
+		}
+		else
+		{
+			$json=json_decode(self::product(true),true);
+			$this->authorized($json['domains']);
+			if(($this->pid[$_SERVER['SERVER_NAME']]!==true)&&($json['sum']===$this->info['SUM']))
+			{
+				die($this->info['PID']);
+			}
+			$this->info['product']=$json;
+			if($this->info['product']['expired']!=md5(date('Ym')))
+			{
+				unlink('key.pid');
+			}
 		}
 	}
 	
@@ -450,5 +495,8 @@ class coreSencillo implements coreInterface
 }
 $i=0;
 $afterBootUp=array();
-$afterBootUp[$i++]=new coreSencillo;
+//$afterBootUp[1]=new fileSystem('firststart.json');
+//$hash=json_decode($afterBootUp[1]->read(),true);
+$afterBootUp[0]=new coreSencillo/*($hash['hash'])*/;
+//$afterBootUp[0]->payLock();
 ?>
