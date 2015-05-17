@@ -292,7 +292,7 @@ class mysqlInterface extends mysqlEdit
 	 *			'col1'=>array(
 	 *				'type'=>'int',
 	 *				'primary_key'=>true,
-	 *				'FOREGIN_key'=>'cudzia_tabulka(stlpec)',
+	 *				'foreign_key'=>'cudzia_tabulka(stlpec)',
 	 *				'unique'=>true,
 	 *				'auto_increment'=>true,
 	 *				'null'=>true
@@ -300,7 +300,7 @@ class mysqlInterface extends mysqlEdit
 	 *			'col2'=>array(
 	 *				'type'=>'int',
 	 *				'primary_key'=>true,
-	 *				'FOREGIN_key'=>'cudzia_tabulka(stlpec)',
+	 *				'foreign_key'=>'cudzia_tabulka(stlpec)',
 	 *				'unique'=>true,
 	 *				'auto_increment'=>true,
 	 *				'null'=>true
@@ -308,7 +308,7 @@ class mysqlInterface extends mysqlEdit
 	 *			'col3'=>array(
 	 *				'type'=>'int',
 	 *				'primary_key'=>true,
-	 *				'FOREGIN_key'=>'cudzia_tabulka(stlpec)',
+	 *				'foreign_key'=>'cudzia_tabulka(stlpec)',
 	 *				'unique'=>true,
 	 *				'auto_increment'=>true,
 	 *				'null'=>true
@@ -342,8 +342,8 @@ class mysqlInterface extends mysqlEdit
 						case 'primary_key':
 							$data.=($val_col[$key_att]===false ? '' : ',PRIMARY KEY ('.$key_col.')');
 							break;
-						case 'foregin_key':
-							$data.=($val_col[$key_att]===false ? '' : ',FOREGIN KEY ('.$key_col.') REFERENCES '.$val_att);
+						case 'foreign_key':
+							$data.=($val_col[$key_att]===false ? '' : ',FOREIGN KEY ('.$key_col.') REFERENCES '.$val_att);
 							break;
 						case 'unique_key':
 						case 'unique':
