@@ -489,6 +489,31 @@ class coreSencillo implements coreInterface
 		}
 	}
 	
+	/**
+	 * Add basic sencillo upgrade function
+	 * @example $this->upgrade('http://upgrade.opensencillo.com/source/');
+	 * @param $source string
+	 */
+	public function upgrade($source=null)
+	{
+		$fileList=scandir('./fw_core');
+		
+		foreach($fileList as $key=>$val)
+		{
+			if($key>1)
+			{
+				$md5 = md5_file('./fw_core/'.$val);
+				$remote_md5 = md5_file($source.$val.'.suf');
+				if($md5!=$remote_md5)
+				{
+					$read = new fileSystem($source.$val.'.suf');
+					$write= new fileSystem('./fw_core/'.$val);
+					$write->write($read->read());
+				}
+			}
+		}
+	}
+	
 	public function __destruct()
 	{
 	}
