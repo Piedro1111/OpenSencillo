@@ -1,14 +1,32 @@
 <?php
+/**
+ * Menu or structure generator
+ * @name Sencillo Structgen
+ * @version 2015.005
+ * @category libraries
+ * @see http://www.opensencillo.com
+ * @author Bc. Peter Horváth
+ * @license Distributed under the General Public License (GPL) http://www.gnu.org/copyleft/gpl.html This program is distributed in the hope that it will be useful - WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ */
 class structgen 
 {
 	protected $data=array();
 	protected $baseCtr;
 	protected $subCtr;
+	protected $name;
 	
 	public function __construct($name,$mysqlObject)
 	{
 		$this->data['sql']=$mysqlObject;
-		$this->data['structure']=array(
+	}
+	
+	/**
+	 * Create structure
+	 * @param $name string
+	 */
+	public function createStructure($name='structgen')
+	{
+		$this->data['structure'][]=array(
 			$name=>array(
 				'id'=>array(
 					'type'=>'int',
@@ -35,18 +53,121 @@ class structgen
 				),
 			)
 		);
-		$this->data['name']=$name;
-		$this->data['sql']->dbCreateTable($this->data['structure']);
+		$this->name=$name;
 	}
 	
-	public function add($item,$base=0,$perm=1000,$link=null,$subnav=null,$priority=null)
+	/**
+	 * Switch to other structure by name
+	 * @param $name string
+	 */
+	public function switchStructure($name)
 	{
-		$this->data['name']=$name;
+		$this->name=$name;
 	}
 	
-	public function __destruct()
+	/**
+	 * Add item / record to structure
+	 * @param $item string name of item 
+	 * @param $base int id of parent (root base is 0)
+	 * @param $subnav int id of new item
+	 * @param $perm int permission for view
+	 * @param $link string full URL
+	 * @param $priority int priority level
+	 */
+	public function add($item,$base=0,$subnav=null,$perm=1000,$link=null,$priority=null)
 	{
+		$this->data['add'][]=array(
+			$this->name=>array(
+				'id'=>"''",
+				'base'=>$base,
+				'subnav'=>$subnav,
+				'priority'=>$priority,
+				'perm'=>$perm,
+				'name'=>$item,
+				'link'=>$link
+			)
+		);
+	}
+	
+	/**
+	 * Create database queries for construct full structure and execute queries
+	 */
+	private function createQueries()
+	{
+		foreach($this->data['structure'] as $val)
+		{
+			$this->data['sql']->dbCreateTable($val);
+		}
+		foreach($this->data['add'] as $val)
+		{
+			$this->data['sql']->insert($val);
+		}
 		$this->data['sql']->execute();
 	}
+	
+	/**
+	 * List structure
+	 * @param $rootbase int
+	 * @param $maxbase int
+	 */
+	public function listStructure()
+	{
+		$structure = $this->worker();
+		$arr=array();
+		$arrstrc=array();
+		foreach($structure as $key=>$val)
+		{
+			foreach($structure as $keyB=>$valB)
+			{
+				if($valB['subnav']==$val['base'])
+				{
+					$arrstrc[]=$valB;
+					unset($structure[$keyB]);
+				}
+			}
+			$arr[$val['base']]=$arrstrc;
+		}
+	}
+	
+	/**
+	 * List all structure information for one base (for one level)
+	 * @param $base int
+	 * @return array
+	 */
+	public function listBase($base)
+	{
+		$structure = $this->worker();
+		foreach($structure as $key=>$val)
+		{
+			if($base!=$val['base'])
+			{
+				unset($structure[$key]);
+			}
+		}
+		return $structure;
+	}
+	/**
+	 * Find all content for list
+	 * @return array
+	 */
+	private function worker()
+	{
+		$allBase=array(
+			$this->name=array(
+				'condition'=>array(
+					'`id`>=0',
+				),
+				'sort'=>array(
+					'asc'=>'`id`'
+				)
+			)
+		);
+		$this->data['sql']->select($allBase);
+		$arr = $this->data['sql']->execute();
+		$sizearr = sizeof($arr);
+		return array('sqlreturn'=>$arr,'recordsctr'=>$sizearr);
+	}
+	
+	public function __destruct(){}
 }
 ?>
