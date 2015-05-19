@@ -46,6 +46,10 @@ It is special modules contains system´s classes.
 
 ###ON BUILD 2015.005
 1. New welcome page
+2. Fix #17 database foreign key problem
+3. New structgen class for generating menu or galleries
+4. Update manager tool #3 - no gui
+5. Paylock subsystem - update
 
 ###2015.004
 1. Fix #9 add io_validator in to Sencillo CORE
