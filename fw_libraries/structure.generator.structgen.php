@@ -11,13 +11,14 @@
 class structgen 
 {
 	protected $data=array();
+	protected $sql;
 	protected $baseCtr;
 	protected $subCtr;
 	protected $name;
 	
 	public function __construct($name,$mysqlObject)
 	{
-		$this->data['sql']=$mysqlObject;
+		$this->sql=$mysqlObject;
 	}
 	
 	/**
@@ -96,13 +97,13 @@ class structgen
 	{
 		foreach($this->data['structure'] as $val)
 		{
-			$this->data['sql']->dbCreateTable($val);
+			$this->sql->dbCreateTable($val);
 		}
 		foreach($this->data['add'] as $val)
 		{
-			$this->data['sql']->insert($val);
+			$this->sql->insert($val);
 		}
-		$this->data['sql']->execute();
+		$this->sql->execute();
 	}
 	
 	/**
@@ -162,8 +163,8 @@ class structgen
 				)
 			)
 		);
-		$this->data['sql']->select($allBase);
-		$arr = $this->data['sql']->execute();
+		$this->sql->select($allBase);
+		$arr = $this->sql->execute();
 		$sizearr = sizeof($arr);
 		return array('sqlreturn'=>$arr,'recordsctr'=>$sizearr);
 	}
