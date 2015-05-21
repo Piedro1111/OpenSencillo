@@ -287,7 +287,7 @@ class headerSeo
 /**
  * Core information
  * @name Sencillo Core - coreSencillo
- * @version 2015.003
+ * @version 2015.005
  * @category core
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth
@@ -414,20 +414,6 @@ class coreSencillo implements coreInterface
 				unlink('key.pid');
 			}
 		}
-	}
-	
-	/**
-	 * Pay lock
-	 */
-	public function payLock()
-	{
-		$json=json_decode(self::product(),true);
-		$this->authorized($json['domains']);
-		if($this->pid[$_SERVER['SERVER_NAME']]!==true)
-		{
-			die($this->info['PID']);
-		}
-		$this->info['product']=$json;
 	}
 	
 	/**

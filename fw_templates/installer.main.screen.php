@@ -1,6 +1,6 @@
 <!--------------------------------------------------------------------------.
 |  Software: Sencillo Default Theme                                         |
-|   Version: 2015.003                                                       |
+|   Version: 2015.105                                                       |
 |   Contact: ph@mastery.sk                                                  |
 | ------------------------------------------------------------------------- |
 |    Author: Bc. Peter Horváth (original founder)                           |
@@ -58,6 +58,7 @@ if(($_GET['install']!='true')||($_POST['user-new-pass']!=$_POST['user-rtp-pass']
 }
 else
 {
+	header('Location: http://'.$_SERVER['SERVER_NAME']);
 	echo("<tr><td><span class='glyphicons glyphicons-old-man'></span><kbd>Super user</kbd></td><td></td></tr>");
 	echo("<tr><td><b>User:</b></td><td>".$_POST['user-new-name']."</td></tr>");
 	echo("<tr><td><b>Email:</b></td><td>".$_POST['user-new-mail']."</td></tr>");
