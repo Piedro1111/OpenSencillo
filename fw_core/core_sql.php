@@ -367,7 +367,7 @@ class mysqlInterface extends mysqlEdit
 	 *  )
 	 * )
 	 */
-	public function insert($array)
+	public function insert($array,$stringRewrite=true)
 	{
 		foreach($array as $key=>$val)
 		{
@@ -377,7 +377,14 @@ class mysqlInterface extends mysqlEdit
 			foreach($val as $sub_key=>$sub_val)
 			{
 				$col.=$sub_key.',';
-				$values.=$sub_val.',';
+				if((is_string($sub_val))&&($stringRewrite))
+				{
+					$values.="'".$sub_val."',";
+				}
+				else
+				{
+					$values.=$sub_val.',';
+				}
 			}
 			$col=substr($col, 0, -1);
 			$values=substr($values, 0, -1);
@@ -648,13 +655,14 @@ class mysqlInterface extends mysqlEdit
 	{
 		if(!$this->connect->multi_query($this->save))
 		{
+			$this->mysqli['dberror']['query']	= $this->save;
 			$this->mysqli['dberror']['message']	= "Multi query failed: (" . $this->connect->errno . ") " . $this->connect->error;
 			$this->mysqli['dberror']['code']	= 'mysqlInterface:002';
 			try 
 			{
 				log::vd($this->mysqli);
 			} 
-			catch(Exception $e) 
+			catch(Exception $e)
 			{
 				var_dump($this->mysqli);
 			}
