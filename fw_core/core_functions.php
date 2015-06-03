@@ -107,6 +107,7 @@ class headerSeo
 	private $header;
 	private $body;
 	private $lang;
+	private $oginfo;
 
 	/**
 	 * Create default status for page
@@ -155,6 +156,7 @@ class headerSeo
 			$t = substr($t,0,66).'...';
 		}
 		$this->header['title-def'] = '<title>'.$t.'</title>';
+		$this->oginfo['title'] = $t;
 	}
 	
 	/**
@@ -168,6 +170,7 @@ class headerSeo
 			$data = substr($data,0,155).'...';
 		}
 		$this->header['description-def'] = '<meta name="description" content="'.$data.'">';
+		$this->oginfo['description'] = $data;
 	}
 	
 	/**
@@ -220,15 +223,16 @@ class headerSeo
 	 */
 	public function save()
 	{
-		$this->seo = $this->header['doctype-def'];
-		$this->seo .= $this->header['html-def'];
-		$this->seo .= $this->header['charset-def'];
-		$this->seo .= $this->header['responsive-def'];
-		$this->seo .= $this->header['title-def'];
-		$this->seo .= $this->header['description-def'];
+		$this->seo = $this->header['doctype-def'].PHP_EOL;
+		$this->seo .= (isset($this->header['html-def-snippet'])?$this->header['html-def-snippet']:$this->header['html-def']).PHP_EOL;
+		$this->seo .= $this->header['charset-def'].PHP_EOL;
+		$this->seo .= $this->header['responsive-def'].PHP_EOL;
+		$this->seo .= $this->header['title-def'].PHP_EOL;
+		$this->seo .= $this->header['description-def'].PHP_EOL;
 		$this->generator();
 		
 		unset($this->header['html-def']);
+		unset($this->header['html-def-snippet']);
 		unset($this->header['doctype-def']);
 		unset($this->header['charset-def']);
 		unset($this->header['responsive-def']);
@@ -239,13 +243,13 @@ class headerSeo
 		{
 			if(!is_array($val))
 			{
-				$this->seo .= $val;
+				$this->seo .= $val.PHP_EOL;
 				$this->info['head'][] = $key;
 			}
 		}
 		foreach($this->header['custom'] as $key => $val)
 		{
-			$this->seo .= $val;
+			$this->seo .= $val.PHP_EOL;
 			$this->info['head'][] = $key;
 		}
 		
@@ -271,6 +275,33 @@ class headerSeo
 	{
 		$this->header['jquery-js']='<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>';
 		$this->header['jqueryui-js']='<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>';
+	}
+	
+	/**
+	 * Add jquery
+	 */
+	public function jquery()
+	{
+		self::googleLoad();
+	}
+	
+	/**
+	 * Add og-tags and social tags
+	 * @param array
+	 */
+	public function socialTags($arr)
+	{
+		$this->custom('<meta property="og:url" content="'.$arr['url'].'" />');
+		$this->custom('<meta property="og:type" content="'.$arr['type'].'" />');
+		$this->custom('<meta property="og:title" content="'.$this->oginfo['title'].'" />');
+		$this->custom('<meta property="og:description" content="'.$this->oginfo['description'].'" />');
+		$this->custom('<meta property="og:image" content="'.$arr['image'].'" />');
+		
+		$this->header['html-def-snippet'] = '<html itemscope itemtype="http://schema.org/Other"><head>';
+		
+		$this->custom('<meta itemprop="name" content="'.$this->oginfo['title'].'">');
+		$this->custom('<meta itemprop="description" content="'.$this->oginfo['description'].'">');
+		$this->custom('<meta itemprop="image" content="'.$arr['image'].'">');
 	}
 	
 	/**
