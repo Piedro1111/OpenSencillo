@@ -21,17 +21,19 @@ class menuGen
 	protected $lvls = array();
 	protected $sorted = array();
 	
-	public function __construct($mysqlObject){
-		
+	public function __construct($mysqlObject)
+	{
 		$this->mysqlObject = $mysqlObject;
 		
 		$this->categories_maxlevel = $this->mysqlObject->query("SELECT MAX(`level_id`) AS maxlevel FROM `categories` LIMIT 1");
 		
-		while($data = mysql_fetch_assoc($this->categories_maxlevel)){
+		while($data = mysql_fetch_assoc($this->categories_maxlevel))
+		{
 			$this->maxLevel[] = $data;
 		}
 		
-		for($i = 0; $i < $this->maxLevel[0]['maxlevel']; $i++){
+		for($i = 0; $i < $this->maxLevel[0]['maxlevel']; $i++)
+		{
 			$this->levels[$i] = $this->mysqlObject->query("SELECT * FROM `categories` WHERE `level_id`=".($i+1)." ORDER BY `category_href` ASC");
 		}	
 	}
@@ -45,19 +47,21 @@ class menuGen
 	 * 
 	 * @return sorted array
 	 */
-	private function keySort($array, $key){
-		
+	private function keySort($array, $key)
+	{
 		//get vlaues of key
-		foreach($array as $k=>$v){
+		foreach($array as $k=>$v)
+		{
 			$b[] = strtolower($v[$key]);
-		};
+		}
 		
 		//sort by key
 		asort($b);
 		
-		foreach($b as $k=>$v){
+		foreach($b as $k=>$v)
+		{
 			$c[] = $array[$k];
-		};
+		}
 		
 		return $c;
 	}
@@ -70,17 +74,20 @@ class menuGen
 	 * 
 	 * @return string
 	 */
-	public function generateLevel($level){
-		
+	public function generateLevel($level)
+	{
 		$menu_level = $this->sorted[$level];
 
-		if(sizeof($menu_level) > 0){
-
-			foreach($menu_level as $lvl){
+		if(sizeof($menu_level) > 0)
+		{
+			foreach($menu_level as $lvl)
+			{
 				$arr[] = "<li class='menu-level-".$level."'><a href='http://".$_SERVER['SERVER_NAME']."/produkty/".$lvl['category_href']."'>".$lvl['category_name']."</a></li>";
 			}
 			
-		} else {
+		}
+		else
+		{
 			$arr[] = "<p>ERROR - Menu level doesnt exist!</p>";
 		}
 		
@@ -90,16 +97,16 @@ class menuGen
 	
 	/**
 	 * Generates menu from DB
-	 * 
+	 * @todo render
 	 * @param array
 	 * @param string
 	 * 
 	 * @return sorted array
 	 */
-	public function generateMenu(){
-		
-		for($i = 0; $i < $this->maxLevel[0]['maxlevel']; $i++){
-			
+	public function generateMenu()
+	{
+		for($i = 0; $i < $this->maxLevel[0]['maxlevel']; $i++)
+		{
 			if($this->levels[$i]){
 				while($data = mysql_fetch_assoc($this->levels[$i])){
 					$this->lvls[$i][] = $data;
@@ -112,6 +119,7 @@ class menuGen
 		//unitTest::vd($this->lvls);
 		//unitTest::vd($this->sorted);
 		
+		//*todo************************************************************************************************************************************************************************
 		$arr[] = "<ul class='menu'>";
 		
 			foreach($this->sorted[0] as $lvl_1){
@@ -132,10 +140,9 @@ class menuGen
 				$arr[] = "</li>";
 			}
 		$arr[] = "</ul>";
+		//*todo************************************************************************************************************************************************************************
 		
 		return implode("\n", $arr);
 	}	
-	
-
 }
 ?>
