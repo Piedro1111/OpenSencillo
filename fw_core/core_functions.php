@@ -289,7 +289,7 @@ class headerSeo
 	 * Add og-tags and social tags
 	 * @param array
 	 */
-	public function socialTags($arr)
+	public function socialTags($arr, $snippet=false)
 	{
 		$this->custom('<meta property="og:url" content="'.$arr['url'].'" />');
 		$this->custom('<meta property="og:type" content="'.$arr['type'].'" />');

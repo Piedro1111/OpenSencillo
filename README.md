@@ -50,6 +50,11 @@ It is special modules contains system´s classes.
 3. New structgen class for generating menu or galleries
 4. Update manager tool #3 - no gui
 5. Paylock subsystem - update
+6. Add OG tags
+7. Add Snippet meta tags
+8. Fix Snippet bug
+9. Fix first start database login problems
+10. Add menu generator
 
 ###2015.004
 1. Fix #9 add io_validator in to Sencillo CORE
