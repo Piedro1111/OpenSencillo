@@ -46,27 +46,30 @@ class mysql
 	/**
 	 * Add query to database
 	 * @param string $sql
+	 * @return mixed resources
 	 */
 	final public function query($sql)
 	{
-		mysql_query($sql);
+		return mysql_query($sql);
 	}
 	
 	/**
 	 * Add query to database
 	 * @param string $sql
+	 * @return mixed resources
 	 */
 	final public function write($sql)
 	{
-		$this->query($sql);
+		return $this->query($sql);
 	}
 	
 	/**
 	 * Close database connection
+	 * @return mixed
 	 */
 	final public function close()
 	{
-		mysql_close($this->con);
+		return mysql_close($this->con);
 	}
 	
 	/**
