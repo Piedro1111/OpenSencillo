@@ -58,6 +58,51 @@ class structgen
 	}
 	
 	/**
+	 * Create unistore list structure
+	 * @param $name string
+	 */
+	public function uniStore($name='uniStructgen')
+	{
+		$this->data['structure'][]=array(
+			$name=>array(
+				'id'=>array(
+					'type'=>'int',
+					'primary_key'=>true,
+					'auto_increment'=>true
+				),
+				'mainBase'=>array(
+					'type'=>'int'
+				),
+				'subBase'=>array(
+					'type'=>'int'
+				),
+				'priority'=>array(
+					'type'=>'int'
+				),
+				'perm'=>array(
+					'type'=>'int(4)'
+				),
+				'dataName'=>array(
+					'type'=>'varchar(50)'
+				),
+				'vchVal'=>array(
+					'type'=>'varchar(255)'
+				),
+				'floatVal'=>array(
+					'type'=>'varchar(255)'
+				),
+				'intVal'=>array(
+					'type'=>'varchar(255)'
+				),
+				'datetime'=>array(
+					'type'=>'datetime'
+				),
+			)
+		);
+		$this->name=$name;
+	}
+	
+	/**
 	 * Switch to other structure by name
 	 * @param $name string
 	 */
@@ -170,5 +215,10 @@ class structgen
 	}
 	
 	public function __destruct(){}
+}
+
+class defaultStructures extends structgen
+{
+	
 }
 ?>

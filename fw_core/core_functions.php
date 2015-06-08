@@ -297,11 +297,14 @@ class headerSeo
 		$this->custom('<meta property="og:description" content="'.$this->oginfo['description'].'" />');
 		$this->custom('<meta property="og:image" content="'.$arr['image'].'" />');
 		
-		$this->header['html-def-snippet'] = '<html itemscope itemtype="http://schema.org/Other"><head>';
-		
-		$this->custom('<meta itemprop="name" content="'.$this->oginfo['title'].'">');
-		$this->custom('<meta itemprop="description" content="'.$this->oginfo['description'].'">');
-		$this->custom('<meta itemprop="image" content="'.$arr['image'].'">');
+		if($snippet)
+		{
+			$this->header['html-def-snippet'] = '<html itemscope itemtype="http://schema.org/Other"><head>';
+			
+			$this->custom('<meta itemprop="name" content="'.$this->oginfo['title'].'">');
+			$this->custom('<meta itemprop="description" content="'.$this->oginfo['description'].'">');
+			$this->custom('<meta itemprop="image" content="'.$arr['image'].'">');
+		}
 	}
 	
 	/**
