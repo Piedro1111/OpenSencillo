@@ -13,136 +13,45 @@ class menuGen
 {
 	protected $mysqlObject;
 	
-	protected $categories_maxlevel;
-	
-	protected $levels = array();
-	public $maxLevel= array();
-	
-	protected $lvls = array();
-	protected $sorted = array();
-	
-	public function __construct($mysqlObject)
-	{
+	public function __construct($mysqlObject){
+		
 		$this->mysqlObject = $mysqlObject;
-		
-		$this->categories_maxlevel = $this->mysqlObject->query("SELECT MAX(`level_id`) AS maxlevel FROM `categories` LIMIT 1");
-		
-		while($data = mysql_fetch_assoc($this->categories_maxlevel))
-		{
-			$this->maxLevel[] = $data;
-		}
-		
-		for($i = 0; $i < $this->maxLevel[0]['maxlevel']; $i++)
-		{
-			$this->levels[$i] = $this->mysqlObject->query("SELECT * FROM `categories` WHERE `level_id`=".($i+1)." ORDER BY `category_href` ASC");
-		}	
 	}
 	
 	
 	/**
-	 * Sort 2D array by key
-	 * @examlpe $sorted = keySort($array, 'id');
-	 * @param 2D array
-	 * @param string
-	 * 
-	 * @return sorted array
-	 */
-	private function keySort($array, $key)
-	{
-		//get vlaues of key
-		foreach($array as $k=>$v)
-		{
-			$b[] = strtolower($v[$key]);
-		}
-		
-		//sort by key
-		asort($b);
-		
-		foreach($b as $k=>$v)
-		{
-			$c[] = $array[$k];
-		}
-		
-		return $c;
-	}
-	
-	
-	/**
-	 * Generates menu level
-	 * 
-	 * @param int
+	 * Generates an unlimited structured menu from DB
+	 * @examlpe echo createMenu("categories", 0, 0, "0-10");
+	 *
+	 * @param string table name
+	 * @param int example 0
+	 * @param int example 0
+	 * @param string example 0-10
 	 * 
 	 * @return string
 	 */
-	public function generateLevel($level)
+	public function generateMenu($db, $subcategory, $level, $limit)
 	{
-		$menu_level = $this->sorted[$level];
-
-		if(sizeof($menu_level) > 0)
+		$query = $this->mysqlObject->query("SELECT menu.category_id, menu.category_name, menu.category_href, menu.sort, Deriv1.count FROM " . "`" .$db. "`" . " menu  LEFT OUTER JOIN (SELECT subcategory_id, COUNT(*) AS count FROM ". "`" .$db. "`". " GROUP BY subcategory_id) Deriv1 ON menu.category_id = Deriv1.subcategory_id WHERE menu.subcategory_id=".$subcategory.' ORDER BY menu.sort ASC');
+		$arr[] = "<ul class='menu_ul_level_".$level."'>";
+		while ($data = mysql_fetch_assoc($query))
 		{
-			foreach($menu_level as $lvl)
+			$href = 'http://'.$_SERVER['SERVER_NAME']."/produkty/".$data['category_href']."/".$limit;
+			//if there are subcategories
+			if ($data['count'] > 0)
 			{
-				$arr[] = "<li class='menu-level-".$level."'><a href='http://".$_SERVER['SERVER_NAME']."/produkty/".$lvl['category_href']."'>".$lvl['category_name']."</a></li>";
+				$arr[] = "<li class='menu_li_level_".$level."'><a class='menu_a_level_".$level."' href='".$href."'>".$data['category_name']."</a>";
+
+				$arr[] = $this->generateMenu($db, $data['category_id'], $level + 1, $limit);
+				$arr[] = "</li>";
+				//no subcategories
+			} else if ($data['count'] == 0){				
+				$arr[] = "<li class='menu_li_level_".$level."'><a class='menu_a_level_".$level."' href='".$href."'>".$data['category_name']."</a></li>";
 			}
-			
 		}
-		else
-		{
-			$arr[] = "<p>ERROR - Menu level doesnt exist!</p>";
-		}
-		
+		$arr[] = "</ul>";
 		return implode("\n", $arr);
 	}
 	
-	
-	/**
-	 * Generates menu from DB
-	 * @todo render
-	 * @param array
-	 * @param string
-	 * 
-	 * @return sorted array
-	 */
-	public function generateMenu()
-	{
-		for($i = 0; $i < $this->maxLevel[0]['maxlevel']; $i++)
-		{
-			if($this->levels[$i]){
-				while($data = mysql_fetch_assoc($this->levels[$i])){
-					$this->lvls[$i][] = $data;
-				}
-				
-				$this->sorted[$i] = $this->keySort($this->lvls[$i], 'sort');
-			}
-		}
-		
-		//unitTest::vd($this->lvls);
-		//unitTest::vd($this->sorted);
-		
-		//*todo************************************************************************************************************************************************************************
-		$arr[] = "<ul class='menu'>";
-		
-			foreach($this->sorted[0] as $lvl_1){
-				$arr[] = "<li class='menu-level-1'><a href='http://".$_SERVER['SERVER_NAME']."/produkty/".$lvl_1['category_href']."'>".$lvl_1['category_name']."</a>";
-				
-				foreach($this->sorted[1] as $lvl_2){
-					if($lvl_2['subcategory_id'] == $lvl_1['category_id']){
-						$arr[] = "<li class='menu-level-2'><a href='http://".$_SERVER['SERVER_NAME']."/produkty/".$lvl_2['category_href']."'>".$lvl_2['category_name']."</a>";
-						
-						foreach($this->sorted[2] as $lvl_3){
-							if($lvl_3['subcategory_id'] == $lvl_2['category_id']){
-								$arr[] = "<li class='menu-level-3'><a href='http://".$_SERVER['SERVER_NAME']."/produkty/".$lvl_3['category_href']."'>".$lvl_3['category_name']."</a>";
-							}
-						}
-						$arr[] = "</li>";
-					}
-				}
-				$arr[] = "</li>";
-			}
-		$arr[] = "</ul>";
-		//*todo************************************************************************************************************************************************************************
-		
-		return implode("\n", $arr);
-	}	
 }
 ?>
