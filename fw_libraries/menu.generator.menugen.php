@@ -13,12 +13,17 @@ class menuGen
 {
 	protected $mysqlObject;
 	protected $href;
-	protected $sitemap;
 	protected $name;
+	protected $protocol;
+	protected $language;
+	protected $perm;
 	
-	public function __construct($mysqlObject){
-		
+	public function __construct($mysqlObject,$protocol,$language,$perm)
+	{
 		$this->mysqlObject = $mysqlObject;
+		$this->protocol = $protocol;
+		$this->language = $language;
+		$this->perm = $perm;
 	}
 	
 	/**
@@ -26,13 +31,15 @@ class menuGen
 	 * @param int base
 	 * @param int subbase
 	 * @param int priority level
+	 * @param int perm level
+	 * @param int language id
 	 * @param string name
 	 * @param string href relative path as my/own/url
 	 * @param string title text
 	 * @param string image full path
 	 * @param string image text alternative
 	 */
-	public function addItemToMenu($cBase,$cSubBase,$priority,$perm,$cName,$cHref,$cTitle,$cImage,$cImageAlt)
+	public function addItemToMenu($cBase,$cSubBase,$priority,$perm,$lang,$cName,$cHref,$cTitle,$cImage,$cImageAlt)
 	{
 		$name = $this->name;
 		$this->mysqlObject->dbCreateTable(array(
@@ -42,6 +49,7 @@ class menuGen
 				'subcategory_id'=>$cSubBase,
 				'sort'=>$priority,
 				'perm'=>$perm,
+				'lang'=>$lang,
 				'category_name'=>"'$cName'",
 				'category_href'=>"'$cHref'",
 				'category_title'=>"'$cTitle'",
@@ -66,6 +74,7 @@ class menuGen
 				'subcategory_id'=>array('type'=>'int'),
 				'sort'=>array('type'=>'int'),
 				'perm'=>array('type'=>'int(4)'),
+				'lang'=>array('type'=>'int(4)'),
 				'category_name'=>array('type'=>'varchar(250)'),
 				'category_href'=>array('type'=>'varchar(250)'),
 				'category_title'=>array('type'=>'varchar(250)'),
@@ -97,20 +106,20 @@ class menuGen
 	public function generateMenu($subcategory, $level)
 	{
 		$db = $this->name;
-		$query = $this->mysqlObject->query("SELECT menu.category_id, menu.category_name, menu.category_href, menu.sort, Deriv1.count FROM " . "`" .$db. "`" . " menu  LEFT OUTER JOIN (SELECT subcategory_id, COUNT(*) AS count FROM ". "`" .$db. "`". " GROUP BY subcategory_id) Deriv1 ON menu.category_id = Deriv1.subcategory_id WHERE menu.subcategory_id=".$subcategory.' ORDER BY menu.sort ASC');
+		$query = $this->mysqlObject->query("SELECT menu.category_id, menu.category_name, menu.category_href, menu.sort, menu.lang, menu.perm, Deriv1.count FROM " . "`" .$db. "`" . " menu  LEFT OUTER JOIN (SELECT subcategory_id, COUNT(*) AS count FROM ". "`" .$db. "`". " GROUP BY subcategory_id) Deriv1 ON menu.category_id = Deriv1.subcategory_id WHERE menu.subcategory_id=".$subcategory." AND menu.lang=".$this->language." AND menu.perm=".$this->perm." ORDER BY menu.sort ASC");
 		$arr[] = "<ul class='menu-ul-level-".$level."'>";
-		while ($data = mysql_fetch_assoc($query))
+		while($data = mysql_fetch_assoc($query))
 		{
-			$this->href = 'http://'.$_SERVER['SERVER_NAME']."/".$data['category_href'];
-			$this->sitemap[] = array('priority'=>$level,'href'=>$this->href);
+			$this->href = $this->protocol.'://'.$_SERVER['SERVER_NAME']."/".$data['category_href'];
 			//if there are subcategories
-			if ($data['count'] > 0)
+			if($data['count'] > 0)
 			{
 				$arr[] = "<li class='menu-li-level-".$level."'><a class='menu-a-level-".$level."' href='".$this->href."'>".$data['category_name']."</a>";
 				$arr[] = $this->generateMenu($data['category_id'], $level + 1);
 				$arr[] = "</li>";
 				//no subcategories
-			} else if ($data['count'] == 0)
+			}
+			elseif($data['count'] == 0)
 			{
 				$arr[] = "<li class='menu-li-level-".$level."'><a class='menu-a-level-".$level."' href='".$this->href."'>".$data['category_name']."</a></li>";
 			}
