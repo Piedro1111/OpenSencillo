@@ -31,8 +31,12 @@ class url
 	
 	/**
 	 * Breadcrumb select
-	 * @page string from PAGE
-	 * @pageNames array('ab/cd/ef'=>'Ef page')
+	 * @param string from PAGE
+	 * @param array('ab/cd/ef'=>'Ef page')
+	 * 
+	 * @tutorial $this->breadcrumb(PAGE,array('first'=>'My first page','first/second'=>'My second page','first/second/third'=>'My third page'));
+	 * 
+	 * @return array(0=>'Page name 0',1=>'Page name 1' ...)
 	 */
 	public function breadcrumb($page,$pageNames)
 	{
