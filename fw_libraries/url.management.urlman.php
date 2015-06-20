@@ -28,5 +28,21 @@ class url
 	{
 		return ($array===true?$this->data['content']:"//".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 	}
+	
+	/**
+	 * Breadcrumb select
+	 * @page string from PAGE
+	 * @pageNames array('ab/cd/ef'=>'Ef page')
+	 */
+	public function breadcrumb($page,$pageNames)
+	{
+		$page = explode('/',$page);
+		foreach($page as $key=>$val)
+		{
+			$bcrumb.='/'.$val;
+			$arr[]=$pageNames[$bcrumb];
+		}
+		return $arr[$page];
+	}
 }
 ?>
