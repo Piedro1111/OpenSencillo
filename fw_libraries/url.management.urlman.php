@@ -20,7 +20,7 @@ class url
 	}
 	
 	/**
-	 * Get url
+	 * Get url/urls
 	 * @param bool
 	 * @return mixed
 	 */
