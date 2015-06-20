@@ -30,6 +30,34 @@ class url
 	}
 	
 	/**
+	 * Add url
+	 * @param string relative page url
+	 * @param string file template url
+	 */
+	public function addUrl($url,$template)
+	{
+		$this->data['content'][$url]=$template;
+	}
+	
+	/**
+	 * Remove url
+	 * @param string
+	 */
+	public function removeUrl($url)
+	{
+		return unset($this->data['content'][$url]);
+	}
+	
+	/**
+	 * Get page by PAGE
+	 * @page string PAGE
+	 */
+	public function getPage($page)
+	{
+		return $this->data['content'][$page];
+	}
+	
+	/**
 	 * Breadcrumb select
 	 * @param string from PAGE
 	 * @param array('ab/cd/ef'=>'Ef page')
