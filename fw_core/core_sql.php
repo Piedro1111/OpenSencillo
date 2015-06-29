@@ -692,5 +692,14 @@ class mysqlInterface extends mysqlEdit
 		return $result;
 	}
 }
-$mysql = new mysqlEdit($DBHost,$DBName,$DBUser,$DBPass);
+
+if(empty($hash['hash']))
+{
+	$mysql = new mysqlEdit($DBHost,$DBName,$DBUser,$DBPass);
+}
+else
+{
+	$mysql = new mysqlInterface($DBHost,$DBName,$DBUser,$DBPass);
+	$mysql->config();
+}
 ?>

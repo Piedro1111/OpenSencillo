@@ -289,5 +289,14 @@ class clist
 			return $this->data[$key];
 		}
 	}
+	
+	/**
+	 * Return country list
+	 * @return array country list
+	 */
+	public function countryList()
+	{
+		return $this->data;
+	}
 }
 ?>

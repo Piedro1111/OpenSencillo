@@ -538,10 +538,39 @@ class coreSencillo implements coreInterface
 	{
 	}
 }
-$i=0;
-$afterBootUp=array();
-//$afterBootUp[1]=new fileSystem('firststart.json');
-//$hash=json_decode($afterBootUp[1]->read(),true);
-$afterBootUp[0]=new coreSencillo/*($hash['hash'])*/;
-//$afterBootUp[0]->payLock();
+
+/**
+ * Core boot up sequention
+ * @name Sencillo Core - bootUp
+ * @version 2015.005
+ * @category core
+ * @see http://www.opensencillo.com
+ * @author Bc. Peter Horváth
+ * @license Distributed under the General Public License (GPL) http://www.gnu.org/copyleft/gpl.html This program is distributed in the hope that it will be useful - WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * @example $boot=new bootUp(); //free code
+ * @example $boot=new bootUp(true); //pay code
+ */
+class bootUp
+{
+	public $coreSencillo;
+	public $headerSeo;
+	public $fileSystem;
+	
+	public function __construct($sum=false)
+	{
+		$this->headerSeo	= new headerSeo;
+		$this->fileSystem	= new fileSystem('firststart.json');
+		
+		if($sum)
+		{
+			$this->coreSencillo = new coreSencillo(json_decode($this->fileSystem->read(),true));
+			$this->fileSystem->payLock();
+		}
+		else
+		{
+			$this->coreSencillo = new coreSencillo;
+		}
+	}
+}
+$core = new bootUp(false);
 ?>
