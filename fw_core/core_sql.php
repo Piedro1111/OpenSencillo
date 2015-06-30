@@ -743,7 +743,7 @@ if(empty($hash['hash']))
 }
 else
 {
-	$mysql = new mysqlInterface($DBHost,$DBName,$DBUser,$DBPass);
+	$mysql = new mysqlInterface();
 	$mysql->config();
 }
 ?>
