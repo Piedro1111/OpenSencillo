@@ -55,6 +55,12 @@ It is special modules contains system´s classes.
 8. Fix Snippet bug
 9. Fix first start database login problems
 10. Add menu generator
+11. Fix foreigns keys in core_sql
+12. Create config class for database layout
+13. Add support config class in core_sql
+14. Add structure.generator.structgen.php for generate universal structures
+15. Add google.analytics.goas.php library for support Google Universal Analytics
+16. Add bootUp class for in class loading sencillo
 
 ###2015.004
 1. Fix #9 add io_validator in to Sencillo CORE
