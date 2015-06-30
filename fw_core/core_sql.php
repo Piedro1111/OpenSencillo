@@ -24,23 +24,26 @@ class mysql
 	 * @param string $DBUser
 	 * @param string $DBPass
 	 */
-	public function __construct($DBHost,$DBName,$DBUser,$DBPass)
+	public function __construct($DBHost=null,$DBName=null,$DBUser=null,$DBPass=null)
 	{
-		$this->DBHost = $DBHost;
-		$this->DBName = $DBName;
-		$this->DBUser = $DBUser;
-		$this->DBPass = $DBPass;
-		
-		if(($this->DBHost!='')&&($this->DBUser!='')&&($this->DBPass!='')&&($this->DBName!=''))
+		if(empty($DBHost))
 		{
-			$this->checksum=md5($this->DBHost.$this->DBUser.$this->DBPass.$this->DBName);
+			$this->DBHost = $DBHost;
+			$this->DBName = $DBName;
+			$this->DBUser = $DBUser;
+			$this->DBPass = $DBPass;
+			
+			if(($this->DBHost!='')&&($this->DBUser!='')&&($this->DBPass!='')&&($this->DBName!=''))
+			{
+				$this->checksum=md5($this->DBHost.$this->DBUser.$this->DBPass.$this->DBName);
+			}
+			$this->con = mysql_connect($this->DBHost, $this->DBUser, $this->DBPass);
+			if(! $this->con)
+			{
+				die("<b>core_sql: MySQL connection failed!</b> ".mysql_error());
+			}
+			mysql_select_db($this->DBName, $this->con);
 		}
-		$this->con = mysql_connect($this->DBHost, $this->DBUser, $this->DBPass);
-		if(! $this->con)
-		{
-			die("<b>core_sql: MySQL connection failed!</b> ".mysql_error());
-		}
-		mysql_select_db($this->DBName, $this->con);
 	}
 	
 	/**
@@ -295,7 +298,8 @@ class mysqlInterface extends mysqlEdit
 	 *			'col1'=>array(
 	 *				'type'=>'int',
 	 *				'primary_key'=>true,
-	 *				'foreign_key'=>'cudzia_tabulka(stlpec)',
+	 *				'foreign_key'=>'foreign_table(foreign_col)',
+	 *				'foreign_key'=>array('foreign table'=>'foreign col'),
 	 *				'unique'=>true,
 	 *				'auto_increment'=>true,
 	 *				'null'=>true
@@ -303,7 +307,8 @@ class mysqlInterface extends mysqlEdit
 	 *			'col2'=>array(
 	 *				'type'=>'int',
 	 *				'primary_key'=>true,
-	 *				'foreign_key'=>'cudzia_tabulka(stlpec)',
+	 *				'foreign_key'=>'foreign_table(foreign_col)',
+	 *				'foreign_key'=>array('foreign table'=>'foreign col'),
 	 *				'unique'=>true,
 	 *				'auto_increment'=>true,
 	 *				'null'=>true
@@ -311,7 +316,8 @@ class mysqlInterface extends mysqlEdit
 	 *			'col3'=>array(
 	 *				'type'=>'int',
 	 *				'primary_key'=>true,
-	 *				'foreign_key'=>'cudzia_tabulka(stlpec)',
+	 *				'foreign_key'=>'foreign_table(foreign_col)',
+	 *				'foreign_key'=>array('foreign table'=>'foreign col'),
 	 *				'unique'=>true,
 	 *				'auto_increment'=>true,
 	 *				'null'=>true
@@ -323,6 +329,7 @@ class mysqlInterface extends mysqlEdit
 	 */
 	public function dbCreateTable($array)
 	{
+		$foreignGenerator='';
 		foreach($array as $key=>$val)
 		{
 			foreach($val as $key_col=>$val_col)
@@ -346,7 +353,18 @@ class mysqlInterface extends mysqlEdit
 							$data.=($val_col[$key_att]===false ? '' : ',PRIMARY KEY ('.$key_col.')');
 							break;
 						case 'foreign_key':
-							$data.=($val_col[$key_att]===false ? '' : ',FOREIGN KEY ('.$key_col.') REFERENCES '.$val_att);
+							if(is_string($val_att))
+							{
+								$this->query('SET foreign_key_checks = 1');
+								$data.=($val_col[$key_att]===false ? '' : ',FOREIGN KEY ('.$key_col.') REFERENCES '.$val_att);
+							}
+							else
+							{
+								foreach($val_att as $key_val_att=>$sub_val_att)
+								{
+									$foreignGenerator = $this->addForeignKey($key, $key_val_att, $key_col, $sub_val_att);
+								}
+							}
 							break;
 						case 'unique_key':
 						case 'unique':
@@ -356,8 +374,22 @@ class mysqlInterface extends mysqlEdit
 				}
 				$this->construct .= ',`'.$key_col.'` '.$data.'';
 			}
-			$this->save .= 'CREATE TABLE IF NOT EXISTS `'.$key.'` ('.substr($this->construct,1).');';
+			$this->save .= 'CREATE TABLE IF NOT EXISTS `'.$key.'` ('.substr($this->construct,1).');'.$foreignGenerator;
 		}
+	}
+	
+	/**
+	 * Foreign key
+	 * @param string master table
+	 * @param string reference table
+	 * @param string master
+	 * @param string reference
+	 */
+	private function addForeignKey($masterTable, $referenceTable, $master, $reference)
+	{
+		$construct = "SET foreign_key_checks=1;";
+		$construct .= "ALTER TABLE $masterTable ADD FOREIGN KEY ($master) REFERENCES $referenceTable ($reference);";
+		return $construct;
 	}
 	
 	/**
@@ -592,12 +624,24 @@ class mysqlInterface extends mysqlEdit
 	 */
 	public function config()
 	{
-		$this->mysqli=array(
-			'dbhost'=>$this->DBHost,
-			'dbname'=>$this->DBName,
-			'dbuser'=>$this->DBUser,
-			'dbpass'=>$this->DBPass
-		);
+		if(empty($this->DBHost))
+		{
+			$this->mysqli=array(
+				'dbhost'=>database::host,
+				'dbname'=>database::name,
+				'dbuser'=>database::user,
+				'dbpass'=>database::pass
+			);
+		}
+		else
+		{
+			$this->mysqli=array(
+				'dbhost'=>$this->DBHost,
+				'dbname'=>$this->DBName,
+				'dbuser'=>$this->DBUser,
+				'dbpass'=>$this->DBPass
+			);
+		}
 	}
 	
 	/**

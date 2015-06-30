@@ -46,18 +46,30 @@ if(($_GET['install']=='true')&&($PHPversion[0]>=5))
 | FITNESS FOR A PARTICULAR PURPOSE.                                         |
 ´---------------------------------------------------------------------------´
 ~*/
+//changable settings
+class database
+{
+	const host = "'.$_POST['host'].'";
+	const name = "'.$_POST['name'].'";
+	const user = "'.$_POST['user'].'";
+	const pass = "'.$_POST['pass'].'";
+	const type = "'.$_POST['type'].'";
+	const hash = "'.$hash.'";
+	const cache= "'.$_POST['cache'].'";
+}
+//depecrated variables
 //DB Server
-$DBHost = "'.$_POST['host'].'";
+$DBHost = database::host;
 //SQL access
-$DBUser = "'.$_POST['user'].'";
-$DBName = "'.$_POST['name'].'";
-$DBPass = "'.$_POST['pass'].'";
+$DBUser = database::name;
+$DBName = database::user;
+$DBPass = database::pass;
 //SQL type
-$DBType = "'.$_POST['type'].'";
+$DBType = database::type;
 //Hash
-define("SENCILLO_CONFIG","'.$hash.'");
+define("SENCILLO_CONFIG",database::hash);
 //Cache
-$QUICKCACHE_ON = '.$_POST['cache'].';
+$QUICKCACHE_ON = database::cache;
 ?>');
 	}
 	chmod("../", 0777);

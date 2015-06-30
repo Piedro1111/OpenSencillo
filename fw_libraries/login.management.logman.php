@@ -2,7 +2,7 @@
 /**
  * Login management
  * @name logMan
- * @version 2015.002
+ * @version 2015.005
  * @category Sencillo Library
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth
@@ -13,9 +13,9 @@ class logMan extends mysqlEdit
 	protected $log=array();
 	protected $status=array();
 	
-	public function __construct($DBHost,$DBName,$DBUser,$DBPass)
+	public function __construct()
 	{
-		parent::__construct($DBHost,$DBName,$DBUser,$DBPass);
+		parent::__construct(database::host,database::name,database::user,datanase::pass);
 		$this->log['server']=$_SERVER['SERVER_NAME'];
 		$this->log['request']=$_SERVER['REQUEST_URI'];
 		$this->log['port']=$_SERVER['REMOTE_PORT'];
@@ -29,10 +29,10 @@ class logMan extends mysqlEdit
 		);
 		if($this->test())
 		{
-			$this->log['database']=array('host'=>$this->DBHost,
-										 'name'=>$this->DBName,
-										 'user'=>$this->DBUser,
-										 'pass'=>$this->DBPass);
+			$this->log['database']=array('host'=>database::host,
+										 'name'=>database::name,
+										 'user'=>database::user,
+										 'pass'=>datanase::pass);
 			$this->install();
 		}
 		else
