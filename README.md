@@ -13,8 +13,8 @@
 > * Category: OpenSource;
 > * Language: PHP 5.3+, JQUERY, HTML5
 > * Year: 2015;
-> * Build: 004;
-> * Rev: 2015.004;
+> * Build: 107;
+> * Rev: 2015.107;
 > * By: [Bc. Peter Horváth](http://phorvath.com);
 > * Homepage: [Open Sencillo](http://opensencillo.com);
 > * Features: File management, File Convertors, Database management, SEO, Session & Cookies management, Hash subsystem, Translates JSON file, Unit Testing, Htaccess generator, Simple image tool ...
@@ -44,7 +44,13 @@ It is special modules contains system´s classes.
 ##Changes log
 ============
 
-###ON BUILD 2015.005
+###ON BUILD 2015.108
+
+###2015.107
+###2015.106
+###2015.105
+###2015.005
+
 1. New welcome page
 2. Fix #17 database foreign key problem
 3. New structgen class for generating menu or galleries
