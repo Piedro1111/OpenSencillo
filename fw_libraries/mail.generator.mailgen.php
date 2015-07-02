@@ -4,8 +4,6 @@ class mailGen
 	protected $head;
 	protected $body;
 	protected $mail;
-	protected $smtp;
-	protected $text;
 	protected $from;
 	protected $to;
 	protected $charset='UTF-8';
