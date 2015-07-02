@@ -2,7 +2,7 @@
 /**
  * Core installer
  * @name OpenSencillo SQL Installer
- * @version 2015.004
+ * @version 2015.105
  * @category core
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth
@@ -46,18 +46,30 @@ if(($_GET['install']=='true')&&($PHPversion[0]>=5))
 | FITNESS FOR A PARTICULAR PURPOSE.                                         |
 ´---------------------------------------------------------------------------´
 ~*/
+//changable settings
+class database
+{
+	const host = "'.$_POST['host'].'";
+	const name = "'.$_POST['name'].'";
+	const user = "'.$_POST['user'].'";
+	const pass = "'.$_POST['pass'].'";
+	const type = "'.$_POST['type'].'";
+	const hash = "'.$hash.'";
+	const cache= "'.$_POST['cache'].'";
+}
+//depecrated variables
 //DB Server
-$DBHost = "'.$_POST['host'].'";
+$DBHost = database::host;
 //SQL access
-$DBUser = "'.$_POST['user'].'";
-$DBName = "'.$_POST['name'].'";
-$DBPass = "'.$_POST['pass'].'";
+$DBUser = database::name;
+$DBName = database::user;
+$DBPass = database::pass;
 //SQL type
-$DBType = "'.$_POST['type'].'";
+$DBType = database::type;
 //Hash
-define("SENCILLO_CONFIG","'.$hash.'");
+define("SENCILLO_CONFIG",database::hash);
 //Cache
-$QUICKCACHE_ON = '.$_POST['cache'].';
+$QUICKCACHE_ON = database::cache;
 ?>');
 	}
 	chmod("../", 0777);
@@ -68,18 +80,14 @@ $QUICKCACHE_ON = '.$_POST['cache'].';
 		$file->write('<?php
 	$seo = new headerSeo;
 	$seo->encode();
-	$seo->title($afterBootUp[0]->info["FWK"]." - Example page");
+	$seo->title($core->coreSencillo->info["FWK"]." - Example page");
 	$seo->owner("'.$_POST['user-new-name'].', '.$_POST['user-new-mail'].'");
 	$seo->bootstrapDefs();
 	echo $seo->save();
-?>
-	<body>
-		<h1>It works</h1>
-		<div class="alert alert-success">
-			<strong>Success!</strong> Write your PHP code to file yourcode.php.
-		</div>
-	</body>
-</html>');
+
+	$translate = new translate("translate.json","en");
+	require_once("./fw_templates/welcome.default.screen.php");
+?>');
 
 		$file = new fileSystem('../firststart.json');
 		$json = json_encode(array(	'time'=>date("H:i:s"),
@@ -129,6 +137,8 @@ RewriteRule ^(.*)$ http://'.$_SERVER['SERVER_NAME'].'/$1 [L,R=301]');
 	require("../fw_headers/mysql-config.php");
 	require("../fw_headers/main-config.php");
 	require("./core_sql.php");
+	require("../fw_libraries/login.management.logman.php");
+	require("../fw_libraries/test.tool.framework.php");
 
 	$delinsql='
 	SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
@@ -194,43 +204,95 @@ RewriteRule ^(.*)$ http://'.$_SERVER['SERVER_NAME'].'/$1 [L,R=301]');
 	) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=0 ;
 	';
 	$mysql->write($delinsql);
-	
-	$delinsql='
-	INSERT INTO `virtual_system_config` (`id`,`function`,`command`,`commander`) VALUES (``,`superuser`,`'.$_POST['user-new-name'].'`,0);
-	';
-	$mysql->write($delinsql);
-	
-	$delinsql='
-	INSERT INTO `virtual_system_config` (`id`,`function`,`command`,`commander`) VALUES (``,`superpass`,`'.$_POST['user-new-pass'].'`,0);
-	';
-	$mysql->write($delinsql);
-
-	$delinsql='
-	INSERT INTO `virtual_system_config` (`id`,`function`,`command`,`commander`) VALUES (``,`superemail`,`'.$_POST['user-new-mail'].'`,0);
-	';
-	$mysql->write($delinsql);
-	
-	$delinsql='
-	INSERT INTO `virtual_system_config` (`id`,`function`,`command`,`commander`) VALUES (``,`systemhash`,`'.$hash.'`,0);
-	';
-	$mysql->write($delinsql);
-	
-	$delinsql='
-	INSERT INTO `virtual_system_config` (`id`,`function`,`command`,`commander`) VALUES (``,`servername`,`'.$_SERVER['SERVER_NAME'].'`,0);
-	';
-	$mysql->write($delinsql);
-	
-	$delinsql='
-	INSERT INTO `virtual_system_config` (`id`,`function`,`command`,`commander`) VALUES (``,`htaccess_config`,`default`,0);
-	';
-	$mysql->write($delinsql);
-	
-	$delinsql='
-	INSERT INTO `virtual_system_config` (`id`,`function`,`command`,`commander`) VALUES (``,`phpversion`,`'.phpversion().'`,0);
-	';
-	$mysql->write($delinsql);
-	
 	$mysql->close();
+	
+	$logman=new logMan($DBHost,$DBName,$DBUser,$DBPass);
+	$mysql=new mysqlInterface($DBHost,$DBName,$DBUser,$DBPass);
+	$mysql->config();
+	$mysql->connect();
+	
+	$delinsql=array(
+			'virtual_system_config'=>array(
+				'id'=>"''",
+				'function'=>'superuser',
+				'command'=>$_POST['user-new-name'],
+				'commander'=>0
+			));
+	$mysql->insert($delinsql);
+	
+	
+	$delinsql=array(
+			'virtual_system_config'=>array(
+				'id'=>"''",
+				'function'=>'superpass',
+				'command'=>md5($_POST['user-new-pass']),
+				'commander'=>0
+			));
+	$mysql->insert($delinsql);
+	
+	$delinsql=array(
+			'virtual_system_config'=>array(
+				'id'=>"''",
+				'function'=>'supermail',
+				'command'=>$_POST['user-new-mail'],
+				'commander'=>0
+			));
+	$mysql->insert($delinsql);
+	
+	$delinsql=array(
+			'virtual_system_config'=>array(
+				'id'=>"''",
+				'function'=>'systemhash',
+				'command'=>$hash,
+				'commander'=>0
+			));
+	$mysql->insert($delinsql);
+	
+	$delinsql=array(
+			'virtual_system_config'=>array(
+				'id'=>"''",
+				'function'=>'servername',
+				'command'=>$_SERVER['SERVER_NAME'],
+				'commander'=>0
+			));
+	$mysql->insert($delinsql);
+	
+	$delinsql=array(
+			'virtual_system_config'=>array(
+				'id'=>"''",
+				'function'=>'htaccess_config',
+				'command'=>'default',
+				'commander'=>0
+			));
+	$mysql->insert($delinsql);
+	
+	$delinsql=array(
+			'virtual_system_config'=>array(
+				'id'=>"''",
+				'function'=>'phpversion',
+				'command'=>phpversion(),
+				'commander'=>0
+			));
+	$mysql->insert($delinsql);
+	
+	$delinsql=array(
+			'users'=>array(
+				'id'=>"''",
+				'sign'=>"'first_use'",
+				'active'=>0,
+				'login'=>"'".$_POST['user-new-name']."'",
+				'pass'=>"'".md5($_POST['user-new-pass'])."'",
+				'email'=>"'".$_POST['user-new-mail']."'",
+				'fname'=>"''",
+				'lname'=>"''",
+				'perm'=>1111,
+				'ip'=>"'".$_SERVER['REMOTE_ADDR']."'",
+				'agent'=>"'".$_SERVER['HTTP_USER_AGENT']."'",
+				'date'=>'DATE(NOW())',
+				'time'=>'TIME(NOW())',
+			));
+	$mysql->insert($delinsql,false);
+	$mysql->execute();
 }
 require_once '../fw_templates/installer.main.screen.php';
 ?>

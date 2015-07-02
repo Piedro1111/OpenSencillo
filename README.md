@@ -8,14 +8,13 @@
 ###About Stable version
 
 > * Name: OpenSencillo;
-> * Licence: GNU/GPL;
+> * Licence: [GNU/GPL](http://www.gnu.org/licenses/gpl-3.0.html);
 > * Type: Framework;
 > * Category: OpenSource;
 > * Language: PHP 5.3+, JQUERY, HTML5
 > * Year: 2015;
 > * Build: 004;
 > * Rev: 2015.004;
-> * Date: 01 February 2015;
 > * By: [Bc. Peter Horváth](http://phorvath.com);
 > * Homepage: [Open Sencillo](http://opensencillo.com);
 > * Features: File management, File Convertors, Database management, SEO, Session & Cookies management, Hash subsystem, Translates JSON file, Unit Testing, Htaccess generator, Simple image tool ...
@@ -46,6 +45,22 @@ It is special modules contains system´s classes.
 ============
 
 ###ON BUILD 2015.005
+1. New welcome page
+2. Fix #17 database foreign key problem
+3. New structgen class for generating menu or galleries
+4. Update manager tool #3 - no gui
+5. Paylock subsystem - update
+6. Add OG tags
+7. Add Snippet meta tags
+8. Fix Snippet bug
+9. Fix first start database login problems
+10. Add menu generator
+11. Fix foreigns keys in core_sql
+12. Create config class for database layout
+13. Add support config class in core_sql
+14. Add structure.generator.structgen.php for generate universal structures
+15. Add google.analytics.goas.php library for support Google Universal Analytics
+16. Add bootUp class for in class loading sencillo
 
 ###2015.004
 1. Fix #9 add io_validator in to Sencillo CORE

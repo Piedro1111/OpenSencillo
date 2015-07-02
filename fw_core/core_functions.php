@@ -107,6 +107,7 @@ class headerSeo
 	private $header;
 	private $body;
 	private $lang;
+	private $oginfo;
 
 	/**
 	 * Create default status for page
@@ -155,6 +156,7 @@ class headerSeo
 			$t = substr($t,0,66).'...';
 		}
 		$this->header['title-def'] = '<title>'.$t.'</title>';
+		$this->oginfo['title'] = $t;
 	}
 	
 	/**
@@ -168,6 +170,7 @@ class headerSeo
 			$data = substr($data,0,155).'...';
 		}
 		$this->header['description-def'] = '<meta name="description" content="'.$data.'">';
+		$this->oginfo['description'] = $data;
 	}
 	
 	/**
@@ -220,15 +223,16 @@ class headerSeo
 	 */
 	public function save()
 	{
-		$this->seo = $this->header['doctype-def'];
-		$this->seo .= $this->header['html-def'];
-		$this->seo .= $this->header['charset-def'];
-		$this->seo .= $this->header['responsive-def'];
-		$this->seo .= $this->header['title-def'];
-		$this->seo .= $this->header['description-def'];
+		$this->seo = $this->header['doctype-def'].PHP_EOL;
+		$this->seo .= (isset($this->header['html-def-snippet'])?$this->header['html-def-snippet']:$this->header['html-def']).PHP_EOL;
+		$this->seo .= $this->header['charset-def'].PHP_EOL;
+		$this->seo .= $this->header['responsive-def'].PHP_EOL;
+		$this->seo .= $this->header['title-def'].PHP_EOL;
+		$this->seo .= $this->header['description-def'].PHP_EOL;
 		$this->generator();
 		
 		unset($this->header['html-def']);
+		unset($this->header['html-def-snippet']);
 		unset($this->header['doctype-def']);
 		unset($this->header['charset-def']);
 		unset($this->header['responsive-def']);
@@ -239,13 +243,13 @@ class headerSeo
 		{
 			if(!is_array($val))
 			{
-				$this->seo .= $val;
+				$this->seo .= $val.PHP_EOL;
 				$this->info['head'][] = $key;
 			}
 		}
 		foreach($this->header['custom'] as $key => $val)
 		{
-			$this->seo .= $val;
+			$this->seo .= $val.PHP_EOL;
 			$this->info['head'][] = $key;
 		}
 		
@@ -274,20 +278,50 @@ class headerSeo
 	}
 	
 	/**
+	 * Add jquery
+	 */
+	public function jquery()
+	{
+		self::googleLoad();
+	}
+	
+	/**
+	 * Add og-tags and social tags
+	 * @param array
+	 */
+	public function socialTags($arr, $snippet=false)
+	{
+		$this->custom('<meta property="og:url" content="'.$arr['url'].'" />');
+		$this->custom('<meta property="og:type" content="'.$arr['type'].'" />');
+		$this->custom('<meta property="og:title" content="'.$this->oginfo['title'].'" />');
+		$this->custom('<meta property="og:description" content="'.$this->oginfo['description'].'" />');
+		$this->custom('<meta property="og:image" content="'.$arr['image'].'" />');
+		
+		if($snippet)
+		{
+			$this->header['html-def-snippet'] = '<html itemscope itemtype="http://schema.org/Other"><head>';
+			
+			$this->custom('<meta itemprop="name" content="'.$this->oginfo['title'].'">');
+			$this->custom('<meta itemprop="description" content="'.$this->oginfo['description'].'">');
+			$this->custom('<meta itemprop="image" content="'.$arr['image'].'">');
+		}
+	}
+	
+	/**
 	 * Add bootstrap call
 	 */
 	public function bootstrapDefs()
 	{
-		$this->header['bootstrap-css']='<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">';
+		$this->header['bootstrap-css']='<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">';
 		$this->header['jquery-js']='<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>';
-		$this->header['bootstrap-js']='<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>';
+		$this->header['bootstrap-js']='<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>';
 	}
 }
 
 /**
  * Core information
  * @name Sencillo Core - coreSencillo
- * @version 2015.003
+ * @version 2015.107
  * @category core
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth
@@ -307,11 +341,11 @@ class coreSencillo implements coreInterface
 	/**
 	 * Add default information about Sencillo
 	 */
-	public function __construct()
+	public function __construct($sum=null)
 	{
 		$version = '2015';
-		$layout	 = '0';
-		$build	 = '04';
+		$layout	 = '1';
+		$build	 = '07';
 		$this->info=array(	'CMS'=>'OpenSencillo',
 							'NME'=>'OpenSencillo',
 							'VSN'=>$version.'.'.$layout.$build,
@@ -320,9 +354,12 @@ class coreSencillo implements coreInterface
 							'CPY'=>'&copy; COPYRIGHT 2011-'.date('Y').' Bc.Peter Horváth',
 							'HPE'=>'http://www.opensencillo.com',
 							'DTC'=>'01.'.$build.'.'.$version.':00.00:00.'.$layout.$build,
-							'PID'=>'PLEASE CONTACT info@opensencillo.com');
-		
-		$this->io_validator();
+							'PID'=>'PLEASE CONTACT info@opensencillo.com',
+							'SUM'=>$sum);
+		if($_GET['install']!='true')
+		{
+			$this->io_validator();
+		}
 	}
 	
 	public function version_info()
@@ -357,9 +394,16 @@ class coreSencillo implements coreInterface
 	/**
 	 * Check product key
 	 */
-	public function product()
+	public function product($path=false)
 	{
-		$read = new fileSystem('http://auth.mastery.sk/OpenSencillo'.$this->info['VSN'].'.pid');
+		if($path==false)
+		{
+			$read = new fileSystem('http://auth.mastery.sk/action.php');
+		}
+		else
+		{
+			$read = new fileSystem('key.pid');
+		}
 		$exist= fopen($read->name,"rb");
 		if(!$exist)
 		{
@@ -372,17 +416,40 @@ class coreSencillo implements coreInterface
 	}
 	
 	/**
-	 * Pay lock
+	 * Check product key
 	 */
 	public function payLock()
 	{
-		$json=json_decode(self::product(),true);
-		$this->authorized($json['domains']);
-		if($this->pid[$_SERVER['SERVER_NAME']]!==true)
+		if(!file_exists("key.pid"))
 		{
-			die($this->info['PID']);
+			$json=json_decode(self::product(false),true);
+			$this->authorized($json['domains']);
+			if($this->pid[$_SERVER['SERVER_NAME']]!==true)
+			{
+				die($this->info['PID']);
+			}
+			$this->info['product']=$json;
+			if(($json['sum']!='none')&&(!empty($this->info['SUM']))&&($json['sum']==$this->info['SUM']))
+			{
+				$write = new fileSystem('key.pid');
+				$json['expired']=md5(date('Ym'));
+				$write->write(json_encode($json));
+			}
 		}
-		$this->info['product']=$json;
+		else
+		{
+			$json=json_decode(self::product(true),true);
+			$this->authorized($json['domains']);
+			if(($this->pid[$_SERVER['SERVER_NAME']]!==true)&&($json['sum']===$this->info['SUM']))
+			{
+				die($this->info['PID']);
+			}
+			$this->info['product']=$json;
+			if($this->info['product']['expired']!=md5(date('Ym')))
+			{
+				unlink('key.pid');
+			}
+		}
 	}
 	
 	/**
@@ -444,11 +511,68 @@ class coreSencillo implements coreInterface
 		}
 	}
 	
+	/**
+	 * Add basic sencillo upgrade function
+	 * @example $this->upgrade('http://upgrade.opensencillo.com/source/');
+	 * @param $source string
+	 */
+	public function upgrade($source=null)
+	{
+		$fileList=scandir('./fw_core');
+		
+		foreach($fileList as $key=>$val)
+		{
+			if($key>1)
+			{
+				$md5 = md5_file('./fw_core/'.$val);
+				$remote_md5 = md5_file($source.$val.'.suf');
+				if($md5!=$remote_md5)
+				{
+					$read = new fileSystem($source.$val.'.suf');
+					$write= new fileSystem('./fw_core/'.$val);
+					$write->write($read->read());
+				}
+			}
+		}
+	}
+	
 	public function __destruct()
 	{
 	}
 }
-$i=0;
-$afterBootUp=array();
-$afterBootUp[$i++]=new coreSencillo;
+
+/**
+ * Core boot up sequention
+ * @name Sencillo Core - bootUp
+ * @version 2015.005
+ * @category core
+ * @see http://www.opensencillo.com
+ * @author Bc. Peter Horváth
+ * @license Distributed under the General Public License (GPL) http://www.gnu.org/copyleft/gpl.html This program is distributed in the hope that it will be useful - WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * @example $boot=new bootUp(); //free code
+ * @example $boot=new bootUp(true); //pay code
+ */
+class bootUp
+{
+	public $coreSencillo;
+	public $headerSeo;
+	public $fileSystem;
+	
+	public function __construct($sum=false)
+	{
+		$this->headerSeo	= new headerSeo;
+		$this->fileSystem	= new fileSystem('firststart.json');
+		
+		if($sum)
+		{
+			$this->coreSencillo = new coreSencillo(json_decode($this->fileSystem->read(),true));
+			$this->fileSystem->payLock();
+		}
+		else
+		{
+			$this->coreSencillo = new coreSencillo;
+		}
+	}
+}
+$core = new bootUp(false);
 ?>
