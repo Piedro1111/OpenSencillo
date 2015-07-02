@@ -47,6 +47,38 @@ class mailGen
 	}
 	
 	/**
+	 * Use html mimetype
+	 * @param boolean
+	 */
+	public function html($bool=true)
+	{
+		if($bool)
+		{
+			$this->ctype = 'text/html';
+		}
+		else 
+		{
+			$this->ctype = 'text/plain';
+		}
+	}
+	
+	/**
+	 * Use text mimetype
+	 * @param boolean
+	 */
+	public function text($bool=true)
+	{
+		if($bool)
+		{
+			$this->ctype = 'text/plain';
+		}
+		else
+		{
+			$this->ctype = 'text/html';
+		}
+	}
+	
+	/**
 	 * Header
 	 */
 	private function head()
