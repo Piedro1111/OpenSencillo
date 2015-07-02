@@ -15,7 +15,6 @@ class url
 	
 	public function __construct()
 	{
-		$this->data['content']=$_GET['p'];
 		$this->data['hash']=md5($data.date("YmdHis"));
 	}
 	
@@ -45,7 +44,8 @@ class url
 	 */
 	public function removeUrl($url)
 	{
-		return unset($this->data['content'][$url]);
+		unset($this->data['content'][$url]);
+		return $url;
 	}
 	
 	/**

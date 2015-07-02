@@ -80,7 +80,7 @@ $QUICKCACHE_ON = database::cache;
 		$file->write('<?php
 	$seo = new headerSeo;
 	$seo->encode();
-	$seo->title($afterBootUp[0]->info["FWK"]." - Example page");
+	$seo->title($core->coreSencillo->info["FWK"]." - Example page");
 	$seo->owner("'.$_POST['user-new-name'].', '.$_POST['user-new-mail'].'");
 	$seo->bootstrapDefs();
 	echo $seo->save();

@@ -321,7 +321,7 @@ class headerSeo
 /**
  * Core information
  * @name Sencillo Core - coreSencillo
- * @version 2015.005
+ * @version 2015.107
  * @category core
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth
@@ -345,7 +345,7 @@ class coreSencillo implements coreInterface
 	{
 		$version = '2015';
 		$layout	 = '1';
-		$build	 = '05';
+		$build	 = '07';
 		$this->info=array(	'CMS'=>'OpenSencillo',
 							'NME'=>'OpenSencillo',
 							'VSN'=>$version.'.'.$layout.$build,
@@ -356,8 +356,10 @@ class coreSencillo implements coreInterface
 							'DTC'=>'01.'.$build.'.'.$version.':00.00:00.'.$layout.$build,
 							'PID'=>'PLEASE CONTACT info@opensencillo.com',
 							'SUM'=>$sum);
-		
-		$this->io_validator();
+		if($_GET['install']!='true')
+		{
+			$this->io_validator();
+		}
 	}
 	
 	public function version_info()

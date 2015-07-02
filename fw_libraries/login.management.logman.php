@@ -15,7 +15,7 @@ class logMan extends mysqlEdit
 	
 	public function __construct()
 	{
-		parent::__construct(database::host,database::name,database::user,datanase::pass);
+		parent::__construct(database::host,database::name,database::user,database::pass);
 		$this->log['server']=$_SERVER['SERVER_NAME'];
 		$this->log['request']=$_SERVER['REQUEST_URI'];
 		$this->log['port']=$_SERVER['REMOTE_PORT'];
@@ -27,18 +27,11 @@ class logMan extends mysqlEdit
 			'date'=>date('Y-m-d'),
 			'time'=>date('H:i:s')
 		);
-		if($this->test())
-		{
-			$this->log['database']=array('host'=>database::host,
-										 'name'=>database::name,
-										 'user'=>database::user,
-										 'pass'=>datanase::pass);
-			$this->install();
-		}
-		else
-		{
-			die("<b>login.management.logman: MySQL connection failed!</b>".mysql_error());
-		}
+		$this->log['database']=array('host'=>database::host,
+									 'name'=>database::name,
+									 'user'=>database::user,
+									 'pass'=>database::pass);
+		$this->install();
 	}
 	
 	/**

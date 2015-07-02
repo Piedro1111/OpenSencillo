@@ -1,4 +1,8 @@
-<?$t=$translate;?>
+<?php
+$t=$translate;
+$afterBootUp=array();
+$afterBootUp[0]=$core->coreSencillo;
+?>
 	<body>
 		<nav class="navbar navbar-inverse navbar-fixed-top">
 			<div class="container-fluid">
