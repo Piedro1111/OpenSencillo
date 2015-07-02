@@ -1,6 +1,6 @@
 <?php
 /**
- * Delete files and folders from server
+ * Send and construct mail
  * @name mailgen
  * @version 2015.108
  * @category Sencillo Library
