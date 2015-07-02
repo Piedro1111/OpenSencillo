@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classform_creator" kind="class" prot="public">
+    <compoundname>formCreator</compoundname>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classform_creator_1a1a4fda4c28a9ee5f91102c023b9501f4" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>$form</definition>
+        <argsstring></argsstring>
+        <name>$form</name>
+        <initializer>=array()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/form.tool.framework.php" line="14" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/form.tool.framework.php" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classform_creator_1af18d37619b90c3eabf6a5d2c59763745" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>create</definition>
+        <argsstring>($type, $params)</argsstring>
+        <name>create</name>
+        <param>
+          <declname>$type</declname>
+        </param>
+        <param>
+          <declname>$params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/form.tool.framework.php" line="32" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/form.tool.framework.php" bodystart="32" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="classform_creator_1ab09542cd5fe8c41321535f2586520e43" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>getById</definition>
+        <argsstring>($id, $action=&quot;/&quot;, $method=&quot;post&quot;)</argsstring>
+        <name>getById</name>
+        <param>
+          <declname>$id</declname>
+        </param>
+        <param>
+          <declname>$action</declname>
+          <defval>&quot;/&quot;</defval>
+        </param>
+        <param>
+          <declname>$method</declname>
+          <defval>&quot;post&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create form</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>array</parametertype>
+<parametername>$id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(identification in the system)</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>string (if exist $id retruning html input tag) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/form.tool.framework.php" line="79" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/form.tool.framework.php" bodystart="79" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classform_creator_1aec79743fc2831bef599b86ad0226e7a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>groupToLines</definition>
+        <argsstring>($id, $tag=null, $params=null)</argsstring>
+        <name>groupToLines</name>
+        <param>
+          <declname>$id</declname>
+        </param>
+        <param>
+          <declname>$tag</declname>
+          <defval>null</defval>
+        </param>
+        <param>
+          <declname>$params</declname>
+          <defval>null</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create a new form line (no save)</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$tag</parametername>
+<parametertype>string</parametertype>
+<parametername>=null</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>string </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/form.tool.framework.php" line="98" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/form.tool.framework.php" bodystart="98" bodyend="118"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/peter/git/OpenSencillo/fw_libraries/form.tool.framework.php" line="13" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/form.tool.framework.php" bodystart="12" bodyend="119"/>
+    <listofallmembers>
+      <member refid="classform_creator_1a1a4fda4c28a9ee5f91102c023b9501f4" prot="protected" virt="non-virtual"><scope>formCreator</scope><name>$form</name></member>
+      <member refid="classform_creator_1af18d37619b90c3eabf6a5d2c59763745" prot="public" virt="non-virtual"><scope>formCreator</scope><name>create</name></member>
+      <member refid="classform_creator_1ab09542cd5fe8c41321535f2586520e43" prot="public" virt="non-virtual"><scope>formCreator</scope><name>getById</name></member>
+      <member refid="classform_creator_1aec79743fc2831bef599b86ad0226e7a7" prot="public" virt="non-virtual"><scope>formCreator</scope><name>groupToLines</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

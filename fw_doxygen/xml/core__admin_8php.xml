@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="core__admin_8php" kind="file">
+    <compoundname>core_admin.php</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="core__admin_8php_1a339ed4fd665c77ed0f58f431d90179e8" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$translate_admin</definition>
+        <argsstring></argsstring>
+        <name>$translate_admin</name>
+        <initializer>= new <ref refid="classtranslate" kindref="compound">translate</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_admin.php" line="2" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_admin.php" bodystart="2" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="core__admin_8php_1aeb0c74e24efb780fe6f02e466f2db9a9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$logman_admin</definition>
+        <argsstring></argsstring>
+        <name>$logman_admin</name>
+        <initializer>= new <ref refid="classlog_man" kindref="compound">logMan</ref>($DBHost,$DBName,$DBUser,$DBPass)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_admin.php" line="3" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_admin.php" bodystart="3" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="core__admin_8php_1af3a1d636376dd2c378181a8bff9233fa" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$seo_admin</definition>
+        <argsstring></argsstring>
+        <name>$seo_admin</name>
+        <initializer>= new <ref refid="classheader_seo" kindref="compound">headerSeo</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_admin.php" line="4" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_admin.php" bodystart="4" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="2"><highlight class="normal">$translate_admin<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classtranslate" kindref="compound">translate</ref>;</highlight></codeline>
+<codeline lineno="3"><highlight class="normal">$logman_admin<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classlog_man" kindref="compound">logMan</ref>($DBHost,$DBName,$DBUser,$DBPass);</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">$seo_admin<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classheader_seo" kindref="compound">headerSeo</ref>;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal">$logman_admin-&gt;adminLogin($translate_admin,$seo_admin);</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">?&gt;</highlight></codeline>
+    </programlisting>
+    <location file="/home/peter/git/OpenSencillo/fw_core/core_admin.php"/>
+  </compounddef>
+</doxygen>

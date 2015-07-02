@@ -1,0 +1,298 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classupload" kind="class" prot="public">
+    <compoundname>upload</compoundname>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classupload_1a958cf7aca45cea5359ba0fa80ee2f2c1" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>$mime</definition>
+        <argsstring></argsstring>
+        <name>$mime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/files.upload.fup.php" line="13" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/files.upload.fup.php" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classupload_1a0226b5fa357adcccf3ab459aaf3f8631" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>$uploadDirectory</definition>
+        <argsstring></argsstring>
+        <name>$uploadDirectory</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/files.upload.fup.php" line="14" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/files.upload.fup.php" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classupload_1af594986e4618a8d6a5d7566617f583c6" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>$size</definition>
+        <argsstring></argsstring>
+        <name>$size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/files.upload.fup.php" line="15" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/files.upload.fup.php" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classupload_1a430a2c99398e101d3e3ed06a18480b87" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>$uploadInfo</definition>
+        <argsstring></argsstring>
+        <name>$uploadInfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/files.upload.fup.php" line="16" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/files.upload.fup.php" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classupload_1a3aaf40baac36e278c7d7c9139df1750c" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>$mode</definition>
+        <argsstring></argsstring>
+        <name>$mode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/files.upload.fup.php" line="17" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/files.upload.fup.php" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classupload_1a58391ea75f2d29d5d708d7050b641c33" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>$status</definition>
+        <argsstring></argsstring>
+        <name>$status</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/files.upload.fup.php" line="18" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/files.upload.fup.php" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classupload_1a03853ceaa393e487835b287de58aba5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>__construct</definition>
+        <argsstring>($path)</argsstring>
+        <name>__construct</name>
+        <param>
+          <declname>$path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/files.upload.fup.php" line="20" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/files.upload.fup.php" bodystart="20" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classupload_1a186afde49d0e262c66f8f5bdefe42cb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mimeConfig</definition>
+        <argsstring>($mime=null)</argsstring>
+        <name>mimeConfig</name>
+        <param>
+          <declname>$mime</declname>
+          <defval>null</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Config method for legal mime types</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$mime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>default, if $mime is null</para>        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/files.upload.fup.php" line="45" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/files.upload.fup.php" bodystart="45" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classupload_1a252353d1d7a5daf38f93859bc7dccccf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>path</definition>
+        <argsstring>($path)</argsstring>
+        <name>path</name>
+        <param>
+          <declname>$path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>specify upload directory ends with / (slash)</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/files.upload.fup.php" line="73" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/files.upload.fup.php" bodystart="73" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classupload_1a8496ccdff0c6ca5869aa5cf6d0adf7fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>maxSize</definition>
+        <argsstring>($size)</argsstring>
+        <name>maxSize</name>
+        <param>
+          <declname>$size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Maximum allowed file size</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/files.upload.fup.php" line="83" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/files.upload.fup.php" bodystart="83" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="classupload_1a5703de110a95a505c2ffd20a1627da89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>advancedMode</definition>
+        <argsstring>($mode=null)</argsstring>
+        <name>advancedMode</name>
+        <param>
+          <declname>$mode</declname>
+          <defval>null</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Advanced upload mode TRUE/FALSE, deafult FALSE</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>bool</parametertype>
+<parametername>$mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/files.upload.fup.php" line="93" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/files.upload.fup.php" bodystart="93" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="classupload_1ab22a9068029ed1bb11aa9e0cd62bc434" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="non-virtual">
+        <type></type>
+        <definition>ajaxSendJson</definition>
+        <argsstring>($respond=null)</argsstring>
+        <name>ajaxSendJson</name>
+        <param>
+          <declname>$respond</declname>
+          <defval>null</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Json status encoder for AJAX comunication </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/files.upload.fup.php" line="109" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/files.upload.fup.php" bodystart="109" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="classupload_1a4b516aaa5fa38da4fed24ab6001627e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>name</definition>
+        <argsstring>()</argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get new file name </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/files.upload.fup.php" line="124" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/files.upload.fup.php" bodystart="124" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="classupload_1a160ae63d11b56d3190b172facb43a343" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>upload</definition>
+        <argsstring>()</argsstring>
+        <name>upload</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Upload method</para><para>200 - OK 404 - Not found / Unknown error / No file 413 - Request is to large (maximum size is low) 415-0 - Unsupported Media Type (acquired in upload method) 415-1 - Unsupported Media Type (acquired in mimeConfig method) 417 - Expectation Failed (failed moving file from temporary location) 444 - No Response / Internal AJAX fail </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/files.upload.fup.php" line="140" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/files.upload.fup.php" bodystart="140" bodyend="241"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classupload_1aa9622d0f468253f04aa122505a089a86" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mimeTest</definition>
+        <argsstring>($mime)</argsstring>
+        <name>mimeTest</name>
+        <param>
+          <declname>$mime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Internal protected function for detection legal mime type</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>mixed</parametertype>
+<parametername>$mime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/files.upload.fup.php" line="32" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/files.upload.fup.php" bodystart="32" bodyend="38"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/peter/git/OpenSencillo/fw_libraries/files.upload.fup.php" line="12" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/files.upload.fup.php" bodystart="11" bodyend="242"/>
+    <listofallmembers>
+      <member refid="classupload_1a958cf7aca45cea5359ba0fa80ee2f2c1" prot="protected" virt="non-virtual"><scope>upload</scope><name>$mime</name></member>
+      <member refid="classupload_1a3aaf40baac36e278c7d7c9139df1750c" prot="protected" virt="non-virtual"><scope>upload</scope><name>$mode</name></member>
+      <member refid="classupload_1af594986e4618a8d6a5d7566617f583c6" prot="protected" virt="non-virtual"><scope>upload</scope><name>$size</name></member>
+      <member refid="classupload_1a58391ea75f2d29d5d708d7050b641c33" prot="protected" virt="non-virtual"><scope>upload</scope><name>$status</name></member>
+      <member refid="classupload_1a0226b5fa357adcccf3ab459aaf3f8631" prot="protected" virt="non-virtual"><scope>upload</scope><name>$uploadDirectory</name></member>
+      <member refid="classupload_1a430a2c99398e101d3e3ed06a18480b87" prot="protected" virt="non-virtual"><scope>upload</scope><name>$uploadInfo</name></member>
+      <member refid="classupload_1a03853ceaa393e487835b287de58aba5a" prot="public" virt="non-virtual"><scope>upload</scope><name>__construct</name></member>
+      <member refid="classupload_1a5703de110a95a505c2ffd20a1627da89" prot="public" virt="non-virtual"><scope>upload</scope><name>advancedMode</name></member>
+      <member refid="classupload_1ab22a9068029ed1bb11aa9e0cd62bc434" prot="public" virt="non-virtual"><scope>upload</scope><name>ajaxSendJson</name></member>
+      <member refid="classupload_1a8496ccdff0c6ca5869aa5cf6d0adf7fc" prot="public" virt="non-virtual"><scope>upload</scope><name>maxSize</name></member>
+      <member refid="classupload_1a186afde49d0e262c66f8f5bdefe42cb4" prot="public" virt="non-virtual"><scope>upload</scope><name>mimeConfig</name></member>
+      <member refid="classupload_1aa9622d0f468253f04aa122505a089a86" prot="protected" virt="non-virtual"><scope>upload</scope><name>mimeTest</name></member>
+      <member refid="classupload_1a4b516aaa5fa38da4fed24ab6001627e2" prot="public" virt="non-virtual"><scope>upload</scope><name>name</name></member>
+      <member refid="classupload_1a252353d1d7a5daf38f93859bc7dccccf" prot="public" virt="non-virtual"><scope>upload</scope><name>path</name></member>
+      <member refid="classupload_1a160ae63d11b56d3190b172facb43a343" prot="public" virt="non-virtual"><scope>upload</scope><name>upload</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

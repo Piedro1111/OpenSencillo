@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classlibrary" kind="class" prot="public">
+    <compoundname>library</compoundname>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classlibrary_1ad2203e5674ffbd18d3fdbcf2cac19a38" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>$all_data_sencillo</definition>
+        <argsstring></argsstring>
+        <name>$all_data_sencillo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/lib_identificator.php" line="13" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/lib_identificator.php" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlibrary_1aa1dfa8c07233f1a9171882cc98fd0e2f" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>$readsql</definition>
+        <argsstring></argsstring>
+        <name>$readsql</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/lib_identificator.php" line="14" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/lib_identificator.php" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlibrary_1a9590b15215a21e9b42eb546aeef79704" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>$files</definition>
+        <argsstring></argsstring>
+        <name>$files</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/lib_identificator.php" line="15" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/lib_identificator.php" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlibrary_1a19e625c76c6796e995f33d323ee3aa84" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>$modules</definition>
+        <argsstring></argsstring>
+        <name>$modules</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/lib_identificator.php" line="16" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/lib_identificator.php" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classlibrary_1a430f5ed50a4c2f3d6ddee6b54bc97eaa" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$lib</definition>
+        <argsstring></argsstring>
+        <name>$lib</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/lib_identificator.php" line="18" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/lib_identificator.php" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classlibrary_1ad150bf5595fb9e609238134519fd2fbd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>createStructure</definition>
+        <argsstring>()</argsstring>
+        <name>createStructure</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create complet data structure </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/lib_identificator.php" line="23" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/lib_identificator.php" bodystart="23" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classlibrary_1a6796dd246b83954d2cc1a8210698531a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>openFiles</definition>
+        <argsstring>()</argsstring>
+        <name>openFiles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Open libraries </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/lib_identificator.php" line="45" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/lib_identificator.php" bodystart="45" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="classlibrary_1a1849ab39977f24a10948028a82bf5776" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>openModules</definition>
+        <argsstring>()</argsstring>
+        <name>openModules</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Open modules </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/lib_identificator.php" line="80" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/lib_identificator.php" bodystart="80" bodyend="110"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classlibrary_1af8fa59992209e36dccb3eefb0f75531f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>start</definition>
+        <argsstring>()</argsstring>
+        <name>start</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Start main mod_id proces </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/lib_identificator.php" line="115" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/lib_identificator.php" bodystart="115" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="classlibrary_1a06412eb3b5af8cd7d978ac6eab667fbf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>export</definition>
+        <argsstring>()</argsstring>
+        <name>export</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Export data obtained after main proces <simplesect kind="return"><para>mixed [(left/right/center/foot/admin)] || [(numeric value)] </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/lib_identificator.php" line="126" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/lib_identificator.php" bodystart="126" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="classlibrary_1a19e49aea71e41a8bd6076bc45169e4a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>status</definition>
+        <argsstring>()</argsstring>
+        <name>status</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Export informations about libraries <simplesect kind="return"><para>array </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/lib_identificator.php" line="135" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/lib_identificator.php" bodystart="135" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="classlibrary_1a2e30710ad967fb842b8cc42452bb4e5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>exportPath</definition>
+        <argsstring>()</argsstring>
+        <name>exportPath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return array with unique path for class loader <simplesect kind="return"><para>arrray </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/lib_identificator.php" line="144" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/lib_identificator.php" bodystart="144" bodyend="147"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/peter/git/OpenSencillo/fw_libraries/lib_identificator.php" line="12" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/lib_identificator.php" bodystart="11" bodyend="148"/>
+    <listofallmembers>
+      <member refid="classlibrary_1ad2203e5674ffbd18d3fdbcf2cac19a38" prot="protected" virt="non-virtual"><scope>library</scope><name>$all_data_sencillo</name></member>
+      <member refid="classlibrary_1a9590b15215a21e9b42eb546aeef79704" prot="protected" virt="non-virtual"><scope>library</scope><name>$files</name></member>
+      <member refid="classlibrary_1a430f5ed50a4c2f3d6ddee6b54bc97eaa" prot="public" virt="non-virtual"><scope>library</scope><name>$lib</name></member>
+      <member refid="classlibrary_1a19e625c76c6796e995f33d323ee3aa84" prot="protected" virt="non-virtual"><scope>library</scope><name>$modules</name></member>
+      <member refid="classlibrary_1aa1dfa8c07233f1a9171882cc98fd0e2f" prot="protected" virt="non-virtual"><scope>library</scope><name>$readsql</name></member>
+      <member refid="classlibrary_1ad150bf5595fb9e609238134519fd2fbd" prot="private" virt="non-virtual"><scope>library</scope><name>createStructure</name></member>
+      <member refid="classlibrary_1a06412eb3b5af8cd7d978ac6eab667fbf" prot="public" virt="non-virtual"><scope>library</scope><name>export</name></member>
+      <member refid="classlibrary_1a2e30710ad967fb842b8cc42452bb4e5e" prot="public" virt="non-virtual"><scope>library</scope><name>exportPath</name></member>
+      <member refid="classlibrary_1a6796dd246b83954d2cc1a8210698531a" prot="private" virt="non-virtual"><scope>library</scope><name>openFiles</name></member>
+      <member refid="classlibrary_1a1849ab39977f24a10948028a82bf5776" prot="private" virt="non-virtual"><scope>library</scope><name>openModules</name></member>
+      <member refid="classlibrary_1af8fa59992209e36dccb3eefb0f75531f" prot="public" virt="non-virtual"><scope>library</scope><name>start</name></member>
+      <member refid="classlibrary_1a19e49aea71e41a8bd6076bc45169e4a3" prot="public" virt="non-virtual"><scope>library</scope><name>status</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

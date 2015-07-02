@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classfile_system" kind="class" prot="public">
+    <compoundname>fileSystem</compoundname>
+    <derivedcompoundref refid="classfile" prot="public" virt="non-virtual">file</derivedcompoundref>
+    <derivedcompoundref refid="classtranslate" prot="public" virt="non-virtual">translate</derivedcompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classfile_system_1ab2fc40d43824ea3e1ce5d86dee0d763b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$name</definition>
+        <argsstring></argsstring>
+        <name>$name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_functions.php" line="13" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_functions.php" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classfile_system_1a36fbb91afce140a6736c5a80d9ab713e" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$rfp</definition>
+        <argsstring></argsstring>
+        <name>$rfp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_functions.php" line="15" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_functions.php" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfile_system_1abf31192c61ebefef8896cd93044422a5" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$wfp</definition>
+        <argsstring></argsstring>
+        <name>$wfp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_functions.php" line="16" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_functions.php" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfile_system_1a87e6516f43ab874500590fe9ec8315fb" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$contents</definition>
+        <argsstring></argsstring>
+        <name>$contents</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_functions.php" line="17" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_functions.php" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfile_system_1a4717bbfc70a40a57ee741ed70766c309" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>__construct</definition>
+        <argsstring>($name)</argsstring>
+        <name>__construct</name>
+        <param>
+          <declname>$name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="classfile_system" kindref="compound">fileSystem</ref> constructor - create object for file manipulation <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_functions.php" line="23" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_functions.php" bodystart="23" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classfile_system_1a85013b0dcf138f6997e2a05332ed0dd5" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="non-virtual">
+        <type></type>
+        <definition>write</definition>
+        <argsstring>($data)</argsstring>
+        <name>write</name>
+        <param>
+          <declname>$data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Write data to file <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to write </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_functions.php" line="31" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_functions.php" bodystart="31" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classfile_system_1a64571309bfb3238c65fd3c2898f92440" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="non-virtual">
+        <type></type>
+        <definition>read</definition>
+        <argsstring>()</argsstring>
+        <name>read</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Read file from file <simplesect kind="return"><para>string </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_functions.php" line="41" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_functions.php" bodystart="41" bodyend="51"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="27">
+        <label>translate</label>
+        <link refid="classtranslate"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>file</label>
+        <link refid="classfile"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>fileSystem</label>
+        <link refid="classfile_system"/>
+      </node>
+    </inheritancegraph>
+    <location file="/home/peter/git/OpenSencillo/fw_core/core_functions.php" line="12" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_functions.php" bodystart="11" bodyend="52"/>
+    <listofallmembers>
+      <member refid="classfile_system_1a87e6516f43ab874500590fe9ec8315fb" prot="private" virt="non-virtual"><scope>fileSystem</scope><name>$contents</name></member>
+      <member refid="classfile_system_1ab2fc40d43824ea3e1ce5d86dee0d763b" prot="public" virt="non-virtual"><scope>fileSystem</scope><name>$name</name></member>
+      <member refid="classfile_system_1a36fbb91afce140a6736c5a80d9ab713e" prot="private" virt="non-virtual"><scope>fileSystem</scope><name>$rfp</name></member>
+      <member refid="classfile_system_1abf31192c61ebefef8896cd93044422a5" prot="private" virt="non-virtual"><scope>fileSystem</scope><name>$wfp</name></member>
+      <member refid="classfile_system_1a4717bbfc70a40a57ee741ed70766c309" prot="public" virt="non-virtual"><scope>fileSystem</scope><name>__construct</name></member>
+      <member refid="classfile_system_1a64571309bfb3238c65fd3c2898f92440" prot="public" virt="non-virtual"><scope>fileSystem</scope><name>read</name></member>
+      <member refid="classfile_system_1a85013b0dcf138f6997e2a05332ed0dd5" prot="public" virt="non-virtual"><scope>fileSystem</scope><name>write</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

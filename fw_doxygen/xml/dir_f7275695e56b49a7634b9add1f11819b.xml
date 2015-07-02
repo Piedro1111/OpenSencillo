@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="dir_f7275695e56b49a7634b9add1f11819b" kind="dir">
+    <compoundname>/home/peter/git/OpenSencillo/fw_cache/type</compoundname>
+    <innerfile refid="file_8php">file.php</innerfile>
+    <innerfile refid="mysql_8php">mysql.php</innerfile>
+    <innerfile refid="template_8php">template.php</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/peter/git/OpenSencillo/fw_cache/type/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,38 @@
+var annotated =
+[
+    [ "abeautifulsite", null, [
+      [ "SimpleImage", "classabeautifulsite_1_1_simple_image.html", "classabeautifulsite_1_1_simple_image" ]
+    ] ],
+    [ "SimpleImage", "namespace_simple_image.html", null ],
+    [ "analytics", "classanalytics.html", "classanalytics" ],
+    [ "bootUp", "classboot_up.html", "classboot_up" ],
+    [ "clist", "classclist.html", "classclist" ],
+    [ "coreInterface", "interfacecore_interface.html", "interfacecore_interface" ],
+    [ "coreSencillo", "classcore_sencillo.html", "classcore_sencillo" ],
+    [ "defaultStructures", "classdefault_structures.html", null ],
+    [ "fdel", "classfdel.html", "classfdel" ],
+    [ "file", "classfile.html", "classfile" ],
+    [ "filesList", "classfiles_list.html", "classfiles_list" ],
+    [ "fileSystem", "classfile_system.html", "classfile_system" ],
+    [ "formCreator", "classform_creator.html", "classform_creator" ],
+    [ "getCookies", "classget_cookies.html", "classget_cookies" ],
+    [ "headerSeo", "classheader_seo.html", "classheader_seo" ],
+    [ "htgen", "classhtgen.html", "classhtgen" ],
+    [ "inputRewrite", "classinput_rewrite.html", "classinput_rewrite" ],
+    [ "library", "classlibrary.html", "classlibrary" ],
+    [ "log", "classlog.html", "classlog" ],
+    [ "loginManager", "classlogin_manager.html", "classlogin_manager" ],
+    [ "logMan", "classlog_man.html", "classlog_man" ],
+    [ "menuGen", "classmenu_gen.html", "classmenu_gen" ],
+    [ "mysql", "classmysql.html", "classmysql" ],
+    [ "mysqlEdit", "classmysql_edit.html", "classmysql_edit" ],
+    [ "mysqlInterface", "classmysql_interface.html", "classmysql_interface" ],
+    [ "PDFtoJPG", "class_p_d_fto_j_p_g.html", "class_p_d_fto_j_p_g" ],
+    [ "sessionManager", "classsession_manager.html", "classsession_manager" ],
+    [ "structgen", "classstructgen.html", "classstructgen" ],
+    [ "translate", "classtranslate.html", "classtranslate" ],
+    [ "unitTest", "classunit_test.html", "classunit_test" ],
+    [ "upload", "classupload.html", "classupload" ],
+    [ "url", "classurl.html", "classurl" ],
+    [ "UserAgentParser", "class_user_agent_parser.html", null ]
+];

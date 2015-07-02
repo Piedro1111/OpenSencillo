@@ -1,0 +1,357 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classmysql_interface" kind="class" prot="public">
+    <compoundname>mysqlInterface</compoundname>
+    <basecompoundref refid="classmysql_edit" prot="public" virt="non-virtual">mysqlEdit</basecompoundref>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classmysql_interface_1a00e6dff44e00c36820da5508c6d9aba3" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>$save</definition>
+        <argsstring></argsstring>
+        <name>$save</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_sql.php" line="288" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_sql.php" bodystart="288" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmysql_interface_1a580989e8e3521433691a0351287f6315" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>$mysqli</definition>
+        <argsstring></argsstring>
+        <name>$mysqli</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_sql.php" line="289" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_sql.php" bodystart="289" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmysql_interface_1a956617395b85e98d907df712f6d0d3f7" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>$connect</definition>
+        <argsstring></argsstring>
+        <name>$connect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_sql.php" line="290" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_sql.php" bodystart="290" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classmysql_interface_1a9df479534ecf05fd7575c6275d381687" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$default</definition>
+        <argsstring></argsstring>
+        <name>$default</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_sql.php" line="291" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_sql.php" bodystart="291" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmysql_interface_1ab8f860d15b6c8e90459cd3ee3a9a746b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dbCreateTable</definition>
+        <argsstring>($array)</argsstring>
+        <name>dbCreateTable</name>
+        <param>
+          <declname>$array</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_sql.php" line="330" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_sql.php" bodystart="330" bodyend="379"/>
+      </memberdef>
+      <memberdef kind="function" id="classmysql_interface_1a083e6cc172b111ec9c7eac0c9fae8a7a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>insert</definition>
+        <argsstring>($array, $stringRewrite=true)</argsstring>
+        <name>insert</name>
+        <param>
+          <declname>$array</declname>
+        </param>
+        <param>
+          <declname>$stringRewrite</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_sql.php" line="405" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_sql.php" bodystart="405" bodyend="430"/>
+      </memberdef>
+      <memberdef kind="function" id="classmysql_interface_1a99e7e1b61e6e94996a4f9ddb84550a9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>filter</definition>
+        <argsstring>($def)</argsstring>
+        <name>filter</name>
+        <param>
+          <declname>$def</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_sql.php" line="442" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_sql.php" bodystart="442" bodyend="452"/>
+      </memberdef>
+      <memberdef kind="function" id="classmysql_interface_1a3211e273c3ee674b966bab63d966c4b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>update</definition>
+        <argsstring>($array)</argsstring>
+        <name>update</name>
+        <param>
+          <declname>$array</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_sql.php" line="474" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_sql.php" bodystart="474" bodyend="477"/>
+      </memberdef>
+      <memberdef kind="function" id="classmysql_interface_1a1a124f363344d55e5d89910dca1b0ac5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>select</definition>
+        <argsstring>($array, $update=false)</argsstring>
+        <name>select</name>
+        <param>
+          <declname>$array</declname>
+        </param>
+        <param>
+          <declname>$update</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>ignore first N items</para><para>ignore last N items</para><para>out - addcode</para>        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_sql.php" line="507" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_sql.php" bodystart="507" bodyend="620"/>
+      </memberdef>
+      <memberdef kind="function" id="classmysql_interface_1a8a549a19ec81f3aafb2b231aaa12e138" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>config</definition>
+        <argsstring>()</argsstring>
+        <name>config</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create database protected configuration arrray </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_sql.php" line="625" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_sql.php" bodystart="625" bodyend="645"/>
+      </memberdef>
+      <memberdef kind="function" id="classmysql_interface_1a78572828d11dcdf2a498497d9001d557" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>connect</definition>
+        <argsstring>()</argsstring>
+        <name>connect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create database connection </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_sql.php" line="650" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_sql.php" bodystart="650" bodyend="669"/>
+      </memberdef>
+      <memberdef kind="function" id="classmysql_interface_1aba1c0c23ab9113d682823ea32a51332e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>validator</definition>
+        <argsstring>()</argsstring>
+        <name>validator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Check SQL code for error <simplesect kind="return"><para>bool </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_sql.php" line="675" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_sql.php" bodystart="675" bodyend="685"/>
+      </memberdef>
+      <memberdef kind="function" id="classmysql_interface_1aaed74f7942d3fc56582e99324500e87b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>debug</definition>
+        <argsstring>()</argsstring>
+        <name>debug</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Write query error log <simplesect kind="see"><para><ref refid="classmysql_interface_1aba1c0c23ab9113d682823ea32a51332e" kindref="member">validator()</ref> </para></simplesect>
+<simplesect kind="return"><para>string </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_sql.php" line="692" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_sql.php" bodystart="692" bodyend="695"/>
+      </memberdef>
+      <memberdef kind="function" id="classmysql_interface_1a1909f4b7f8129c7790cb75de2ffbe1e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>execute</definition>
+        <argsstring>()</argsstring>
+        <name>execute</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Execute database multiline query and return result <simplesect kind="return"><para>array[group_id][line_id][row_name] </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_sql.php" line="701" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_sql.php" bodystart="701" bodyend="737"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classmysql_interface_1aaa0a775a04dc126b74db0e2d021fa779" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>addForeignKey</definition>
+        <argsstring>($masterTable, $referenceTable, $master, $reference)</argsstring>
+        <name>addForeignKey</name>
+        <param>
+          <declname>$masterTable</declname>
+        </param>
+        <param>
+          <declname>$referenceTable</declname>
+        </param>
+        <param>
+          <declname>$master</declname>
+        </param>
+        <param>
+          <declname>$reference</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Foreign key <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>master table </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reference table </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>master </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reference </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_sql.php" line="388" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_sql.php" bodystart="388" bodyend="393"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>test need </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="68">
+        <label>mysqlEdit</label>
+        <link refid="classmysql_edit"/>
+        <childnode refid="69" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="67">
+        <label>mysqlInterface</label>
+        <link refid="classmysql_interface"/>
+        <childnode refid="68" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="69">
+        <label>mysql</label>
+        <link refid="classmysql"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="71">
+        <label>mysqlEdit</label>
+        <link refid="classmysql_edit"/>
+        <childnode refid="72" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="70">
+        <label>mysqlInterface</label>
+        <link refid="classmysql_interface"/>
+        <childnode refid="71" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="72">
+        <label>mysql</label>
+        <link refid="classmysql"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/peter/git/OpenSencillo/fw_core/core_sql.php" line="287" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_sql.php" bodystart="286" bodyend="738"/>
+    <listofallmembers>
+      <member refid="classmysql_1a0debe10448ec56a57b5509648408a549" prot="public" virt="non-virtual"><scope>mysqlInterface</scope><name>$con</name></member>
+      <member refid="classmysql_interface_1a956617395b85e98d907df712f6d0d3f7" prot="protected" virt="non-virtual"><scope>mysqlInterface</scope><name>$connect</name></member>
+      <member refid="classmysql_1a1a881c28f710232dbf702d93c6a6e865" prot="public" virt="non-virtual"><scope>mysqlInterface</scope><name>$DBHost</name></member>
+      <member refid="classmysql_1a3748d4d771a26c5411f1666a3a7a3cd8" prot="public" virt="non-virtual"><scope>mysqlInterface</scope><name>$DBName</name></member>
+      <member refid="classmysql_1a8cf3718595a762c1974c4adfa331bc58" prot="public" virt="non-virtual"><scope>mysqlInterface</scope><name>$DBPass</name></member>
+      <member refid="classmysql_1af107a7d38167b4ff8f65b395d856f7ab" prot="public" virt="non-virtual"><scope>mysqlInterface</scope><name>$DBUser</name></member>
+      <member refid="classmysql_interface_1a9df479534ecf05fd7575c6275d381687" prot="private" virt="non-virtual"><scope>mysqlInterface</scope><name>$default</name></member>
+      <member refid="classmysql_interface_1a580989e8e3521433691a0351287f6315" prot="protected" virt="non-virtual"><scope>mysqlInterface</scope><name>$mysqli</name></member>
+      <member refid="classmysql_interface_1a00e6dff44e00c36820da5508c6d9aba3" prot="protected" virt="non-virtual"><scope>mysqlInterface</scope><name>$save</name></member>
+      <member refid="classmysql_1a7af15455307c9b6a6c4d51d620014e7d" prot="public" virt="non-virtual"><scope>mysqlInterface</scope><name>__construct</name></member>
+      <member refid="classmysql_interface_1aaa0a775a04dc126b74db0e2d021fa779" prot="private" virt="non-virtual"><scope>mysqlInterface</scope><name>addForeignKey</name></member>
+      <member refid="classmysql_1aa69c8bf1f1dcf4e72552efff1fe3e87e" prot="public" virt="non-virtual"><scope>mysqlInterface</scope><name>close</name></member>
+      <member refid="classmysql_interface_1a8a549a19ec81f3aafb2b231aaa12e138" prot="public" virt="non-virtual"><scope>mysqlInterface</scope><name>config</name></member>
+      <member refid="classmysql_interface_1a78572828d11dcdf2a498497d9001d557" prot="public" virt="non-virtual"><scope>mysqlInterface</scope><name>connect</name></member>
+      <member refid="classmysql_edit_1a1fb0787af4bf5891a0ac1ee919bcda1f" prot="public" virt="non-virtual"><scope>mysqlInterface</scope><name>createTable</name></member>
+      <member refid="classmysql_interface_1ab8f860d15b6c8e90459cd3ee3a9a746b" prot="public" virt="non-virtual"><scope>mysqlInterface</scope><name>dbCreateTable</name></member>
+      <member refid="classmysql_interface_1aaed74f7942d3fc56582e99324500e87b" prot="public" virt="non-virtual"><scope>mysqlInterface</scope><name>debug</name></member>
+      <member refid="classmysql_edit_1a54cfa86a296a1717ecdc7c667d8d238e" prot="public" virt="non-virtual"><scope>mysqlInterface</scope><name>delete</name></member>
+      <member refid="classmysql_interface_1a1909f4b7f8129c7790cb75de2ffbe1e4" prot="public" virt="non-virtual"><scope>mysqlInterface</scope><name>execute</name></member>
+      <member refid="classmysql_interface_1a99e7e1b61e6e94996a4f9ddb84550a9c" prot="public" virt="non-virtual"><scope>mysqlInterface</scope><name>filter</name></member>
+      <member refid="classmysql_interface_1a083e6cc172b111ec9c7eac0c9fae8a7a" prot="public" virt="non-virtual"><scope>mysqlInterface</scope><name>insert</name></member>
+      <member refid="classmysql_edit_1ab76a899fa24ade276873e3bd1c34020c" prot="public" virt="non-virtual" ambiguityscope="mysqlEdit::"><scope>mysqlInterface</scope><name>insert</name></member>
+      <member refid="classmysql_1a2ddd43b5dd962bf0e23e9ce19e549ff3" prot="public" virt="non-virtual"><scope>mysqlInterface</scope><name>integrity</name></member>
+      <member refid="classmysql_edit_1afb4a6a8508ccd874c0ebd19ea9c6d7a3" prot="public" virt="non-virtual"><scope>mysqlInterface</scope><name>newColumn</name></member>
+      <member refid="classmysql_edit_1a46db6a2a866e7edcd9655e57343bda8a" prot="public" virt="non-virtual"><scope>mysqlInterface</scope><name>openTable</name></member>
+      <member refid="classmysql_edit_1a273362ae49e939816659e808d6b8aadc" prot="public" virt="non-virtual"><scope>mysqlInterface</scope><name>output</name></member>
+      <member refid="classmysql_edit_1a20393378a29011bde0843665319c2ec7" prot="public" virt="non-virtual"><scope>mysqlInterface</scope><name>prepareTable</name></member>
+      <member refid="classmysql_1a6b251c8058230359b2922377699c4f29" prot="public" virt="non-virtual"><scope>mysqlInterface</scope><name>query</name></member>
+      <member refid="classmysql_interface_1a1a124f363344d55e5d89910dca1b0ac5" prot="public" virt="non-virtual"><scope>mysqlInterface</scope><name>select</name></member>
+      <member refid="classmysql_edit_1a9c81290e60bed5bcac4f233f8315a02d" prot="public" virt="non-virtual"><scope>mysqlInterface</scope><name>set</name></member>
+      <member refid="classmysql_1ad69dd4607977cae05ebe19d1ae604fb1" prot="public" virt="non-virtual"><scope>mysqlInterface</scope><name>test</name></member>
+      <member refid="classmysql_edit_1af26ffcc175f4c1824af435ab0181fc47" prot="public" virt="non-virtual"><scope>mysqlInterface</scope><name>uniqueKey</name></member>
+      <member refid="classmysql_interface_1a3211e273c3ee674b966bab63d966c4b2" prot="public" virt="non-virtual"><scope>mysqlInterface</scope><name>update</name></member>
+      <member refid="classmysql_edit_1ab2da7078237b1fc56a1621426df94391" prot="public" virt="non-virtual" ambiguityscope="mysqlEdit::"><scope>mysqlInterface</scope><name>update</name></member>
+      <member refid="classmysql_interface_1aba1c0c23ab9113d682823ea32a51332e" prot="public" virt="non-virtual"><scope>mysqlInterface</scope><name>validator</name></member>
+      <member refid="classmysql_1a5c41f7192b0b3b866e15f56c431ddc36" prot="public" virt="non-virtual"><scope>mysqlInterface</scope><name>write</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

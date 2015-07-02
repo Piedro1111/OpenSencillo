@@ -1,0 +1,26 @@
+var classlog_man =
+[
+    [ "__construct", "classlog_man.html#a095c5d389db211932136b53f25f39685", null ],
+    [ "addNewUser", "classlog_man.html#a7f3e615305910cf5ea9f24692e9613f6", null ],
+    [ "addSessionData", "classlog_man.html#a63e86500ba57ad327c3cfdc4777b2edc", null ],
+    [ "addToMainArray", "classlog_man.html#a64ac0e06faad327b014754e951dfe170", null ],
+    [ "adminLogin", "classlog_man.html#ab0912c8df7035bb6e9571a4333c0238a", null ],
+    [ "ajaxSendJson", "classlog_man.html#a89196d2fcfb896306fe7e387f634a080", null ],
+    [ "basicLogin", "classlog_man.html#a9a30d68c9f462839242a462ca43f5753", null ],
+    [ "checkSession", "classlog_man.html#aa8dfc7c51361d8f550975be90ed2cf67", null ],
+    [ "clean", "classlog_man.html#aff5b25c460fba7b1bce3e2a36fe702cf", null ],
+    [ "createSession", "classlog_man.html#ad0c5594c7e33c9821afd4305edaee0b9", null ],
+    [ "createSuperUser", "classlog_man.html#ae8162eecf899a411b0f91d013d16cda3", null ],
+    [ "destroySession", "classlog_man.html#a9aea96aaeaf1efd5531eb1867ee67ca6", null ],
+    [ "editPerm", "classlog_man.html#a52a57cda7a4b849ed18d5c7133f75256", null ],
+    [ "ereg", "classlog_man.html#af787db5c087b93924fc5ac54e14775d5", null ],
+    [ "getPerm", "classlog_man.html#a3884708300d256bc4e2aed3d425ec00a", null ],
+    [ "getSessionData", "classlog_man.html#a0055230648d2a2484c489013a475c3d7", null ],
+    [ "getSignedUser", "classlog_man.html#ae99d103123f211eb28e19c09f7fd134e", null ],
+    [ "install", "classlog_man.html#aa966adc12c56a4cc70da92207fa50929", null ],
+    [ "login", "classlog_man.html#a3b510811361c14194c4c54177f000f2d", null ],
+    [ "signIn", "classlog_man.html#a0bb131a01e8d92cdecdc9013ca808013", null ],
+    [ "signOut", "classlog_man.html#af6b7cbde6eae6ee4d7825b1a9f202bf6", null ],
+    [ "$log", "classlog_man.html#a9a2cf15a653aee8be437f7ae474cd494", null ],
+    [ "$status", "classlog_man.html#a58391ea75f2d29d5d708d7050b641c33", null ]
+];

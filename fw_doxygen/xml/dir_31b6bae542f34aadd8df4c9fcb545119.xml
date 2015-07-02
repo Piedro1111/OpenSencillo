@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="dir_31b6bae542f34aadd8df4c9fcb545119" kind="dir">
+    <compoundname>/home/peter/git/OpenSencillo/fw_templates</compoundname>
+    <innerfile refid="account_8dafault_8screen_8php">account.dafault.screen.php</innerfile>
+    <innerfile refid="ereg_8default_8screen_8php">ereg.default.screen.php</innerfile>
+    <innerfile refid="installer_8main_8screen_8php">installer.main.screen.php</innerfile>
+    <innerfile refid="login_8default_8screen_8php">login.default.screen.php</innerfile>
+    <innerfile refid="welcome_8default_8screen_8php">welcome.default.screen.php</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/peter/git/OpenSencillo/fw_templates/"/>
+  </compounddef>
+</doxygen>

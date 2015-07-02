@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="dir_fd02c0f1aacf8d33109f72bbfbc5ead8" kind="dir">
+    <compoundname>/home/peter/git/OpenSencillo/fw_core</compoundname>
+    <innerfile refid="core__admin_8php">core_admin.php</innerfile>
+    <innerfile refid="core__functions_8php">core_functions.php</innerfile>
+    <innerfile refid="core__installer_8php">core_installer.php</innerfile>
+    <innerfile refid="core__interface_8php">core_interface.php</innerfile>
+    <innerfile refid="core__sql_8php">core_sql.php</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/peter/git/OpenSencillo/fw_core/"/>
+  </compounddef>
+</doxygen>

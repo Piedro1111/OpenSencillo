@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="md__home_peter_git__open_sencillo__r_e_a_d_m_e" kind="page">
+    <compoundname>md__home_peter_git_OpenSencillo_README</compoundname>
+    <title>#OpenSencillo</title>
+    <detaileddescription>
+<para><heading level="2">OpenSencillo PHP framework</heading>
+</para><para><blockquote><para>Help with programming OpenSencillo PHP Framework. <emphasis>We are looking for you!</emphasis></para><para></para></blockquote></para><para><heading level="3">About Stable version</heading>
+</para><para><blockquote><para><itemizedlist>
+<listitem><para>Name: OpenSencillo;</para></listitem><listitem><para>Licence: <ulink url="http://www.gnu.org/licenses/gpl-3.0.html">GNU/GPL</ulink>;</para></listitem><listitem><para>Type: Framework;</para></listitem><listitem><para>Category: OpenSource;</para></listitem><listitem><para>Language: PHP 5.3+, JQUERY, HTML5</para></listitem><listitem><para>Year: 2015;</para></listitem><listitem><para>Build: 107;</para></listitem><listitem><para>Rev: 2015.107;</para></listitem><listitem><para>By: <ulink url="http://phorvath.com">Bc. Peter Horváth</ulink>;</para></listitem><listitem><para>Homepage: <ulink url="http://opensencillo.com">Open Sencillo</ulink>;</para></listitem><listitem><para>Features: File management, File Convertors, Database management, SEO, Session &amp; Cookies management, Hash subsystem, Translates JSON file, Unit Testing, Htaccess generator, Simple image tool ...</para></listitem></itemizedlist>
+</para><para></para></blockquote></para><para><heading level="1">##How to Install </heading>
+</para><para>Check: <ulink url="http://www.opensencillo.com/installation/">http://www.opensencillo.com/installation/</ulink></para><para><heading level="1">##Examples </heading>
+</para><para>Check: <ulink url="http://www.opensencillo.com/sencillo-php-examples/">http://www.opensencillo.com/sencillo-php-examples/</ulink></para><para><heading level="2">Module types</heading>
+</para><para><heading level="3">Name structure</heading>
+</para><para>In version &gt;= 2015.003 <blockquote><para>[type]_[module-name].php</para><para></para></blockquote></para><para><heading level="4">Types:</heading>
+</para><para><itemizedlist>
+<listitem><para>module</para></listitem><listitem><para>info</para></listitem><listitem><para>install</para></listitem><listitem><para>update</para></listitem></itemizedlist>
+</para><para><heading level="2">Library files</heading>
+</para><para>It is special modules contains system´s classes.</para><para><heading level="1">##Changes log </heading>
+</para><para><heading level="3">ON BUILD 2015.108</heading>
+</para><para><heading level="3">2015.107</heading>
+</para><para><heading level="3">2015.106</heading>
+</para><para><heading level="3">2015.105</heading>
+</para><para><heading level="3">2015.005</heading>
+</para><para><orderedlist>
+<listitem><para>New welcome page</para></listitem><listitem><para>Fix #17 database foreign key problem</para></listitem><listitem><para>New structgen class for generating menu or galleries</para></listitem><listitem><para>Update manager tool #3 - no gui</para></listitem><listitem><para>Paylock subsystem - update</para></listitem><listitem><para>Add OG tags</para></listitem><listitem><para>Add Snippet meta tags</para></listitem><listitem><para>Fix Snippet bug</para></listitem><listitem><para>Fix first start database login problems</para></listitem><listitem><para>Add menu generator</para></listitem><listitem><para>Fix foreigns keys in core_sql</para></listitem><listitem><para>Create config class for database layout</para></listitem><listitem><para>Add support config class in core_sql</para></listitem><listitem><para>Add <ref refid="structure_8generator_8structgen_8php_source" kindref="compound">structure.generator.structgen.php</ref> for generate universal structures</para></listitem><listitem><para>Add <ref refid="google_8analytics_8goas_8php_source" kindref="compound">google.analytics.goas.php</ref> library for support Google Universal Analytics</para></listitem><listitem><para>Add <ref refid="classboot_up" kindref="compound">bootUp</ref> class for in class loading sencillo</para></listitem></orderedlist>
+</para><para><heading level="3">2015.004</heading>
+</para><para><orderedlist>
+<listitem><para>Fix #9 add io_validator in to Sencillo CORE</para></listitem><listitem><para>Add Mastery product key validator</para></listitem><listitem><para>Add Mastery system key lock</para></listitem><listitem><para>Add float parser</para></listitem><listitem><para>Add object interface for core</para></listitem><listitem><para>Add welcome page (in yourcode.php)</para></listitem><listitem><para>Fix installation bug</para></listitem></orderedlist>
+</para><para><heading level="3">2015.003</heading>
+</para><para><orderedlist>
+<listitem><para>New structure for module: [type]_[module-name].php</para></listitem><listitem><para>Fix #5 lib_identificator is used for read modules</para></listitem><listitem><para>Add bootstrap for CSS3</para></listitem><listitem><para>Add bootstrap pretty installer</para></listitem><listitem><para>Add relocation installer if sencillo not installed</para></listitem><listitem><para>Add new MySQL Interface</para></listitem><listitem><para>Cache defaults OFF</para></listitem><listitem><para>Gzip cache if allow</para></listitem><listitem><para>Add mysql full outer join</para></listitem><listitem><para>Add mysql left join</para></listitem><listitem><para>Add mysql right join</para></listitem><listitem><para>Add mysql inner join</para></listitem><listitem><para>Add action aliases</para></listitem><listitem><para>Add mysqli update</para></listitem><listitem><para>Add mysqli insert</para></listitem><listitem><para>Convert to GPL3</para></listitem><listitem><para>Add security hash</para></listitem><listitem><para>Add INSERT to SQL installer</para></listitem><listitem><para>Add <ref refid="namespace_simple_image" kindref="compound">SimpleImage</ref> library</para></listitem><listitem><para>Close issue #2 - add new htaccess generator (library only; test need)</para></listitem></orderedlist>
+</para><para><heading level="3">2015.002</heading>
+</para><para><orderedlist>
+<listitem><para>Add mysql core function: uniqueKey</para></listitem><listitem><para>Add mysql core function: prepareTable</para></listitem><listitem><para>Add testing tool in to <ref refid="test_8tool_8framework_8php_source" kindref="compound">test.tool.framework.php</ref></para></listitem><listitem><para>Add testing tool function output to browser console: print_ut,print_test</para></listitem><listitem><para>Removed nonobject files</para></listitem><listitem><para>Comment old cookie system and old session system (as depecrated)</para></listitem><listitem><para>Full comment main config (as depecrated)</para></listitem><listitem><para>Fix #1 Installer problem: Problem 1,3 solved</para></listitem></orderedlist>
+</para><para><heading level="3">2015.001</heading>
+</para><para><orderedlist>
+<listitem><para>Add default login template</para></listitem><listitem><para>Add default registration template</para></listitem><listitem><para>Add default account template</para></listitem><listitem><para>Add installer main screen template</para></listitem><listitem><para>Add logman default login function</para></listitem></orderedlist>
+</para><para><heading level="3">2014.012</heading>
+</para><para><orderedlist>
+<listitem><para>Add library support system lib_identificator</para></listitem><listitem><para>Add exception for load lib_identification</para></listitem><listitem><para>Add information subsystem</para></listitem><listitem><para>Repair mod_indentificator path</para></listitem><listitem><para>Add back support for old Sencillos</para></listitem><listitem><para>Add lib_identificator to bootstrap</para></listitem><listitem><para>Add library for delete files named file.delete.fdel.php</para></listitem><listitem><para>Fix core bugs in openTable</para></listitem><listitem><para>Fix logman support version 2014.012</para></listitem><listitem><para>Root folder &quot;framework&quot; set as variable subfolder</para></listitem><listitem><para>Add check session to logman</para></listitem><listitem><para>Add login by logman via hash sha512</para></listitem><listitem><para>Fix translate tool (translate file not exist)</para></listitem><listitem><para>Add create translate</para></listitem><listitem><para>Add cache allow / disallow</para></listitem></orderedlist>
+</para><para><heading level="3">2014.011</heading>
+</para><para><orderedlist>
+<listitem><para>Repair install path</para></listitem><listitem><para>Add PDF2JPG support</para></listitem><listitem><para>Add prebuild path to jquery</para></listitem><listitem><para>Add translate library</para></listitem></orderedlist>
+</para><para><heading level="3">2014.010</heading>
+</para><para><heading level="3">2014.009</heading>
+</para><para><heading level="3">2014.008</heading>
+</para><para><orderedlist>
+<listitem><para>Add back compatible mode</para></listitem><listitem><para>Upgrade installer from version 2014.005 to 2014.008</para></listitem><listitem><para>Upgrade broken path in installer</para></listitem><listitem><para>Upgrade broken path in core</para></listitem><listitem><para>Add new path in core chmod</para></listitem><listitem><para>Delete boxid from default install mode</para></listitem><listitem><para>Upgrade to nodatabase module installer mod_identificator.php</para></listitem><listitem><para>Add database select</para></listitem><listitem><para>Add GNU GPL terms</para></listitem></orderedlist>
+</para><para><heading level="3">2014.007</heading>
+</para><para><orderedlist>
+<listitem><para>Rename folders cms_* to fw_*</para></listitem><listitem><para>Merged developer version to version 2014.007</para></listitem><listitem><para>Upgrade mod_identificator.php from version 2014.002 to 2014.007</para></listitem><listitem><para>Add default libraries</para></listitem><listitem><para>Rename root folder &quot;cms&quot; to root folder &quot;framework&quot;</para></listitem></orderedlist>
+</para><para><heading level="1">##Older </heading>
+</para><para><heading level="3">OBSOLETE 2014.006 AND OLDER</heading>
+</para><para><orderedlist>
+<listitem><para>Minimal support for modules 2014.007 and up</para></listitem><listitem><para>Not support library</para></listitem><listitem><para>Old layout subsystem</para></listitem><listitem><para>Instalation problems in 2014.005 and older</para></listitem><listitem><para>Security subsystem problem </para></listitem></orderedlist>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

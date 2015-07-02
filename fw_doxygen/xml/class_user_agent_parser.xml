@@ -1,0 +1,431 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="class_user_agent_parser" kind="class" prot="public">
+    <compoundname>UserAgentParser</compoundname>
+      <sectiondef kind="protected-static-attrib">
+      <memberdef kind="variable" id="class_user_agent_parser_1a81edf933083b5ac5b380385f59074a7d" prot="protected" static="yes" mutable="no">
+        <type>static</type>
+        <definition>$browsers</definition>
+        <argsstring></argsstring>
+        <name>$browsers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" line="64" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_user_agent_parser_1ad0821f30ee48c49356b114884ad1c552" prot="protected" static="yes" mutable="no">
+        <type>static</type>
+        <definition>$browserType</definition>
+        <argsstring></argsstring>
+        <name>$browserType</name>
+        <initializer>= array(
+		&apos;ie&apos; 		=&gt; array(&apos;IE&apos;),
+		&apos;gecko&apos; 	=&gt; array(&apos;NS&apos;, &apos;PX&apos;, &apos;FF&apos;, &apos;FB&apos;, &apos;CA&apos;, &apos;GA&apos;, &apos;KM&apos;, &apos;MO&apos;, &apos;SM&apos;, &apos;CO&apos;, &apos;FE&apos;, &apos;KP&apos;, &apos;KZ&apos;, &apos;TB&apos;),
+		&apos;khtml&apos; 	=&gt; array(&apos;KO&apos;),
+		&apos;webkit&apos; 	=&gt; array(&apos;SF&apos;, &apos;CH&apos;, &apos;OW&apos;, &apos;AR&apos;, &apos;EP&apos;, &apos;FL&apos;, &apos;WO&apos;, &apos;AB&apos;, &apos;IR&apos;, &apos;CS&apos;, &apos;FD&apos;, &apos;HA&apos;, &apos;MI&apos;, &apos;GE&apos;, &apos;DF&apos;, &apos;BB&apos;, &apos;BP&apos;, &apos;TI&apos;, &apos;CF&apos;, &apos;RK&apos;, &apos;B2&apos;, &apos;NF&apos;),
+		&apos;opera&apos; 	=&gt; array(&apos;OP&apos;),
+	)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" line="153" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_user_agent_parser_1a3493595b0af2ff79e44fe73847a67688" prot="protected" static="yes" mutable="no">
+        <type>static</type>
+        <definition>$safariVersions</definition>
+        <argsstring></argsstring>
+        <name>$safariVersions</name>
+        <initializer>= array(
+		&apos;536.25&apos; 	=&gt; array(&apos;6&apos;, &apos;0&apos;),
+		&apos;534.48&apos; 	=&gt; array(&apos;5&apos;, &apos;1&apos;),
+		&apos;533.16&apos; 	=&gt; array(&apos;5&apos;, &apos;0&apos;),
+		&apos;533.4&apos; 	=&gt; array(&apos;4&apos;, &apos;1&apos;),
+		&apos;526.11.2&apos; 	=&gt; array(&apos;4&apos;, &apos;0&apos;),
+		&apos;525.26&apos; 	=&gt; array(&apos;3&apos;, &apos;2&apos;),
+		&apos;525.13&apos; 	=&gt; array(&apos;3&apos;, &apos;1&apos;),
+		&apos;522.11&apos; 	=&gt; array(&apos;3&apos;, &apos;0&apos;),
+		&apos;412&apos; 		=&gt; array(&apos;2&apos;, &apos;0&apos;),
+		&apos;312&apos; 		=&gt; array(&apos;1&apos;, &apos;3&apos;),
+		&apos;125&apos; 		=&gt; array(&apos;1&apos;, &apos;2&apos;),
+		&apos;100&apos; 		=&gt; array(&apos;1&apos;, &apos;1&apos;),
+		&apos;85&apos; 		=&gt; array(&apos;1&apos;, &apos;0&apos;),
+		&apos;73&apos; 		=&gt; array(&apos;0&apos;, &apos;9&apos;),
+		&apos;48&apos; 		=&gt; array(&apos;0&apos;, &apos;8&apos;),
+	)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" line="161" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_user_agent_parser_1a0f50a04746313e5adeaaa8fe0edcb115" prot="protected" static="yes" mutable="no">
+        <type>static</type>
+        <definition>$omniWebVersions</definition>
+        <argsstring></argsstring>
+        <name>$omniWebVersions</name>
+        <initializer>= array(
+		&apos;622.15&apos; 	=&gt; array(&apos;5&apos;, &apos;11&apos;),
+		&apos;622.10&apos; 	=&gt; array(&apos;5&apos;, &apos;10&apos;),
+		&apos;622.8&apos; 	=&gt; array(&apos;5&apos;, &apos;9&apos;),
+		&apos;622.3&apos; 	=&gt; array(&apos;5&apos;, &apos;8&apos;),
+		&apos;621&apos; 		=&gt; array(&apos;5&apos;, &apos;7&apos;),
+		&apos;613&apos; 		=&gt; array(&apos;5&apos;, &apos;6&apos;),
+		&apos;607&apos; 		=&gt; array(&apos;5&apos;, &apos;5&apos;),
+		&apos;563.34&apos; 	=&gt; array(&apos;5&apos;, &apos;1&apos;),
+		&apos;558.36&apos; 	=&gt; array(&apos;5&apos;, &apos;0&apos;),
+		&apos;496&apos; 		=&gt; array(&apos;4&apos;, &apos;5&apos;),
+	)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" line="179" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" bodystart="179" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_user_agent_parser_1a6c81c14f25de6a8b8206335eea724eb1" prot="protected" static="yes" mutable="no">
+        <type>static</type>
+        <definition>$operatingSystems</definition>
+        <argsstring></argsstring>
+        <name>$operatingSystems</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" line="192" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" bodystart="192" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_user_agent_parser_1a35cddafe55870d08e38ce841e7902a4b" prot="protected" static="yes" mutable="no">
+        <type>static</type>
+        <definition>$osType</definition>
+        <argsstring></argsstring>
+        <name>$osType</name>
+        <initializer>= array(
+		&apos;Windows&apos; 				=&gt; array(&apos;WI8&apos;, &apos;WI7&apos;, &apos;WVI&apos;, &apos;WS3&apos;, &apos;WXP&apos;, &apos;W2K&apos;, &apos;WNT&apos;, &apos;WME&apos;, &apos;W98&apos;, &apos;W95&apos;),
+		&apos;Linux&apos; 				=&gt; array(&apos;LIN&apos;),
+		&apos;Mac&apos; 					=&gt; array(&apos;MAC&apos;),
+		&apos;iOS&apos; 					=&gt; array(&apos;IPD&apos;, &apos;IPA&apos;, &apos;IPH&apos;),
+		&apos;Android&apos; 				=&gt; array(&apos;AND&apos;),
+		&apos;Windows Mobile&apos; 		=&gt; array(&apos;WPH&apos;, &apos;WMO&apos;, &apos;WCE&apos;),
+		&apos;Gaming Console&apos; 		=&gt; array(&apos;WII&apos;, &apos;WIU&apos;, &apos;PS3&apos;, &apos;XBX&apos;),
+		&apos;Mobile Gaming Console&apos; =&gt; array(&apos;PSP&apos;, &apos;PSV&apos;, &apos;NDS&apos;, &apos;DSI&apos;, &apos;3DS&apos;),
+		&apos;Unix&apos; 					=&gt; array(&apos;SOS&apos;, &apos;AIX&apos;, &apos;HP-UX&apos;, &apos;BSD&apos;, &apos;NBS&apos;, &apos;OBS&apos;, &apos;DFB&apos;, &apos;SYL&apos;, &apos;IRI&apos;, &apos;T64&apos;),
+		&apos;Other Mobile&apos; 			=&gt; array(&apos;MAE&apos;, &apos;WOS&apos;, &apos;POS&apos;, &apos;BLB&apos;, &apos;QNX&apos;, &apos;SYM&apos;, &apos;SBA&apos;),
+		&apos;Other&apos; 				=&gt; array(&apos;VMS&apos;, &apos;OS2&apos;, &apos;BEOS&apos;, &apos;AMI&apos;)
+	)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" line="292" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" bodystart="292" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_user_agent_parser_1a1d8d7fab9e2c2974919888f5b886295e" prot="protected" static="yes" mutable="no">
+        <type>static</type>
+        <definition>$browserIdToName</definition>
+        <argsstring></argsstring>
+        <name>$browserIdToName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" line="305" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" bodystart="305" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_user_agent_parser_1a7958078b2a0013798f14838fa1fd40c1" prot="protected" static="yes" mutable="no">
+        <type>static</type>
+        <definition>$browserIdToShortName</definition>
+        <argsstring></argsstring>
+        <name>$browserIdToShortName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" line="306" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" bodystart="306" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_user_agent_parser_1ab68e07510370828435a3e86c320c7bdc" prot="protected" static="yes" mutable="no">
+        <type>static</type>
+        <definition>$operatingSystemsIdToName</definition>
+        <argsstring></argsstring>
+        <name>$operatingSystemsIdToName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" line="307" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" bodystart="307" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_user_agent_parser_1ada1762b34d38d7498838252118cca041" prot="protected" static="yes" mutable="no">
+        <type>static</type>
+        <definition>$operatingSystemsIdToShortName</definition>
+        <argsstring></argsstring>
+        <name>$operatingSystemsIdToShortName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" line="308" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" bodystart="308" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_user_agent_parser_1a8834b0851b05d161c207a7d2e5dca9bd" prot="private" static="yes" mutable="no">
+        <type>static</type>
+        <definition>$init</definition>
+        <argsstring></argsstring>
+        <name>$init</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" line="309" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" bodystart="309" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_user_agent_parser_1ac435f3d1806cea069a6ca890ab1883c4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static getOperatingSystem</definition>
+        <argsstring>($userAgent)</argsstring>
+        <name>getOperatingSystem</name>
+        <param>
+          <declname>$userAgent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns an array of the OS for the submitted user agent &apos;id&apos; =&gt; &apos;&apos;, &apos;name&apos; =&gt; &apos;&apos;, &apos;short_name&apos; =&gt; &apos;&apos;,</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$userAgent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>string false if OS couldn&apos;t be identified, or 3 letters ID (eg. WXP) </para></simplesect>
+<simplesect kind="see"><para>UserAgentParser/OperatingSystems.php for the list of OS (also available in self::$operatingSystems) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" line="320" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" bodystart="320" bodyend="341"/>
+      </memberdef>
+      <memberdef kind="function" id="class_user_agent_parser_1a54038e0276f884046a26514fd9c262b0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static getBrowser</definition>
+        <argsstring>($userAgent)</argsstring>
+        <name>getBrowser</name>
+        <param>
+          <declname>$userAgent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the browser information array, given a user agent string.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$userAgent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>array false if the browser is &quot;unknown&quot;, or array( &apos;id&apos; =&gt; &apos;&apos;, // 2 letters ID, eg. FF &apos;name&apos; =&gt; &apos;&apos;, // 2 letters ID, eg. FF &apos;short_name&apos; =&gt; &apos;&apos;, // 2 letters ID, eg. FF &apos;major_number&apos; =&gt; &apos;&apos;, // 2 in firefox 2.0.12 &apos;minor_number&apos; =&gt; &apos;&apos;, // 0 in firefox 2.0.12 &apos;version&apos; =&gt; &apos;&apos;, // major_number.minor_number ); </para></simplesect>
+<simplesect kind="see"><para>self::$browsers for the list of OS </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" line="361" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" bodystart="361" bodyend="489"/>
+      </memberdef>
+      <memberdef kind="function" id="class_user_agent_parser_1a62a7a74fe088a35b3f233bf67df2012b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static getBrowserNameFromId</definition>
+        <argsstring>($browserId)</argsstring>
+        <name>getBrowserNameFromId</name>
+        <param>
+          <declname>$browserId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" line="571" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" bodystart="571" bodyend="584"/>
+      </memberdef>
+      <memberdef kind="function" id="class_user_agent_parser_1a5223fe564aa5f8872c1ad03e2c868b44" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static getBrowserShortNameFromId</definition>
+        <argsstring>($browserId)</argsstring>
+        <name>getBrowserShortNameFromId</name>
+        <param>
+          <declname>$browserId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" line="585" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" bodystart="585" bodyend="592"/>
+      </memberdef>
+      <memberdef kind="function" id="class_user_agent_parser_1ada5bf3c372bdeafe45c06a5bca1a7cb3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static getBrowserFamilyFromId</definition>
+        <argsstring>($browserId)</argsstring>
+        <name>getBrowserFamilyFromId</name>
+        <param>
+          <declname>$browserId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" line="593" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" bodystart="593" bodyend="604"/>
+      </memberdef>
+      <memberdef kind="function" id="class_user_agent_parser_1a654d56eac9925308282304e98b6b981e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static getOperatingSystemNameFromId</definition>
+        <argsstring>($osId)</argsstring>
+        <name>getOperatingSystemNameFromId</name>
+        <param>
+          <declname>$osId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" line="605" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" bodystart="605" bodyend="618"/>
+      </memberdef>
+      <memberdef kind="function" id="class_user_agent_parser_1a0def641c9d57aa4cb3b89672cde82884" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static getOperatingSystemShortNameFromId</definition>
+        <argsstring>($osId)</argsstring>
+        <name>getOperatingSystemShortNameFromId</name>
+        <param>
+          <declname>$osId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" line="619" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" bodystart="619" bodyend="626"/>
+      </memberdef>
+      <memberdef kind="function" id="class_user_agent_parser_1a4a677f5103ebf2631c940c06384adfe4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static getOperatingSystemIdFromName</definition>
+        <argsstring>($osName)</argsstring>
+        <name>getOperatingSystemIdFromName</name>
+        <param>
+          <declname>$osName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" line="627" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" bodystart="627" bodyend="630"/>
+      </memberdef>
+      <memberdef kind="function" id="class_user_agent_parser_1a7e5b3840ca6c0e2081ac3f41eece3c4e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static getOperatingSystemFamilyFromId</definition>
+        <argsstring>($osId)</argsstring>
+        <name>getOperatingSystemFamilyFromId</name>
+        <param>
+          <declname>$osId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" line="631" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" bodystart="631" bodyend="640"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-static-func">
+      <memberdef kind="function" id="class_user_agent_parser_1add41e0ac3852ff63f876e5b04fedc069" prot="protected" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static cleanupUserAgent</definition>
+        <argsstring>($userAgent)</argsstring>
+        <name>cleanupUserAgent</name>
+        <param>
+          <declname>$userAgent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" line="342" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" bodystart="342" bodyend="346"/>
+      </memberdef>
+      <memberdef kind="function" id="class_user_agent_parser_1a9f0be6ae273d3669e11c29910a0be338" prot="protected" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" line="490" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" bodystart="490" bodyend="570"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" line="61" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/userAgent.parser.usagpa.php" bodystart="60" bodyend="641"/>
+    <listofallmembers>
+      <member refid="class_user_agent_parser_1a1d8d7fab9e2c2974919888f5b886295e" prot="protected" virt="non-virtual"><scope>UserAgentParser</scope><name>$browserIdToName</name></member>
+      <member refid="class_user_agent_parser_1a7958078b2a0013798f14838fa1fd40c1" prot="protected" virt="non-virtual"><scope>UserAgentParser</scope><name>$browserIdToShortName</name></member>
+      <member refid="class_user_agent_parser_1a81edf933083b5ac5b380385f59074a7d" prot="protected" virt="non-virtual"><scope>UserAgentParser</scope><name>$browsers</name></member>
+      <member refid="class_user_agent_parser_1ad0821f30ee48c49356b114884ad1c552" prot="protected" virt="non-virtual"><scope>UserAgentParser</scope><name>$browserType</name></member>
+      <member refid="class_user_agent_parser_1a8834b0851b05d161c207a7d2e5dca9bd" prot="private" virt="non-virtual"><scope>UserAgentParser</scope><name>$init</name></member>
+      <member refid="class_user_agent_parser_1a0f50a04746313e5adeaaa8fe0edcb115" prot="protected" virt="non-virtual"><scope>UserAgentParser</scope><name>$omniWebVersions</name></member>
+      <member refid="class_user_agent_parser_1a6c81c14f25de6a8b8206335eea724eb1" prot="protected" virt="non-virtual"><scope>UserAgentParser</scope><name>$operatingSystems</name></member>
+      <member refid="class_user_agent_parser_1ab68e07510370828435a3e86c320c7bdc" prot="protected" virt="non-virtual"><scope>UserAgentParser</scope><name>$operatingSystemsIdToName</name></member>
+      <member refid="class_user_agent_parser_1ada1762b34d38d7498838252118cca041" prot="protected" virt="non-virtual"><scope>UserAgentParser</scope><name>$operatingSystemsIdToShortName</name></member>
+      <member refid="class_user_agent_parser_1a35cddafe55870d08e38ce841e7902a4b" prot="protected" virt="non-virtual"><scope>UserAgentParser</scope><name>$osType</name></member>
+      <member refid="class_user_agent_parser_1a3493595b0af2ff79e44fe73847a67688" prot="protected" virt="non-virtual"><scope>UserAgentParser</scope><name>$safariVersions</name></member>
+      <member refid="class_user_agent_parser_1add41e0ac3852ff63f876e5b04fedc069" prot="protected" virt="non-virtual"><scope>UserAgentParser</scope><name>cleanupUserAgent</name></member>
+      <member refid="class_user_agent_parser_1a54038e0276f884046a26514fd9c262b0" prot="public" virt="non-virtual"><scope>UserAgentParser</scope><name>getBrowser</name></member>
+      <member refid="class_user_agent_parser_1ada5bf3c372bdeafe45c06a5bca1a7cb3" prot="public" virt="non-virtual"><scope>UserAgentParser</scope><name>getBrowserFamilyFromId</name></member>
+      <member refid="class_user_agent_parser_1a62a7a74fe088a35b3f233bf67df2012b" prot="public" virt="non-virtual"><scope>UserAgentParser</scope><name>getBrowserNameFromId</name></member>
+      <member refid="class_user_agent_parser_1a5223fe564aa5f8872c1ad03e2c868b44" prot="public" virt="non-virtual"><scope>UserAgentParser</scope><name>getBrowserShortNameFromId</name></member>
+      <member refid="class_user_agent_parser_1ac435f3d1806cea069a6ca890ab1883c4" prot="public" virt="non-virtual"><scope>UserAgentParser</scope><name>getOperatingSystem</name></member>
+      <member refid="class_user_agent_parser_1a7e5b3840ca6c0e2081ac3f41eece3c4e" prot="public" virt="non-virtual"><scope>UserAgentParser</scope><name>getOperatingSystemFamilyFromId</name></member>
+      <member refid="class_user_agent_parser_1a4a677f5103ebf2631c940c06384adfe4" prot="public" virt="non-virtual"><scope>UserAgentParser</scope><name>getOperatingSystemIdFromName</name></member>
+      <member refid="class_user_agent_parser_1a654d56eac9925308282304e98b6b981e" prot="public" virt="non-virtual"><scope>UserAgentParser</scope><name>getOperatingSystemNameFromId</name></member>
+      <member refid="class_user_agent_parser_1a0def641c9d57aa4cb3b89672cde82884" prot="public" virt="non-virtual"><scope>UserAgentParser</scope><name>getOperatingSystemShortNameFromId</name></member>
+      <member refid="class_user_agent_parser_1a9f0be6ae273d3669e11c29910a0be338" prot="protected" virt="non-virtual"><scope>UserAgentParser</scope><name>init</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
