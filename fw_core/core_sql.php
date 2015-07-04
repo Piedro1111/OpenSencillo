@@ -26,7 +26,7 @@ class mysql
 	 */
 	public function __construct($DBHost=null,$DBName=null,$DBUser=null,$DBPass=null)
 	{
-		if(empty($DBHost))
+		if(!empty($DBHost))
 		{
 			$this->DBHost = $DBHost;
 			$this->DBName = $DBName;
