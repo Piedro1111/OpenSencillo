@@ -16,17 +16,24 @@ class css
 	/* Add your CSS files to this array (THESE ARE ONLY EXAMPLES) */
 	protected $cssFiles = array();
 	
+	/**
+	 * Set css relative path (one css file only)
+	 * @example $this->add('/css/style.css');
+	 * @param string $path
+	 */
 	final public function add($path)
 	{
 		$this->cssFiles[] = $path;
 	}
 	/**
+	 * Run minify process
 	 * Ideally, you wouldn't need to change any code beyond this point.
+	 * @return string minify css
 	 */
 	final public function minify()
 	{
 		$buffer = "";
-		foreach ($cssFiles as $cssFile) {
+		foreach ($this->cssFiles as $cssFile) {
 		  $buffer .= file_get_contents($cssFile);
 		}
 		
@@ -65,12 +72,16 @@ class css
 		header("Content-type: text/css");
 		
 		// Write everything out
-		echo($buffer);
+		return $buffer;
 	}
 	
+	/**
+	 * Call minify css
+	 * @return string
+	 */
 	final public function call()
 	{
-		echo '<link rel="stylesheet" type="text/css" media="screen, print, projection" href="/css/compressed.css.php" />';
+		return '<link rel="stylesheet" type="text/css" media="screen, print, projection" href="/css/compressed.css.php" />';
 	}
 }
 ?>
