@@ -45,11 +45,13 @@ It is special modules contains system´s classes.
 ============
 
 ###ON BUILD 2015.108
+1. Add minify css library named minify.css.mincss.php
+2. Fix MySQL connection driver problems 
 
 ###2015.107
-###2015.106
-###2015.105
-###2015.005
+###2015.106 (only developers)
+###2015.105 (only developers)
+###2015.005 (only developers)
 
 1. New welcome page
 2. Fix #17 database foreign key problem
