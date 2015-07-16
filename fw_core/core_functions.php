@@ -317,7 +317,37 @@ class headerSeo
 		$this->header['bootstrap-js']='<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>';
 	}
 }
-
+/**
+ * Convert data
+ * @name convert
+ * @version 2015.108
+ * @category core
+ * @see http://www.opensencillo.com
+ * @author Bc. Peter Horváth
+ * @license Distributed under the General Public License (GPL) http://www.gnu.org/copyleft/gpl.html This program is distributed in the hope that it will be useful - WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ */
+class convert
+{
+	/**
+	 * Html to text
+	 * @param string $html
+	 * @return string without html
+	 */
+	public function stripHtml($html)
+	{
+		$blockTags = '/?p|/?h\\d|li|dt|br|hr|/tr';
+		$text = $html;
+		$text = preg_replace('~<!--.*-->~sU', '', $text);
+		$text = preg_replace('~<(script|style|head).*</\\1>~isU', '', $text);
+		$text = preg_replace('~<(td|th|dd)[ >]~isU', ' \\0', $text);
+		$text = preg_replace('~\\d+~u', ' ', $text);
+		$text = preg_replace('~<($blockTags)[ >/]~i', '\n\\0', $text);
+		$text = strip_tags($text);
+		$text = html_entity_decode($text, ENT_QUOTES, "utf-8");
+		
+		return $text;
+	}
+}
 /**
  * Core information
  * @name Sencillo Core - coreSencillo

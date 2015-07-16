@@ -45,6 +45,8 @@ It is special modules contains system´s classes.
 ============
 
 ###ON BUILD 2015.108
+1. Created class startInfo
+2. Add mail.generator.mailgen.php
 
 ###2015.107
 ###2015.106

@@ -17,7 +17,7 @@ class mailGen
 	protected $to;
 	protected $charset='UTF-8';
 	protected $ctype='text/html';
-	protected $subiect;
+	protected $subject;
 	
 	/**
 	 * Set mail recipient
@@ -38,12 +38,12 @@ class mailGen
 	}
 	
 	/**
-	 * Set subiect
-	 * @param subiect
+	 * Set subject
+	 * @param subject
 	 */
-	public function subiect($subiect)
+	public function subject($subject)
 	{
-		$this->subiect = $subiect;
+		$this->subject = $subject;
 	}
 	
 	/**
@@ -87,7 +87,7 @@ class mailGen
 		$this->head[]='Content-type: '.$this->ctype.'; charset='.$this->charset;
 		$this->head[]='From: '.$this->from;
 		$this->head[]='Reply-To: '.$this->from;
-		$this->head[]='X-Mailer: PHP/' . phpversion();
+		$this->head[]='X-Mailer: PHP/'.phpversion();
 		return implode("\r\n",$this->head);
 	}
 	
@@ -109,12 +109,38 @@ class mailGen
 		$this->head();
 		if((filter_var($this->from, FILTER_VALIDATE_EMAIL))&&(filter_var($this->to, FILTER_VALIDATE_EMAIL)))
 		{
-			return mail(''.$this->to.'',$this->subiect,implode(PHP_EOL,$this->body),implode("\r\n",$this->head));
+			return mail(''.$this->to.'',$this->subject,implode(PHP_EOL,$this->body),implode("\r\n",$this->head));
 		}
 		else
 		{
 			return false;
 		}
+	}
+	
+	/**
+	 * Compile mail but not send mail
+	 * @return mixed multiple array
+	 */
+	public function compile()
+	{
+		$h = $this->head();
+		$b = implode(PHP_EOL,$this->body);
+		return array(
+				'source'=>array(
+						'head'=>$this->head,
+						'from'=>$this->from,
+						'to'=>$this->to,
+						'subject'=>$this->subject,
+						'body'=>$this->body,
+						'text'=>convert::stripHtml($this->body)
+				),
+				'send'=>array(
+						'head'=>$h,
+						'to'=>$this->to,
+						'subject'=>$this->subject,
+						'body'=>$b
+				)
+		);
 	}
 }
 ?>

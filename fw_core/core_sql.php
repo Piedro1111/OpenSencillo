@@ -26,7 +26,7 @@ class mysql
 	 */
 	public function __construct($DBHost=null,$DBName=null,$DBUser=null,$DBPass=null)
 	{
-		if(empty($DBHost))
+		if(!empty($DBHost))
 		{
 			$this->DBHost = $DBHost;
 			$this->DBName = $DBName;
@@ -555,18 +555,20 @@ class mysqlInterface extends mysqlEdit
 					break;
 					case 'sort':
 						$data_sort=' ORDER BY ';
+						$data_sort_arr=array();
 						foreach($val_col as $key_att=>$val_att)
 						{
 							switch(strtolower($key_att))
 							{
 								case 'asc':
-									$data_sort.=$val_att.' ASC';
+									$data_sort_arr[]=$val_att.' ASC';
 									break;
 								case 'desc':
-									$data_sort.=$val_att.' DESC';
+									$data_sort_arr[]=$val_att.' DESC';
 									break;
 							}
 						}
+						$data_sort.=implode(',',$data_sort_arr);
 					break;
 					case 'like':
 						$data_like=' LIKE '.$val_col;
