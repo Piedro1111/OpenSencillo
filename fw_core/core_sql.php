@@ -622,6 +622,15 @@ class mysqlInterface extends mysqlEdit
 	}
 	
 	/**
+	 * Add SQL query
+	 * @param string $sql
+	 */
+	public function addQuery($sql)
+	{
+		$this->save.=$sql;
+	}
+	
+	/**
 	 * Create database protected configuration arrray
 	 */
 	public function config()

@@ -120,6 +120,18 @@ class headerSeo
 	}
 	
 	/**
+	 * Block cache
+	 */
+	public function nocache()
+	{
+		header("Cache-Control: no-store, no-cache, must-revalidate");
+		header("Cache-Control: post-check=0, pre-check=0", false);
+		header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
+		$this->header['cache-control-def'] = '<meta http-equiv="cache-control" content="no-cache">';
+		$this->header['expires-def'] = '<meta http-equiv="expires" content="-1">';
+		$this->header['pragma-def'] = '<meta http-equiv="pragma" content="no-cache">';
+	}
+	/**
 	 * Basic function for generate keywords tag
 	 * @param string $kw add keywords
 	 */
