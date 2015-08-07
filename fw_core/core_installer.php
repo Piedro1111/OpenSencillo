@@ -61,8 +61,8 @@ class database
 //DB Server
 $DBHost = database::host;
 //SQL access
-$DBUser = database::name;
-$DBName = database::user;
+$DBUser = database::user;
+$DBName = database::name;
 $DBPass = database::pass;
 //SQL type
 $DBType = database::type;
