@@ -49,6 +49,7 @@ It is special modules contains system´s classes.
 2. Add mail.generator.mailgen.php
 3. Add minify css library named minify.css.mincss.php
 4. Fix MySQL connection driver problems 
+5. Fix config generator problem
 
 ###2015.107
 ###2015.106 (only developers)
