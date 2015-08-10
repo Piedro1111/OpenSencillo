@@ -44,6 +44,12 @@ class logMan extends mysqlEdit
 	{
 		try
 		{
+            $this->newColumn("user_id","INT(1)");
+            $this->newColumn("code","VARCHAR(5)");
+			$this->newColumn("param","INT(1)");
+			$this->newColumn("expire","DATETIME");
+            $this->createTable("usersPasswordCodes");
+            
 			$this->newColumn("sign","TEXT");
 			$this->newColumn("active","INT(1)");
 			$this->newColumn("login","VARCHAR(255)");
@@ -155,11 +161,12 @@ class logMan extends mysqlEdit
 	/**
 	 * Create new user in database
 	 * 
-	 * @param array $_POST
+	 * [@param array $_POST]
+     * @param bool $onlyCheckUser if true set ereg to simulation mode (no insert query)
 	 * 
 	 * @return array $this->status
 	 */
-	final public function ereg()
+	final public function ereg($onlyCheckUser=false)
 	{
 		$this->openTable('users');
 	    if(filter_var($_POST['email'],FILTER_VALIDATE_EMAIL))
@@ -169,7 +176,10 @@ class logMan extends mysqlEdit
     	    {
     	        try 
     	        {
-    	            $this->insert("'first_use',0,'".strtolower($_POST['email'])."',MD5('".$_POST['pass']."'),'".strtolower($_POST['email'])."','".$this->clean(ucwords(strtolower($_POST['fname'])))."','".$this->clean(ucwords(strtolower($_POST['lname'])))."',1000,'".$this->log['external_ip'].":".$this->log['port']."','".$this->log['agent']."',DATE(NOW()),TIME(NOW())");
+                    if($onlyCheckUser===false)
+                    {
+                        $this->insert("'first_use',0,'".strtolower($_POST['email'])."',MD5('".$_POST['pass']."'),'".strtolower($_POST['email'])."','".$this->clean(ucwords(strtolower($_POST['fname'])))."','".$this->clean(ucwords(strtolower($_POST['lname'])))."',1000,'".$this->log['external_ip'].":".$this->log['port']."','".$this->log['agent']."',DATE(NOW()),TIME(NOW())");
+                    }
     	            $this->status['status']='ok';
     	            $this->status['code']=200;
     	        }
@@ -439,9 +449,13 @@ class logMan extends mysqlEdit
 		return $_SESSION[$name];
 	}
 	
+    /**
+     * @todo Login function
+     * @param type $pass
+     */
 	final public function signIn($pass)
 	{
-		
+		//TODO
 	}
 	
 	/**
@@ -454,12 +468,37 @@ class logMan extends mysqlEdit
 		return $this->log;
 	}
 	
+    /**
+     * @todo logout function
+     */
 	final public function signOut()
 	{
 		//TODO
 	}
 	
-	/**
+    /**
+     * Forgot / Reset password
+     * @return array
+     */
+    final public function forgot()
+    {
+        $status = $this->ereg(true);
+        if($status['code']===409)
+        {
+            $this->status = array('code'    => 200,
+                                  'status'  => 'ok');
+        }
+        else
+        {
+            $this->status = array('code'    => 404,
+                                  'status'  => 'not registered');
+        }
+        
+        $this->status['confirm-code'] = substr(hash('crc32b',date('YmdHis')),0,5);
+        return $this->status;
+    }
+
+    /**
 	 * Remove all special characters
 	 * @param string $string
 	 * @return string
