@@ -12,10 +12,15 @@ class logMan extends mysqlEdit
 {
 	protected $log=array();
 	protected $status=array();
+    protected $mysqlInterface;
 	
 	public function __construct()
 	{
 		parent::__construct(database::host,database::name,database::user,database::pass);
+        $this->mysqlInterface = new mysqlInterface;
+        $this->mysqlInterface->config();
+        $this->mysqlInterface->connect();
+        
 		$this->log['server']=$_SERVER['SERVER_NAME'];
 		$this->log['request']=$_SERVER['REQUEST_URI'];
 		$this->log['port']=$_SERVER['REMOTE_PORT'];
@@ -174,14 +179,19 @@ class logMan extends mysqlEdit
 	    	$user=$this->output("`login`='".$_POST['email']."'","`id` ASC",1);
 	    	if($user['line'][1][0]==null)
     	    {
-    	        try 
+    	        try
     	        {
                     if($onlyCheckUser===false)
                     {
                         $this->insert("'first_use',0,'".strtolower($_POST['email'])."',MD5('".$_POST['pass']."'),'".strtolower($_POST['email'])."','".$this->clean(ucwords(strtolower($_POST['fname'])))."','".$this->clean(ucwords(strtolower($_POST['lname'])))."',1000,'".$this->log['external_ip'].":".$this->log['port']."','".$this->log['agent']."',DATE(NOW()),TIME(NOW())");
+                        $this->status['status']='ok';
+                        $this->status['code']=200;
                     }
-    	            $this->status['status']='ok';
-    	            $this->status['code']=200;
+    	            else
+                    {
+                        $this->status['status']='email not found';
+                        $this->status['code']=404;
+                    }
     	        }
     	        catch(Exception $e)
     	        {
@@ -189,10 +199,19 @@ class logMan extends mysqlEdit
     	        	$this->status['code']=417;
     	        }
     	    }
-    	    else 
+    	    else
     	    {
-    	    	$this->status['status']='exist';
-    	    	$this->status['code']=409;
+                if($onlyCheckUser===true)
+                {
+                    $this->status['user_array']=$user['line'][1];
+                    $this->status['status']='exist';
+                    $this->status['code']=200;
+                }
+                else
+                {
+                    $this->status['status']='exist';
+                    $this->status['code']=409;
+                }
     	    }
 	    }
 	    else 
@@ -482,19 +501,13 @@ class logMan extends mysqlEdit
      */
     final public function forgot()
     {
-        $status = $this->ereg(true);
-        if($status['code']===409)
-        {
-            $this->status = array('code'    => 200,
-                                  'status'  => 'ok');
-        }
-        else
-        {
-            $this->status = array('code'    => 404,
-                                  'status'  => 'not registered');
-        }
-        
-        $this->status['confirm-code'] = substr(hash('crc32b',date('YmdHis')),0,5);
+        $this->status = $this->ereg(true);
+        $this->status['confirm-code'] = $this->clean(substr(hash('crc32b',date('YmdHis')),0,5));
+        $this->mysqlInterface->insert(array('usersPasswordCodes'=> array('user_id'  => $this->status['user_array'][0],
+                                                                         'code'     => $this->status['confirm-code'],
+                                                                         'param'    => 0,
+                                                                         'expire'   => date('d-m-Y H:i:s',strtotime('+1 hour')))),true);
+        $this->mysqlInterface->execute();
         return $this->status;
     }
 
