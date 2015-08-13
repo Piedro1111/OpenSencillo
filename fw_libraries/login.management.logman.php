@@ -506,7 +506,7 @@ class logMan extends mysqlEdit
         $this->mysqlInterface->insert(array('usersPasswordCodes'=> array('user_id'  => $this->status['user_array'][0],
                                                                          'code'     => $this->status['confirm-code'],
                                                                          'param'    => 0,
-                                                                         'expire'   => date('d-m-Y H:i:s',strtotime('+1 hour')))),true);
+                                                                         'expire'   => date('Y-m-d H:i:s',strtotime('+1 hour')))),true);
         $this->mysqlInterface->execute();
         return $this->status;
     }
