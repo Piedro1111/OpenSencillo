@@ -2,7 +2,7 @@
 /**
  * Simple file upload
  * @name upload
- * @version 2015.002
+ * @version 2015.108
  * @category Sencillo Library
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth
@@ -10,12 +10,13 @@
  */
 class upload
 {
-	protected $mime;
+	public $mime;
 	protected $uploadDirectory;
 	protected $size;
 	protected $uploadInfo;
 	protected $mode;
 	protected $status;
+    public $ajax = false;
 	
 	public function __construct($path)
 	{
@@ -27,11 +28,12 @@ class upload
 	/**
 	 * Internal protected function for detection legal mime type
 	 * 
+     * @deprecated since version 2015.002
 	 * @param mixed $mime
 	 */
 	protected function mimeTest($mime)
 	{
-		if($val == $_FILES['FileInput']['type'])
+		if(($mime == $_FILES['FileInput']['type'])&&(isset($mime)&&(!empty($mime))))
 		{
 			$this->mime=true;
 		}
@@ -40,6 +42,7 @@ class upload
 	/**
 	 * Config method for legal mime types
 	 * 
+     * @deprecated since version 2015.002
 	 * @param string $mime
 	 */
 	public function mimeConfig($mime=null)
@@ -59,10 +62,27 @@ class upload
 		/**
 		 * default, if $mime is null
 		 */
-		if($mime==null)
+		if($mime===null)
 		{
 			$this->mime=true;
 		}
+	}
+    
+    /**
+	 * Set legal mime types
+	 * 
+	 * @param array $mime
+	 */
+	public function setMimes($mime=null)
+	{
+		if(is_array($mime))
+		{
+			$this->mime=$mime;
+		}
+        else
+        {
+            die(__CLASS__.':'.__METHOD__.':line='.__LINE__);
+        }
 	}
 	
 	/**
@@ -110,11 +130,11 @@ class upload
 	{
 		if($respond==null)
 		{
-			print json_encode($this->status);
+			return json_encode($this->status);
 		}
 		else
 		{
-			print json_encode($this->status[$respond]);
+			return json_encode($this->status[$respond]);
 		}
 	}
 	
@@ -133,7 +153,7 @@ class upload
 	 * 404   - Not found / Unknown error / No file
 	 * 413   - Request is to large (maximum size is low)
 	 * 415-0 - Unsupported Media Type (acquired in upload method)
-	 * 415-1 - Unsupported Media Type (acquired in mimeConfig method)
+	 * 415-1 - Unsupported Media Type (acquired in mimeConfig method) [depecrated]
 	 * 417   - Expectation Failed (failed moving file from temporary location)
 	 * 444   - No Response / Internal AJAX fail
 	 */
@@ -154,44 +174,37 @@ class upload
 			if($this->mode)
 			{
 				$this->status['mode']='advanced';
-				if (!isset($_SERVER['HTTP_X_REQUESTED_WITH']))
-				{
-					$this->status['code']="444";
-				}
-				 
+                if($this->ajax===true)
+                {
+                    $this->status['ajax']=true;
+                    if (!isset($_SERVER['HTTP_X_REQUESTED_WITH']))
+                    {
+                        $this->status['code']="444";
+                        return $this->status;
+                    }
+                }
+                else
+                {
+                    $this->status['ajax']=false;
+                }
+                
 				//Is file size is less than allowed size.
 				if ($_FILES["FileInput"]["size"] > $this->size) 
 				{
 					$this->status['code']="413";
+                    return $this->status;
 				}
 				 
 				//allowed file type Server side check
-				if($this->mime==true)
-				{
-					switch(strtolower($_FILES['FileInput']['type']))
-					{
-						//allowed file types
-						case 'image/png':
-						case 'image/gif':
-						case 'image/jpeg':
-						case 'image/pjpeg':
-						case 'text/plain':
-						case 'text/html': //html file
-						case 'application/x-zip-compressed':
-						case 'application/pdf':
-						case 'application/msword':
-						case 'application/vnd.ms-excel':
-						case 'video/mp4':
-							$this->status['mime']=$_FILES['FileInput']['type'];
-							break;
-						default:
-							$this->status['code']="415-0"; //output error
-					}
-				}
-				else 
-				{
-					$this->status['code']="415-1";//output error
-				}
+                if(in_array(strtolower($_FILES['FileInput']['type']),$this->mime)===true)
+                {
+                    $this->status['mime']=$_FILES['FileInput']['type'];
+                }
+                else
+                {
+                    $this->status['code']="415-0"; //output error
+                    return $this->status;
+                }
 			}
 			else
 			{
@@ -218,6 +231,7 @@ class upload
 				// do other stuff
 				$this->status['code']="200";
 				$this->status['name']=$NewFileName;
+                $this->status['path']=$UploadDirectory;
 			}
 			else
 			{
@@ -230,14 +244,7 @@ class upload
 			$this->status['code']="404";
 		}
 		
-		if($this->status['code']=='200')
-		{
-		    $this->ajaxSendJson('name');
-		}
-		else
-		{
-		    $this->ajaxSendJson('code');
-		}
+        return $this->status;
 	}
 }
 ?>
