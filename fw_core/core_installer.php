@@ -55,6 +55,7 @@ class database
 	const pass = "'.$_POST['pass'].'";
 	const type = "'.$_POST['type'].'";
 	const hash = "'.$hash.'";
+	const sams = "0";
 	const cache= "'.$_POST['cache'].'";
 }
 //depecrated variables
