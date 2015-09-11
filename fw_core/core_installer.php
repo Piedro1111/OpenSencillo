@@ -2,7 +2,7 @@
 /**
  * Core installer
  * @name OpenSencillo SQL Installer
- * @version 2015.108
+ * @version 2015.109
  * @category core
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth
@@ -37,7 +37,7 @@ if(($_GET['install']=='true')&&($PHPversion[0]>=5))
 |   Contact: mail@phorvath.com                                              |
 | ------------------------------------------------------------------------- |
 |    Author: Bc. Peter Horváth (original founder)                           |
-| Copyright (c) 2015, Bc. Peter Horváth. All Rights Reserved.               |
+| Copyright (c) 2011-'.date("Y").', Bc. Peter Horváth. All Rights Reserved.          |
 | ------------------------------------------------------------------------- |
 |   License: Distributed under the General Public License (GPL)             |
 |            http://www.gnu.org/licenses/gpl-3.0.html                       |
