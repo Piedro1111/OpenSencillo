@@ -43,8 +43,11 @@ It is special modules contains system´s classes.
 
 ##Changes log
 ============
+###ON BUILD 2015.109
+1. Created SAMS - Sencillo As Module Subsystem
+2. Add __DIR__ for SAMS
 
-###ON BUILD 2015.108
+###2015.108
 1. Created class startInfo
 2. Add mail.generator.mailgen.php
 3. Add minify css library named minify.css.mincss.php
