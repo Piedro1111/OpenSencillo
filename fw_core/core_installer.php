@@ -49,14 +49,13 @@ if(($_GET['install']=='true')&&($PHPversion[0]>=5))
 //changable settings
 class database
 {
-	const host = "'.$_POST['host'].'";
-	const name = "'.$_POST['name'].'";
-	const user = "'.$_POST['user'].'";
-	const pass = "'.$_POST['pass'].'";
-	const type = "'.$_POST['type'].'";
+	const host = "'.(isset($_POST['host'])?$_POST['host']:DB_HOST).'";
+	const name = "'.(isset($_POST['name'])?$_POST['name']:DB_NAME).'";
+	const user = "'.(isset($_POST['user'])?$_POST['user']:DB_USER).'";
+	const pass = "'.(isset($_POST['pass'])?$_POST['pass']:DB_PASS).'";
+	const type = "'.(isset($_POST['type'])?$_POST['type']:"WORDPRESS_DB").'";
 	const hash = "'.$hash.'";
-	const sams = "0";
-	const cache= "'.$_POST['cache'].'";
+	const cache= "'.(isset($_POST['cache'])?$_POST['cache']:"0").'";
 }
 //depecrated variables
 //DB Server
