@@ -25,14 +25,14 @@ $PHPversion=explode(".",phpversion());
 if(($_GET['install']=='true')&&($PHPversion[0]>=5))
 {
 	chmod("../fw_headers/", 0777);
-	if(($_POST['host']!="")&&($_POST['user']!="")&&($_POST['name']!="")&&($_POST['pass']!=""))
+	if((($_POST['host']!="")&&($_POST['user']!="")&&($_POST['name']!="")&&($_POST['pass']!=""))||((defined('DB_USER'))&&(defined('DB_NAME'))&&(defined('DB_PASS'))&&(defined('DB_HOST'))))
 	{
 		$hash = md5($_SERVER['SERVER_NAME'].$_SERVER['SERVER_ADDR'].$_POST['host'].$_POST['user'].$_POST['type']);
 		$file = new fileSystem('../fw_headers/mysql-config.php');
 		$file->write('<?php
 /*~ mysql-config.php
 .---------------------------------------------------------------------------.
-|  Software: OpenSencillo SQL Config                                        |
+|  Software: '.$afterBootUp[0]->info['NME'].' SQL Config                                        |
 |   Version: '.$afterBootUp[0]->info['VSN'].'                                                       |
 |   Contact: mail@phorvath.com                                              |
 | ------------------------------------------------------------------------- |
@@ -53,7 +53,7 @@ class database
 	const name = "'.(isset($_POST['name'])?$_POST['name']:DB_NAME).'";
 	const user = "'.(isset($_POST['user'])?$_POST['user']:DB_USER).'";
 	const pass = "'.(isset($_POST['pass'])?$_POST['pass']:DB_PASS).'";
-	const type = "'.(isset($_POST['type'])?$_POST['type']:"WORDPRESS_DB").'";
+	const type = "'.(isset($_POST['type'])?$_POST['type']:"sams").'";
 	const hash = "'.$hash.'";
 	const cache= "'.(isset($_POST['cache'])?$_POST['cache']:"0").'";
 }
@@ -99,8 +99,10 @@ $QUICKCACHE_ON = database::cache;
 		));
 		$file->write($json);
 	}
-	$file = new fileSystem('../.htaccess');
-	$file->write('# Create with '.$afterBootUp[0]->info['FWK'].'.
+	if(!defined('DB_USER'))
+	{
+		$file = new fileSystem('../.htaccess');
+		$file->write('# Create with '.$afterBootUp[0]->info['FWK'].'.
 # Image cache
 <IfModule mod_expires.c>
     ExpiresActive on
@@ -127,6 +129,8 @@ RewriteRule ^(.*)$ index.php?p=$1 [L,QSA]
 # opensencillo.com -> www.opensencillo.com
 RewriteCond %{HTTP_HOST} !^'.$_SERVER['SERVER_NAME'].'$ [NC]
 RewriteRule ^(.*)$ http://'.$_SERVER['SERVER_NAME'].'/$1 [L,R=301]');
+	}
+	
 	chmod("../fw_core/", 0700);
 	chmod("../fw_cache/", 0700);
 	chmod("../fw_headers/", 0700);
@@ -139,16 +143,18 @@ RewriteRule ^(.*)$ http://'.$_SERVER['SERVER_NAME'].'/$1 [L,R=301]');
 	require("./core_sql.php");
 	require("../fw_libraries/login.management.logman.php");
 	require("../fw_libraries/test.tool.framework.php");
-
-	$delinsql='
-	SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-	';
-	$mysql->write($delinsql);
-	$delinsql='
-	SET time_zone = "+00:00";
-	';
-	$mysql->write($delinsql);
-
+		
+	if(!defined('DB_USER'))
+	{
+		$delinsql='
+		SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+		';
+		$mysql->write($delinsql);
+		$delinsql='
+		SET time_zone = "+00:00";
+		';
+		$mysql->write($delinsql);
+	}
 	$delinsql='
 	CREATE TABLE IF NOT EXISTS `console` (
 	  `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -211,86 +217,100 @@ RewriteRule ^(.*)$ http://'.$_SERVER['SERVER_NAME'].'/$1 [L,R=301]');
 	$mysql->config();
 	$mysql->connect();
 	
+	if(!defined('DB_USER'))
+	{
+		$delinsql=array(
+		'virtual_system_config'=>array(
+			'id'=>"''",
+			'function'=>'superuser',
+			'command'=>$_POST['user-new-name'],
+			'commander'=>0
+		));
+		$mysql->insert($delinsql);
+	
+	
+		$delinsql=array(
+		'virtual_system_config'=>array(
+			'id'=>"''",
+			'function'=>'superpass',
+			'command'=>md5($_POST['user-new-pass']),
+			'commander'=>0
+		));
+		$mysql->insert($delinsql);
+	
+		$delinsql=array(
+		'virtual_system_config'=>array(
+			'id'=>"''",
+			'function'=>'supermail',
+			'command'=>$_POST['user-new-mail'],
+			'commander'=>0
+		));
+		$mysql->insert($delinsql);
+	
+		$delinsql=array(
+		'virtual_system_config'=>array(
+			'id'=>"''",
+			'function'=>'systemhash',
+			'command'=>$hash,
+			'commander'=>0
+		));
+		$mysql->insert($delinsql);
+	
+		$delinsql=array(
+		'virtual_system_config'=>array(
+			'id'=>"''",
+			'function'=>'servername',
+			'command'=>$_SERVER['SERVER_NAME'],
+			'commander'=>0
+		));
+		$mysql->insert($delinsql);
+	
+		$delinsql=array(
+		'virtual_system_config'=>array(
+			'id'=>"''",
+			'function'=>'htaccess_config',
+			'command'=>'default',
+			'commander'=>0
+		));
+		$mysql->insert($delinsql);
+	}
+	else
+	{
+		$delinsql=array(
+		'virtual_system_config'=>array(
+			'id'=>"''",
+			'function'=>'htaccess_config',
+			'command'=>'sams',
+			'commander'=>0
+		));
+		$mysql->insert($delinsql);
+	}
+	
 	$delinsql=array(
-			'virtual_system_config'=>array(
-				'id'=>"''",
-				'function'=>'superuser',
-				'command'=>$_POST['user-new-name'],
-				'commander'=>0
-			));
+	'virtual_system_config'=>array(
+		'id'=>"''",
+		'function'=>'phpversion',
+		'command'=>phpversion(),
+		'commander'=>0
+	));
 	$mysql->insert($delinsql);
 	
-	
 	$delinsql=array(
-			'virtual_system_config'=>array(
-				'id'=>"''",
-				'function'=>'superpass',
-				'command'=>md5($_POST['user-new-pass']),
-				'commander'=>0
-			));
-	$mysql->insert($delinsql);
-	
-	$delinsql=array(
-			'virtual_system_config'=>array(
-				'id'=>"''",
-				'function'=>'supermail',
-				'command'=>$_POST['user-new-mail'],
-				'commander'=>0
-			));
-	$mysql->insert($delinsql);
-	
-	$delinsql=array(
-			'virtual_system_config'=>array(
-				'id'=>"''",
-				'function'=>'systemhash',
-				'command'=>$hash,
-				'commander'=>0
-			));
-	$mysql->insert($delinsql);
-	
-	$delinsql=array(
-			'virtual_system_config'=>array(
-				'id'=>"''",
-				'function'=>'servername',
-				'command'=>$_SERVER['SERVER_NAME'],
-				'commander'=>0
-			));
-	$mysql->insert($delinsql);
-	
-	$delinsql=array(
-			'virtual_system_config'=>array(
-				'id'=>"''",
-				'function'=>'htaccess_config',
-				'command'=>'default',
-				'commander'=>0
-			));
-	$mysql->insert($delinsql);
-	
-	$delinsql=array(
-			'virtual_system_config'=>array(
-				'id'=>"''",
-				'function'=>'phpversion',
-				'command'=>phpversion(),
-				'commander'=>0
-			));
-	$mysql->insert($delinsql);
-	
-	$delinsql=array(
-			'users'=>array(
-				'id'=>"''",
-				'sign'=>"'first_use'",
-				'active'=>0,
-				'login'=>"'".$_POST['user-new-name']."'",
-				'pass'=>"'".md5($_POST['user-new-pass'])."'",
-				'email'=>"'".$_POST['user-new-mail']."'",
-				'fname'=>"''",
-				'lname'=>"''",
-				'perm'=>1111,
-				'ip'=>"'".$_SERVER['REMOTE_ADDR']."'",
-				'agent'=>"'".$_SERVER['HTTP_USER_AGENT']."'",
-				'date'=>'DATE(NOW())',
-				'time'=>'TIME(NOW())',
-			));
+	'users'=>array(
+		'id'=>"''",
+		'sign'=>"'first_use'",
+		'active'=>0,
+		'login'=>"'".$_POST['user-new-name']."'",
+		'pass'=>"'".md5($_POST['user-new-pass'])."'",
+		'email'=>"'".$_POST['user-new-mail']."'",
+		'fname'=>"''",
+		'lname'=>"''",
+		'perm'=>1111,
+		'ip'=>"'".$_SERVER['REMOTE_ADDR']."'",
+		'agent'=>"'".$_SERVER['HTTP_USER_AGENT']."'",
+		'date'=>'DATE(NOW())',
+		'time'=>'TIME(NOW())',
+	));
 	$mysql->insert($delinsql,false);
 	$mysql->execute();
 }
