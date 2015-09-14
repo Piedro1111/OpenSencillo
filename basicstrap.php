@@ -1,9 +1,9 @@
 <?php
 /*~ basicstrap.php
 .---------------------------------------------------------------------------.
-|  Software: Sencillo Basic Bootstrap                                       |
-|   Version: 2015.003                                                       |
-|   Contact: ph@mastery.sk                                                  |
+|  Software: OpenSencillo Basic Bootstrap                                   |
+|   Version: 2015.109                                                       |
+|   Contact: mail@phorvath.com                                              |
 | ------------------------------------------------------------------------- |
 |    Author: Bc. Peter Horváth (original founder)                           |
 | Copyright (c) 2015, Bc. Peter Horváth. All Rights Reserved.               |
@@ -16,15 +16,15 @@
 '---------------------------------------------------------------------------'
 ~*/
 error_reporting(E_ERROR | E_PARSE);
-include("./fw_headers/mysql-config.php");
-include("./fw_headers/main-config.php");
-require_once("./fw_core/core_interface.php");
-require("./fw_core/core_sql.php");
-require("./fw_headers/session.php");
-require("./fw_headers/cookies.php");
-require("./cache.php");
-require("./fw_core/core_functions.php");
-require("./fw_libraries/lib_identificator.php");
+include(__DIR__ . "/fw_headers/mysql-config.php");
+include(__DIR__ . "/fw_headers/main-config.php");
+require_once(__DIR__ . "/fw_core/core_interface.php");
+require(__DIR__ . "/fw_core/core_sql.php");
+require(__DIR__ . "/fw_headers/session.php");
+require(__DIR__ . "/fw_headers/cookies.php");
+require(__DIR__ . "/cache.php");
+require(__DIR__ . "/fw_core/core_functions.php");
+require(__DIR__ . "/fw_libraries/lib_identificator.php");
 $inc=new library;
 $inc->start();
 $paths = $inc->exportPath();
@@ -41,6 +41,6 @@ unset($paths);
 
 if(PAGE=='admin')
 {
-	require_once("./fw_core/core_admin.php");
+	require_once(__DIR__ . "/fw_core/core_admin.php");
 }
 ?>
