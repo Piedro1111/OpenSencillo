@@ -612,7 +612,7 @@ class mysqlInterface extends mysqlEdit
 					break;
 				}
 			}
-			$this->save.=(isset($data_set)?' SET '.substr($data_set,0,-1):'').$data_condition.$data_like.$data_sort.(isset($data_limit_max)? ' LIMIT '.$data_limit_start.$data_limit_max : '').';';
+			$this->save.=(isset($data_set)?' SET '.substr($data_set,0,-1):'').$data_join.$data_condition.$data_like.$data_sort.(isset($data_limit_max)? ' LIMIT '.$data_limit_start.$data_limit_max : '').';';
 		}
 		/**
 		 * @TODO out - addcode
