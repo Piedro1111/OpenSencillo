@@ -387,7 +387,7 @@ class coreSencillo implements coreInterface
 	{
 		$version = '2015';
 		$layout	 = '1';
-		$build	 = '07';
+		$build	 = '09';
 		$this->info=array(	'CMS'=>'OpenSencillo',
 							'NME'=>'OpenSencillo',
 							'VSN'=>$version.'.'.$layout.$build,
