@@ -4,7 +4,7 @@
  * DO NOT CHANGE IT!
  * 
  * @name Sencillo Config
- * @version 2015.005
+ * @version 2015.109
  * @category config
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth
