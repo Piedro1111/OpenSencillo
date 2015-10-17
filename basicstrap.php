@@ -40,8 +40,6 @@ else
 	include(__DIR__ . "/fw_headers/main-config.php");
 	require_once(__DIR__ . "/fw_core/core_interface.php");
 	require(__DIR__ . "/fw_core/core_sql.php");
-	require(__DIR__ . "/fw_headers/session.php");
-	require(__DIR__ . "/fw_headers/cookies.php");
 	require(__DIR__ . "/cache.php");
 	require(__DIR__ . "/fw_core/core_functions.php");
 	require(__DIR__ . "/fw_libraries/lib_identificator.php");

@@ -295,6 +295,30 @@ RewriteRule ^(.*)$ http://'.$_SERVER['SERVER_NAME'].'/$1 [L,R=301]');
 	));
 	$mysql->insert($delinsql);
 	
+	$dir  = '../fw_libraries';
+	$scan = array_diff(scandir($dir),array('..', '.'));
+	$json = json_encode($scan);
+	$hash = md5($json);
+	foreach($scan as $key=>$val)
+	{
+		$delinsql=array(
+		'virtual_system_config'=>array(
+			'id'=>"''",
+			'function'=>"lib:$key",
+			'command'=>"$val",
+			'commander'=>0
+		));
+		$mysql->insert($delinsql);
+	}
+	$delinsql=array(
+	'virtual_system_config'=>array(
+		'id'=>"''",
+		'function'=>"lib_count",
+		'command'=>sizeof($scan),
+		'commander'=>0
+	));
+	$mysql->insert($delinsql);
+	
 	$delinsql=array(
 	'users'=>array(
 		'id'=>"''",
