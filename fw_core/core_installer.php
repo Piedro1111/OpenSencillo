@@ -11,6 +11,7 @@
 error_reporting(E_ERROR | E_PARSE);
 require_once("./core_interface.php");
 require_once("./core_functions.php");
+require_once("../fw_libraries/lib_identificator.php");
 $i=0;
 $afterBootUp=array();
 $afterBootUp[$i++]=new coreSencillo;
