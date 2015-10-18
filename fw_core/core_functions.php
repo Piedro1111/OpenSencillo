@@ -255,5 +255,4 @@ class bootUp
 		}
 	}
 }
-$core = new bootUp(false);
 ?>
