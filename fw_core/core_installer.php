@@ -15,7 +15,7 @@ require_once("../fw_libraries/lib_identificator.php");
 
 $inc=new library;
 $inc->start();
-$paths = $inc->exportPath();
+$paths = $inc->installerPath();
 $realPath = array();
 foreach($paths as $val)
 {

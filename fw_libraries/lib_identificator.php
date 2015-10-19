@@ -66,6 +66,7 @@ class library
 		    	$this->lib['version'][]=$VERSION;
 		    	$this->lib['status'][]='OK:'.$value;
 		    	$this->lib['path'][]=__DIR__ . "/fw_libraries/".$value;
+				$this->lib['install'][]="../fw_libraries/".$value;
 		    }
 		    catch(Exception $e)
 		    {
@@ -144,6 +145,15 @@ class library
 	public function exportPath()
 	{
 		return array_unique($this->lib['path']);
+	}
+	
+	/**
+	 * Return array with unique installer path for installer class loader
+	 * @return arrray
+	 */
+	public function installerPath()
+	{
+		return array_unique($this->lib['install']);
 	}
 }
 ?>
