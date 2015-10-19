@@ -12,6 +12,21 @@ error_reporting(E_ERROR | E_PARSE);
 require_once("./core_interface.php");
 require_once("./core_functions.php");
 require_once("../fw_libraries/lib_identificator.php");
+
+$inc=new library;
+$inc->start();
+$paths = $inc->exportPath();
+$realPath = array();
+foreach($paths as $val)
+{
+	if(file_exists($val))
+	{
+		require_once("$val");
+		$realPath[] = $val;
+	}
+}
+unset($paths);
+
 $i=0;
 $afterBootUp=array();
 $afterBootUp[$i++]=new coreSencillo;
