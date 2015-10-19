@@ -22,21 +22,21 @@ class library
 	 */
 	private function createStructure()
 	{
-	    $this->lib=array("id"=>array(),
-	                     "function"=>array(),
-	                     "boxid"=>array(),
-	                     "status"=>array());
-	    $this->all_data_sencillo=array("left"=>array(),
-	                                   "center"=>array(),
-	                                   "right"=>array(),
-	                                   "foot"=>array(),
-	                                   "admin"=>array());
-	    $this->readsql="SELECT * FROM cms_boxid";
-	    $this->files = scandir(__DIR__ . '/fw_libraries/');
-	    if(file_exists(__DIR__ . "/fw_modules/"))
-	    {
-	    	$this->modules = scandir(__DIR__ . '/fw_modules/');
-	    }
+		$this->lib=array("id"=>array(),
+						 "function"=>array(),
+						 "boxid"=>array(),
+						 "status"=>array());
+		$this->all_data_sencillo=array("left"=>array(),
+									   "center"=>array(),
+									   "right"=>array(),
+									   "foot"=>array(),
+									   "admin"=>array());
+		$this->readsql="SELECT * FROM cms_boxid";
+		$this->files = scandir(__DIR__ . '/fw_libraries/');
+		if(file_exists(__DIR__ . "/fw_modules/"))
+		{
+			$this->modules = scandir(__DIR__ . '/fw_modules/');
+		}
 	}
 	
 	/**
@@ -44,34 +44,34 @@ class library
 	 */
 	private function openFiles()
 	{
-	    foreach($this->files as $value)
-	    {
+		foreach($this->files as $value)
+		{
 			$test=(($value!='.')&&($value!='..')&&($value!='lib_identificator.php')&&($value!='examples')?true:false);
-	    	
-	        if(($value!='.')&&($value!='..')&&($value!='lib_identificator.php')&&($value!='examples'))
-	        {
-	            $this->lib['id'][]=$value;
-	        }
-	    }
+			
+			if(($value!='.')&&($value!='..')&&($value!='lib_identificator.php')&&($value!='examples'))
+			{
+				$this->lib['id'][]=$value;
+			}
+		}
 
 		foreach($this->lib['id'] as $value)
 		{
-		    try
-		    {
-		    	//require("./fw_libraries/".$value);
-		    	$NAME=explode(".",$value);
-		    	$MOD_DESC=$NAME[0].','.$NAME[1];
-		    	$this->lib['name'][]=$NAME[2];
-		    	$this->lib['function'][]=$MOD_DESC;
-		    	$this->lib['version'][]=$VERSION;
-		    	$this->lib['status'][]='OK:'.$value;
-		    	$this->lib['path'][]=__DIR__ . "/fw_libraries/".$value;
+			try
+			{
+				//require("./fw_libraries/".$value);
+				$NAME=explode(".",$value);
+				$MOD_DESC=$NAME[0].','.$NAME[1];
+				$this->lib['name'][]=$NAME[2];
+				$this->lib['function'][]=$MOD_DESC;
+				$this->lib['version'][]=$VERSION;
+				$this->lib['status'][]='OK:'.$value;
+				$this->lib['path'][]=__DIR__ . "/fw_libraries/".$value;
 				$this->lib['install'][]="../fw_libraries/".$value;
-		    }
-		    catch(Exception $e)
-		    {
-		        $this->lib['status']=array('ERROR:'.$value.':'.$e);
-		    }
+			}
+			catch(Exception $e)
+			{
+				$this->lib['status']=array('ERROR:'.$value.':'.$e);
+			}
 		}
 	}
 	
@@ -111,13 +111,24 @@ class library
 	}
 	
 	/**
+	 * Install main mod_id. Safe start only.
+	 * @param array $ignored
+	 */
+	public function install($ignored)
+	{
+		$this->createStructure();
+		$this->files = array_diff(scandir('../fw_libraries/'),$ignored);
+		$this->openFiles();
+	}
+	
+	/**
 	 * Start main mod_id proces
 	 */
 	public function start()
 	{
-	    $this->createStructure();
-	    $this->openFiles();
-	    $this->openModules();
+		$this->createStructure();
+		$this->openFiles();
+		$this->openModules();
 	}
 	
 	/**
@@ -126,7 +137,7 @@ class library
 	 */
 	public function export()
 	{
-	    return $this->all_data_sencillo;
+		return $this->all_data_sencillo;
 	}
 	
 	/**

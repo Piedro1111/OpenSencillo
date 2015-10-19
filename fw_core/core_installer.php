@@ -14,7 +14,7 @@ require_once("./core_functions.php");
 require_once("../fw_libraries/lib_identificator.php");
 
 $inc=new library;
-$inc->start();
+$inc->install(array('login.management.logman.php'));
 $paths = $inc->installerPath();
 $realPath = array();
 foreach($paths as $val)
@@ -122,29 +122,45 @@ $QUICKCACHE_ON = database::cache;
 # Image cache
 <IfModule mod_expires.c>
     ExpiresActive on
-
     ExpiresByType image/jpg "access plus 1 month"
     ExpiresByType image/jpeg "access plus 1 month"
     ExpiresByType image/gif "access plus 1 month"
     ExpiresByType image/png "access plus 1 month"
 </IfModule>
 
-RewriteCond %{SERVER_PORT} ^443$
-RewriteRule ^(.*)$ http://'.$_SERVER['SERVER_NAME'].'/$1 [L,R=301]
+# HTTPS to HTTP
+<IfModule mod_rewrite.c>
+    RewriteCond %{SERVER_PORT} ^443$
+    RewriteCond %{HTTPS} =on
+    RewriteRule ^(.*)$ http://'.$_SERVER['SERVER_NAME'].'/$1 [L,R=301]
+</IfModule>
+
+# HTTP to HTTPS
+#<IfModule mod_rewrite.c>
+#    RewriteCond %{SERVER_PORT} !^443$ 
+#    RewriteCond %{HTTPS}  off 
+#    RewriteRule ^(.*)$ https://'.$_SERVER['SERVER_NAME'].'/$1 [R=301,L]
+#</IfModule>
 
 # Rewrite URLs
-RewriteEngine on
-RewriteBase /
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteBase /
+</IfModule>
 
-# Best URLs
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-l
-RewriteRule ^(.*)$ index.php?p=$1 [L,QSA]
+# Pretty URLs
+<IfModule mod_rewrite.c>
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-l
+    RewriteRule ^(.*)$ index.php?p=$1 [L,QSA]
+</IfModule>
 
-# opensencillo.com -> www.opensencillo.com
-RewriteCond %{HTTP_HOST} !^'.$_SERVER['SERVER_NAME'].'$ [NC]
-RewriteRule ^(.*)$ http://'.$_SERVER['SERVER_NAME'].'/$1 [L,R=301]');
+# '.$_SERVER['SERVER_NAME'].' -> www.'.$_SERVER['SERVER_NAME'].'
+<IfModule mod_rewrite.c>
+    RewriteCond %{HTTP_HOST} !^'.$_SERVER['SERVER_NAME'].'$ [NC]
+    RewriteRule ^(.*)$ http://'.$_SERVER['SERVER_NAME'].'/$1 [L,R=301]
+</IfModule>');
 	}
 	
 	chmod("../fw_core/", 0700);
@@ -158,7 +174,7 @@ RewriteRule ^(.*)$ http://'.$_SERVER['SERVER_NAME'].'/$1 [L,R=301]');
 	require("../fw_headers/main-config.php");
 	require("./core_sql.php");
 	require("../fw_libraries/login.management.logman.php");
-	require("../fw_libraries/test.tool.framework.php");
+	//require("../fw_libraries/test.tool.framework.php");
 		
 	if(!defined('DB_USER'))
 	{
