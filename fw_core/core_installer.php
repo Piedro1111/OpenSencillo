@@ -27,7 +27,6 @@ foreach($paths as $val)
 }
 unset($paths);
 
-
 $i=0;
 $afterBootUp=array();
 $afterBootUp[$i++]=new coreSencillo;
