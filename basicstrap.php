@@ -58,6 +58,7 @@ foreach($paths as $val)
 	}
 }
 unset($paths);
+$core = new bootUp(false);
 
 if(PAGE=='admin')
 {
