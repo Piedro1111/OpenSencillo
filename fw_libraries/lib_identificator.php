@@ -23,7 +23,7 @@ class library
 	{
 		$this->config('lib_folder','fw_libraries');
 		$this->config('mod_folder','fw_modules');
-		$this->config('lib_ignore',__FILE__);
+		$this->config('lib_ignore','lib_identificator.php');
 	}
 
 	/**
@@ -40,7 +40,7 @@ class library
 									   "right"=>array(),
 									   "foot"=>array(),
 									   "admin"=>array());
-		$this->files = scandir(__DIR__ . '/' . $this->config['lib_folder'] . '/');
+		$this->files = scandir(__DIR__.'/'.$this->config['lib_folder'].'/');
 		if(file_exists(__DIR__ . '/' . $this->config['mod_folder'] . '/'))
 		{
 			$this->modules = scandir(__DIR__ . '/' . $this->config['mod_folder'] . '/');

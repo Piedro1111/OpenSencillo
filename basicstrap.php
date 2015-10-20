@@ -31,7 +31,6 @@ if((defined('DB_USER'))&&(defined('DB_NAME'))&&(defined('DB_PASS'))&&(defined('D
 	
 	require_once(__DIR__ . "/fw_core/core_interface.php");
 	require(__DIR__ . "/fw_core/core_sql.php");
-	require(__DIR__ . "/fw_libraries/lib_identificator.php");
 }
 else
 {
@@ -40,9 +39,9 @@ else
 	require_once(__DIR__ . "/fw_core/core_interface.php");
 	require(__DIR__ . "/fw_core/core_sql.php");
 	require(__DIR__ . "/cache.php");
-	require(__DIR__ . "/fw_libraries/lib_identificator.php");
 }
-
+require(__DIR__ . "/fw_libraries/lib_identificator.php");
+require(__DIR__ . "/fw_core/core_functions.php");
 $inc=new library;
 $inc->start();
 $paths = $inc->exportPath();
@@ -56,8 +55,6 @@ foreach($paths as $val)
 	}
 }
 unset($paths);
-
-require(__DIR__ . "/fw_core/core_functions.php");
 $core = new bootUp(false);
 
 if(PAGE=='admin')
