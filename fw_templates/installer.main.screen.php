@@ -15,7 +15,12 @@
 '--------------------------------------------------------------------------*/
 
 $PHPversion=explode(".",phpversion());
-echo("<body><div class='container' style='width:600px;border:1px solid gray;padding:0px;'><form method='post' action='http://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']."?install=true'><table class='table table-striped'>");
+echo("<body><div class='container' style='");
+foreach($ini['layout'] as $key=>$val)
+{
+	echo "$key:$val;";
+}
+echo("'><form method='post' action='http://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']."?install={$ini['installer']['initialize']}'><table class='table table-striped'>");
 echo("<tr><td><span class='glyphicons glyphicons-circle-info'></span><kbd>About ".$afterBootUp[0]->info['FWK']."</kbd></td><td></td></tr>");
 echo("<tr><td><b>System:</b></td><td>".$afterBootUp[0]->info['FWK']."</td></tr>");
 echo("<tr><td><b>By:</b></td><td>".$afterBootUp[0]->info['CPY']."</td></tr>");
@@ -23,32 +28,65 @@ echo("<tr><td><b>Homepage:</b></td><td><a href='http://www.opensencillo.com' tar
 echo("<tr><td><b>PHP:</b></td><td>".$PHPversion[0].".".$PHPversion[1]."</td></tr>");
 echo("<tr><td><b>DB charset:</b></td><td>UTF-8</td></tr>");
 echo("<tr><td><b>System charset:</b></td><td>UTF-8</td></tr>");
-if(($_GET['install']!='true')||($_POST['user-new-pass']!=$_POST['user-rtp-pass'])||(empty($_POST['user-new-pass'])))
+echo("<tr><td><b>Installer status:</b></td><td>".($ini['installer']['testcheck']=="true"?"OK":"Error")."</td></tr>");
+if(($_GET['install']!=$ini['installer']['initialize'])||($_POST['user-new-pass']!=$_POST['user-rtp-pass'])||(empty($_POST['user-new-pass'])))
 {
-	if(($PHPversion[0]>=5)&&($PHPversion[1]>=3))
+	if((floatval($PHPversion[0].'.'.$PHPversion[1]))>=floatval($ini['installer']['minimalphp']))
 	{
+		foreach($ini['perm_options_list'] as $key=>$val)
+		{
+			if($key==="default")
+			{
+				$default=$val;
+			}
+			else
+			{
+				$outpermlist .= "<option value='$key'".($default===$key?' selected':'').">$val</option>".PHP_EOL;
+			}
+		}
+		
 		echo("<tr><td><span class='glyphicons glyphicons-old-man'></span><kbd>Superuser</kbd></td><td></td></tr>");
 		echo("<tr><td><b>User:</b></td><td><input type='text' value='".$_POST['user-new-name']."' name='user-new-name' required></td></tr>");
 		echo("<tr><td><b>Email:</b></td><td><input type='email' value='".$_POST['user-new-mail']."' name='user-new-mail' required></td></tr>");
 		echo("<tr class='failgroupe1'><td><b>Pass:</b></td><td><input type='password' value='password1' name='user-new-pass' required></td></tr>");
 		echo("<tr class='failgroupe1'><td><b>Retype pass:</b></td><td><input type='password' value='password2' name='user-rtp-pass' required></td></tr>");
-		echo("<tr><td><b>Permission:</b></td><td><select name='perm' disabled>
-	                                                <option value='admin' selected>Admin</option>
+		echo("<tr><td><b>Permission:</b></td><td><select name='perm' {$ini['options']['perm']}>
+	                                                $outpermlist
 	                                           </select></td></tr>");
 		
+		foreach($ini['sql_options_list'] as $key=>$val)
+		{
+			if($key==="default")
+			{
+				$default=$val;
+			}
+			else
+			{
+				$outsqllist .= "<option value='$key'".($default===$key?' selected':'').">$val</option>".PHP_EOL;
+			}
+		}
 		echo("<tr><td><span class='glyphicons glyphicons-database'></span><kbd>Database</kbd></td><td></td></tr>");
 		echo("<tr><td><span class='halflings halflings-hdd'></span><b>Host:</b></td><td><input type='text' value='".$_POST['host']."' name='host' required></td></tr>");
 		echo("<tr><td><span class='halflings halflings-tag'></span><b>Name:</b></td><td><input type='text' value='".$_POST['name']."' name='name' required></td></tr>");
 		echo("<tr><td><span class='halflings halflings-user'></span><b>User:</b></td><td><input type='text' value='".$_POST['user']."' name='user' required></td></tr>");
 		echo("<tr><td><span class='halflings halflings-glyph-lock'></span><b>Pass:</b></td><td><input type='text' name='pass' required></td></tr>");
-		echo("<tr><td><span class='halflings halflings-transfer'></span><b>SQL type:</b></td><td><select name='type'>
-	                                                <option value='mysql' selected>MySQL</option>
-	                                                <option value='mariasql'>MariaDB</option>
-													<option value='othersql'>Other SQL</option>
+		echo("<tr><td><span class='halflings halflings-transfer'></span><b>SQL type:</b></td><td><select name='type' {$ini['options']['sqltype']}>
+	                                                $outsqllist
 	                                           </select></td></tr>");
-		echo("<tr><td><span class='halflings halflings-compressed'></span><b>Cache:</b></td><td><select name='cache'>
-	                                                <option value='1'>Allow</option>
-	                                                <option value='0' selected>Disallow</option>
+		
+		foreach($ini['cache_options_list'] as $key=>$val)
+		{
+			if($key==="default")
+			{
+				$default=$val;
+			}
+			else
+			{
+				$outcachelist .= "<option value='$key'".($default==$key?' selected':'').">$val</option>".PHP_EOL;
+			}
+		}
+		echo("<tr><td><span class='halflings halflings-compressed'></span><b>Cache:</b></td><td><select name='cache' {$ini['options']['cachetype']}>
+	                                                $outcachelist
 	                                           </select></td></tr>");
 		echo("<tr><td></td><td><input class='btn btn-success' type='submit' value='Install'></td></tr>");
 	}

@@ -17,8 +17,8 @@
 ~*/
 if(file_exists('yourcode.php'))
 {
-	require(__DIR__ . 'basicstrap.php');
-	require(__DIR__ . 'yourcode.php');
+	require(__DIR__ . '/basicstrap.php');
+	require(__DIR__ . '/yourcode.php');
 }
 else 
 {

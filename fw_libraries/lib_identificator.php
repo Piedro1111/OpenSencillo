@@ -15,8 +15,17 @@ class library
 	protected $files;
 	protected $modules;
 	
+	private $config = array();
+	
 	public $lib;
 	
+	public function __construct()
+	{
+		$this->config('lib_folder','fw_libraries');
+		$this->config('mod_folder','fw_modules');
+		$this->config('lib_ignore',__FILE__);
+	}
+
 	/**
 	 * Create complet data structure
 	 */
@@ -31,11 +40,10 @@ class library
 									   "right"=>array(),
 									   "foot"=>array(),
 									   "admin"=>array());
-		$this->readsql="SELECT * FROM cms_boxid";
-		$this->files = scandir(__DIR__ . '/fw_libraries/');
-		if(file_exists(__DIR__ . "/fw_modules/"))
+		$this->files = scandir(__DIR__ . '/' . $this->config['lib_folder'] . '/');
+		if(file_exists(__DIR__ . '/' . $this->config['mod_folder'] . '/'))
 		{
-			$this->modules = scandir(__DIR__ . '/fw_modules/');
+			$this->modules = scandir(__DIR__ . '/' . $this->config['mod_folder'] . '/');
 		}
 	}
 	
@@ -46,9 +54,9 @@ class library
 	{
 		foreach($this->files as $value)
 		{
-			$test=(($value!='.')&&($value!='..')&&($value!='lib_identificator.php')&&($value!='examples')?true:false);
+			$test=(($value!='.')&&($value!='..')&&($value!=$this->config['lib_ignore'])&&($value!='examples')?true:false);
 			
-			if(($value!='.')&&($value!='..')&&($value!='lib_identificator.php')&&($value!='examples'))
+			if(($value!='.')&&($value!='..')&&($value!=$this->config['lib_ignore'])&&($value!='examples'))
 			{
 				$this->lib['id'][]=$value;
 			}
@@ -65,8 +73,8 @@ class library
 				$this->lib['function'][]=$MOD_DESC;
 				$this->lib['version'][]=$VERSION;
 				$this->lib['status'][]='OK:'.$value;
-				$this->lib['path'][]=__DIR__ . "/fw_libraries/".$value;
-				$this->lib['install'][]="../fw_libraries/".$value;
+				$this->lib['path'][]=__DIR__ . '/' . $this->config['lib_folder'] . '/'.$value;
+				$this->lib['install'][]='../' . $this->config['lib_folder'] . '/'.$value;
 			}
 			catch(Exception $e)
 			{
@@ -82,9 +90,9 @@ class library
 	{
 		foreach($this->modules as $value)
 		{
-			$test=((file_exists(__DIR__ . "/fw_modules/".$value."/"))&&($value!='.')&&($value!='..')&&($value!='lib_identificator.php')&&($value!='examples')?true:false);
+			$test=((file_exists(__DIR__ . '/' . $this->config['mod_folder'] . '/'.$value.'/'))&&($value!='.')&&($value!='..')&&($value!=$this->config['lib_ignore'])&&($value!='examples')?true:false);
 	
-			if((file_exists(__DIR__ . "/fw_modules/".$value."/"))&&($value!='.')&&($value!='..')&&($value!='lib_identificator.php')&&($value!='examples'))
+			if((file_exists(__DIR__ . '/' . $this->config['mod_folder'] . '/'.$value.'/'))&&($value!='.')&&($value!='..')&&($value!=$this->config['lib_ignore'])&&($value!='examples'))
 			{
 				$this->lib['id'][]=$value;
 			}
@@ -97,11 +105,11 @@ class library
 				$this->lib['name'][]=$value;
 				$this->lib['function'][]='custom_module';
 				$this->lib['status'][]='OK:'.$value;
-				$this->lib['path'][]=__DIR__ . "/fw_modules/".$value."/info_".$value.".php";//information about module
-				$this->lib['path'][]=__DIR__ . "/fw_modules/".$value."/update_".$value.".php";//update database for module
-				$this->lib['path'][]=__DIR__ . "/fw_modules/".$value."/install_".$value.".php";//installer
-				$this->lib['path'][]=__DIR__ . "/fw_modules/".$value."/main_".$value.".php";//main module
-				$this->lib['path'][]=__DIR__ . "/fw_modules/".$value."/".$value.".php";//basic module
+				$this->lib['path'][]=__DIR__ . '/' . $this->config['mod_folder'] . '/'.$value.'/info_'.$value.'.php';//information about module
+				$this->lib['path'][]=__DIR__ . '/' . $this->config['mod_folder'] . '/'.$value.'/update_'.$value.'.php';//update database for module
+				$this->lib['path'][]=__DIR__ . '/' . $this->config['mod_folder'] . '/'.$value.'/install_'.$value.'.php';//installer
+				$this->lib['path'][]=__DIR__ . '/' . $this->config['mod_folder'] . '/'.$value.'/main_'.$value.'.php';//main module
+				$this->lib['path'][]=__DIR__ . '/' . $this->config['mod_folder'] . '/'.$value.'/'.$value.'.php';//basic module
 			}
 			catch(Exception $e)
 			{
@@ -117,10 +125,30 @@ class library
 	public function install($ignored)
 	{
 		$this->createStructure();
-		$this->files = array_diff(scandir('../fw_libraries/'),$ignored);
+		$this->files = array_diff(scandir('../' . $this->config['lib_folder'] . '/'),$ignored);
 		$this->openFiles();
 	}
 	
+	/*
+	 * Set one value and his key in config
+	 * @param string $key
+	 * @param string $val
+	 * @return bool
+	 */
+	public function config($key,$val)
+	{
+		unset($this->config[$key]);
+		if(empty($this->config[$key]))
+		{
+			$this->config[$key] = $val;
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
 	/**
 	 * Start main mod_id proces
 	 */

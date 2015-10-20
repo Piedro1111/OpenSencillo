@@ -174,10 +174,6 @@ class coreSencillo implements coreInterface
 		$arr['get']['status']		=	200;
 		$arr['post']['status']		=	200;
 		
-		$_GET		=	$arr['get'];
-		$_POST		=	$arr['post'];
-		$_REQUEST	=	$arr['request'];
-		
 		$this->get		=	$arr['get'];
 		$this->post		=	$arr['post'];
 		$this->request	=	$arr['request'];
