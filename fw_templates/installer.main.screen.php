@@ -97,7 +97,10 @@ if(($_GET['install']!=$ini['installer']['initialize'])||($_POST['user-new-pass']
 }
 else
 {
-	header('Location: http://'.$_SERVER['SERVER_NAME']);
+	if($ini['actions']['onsuccess']==="location")
+	{
+		header('Location: http://'.$_SERVER['SERVER_NAME']);
+	}
 	echo("<tr><td><span class='glyphicons glyphicons-old-man'></span><kbd>Super user</kbd></td><td></td></tr>");
 	echo("<tr><td><b>User:</b></td><td>".$_POST['user-new-name']."</td></tr>");
 	echo("<tr><td><b>Email:</b></td><td>".$_POST['user-new-mail']."</td></tr>");
@@ -135,10 +138,10 @@ $(document).ready(function(){
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="hide-dialog close" data-dismiss="modal">&times;</button>
-				<h4 class="modal-title">Password retype error</h4>
+				<h4 class="modal-title">'.$ini['modal']['title'].'</h4>
 			</div>
 			<div class="modal-body">
-				<p>An error has occurred in section Superuser!</p>
+				<p>'.$ini['modal']['message'].'</p>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="hide-dialog btn btn-default" data-dismiss="modal">Close</button>

@@ -40,10 +40,11 @@ class library
 									   "right"=>array(),
 									   "foot"=>array(),
 									   "admin"=>array());
-		$this->files = scandir(__DIR__.'/'.$this->config['lib_folder'].'/');
-		if(file_exists(__DIR__ . '/' . $this->config['mod_folder'] . '/'))
+		$this->files = scandir('./' . $this->config['lib_folder'] . '/');
+		//var_dump($this->config,$this->files);
+		if(file_exists('./' . $this->config['mod_folder'] . '/'))
 		{
-			$this->modules = scandir(__DIR__ . '/' . $this->config['mod_folder'] . '/');
+			$this->modules = scandir('./' . $this->config['mod_folder'] . '/');
 		}
 	}
 	
@@ -73,7 +74,7 @@ class library
 				$this->lib['function'][]=$MOD_DESC;
 				$this->lib['version'][]=$VERSION;
 				$this->lib['status'][]='OK:'.$value;
-				$this->lib['path'][]=__DIR__ . '/' . $this->config['lib_folder'] . '/'.$value;
+				$this->lib['path'][]='./' . $this->config['lib_folder'] . '/'.$value;
 				$this->lib['install'][]='../' . $this->config['lib_folder'] . '/'.$value;
 			}
 			catch(Exception $e)
@@ -90,9 +91,9 @@ class library
 	{
 		foreach($this->modules as $value)
 		{
-			$test=((file_exists(__DIR__ . '/' . $this->config['mod_folder'] . '/'.$value.'/'))&&($value!='.')&&($value!='..')&&($value!=$this->config['lib_ignore'])&&($value!='examples')?true:false);
+			$test=((file_exists('./' . $this->config['mod_folder'] . '/'.$value.'/'))&&($value!='.')&&($value!='..')&&($value!=$this->config['lib_ignore'])&&($value!='examples')?true:false);
 	
-			if((file_exists(__DIR__ . '/' . $this->config['mod_folder'] . '/'.$value.'/'))&&($value!='.')&&($value!='..')&&($value!=$this->config['lib_ignore'])&&($value!='examples'))
+			if((file_exists('./' . $this->config['mod_folder'] . '/'.$value.'/'))&&($value!='.')&&($value!='..')&&($value!=$this->config['lib_ignore'])&&($value!='examples'))
 			{
 				$this->lib['id'][]=$value;
 			}
@@ -105,11 +106,11 @@ class library
 				$this->lib['name'][]=$value;
 				$this->lib['function'][]='custom_module';
 				$this->lib['status'][]='OK:'.$value;
-				$this->lib['path'][]=__DIR__ . '/' . $this->config['mod_folder'] . '/'.$value.'/info_'.$value.'.php';//information about module
-				$this->lib['path'][]=__DIR__ . '/' . $this->config['mod_folder'] . '/'.$value.'/update_'.$value.'.php';//update database for module
-				$this->lib['path'][]=__DIR__ . '/' . $this->config['mod_folder'] . '/'.$value.'/install_'.$value.'.php';//installer
-				$this->lib['path'][]=__DIR__ . '/' . $this->config['mod_folder'] . '/'.$value.'/main_'.$value.'.php';//main module
-				$this->lib['path'][]=__DIR__ . '/' . $this->config['mod_folder'] . '/'.$value.'/'.$value.'.php';//basic module
+				$this->lib['path'][]='./' . $this->config['mod_folder'] . '/'.$value.'/info_'.$value.'.php';//information about module
+				$this->lib['path'][]='./' . $this->config['mod_folder'] . '/'.$value.'/update_'.$value.'.php';//update database for module
+				$this->lib['path'][]='./' . $this->config['mod_folder'] . '/'.$value.'/install_'.$value.'.php';//installer
+				$this->lib['path'][]='./' . $this->config['mod_folder'] . '/'.$value.'/main_'.$value.'.php';//main module
+				$this->lib['path'][]='./' . $this->config['mod_folder'] . '/'.$value.'/'.$value.'.php';//basic module
 			}
 			catch(Exception $e)
 			{
@@ -156,7 +157,7 @@ class library
 	{
 		$this->createStructure();
 		$this->openFiles();
-		$this->openModules();
+		//$this->openModules();
 	}
 	
 	/**

@@ -119,30 +119,43 @@ $QUICKCACHE_ON = database::cache;
 	}
 	if(!defined('DB_USER'))
 	{
-		$file = new fileSystem($ini['new_file_paths']['htaccess']);
-		$file->write('# Create with '.$afterBootUp[0]->info['FWK'].'.
-# Image cache
-<IfModule mod_expires.c>
-    ExpiresActive on
-    ExpiresByType image/jpg "access plus 1 month"
-    ExpiresByType image/jpeg "access plus 1 month"
-    ExpiresByType image/gif "access plus 1 month"
-    ExpiresByType image/png "access plus 1 month"
-</IfModule>
-
-# HTTPS to HTTP
+		foreach($ini['htaccess']['cache'] as $key=>$val)
+		{
+			$expiresbytype.='ExpiresByType '.$val.' "access plus '.$ini['htaccess']['cache_size'].' '.$ini['htaccess']['cache_month'].'"'.PHP_EOL;
+		}
+		if($ini['htaccess']['protocol']=="http")
+		{
+			$protocolinhtaccess='# HTTPS to HTTP
 <IfModule mod_rewrite.c>
     RewriteCond %{SERVER_PORT} ^443$
     RewriteCond %{HTTPS} =on
     RewriteRule ^(.*)$ http://'.$_SERVER['SERVER_NAME'].'/$1 [L,R=301]
+</IfModule>';
+		}
+		else
+		{
+			$protocolinhtaccess='# HTTP to HTTPS
+<IfModule mod_rewrite.c>
+    RewriteCond %{SERVER_PORT} !^443$ 
+    RewriteCond %{HTTPS}  off 
+    RewriteRule ^(.*)$ https://'.$_SERVER['SERVER_NAME'].'/$1 [R=301,L]
+</IfModule>';
+		}
+		$file = new fileSystem($ini['new_file_paths']['htaccess']);
+		$file->write('# Create with '.$afterBootUp[0]->info['FWK'].'.
+# Secure ini files
+<Files ~ "\.ini">
+Order allow,deny
+Deny from all
+</Files>
+
+# Image cache
+<IfModule mod_expires.c>
+    ExpiresActive on
+    '.$expiresbytype.'
 </IfModule>
 
-# HTTP to HTTPS
-#<IfModule mod_rewrite.c>
-#    RewriteCond %{SERVER_PORT} !^443$ 
-#    RewriteCond %{HTTPS}  off 
-#    RewriteRule ^(.*)$ https://'.$_SERVER['SERVER_NAME'].'/$1 [R=301,L]
-#</IfModule>
+'.$protocolinhtaccess.'
 
 # Rewrite URLs
 <IfModule mod_rewrite.c>
