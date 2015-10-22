@@ -139,6 +139,24 @@ class headerSeo
 	}
 	
 	/**
+	 * Add custom link to css
+	 * @param string $link
+	 */
+	public function css($link)
+	{
+		$this->custom('<link rel="stylesheet" href="'.$link.'">');
+	}
+	
+	/**
+	 * Alternative to headerSeo::css($link)
+	 * @param string $link
+	 */
+	public function style($link)
+	{
+		$this->css($link);
+	}
+	
+	/**
 	 * Save SEO and generate header content
 	 * @return string
 	 */
