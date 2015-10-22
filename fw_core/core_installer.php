@@ -343,6 +343,7 @@ Deny from all
 		));
 		$mysql->insert($delinsql);
 	}
+	$mysql->execute();
 	
 	$delinsql=array(
 	'virtual_system_config'=>array(
@@ -352,6 +353,7 @@ Deny from all
 		'commander'=>0
 	));
 	$mysql->insert($delinsql);
+	$mysql->execute();
 	
 	$dir  = '../fw_libraries';
 	$scan = array_diff(scandir($dir),array('..', '.'));
@@ -368,6 +370,8 @@ Deny from all
 		));
 		$mysql->insert($delinsql);
 	}
+	$mysql->execute();
+	
 	$delinsql=array(
 	'virtual_system_config'=>array(
 		'id'=>"''",
@@ -376,6 +380,7 @@ Deny from all
 		'commander'=>0
 	));
 	$mysql->insert($delinsql);
+	$mysql->execute();
 	
 	$delinsql=array(
 	'users'=>array(
