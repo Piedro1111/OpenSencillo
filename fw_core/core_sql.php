@@ -411,7 +411,7 @@ class mysqlInterface extends mysqlEdit
 			$values=' VALUES (';
 			foreach($val as $sub_key=>$sub_val)
 			{
-				$col.=$sub_key.',';
+				$col.='`'.$sub_key.'`,';
 				if((is_string($sub_val))&&($stringRewrite))
 				{
 					$values.="'".$sub_val."',";

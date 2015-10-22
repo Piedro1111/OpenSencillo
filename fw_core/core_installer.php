@@ -264,11 +264,10 @@ Deny from all
 	$mysql=new mysqlInterface;
 	$mysql->config();
 	$mysql->connect();
-	
 	foreach($clist as $key=>$val)
 	{
 		$delinsql=array(
-		'virtual_system_config'=>array(
+		'country'=>array(
 			'id'=>$key,
 			'id2'=>'',
 			'name'=>$val
