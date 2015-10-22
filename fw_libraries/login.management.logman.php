@@ -17,10 +17,10 @@ class logMan extends mysqlEdit
 	public function __construct()
 	{
 		parent::__construct(database::host,database::name,database::user,database::pass);
-        $this->mysqlInterface = new mysqlInterface;
-        $this->mysqlInterface->config();
-        $this->mysqlInterface->connect();
-        
+		$this->mysqlInterface = new mysqlInterface;
+		$this->mysqlInterface->config();
+		$this->mysqlInterface->connect();
+		
 		$this->log['server']=$_SERVER['SERVER_NAME'];
 		$this->log['request']=$_SERVER['REQUEST_URI'];
 		$this->log['port']=$_SERVER['REMOTE_PORT'];

@@ -121,7 +121,7 @@ $QUICKCACHE_ON = database::cache;
 	{
 		foreach($ini['htaccess']['cache'] as $key=>$val)
 		{
-			$expiresbytype.='ExpiresByType '.$val.' "access plus '.$ini['htaccess']['cache_size'].' '.$ini['htaccess']['cache_month'].'"'.PHP_EOL;
+			$expiresbytype.='ExpiresByType '.$val.' "access plus '.$ini['htaccess']['cache_size'].' '.$ini['htaccess']['cache_unit'].'"'.PHP_EOL;
 		}
 		if($ini['htaccess']['protocol']=="http")
 		{
@@ -260,8 +260,8 @@ Deny from all
 	$mysql->write($delinsql);
 	$mysql->close();
 	
-	$logman=new logMan($DBHost,$DBName,$DBUser,$DBPass);
-	$mysql=new mysqlInterface($DBHost,$DBName,$DBUser,$DBPass);
+	$logman=new logMan;
+	$mysql=new mysqlInterface;
 	$mysql->config();
 	$mysql->connect();
 	
