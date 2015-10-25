@@ -4,10 +4,13 @@ session_start();
 require_once("./basicstrap.php");
 
 $logman=new logMan;
+$email=new mailGen;
+$emailhead=new headerSeo;
+
 $log=$logman->getSignedUser();
 $status=array(
 	'called'=>$_POST['atype'],
-	'data'=>date('Y-m-d'),
+	'date'=>date('Y-m-d'),
 	'time'=>date('H:i:s')
 );
 if($_POST['atype']!='')
@@ -17,8 +20,6 @@ if($_POST['atype']!='')
 switch($ajax['atype'])
 {
 	case 'login':
-		//TODO
-		// login system
 		$logman->openTable('users');
 		if(filter_var($ajax[$ajax['atype'].'email'],FILTER_VALIDATE_EMAIL))
 		{
@@ -55,8 +56,6 @@ switch($ajax['atype'])
 		}
 		break;
 	case 'ereg':
-		//TODO
-		// move to logman addNewUser($pass,$perm)
 		$logman->openTable('users');
 		if(filter_var($_POST[$ajax['atype'].'email'], FILTER_VALIDATE_EMAIL))
 		{
@@ -92,8 +91,21 @@ switch($ajax['atype'])
 		}
 		break;
 	case 'forgot':
-		//TODO
-		// forgot pass
+		$_POST['email']=$_POST[$ajax['atype'].'email'];
+		$status=$logman->forgot();
+		if($status['code']===200)
+		{
+			$log=$logman->getSignedUser();
+			$logman->openTable('users');
+			$logman->update("`email`='{$_POST['email']}'","`sign`='change_pass',`pass`=MD5('{$status['confirm-code']}'),`ip`='".$log['external_ip'].":".$log['port']."',`agent`='".$log['agent']."',`date`='".$status['date']."',`time`='".$status['time']."'");
+			$email->to($_POST['email']);
+			$email->from('info@'.$_SERVER['SERVER_NAME']);
+			$email->subject('New password - '.$_SERVER['SERVER_NAME']);
+			$email->html();
+			$emailhead->encode();
+			$email->body($emailhead->save()."<body><p>Hello {$_POST['email']},</p><p>your new password is <b>{$status['confirm-code']}</b>.</p></body></html>");
+			$email->send();
+		}
 		break;
 	default:
 		$status['status'] = 'not acceptable';
