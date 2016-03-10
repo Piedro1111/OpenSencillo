@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="_s_q_l-example" kind="example">
+    <compoundname>SQL</compoundname>
+    <detaileddescription>
+<para>Create table array construction: array( &apos;table&apos;=&gt;array( &apos;col1&apos;=&gt;array( &apos;type&apos;=&gt;&apos;int&apos;, &apos;primary_key&apos;=&gt;true, &apos;foreign_key&apos;=&gt;&apos;foreign_table(foreign_col)&apos;, &apos;foreign_key&apos;=&gt;array(&apos;foreign table&apos;=&gt;&apos;foreign col&apos;), &apos;unique&apos;=&gt;true, &apos;auto_increment&apos;=&gt;true, &apos;null&apos;=&gt;true ), &apos;col2&apos;=&gt;array( &apos;type&apos;=&gt;&apos;int&apos;, &apos;primary_key&apos;=&gt;true, &apos;foreign_key&apos;=&gt;&apos;foreign_table(foreign_col)&apos;, &apos;foreign_key&apos;=&gt;array(&apos;foreign table&apos;=&gt;&apos;foreign col&apos;), &apos;unique&apos;=&gt;true, &apos;auto_increment&apos;=&gt;true, &apos;null&apos;=&gt;true ), &apos;col3&apos;=&gt;array( &apos;type&apos;=&gt;&apos;int&apos;, &apos;primary_key&apos;=&gt;true, &apos;foreign_key&apos;=&gt;&apos;foreign_table(foreign_col)&apos;, &apos;foreign_key&apos;=&gt;array(&apos;foreign table&apos;=&gt;&apos;foreign col&apos;), &apos;unique&apos;=&gt;true, &apos;auto_increment&apos;=&gt;true, &apos;null&apos;=&gt;true ) ) ) <programlisting></programlisting> </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

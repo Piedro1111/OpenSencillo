@@ -1,0 +1,397 @@
+\hypertarget{classlog_man}{\section{log\-Man Class Reference}
+\label{classlog_man}\index{log\-Man@{log\-Man}}
+}
+Inheritance diagram for log\-Man\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classlog_man}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlog_man_aa966adc12c56a4cc70da92207fa50929}{install} ()
+\item 
+\hyperlink{classlog_man_a52a57cda7a4b849ed18d5c7133f75256}{edit\-Perm} (\$\hyperlink{classlog_man_a3b510811361c14194c4c54177f000f2d}{login}=null, \$perm=null)
+\item 
+\hyperlink{classlog_man_a3884708300d256bc4e2aed3d425ec00a}{get\-Perm} ()
+\item 
+\hyperlink{classlog_man_ae8162eecf899a411b0f91d013d16cda3}{create\-Super\-User} (\$email, \$name, \$pass)
+\item 
+\hyperlink{classlog_man_af787db5c087b93924fc5ac54e14775d5}{ereg} ()
+\item 
+\hyperlink{classlog_man_a3b510811361c14194c4c54177f000f2d}{login} (\$ajax)
+\item 
+\hyperlink{classlog_man_aa8dfc7c51361d8f550975be90ed2cf67}{check\-Session} (\$signal=false)
+\item 
+\hyperlink{classlog_man_a9a30d68c9f462839242a462ca43f5753}{basic\-Login} (\$\hyperlink{classtranslate}{translate}, \$seo)
+\item 
+\hyperlink{classlog_man_ab0912c8df7035bb6e9571a4333c0238a}{admin\-Login} (\$\hyperlink{classtranslate}{translate}, \$seo)
+\item 
+\hyperlink{classlog_man_a64ac0e06faad327b014754e951dfe170}{add\-To\-Main\-Array} (\$name, \$data)
+\item 
+\hyperlink{classlog_man_a89196d2fcfb896306fe7e387f634a080}{ajax\-Send\-Json} ()
+\item 
+\hypertarget{classlog_man_a7f3e615305910cf5ea9f24692e9613f6}{{\bfseries add\-New\-User} (\$pass, \$perm)}\label{classlog_man_a7f3e615305910cf5ea9f24692e9613f6}
+
+\item 
+\hyperlink{classlog_man_ad0c5594c7e33c9821afd4305edaee0b9}{create\-Session} ()
+\item 
+\hyperlink{classlog_man_a9aea96aaeaf1efd5531eb1867ee67ca6}{destroy\-Session} ()
+\item 
+\hyperlink{classlog_man_a63e86500ba57ad327c3cfdc4777b2edc}{add\-Session\-Data} (\$name, \$data=null)
+\item 
+\hyperlink{classlog_man_a0055230648d2a2484c489013a475c3d7}{get\-Session\-Data} (\$name)
+\item 
+\hypertarget{classlog_man_a0bb131a01e8d92cdecdc9013ca808013}{{\bfseries sign\-In} (\$pass)}\label{classlog_man_a0bb131a01e8d92cdecdc9013ca808013}
+
+\item 
+\hyperlink{classlog_man_ae99d103123f211eb28e19c09f7fd134e}{get\-Signed\-User} ()
+\item 
+\hypertarget{classlog_man_af6b7cbde6eae6ee4d7825b1a9f202bf6}{{\bfseries sign\-Out} ()}\label{classlog_man_af6b7cbde6eae6ee4d7825b1a9f202bf6}
+
+\item 
+\hyperlink{classlog_man_aff5b25c460fba7b1bce3e2a36fe702cf}{clean} (\$string)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classlog_man_a9a2cf15a653aee8be437f7ae474cd494}{{\bfseries \$log} =array()}\label{classlog_man_a9a2cf15a653aee8be437f7ae474cd494}
+
+\item 
+\hypertarget{classlog_man_a58391ea75f2d29d5d708d7050b641c33}{{\bfseries \$status} =array()}\label{classlog_man_a58391ea75f2d29d5d708d7050b641c33}
+
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 11 of file login.\-management.\-logman.\-php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classlog_man_a63e86500ba57ad327c3cfdc4777b2edc}{\index{log\-Man@{log\-Man}!add\-Session\-Data@{add\-Session\-Data}}
+\index{add\-Session\-Data@{add\-Session\-Data}!logMan@{log\-Man}}
+\subsubsection[{add\-Session\-Data}]{\setlength{\rightskip}{0pt plus 5cm}add\-Session\-Data (
+\begin{DoxyParamCaption}
+\item[{}]{\$name, }
+\item[{}]{\$data = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [final]}}}\label{classlog_man_a63e86500ba57ad327c3cfdc4777b2edc}
+Store data in new session 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$name} & \\
+\hline
+string & {\em \$data} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 426 of file login.\-management.\-logman.\-php.
+
+\hypertarget{classlog_man_a64ac0e06faad327b014754e951dfe170}{\index{log\-Man@{log\-Man}!add\-To\-Main\-Array@{add\-To\-Main\-Array}}
+\index{add\-To\-Main\-Array@{add\-To\-Main\-Array}!logMan@{log\-Man}}
+\subsubsection[{add\-To\-Main\-Array}]{\setlength{\rightskip}{0pt plus 5cm}add\-To\-Main\-Array (
+\begin{DoxyParamCaption}
+\item[{}]{\$name, }
+\item[{}]{\$data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [final]}}}\label{classlog_man_a64ac0e06faad327b014754e951dfe170}
+Add data to main login array 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$name} & \\
+\hline
+multitype & {\em \$data} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 379 of file login.\-management.\-logman.\-php.
+
+\hypertarget{classlog_man_ab0912c8df7035bb6e9571a4333c0238a}{\index{log\-Man@{log\-Man}!admin\-Login@{admin\-Login}}
+\index{admin\-Login@{admin\-Login}!logMan@{log\-Man}}
+\subsubsection[{admin\-Login}]{\setlength{\rightskip}{0pt plus 5cm}admin\-Login (
+\begin{DoxyParamCaption}
+\item[{}]{\$translate, }
+\item[{}]{\$seo}
+\end{DoxyParamCaption}
+)}}\label{classlog_man_ab0912c8df7035bb6e9571a4333c0238a}
+Create default admin login system 
+\begin{DoxyParams}[1]{Parameters}
+object & {\em \$translate} & \\
+\hline
+object & {\em \$seo} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number 
+\end{DoxyReturn}
+
+
+Definition at line 335 of file login.\-management.\-logman.\-php.
+
+\hypertarget{classlog_man_a89196d2fcfb896306fe7e387f634a080}{\index{log\-Man@{log\-Man}!ajax\-Send\-Json@{ajax\-Send\-Json}}
+\index{ajax\-Send\-Json@{ajax\-Send\-Json}!logMan@{log\-Man}}
+\subsubsection[{ajax\-Send\-Json}]{\setlength{\rightskip}{0pt plus 5cm}ajax\-Send\-Json (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [final]}}}\label{classlog_man_a89196d2fcfb896306fe7e387f634a080}
+Convert main array to J\-S\-O\-N export and print as A\-J\-A\-X response 
+
+Definition at line 387 of file login.\-management.\-logman.\-php.
+
+\hypertarget{classlog_man_a9a30d68c9f462839242a462ca43f5753}{\index{log\-Man@{log\-Man}!basic\-Login@{basic\-Login}}
+\index{basic\-Login@{basic\-Login}!logMan@{log\-Man}}
+\subsubsection[{basic\-Login}]{\setlength{\rightskip}{0pt plus 5cm}basic\-Login (
+\begin{DoxyParamCaption}
+\item[{}]{\$translate, }
+\item[{}]{\$seo}
+\end{DoxyParamCaption}
+)}}\label{classlog_man_a9a30d68c9f462839242a462ca43f5753}
+Create default login system 
+\begin{DoxyParams}[1]{Parameters}
+object & {\em \$translate} & \\
+\hline
+object & {\em \$seo} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number 
+\end{DoxyReturn}
+
+
+Definition at line 274 of file login.\-management.\-logman.\-php.
+
+\hypertarget{classlog_man_aa8dfc7c51361d8f550975be90ed2cf67}{\index{log\-Man@{log\-Man}!check\-Session@{check\-Session}}
+\index{check\-Session@{check\-Session}!logMan@{log\-Man}}
+\subsubsection[{check\-Session}]{\setlength{\rightskip}{0pt plus 5cm}check\-Session (
+\begin{DoxyParamCaption}
+\item[{}]{\$signal = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [final]}}}\label{classlog_man_aa8dfc7c51361d8f550975be90ed2cf67}
+Check whether session
+
+
+\begin{DoxyParams}[1]{Parameters}
+bool & {\em \$signal} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean$\vert$\-Ambigous $<$multitype\-:number , multitype\-:$>$ 
+\end{DoxyReturn}
+
+
+Definition at line 252 of file login.\-management.\-logman.\-php.
+
+\hypertarget{classlog_man_aff5b25c460fba7b1bce3e2a36fe702cf}{\index{log\-Man@{log\-Man}!clean@{clean}}
+\index{clean@{clean}!logMan@{log\-Man}}
+\subsubsection[{clean}]{\setlength{\rightskip}{0pt plus 5cm}clean (
+\begin{DoxyParamCaption}
+\item[{}]{\$string}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [final]}}}\label{classlog_man_aff5b25c460fba7b1bce3e2a36fe702cf}
+Remove all special characters 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$string} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 467 of file login.\-management.\-logman.\-php.
+
+\hypertarget{classlog_man_ad0c5594c7e33c9821afd4305edaee0b9}{\index{log\-Man@{log\-Man}!create\-Session@{create\-Session}}
+\index{create\-Session@{create\-Session}!logMan@{log\-Man}}
+\subsubsection[{create\-Session}]{\setlength{\rightskip}{0pt plus 5cm}create\-Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [final]}}}\label{classlog_man_ad0c5594c7e33c9821afd4305edaee0b9}
+Create session data \begin{DoxyReturn}{Returns}
+multitype array 
+\end{DoxyReturn}
+
+
+Definition at line 401 of file login.\-management.\-logman.\-php.
+
+\hypertarget{classlog_man_ae8162eecf899a411b0f91d013d16cda3}{\index{log\-Man@{log\-Man}!create\-Super\-User@{create\-Super\-User}}
+\index{create\-Super\-User@{create\-Super\-User}!logMan@{log\-Man}}
+\subsubsection[{create\-Super\-User}]{\setlength{\rightskip}{0pt plus 5cm}create\-Super\-User (
+\begin{DoxyParamCaption}
+\item[{}]{\$email, }
+\item[{}]{\$name, }
+\item[{}]{\$pass}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [final]}}}\label{classlog_man_ae8162eecf899a411b0f91d013d16cda3}
+Create admin user in database
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$\-\_\-\-P\-O\-S\-T} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array \$this-\/$>$status 
+\end{DoxyReturn}
+
+
+Definition at line 121 of file login.\-management.\-logman.\-php.
+
+\hypertarget{classlog_man_a9aea96aaeaf1efd5531eb1867ee67ca6}{\index{log\-Man@{log\-Man}!destroy\-Session@{destroy\-Session}}
+\index{destroy\-Session@{destroy\-Session}!logMan@{log\-Man}}
+\subsubsection[{destroy\-Session}]{\setlength{\rightskip}{0pt plus 5cm}destroy\-Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [final]}}}\label{classlog_man_a9aea96aaeaf1efd5531eb1867ee67ca6}
+Destroy exist session 
+
+Definition at line 413 of file login.\-management.\-logman.\-php.
+
+\hypertarget{classlog_man_a52a57cda7a4b849ed18d5c7133f75256}{\index{log\-Man@{log\-Man}!edit\-Perm@{edit\-Perm}}
+\index{edit\-Perm@{edit\-Perm}!logMan@{log\-Man}}
+\subsubsection[{edit\-Perm}]{\setlength{\rightskip}{0pt plus 5cm}edit\-Perm (
+\begin{DoxyParamCaption}
+\item[{}]{\$login = {\ttfamily null}, }
+\item[{}]{\$perm = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [final]}}}\label{classlog_man_a52a57cda7a4b849ed18d5c7133f75256}
+Update perm in \hyperlink{classlog_man}{log\-Man}
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & \\
+\hline
+{\em int} & (1000$\sim$1111)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int O\-R false 
+\end{DoxyReturn}
+
+
+Definition at line 80 of file login.\-management.\-logman.\-php.
+
+\hypertarget{classlog_man_af787db5c087b93924fc5ac54e14775d5}{\index{log\-Man@{log\-Man}!ereg@{ereg}}
+\index{ereg@{ereg}!logMan@{log\-Man}}
+\subsubsection[{ereg}]{\setlength{\rightskip}{0pt plus 5cm}ereg (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [final]}}}\label{classlog_man_af787db5c087b93924fc5ac54e14775d5}
+Create new user in database
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$\-\_\-\-P\-O\-S\-T} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array \$this-\/$>$status 
+\end{DoxyReturn}
+
+
+Definition at line 162 of file login.\-management.\-logman.\-php.
+
+\hypertarget{classlog_man_a3884708300d256bc4e2aed3d425ec00a}{\index{log\-Man@{log\-Man}!get\-Perm@{get\-Perm}}
+\index{get\-Perm@{get\-Perm}!logMan@{log\-Man}}
+\subsubsection[{get\-Perm}]{\setlength{\rightskip}{0pt plus 5cm}get\-Perm (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [final]}}}\label{classlog_man_a3884708300d256bc4e2aed3d425ec00a}
+Returned actual user permission
+
+\begin{DoxyReturn}{Returns}
+int(4) 
+\end{DoxyReturn}
+
+
+Definition at line 109 of file login.\-management.\-logman.\-php.
+
+\hypertarget{classlog_man_a0055230648d2a2484c489013a475c3d7}{\index{log\-Man@{log\-Man}!get\-Session\-Data@{get\-Session\-Data}}
+\index{get\-Session\-Data@{get\-Session\-Data}!logMan@{log\-Man}}
+\subsubsection[{get\-Session\-Data}]{\setlength{\rightskip}{0pt plus 5cm}get\-Session\-Data (
+\begin{DoxyParamCaption}
+\item[{}]{\$name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [final]}}}\label{classlog_man_a0055230648d2a2484c489013a475c3d7}
+Get data from session storage 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+multitype 
+\end{DoxyReturn}
+
+
+Definition at line 437 of file login.\-management.\-logman.\-php.
+
+\hypertarget{classlog_man_ae99d103123f211eb28e19c09f7fd134e}{\index{log\-Man@{log\-Man}!get\-Signed\-User@{get\-Signed\-User}}
+\index{get\-Signed\-User@{get\-Signed\-User}!logMan@{log\-Man}}
+\subsubsection[{get\-Signed\-User}]{\setlength{\rightskip}{0pt plus 5cm}get\-Signed\-User (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [final]}}}\label{classlog_man_ae99d103123f211eb28e19c09f7fd134e}
+Get all information about signed user
+
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Definition at line 452 of file login.\-management.\-logman.\-php.
+
+\hypertarget{classlog_man_aa966adc12c56a4cc70da92207fa50929}{\index{log\-Man@{log\-Man}!install@{install}}
+\index{install@{install}!logMan@{log\-Man}}
+\subsubsection[{install}]{\setlength{\rightskip}{0pt plus 5cm}install (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [final]}}}\label{classlog_man_aa966adc12c56a4cc70da92207fa50929}
+Install \hyperlink{classlog_man}{log\-Man} if table not exist
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Definition at line 43 of file login.\-management.\-logman.\-php.
+
+\hypertarget{classlog_man_a3b510811361c14194c4c54177f000f2d}{\index{log\-Man@{log\-Man}!login@{login}}
+\index{login@{login}!logMan@{log\-Man}}
+\subsubsection[{login}]{\setlength{\rightskip}{0pt plus 5cm}login (
+\begin{DoxyParamCaption}
+\item[{}]{\$ajax}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [final]}}}\label{classlog_man_a3b510811361c14194c4c54177f000f2d}
+Login with ajax
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$ajax} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array \$this-\/$>$status 
+\end{DoxyReturn}
+
+
+Definition at line 203 of file login.\-management.\-logman.\-php.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/peter/git/\-Open\-Sencillo/fw\-\_\-libraries/login.\-management.\-logman.\-php\end{DoxyCompactItemize}

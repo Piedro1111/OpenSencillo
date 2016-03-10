@@ -21,7 +21,7 @@ class translate extends fileSystem
 		
 		if(file_exists($this->name))
 		{
-			$this->tSource = json_decode($this->read(),true);	
+			$this->tSource = json_decode($this->read(),true);
 		}
 	}
 	

@@ -1,9 +1,9 @@
 <?php
 /*~ index.php
 .---------------------------------------------------------------------------.
-|  Software: Sencillo Index                                                 |
-|   Version: 2015.003                                                       |
-|   Contact: ph@mastery.sk                                                  |
+|  Software: OpenSencillo Index                                             |
+|   Version: 2015.109                                                       |
+|   Contact: info@opensencillo.com                                          |
 | ------------------------------------------------------------------------- |
 |    Author: Bc. Peter Horváth (original founder)                           |
 | Copyright (c) 2015, Bc. Peter Horváth. All Rights Reserved.               |
@@ -17,8 +17,9 @@
 ~*/
 if(file_exists('yourcode.php'))
 {
-	require('basicstrap.php');
-	require('yourcode.php');
+	session_start();
+	require(__DIR__ . '/basicstrap.php');
+	require(__DIR__ . '/yourcode.php');
 }
 else 
 {

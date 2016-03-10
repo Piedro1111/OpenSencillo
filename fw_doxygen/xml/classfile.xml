@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classfile" kind="class" prot="public">
+    <compoundname>file</compoundname>
+    <basecompoundref refid="classfile_system" prot="public" virt="non-virtual">fileSystem</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfile_1a4717bbfc70a40a57ee741ed70766c309" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>__construct</definition>
+        <argsstring>($name)</argsstring>
+        <name>__construct</name>
+        <param>
+          <declname>$name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Switch folders chmod to 0777 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_functions.php" line="68" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_functions.php" bodystart="68" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="classfile_1a421831a265621325e1fdd19aace0c758" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>__destruct</definition>
+        <argsstring>()</argsstring>
+        <name>__destruct</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Switch folders chmod to 0700 <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_functions.php" line="82" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_functions.php" bodystart="82" bodyend="91"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="19">
+        <label>file</label>
+        <link refid="classfile"/>
+        <childnode refid="20" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>fileSystem</label>
+        <link refid="classfile_system"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="21">
+        <label>file</label>
+        <link refid="classfile"/>
+        <childnode refid="22" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>fileSystem</label>
+        <link refid="classfile_system"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/peter/git/OpenSencillo/fw_core/core_functions.php" line="63" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_functions.php" bodystart="62" bodyend="92"/>
+    <listofallmembers>
+      <member refid="classfile_system_1ab2fc40d43824ea3e1ce5d86dee0d763b" prot="public" virt="non-virtual"><scope>file</scope><name>$name</name></member>
+      <member refid="classfile_1a4717bbfc70a40a57ee741ed70766c309" prot="public" virt="non-virtual"><scope>file</scope><name>__construct</name></member>
+      <member refid="classfile_1a421831a265621325e1fdd19aace0c758" prot="public" virt="non-virtual"><scope>file</scope><name>__destruct</name></member>
+      <member refid="classfile_system_1a64571309bfb3238c65fd3c2898f92440" prot="public" virt="non-virtual"><scope>file</scope><name>read</name></member>
+      <member refid="classfile_system_1a85013b0dcf138f6997e2a05332ed0dd5" prot="public" virt="non-virtual"><scope>file</scope><name>write</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

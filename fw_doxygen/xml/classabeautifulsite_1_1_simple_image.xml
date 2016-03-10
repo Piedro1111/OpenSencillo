@@ -1,0 +1,1675 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classabeautifulsite_1_1_simple_image" kind="class" prot="public">
+    <compoundname>abeautifulsite::SimpleImage</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classabeautifulsite_1_1_simple_image_1a0e342ea32cccdc2c932ad23b9796a62a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$quality</definition>
+        <argsstring></argsstring>
+        <name>$quality</name>
+        <initializer>= 80</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="27" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classabeautifulsite_1_1_simple_image_1a0722441477f957078ee2437054556cbc" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$filename</definition>
+        <argsstring></argsstring>
+        <name>$filename</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="29" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classabeautifulsite_1_1_simple_image_1ab0f3ea69c9d9d311d11940fe4784a353" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$original_info</definition>
+        <argsstring></argsstring>
+        <name>$original_info</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="29" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classabeautifulsite_1_1_simple_image_1a5795120b4b324bc4ca83f1e6fdce7d57" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$width</definition>
+        <argsstring></argsstring>
+        <name>$width</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="29" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classabeautifulsite_1_1_simple_image_1a2c265bba1724371bb03e6901297c30b2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$height</definition>
+        <argsstring></argsstring>
+        <name>$height</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="29" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classabeautifulsite_1_1_simple_image_1a3abffbc75cede9a7ba56156c8dec06c0" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$imagestring</definition>
+        <argsstring></argsstring>
+        <name>$imagestring</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="29" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classabeautifulsite_1_1_simple_image_1aac6146b4cdec66c94263ddb55afd5946" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>$image</definition>
+        <argsstring></argsstring>
+        <name>$image</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="29" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1ae69773d7ae7457ff1524174317f6ad62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>__construct</definition>
+        <argsstring>($filename=null, $width=null, $height=null, $color=null)</argsstring>
+        <name>__construct</name>
+        <param>
+          <declname>$filename</declname>
+          <defval>null</defval>
+        </param>
+        <param>
+          <declname>$width</declname>
+          <defval>null</defval>
+        </param>
+        <param>
+          <declname>$height</declname>
+          <defval>null</defval>
+        </param>
+        <param>
+          <declname>$color</declname>
+          <defval>null</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create instance and load an image, or create an image from scratch</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>null</parametertype>
+<parametertype>string</parametertype>
+<parametername>$filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to image file (may be omitted to create image from scratch) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Image width (is used for creating image from scratch) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>null</parametertype>
+<parametername>$height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If omitted - assumed equal to $width (is used for creating image from scratch) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>null</parametertype>
+<parametertype>string</parametertype>
+<parametername>$color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Hex color string, array(red, green, blue) or array(red, green, blue, alpha). Where red, green, blue - integers 0-255, alpha - integer 0-127<linebreak/>
+ (is used for creating image from scratch)</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classabeautifulsite_1_1_simple_image" kindref="compound">SimpleImage</ref> </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>Exception</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="45" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="45" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1a421831a265621325e1fdd19aace0c758" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>__destruct</definition>
+        <argsstring>()</argsstring>
+        <name>__destruct</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destroy image resource </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="58" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="58" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1a1e67e72870ddf87f3d16b3010cd7d3f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>adaptive_resize</definition>
+        <argsstring>($width, $height=null)</argsstring>
+        <name>adaptive_resize</name>
+        <param>
+          <declname>$width</declname>
+        </param>
+        <param>
+          <declname>$height</declname>
+          <defval>null</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adaptive resize</para><para>This function has been deprecated and will be removed in an upcoming release. Please update your code to use the <computeroutput><ref refid="classabeautifulsite_1_1_simple_image_1a48003368138dcf4baf3e06f5e5599b8d" kindref="member">thumbnail()</ref></computeroutput> method instead. The arguments for both methods are exactly the same.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>null</parametertype>
+<parametername>$height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If omitted - assumed equal to $width</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classabeautifulsite_1_1_simple_image" kindref="compound">SimpleImage</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="77" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="77" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1a0ed80eb3d0f683447f8c163aba89cc84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>auto_orient</definition>
+        <argsstring>()</argsstring>
+        <name>auto_orient</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Rotates and/or flips an image automatically so the orientation will be correct (based on exif &apos;Orientation&apos;)</para><para><simplesect kind="return"><para><ref refid="classabeautifulsite_1_1_simple_image" kindref="compound">SimpleImage</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="89" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="89" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1aaced3f2b7cc91ab8891d9248139338cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>best_fit</definition>
+        <argsstring>($max_width, $max_height)</argsstring>
+        <name>best_fit</name>
+        <param>
+          <declname>$max_width</declname>
+        </param>
+        <param>
+          <declname>$max_height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Best fit (proportionally resize to fit in specified width/height)</para><para>Shrink the image proportionally to fit inside a $width x $height box</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$max_width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$max_height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classabeautifulsite_1_1_simple_image" kindref="compound">SimpleImage</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="142" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="142" bodyend="169"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1a693a4a7bc49924eb8c7ca586c3fbc2ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>blur</definition>
+        <argsstring>($type= &apos;selective&apos;, $passes=1)</argsstring>
+        <name>blur</name>
+        <param>
+          <declname>$type</declname>
+          <defval>&apos;selective&apos;</defval>
+        </param>
+        <param>
+          <declname>$passes</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Blur</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>selective|gaussian </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$passes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of times to apply the filter</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classabeautifulsite_1_1_simple_image" kindref="compound">SimpleImage</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="180" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="180" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1af571c7cddbd8021822dc8a6c36bd4059" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>brightness</definition>
+        <argsstring>($level)</argsstring>
+        <name>brightness</name>
+        <param>
+          <declname>$level</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Brightness</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Darkest = -255, lightest = 255</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classabeautifulsite_1_1_simple_image" kindref="compound">SimpleImage</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="203" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="203" bodyend="206"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1a7af23605eb273c1084cbbf092bf69c50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>contrast</definition>
+        <argsstring>($level)</argsstring>
+        <name>contrast</name>
+        <param>
+          <declname>$level</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Contrast</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Min = -100, max = 100</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classabeautifulsite_1_1_simple_image" kindref="compound">SimpleImage</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="217" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="217" bodyend="220"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1ab133aa5541f0ae97c49d5729ace52c62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>colorize</definition>
+        <argsstring>($color, $opacity)</argsstring>
+        <name>colorize</name>
+        <param>
+          <declname>$color</declname>
+        </param>
+        <param>
+          <declname>$opacity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Colorize</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Hex color string, array(red, green, blue) or array(red, green, blue, alpha). Where red, green, blue - integers 0-255, alpha - integer 0-127 </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>float</parametertype>
+<parametertype>int</parametertype>
+<parametername>$opacity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>0-1</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classabeautifulsite_1_1_simple_image" kindref="compound">SimpleImage</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="232" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="232" bodyend="237"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1aae0bbd9a1af614db7c62fcfcdb906ecb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>create</definition>
+        <argsstring>($width, $height=null, $color=null)</argsstring>
+        <name>create</name>
+        <param>
+          <declname>$width</declname>
+        </param>
+        <param>
+          <declname>$height</declname>
+          <defval>null</defval>
+        </param>
+        <param>
+          <declname>$color</declname>
+          <defval>null</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create an image from scratch</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Image width </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>null</parametertype>
+<parametername>$height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If omitted - assumed equal to $width </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>null</parametertype>
+<parametertype>string</parametertype>
+<parametername>$color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Hex color string, array(red, green, blue) or array(red, green, blue, alpha). Where red, green, blue - integers 0-255, alpha - integer 0-127</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classabeautifulsite_1_1_simple_image" kindref="compound">SimpleImage</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="250" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="250" bodyend="271"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1a4363bcc58d31e100cc126fafad73ef1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>crop</definition>
+        <argsstring>($x1, $y1, $x2, $y2)</argsstring>
+        <name>crop</name>
+        <param>
+          <declname>$x1</declname>
+        </param>
+        <param>
+          <declname>$y1</declname>
+        </param>
+        <param>
+          <declname>$x2</declname>
+        </param>
+        <param>
+          <declname>$y2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Crop an image</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$x1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$y1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Top </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$x2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Right </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$y2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bottom</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classabeautifulsite_1_1_simple_image" kindref="compound">SimpleImage</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="284" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="284" bodyend="309"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1aac9e0740c42741b5b9f2e61991a34112" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>desaturate</definition>
+        <argsstring>()</argsstring>
+        <name>desaturate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Desaturate (grayscale)</para><para><simplesect kind="return"><para><ref refid="classabeautifulsite_1_1_simple_image" kindref="compound">SimpleImage</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="317" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="317" bodyend="320"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1aed0804dc7416329172ab55bcbf1d41b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>edges</definition>
+        <argsstring>()</argsstring>
+        <name>edges</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Edge Detect</para><para><simplesect kind="return"><para><ref refid="classabeautifulsite_1_1_simple_image" kindref="compound">SimpleImage</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="328" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="328" bodyend="331"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1aabc8c1473621bfe3e064dd0a756c935e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>emboss</definition>
+        <argsstring>()</argsstring>
+        <name>emboss</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Emboss</para><para><simplesect kind="return"><para><ref refid="classabeautifulsite_1_1_simple_image" kindref="compound">SimpleImage</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="339" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="339" bodyend="342"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1aaa59492eca3655d941d74c92eff212e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fill</definition>
+        <argsstring>($color= &apos;#000000&apos;)</argsstring>
+        <name>fill</name>
+        <param>
+          <declname>$color</declname>
+          <defval>&apos;#000000&apos;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Fill image with color</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Hex color string, array(red, green, blue) or array(red, green, blue, alpha). Where red, green, blue - integers 0-255, alpha - integer 0-127</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classabeautifulsite_1_1_simple_image" kindref="compound">SimpleImage</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="353" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="353" bodyend="363"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1a8336e743a25f5301892696cd7c394f1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fit_to_height</definition>
+        <argsstring>($height)</argsstring>
+        <name>fit_to_height</name>
+        <param>
+          <declname>$height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Fit to height (proportionally resize to specified height)</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classabeautifulsite_1_1_simple_image" kindref="compound">SimpleImage</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="373" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="373" bodyend="380"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1ac94ed3e74548edbf50883dc09790ab16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fit_to_width</definition>
+        <argsstring>($width)</argsstring>
+        <name>fit_to_width</name>
+        <param>
+          <declname>$width</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Fit to width (proportionally resize to specified width)</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classabeautifulsite_1_1_simple_image" kindref="compound">SimpleImage</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="390" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="390" bodyend="397"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1afbed21df0630ae4d62c6ba38edd6f9d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>flip</definition>
+        <argsstring>($direction)</argsstring>
+        <name>flip</name>
+        <param>
+          <declname>$direction</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Flip an image horizontally or vertically</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$direction</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>x|y</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classabeautifulsite_1_1_simple_image" kindref="compound">SimpleImage</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="407" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="407" bodyend="430"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1a0acd49b80218568ea04e7a5886373c54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>get_height</definition>
+        <argsstring>()</argsstring>
+        <name>get_height</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the current height</para><para><simplesect kind="return"><para>int </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="438" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="438" bodyend="440"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1a6bb3cbd0b8cb4156b2521365fca79529" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>get_orientation</definition>
+        <argsstring>()</argsstring>
+        <name>get_orientation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the current orientation</para><para><simplesect kind="return"><para>string portrait|landscape|square </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="448" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="448" bodyend="460"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1a2514a0242e2b19b8b5fcbd7a79db5527" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>get_original_info</definition>
+        <argsstring>()</argsstring>
+        <name>get_original_info</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get info about the original image</para><para><simplesect kind="return"><para>array <preformatted> array(
+    width        =&gt; 320,
+    height       =&gt; 200,
+    orientation  =&gt; [&apos;portrait&apos;, &apos;landscape&apos;, &apos;square&apos;],
+    exif         =&gt; array(...),
+    mime         =&gt; [&apos;image/jpeg&apos;, &apos;image/gif&apos;, &apos;image/png&apos;],
+    format       =&gt; [&apos;jpeg&apos;, &apos;gif&apos;, &apos;png&apos;]
+)</preformatted> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="475" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="475" bodyend="477"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1abb10ccd258503d273acaf265bf1b1535" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>get_width</definition>
+        <argsstring>()</argsstring>
+        <name>get_width</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the current width</para><para><simplesect kind="return"><para>int </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="485" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="485" bodyend="487"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1a70a743c63f97d5bbfdb2cdab7d186938" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>invert</definition>
+        <argsstring>()</argsstring>
+        <name>invert</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Invert</para><para><simplesect kind="return"><para><ref refid="classabeautifulsite_1_1_simple_image" kindref="compound">SimpleImage</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="495" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="495" bodyend="498"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1a585c262d16bad21a05af8804df8372b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>load</definition>
+        <argsstring>($filename)</argsstring>
+        <name>load</name>
+        <param>
+          <declname>$filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Load an image</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to image file</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classabeautifulsite_1_1_simple_image" kindref="compound">SimpleImage</ref> </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>Exception</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="509" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="509" bodyend="517"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1a21c21cee2c0a9cd9e8965a684f50e8e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>load_base64</definition>
+        <argsstring>($base64string)</argsstring>
+        <name>load_base64</name>
+        <param>
+          <declname>$base64string</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Load a base64 string as image</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>base64 string</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classabeautifulsite_1_1_simple_image" kindref="compound">SimpleImage</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="527" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="527" bodyend="535"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1a4f2623f77a0eb2993c39668604b9d028" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mean_remove</definition>
+        <argsstring>()</argsstring>
+        <name>mean_remove</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Mean Remove</para><para><simplesect kind="return"><para><ref refid="classabeautifulsite_1_1_simple_image" kindref="compound">SimpleImage</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="543" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="543" bodyend="546"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1add5b914f35ec96d98f9e3026693a627d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>opacity</definition>
+        <argsstring>($opacity)</argsstring>
+        <name>opacity</name>
+        <param>
+          <declname>$opacity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Changes the opacity level of the image</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>float</parametertype>
+<parametertype>int</parametertype>
+<parametername>$opacity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>0-1</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>Exception</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="556" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="556" bodyend="576"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1a1d8a0c4ee571db448e556caed12028d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>output</definition>
+        <argsstring>($format=null, $quality=null)</argsstring>
+        <name>output</name>
+        <param>
+          <declname>$format</declname>
+          <defval>null</defval>
+        </param>
+        <param>
+          <declname>$quality</declname>
+          <defval>null</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Outputs image without saving</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>null</parametertype>
+<parametertype>string</parametertype>
+<parametername>$format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If omitted or null - format of original file will be used, may be gif|jpg|png </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>null</parametertype>
+<parametername>$quality</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output image quality in percents 0-100</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>Exception</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="587" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="587" bodyend="632"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1acd08ab8d9a2213db91dc8a4cd533fedc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>output_base64</definition>
+        <argsstring>($format=null, $quality=null)</argsstring>
+        <name>output_base64</name>
+        <param>
+          <declname>$format</declname>
+          <defval>null</defval>
+        </param>
+        <param>
+          <declname>$quality</declname>
+          <defval>null</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Outputs image as data base64 to use as img src</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>null</parametertype>
+<parametertype>string</parametertype>
+<parametername>$format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If omitted or null - format of original file will be used, may be gif|jpg|png </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>null</parametertype>
+<parametername>$quality</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output image quality in percents 0-100</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>string </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>Exception</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="644" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="644" bodyend="691"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1ab2dbc20c617a63e98ab1249031a4f65a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>overlay</definition>
+        <argsstring>($overlay, $position= &apos;center&apos;, $opacity=1, $x_offset=0, $y_offset=0)</argsstring>
+        <name>overlay</name>
+        <param>
+          <declname>$overlay</declname>
+        </param>
+        <param>
+          <declname>$position</declname>
+          <defval>&apos;center&apos;</defval>
+        </param>
+        <param>
+          <declname>$opacity</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <declname>$x_offset</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <declname>$y_offset</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Overlay</para><para>Overlay an image on top of another, works with 24-bit PNG alpha-transparency</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$overlay</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An image filename or a <ref refid="classabeautifulsite_1_1_simple_image" kindref="compound">SimpleImage</ref> object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>center|top|left|bottom|right|top left|top right|bottom left|bottom right </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>float</parametertype>
+<parametertype>int</parametertype>
+<parametername>$opacity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Overlay opacity 0-1 </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$x_offset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Horizontal offset in pixels </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$y_offset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vertical offset in pixels</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classabeautifulsite_1_1_simple_image" kindref="compound">SimpleImage</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="707" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="707" bodyend="763"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1a682af070180fbd1f3734653757403139" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>pixelate</definition>
+        <argsstring>($block_size=10)</argsstring>
+        <name>pixelate</name>
+        <param>
+          <declname>$block_size</declname>
+          <defval>10</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pixelate</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$block_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size in pixels of each resulting block</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classabeautifulsite_1_1_simple_image" kindref="compound">SimpleImage</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="773" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="773" bodyend="776"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1aa22cf38c82a9f8234d99293ada1f70fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>resize</definition>
+        <argsstring>($width, $height)</argsstring>
+        <name>resize</name>
+        <param>
+          <declname>$width</declname>
+        </param>
+        <param>
+          <declname>$height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Resize an image to the specified dimensions</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classabeautifulsite_1_1_simple_image" kindref="compound">SimpleImage</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="787" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="787" bodyend="817"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1a2c6d126f21bff5223d7d7f9bdb54cf79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>rotate</definition>
+        <argsstring>($angle, $bg_color= &apos;#000000&apos;)</argsstring>
+        <name>rotate</name>
+        <param>
+          <declname>$angle</declname>
+        </param>
+        <param>
+          <declname>$bg_color</declname>
+          <defval>&apos;#000000&apos;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Rotate an image</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$angle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>0-360 </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$bg_color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Hex color string, array(red, green, blue) or array(red, green, blue, alpha). Where red, green, blue - integers 0-255, alpha - integer 0-127</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classabeautifulsite_1_1_simple_image" kindref="compound">SimpleImage</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="829" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="829" bodyend="845"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1a23cd0d0e54d1453a48d8d21ff9f65ae6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>save</definition>
+        <argsstring>($filename=null, $quality=null)</argsstring>
+        <name>save</name>
+        <param>
+          <declname>$filename</declname>
+          <defval>null</defval>
+        </param>
+        <param>
+          <declname>$quality</declname>
+          <defval>null</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Save an image</para><para>The resulting format will be determined by the file extension.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>null</parametertype>
+<parametertype>string</parametertype>
+<parametername>$filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If omitted - original file will be overwritten </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>null</parametertype>
+<parametertype>int</parametertype>
+<parametername>$quality</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output image quality in percents 0-100</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classabeautifulsite_1_1_simple_image" kindref="compound">SimpleImage</ref> </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>Exception</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="859" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="859" bodyend="889"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1a4723159606519b101e408854bc65ee35" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>sepia</definition>
+        <argsstring>()</argsstring>
+        <name>sepia</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sepia</para><para><simplesect kind="return"><para><ref refid="classabeautifulsite_1_1_simple_image" kindref="compound">SimpleImage</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="897" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="897" bodyend="901"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1afc92209cb2a19193d46a9338b13a3bb9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>sketch</definition>
+        <argsstring>()</argsstring>
+        <name>sketch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sketch</para><para><simplesect kind="return"><para><ref refid="classabeautifulsite_1_1_simple_image" kindref="compound">SimpleImage</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="909" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="909" bodyend="912"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1a7ebc6366f3da2bf2af1608663fdb7a09" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>smooth</definition>
+        <argsstring>($level)</argsstring>
+        <name>smooth</name>
+        <param>
+          <declname>$level</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Smooth</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Min = -10, max = 10</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classabeautifulsite_1_1_simple_image" kindref="compound">SimpleImage</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="922" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="922" bodyend="925"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1a7dff268d38b2b142b38c7a495bc439c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>text</definition>
+        <argsstring>($text, $font_file, $font_size=12, $color= &apos;#000000&apos;, $position= &apos;center&apos;, $x_offset=0, $y_offset=0)</argsstring>
+        <name>text</name>
+        <param>
+          <declname>$text</declname>
+        </param>
+        <param>
+          <declname>$font_file</declname>
+        </param>
+        <param>
+          <declname>$font_size</declname>
+          <defval>12</defval>
+        </param>
+        <param>
+          <declname>$color</declname>
+          <defval>&apos;#000000&apos;</defval>
+        </param>
+        <param>
+          <declname>$position</declname>
+          <defval>&apos;center&apos;</defval>
+        </param>
+        <param>
+          <declname>$x_offset</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <declname>$y_offset</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add text to an image</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$font_file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>float</parametertype>
+<parametertype>int</parametertype>
+<parametername>$font_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$x_offset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$y_offset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classabeautifulsite_1_1_simple_image" kindref="compound">SimpleImage</ref> </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>Exception</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="942" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="942" bodyend="1005"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1a48003368138dcf4baf3e06f5e5599b8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>thumbnail</definition>
+        <argsstring>($width, $height=null)</argsstring>
+        <name>thumbnail</name>
+        <param>
+          <declname>$width</declname>
+        </param>
+        <param>
+          <declname>$height</declname>
+          <defval>null</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Thumbnail</para><para>This function attempts to get the image to as close to the provided dimensions as possible, and then crops the remaining overflow (from the center) to get the image to be the size specified. Useful for generating thumbnails.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametername>$width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>null</parametertype>
+<parametername>$height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If omitted - assumed equal to $width</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classabeautifulsite_1_1_simple_image" kindref="compound">SimpleImage</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="1019" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="1019" bodyend="1040"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1ae0e4ad34b7a0b6a4b7e582c4676bd60f" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>file_ext</definition>
+        <argsstring>($filename)</argsstring>
+        <name>file_ext</name>
+        <param>
+          <declname>$filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the file extension of the specified file</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>string </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="1050" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="1050" bodyend="1058"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1a6ed959330a006f41f6c48bcbb9aa2f86" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>get_meta_data</definition>
+        <argsstring>()</argsstring>
+        <name>get_meta_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get meta data of image or base64 string</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametertype>null</parametertype>
+<parametername>$imagestring</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If omitted treat as a normal image</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classabeautifulsite_1_1_simple_image" kindref="compound">SimpleImage</ref> </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>Exception</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="1069" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="1069" bodyend="1110"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1a725590e68594a12d631830dfce494571" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>imagecopymerge_alpha</definition>
+        <argsstring>($dst_im, $src_im, $dst_x, $dst_y, $src_x, $src_y, $src_w, $src_h, $pct)</argsstring>
+        <name>imagecopymerge_alpha</name>
+        <param>
+          <declname>$dst_im</declname>
+        </param>
+        <param>
+          <declname>$src_im</declname>
+        </param>
+        <param>
+          <declname>$dst_x</declname>
+        </param>
+        <param>
+          <declname>$dst_y</declname>
+        </param>
+        <param>
+          <declname>$src_x</declname>
+        </param>
+        <param>
+          <declname>$src_y</declname>
+        </param>
+        <param>
+          <declname>$src_w</declname>
+        </param>
+        <param>
+          <declname>$src_h</declname>
+        </param>
+        <param>
+          <declname>$pct</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Same as PHP&apos;s imagecopymerge() function, except preserves alpha-transparency in 24-bit PNGs</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>$dst_im</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>$src_im</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>$dst_x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>$dst_y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>$src_x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>$src_y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>$src_w</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>$src_h</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>$pct</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="" kindref="compound">http://www.php.net/manual/en/function.imagecopymerge.php#88456</ref></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="1128" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="1128" bodyend="1177"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1a4b91068cc14980876d02cb4d51996c36" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>keep_within</definition>
+        <argsstring>($value, $min, $max)</argsstring>
+        <name>keep_within</name>
+        <param>
+          <declname>$value</declname>
+        </param>
+        <param>
+          <declname>$min</declname>
+        </param>
+        <param>
+          <declname>$max</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Ensures $value is always within $min and $max range.</para><para>If lower, $min is returned. If higher, $max is returned.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>float</parametertype>
+<parametername>$value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>float</parametertype>
+<parametername>$min</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>int</parametertype>
+<parametertype>float</parametertype>
+<parametername>$max</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>int|float </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="1191" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="1191" bodyend="1203"/>
+      </memberdef>
+      <memberdef kind="function" id="classabeautifulsite_1_1_simple_image_1aa0cce094a549fbed2a9e7288bd15221f" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>normalize_color</definition>
+        <argsstring>($color)</argsstring>
+        <name>normalize_color</name>
+        <param>
+          <declname>$color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Converts a hex color value to its RGB equivalent</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Hex color string, array(red, green, blue) or array(red, green, blue, alpha). Where red, green, blue - integers 0-255, alpha - integer 0-127</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>array|bool </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="1214" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="1214" bodyend="1262"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" line="21" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/simple.image.simp.php" bodystart="21" bodyend="1264"/>
+    <listofallmembers>
+      <member refid="classabeautifulsite_1_1_simple_image_1a0722441477f957078ee2437054556cbc" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>$filename</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1a2c265bba1724371bb03e6901297c30b2" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>$height</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1aac6146b4cdec66c94263ddb55afd5946" prot="protected" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>$image</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1a3abffbc75cede9a7ba56156c8dec06c0" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>$imagestring</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1ab0f3ea69c9d9d311d11940fe4784a353" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>$original_info</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1a0e342ea32cccdc2c932ad23b9796a62a" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>$quality</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1a5795120b4b324bc4ca83f1e6fdce7d57" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>$width</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1ae69773d7ae7457ff1524174317f6ad62" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>__construct</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1a421831a265621325e1fdd19aace0c758" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>__destruct</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1a1e67e72870ddf87f3d16b3010cd7d3f2" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>adaptive_resize</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1a0ed80eb3d0f683447f8c163aba89cc84" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>auto_orient</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1aaced3f2b7cc91ab8891d9248139338cf" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>best_fit</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1a693a4a7bc49924eb8c7ca586c3fbc2ba" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>blur</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1af571c7cddbd8021822dc8a6c36bd4059" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>brightness</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1ab133aa5541f0ae97c49d5729ace52c62" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>colorize</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1a7af23605eb273c1084cbbf092bf69c50" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>contrast</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1aae0bbd9a1af614db7c62fcfcdb906ecb" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>create</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1a4363bcc58d31e100cc126fafad73ef1a" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>crop</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1aac9e0740c42741b5b9f2e61991a34112" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>desaturate</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1aed0804dc7416329172ab55bcbf1d41b7" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>edges</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1aabc8c1473621bfe3e064dd0a756c935e" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>emboss</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1ae0e4ad34b7a0b6a4b7e582c4676bd60f" prot="protected" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>file_ext</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1aaa59492eca3655d941d74c92eff212e9" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>fill</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1a8336e743a25f5301892696cd7c394f1f" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>fit_to_height</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1ac94ed3e74548edbf50883dc09790ab16" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>fit_to_width</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1afbed21df0630ae4d62c6ba38edd6f9d1" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>flip</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1a0acd49b80218568ea04e7a5886373c54" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>get_height</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1a6ed959330a006f41f6c48bcbb9aa2f86" prot="protected" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>get_meta_data</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1a6bb3cbd0b8cb4156b2521365fca79529" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>get_orientation</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1a2514a0242e2b19b8b5fcbd7a79db5527" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>get_original_info</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1abb10ccd258503d273acaf265bf1b1535" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>get_width</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1a725590e68594a12d631830dfce494571" prot="protected" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>imagecopymerge_alpha</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1a70a743c63f97d5bbfdb2cdab7d186938" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>invert</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1a4b91068cc14980876d02cb4d51996c36" prot="protected" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>keep_within</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1a585c262d16bad21a05af8804df8372b2" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>load</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1a21c21cee2c0a9cd9e8965a684f50e8e8" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>load_base64</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1a4f2623f77a0eb2993c39668604b9d028" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>mean_remove</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1aa0cce094a549fbed2a9e7288bd15221f" prot="protected" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>normalize_color</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1add5b914f35ec96d98f9e3026693a627d" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>opacity</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1a1d8a0c4ee571db448e556caed12028d1" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>output</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1acd08ab8d9a2213db91dc8a4cd533fedc" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>output_base64</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1ab2dbc20c617a63e98ab1249031a4f65a" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>overlay</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1a682af070180fbd1f3734653757403139" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>pixelate</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1aa22cf38c82a9f8234d99293ada1f70fa" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>resize</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1a2c6d126f21bff5223d7d7f9bdb54cf79" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>rotate</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1a23cd0d0e54d1453a48d8d21ff9f65ae6" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>save</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1a4723159606519b101e408854bc65ee35" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>sepia</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1afc92209cb2a19193d46a9338b13a3bb9" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>sketch</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1a7ebc6366f3da2bf2af1608663fdb7a09" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>smooth</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1a7dff268d38b2b142b38c7a495bc439c0" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>text</name></member>
+      <member refid="classabeautifulsite_1_1_simple_image_1a48003368138dcf4baf3e06f5e5599b8d" prot="public" virt="non-virtual"><scope>abeautifulsite::SimpleImage</scope><name>thumbnail</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

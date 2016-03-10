@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="info__examples_8php" kind="file">
+    <compoundname>info_examples.php</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="info__examples_8php_1ae19722790c6683980bbf0af8572f26ab" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$info</definition>
+        <argsstring></argsstring>
+        <name>$info</name>
+        <initializer>=&apos;test&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_modules/examples/info_examples.php" line="2" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_modules/examples/info_examples.php" bodystart="2" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="2"><highlight class="normal">$info=</highlight><highlight class="stringliteral">&apos;test&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="3"><highlight class="normal">?&gt;</highlight></codeline>
+    </programlisting>
+    <location file="/home/peter/git/OpenSencillo/fw_modules/examples/info_examples.php"/>
+  </compounddef>
+</doxygen>

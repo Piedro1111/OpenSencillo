@@ -12,10 +12,15 @@ class logMan extends mysqlEdit
 {
 	protected $log=array();
 	protected $status=array();
+    protected $mysqlInterface;
 	
 	public function __construct()
 	{
 		parent::__construct(database::host,database::name,database::user,database::pass);
+		$this->mysqlInterface = new mysqlInterface;
+		$this->mysqlInterface->config();
+		$this->mysqlInterface->connect();
+		
 		$this->log['server']=$_SERVER['SERVER_NAME'];
 		$this->log['request']=$_SERVER['REQUEST_URI'];
 		$this->log['port']=$_SERVER['REMOTE_PORT'];
@@ -44,6 +49,12 @@ class logMan extends mysqlEdit
 	{
 		try
 		{
+            $this->newColumn("user_id","INT(1)");
+            $this->newColumn("code","VARCHAR(5)");
+			$this->newColumn("param","INT(1)");
+			$this->newColumn("expire","DATETIME");
+            $this->createTable("usersPasswordCodes");
+            
 			$this->newColumn("sign","TEXT");
 			$this->newColumn("active","INT(1)");
 			$this->newColumn("login","VARCHAR(255)");
@@ -155,11 +166,12 @@ class logMan extends mysqlEdit
 	/**
 	 * Create new user in database
 	 * 
-	 * @param array $_POST
+	 * [@param array $_POST]
+     * @param bool $onlyCheckUser if true set ereg to simulation mode (no insert query)
 	 * 
 	 * @return array $this->status
 	 */
-	final public function ereg()
+	final public function ereg($onlyCheckUser=false)
 	{
 		$this->openTable('users');
 	    if(filter_var($_POST['email'],FILTER_VALIDATE_EMAIL))
@@ -167,11 +179,19 @@ class logMan extends mysqlEdit
 	    	$user=$this->output("`login`='".$_POST['email']."'","`id` ASC",1);
 	    	if($user['line'][1][0]==null)
     	    {
-    	        try 
+    	        try
     	        {
-    	            $this->insert("'first_use',0,'".strtolower($_POST['email'])."',MD5('".$_POST['pass']."'),'".strtolower($_POST['email'])."','".$this->clean(ucwords(strtolower($_POST['fname'])))."','".$this->clean(ucwords(strtolower($_POST['lname'])))."',1000,'".$this->log['external_ip'].":".$this->log['port']."','".$this->log['agent']."',DATE(NOW()),TIME(NOW())");
-    	            $this->status['status']='ok';
-    	            $this->status['code']=200;
+                    if($onlyCheckUser===false)
+                    {
+                        $this->insert("'first_use',0,'".strtolower($_POST['email'])."',MD5('".$_POST['pass']."'),'".strtolower($_POST['email'])."','".$this->clean(ucwords(strtolower($_POST['fname'])))."','".$this->clean(ucwords(strtolower($_POST['lname'])))."',1000,'".$this->log['external_ip'].":".$this->log['port']."','".$this->log['agent']."',DATE(NOW()),TIME(NOW())");
+                        $this->status['status']='ok';
+                        $this->status['code']=200;
+                    }
+    	            else
+                    {
+                        $this->status['status']='email not found';
+                        $this->status['code']=404;
+                    }
     	        }
     	        catch(Exception $e)
     	        {
@@ -179,10 +199,19 @@ class logMan extends mysqlEdit
     	        	$this->status['code']=417;
     	        }
     	    }
-    	    else 
+    	    else
     	    {
-    	    	$this->status['status']='exist';
-    	    	$this->status['code']=409;
+                if($onlyCheckUser===true)
+                {
+                    $this->status['user_array']=$user['line'][1];
+                    $this->status['status']='exist';
+                    $this->status['code']=200;
+                }
+                else
+                {
+                    $this->status['status']='exist';
+                    $this->status['code']=409;
+                }
     	    }
 	    }
 	    else 
@@ -439,9 +468,13 @@ class logMan extends mysqlEdit
 		return $_SESSION[$name];
 	}
 	
+    /**
+     * @todo Login function
+     * @param type $pass
+     */
 	final public function signIn($pass)
 	{
-		
+		//TODO
 	}
 	
 	/**
@@ -454,12 +487,36 @@ class logMan extends mysqlEdit
 		return $this->log;
 	}
 	
+    /**
+     * @todo logout function
+     */
 	final public function signOut()
 	{
 		//TODO
 	}
 	
-	/**
+    /**
+     * Forgot reset code
+     * @return array
+     */
+    final public function forgot()
+    {
+        $this->status = $this->ereg(true);
+        $this->status['confirm-code'] = $this->clean(substr(hash('crc32b',date('YmdHis')),0,5));
+        $this->mysqlInterface->delete('`user_id`='.$this->status['user_array'][0]);
+        $this->mysqlInterface->delete('`expire`<NOW()');
+        if($this->status['code']===200)
+        {
+            $this->mysqlInterface->insert(array('usersPasswordCodes'=> array('user_id'  => $this->status['user_array'][0],
+                                                                             'code'     => $this->status['confirm-code'],
+                                                                             'param'    => 0,
+                                                                             'expire'   => date('Y-m-d H:i:s',strtotime('+1 hour')))),true);
+            $this->mysqlInterface->execute();
+        }
+        return $this->status;
+    }
+
+    /**
 	 * Remove all special characters
 	 * @param string $string
 	 * @return string

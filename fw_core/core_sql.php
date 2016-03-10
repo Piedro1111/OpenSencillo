@@ -26,7 +26,7 @@ class mysql
 	 */
 	public function __construct($DBHost=null,$DBName=null,$DBUser=null,$DBPass=null)
 	{
-		if(empty($DBHost))
+		if(!empty($DBHost))
 		{
 			$this->DBHost = $DBHost;
 			$this->DBName = $DBName;
@@ -411,7 +411,7 @@ class mysqlInterface extends mysqlEdit
 			$values=' VALUES (';
 			foreach($val as $sub_key=>$sub_val)
 			{
-				$col.=$sub_key.',';
+				$col.='`'.$sub_key.'`,';
 				if((is_string($sub_val))&&($stringRewrite))
 				{
 					$values.="'".$sub_val."',";
@@ -555,18 +555,20 @@ class mysqlInterface extends mysqlEdit
 					break;
 					case 'sort':
 						$data_sort=' ORDER BY ';
+						$data_sort_arr=array();
 						foreach($val_col as $key_att=>$val_att)
 						{
 							switch(strtolower($key_att))
 							{
 								case 'asc':
-									$data_sort.=$val_att.' ASC';
+									$data_sort_arr[]=$val_att.' ASC';
 									break;
 								case 'desc':
-									$data_sort.=$val_att.' DESC';
+									$data_sort_arr[]=$val_att.' DESC';
 									break;
 							}
 						}
+						$data_sort.=implode(',',$data_sort_arr);
 					break;
 					case 'like':
 						$data_like=' LIKE '.$val_col;
@@ -610,13 +612,22 @@ class mysqlInterface extends mysqlEdit
 					break;
 				}
 			}
-			$this->save.=(isset($data_set)?' SET '.substr($data_set,0,-1):'').$data_condition.$data_like.$data_sort.(isset($data_limit_max)? ' LIMIT '.$data_limit_start.$data_limit_max : '').';';
+			$this->save.=(isset($data_set)?' SET '.substr($data_set,0,-1):'').$data_join.$data_condition.$data_like.$data_sort.(isset($data_limit_max)? ' LIMIT '.$data_limit_start.$data_limit_max : '').';';
 		}
 		/**
 		 * @TODO out - addcode
 		 */
 		
 		return $this->save;
+	}
+	
+	/**
+	 * Add SQL query
+	 * @param string $sql
+	 */
+	public function addQuery($sql)
+	{
+		$this->save.=$sql;
 	}
 	
 	/**

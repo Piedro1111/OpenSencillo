@@ -1,0 +1,167 @@
+\hypertarget{classmysql}{\section{mysql Class Reference}
+\label{classmysql}\index{mysql@{mysql}}
+}
+Inheritance diagram for mysql\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classmysql}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmysql_a7af15455307c9b6a6c4d51d620014e7d}{\-\_\-\-\_\-construct} (\$D\-B\-Host=null, \$D\-B\-Name=null, \$D\-B\-User=null, \$D\-B\-Pass=null)
+\item 
+\hyperlink{classmysql_a6b251c8058230359b2922377699c4f29}{query} (\$sql)
+\item 
+\hyperlink{classmysql_a5c41f7192b0b3b866e15f56c431ddc36}{write} (\$sql)
+\item 
+\hyperlink{classmysql_aa69c8bf1f1dcf4e72552efff1fe3e87e}{close} ()
+\item 
+\hyperlink{classmysql_ad69dd4607977cae05ebe19d1ae604fb1}{test} ()
+\item 
+\hyperlink{classmysql_a2ddd43b5dd962bf0e23e9ce19e549ff3}{integrity} (\$type)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classmysql_a1a881c28f710232dbf702d93c6a6e865}{{\bfseries \$\-D\-B\-Host}}\label{classmysql_a1a881c28f710232dbf702d93c6a6e865}
+
+\item 
+\hypertarget{classmysql_a3748d4d771a26c5411f1666a3a7a3cd8}{{\bfseries \$\-D\-B\-Name}}\label{classmysql_a3748d4d771a26c5411f1666a3a7a3cd8}
+
+\item 
+\hypertarget{classmysql_af107a7d38167b4ff8f65b395d856f7ab}{{\bfseries \$\-D\-B\-User}}\label{classmysql_af107a7d38167b4ff8f65b395d856f7ab}
+
+\item 
+\hypertarget{classmysql_a8cf3718595a762c1974c4adfa331bc58}{{\bfseries \$\-D\-B\-Pass}}\label{classmysql_a8cf3718595a762c1974c4adfa331bc58}
+
+\item 
+\hypertarget{classmysql_a0debe10448ec56a57b5509648408a549}{{\bfseries \$con}}\label{classmysql_a0debe10448ec56a57b5509648408a549}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 11 of file core\-\_\-sql.\-php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmysql_a7af15455307c9b6a6c4d51d620014e7d}{\index{mysql@{mysql}!\-\_\-\-\_\-construct@{\-\_\-\-\_\-construct}}
+\index{\-\_\-\-\_\-construct@{\-\_\-\-\_\-construct}!mysql@{mysql}}
+\subsubsection[{\-\_\-\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-\-\_\-construct (
+\begin{DoxyParamCaption}
+\item[{}]{\$\-D\-B\-Host = {\ttfamily null}, }
+\item[{}]{\$\-D\-B\-Name = {\ttfamily null}, }
+\item[{}]{\$\-D\-B\-User = {\ttfamily null}, }
+\item[{}]{\$\-D\-B\-Pass = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}\label{classmysql_a7af15455307c9b6a6c4d51d620014e7d}
+Create connection 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$\-D\-B\-Host} & \\
+\hline
+string & {\em \$\-D\-B\-Name} & \\
+\hline
+string & {\em \$\-D\-B\-User} & \\
+\hline
+string & {\em \$\-D\-B\-Pass} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 27 of file core\-\_\-sql.\-php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classmysql_aa69c8bf1f1dcf4e72552efff1fe3e87e}{\index{mysql@{mysql}!close@{close}}
+\index{close@{close}!mysql@{mysql}}
+\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}close (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [final]}}}\label{classmysql_aa69c8bf1f1dcf4e72552efff1fe3e87e}
+Close database connection \begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 73 of file core\-\_\-sql.\-php.
+
+\hypertarget{classmysql_a2ddd43b5dd962bf0e23e9ce19e549ff3}{\index{mysql@{mysql}!integrity@{integrity}}
+\index{integrity@{integrity}!mysql@{mysql}}
+\subsubsection[{integrity}]{\setlength{\rightskip}{0pt plus 5cm}integrity (
+\begin{DoxyParamCaption}
+\item[{}]{\$type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [final]}}}\label{classmysql_a2ddd43b5dd962bf0e23e9ce19e549ff3}
+Integrity check 
+\begin{DoxyParams}{Parameters}
+{\em string} & database type \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 101 of file core\-\_\-sql.\-php.
+
+\hypertarget{classmysql_a6b251c8058230359b2922377699c4f29}{\index{mysql@{mysql}!query@{query}}
+\index{query@{query}!mysql@{mysql}}
+\subsubsection[{query}]{\setlength{\rightskip}{0pt plus 5cm}query (
+\begin{DoxyParamCaption}
+\item[{}]{\$sql}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [final]}}}\label{classmysql_a6b251c8058230359b2922377699c4f29}
+Add query to database 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$sql} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed resources 
+\end{DoxyReturn}
+
+
+Definition at line 54 of file core\-\_\-sql.\-php.
+
+\hypertarget{classmysql_ad69dd4607977cae05ebe19d1ae604fb1}{\index{mysql@{mysql}!test@{test}}
+\index{test@{test}!mysql@{mysql}}
+\subsubsection[{test}]{\setlength{\rightskip}{0pt plus 5cm}test (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [final]}}}\label{classmysql_ad69dd4607977cae05ebe19d1ae604fb1}
+Test connection \begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 82 of file core\-\_\-sql.\-php.
+
+\hypertarget{classmysql_a5c41f7192b0b3b866e15f56c431ddc36}{\index{mysql@{mysql}!write@{write}}
+\index{write@{write}!mysql@{mysql}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}write (
+\begin{DoxyParamCaption}
+\item[{}]{\$sql}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [final]}}}\label{classmysql_a5c41f7192b0b3b866e15f56c431ddc36}
+Add query to database 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$sql} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed resources 
+\end{DoxyReturn}
+
+
+Definition at line 64 of file core\-\_\-sql.\-php.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/peter/git/\-Open\-Sencillo/fw\-\_\-core/core\-\_\-sql.\-php\end{DoxyCompactItemize}

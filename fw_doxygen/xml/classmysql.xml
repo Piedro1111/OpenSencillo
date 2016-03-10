@@ -1,0 +1,300 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classmysql" kind="class" prot="public">
+    <compoundname>mysql</compoundname>
+    <derivedcompoundref refid="classmysql_edit" prot="public" virt="non-virtual">mysqlEdit</derivedcompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classmysql_1a1a881c28f710232dbf702d93c6a6e865" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$DBHost</definition>
+        <argsstring></argsstring>
+        <name>$DBHost</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_sql.php" line="13" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_sql.php" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmysql_1a3748d4d771a26c5411f1666a3a7a3cd8" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$DBName</definition>
+        <argsstring></argsstring>
+        <name>$DBName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_sql.php" line="14" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_sql.php" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmysql_1af107a7d38167b4ff8f65b395d856f7ab" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$DBUser</definition>
+        <argsstring></argsstring>
+        <name>$DBUser</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_sql.php" line="15" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_sql.php" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmysql_1a8cf3718595a762c1974c4adfa331bc58" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$DBPass</definition>
+        <argsstring></argsstring>
+        <name>$DBPass</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_sql.php" line="16" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_sql.php" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmysql_1a0debe10448ec56a57b5509648408a549" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$con</definition>
+        <argsstring></argsstring>
+        <name>$con</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_sql.php" line="18" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_sql.php" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classmysql_1a109f1eeb3d62139fada8587911db5ea1" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$checksum</definition>
+        <argsstring></argsstring>
+        <name>$checksum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_sql.php" line="17" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_sql.php" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmysql_1a7af15455307c9b6a6c4d51d620014e7d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>__construct</definition>
+        <argsstring>($DBHost=null, $DBName=null, $DBUser=null, $DBPass=null)</argsstring>
+        <name>__construct</name>
+        <param>
+          <declname>$DBHost</declname>
+          <defval>null</defval>
+        </param>
+        <param>
+          <declname>$DBName</declname>
+          <defval>null</defval>
+        </param>
+        <param>
+          <declname>$DBUser</declname>
+          <defval>null</defval>
+        </param>
+        <param>
+          <declname>$DBPass</declname>
+          <defval>null</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create connection <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$DBHost</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$DBName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$DBUser</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$DBPass</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_sql.php" line="27" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_sql.php" bodystart="27" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classmysql_1a6b251c8058230359b2922377699c4f29" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="non-virtual">
+        <type></type>
+        <definition>query</definition>
+        <argsstring>($sql)</argsstring>
+        <name>query</name>
+        <param>
+          <declname>$sql</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add query to database <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$sql</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>mixed resources </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_sql.php" line="54" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_sql.php" bodystart="54" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classmysql_1a5c41f7192b0b3b866e15f56c431ddc36" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="non-virtual">
+        <type></type>
+        <definition>write</definition>
+        <argsstring>($sql)</argsstring>
+        <name>write</name>
+        <param>
+          <declname>$sql</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add query to database <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$sql</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>mixed resources </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_sql.php" line="64" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_sql.php" bodystart="64" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classmysql_1aa69c8bf1f1dcf4e72552efff1fe3e87e" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="non-virtual">
+        <type></type>
+        <definition>close</definition>
+        <argsstring>()</argsstring>
+        <name>close</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Close database connection <simplesect kind="return"><para>mixed </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_sql.php" line="73" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_sql.php" bodystart="73" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classmysql_1ad69dd4607977cae05ebe19d1ae604fb1" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="non-virtual">
+        <type></type>
+        <definition>test</definition>
+        <argsstring>()</argsstring>
+        <name>test</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Test connection <simplesect kind="return"><para>mixed </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_sql.php" line="82" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_sql.php" bodystart="82" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="classmysql_1a2ddd43b5dd962bf0e23e9ce19e549ff3" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="non-virtual">
+        <type></type>
+        <definition>integrity</definition>
+        <argsstring>($type)</argsstring>
+        <name>integrity</name>
+        <param>
+          <declname>$type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Integrity check <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>database type </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_sql.php" line="101" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_sql.php" bodystart="101" bodyend="112"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="58">
+        <label>logMan</label>
+        <link refid="classlog_man"/>
+        <childnode refid="57" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="57">
+        <label>mysqlEdit</label>
+        <link refid="classmysql_edit"/>
+        <childnode refid="56" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="59">
+        <label>mysqlInterface</label>
+        <link refid="classmysql_interface"/>
+        <childnode refid="57" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="56">
+        <label>mysql</label>
+        <link refid="classmysql"/>
+      </node>
+    </inheritancegraph>
+    <location file="/home/peter/git/OpenSencillo/fw_core/core_sql.php" line="12" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_sql.php" bodystart="11" bodyend="113"/>
+    <listofallmembers>
+      <member refid="classmysql_1a109f1eeb3d62139fada8587911db5ea1" prot="private" virt="non-virtual"><scope>mysql</scope><name>$checksum</name></member>
+      <member refid="classmysql_1a0debe10448ec56a57b5509648408a549" prot="public" virt="non-virtual"><scope>mysql</scope><name>$con</name></member>
+      <member refid="classmysql_1a1a881c28f710232dbf702d93c6a6e865" prot="public" virt="non-virtual"><scope>mysql</scope><name>$DBHost</name></member>
+      <member refid="classmysql_1a3748d4d771a26c5411f1666a3a7a3cd8" prot="public" virt="non-virtual"><scope>mysql</scope><name>$DBName</name></member>
+      <member refid="classmysql_1a8cf3718595a762c1974c4adfa331bc58" prot="public" virt="non-virtual"><scope>mysql</scope><name>$DBPass</name></member>
+      <member refid="classmysql_1af107a7d38167b4ff8f65b395d856f7ab" prot="public" virt="non-virtual"><scope>mysql</scope><name>$DBUser</name></member>
+      <member refid="classmysql_1a7af15455307c9b6a6c4d51d620014e7d" prot="public" virt="non-virtual"><scope>mysql</scope><name>__construct</name></member>
+      <member refid="classmysql_1aa69c8bf1f1dcf4e72552efff1fe3e87e" prot="public" virt="non-virtual"><scope>mysql</scope><name>close</name></member>
+      <member refid="classmysql_1a2ddd43b5dd962bf0e23e9ce19e549ff3" prot="public" virt="non-virtual"><scope>mysql</scope><name>integrity</name></member>
+      <member refid="classmysql_1a6b251c8058230359b2922377699c4f29" prot="public" virt="non-virtual"><scope>mysql</scope><name>query</name></member>
+      <member refid="classmysql_1ad69dd4607977cae05ebe19d1ae604fb1" prot="public" virt="non-virtual"><scope>mysql</scope><name>test</name></member>
+      <member refid="classmysql_1a5c41f7192b0b3b866e15f56c431ddc36" prot="public" virt="non-virtual"><scope>mysql</scope><name>write</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="interfacecore_interface" kind="interface" prot="public">
+    <compoundname>coreInterface</compoundname>
+    <derivedcompoundref refid="classcore_sencillo" prot="public" virt="non-virtual">coreSencillo</derivedcompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="interfacecore_interface_1a095c5d389db211932136b53f25f39685" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>__construct</definition>
+        <argsstring>()</argsstring>
+        <name>__construct</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_interface.php" line="7" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacecore_interface_1a7664184e15f00825b54ecf378cd4174f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>version_info</definition>
+        <argsstring>()</argsstring>
+        <name>version_info</name>
+        <reimplementedby refid="classcore_sencillo_1a7664184e15f00825b54ecf378cd4174f">version_info</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_interface.php" line="8" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacecore_interface_1aa88fe4a9dd8795c065f2620947d450db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>product</definition>
+        <argsstring>()</argsstring>
+        <name>product</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_interface.php" line="9" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacecore_interface_1af4cf8181fcda31ba0ce060121795c5dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>payLock</definition>
+        <argsstring>()</argsstring>
+        <name>payLock</name>
+        <reimplementedby refid="classcore_sencillo_1af4cf8181fcda31ba0ce060121795c5dc">payLock</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_interface.php" line="10" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacecore_interface_1a421831a265621325e1fdd19aace0c758" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>__destruct</definition>
+        <argsstring>()</argsstring>
+        <name>__destruct</name>
+        <reimplementedby refid="classcore_sencillo_1a421831a265621325e1fdd19aace0c758">__destruct</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_interface.php" line="11" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Core static interface </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="7">
+        <label>coreSencillo</label>
+        <link refid="classcore_sencillo"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>coreInterface</label>
+        <link refid="interfacecore_interface"/>
+      </node>
+    </inheritancegraph>
+    <location file="/home/peter/git/OpenSencillo/fw_core/core_interface.php" line="6" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_interface.php" bodystart="5" bodyend="12"/>
+    <listofallmembers>
+      <member refid="interfacecore_interface_1a095c5d389db211932136b53f25f39685" prot="public" virt="non-virtual"><scope>coreInterface</scope><name>__construct</name></member>
+      <member refid="interfacecore_interface_1a421831a265621325e1fdd19aace0c758" prot="public" virt="non-virtual"><scope>coreInterface</scope><name>__destruct</name></member>
+      <member refid="interfacecore_interface_1af4cf8181fcda31ba0ce060121795c5dc" prot="public" virt="non-virtual"><scope>coreInterface</scope><name>payLock</name></member>
+      <member refid="interfacecore_interface_1aa88fe4a9dd8795c065f2620947d450db" prot="public" virt="non-virtual"><scope>coreInterface</scope><name>product</name></member>
+      <member refid="interfacecore_interface_1a7664184e15f00825b54ecf378cd4174f" prot="public" virt="non-virtual"><scope>coreInterface</scope><name>version_info</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classtranslate" kind="class" prot="public">
+    <compoundname>translate</compoundname>
+    <basecompoundref refid="classfile_system" prot="public" virt="non-virtual">fileSystem</basecompoundref>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classtranslate_1a9a663ee008f29e190f7a56c35ae011db" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>$tSource</definition>
+        <argsstring></argsstring>
+        <name>$tSource</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/translate.tool.framework.php" line="14" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/translate.tool.framework.php" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtranslate_1a7714b111b644017933931ec69a154102" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>$lang</definition>
+        <argsstring></argsstring>
+        <name>$lang</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/translate.tool.framework.php" line="15" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/translate.tool.framework.php" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtranslate_1afa2489379aace6afacf1391038f04fed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>__construct</definition>
+        <argsstring>($name, $lang)</argsstring>
+        <name>__construct</name>
+        <param>
+          <declname>$name</declname>
+        </param>
+        <param>
+          <declname>$lang</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/translate.tool.framework.php" line="17" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/translate.tool.framework.php" bodystart="17" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classtranslate_1a413ddf994d1d740bb68c2fecfa47e68e" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="non-virtual">
+        <type></type>
+        <definition>translate</definition>
+        <argsstring>($tKey)</argsstring>
+        <name>translate</name>
+        <param>
+          <declname>$tKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Find translate by key <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$tKey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/translate.tool.framework.php" line="33" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/translate.tool.framework.php" bodystart="33" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classtranslate_1a2df21f2e384deb0f4f0f42c0ecd069ba" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="non-virtual">
+        <type></type>
+        <definition>addTranslate</definition>
+        <argsstring>($tKey, $tData)</argsstring>
+        <name>addTranslate</name>
+        <param>
+          <declname>$tKey</declname>
+        </param>
+        <param>
+          <declname>$tData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/translate.tool.framework.php" line="45" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/translate.tool.framework.php" bodystart="45" bodyend="57"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="83">
+        <label>translate</label>
+        <link refid="classtranslate"/>
+        <childnode refid="84" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="84">
+        <label>fileSystem</label>
+        <link refid="classfile_system"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="85">
+        <label>translate</label>
+        <link refid="classtranslate"/>
+        <childnode refid="86" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="86">
+        <label>fileSystem</label>
+        <link refid="classfile_system"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/peter/git/OpenSencillo/fw_libraries/translate.tool.framework.php" line="13" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/translate.tool.framework.php" bodystart="12" bodyend="58"/>
+    <listofallmembers>
+      <member refid="classtranslate_1a7714b111b644017933931ec69a154102" prot="protected" virt="non-virtual"><scope>translate</scope><name>$lang</name></member>
+      <member refid="classfile_system_1ab2fc40d43824ea3e1ce5d86dee0d763b" prot="public" virt="non-virtual"><scope>translate</scope><name>$name</name></member>
+      <member refid="classtranslate_1a9a663ee008f29e190f7a56c35ae011db" prot="protected" virt="non-virtual"><scope>translate</scope><name>$tSource</name></member>
+      <member refid="classtranslate_1afa2489379aace6afacf1391038f04fed" prot="public" virt="non-virtual"><scope>translate</scope><name>__construct</name></member>
+      <member refid="classfile_system_1a4717bbfc70a40a57ee741ed70766c309" prot="public" virt="non-virtual" ambiguityscope="fileSystem::"><scope>translate</scope><name>__construct</name></member>
+      <member refid="classtranslate_1a2df21f2e384deb0f4f0f42c0ecd069ba" prot="public" virt="non-virtual"><scope>translate</scope><name>addTranslate</name></member>
+      <member refid="classfile_system_1a64571309bfb3238c65fd3c2898f92440" prot="public" virt="non-virtual"><scope>translate</scope><name>read</name></member>
+      <member refid="classtranslate_1a413ddf994d1d740bb68c2fecfa47e68e" prot="public" virt="non-virtual"><scope>translate</scope><name>translate</name></member>
+      <member refid="classfile_system_1a85013b0dcf138f6997e2a05332ed0dd5" prot="public" virt="non-virtual"><scope>translate</scope><name>write</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

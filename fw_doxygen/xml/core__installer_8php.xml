@@ -1,0 +1,392 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="core__installer_8php" kind="file">
+    <compoundname>core_installer.php</compoundname>
+      <sectiondef kind="user-defined">
+      <header>OpenSencillo SQL Installer</header>
+      <description><para>Core installer</para><para><simplesect kind="version"><para>2015.105 </para></simplesect>
+</para></description>
+      <memberdef kind="variable" id="core__installer_8php_1a83018d9153d17d91fbcf3bc10158d34f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$i</definition>
+        <argsstring></argsstring>
+        <name>$i</name>
+        <initializer>=0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_installer.php" line="14" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_installer.php" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="core__installer_8php_1a5babc204490c6f8002bccd3d3c29fdbc" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$afterBootUp</definition>
+        <argsstring></argsstring>
+        <name>$afterBootUp</name>
+        <initializer>=array()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_installer.php" line="15" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_installer.php" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="core__installer_8php_1af2a8c07084ba77678d1a9db668825855" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$afterBootUp[$i++]</definition>
+        <argsstring>[$i++]</argsstring>
+        <name>$afterBootUp</name>
+        <initializer>=new <ref refid="classcore_sencillo" kindref="compound">coreSencillo</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_installer.php" line="16" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_installer.php" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="core__installer_8php_1a8ec97217cd00453cdb17e5d6a18829ee" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$seo</definition>
+        <argsstring></argsstring>
+        <name>$seo</name>
+        <initializer>=new <ref refid="classheader_seo" kindref="compound">headerSeo</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_installer.php" line="17" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_installer.php" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="core__installer_8php_1ae4f0a7a99c7d0d5eb5b83a37566c0788" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$PHPversion</definition>
+        <argsstring></argsstring>
+        <name>$PHPversion</name>
+        <initializer>=explode(&quot;.&quot;,phpversion())</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_installer.php" line="24" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_installer.php" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="core__installer_8php_1a7784ea78914e7c3f100b4ad6f5fcc813" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>if</definition>
+        <argsstring>(($_GET[&apos;install&apos;]==&apos;true&apos;)&amp;&amp;($PHPversion[0]&gt;=5))</argsstring>
+        <name>if</name>
+        <initializer>{
+  $QUICKCACHE_ISCGI = 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_installer.php" line="25" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_installer.php" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">error_reporting(E_ERROR<sp/>|<sp/>E_PARSE);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">require_once(</highlight><highlight class="stringliteral">&quot;./core_interface.php&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">require_once(</highlight><highlight class="stringliteral">&quot;./core_functions.php&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">$i=0;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">$afterBootUp=array();</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">$afterBootUp[$i++]=</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classcore_sencillo" kindref="compound">coreSencillo</ref>;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">$seo=</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classheader_seo" kindref="compound">headerSeo</ref>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">$seo-&gt;encode();</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">$seo-&gt;title($afterBootUp[0]-&gt;info[</highlight><highlight class="stringliteral">&apos;FWK&apos;</highlight><highlight class="normal">].</highlight><highlight class="stringliteral">&apos;<sp/>-<sp/>Installer&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">$seo-&gt;owner(</highlight><highlight class="stringliteral">&apos;Bc.<sp/>Peter<sp/>Horváth&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">$seo-&gt;bootstrapDefs();</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">$seo-&gt;save();</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">echo<sp/>$seo-&gt;seo;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">$PHPversion=explode(</highlight><highlight class="stringliteral">&quot;.&quot;</highlight><highlight class="normal">,phpversion());</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(($_GET[</highlight><highlight class="stringliteral">&apos;install&apos;</highlight><highlight class="normal">]==</highlight><highlight class="stringliteral">&apos;true&apos;</highlight><highlight class="normal">)&amp;&amp;($PHPversion[0]&gt;=5))</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>chmod(</highlight><highlight class="stringliteral">&quot;../fw_headers/&quot;</highlight><highlight class="normal">,<sp/>0777);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(($_POST[</highlight><highlight class="stringliteral">&apos;host&apos;</highlight><highlight class="normal">]!=</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)&amp;&amp;($_POST[</highlight><highlight class="stringliteral">&apos;user&apos;</highlight><highlight class="normal">]!=</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)&amp;&amp;($_POST[</highlight><highlight class="stringliteral">&apos;name&apos;</highlight><highlight class="normal">]!=</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)&amp;&amp;($_POST[</highlight><highlight class="stringliteral">&apos;pass&apos;</highlight><highlight class="normal">]!=</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$hash<sp/>=<sp/>md5($_SERVER[</highlight><highlight class="stringliteral">&apos;SERVER_NAME&apos;</highlight><highlight class="normal">].$_SERVER[</highlight><highlight class="stringliteral">&apos;SERVER_ADDR&apos;</highlight><highlight class="normal">].$_POST[</highlight><highlight class="stringliteral">&apos;host&apos;</highlight><highlight class="normal">].$_POST[</highlight><highlight class="stringliteral">&apos;user&apos;</highlight><highlight class="normal">].$_POST[</highlight><highlight class="stringliteral">&apos;type&apos;</highlight><highlight class="normal">]);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$file<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classfile_system" kindref="compound">fileSystem</ref>(</highlight><highlight class="stringliteral">&apos;../fw_headers/mysql-config.php&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$file-&gt;write(</highlight><highlight class="stringliteral">&apos;&lt;?php</highlight></codeline>
+<codeline lineno="33"><highlight class="stringliteral">/*~<sp/>mysql-config.php</highlight></codeline>
+<codeline lineno="34"><highlight class="stringliteral">.---------------------------------------------------------------------------.</highlight></codeline>
+<codeline lineno="35"><highlight class="stringliteral">|<sp/><sp/>Software:<sp/>OpenSencillo<sp/>SQL<sp/>Config<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="36"><highlight class="stringliteral">|<sp/><sp/><sp/>Version:<sp/>&apos;</highlight><highlight class="normal">.$afterBootUp[0]-&gt;info[</highlight><highlight class="stringliteral">&apos;VSN&apos;</highlight><highlight class="normal">].</highlight><highlight class="stringliteral">&apos;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="37"><highlight class="stringliteral">|<sp/><sp/><sp/>Contact:<sp/>mail@phorvath.com<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="38"><highlight class="stringliteral">|<sp/>-------------------------------------------------------------------------<sp/>|</highlight></codeline>
+<codeline lineno="39"><highlight class="stringliteral">|<sp/><sp/><sp/><sp/>Author:<sp/>Bc.<sp/>Peter<sp/>Horváth<sp/>(original<sp/>founder)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="40"><highlight class="stringliteral">|<sp/>Copyright<sp/>(c)<sp/>2015,<sp/>Bc.<sp/>Peter<sp/>Horváth.<sp/>All<sp/>Rights<sp/>Reserved.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="41"><highlight class="stringliteral">|<sp/>-------------------------------------------------------------------------<sp/>|</highlight></codeline>
+<codeline lineno="42"><highlight class="stringliteral">|<sp/><sp/><sp/>License:<sp/>Distributed<sp/>under<sp/>the<sp/>General<sp/>Public<sp/>License<sp/>(GPL)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="43"><highlight class="stringliteral">|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>http://www.gnu.org/licenses/gpl-3.0.html<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="44"><highlight class="stringliteral">|<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful<sp/>-<sp/>WITHOUT<sp/><sp/>|</highlight></codeline>
+<codeline lineno="45"><highlight class="stringliteral">|<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="46"><highlight class="stringliteral">|<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="47"><highlight class="stringliteral">´---------------------------------------------------------------------------´</highlight></codeline>
+<codeline lineno="48"><highlight class="stringliteral">~*/</highlight></codeline>
+<codeline lineno="49"><highlight class="stringliteral">//changable<sp/>settings</highlight></codeline>
+<codeline lineno="50"><highlight class="stringliteral">class<sp/>database</highlight></codeline>
+<codeline lineno="51"><highlight class="stringliteral">{</highlight></codeline>
+<codeline lineno="52"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>const<sp/>host<sp/>=<sp/>&quot;&apos;</highlight><highlight class="normal">.$_POST[</highlight><highlight class="stringliteral">&apos;host&apos;</highlight><highlight class="normal">].</highlight><highlight class="stringliteral">&apos;&quot;;</highlight></codeline>
+<codeline lineno="53"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>const<sp/>name<sp/>=<sp/>&quot;&apos;</highlight><highlight class="normal">.$_POST[</highlight><highlight class="stringliteral">&apos;name&apos;</highlight><highlight class="normal">].</highlight><highlight class="stringliteral">&apos;&quot;;</highlight></codeline>
+<codeline lineno="54"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>const<sp/>user<sp/>=<sp/>&quot;&apos;</highlight><highlight class="normal">.$_POST[</highlight><highlight class="stringliteral">&apos;user&apos;</highlight><highlight class="normal">].</highlight><highlight class="stringliteral">&apos;&quot;;</highlight></codeline>
+<codeline lineno="55"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>const<sp/>pass<sp/>=<sp/>&quot;&apos;</highlight><highlight class="normal">.$_POST[</highlight><highlight class="stringliteral">&apos;pass&apos;</highlight><highlight class="normal">].</highlight><highlight class="stringliteral">&apos;&quot;;</highlight></codeline>
+<codeline lineno="56"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>const<sp/>type<sp/>=<sp/>&quot;&apos;</highlight><highlight class="normal">.$_POST[</highlight><highlight class="stringliteral">&apos;type&apos;</highlight><highlight class="normal">].</highlight><highlight class="stringliteral">&apos;&quot;;</highlight></codeline>
+<codeline lineno="57"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>const<sp/>hash<sp/>=<sp/>&quot;&apos;</highlight><highlight class="normal">.$hash.</highlight><highlight class="stringliteral">&apos;&quot;;</highlight></codeline>
+<codeline lineno="58"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>const<sp/>cache=<sp/>&quot;&apos;</highlight><highlight class="normal">.$_POST[</highlight><highlight class="stringliteral">&apos;cache&apos;</highlight><highlight class="normal">].</highlight><highlight class="stringliteral">&apos;&quot;;</highlight></codeline>
+<codeline lineno="59"><highlight class="stringliteral">}</highlight></codeline>
+<codeline lineno="60"><highlight class="stringliteral">//depecrated<sp/>variables</highlight></codeline>
+<codeline lineno="61"><highlight class="stringliteral">//DB<sp/>Server</highlight></codeline>
+<codeline lineno="62"><highlight class="stringliteral">$DBHost<sp/>=<sp/>database::host;</highlight></codeline>
+<codeline lineno="63"><highlight class="stringliteral">//SQL<sp/>access</highlight></codeline>
+<codeline lineno="64"><highlight class="stringliteral">$DBUser<sp/>=<sp/>database::name;</highlight></codeline>
+<codeline lineno="65"><highlight class="stringliteral">$DBName<sp/>=<sp/>database::user;</highlight></codeline>
+<codeline lineno="66"><highlight class="stringliteral">$DBPass<sp/>=<sp/>database::pass;</highlight></codeline>
+<codeline lineno="67"><highlight class="stringliteral">//SQL<sp/>type</highlight></codeline>
+<codeline lineno="68"><highlight class="stringliteral">$DBType<sp/>=<sp/>database::type;</highlight></codeline>
+<codeline lineno="69"><highlight class="stringliteral">//Hash</highlight></codeline>
+<codeline lineno="70"><highlight class="stringliteral">define(&quot;SENCILLO_CONFIG&quot;,database::hash);</highlight></codeline>
+<codeline lineno="71"><highlight class="stringliteral">//Cache</highlight></codeline>
+<codeline lineno="72"><highlight class="stringliteral">$QUICKCACHE_ON<sp/>=<sp/>database::cache;</highlight></codeline>
+<codeline lineno="73"><highlight class="stringliteral">?&gt;&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>chmod(</highlight><highlight class="stringliteral">&quot;../&quot;</highlight><highlight class="normal">,<sp/>0777);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!file_exists(</highlight><highlight class="stringliteral">&apos;../yourcode.php&apos;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$file<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classfile_system" kindref="compound">fileSystem</ref>(</highlight><highlight class="stringliteral">&apos;../yourcode.php&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$file-&gt;write(</highlight><highlight class="stringliteral">&apos;&lt;?php</highlight></codeline>
+<codeline lineno="81"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>$seo<sp/>=<sp/>new<sp/>headerSeo;</highlight></codeline>
+<codeline lineno="82"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>$seo-&gt;encode();</highlight></codeline>
+<codeline lineno="83"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>$seo-&gt;title($core-&gt;coreSencillo-&gt;info[&quot;FWK&quot;].&quot;<sp/>-<sp/>Example<sp/>page&quot;);</highlight></codeline>
+<codeline lineno="84"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>$seo-&gt;owner(&quot;&apos;</highlight><highlight class="normal">.$_POST[</highlight><highlight class="stringliteral">&apos;user-new-name&apos;</highlight><highlight class="normal">].</highlight><highlight class="stringliteral">&apos;,<sp/>&apos;</highlight><highlight class="normal">.$_POST[</highlight><highlight class="stringliteral">&apos;user-new-mail&apos;</highlight><highlight class="normal">].</highlight><highlight class="stringliteral">&apos;&quot;);</highlight></codeline>
+<codeline lineno="85"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>$seo-&gt;bootstrapDefs();</highlight></codeline>
+<codeline lineno="86"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>echo<sp/>$seo-&gt;save();</highlight></codeline>
+<codeline lineno="87"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="88"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>$translate<sp/>=<sp/>new<sp/>translate(&quot;translate.json&quot;,&quot;en&quot;);</highlight></codeline>
+<codeline lineno="89"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>require_once(&quot;./fw_templates/welcome.default.screen.php&quot;);</highlight></codeline>
+<codeline lineno="90"><highlight class="stringliteral">?&gt;&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$file<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classfile_system" kindref="compound">fileSystem</ref>(</highlight><highlight class="stringliteral">&apos;../firststart.json&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$json<sp/>=<sp/>json_encode(array(<sp/><sp/></highlight><highlight class="stringliteral">&apos;time&apos;</highlight><highlight class="normal">=&gt;date(</highlight><highlight class="stringliteral">&quot;H:i:s&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;date&apos;</highlight><highlight class="normal">=&gt;date(</highlight><highlight class="stringliteral">&quot;Y-m-d&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;email&apos;</highlight><highlight class="normal">=&gt;$_POST[</highlight><highlight class="stringliteral">&apos;user-new-mail&apos;</highlight><highlight class="normal">],</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;PHP&apos;</highlight><highlight class="normal"><sp/>=&gt;phpversion(),</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;SYSTEM&apos;</highlight><highlight class="normal">=&gt;$afterBootUp[0]-&gt;info[</highlight><highlight class="stringliteral">&apos;FWK&apos;</highlight><highlight class="normal">],</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;hash&apos;</highlight><highlight class="normal">=&gt;$hash</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>));</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$file-&gt;write($json);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>$file<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classfile_system" kindref="compound">fileSystem</ref>(</highlight><highlight class="stringliteral">&apos;../.htaccess&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>$file-&gt;write(</highlight><highlight class="stringliteral">&apos;# Create<sp/>with<sp/>&apos;</highlight><highlight class="normal">.$afterBootUp[0]-&gt;info[</highlight><highlight class="stringliteral">&apos;FWK&apos;</highlight><highlight class="normal">].</highlight><highlight class="stringliteral">&apos;.</highlight></codeline>
+<codeline lineno="104"><highlight class="stringliteral">#<sp/>Image<sp/>cache</highlight></codeline>
+<codeline lineno="105"><highlight class="stringliteral">&lt;IfModule<sp/>mod_expires.c&gt;</highlight></codeline>
+<codeline lineno="106"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>ExpiresActive<sp/>on</highlight></codeline>
+<codeline lineno="107"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="108"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>ExpiresByType<sp/>image/jpg<sp/>&quot;access<sp/>plus<sp/>1<sp/>month&quot;</highlight></codeline>
+<codeline lineno="109"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>ExpiresByType<sp/>image/jpeg<sp/>&quot;access<sp/>plus<sp/>1<sp/>month&quot;</highlight></codeline>
+<codeline lineno="110"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>ExpiresByType<sp/>image/gif<sp/>&quot;access<sp/>plus<sp/>1<sp/>month&quot;</highlight></codeline>
+<codeline lineno="111"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>ExpiresByType<sp/>image/png<sp/>&quot;access<sp/>plus<sp/>1<sp/>month&quot;</highlight></codeline>
+<codeline lineno="112"><highlight class="stringliteral">&lt;/IfModule&gt;</highlight></codeline>
+<codeline lineno="113"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="114"><highlight class="stringliteral">RewriteCond<sp/>%{SERVER_PORT}<sp/>^443$</highlight></codeline>
+<codeline lineno="115"><highlight class="stringliteral">RewriteRule<sp/>^(.*)$<sp/>http://&apos;</highlight><highlight class="normal">.$_SERVER[</highlight><highlight class="stringliteral">&apos;SERVER_NAME&apos;</highlight><highlight class="normal">].</highlight><highlight class="stringliteral">&apos;/$1<sp/>[L,R=301]</highlight></codeline>
+<codeline lineno="116"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="117"><highlight class="stringliteral">#<sp/>Rewrite<sp/>URLs</highlight></codeline>
+<codeline lineno="118"><highlight class="stringliteral">RewriteEngine<sp/>on</highlight></codeline>
+<codeline lineno="119"><highlight class="stringliteral">RewriteBase<sp/>/</highlight></codeline>
+<codeline lineno="120"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="121"><highlight class="stringliteral">#<sp/>Best<sp/>URLs</highlight></codeline>
+<codeline lineno="122"><highlight class="stringliteral">RewriteCond<sp/>%{REQUEST_FILENAME}<sp/>!-f</highlight></codeline>
+<codeline lineno="123"><highlight class="stringliteral">RewriteCond<sp/>%{REQUEST_FILENAME}<sp/>!-d</highlight></codeline>
+<codeline lineno="124"><highlight class="stringliteral">RewriteCond<sp/>%{REQUEST_FILENAME}<sp/>!-l</highlight></codeline>
+<codeline lineno="125"><highlight class="stringliteral">RewriteRule<sp/>^(.*)$<sp/>index.php?p=$1<sp/>[L,QSA]</highlight></codeline>
+<codeline lineno="126"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="127"><highlight class="stringliteral">#<sp/>opensencillo.com<sp/>-&gt; www.opensencillo.com</highlight></codeline>
+<codeline lineno="128"><highlight class="stringliteral">RewriteCond<sp/>%{HTTP_HOST}<sp/>!^&apos;</highlight><highlight class="normal">.$_SERVER[</highlight><highlight class="stringliteral">&apos;SERVER_NAME&apos;</highlight><highlight class="normal">].</highlight><highlight class="stringliteral">&apos;$<sp/>[NC]</highlight></codeline>
+<codeline lineno="129"><highlight class="stringliteral">RewriteRule<sp/>^(.*)$<sp/>http://&apos;</highlight><highlight class="normal">.$_SERVER[</highlight><highlight class="stringliteral">&apos;SERVER_NAME&apos;</highlight><highlight class="normal">].</highlight><highlight class="stringliteral">&apos;/$1<sp/>[L,R=301]&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>chmod(</highlight><highlight class="stringliteral">&quot;../fw_core/&quot;</highlight><highlight class="normal">,<sp/>0700);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>chmod(</highlight><highlight class="stringliteral">&quot;../fw_cache/&quot;</highlight><highlight class="normal">,<sp/>0700);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>chmod(</highlight><highlight class="stringliteral">&quot;../fw_headers/&quot;</highlight><highlight class="normal">,<sp/>0700);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>chmod(</highlight><highlight class="stringliteral">&quot;../fw_modules/&quot;</highlight><highlight class="normal">,<sp/>0700);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>chmod(</highlight><highlight class="stringliteral">&quot;../fw_libraries/&quot;</highlight><highlight class="normal">,<sp/>0700);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>chmod(</highlight><highlight class="stringliteral">&quot;../fw_script/&quot;</highlight><highlight class="normal">,<sp/>0700);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>chmod(</highlight><highlight class="stringliteral">&quot;../&quot;</highlight><highlight class="normal">,<sp/>0700);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>require(</highlight><highlight class="stringliteral">&quot;../fw_headers/mysql-config.php&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>require(</highlight><highlight class="stringliteral">&quot;../fw_headers/main-config.php&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>require(</highlight><highlight class="stringliteral">&quot;./core_sql.php&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>require(</highlight><highlight class="stringliteral">&quot;../fw_libraries/login.management.logman.php&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>require(</highlight><highlight class="stringliteral">&quot;../fw_libraries/test.tool.framework.php&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>$delinsql=</highlight><highlight class="stringliteral">&apos;</highlight></codeline>
+<codeline lineno="144"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>SET<sp/>SQL_MODE=&quot;NO_AUTO_VALUE_ON_ZERO&quot;;</highlight></codeline>
+<codeline lineno="145"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>$mysql-&gt;write($delinsql);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>$delinsql=</highlight><highlight class="stringliteral">&apos;</highlight></codeline>
+<codeline lineno="148"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>SET<sp/>time_zone<sp/>=<sp/>&quot;+00:00&quot;;</highlight></codeline>
+<codeline lineno="149"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>$mysql-&gt;write($delinsql);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>$delinsql=</highlight><highlight class="stringliteral">&apos;</highlight></codeline>
+<codeline lineno="153"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>CREATE<sp/>TABLE<sp/>IF<sp/>NOT<sp/>EXISTS<sp/>`console`<sp/>(</highlight></codeline>
+<codeline lineno="154"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/>`id`<sp/>bigint(20)<sp/>NOT<sp/>NULL<sp/>AUTO_INCREMENT,</highlight></codeline>
+<codeline lineno="155"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/>`time`<sp/>datetime<sp/>NOT<sp/>NULL,</highlight></codeline>
+<codeline lineno="156"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/>`title`<sp/>varchar(25)<sp/>NOT<sp/>NULL,</highlight></codeline>
+<codeline lineno="157"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/>`data`<sp/>varchar(255)<sp/>NOT<sp/>NULL,</highlight></codeline>
+<codeline lineno="158"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/>PRIMARY<sp/>KEY<sp/>(`id`)</highlight></codeline>
+<codeline lineno="159"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>)<sp/>ENGINE=MEMORY<sp/><sp/>DEFAULT<sp/>CHARSET=utf8<sp/>MAX_ROWS=10000<sp/>AUTO_INCREMENT=0;</highlight></codeline>
+<codeline lineno="160"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>$mysql-&gt;write($delinsql);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>$delinsql=</highlight><highlight class="stringliteral">&apos;</highlight></codeline>
+<codeline lineno="164"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>CREATE<sp/>TABLE<sp/>IF<sp/>NOT<sp/>EXISTS<sp/>`country`<sp/>(</highlight></codeline>
+<codeline lineno="165"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/>`id`<sp/>varchar(2)<sp/>COLLATE<sp/>utf8_unicode_ci<sp/>NOT<sp/>NULL,</highlight></codeline>
+<codeline lineno="166"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/>`id2`<sp/>varchar(3)<sp/>COLLATE<sp/>utf8_unicode_ci<sp/>DEFAULT<sp/>NULL,</highlight></codeline>
+<codeline lineno="167"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/>`name`<sp/>varchar(64)<sp/>COLLATE<sp/>utf8_unicode_ci<sp/>NOT<sp/>NULL,</highlight></codeline>
+<codeline lineno="168"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/>PRIMARY<sp/>KEY<sp/>(`id`)</highlight></codeline>
+<codeline lineno="169"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>)<sp/>ENGINE=InnoDB<sp/>DEFAULT<sp/>CHARSET=utf8<sp/>COLLATE=utf8_unicode_ci;</highlight></codeline>
+<codeline lineno="170"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>$mysql-&gt;write($delinsql);</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>$delinsql=</highlight><highlight class="stringliteral">&apos;</highlight></codeline>
+<codeline lineno="174"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>CREATE<sp/>TABLE<sp/>IF<sp/>NOT<sp/>EXISTS<sp/>`login`<sp/>(</highlight></codeline>
+<codeline lineno="175"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/>`id`<sp/>bigint(20)<sp/>NOT<sp/>NULL<sp/>AUTO_INCREMENT,</highlight></codeline>
+<codeline lineno="176"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/>`userid`<sp/>bigint(20)<sp/>NOT<sp/>NULL,</highlight></codeline>
+<codeline lineno="177"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/>`sessionid`<sp/>longtext<sp/>NOT<sp/>NULL,</highlight></codeline>
+<codeline lineno="178"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/>`expiration`<sp/>int(11)<sp/>NOT<sp/>NULL,</highlight></codeline>
+<codeline lineno="179"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/>`perm`<sp/>int(11)<sp/>NOT<sp/>NULL,</highlight></codeline>
+<codeline lineno="180"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/>PRIMARY<sp/>KEY<sp/>(`id`)</highlight></codeline>
+<codeline lineno="181"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>)<sp/>ENGINE=MyISAM<sp/><sp/>DEFAULT<sp/>CHARSET=utf8<sp/>AUTO_INCREMENT=0;</highlight></codeline>
+<codeline lineno="182"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>$mysql-&gt;write($delinsql);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>$delinsql=</highlight><highlight class="stringliteral">&apos;</highlight></codeline>
+<codeline lineno="186"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>CREATE<sp/>TABLE<sp/>sencillo_cache<sp/>(</highlight></codeline>
+<codeline lineno="187"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CACHEKEY<sp/>varchar(255)<sp/>NOT<sp/>NULL,</highlight></codeline>
+<codeline lineno="188"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CACHEEXPIRATION<sp/>int(11)<sp/>NOT<sp/>NULL,</highlight></codeline>
+<codeline lineno="189"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GZDATA<sp/>blob,</highlight></codeline>
+<codeline lineno="190"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DATASIZE<sp/>int(11),</highlight></codeline>
+<codeline lineno="191"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DATACRC<sp/>int(11),</highlight></codeline>
+<codeline lineno="192"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PRIMARY<sp/>KEY<sp/>(CACHEKEY)</highlight></codeline>
+<codeline lineno="193"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="194"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>$mysql-&gt;write($delinsql);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/>$delinsql=</highlight><highlight class="stringliteral">&apos;</highlight></codeline>
+<codeline lineno="198"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>CREATE<sp/>TABLE<sp/>IF<sp/>NOT<sp/>EXISTS<sp/>`virtual_system_config`<sp/>(</highlight></codeline>
+<codeline lineno="199"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/>`id`<sp/>int(11)<sp/>NOT<sp/>NULL<sp/>AUTO_INCREMENT,</highlight></codeline>
+<codeline lineno="200"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/>`function`<sp/>varchar(25)<sp/>NOT<sp/>NULL,</highlight></codeline>
+<codeline lineno="201"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/>`command`<sp/>varchar(25)<sp/>NOT<sp/>NULL,</highlight></codeline>
+<codeline lineno="202"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/>`commander`<sp/>int(11)<sp/>NOT<sp/>NULL,</highlight></codeline>
+<codeline lineno="203"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/>PRIMARY<sp/>KEY<sp/>(`id`)</highlight></codeline>
+<codeline lineno="204"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>)<sp/>ENGINE=MyISAM<sp/><sp/>DEFAULT<sp/>CHARSET=utf8<sp/>AUTO_INCREMENT=0<sp/>;</highlight></codeline>
+<codeline lineno="205"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>$mysql-&gt;write($delinsql);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>$mysql-&gt;close();</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>$logman=</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classlog_man" kindref="compound">logMan</ref>($DBHost,$DBName,$DBUser,$DBPass);</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>$mysql=</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classmysql_interface" kindref="compound">mysqlInterface</ref>($DBHost,$DBName,$DBUser,$DBPass);</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/>$mysql-&gt;config();</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/>$mysql-&gt;connect();</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/>$delinsql=array(</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;virtual_system_config&apos;</highlight><highlight class="normal">=&gt;array(</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;id&apos;</highlight><highlight class="normal">=&gt;</highlight><highlight class="stringliteral">&quot;&apos;&apos;&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;function&apos;</highlight><highlight class="normal">=&gt;</highlight><highlight class="stringliteral">&apos;superuser&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;command&apos;</highlight><highlight class="normal">=&gt;$_POST[</highlight><highlight class="stringliteral">&apos;user-new-name&apos;</highlight><highlight class="normal">],</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;commander&apos;</highlight><highlight class="normal">=&gt;0</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>));</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/>$mysql-&gt;insert($delinsql);</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/>$delinsql=array(</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;virtual_system_config&apos;</highlight><highlight class="normal">=&gt;array(</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;id&apos;</highlight><highlight class="normal">=&gt;</highlight><highlight class="stringliteral">&quot;&apos;&apos;&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;function&apos;</highlight><highlight class="normal">=&gt;</highlight><highlight class="stringliteral">&apos;superpass&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;command&apos;</highlight><highlight class="normal">=&gt;md5($_POST[</highlight><highlight class="stringliteral">&apos;user-new-pass&apos;</highlight><highlight class="normal">]),</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;commander&apos;</highlight><highlight class="normal">=&gt;0</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>));</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/>$mysql-&gt;insert($delinsql);</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/>$delinsql=array(</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;virtual_system_config&apos;</highlight><highlight class="normal">=&gt;array(</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;id&apos;</highlight><highlight class="normal">=&gt;</highlight><highlight class="stringliteral">&quot;&apos;&apos;&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;function&apos;</highlight><highlight class="normal">=&gt;</highlight><highlight class="stringliteral">&apos;supermail&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;command&apos;</highlight><highlight class="normal">=&gt;$_POST[</highlight><highlight class="stringliteral">&apos;user-new-mail&apos;</highlight><highlight class="normal">],</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;commander&apos;</highlight><highlight class="normal">=&gt;0</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>));</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/>$mysql-&gt;insert($delinsql);</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/>$delinsql=array(</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;virtual_system_config&apos;</highlight><highlight class="normal">=&gt;array(</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;id&apos;</highlight><highlight class="normal">=&gt;</highlight><highlight class="stringliteral">&quot;&apos;&apos;&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;function&apos;</highlight><highlight class="normal">=&gt;</highlight><highlight class="stringliteral">&apos;systemhash&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;command&apos;</highlight><highlight class="normal">=&gt;$hash,</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;commander&apos;</highlight><highlight class="normal">=&gt;0</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>));</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/>$mysql-&gt;insert($delinsql);</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/>$delinsql=array(</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;virtual_system_config&apos;</highlight><highlight class="normal">=&gt;array(</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;id&apos;</highlight><highlight class="normal">=&gt;</highlight><highlight class="stringliteral">&quot;&apos;&apos;&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;function&apos;</highlight><highlight class="normal">=&gt;</highlight><highlight class="stringliteral">&apos;servername&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;command&apos;</highlight><highlight class="normal">=&gt;$_SERVER[</highlight><highlight class="stringliteral">&apos;SERVER_NAME&apos;</highlight><highlight class="normal">],</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;commander&apos;</highlight><highlight class="normal">=&gt;0</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>));</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/>$mysql-&gt;insert($delinsql);</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/>$delinsql=array(</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;virtual_system_config&apos;</highlight><highlight class="normal">=&gt;array(</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;id&apos;</highlight><highlight class="normal">=&gt;</highlight><highlight class="stringliteral">&quot;&apos;&apos;&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;function&apos;</highlight><highlight class="normal">=&gt;</highlight><highlight class="stringliteral">&apos;htaccess_config&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;command&apos;</highlight><highlight class="normal">=&gt;</highlight><highlight class="stringliteral">&apos;default&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;commander&apos;</highlight><highlight class="normal">=&gt;0</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>));</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/>$mysql-&gt;insert($delinsql);</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/>$delinsql=array(</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;virtual_system_config&apos;</highlight><highlight class="normal">=&gt;array(</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;id&apos;</highlight><highlight class="normal">=&gt;</highlight><highlight class="stringliteral">&quot;&apos;&apos;&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;function&apos;</highlight><highlight class="normal">=&gt;</highlight><highlight class="stringliteral">&apos;phpversion&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;command&apos;</highlight><highlight class="normal">=&gt;phpversion(),</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;commander&apos;</highlight><highlight class="normal">=&gt;0</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>));</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/>$mysql-&gt;insert($delinsql);</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/>$delinsql=array(</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;users&apos;</highlight><highlight class="normal">=&gt;array(</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;id&apos;</highlight><highlight class="normal">=&gt;</highlight><highlight class="stringliteral">&quot;&apos;&apos;&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;sign&apos;</highlight><highlight class="normal">=&gt;</highlight><highlight class="stringliteral">&quot;&apos;first_use&apos;&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;active&apos;</highlight><highlight class="normal">=&gt;0,</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;login&apos;</highlight><highlight class="normal">=&gt;</highlight><highlight class="stringliteral">&quot;&apos;&quot;</highlight><highlight class="normal">.$_POST[</highlight><highlight class="stringliteral">&apos;user-new-name&apos;</highlight><highlight class="normal">].</highlight><highlight class="stringliteral">&quot;&apos;&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;pass&apos;</highlight><highlight class="normal">=&gt;</highlight><highlight class="stringliteral">&quot;&apos;&quot;</highlight><highlight class="normal">.md5($_POST[</highlight><highlight class="stringliteral">&apos;user-new-pass&apos;</highlight><highlight class="normal">]).</highlight><highlight class="stringliteral">&quot;&apos;&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;email&apos;</highlight><highlight class="normal">=&gt;</highlight><highlight class="stringliteral">&quot;&apos;&quot;</highlight><highlight class="normal">.$_POST[</highlight><highlight class="stringliteral">&apos;user-new-mail&apos;</highlight><highlight class="normal">].</highlight><highlight class="stringliteral">&quot;&apos;&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;fname&apos;</highlight><highlight class="normal">=&gt;</highlight><highlight class="stringliteral">&quot;&apos;&apos;&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;lname&apos;</highlight><highlight class="normal">=&gt;</highlight><highlight class="stringliteral">&quot;&apos;&apos;&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;perm&apos;</highlight><highlight class="normal">=&gt;1111,</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;ip&apos;</highlight><highlight class="normal">=&gt;</highlight><highlight class="stringliteral">&quot;&apos;&quot;</highlight><highlight class="normal">.$_SERVER[</highlight><highlight class="stringliteral">&apos;REMOTE_ADDR&apos;</highlight><highlight class="normal">].</highlight><highlight class="stringliteral">&quot;&apos;&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;agent&apos;</highlight><highlight class="normal">=&gt;</highlight><highlight class="stringliteral">&quot;&apos;&quot;</highlight><highlight class="normal">.$_SERVER[</highlight><highlight class="stringliteral">&apos;HTTP_USER_AGENT&apos;</highlight><highlight class="normal">].</highlight><highlight class="stringliteral">&quot;&apos;&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;date&apos;</highlight><highlight class="normal">=&gt;</highlight><highlight class="stringliteral">&apos;DATE(NOW())&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;time&apos;</highlight><highlight class="normal">=&gt;</highlight><highlight class="stringliteral">&apos;TIME(NOW())&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>));</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/>$mysql-&gt;insert($delinsql,</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/>$mysql-&gt;execute();</highlight></codeline>
+<codeline lineno="296"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="297"><highlight class="normal">require_once<sp/></highlight><highlight class="stringliteral">&apos;../fw_templates/installer.main.screen.php&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="298"><highlight class="normal">?&gt;</highlight></codeline>
+    </programlisting>
+    <location file="/home/peter/git/OpenSencillo/fw_core/core_installer.php"/>
+  </compounddef>
+</doxygen>

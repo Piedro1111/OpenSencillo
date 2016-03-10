@@ -8,6 +8,6 @@ interface coreInterface
 	public function version_info();
 	public function product();
 	public function payLock();
-	public function __destruct();	
+	public function __destruct();
 }
 ?>

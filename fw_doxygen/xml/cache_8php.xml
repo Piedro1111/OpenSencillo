@@ -1,0 +1,412 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="cache_8php" kind="file">
+    <compoundname>cache.php</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="cache_8php_1abd8ff220e147728d61b7c9cfaf0ea500" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$QUICKCACHE_VERSION</definition>
+        <argsstring></argsstring>
+        <name>$QUICKCACHE_VERSION</name>
+        <initializer>=&quot;v2015.003&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/cache.php" line="25" column="1" bodyfile="/home/peter/git/OpenSencillo/cache.php" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="cache_8php_1a2a63114e1793d470c53ef21e7c9e7ba9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$includedir</definition>
+        <argsstring></argsstring>
+        <name>$includedir</name>
+        <initializer>= &quot;./fw_cache&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/cache.php" line="28" column="1" bodyfile="/home/peter/git/OpenSencillo/cache.php" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="cache_8php_1a786cc8e2b9fdedb53bb1a4bdc52fb335" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$QUICKCACHE_DIR</definition>
+        <argsstring></argsstring>
+        <name>$QUICKCACHE_DIR</name>
+        <initializer>= $includedir . &apos;/tmp&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/cache.php" line="31" column="1" bodyfile="/home/peter/git/OpenSencillo/cache.php" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="cache_8php_1a046d8a48d80a3cd0f0adb55051223ddf" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$QUICKCACHE_DB_HOST</definition>
+        <argsstring></argsstring>
+        <name>$QUICKCACHE_DB_HOST</name>
+        <initializer>= $DBHost</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/cache.php" line="50" column="1" bodyfile="/home/peter/git/OpenSencillo/cache.php" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="cache_8php_1aaedd6686a8710d0da009127a3153cf3b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$QUICKCACHE_DB_DATABASE</definition>
+        <argsstring></argsstring>
+        <name>$QUICKCACHE_DB_DATABASE</name>
+        <initializer>= $DBName</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/cache.php" line="51" column="1" bodyfile="/home/peter/git/OpenSencillo/cache.php" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="cache_8php_1a708297f29fa8b029e2923814d2036b87" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$QUICKCACHE_DB_USERNAME</definition>
+        <argsstring></argsstring>
+        <name>$QUICKCACHE_DB_USERNAME</name>
+        <initializer>= $DBUser</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/cache.php" line="52" column="1" bodyfile="/home/peter/git/OpenSencillo/cache.php" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="cache_8php_1ad177a0da5bc86b37f74124099459a5f8" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$QUICKCACHE_DB_PASSWORD</definition>
+        <argsstring></argsstring>
+        <name>$QUICKCACHE_DB_PASSWORD</name>
+        <initializer>= $DBPass</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/cache.php" line="53" column="1" bodyfile="/home/peter/git/OpenSencillo/cache.php" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="cache_8php_1a544edf64466b48906262db776d95ef7c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$QUICKCACHE_DB_TABLE</definition>
+        <argsstring></argsstring>
+        <name>$QUICKCACHE_DB_TABLE</name>
+        <initializer>= &apos;sencillo_cache&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/cache.php" line="54" column="1" bodyfile="/home/peter/git/OpenSencillo/cache.php" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="cache_8php_1a30f2335aa4ceef9a0dbe0aa1a0ae75b3" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$QUICKCACHE_OPTIMIZE</definition>
+        <argsstring></argsstring>
+        <name>$QUICKCACHE_OPTIMIZE</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/cache.php" line="55" column="1" bodyfile="/home/peter/git/OpenSencillo/cache.php" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="cache_8php_1a8cacd91c56f15ec1f4eab321a20b349d" prot="public" static="no" mutable="no">
+        <type>IF($QUICKCACHE_DB_USERNAME!= &apos;&apos;)</type>
+        <definition>if (isCGI()) else</definition>
+        <argsstring></argsstring>
+        <name>else</name>
+        <initializer>{
+  $QUICKCACHE_TYPE = &apos;<ref refid="classfile" kindref="compound">file</ref>&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/cache.php" line="61" column="1" bodyfile="/home/peter/git/OpenSencillo/cache.php" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="cache_8php_1a68583c8de55b5217edc3ea6535246849" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$QUICKCACHE_TIME</definition>
+        <argsstring></argsstring>
+        <name>$QUICKCACHE_TIME</name>
+        <initializer>=   900</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/cache.php" line="72" column="1" bodyfile="/home/peter/git/OpenSencillo/cache.php" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="cache_8php_1aa6108a5a04f9371b0fd7a4c2ce3ec21a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$QUICKCACHE_DEBUG</definition>
+        <argsstring></argsstring>
+        <name>$QUICKCACHE_DEBUG</name>
+        <initializer>=   0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/cache.php" line="73" column="1" bodyfile="/home/peter/git/OpenSencillo/cache.php" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="cache_8php_1a46c336169b1b9393e053ebe1e5e4e069" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$QUICKCACHE_IGNORE_DOMAIN</definition>
+        <argsstring></argsstring>
+        <name>$QUICKCACHE_IGNORE_DOMAIN</name>
+        <initializer>=   1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/cache.php" line="74" column="1" bodyfile="/home/peter/git/OpenSencillo/cache.php" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="cache_8php_1ac140c1bcf73312f4189fd5d9ffdfdce9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$QUICKCACHE_USE_GZIP</definition>
+        <argsstring></argsstring>
+        <name>$QUICKCACHE_USE_GZIP</name>
+        <initializer>=   1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/cache.php" line="76" column="1" bodyfile="/home/peter/git/OpenSencillo/cache.php" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="cache_8php_1a55b0a80b0a2f4eb5dc30c225abcae75f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$QUICKCACHE_POST</definition>
+        <argsstring></argsstring>
+        <name>$QUICKCACHE_POST</name>
+        <initializer>=   0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/cache.php" line="77" column="1" bodyfile="/home/peter/git/OpenSencillo/cache.php" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="cache_8php_1aef7db44992526049791eb7696b4e4958" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$QUICKCACHE_GC</definition>
+        <argsstring></argsstring>
+        <name>$QUICKCACHE_GC</name>
+        <initializer>=   1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/cache.php" line="78" column="1" bodyfile="/home/peter/git/OpenSencillo/cache.php" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="cache_8php_1afc83581da52cec01fce9698d29bd0745" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$QUICKCACHE_GZIP_LEVEL</definition>
+        <argsstring></argsstring>
+        <name>$QUICKCACHE_GZIP_LEVEL</name>
+        <initializer>=   9</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/cache.php" line="79" column="1" bodyfile="/home/peter/git/OpenSencillo/cache.php" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="cache_8php_1ae00172b47dcac3c0bb2341a59b0021b9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$QUICKCACHE_CLEANKEYS</definition>
+        <argsstring></argsstring>
+        <name>$QUICKCACHE_CLEANKEYS</name>
+        <initializer>=   0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/cache.php" line="80" column="1" bodyfile="/home/peter/git/OpenSencillo/cache.php" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="cache_8php_1a4b884e77713fac1e6769b8e83b7a0a4c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$QUICKCACHE_FILEPREFIX</definition>
+        <argsstring></argsstring>
+        <name>$QUICKCACHE_FILEPREFIX</name>
+        <initializer>= &apos;qcc-&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/cache.php" line="83" column="1" bodyfile="/home/peter/git/OpenSencillo/cache.php" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="cache_8php_1a79ba9a3563194698a3373a093fcba256" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>if($QUICKCACHE_ON===1)</type>
+        <definition>if ($QUICKCACHE_ON===1) isCGI</definition>
+        <argsstring>()</argsstring>
+        <name>isCGI</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/cache.php" line="107" column="1" bodyfile="/home/peter/git/OpenSencillo/cache.php" bodystart="107" bodyend="113"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*~<sp/>cache.php</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">.---------------------------------------------------------------------------.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">|<sp/><sp/>Software:<sp/>SencilloCache<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">|<sp/><sp/><sp/>Version:<sp/>2015.003<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">|<sp/><sp/><sp/>Contact:<sp/>ph@mastery.sk<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">|<sp/>-------------------------------------------------------------------------<sp/>|</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">|<sp/><sp/><sp/><sp/>Author:<sp/>Bc.<sp/>Peter<sp/>Horváth<sp/>(original<sp/>founder)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">|<sp/>Copyright<sp/>(c)<sp/>2015,<sp/>Bc.<sp/>Peter<sp/>Horváth.<sp/>All<sp/>Rights<sp/>Reserved.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">|<sp/>-------------------------------------------------------------------------<sp/>|</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">|<sp/><sp/><sp/>License:<sp/>Distributed<sp/>under<sp/>the<sp/>General<sp/>Public<sp/>License<sp/>(GPL)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>http://www.gnu.org/licenses/gpl-3.0.html<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="13"><highlight class="comment">|<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful<sp/>-<sp/>WITHOUT<sp/><sp/>|</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">|<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">|<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="16"><highlight class="comment">&apos;---------------------------------------------------------------------------&apos;</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">~*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Credits:</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>Based<sp/>upon<sp/>and<sp/>inspired<sp/>by:</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>QuickCache<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;andy.prevost@worxteam.com&gt;<sp/>(http://sourceforge.net/projects/quickcache)</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">$QUICKCACHE_VERSION=</highlight><highlight class="stringliteral">&quot;v2015.003&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Set<sp/>the<sp/>includedir<sp/>to<sp/>the<sp/>quickcache-directory</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">$includedir<sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;./fw_cache&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>File<sp/>based<sp/>caching<sp/>setting.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">$QUICKCACHE_DIR<sp/>=<sp/>$includedir<sp/>.<sp/></highlight><highlight class="stringliteral">&apos;/tmp&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Directory<sp/>where<sp/>quickcache<sp/>will<sp/>store<sp/>generated<sp/>files.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Please<sp/>use<sp/>a<sp/>dedicated<sp/>directory,<sp/>and<sp/>make<sp/>it<sp/>writable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>IF<sp/>USING<sp/>DATABASE<sp/>TYPE<sp/>CACHE<sp/>STORAGE,<sp/>FILL<sp/>INFO<sp/>BELOW<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Some<sp/>settings<sp/>are<sp/>specific<sp/>for<sp/>the<sp/>type<sp/>of<sp/>cache<sp/>you<sp/>are<sp/>running,<sp/>like</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/>file-<sp/>or<sp/>database-based.</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*<sp/>Define<sp/>which<sp/>QuickCache<sp/><sp/>type<sp/>you<sp/>want<sp/>to<sp/>use<sp/>(db<sp/>storage<sp/>and/or<sp/>system).</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/>Note:<sp/>with<sp/>2.1rc1,<sp/>file<sp/>type<sp/>is<sp/>assumed<sp/>unless<sp/>another<sp/>type<sp/>is<sp/>selected</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/>This<sp/>allows<sp/>for<sp/>system-specific<sp/>patches<sp/>&amp;<sp/>handling,<sp/>as<sp/>sometimes</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*<sp/>&apos;platform<sp/>independent&apos;<sp/>is<sp/>behaving<sp/>quite<sp/>differently.</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>DB<sp/>based<sp/>caching<sp/>settings</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*<sp/>Fill<sp/>in<sp/>your<sp/>username<sp/>and<sp/>password</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/>ONLY<sp/>if<sp/>you<sp/>intend<sp/>to<sp/>use<sp/>the<sp/>MySQL<sp/>database<sp/>to<sp/>store</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/>cache<sp/>settings,<sp/>otherwise,<sp/>leave<sp/>blank</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal">$QUICKCACHE_DB_HOST<sp/><sp/><sp/><sp/><sp/>=<sp/>$DBHost;<sp/><sp/></highlight><highlight class="comment">//<sp/>Database<sp/>Server</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal">$QUICKCACHE_DB_DATABASE<sp/>=<sp/>$DBName;<sp/></highlight><highlight class="comment">//<sp/>Database-name<sp/>to<sp/>use</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal">$QUICKCACHE_DB_USERNAME<sp/>=<sp/>$DBUser;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Username</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal">$QUICKCACHE_DB_PASSWORD<sp/>=<sp/>$DBPass;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Password</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal">$QUICKCACHE_DB_TABLE<sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&apos;sencillo_cache&apos;</highlight><highlight class="normal">;<sp/><sp/></highlight><highlight class="comment">//<sp/>Table<sp/>that<sp/>holds<sp/>the<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal">$QUICKCACHE_OPTIMIZE<sp/><sp/><sp/><sp/>=<sp/>1;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>&apos;OPTIMIZE<sp/>TABLE&apos;<sp/>after<sp/>garbage</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>collection<sp/>is<sp/>executed.<sp/>Please<sp/>check</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>first<sp/>if<sp/>this<sp/>works<sp/>on<sp/>your<sp/>mySQL!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal">IF<sp/>($QUICKCACHE_DB_USERNAME<sp/>!=<sp/></highlight><highlight class="stringliteral">&apos;&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/>$QUICKCACHE_TYPE<sp/>=<sp/></highlight><highlight class="stringliteral">&apos;mysql&apos;</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">/*<sp/>means<sp/>this<sp/>is<sp/>a<sp/>&apos;MySQL&apos;<sp/>type<sp/>cache<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal">}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/>$QUICKCACHE_TYPE<sp/>=<sp/></highlight><highlight class="stringliteral">&apos;file&apos;</highlight><highlight class="normal">;<sp/><sp/></highlight><highlight class="comment">/*<sp/>means<sp/>this<sp/>is<sp/>a<sp/>&apos;file&apos;<sp/>type<sp/>cache<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>IF<sp/>YOU<sp/>HAVE<sp/>IMPLEMENTED<sp/>YOUR<sp/>OWN<sp/>TYPE<sp/>OF<sp/>STORAGE<sp/>OR<sp/>FILE<sp/>SYSTEM</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/>*<sp/>FILL<sp/>IN<sp/>BELOW<sp/>AND<sp/>EMAIL<sp/>TO<sp/>&apos;andy.prevost@worxteam.com&apos;<sp/>TO<sp/>INCLUDE<sp/>IN</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/>*<sp/>THE<sp/>NEXT<sp/>RELEASE<sp/>OF<sp/>QUICKCACHE</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="comment">//<sp/>$QCACHE_TYPE<sp/>=<sp/>&apos;template&apos;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>General<sp/>configuration<sp/>options<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal">$QUICKCACHE_TIME<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><sp/><sp/>900;<sp/></highlight><highlight class="comment">//<sp/>Default<sp/>number<sp/>of<sp/>seconds<sp/>to<sp/>cache<sp/>a<sp/>page</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal">$QUICKCACHE_DEBUG<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><sp/><sp/>0;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Turn<sp/>debugging<sp/>on/off</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal">$QUICKCACHE_IGNORE_DOMAIN=<sp/><sp/><sp/>1;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Ignore<sp/>domain<sp/>name<sp/>in<sp/>request(single<sp/>site)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="comment">//$QUICKCACHE_ON<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><sp/><sp/>1;<sp/><sp/><sp/>//<sp/>Turn<sp/>caching<sp/>on/off</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal">$QUICKCACHE_USE_GZIP<sp/><sp/><sp/><sp/><sp/>=<sp/><sp/><sp/>1;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Whether<sp/>or<sp/>not<sp/>to<sp/>use<sp/>GZIP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal">$QUICKCACHE_POST<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><sp/><sp/>0;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Should<sp/>POST&apos;s<sp/>be<sp/>cached<sp/>(default<sp/>OFF)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal">$QUICKCACHE_GC<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><sp/><sp/>1;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Probability<sp/>%<sp/>of<sp/>garbage<sp/>collection</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal">$QUICKCACHE_GZIP_LEVEL<sp/><sp/><sp/>=<sp/><sp/><sp/>9;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>GZIPcompressionlevel<sp/>to<sp/>use<sp/>(1=low,9=high)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal">$QUICKCACHE_CLEANKEYS<sp/><sp/><sp/><sp/>=<sp/><sp/><sp/>0;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>to<sp/>1<sp/>to<sp/>avoid<sp/>hashing<sp/>storage-key:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>you<sp/>can<sp/>easily<sp/>see<sp/>cachefile-origin.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal">$QUICKCACHE_FILEPREFIX<sp/>=<sp/></highlight><highlight class="stringliteral">&apos;qcc-&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Prefix<sp/>used<sp/>in<sp/>the<sp/>filename.<sp/>This<sp/>enables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>QuickCache<sp/>to<sp/>(more<sp/>accurately)<sp/>recognize</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>quickcache<sp/>files.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>isCGI()<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/>$QUICKCACHE_ISCGI<sp/>=<sp/>1;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>CGI-PHP<sp/>is<sp/>running</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal">}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/>$QUICKCACHE_ISCGI<sp/>=<sp/>0;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>PHP<sp/>is<sp/>running<sp/>as<sp/>module<sp/>-<sp/>definitely<sp/>not<sp/>CGI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Standard<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal">require<sp/>$includedir<sp/>.<sp/></highlight><highlight class="stringliteral">&quot;/cache_main.php&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Type<sp/>specific<sp/>implementations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal">require<sp/>$includedir<sp/>.<sp/></highlight><highlight class="stringliteral">&quot;/type/&quot;</highlight><highlight class="normal"><sp/>.<sp/>$QUICKCACHE_TYPE<sp/>.<sp/></highlight><highlight class="stringliteral">&quot;.php&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Start<sp/>caching</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">($QUICKCACHE_ON===1)</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>quickcache_start();</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>function<sp/>to<sp/>determine<sp/>if<sp/>PHP<sp/>is<sp/>loaded<sp/>as<sp/>a<sp/>CGI-PHP<sp/>or<sp/>as<sp/>an<sp/>Apache<sp/>module<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>isCGI()<sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(substr(php_sapi_name(),<sp/>0,<sp/>3)<sp/>==<sp/></highlight><highlight class="stringliteral">&apos;cgi&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal">?&gt;</highlight></codeline>
+    </programlisting>
+    <location file="/home/peter/git/OpenSencillo/cache.php"/>
+  </compounddef>
+</doxygen>

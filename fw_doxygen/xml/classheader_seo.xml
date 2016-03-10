@@ -1,0 +1,436 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classheader_seo" kind="class" prot="public">
+    <compoundname>headerSeo</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classheader_seo_1a8ec97217cd00453cdb17e5d6a18829ee" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$seo</definition>
+        <argsstring></argsstring>
+        <name>$seo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_functions.php" line="104" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_functions.php" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classheader_seo_1ae19722790c6683980bbf0af8572f26ab" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$info</definition>
+        <argsstring></argsstring>
+        <name>$info</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_functions.php" line="105" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_functions.php" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classheader_seo_1a4f44601f2b9dc8a1644bce53c94ce622" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$header</definition>
+        <argsstring></argsstring>
+        <name>$header</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_functions.php" line="107" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_functions.php" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classheader_seo_1a26b9f9373f7bb79dfcf8a86dff086b45" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$body</definition>
+        <argsstring></argsstring>
+        <name>$body</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_functions.php" line="108" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_functions.php" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classheader_seo_1a7714b111b644017933931ec69a154102" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$lang</definition>
+        <argsstring></argsstring>
+        <name>$lang</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_functions.php" line="109" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_functions.php" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classheader_seo_1afd02eefcb7a468f3fc0ed9ba3a30ebd9" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$oginfo</definition>
+        <argsstring></argsstring>
+        <name>$oginfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_functions.php" line="110" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_functions.php" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classheader_seo_1a095c5d389db211932136b53f25f39685" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>__construct</definition>
+        <argsstring>()</argsstring>
+        <name>__construct</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create default status for page </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_functions.php" line="115" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_functions.php" bodystart="115" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="classheader_seo_1a6731160af6291e4d9f49bdf99e12eea8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>keywords</definition>
+        <argsstring>($kw)</argsstring>
+        <name>keywords</name>
+        <param>
+          <declname>$kw</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Basic function for generate keywords tag <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$kw</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>add keywords </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_functions.php" line="126" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_functions.php" bodystart="126" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="classheader_seo_1adf0fd8dd948e7622a113218888789b4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>encode</definition>
+        <argsstring>($ec=&apos;UTF-8&apos;)</argsstring>
+        <name>encode</name>
+        <param>
+          <declname>$ec</declname>
+          <defval>&apos;UTF-8&apos;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Encoding webpage <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$ec</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>webpage encoding </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_functions.php" line="135" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_functions.php" bodystart="135" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="classheader_seo_1abfdce57af88e3f1213816e5e6a6676e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>responsive</definition>
+        <argsstring>()</argsstring>
+        <name>responsive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Enabled responsive page </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_functions.php" line="143" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_functions.php" bodystart="143" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="classheader_seo_1a8a181ec2d8a26ba25144cad400ca3a87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>title</definition>
+        <argsstring>($t)</argsstring>
+        <name>title</name>
+        <param>
+          <declname>$t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Page title <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>title size max 69 characters </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_functions.php" line="152" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_functions.php" bodystart="152" bodyend="160"/>
+      </memberdef>
+      <memberdef kind="function" id="classheader_seo_1a9ac92a195c29bc1edc1475eef4923c72" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>description</definition>
+        <argsstring>($data)</argsstring>
+        <name>description</name>
+        <param>
+          <declname>$data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Page description with max size 159 characters <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_functions.php" line="166" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_functions.php" bodystart="166" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="function" id="classheader_seo_1a63237197ed5c8199150856dc71ec9e97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>robots</definition>
+        <argsstring>()</argsstring>
+        <name>robots</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add settings for Google Bot and Bing Bot </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_functions.php" line="179" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_functions.php" bodystart="179" bodyend="182"/>
+      </memberdef>
+      <memberdef kind="function" id="classheader_seo_1a2dcb21be96d78f504583452f906e8ad1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>owner</definition>
+        <argsstring>($author)</argsstring>
+        <name>owner</name>
+        <param>
+          <declname>$author</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add page owner meta tag <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$author</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_functions.php" line="188" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_functions.php" bodystart="188" bodyend="191"/>
+      </memberdef>
+      <memberdef kind="function" id="classheader_seo_1a3d46f2f84b0bf0de1921a0cb899bedff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>generator</definition>
+        <argsstring>()</argsstring>
+        <name>generator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add page generator meta tag </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_functions.php" line="196" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_functions.php" bodystart="196" bodyend="199"/>
+      </memberdef>
+      <memberdef kind="function" id="classheader_seo_1a61e85615da2625b55b5580d7ec5e9258" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>custom</definition>
+        <argsstring>($code)</argsstring>
+        <name>custom</name>
+        <param>
+          <declname>$code</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add custom code to header <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$code</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_functions.php" line="205" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_functions.php" bodystart="205" bodyend="208"/>
+      </memberdef>
+      <memberdef kind="function" id="classheader_seo_1a21fdbf37b0f5c645d980ba7a96fabf6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>script</definition>
+        <argsstring>($code)</argsstring>
+        <name>script</name>
+        <param>
+          <declname>$code</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_functions.php" line="215" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_functions.php" bodystart="215" bodyend="218"/>
+      </memberdef>
+      <memberdef kind="function" id="classheader_seo_1afc8a3c62679cf00ade9f15fb2a6d6132" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>save</definition>
+        <argsstring>()</argsstring>
+        <name>save</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Save SEO and generate header content <simplesect kind="return"><para>string </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_functions.php" line="224" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_functions.php" bodystart="224" bodyend="258"/>
+      </memberdef>
+      <memberdef kind="function" id="classheader_seo_1aa47df0e5b5191e604c711ede952a91fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>lang</definition>
+        <argsstring>($lang)</argsstring>
+        <name>lang</name>
+        <param>
+          <declname>$lang</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_functions.php" line="265" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_functions.php" bodystart="265" bodyend="269"/>
+      </memberdef>
+      <memberdef kind="function" id="classheader_seo_1a7d18829341f798ff00342e4e7d96030a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>googleLoad</definition>
+        <argsstring>()</argsstring>
+        <name>googleLoad</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add google load call </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_functions.php" line="274" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_functions.php" bodystart="274" bodyend="278"/>
+      </memberdef>
+      <memberdef kind="function" id="classheader_seo_1a1b6489fdb8d3547f32072eb5a3abd514" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>jquery</definition>
+        <argsstring>()</argsstring>
+        <name>jquery</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add jquery </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_functions.php" line="283" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_functions.php" bodystart="283" bodyend="286"/>
+      </memberdef>
+      <memberdef kind="function" id="classheader_seo_1ac49e736b6e84fc47561fcf0dfe4df35b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>socialTags</definition>
+        <argsstring>($arr, $snippet=false)</argsstring>
+        <name>socialTags</name>
+        <param>
+          <declname>$arr</declname>
+        </param>
+        <param>
+          <declname>$snippet</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add og-tags and social tags <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_functions.php" line="292" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_functions.php" bodystart="292" bodyend="308"/>
+      </memberdef>
+      <memberdef kind="function" id="classheader_seo_1a861ffee5950974206ca24646eab7d39f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>bootstrapDefs</definition>
+        <argsstring>()</argsstring>
+        <name>bootstrapDefs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add bootstrap call </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_core/core_functions.php" line="313" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_functions.php" bodystart="313" bodyend="318"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/peter/git/OpenSencillo/fw_core/core_functions.php" line="103" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_core/core_functions.php" bodystart="102" bodyend="319"/>
+    <listofallmembers>
+      <member refid="classheader_seo_1a26b9f9373f7bb79dfcf8a86dff086b45" prot="private" virt="non-virtual"><scope>headerSeo</scope><name>$body</name></member>
+      <member refid="classheader_seo_1a4f44601f2b9dc8a1644bce53c94ce622" prot="private" virt="non-virtual"><scope>headerSeo</scope><name>$header</name></member>
+      <member refid="classheader_seo_1ae19722790c6683980bbf0af8572f26ab" prot="public" virt="non-virtual"><scope>headerSeo</scope><name>$info</name></member>
+      <member refid="classheader_seo_1a7714b111b644017933931ec69a154102" prot="private" virt="non-virtual"><scope>headerSeo</scope><name>$lang</name></member>
+      <member refid="classheader_seo_1afd02eefcb7a468f3fc0ed9ba3a30ebd9" prot="private" virt="non-virtual"><scope>headerSeo</scope><name>$oginfo</name></member>
+      <member refid="classheader_seo_1a8ec97217cd00453cdb17e5d6a18829ee" prot="public" virt="non-virtual"><scope>headerSeo</scope><name>$seo</name></member>
+      <member refid="classheader_seo_1a095c5d389db211932136b53f25f39685" prot="public" virt="non-virtual"><scope>headerSeo</scope><name>__construct</name></member>
+      <member refid="classheader_seo_1a861ffee5950974206ca24646eab7d39f" prot="public" virt="non-virtual"><scope>headerSeo</scope><name>bootstrapDefs</name></member>
+      <member refid="classheader_seo_1a61e85615da2625b55b5580d7ec5e9258" prot="public" virt="non-virtual"><scope>headerSeo</scope><name>custom</name></member>
+      <member refid="classheader_seo_1a9ac92a195c29bc1edc1475eef4923c72" prot="public" virt="non-virtual"><scope>headerSeo</scope><name>description</name></member>
+      <member refid="classheader_seo_1adf0fd8dd948e7622a113218888789b4c" prot="public" virt="non-virtual"><scope>headerSeo</scope><name>encode</name></member>
+      <member refid="classheader_seo_1a3d46f2f84b0bf0de1921a0cb899bedff" prot="public" virt="non-virtual"><scope>headerSeo</scope><name>generator</name></member>
+      <member refid="classheader_seo_1a7d18829341f798ff00342e4e7d96030a" prot="public" virt="non-virtual"><scope>headerSeo</scope><name>googleLoad</name></member>
+      <member refid="classheader_seo_1a1b6489fdb8d3547f32072eb5a3abd514" prot="public" virt="non-virtual"><scope>headerSeo</scope><name>jquery</name></member>
+      <member refid="classheader_seo_1a6731160af6291e4d9f49bdf99e12eea8" prot="public" virt="non-virtual"><scope>headerSeo</scope><name>keywords</name></member>
+      <member refid="classheader_seo_1aa47df0e5b5191e604c711ede952a91fd" prot="public" virt="non-virtual"><scope>headerSeo</scope><name>lang</name></member>
+      <member refid="classheader_seo_1a2dcb21be96d78f504583452f906e8ad1" prot="public" virt="non-virtual"><scope>headerSeo</scope><name>owner</name></member>
+      <member refid="classheader_seo_1abfdce57af88e3f1213816e5e6a6676e9" prot="public" virt="non-virtual"><scope>headerSeo</scope><name>responsive</name></member>
+      <member refid="classheader_seo_1a63237197ed5c8199150856dc71ec9e97" prot="public" virt="non-virtual"><scope>headerSeo</scope><name>robots</name></member>
+      <member refid="classheader_seo_1afc8a3c62679cf00ade9f15fb2a6d6132" prot="public" virt="non-virtual"><scope>headerSeo</scope><name>save</name></member>
+      <member refid="classheader_seo_1a21fdbf37b0f5c645d980ba7a96fabf6e" prot="public" virt="non-virtual"><scope>headerSeo</scope><name>script</name></member>
+      <member refid="classheader_seo_1ac49e736b6e84fc47561fcf0dfe4df35b" prot="public" virt="non-virtual"><scope>headerSeo</scope><name>socialTags</name></member>
+      <member refid="classheader_seo_1a8a181ec2d8a26ba25144cad400ca3a87" prot="public" virt="non-virtual"><scope>headerSeo</scope><name>title</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

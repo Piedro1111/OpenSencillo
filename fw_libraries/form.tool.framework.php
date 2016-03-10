@@ -2,7 +2,7 @@
 /**
  * Simple make form
  * @name formCreator
- * @version 2015.002
+ * @version 2015.108
  * @category Sencillo Library
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth
@@ -16,20 +16,21 @@ class formCreator
     /**
      * Create input
      * 
-     * @example Usable parameter type: sstring $type (HTML5 types)
+     * @example Usable parameter type: string $type (HTML5 types)
      * @example Usable parameter type: string $id (unique identification)
      * @example Usable parameter type: string $name (unique name)
      * @example Usable parameter type: string $value (sending value)
      * @example Usable parameter type: string $class (classes)
      * @example Usable parameter type: string $param (other parameters)
      * 
+     * @param string $tag (tag name)
      * @param array $type (content type)
      * @param array $params (html parameter in attribute)
      * 
      * @return bool (if notype)
      * @return array (if generating process is ok)
      */
-    public function create($type,$params)
+    public function newInputLine($tag='input',$type='text',$params=array('id'=>'default'),$otherContent=null)
     {
         if($type==null)
         {
@@ -37,35 +38,36 @@ class formCreator
         }
         else 
         {
-            $params=array();
+            $updateClass=array();
             $updateParams=array();
-            if($params['value']!=null)
+            foreach($params as $key=>$val)
             {
-            	$updateParams['value']=" value='".$params['value']."'";
+            	if($key=='class')
+            	{
+            		$updateClass['class']['open']="";
+            		foreach($params['class'] as $val)
+            		{
+            			$updateClass['class'][]=$val;
+            		}
+            		$updateClass['class']['close']="'";
+            	}
+            	else
+            	{
+            		$updateParams[$key]=" $key='".$val."'";
+            	}
             }
-            if($params['id']!=null)
-            {
-                $updateParams['id']=" id='".$params['id']."'";
-            }
-            if($params['name']!=null)
-            {
-                $updateParams['name']=" name='".$params['name']."'";
-            }
-            if($params['class']!=null)
-            {
-                $updateParams['class']=" class='".$params['class']."'";
-            }
-            if($params['param']!=null)
-            {
-                $updateParams['param']=" param='".$params['param']."'";
-            }
-            if($params['label']!=null)
+            
+            if(!empty($params['label']))
             {
                 $updateParams['label']="<label id='".$params['id']."_label' for='".$params['id']."'>".$params['label']."</label>";
             }
             $this->form['label'][$params['id']]=$updateParams['label'];
-            $this->form['input'][$params['id']]="<input type='$type'".$params['value'].$params['id'].$params['name'].$params['class'].$params['param'].">";
-        	return array($this->form['label'][$params['id']],$this->form['input'][$params['id']]);
+            $this->form[$tag][$params['id']]="<$tag class='".implode(" ",$updateClass['class'])."' ".implode(" ",$updateParams).">";
+            if($otherContent!=null)
+            {
+            	$this->form[$tag."_data"][$params['id']]="$otherContent</$tag>";
+            }
+        	return $this->form;
         }
     }
     
@@ -75,6 +77,7 @@ class formCreator
      * @param array $id (identification in the system)
      * 
      * @return string (if exist $id retruning html input tag)
+     * @todo add div generator for label and input groupe
      */
     public function getById($id,$action="/",$method="post")
     {
@@ -115,6 +118,36 @@ class formCreator
             $i++;
         }
         return $out;
+    }
+    
+    /**
+     * Create selectbox from table
+     * 
+     * @param string $system
+     * @param string $group
+     * @param string $order ['asc'] | ['desc']
+     * @param string $table (your database uniData table name)
+     * 
+     * @return array
+     */
+    final private function selectbox($system,$group,$order='asc',$table='formData')
+    {
+    	if(database::json===0)
+    	{
+    		$mysql = new mysqlInterface;
+    		$mysql->config();
+    		$mysql->connect();
+    		$mysql->select(array($table=>array('condition'=>array('`par_system`='.$system,'`par_group`='.$group),'sort'=>array($order=>'`id`'))));
+    		$data = $mysql->execute();
+    			
+    		foreach($data as $key=>$val)
+    		{
+    			$default = (($val['par_default']!='')?' selected':'');
+    			$arr[] = "<option value='{$val['par_value']}'$default>{$val['par_name']}</option>";
+    		}
+    			
+    		return implode(PHP_EOL,$arr);
+    	}
     }
 }
 ?>

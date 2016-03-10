@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="welcome_8default_8screen_8php" kind="file">
+    <compoundname>welcome.default.screen.php</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="welcome_8default_8screen_8php_1a3d44ea1cbbc9bc72aad8436186c4866e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$t</definition>
+        <argsstring></argsstring>
+        <name>$t</name>
+        <initializer>=$<ref refid="classtranslate" kindref="compound">translate</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_templates/welcome.default.screen.php" line="2" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_templates/welcome.default.screen.php" bodystart="2" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="welcome_8default_8screen_8php_1a5babc204490c6f8002bccd3d3c29fdbc" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$afterBootUp</definition>
+        <argsstring></argsstring>
+        <name>$afterBootUp</name>
+        <initializer>=array()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_templates/welcome.default.screen.php" line="3" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_templates/welcome.default.screen.php" bodystart="3" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="welcome_8default_8screen_8php_1a0b6ecd9bb98678f35c90c3f3a80d7b5c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$afterBootUp[0]</definition>
+        <argsstring>[0]</argsstring>
+        <name>$afterBootUp</name>
+        <initializer>=$core-&gt;<ref refid="classcore_sencillo" kindref="compound">coreSencillo</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_templates/welcome.default.screen.php" line="4" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_templates/welcome.default.screen.php" bodystart="4" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="2"><highlight class="normal">$t=$translate;</highlight></codeline>
+<codeline lineno="3"><highlight class="normal">$afterBootUp=array();</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">$afterBootUp[0]=$core-&gt;coreSencillo;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal">?&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;body&gt;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;nav<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;navbar<sp/>navbar-inverse<sp/>navbar-fixed-top&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;div<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;container-fluid&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;div<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;navbar-header&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;a<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;navbar-brand&quot;</highlight><highlight class="normal"><sp/>href=</highlight><highlight class="stringliteral">&quot;http://www.opensencillo.com&quot;</highlight><highlight class="normal">&gt;&lt;?=$t-&gt;translate(</highlight><highlight class="stringliteral">&apos;OpenSencillo&apos;</highlight><highlight class="normal">);?&gt;&lt;/a&gt;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/div&gt;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;div&gt;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;ul<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;nav<sp/>navbar-nav&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;active&quot;</highlight><highlight class="normal">&gt;&lt;a<sp/>href=</highlight><highlight class="stringliteral">&quot;http://www.opensencillo.com&quot;</highlight><highlight class="normal">&gt;&lt;?=$t-&gt;translate(</highlight><highlight class="stringliteral">&apos;Homepage&apos;</highlight><highlight class="normal">);?&gt;&lt;/a&gt;&lt;/li&gt;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;&lt;a<sp/>href=</highlight><highlight class="stringliteral">&quot;http://github.com/Piedro1111/OpenSencillo/archive/master.zip&quot;</highlight><highlight class="normal">&gt;&lt;?=$t-&gt;translate(</highlight><highlight class="stringliteral">&apos;Download&apos;</highlight><highlight class="normal">);?&gt;&lt;/a&gt;&lt;/li&gt;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;&lt;a<sp/>href=</highlight><highlight class="stringliteral">&quot;http://www.opensencillo.com/installation-2015-003/&quot;</highlight><highlight class="normal">&gt;&lt;?=$t-&gt;translate(</highlight><highlight class="stringliteral">&apos;Installation&apos;</highlight><highlight class="normal">);?&gt;&lt;/a&gt;&lt;/li&gt;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;&lt;a<sp/>href=</highlight><highlight class="stringliteral">&quot;http://documentation.opensencillo.com/version/2015/003.r1/&quot;</highlight><highlight class="normal">&gt;&lt;?=$t-&gt;translate(</highlight><highlight class="stringliteral">&apos;Documentation&apos;</highlight><highlight class="normal">);?&gt;&lt;/a&gt;&lt;/li&gt;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;&lt;a<sp/>href=</highlight><highlight class="stringliteral">&quot;https://github.com/Piedro1111/OpenSencillo&quot;</highlight><highlight class="normal">&gt;GitHub&lt;/a&gt;&lt;/li&gt;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/ul&gt;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/div&gt;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/div&gt;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/nav&gt;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;div<sp/>style=</highlight><highlight class="stringliteral">&quot;padding-top:<sp/>100px;&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;container&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;div<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;row&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;div<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;col-sm-12&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;h1&gt;&lt;?=$t-&gt;translate(</highlight><highlight class="stringliteral">&apos;It<sp/>works&apos;</highlight><highlight class="normal">);?&gt;&lt;/h1&gt;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;div<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;alert<sp/>alert-success&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;strong&gt;&lt;?=$t-&gt;translate(</highlight><highlight class="stringliteral">&apos;Success&apos;</highlight><highlight class="normal">);?&gt;!&lt;/strong&gt;<sp/>&lt;?=$t-&gt;translate(</highlight><highlight class="stringliteral">&apos;Write<sp/>your<sp/>PHP<sp/>code<sp/>to<sp/>file<sp/>yourcode.php&apos;</highlight><highlight class="normal">);?&gt;.</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/div&gt;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/div&gt;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/div&gt;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;div<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;row&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;div<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;col-sm-12&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;ul<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;list-group&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;list-group-item&quot;</highlight><highlight class="normal">&gt;&lt;strong&gt;Name:&lt;/strong&gt;<sp/>&lt;?=$afterBootUp[0]-&gt;info[</highlight><highlight class="stringliteral">&apos;NME&apos;</highlight><highlight class="normal">];?&gt;&lt;/li&gt;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;list-group-item&quot;</highlight><highlight class="normal">&gt;&lt;strong&gt;Licence:&lt;/strong&gt;<sp/>GNU/GPL&lt;/li&gt;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;list-group-item&quot;</highlight><highlight class="normal">&gt;&lt;strong&gt;Type:&lt;/strong&gt;<sp/>Framework&lt;/li&gt;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;list-group-item&quot;</highlight><highlight class="normal">&gt;&lt;strong&gt;Category:&lt;/strong&gt;<sp/>OpenSource&lt;/li&gt;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;list-group-item&quot;</highlight><highlight class="normal">&gt;&lt;strong&gt;Language:&lt;/strong&gt;<sp/>PHP<sp/>5.3+,<sp/>JQUERY,<sp/>HTML5&lt;/li&gt;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;list-group-item&quot;</highlight><highlight class="normal">&gt;&lt;strong&gt;Release:&lt;/strong&gt;<sp/>&lt;?=$afterBootUp[0]-&gt;info[</highlight><highlight class="stringliteral">&apos;VSN&apos;</highlight><highlight class="normal">];?&gt;&lt;/li&gt;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;list-group-item&quot;</highlight><highlight class="normal">&gt;&lt;strong&gt;Build:&lt;/strong&gt;<sp/>&lt;?=$afterBootUp[0]-&gt;info[</highlight><highlight class="stringliteral">&apos;DTC&apos;</highlight><highlight class="normal">];?&gt;&lt;/li&gt;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;list-group-item&quot;</highlight><highlight class="normal">&gt;&lt;strong&gt;By:&lt;/strong&gt;<sp/>&lt;?=$afterBootUp[0]-&gt;info[</highlight><highlight class="stringliteral">&apos;CPY&apos;</highlight><highlight class="normal">];?&gt;&lt;/li&gt;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;list-group-item&quot;</highlight><highlight class="normal">&gt;&lt;strong&gt;Homepage:&lt;/strong&gt;<sp/>&lt;a<sp/>href=</highlight><highlight class="stringliteral">&quot;&lt;?=$afterBootUp[0]-&gt;info[&apos;HPE&apos;];?&gt;&quot;</highlight><highlight class="normal">&gt;&lt;?=$afterBootUp[0]-&gt;info[</highlight><highlight class="stringliteral">&apos;HPE&apos;</highlight><highlight class="normal">];?&gt;&lt;/a&gt;&lt;/li&gt;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;list-group-item&quot;</highlight><highlight class="normal">&gt;&lt;strong&gt;Features:&lt;/strong&gt;<sp/>File<sp/>management,<sp/>File<sp/>Convertors,<sp/>Database<sp/>management,<sp/>SEO,<sp/>Session<sp/>&amp;<sp/>Cookies<sp/>management,<sp/>Hash<sp/>subsystem,<sp/>Translates<sp/>JSON<sp/><ref refid="classfile" kindref="compound">file</ref>,<sp/>Unit<sp/>Testing,<sp/>…&lt;/li&gt;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/ul&gt;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/div&gt;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/div&gt;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/div&gt;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;/body&gt;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">&lt;/html&gt;</highlight></codeline>
+    </programlisting>
+    <location file="/home/peter/git/OpenSencillo/fw_templates/welcome.default.screen.php"/>
+  </compounddef>
+</doxygen>

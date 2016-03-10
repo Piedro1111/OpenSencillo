@@ -1,9 +1,9 @@
 <?php
 /*~ basicstrap.php
 .---------------------------------------------------------------------------.
-|  Software: Sencillo Basic Bootstrap                                       |
-|   Version: 2015.003                                                       |
-|   Contact: ph@mastery.sk                                                  |
+|  Software: OpenSencillo Basic Bootstrap                                   |
+|   Version: 2015.109                                                       |
+|   Contact: mail@phorvath.com                                              |
 | ------------------------------------------------------------------------- |
 |    Author: Bc. Peter Horváth (original founder)                           |
 | Copyright (c) 2015, Bc. Peter Horváth. All Rights Reserved.               |
@@ -16,15 +16,32 @@
 '---------------------------------------------------------------------------'
 ~*/
 error_reporting(E_ERROR | E_PARSE);
-include("./fw_headers/mysql-config.php");
-include("./fw_headers/main-config.php");
-require_once("./fw_core/core_interface.php");
-require("./fw_core/core_sql.php");
-require("./fw_headers/session.php");
-require("./fw_headers/cookies.php");
-require("./cache.php");
-require("./fw_core/core_functions.php");
-require("./fw_libraries/lib_identificator.php");
+if((defined('DB_USER'))&&(defined('DB_NAME'))&&(defined('DB_PASS'))&&(defined('DB_HOST')))
+{
+	class database
+	{
+		const host = DB_HOST;
+		const name = DB_NAME;
+		const user = DB_USER;
+		const pass = DB_PASS;
+		const type = "sams";
+		const hash = "sams";
+		const cache= "0";
+	}
+	
+	require_once(__DIR__ . "/fw_core/core_interface.php");
+	require(__DIR__ . "/fw_core/core_sql.php");
+}
+else
+{
+	include(__DIR__ . "/fw_headers/mysql-config.php");
+	include(__DIR__ . "/fw_headers/main-config.php");
+	require_once(__DIR__ . "/fw_core/core_interface.php");
+	require(__DIR__ . "/fw_core/core_sql.php");
+	require(__DIR__ . "/cache.php");
+}
+require(__DIR__ . "/fw_libraries/lib_identificator.php");
+require(__DIR__ . "/fw_core/core_functions.php");
 $inc=new library;
 $inc->start();
 $paths = $inc->exportPath();
@@ -38,9 +55,10 @@ foreach($paths as $val)
 	}
 }
 unset($paths);
+$core = new bootUp(false);
 
 if(PAGE=='admin')
 {
-	require_once("./fw_core/core_admin.php");
+	require_once(__DIR__ . "/fw_core/core_admin.php");
 }
 ?>

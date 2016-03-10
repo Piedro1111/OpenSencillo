@@ -1,0 +1,378 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classstructgen" kind="class" prot="public">
+    <compoundname>structgen</compoundname>
+    <derivedcompoundref refid="classdefault_structures" prot="public" virt="non-virtual">defaultStructures</derivedcompoundref>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classstructgen_1a6efc15b5a2314dd4b5aaa556a375c6d6" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>$data</definition>
+        <argsstring></argsstring>
+        <name>$data</name>
+        <initializer>=array()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/structure.generator.structgen.php" line="13" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/structure.generator.structgen.php" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classstructgen_1a047170d6020a882807665812a27e2525" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>$sql</definition>
+        <argsstring></argsstring>
+        <name>$sql</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/structure.generator.structgen.php" line="14" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/structure.generator.structgen.php" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classstructgen_1af28a2bf1bdf5c6f3ffeb459f2bba572b" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>$baseCtr</definition>
+        <argsstring></argsstring>
+        <name>$baseCtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/structure.generator.structgen.php" line="15" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/structure.generator.structgen.php" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classstructgen_1a629dff33e6ad4aecc6c382d488cdcb08" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>$subCtr</definition>
+        <argsstring></argsstring>
+        <name>$subCtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/structure.generator.structgen.php" line="16" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/structure.generator.structgen.php" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classstructgen_1ab2fc40d43824ea3e1ce5d86dee0d763b" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>$name</definition>
+        <argsstring></argsstring>
+        <name>$name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/structure.generator.structgen.php" line="17" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/structure.generator.structgen.php" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classstructgen_1a36878ba6be584b5b676f7bd98af20ee9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>__construct</definition>
+        <argsstring>($name, $mysqlObject)</argsstring>
+        <name>__construct</name>
+        <param>
+          <declname>$name</declname>
+        </param>
+        <param>
+          <declname>$mysqlObject</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/structure.generator.structgen.php" line="19" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/structure.generator.structgen.php" bodystart="19" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classstructgen_1a92f20c16db5c95fbd705777feacf8125" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>createStructure</definition>
+        <argsstring>($name=&apos;structgen&apos;)</argsstring>
+        <name>createStructure</name>
+        <param>
+          <declname>$name</declname>
+          <defval>&apos;<ref refid="classstructgen" kindref="compound">structgen</ref>&apos;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create structure <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>$name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>string </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/structure.generator.structgen.php" line="28" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/structure.generator.structgen.php" bodystart="28" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classstructgen_1ade4889cf904248b04ad83fbe2f2e74f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>uniStore</definition>
+        <argsstring>($name=&apos;uniStructgen&apos;)</argsstring>
+        <name>uniStore</name>
+        <param>
+          <declname>$name</declname>
+          <defval>&apos;uniStructgen&apos;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create unistore list structure <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>$name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>string </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/structure.generator.structgen.php" line="64" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/structure.generator.structgen.php" bodystart="64" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="classstructgen_1a9ad9f4819f4914c8f0af701c5d5832e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>switchStructure</definition>
+        <argsstring>($name)</argsstring>
+        <name>switchStructure</name>
+        <param>
+          <declname>$name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Switch to other structure by name <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>$name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>string </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/structure.generator.structgen.php" line="109" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/structure.generator.structgen.php" bodystart="109" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="classstructgen_1a68faa951ece5c70b42a9782bcfa3590a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>add</definition>
+        <argsstring>($item, $base=0, $subnav=null, $perm=1000, $link=null, $priority=null)</argsstring>
+        <name>add</name>
+        <param>
+          <declname>$item</declname>
+        </param>
+        <param>
+          <declname>$base</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <declname>$subnav</declname>
+          <defval>null</defval>
+        </param>
+        <param>
+          <declname>$perm</declname>
+          <defval>1000</defval>
+        </param>
+        <param>
+          <declname>$link</declname>
+          <defval>null</defval>
+        </param>
+        <param>
+          <declname>$priority</declname>
+          <defval>null</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add item / record to structure <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>$item</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>string name of item </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>$base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>int id of parent (root base is 0) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>$subnav</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>int id of new item </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>$perm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>int permission for view </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>$link</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>string full URL </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>$priority</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>int priority level </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/structure.generator.structgen.php" line="123" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/structure.generator.structgen.php" bodystart="123" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="classstructgen_1abe862044c4d94459740b5b6563a4f870" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>listStructure</definition>
+        <argsstring>()</argsstring>
+        <name>listStructure</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>List structure <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>$rootbase</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>int </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>$maxbase</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>int </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/structure.generator.structgen.php" line="159" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/structure.generator.structgen.php" bodystart="159" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="classstructgen_1ad1e438322f50cf6f9cf6025c76ded250" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>listBase</definition>
+        <argsstring>($base)</argsstring>
+        <name>listBase</name>
+        <param>
+          <declname>$base</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>List all structure information for one base (for one level) <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>$base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>int </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>array </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/structure.generator.structgen.php" line="183" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/structure.generator.structgen.php" bodystart="183" bodyend="194"/>
+      </memberdef>
+      <memberdef kind="function" id="classstructgen_1a421831a265621325e1fdd19aace0c758" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>__destruct</definition>
+        <argsstring>()</argsstring>
+        <name>__destruct</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/structure.generator.structgen.php" line="217" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/structure.generator.structgen.php" bodystart="217" bodyend="217"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classstructgen_1ade8dce698ebb615d905c0ed634daa670" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>createQueries</definition>
+        <argsstring>()</argsstring>
+        <name>createQueries</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create database queries for construct full structure and execute queries </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/structure.generator.structgen.php" line="141" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/structure.generator.structgen.php" bodystart="141" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="classstructgen_1a75e82634a8701d46c3f32c15de055316" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>worker</definition>
+        <argsstring>()</argsstring>
+        <name>worker</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Find all content for list <simplesect kind="return"><para>array </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/structure.generator.structgen.php" line="199" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/structure.generator.structgen.php" bodystart="199" bodyend="215"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="80">
+        <label>structgen</label>
+        <link refid="classstructgen"/>
+      </node>
+      <node id="81">
+        <label>defaultStructures</label>
+        <link refid="classdefault_structures"/>
+        <childnode refid="80" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="/home/peter/git/OpenSencillo/fw_libraries/structure.generator.structgen.php" line="12" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/structure.generator.structgen.php" bodystart="11" bodyend="218"/>
+    <listofallmembers>
+      <member refid="classstructgen_1af28a2bf1bdf5c6f3ffeb459f2bba572b" prot="protected" virt="non-virtual"><scope>structgen</scope><name>$baseCtr</name></member>
+      <member refid="classstructgen_1a6efc15b5a2314dd4b5aaa556a375c6d6" prot="protected" virt="non-virtual"><scope>structgen</scope><name>$data</name></member>
+      <member refid="classstructgen_1ab2fc40d43824ea3e1ce5d86dee0d763b" prot="protected" virt="non-virtual"><scope>structgen</scope><name>$name</name></member>
+      <member refid="classstructgen_1a047170d6020a882807665812a27e2525" prot="protected" virt="non-virtual"><scope>structgen</scope><name>$sql</name></member>
+      <member refid="classstructgen_1a629dff33e6ad4aecc6c382d488cdcb08" prot="protected" virt="non-virtual"><scope>structgen</scope><name>$subCtr</name></member>
+      <member refid="classstructgen_1a36878ba6be584b5b676f7bd98af20ee9" prot="public" virt="non-virtual"><scope>structgen</scope><name>__construct</name></member>
+      <member refid="classstructgen_1a421831a265621325e1fdd19aace0c758" prot="public" virt="non-virtual"><scope>structgen</scope><name>__destruct</name></member>
+      <member refid="classstructgen_1a68faa951ece5c70b42a9782bcfa3590a" prot="public" virt="non-virtual"><scope>structgen</scope><name>add</name></member>
+      <member refid="classstructgen_1ade8dce698ebb615d905c0ed634daa670" prot="private" virt="non-virtual"><scope>structgen</scope><name>createQueries</name></member>
+      <member refid="classstructgen_1a92f20c16db5c95fbd705777feacf8125" prot="public" virt="non-virtual"><scope>structgen</scope><name>createStructure</name></member>
+      <member refid="classstructgen_1ad1e438322f50cf6f9cf6025c76ded250" prot="public" virt="non-virtual"><scope>structgen</scope><name>listBase</name></member>
+      <member refid="classstructgen_1abe862044c4d94459740b5b6563a4f870" prot="public" virt="non-virtual"><scope>structgen</scope><name>listStructure</name></member>
+      <member refid="classstructgen_1a9ad9f4819f4914c8f0af701c5d5832e4" prot="public" virt="non-virtual"><scope>structgen</scope><name>switchStructure</name></member>
+      <member refid="classstructgen_1ade4889cf904248b04ad83fbe2f2e74f9" prot="public" virt="non-virtual"><scope>structgen</scope><name>uniStore</name></member>
+      <member refid="classstructgen_1a75e82634a8701d46c3f32c15de055316" prot="private" virt="non-virtual"><scope>structgen</scope><name>worker</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

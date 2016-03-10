@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classfdel" kind="class" prot="public">
+    <compoundname>fdel</compoundname>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classfdel_1a6efc15b5a2314dd4b5aaa556a375c6d6" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>$data</definition>
+        <argsstring></argsstring>
+        <name>$data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/files.delete.fdel.php" line="13" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/files.delete.fdel.php" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfdel_1af104a08d89a5bbf1f513b65fdc8bba1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>__construct</definition>
+        <argsstring>($storage)</argsstring>
+        <name>__construct</name>
+        <param>
+          <declname>$storage</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Construct <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$storage</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/files.delete.fdel.php" line="19" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/files.delete.fdel.php" bodystart="19" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classfdel_1aaed74f7942d3fc56582e99324500e87b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>debug</definition>
+        <argsstring>()</argsstring>
+        <name>debug</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return debug information <simplesect kind="return"><para>array </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/files.delete.fdel.php" line="29" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/files.delete.fdel.php" bodystart="29" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classfdel_1a91e316c945c62d9fca01935263815b03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>deleteFile</definition>
+        <argsstring>($name)</argsstring>
+        <name>deleteFile</name>
+        <param>
+          <declname>$name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Delete one file <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boolean </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/files.delete.fdel.php" line="39" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/files.delete.fdel.php" bodystart="39" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classfdel_1acad5a617688373b7d8032baefa0dad1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>deleteFolder</definition>
+        <argsstring>($name)</argsstring>
+        <name>deleteFolder</name>
+        <param>
+          <declname>$name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Delete folder by name <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>string</parametertype>
+<parametername>$name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boolean </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/files.delete.fdel.php" line="66" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/files.delete.fdel.php" bodystart="66" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="classfdel_1a45176edc5172bdb59f6a1fe0cd2235f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>deleteOldFile</definition>
+        <argsstring>($olderThan=7)</argsstring>
+        <name>deleteOldFile</name>
+        <param>
+          <declname>$olderThan</declname>
+          <defval>7</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Delete old file by expire day <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametertype>number</parametertype>
+<parametername>$olderThan</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>number </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/peter/git/OpenSencillo/fw_libraries/files.delete.fdel.php" line="87" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/files.delete.fdel.php" bodystart="87" bodyend="115"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/peter/git/OpenSencillo/fw_libraries/files.delete.fdel.php" line="12" column="1" bodyfile="/home/peter/git/OpenSencillo/fw_libraries/files.delete.fdel.php" bodystart="11" bodyend="116"/>
+    <listofallmembers>
+      <member refid="classfdel_1a6efc15b5a2314dd4b5aaa556a375c6d6" prot="protected" virt="non-virtual"><scope>fdel</scope><name>$data</name></member>
+      <member refid="classfdel_1af104a08d89a5bbf1f513b65fdc8bba1f" prot="public" virt="non-virtual"><scope>fdel</scope><name>__construct</name></member>
+      <member refid="classfdel_1aaed74f7942d3fc56582e99324500e87b" prot="public" virt="non-virtual"><scope>fdel</scope><name>debug</name></member>
+      <member refid="classfdel_1a91e316c945c62d9fca01935263815b03" prot="public" virt="non-virtual"><scope>fdel</scope><name>deleteFile</name></member>
+      <member refid="classfdel_1acad5a617688373b7d8032baefa0dad1b" prot="public" virt="non-virtual"><scope>fdel</scope><name>deleteFolder</name></member>
+      <member refid="classfdel_1a45176edc5172bdb59f6a1fe0cd2235f4" prot="public" virt="non-virtual"><scope>fdel</scope><name>deleteOldFile</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

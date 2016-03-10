@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="dir_e8da1a3be6b96e9c0a124b6674151229" kind="dir">
+    <compoundname>/home/peter/git/OpenSencillo/fw_libraries</compoundname>
+    <innerfile refid="country_8list_8clist_8php">country.list.clist.php</innerfile>
+    <innerfile refid="files_8delete_8fdel_8php">files.delete.fdel.php</innerfile>
+    <innerfile refid="files_8management_8fman_8php">files.management.fman.php</innerfile>
+    <innerfile refid="files_8upload_8fup_8php">files.upload.fup.php</innerfile>
+    <innerfile refid="form_8tool_8framework_8php">form.tool.framework.php</innerfile>
+    <innerfile refid="google_8analytics_8goas_8php">google.analytics.goas.php</innerfile>
+    <innerfile refid="htaccess_8generator_8htgen_8php">htaccess.generator.htgen.php</innerfile>
+    <innerfile refid="imagick_8convert_8pdf2jpg_8php">imagick.convert.pdf2jpg.php</innerfile>
+    <innerfile refid="input_8rewrite_8inrew_8php">input.rewrite.inrew.php</innerfile>
+    <innerfile refid="lib__identificator_8php">lib_identificator.php</innerfile>
+    <innerfile refid="login_8management_8logman_8php">login.management.logman.php</innerfile>
+    <innerfile refid="menu_8generator_8menugen_8php">menu.generator.menugen.php</innerfile>
+    <innerfile refid="simple_8image_8simp_8php">simple.image.simp.php</innerfile>
+    <innerfile refid="structure_8generator_8structgen_8php">structure.generator.structgen.php</innerfile>
+    <innerfile refid="test_8tool_8framework_8php">test.tool.framework.php</innerfile>
+    <innerfile refid="translate_8tool_8framework_8php">translate.tool.framework.php</innerfile>
+    <innerfile refid="url_8management_8urlman_8php">url.management.urlman.php</innerfile>
+    <innerfile refid="user_agent_8parser_8usagpa_8php">userAgent.parser.usagpa.php</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/peter/git/OpenSencillo/fw_libraries/"/>
+  </compounddef>
+</doxygen>
