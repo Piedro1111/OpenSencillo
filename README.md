@@ -43,7 +43,8 @@ It is special modules contains system´s classes.
 
 ##Changes log
 ============
-###ON BUILD 2015.109
+###ON BUILD 2016.105
+###2015.109
 1. Created SAMS - Sencillo As Module Subsystem
 2. Add __DIR__ for SAMS
 
