@@ -13,8 +13,8 @@
 > * Category: OpenSource;
 > * Language: PHP 5.3+, JQUERY, HTML5
 > * Year: 2015;
-> * Build: 107;
-> * Rev: 2015.107;
+> * Build: 109;
+> * Rev: 2015.109;
 > * By: [Bc. Peter Horváth](http://phorvath.com);
 > * Homepage: [Open Sencillo](http://opensencillo.com);
 > * Features: File management, File Convertors, Database management, SEO, Session & Cookies management, Hash subsystem, Translates JSON file, Unit Testing, Htaccess generator, Simple image tool ...
@@ -44,6 +44,10 @@ It is special modules contains system´s classes.
 ##Changes log
 ============
 ###ON BUILD 2016.105
+1. Update welcome screen
+2. Update install.ini
+3. Readme update
+
 ###2015.109
 1. Created SAMS - Sencillo As Module Subsystem
 2. Add __DIR__ for SAMS

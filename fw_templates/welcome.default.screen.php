@@ -1,4 +1,13 @@
 <?php
+/**
+ * Core installer
+ * @name OpenSencillo SQL Installer
+ * @version 2016.105
+ * @category core
+ * @see http://www.opensencillo.com
+ * @author Bc. Peter Horváth
+ * @license Distributed under the General Public License (GPL) http://www.gnu.org/copyleft/gpl.html This program is distributed in the hope that it will be useful - WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ */
 $ini = parse_ini_file('./fw_headers/install.ini',true);
 $t=$translate;
 $afterBootUp=array();
@@ -8,16 +17,16 @@ $afterBootUp[0]=$core->coreSencillo;
 		<nav class="navbar navbar-inverse navbar-fixed-top">
 			<div class="container-fluid">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="http://www.opensencillo.com"><?=$t->translate('OpenSencillo');?></a>
+					<a class="navbar-brand" href="<?=$ini['first_screen']['home'];?>"><?=$t->translate('OpenSencillo');?></a>
 				</div>
 				<div>
 					<?if($ini['first_screen']['menu']=="true"):?>
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="http://www.opensencillo.com"><?=$t->translate('Homepage');?></a></li>
-						<li><a href="http://github.com/Piedro1111/OpenSencillo/archive/master.zip"><?=$t->translate('Download');?></a></li>
-						<li><a href="http://www.opensencillo.com/installation-2015-003/"><?=$t->translate('Installation');?></a></li>
-						<li><a href="http://documentation.opensencillo.com/version/2015/003.r1/"><?=$t->translate('Documentation');?></a></li>
-						<li><a href="https://github.com/Piedro1111/OpenSencillo">GitHub</a></li>
+						<li class="active"><a href="<?=$ini['first_screen']['home'];?>"><?=$t->translate('Homepage');?></a></li>
+						<li><a href="<?=$ini['first_screen']['download'];?>"><?=$t->translate('Download');?></a></li>
+						<li><a href="<?=$ini['first_screen']['manual'];?>"><?=$t->translate('Installation');?></a></li>
+						<li><a href="<?=$ini['first_screen']['docs'];?>"><?=$t->translate('Documentation');?></a></li>
+						<li><a href="<?=$ini['first_screen']['github'];?>">GitHub</a></li>
 					</ul>
 					<?endif;?>
 				</div>
