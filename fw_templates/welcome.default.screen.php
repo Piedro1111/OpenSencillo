@@ -16,7 +16,7 @@ $afterBootUp[0]=$core->coreSencillo;
 						<li class="active"><a href="http://www.opensencillo.com"><?=$t->translate('Homepage');?></a></li>
 						<li><a href="http://github.com/Piedro1111/OpenSencillo/archive/master.zip"><?=$t->translate('Download');?></a></li>
 						<li><a href="http://www.opensencillo.com/installation-2015-003/"><?=$t->translate('Installation');?></a></li>
-						<li><a href="http://documentation.opensencillo.com/version/2015/003.r1/"><?=$t->translate('Documentation');?></a></li>
+						<li><a href="<?=$ini['first_screen']['docs'];?>"><?=$t->translate('Documentation');?></a></li>
 						<li><a href="https://github.com/Piedro1111/OpenSencillo">GitHub</a></li>
 					</ul>
 					<?endif;?>
