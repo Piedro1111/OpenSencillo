@@ -104,7 +104,7 @@ $QUICKCACHE_ON = database::cache;
 	echo $seo->save();
 
 	$translate = new translate("translate.json","en");
-	require_once("./fw_templates/welcome.default.screen.php");
+	require_once("./fw_templates/system/welcome.default.screen.php");
 ?>');
 
 		$file = new fileSystem($ini['new_file_paths']['firststart']);
