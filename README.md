@@ -19,9 +19,17 @@
 > * Homepage: [Open Sencillo](http://opensencillo.com);
 > * Features: File management, File Convertors, Database management, SEO, Session & Cookies management, Hash subsystem, Translates JSON file, Unit Testing, Htaccess generator, Simple image tool ...
 
+
 ##How to Install
 ============
-Check: http://www.opensencillo.com/installation/
+1. [Download](https://github.com/Piedro1111/OpenSencillo/archive/master.zip) OpenSencillo.
+2. Upload sencillo to the webroot directory on your server.
+3. Go to [www.example.com/fw_core/core_installer.php](www.example.com/fw_core/core_installer.php) and show you install guide as in the picture:
+![Installation screen](http://www.opensencillo.com/wp-content/uploads/2015/02/install-e1424023344141.png)
+4. After installation you can see default welcome screen with information about OpenSencillo.
+5. Now you can write code in yourcode.php and create profesional website.
+
+Check: http://www.opensencillo.com/installation-2015-003/
 
 ##Examples
 ============
