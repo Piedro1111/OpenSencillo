@@ -33,7 +33,7 @@ Check: http://www.opensencillo.com/installation-2015-003/
 
 ##Examples
 ============
-Check: http://www.opensencillo.com/sencillo-php-examples/
+Check: http://www.opensencillo.com/category/examples/
 
 ##Module types
 ###Name structure
