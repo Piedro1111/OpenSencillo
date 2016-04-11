@@ -59,6 +59,8 @@ It is special modules contains system´s classes.
 ###2015.109
 1. Created SAMS - Sencillo As Module Subsystem
 2. Add __DIR__ for SAMS
+3. Add Gentenela free theme
+4. Modify new theme
 
 ###2015.108 (only developers)
 1. Created class startInfo
@@ -68,9 +70,7 @@ It is special modules contains system´s classes.
 5. Fix config generator problem
 
 ###2015.107
-###2015.106 (only developers)
-###2015.105 (only developers)
-###2015.005 (only developers)
+###2015.005 - 106 (only developers)
 
 1. New welcome page
 2. Fix #17 database foreign key problem
@@ -165,9 +165,7 @@ It is special modules contains system´s classes.
 3. Add prebuild path to jquery
 4. Add translate library
 
-###2014.010
-###2014.009
-###2014.008
+###2014.008 - 010
 
 1. Add back compatible mode
 2. Upgrade installer from version 2014.005 to 2014.008
@@ -181,7 +179,7 @@ It is special modules contains system´s classes.
 
 ###2014.007
 
-1. Rename folders cms_* to fw_*
+1. Rename folders cms_* (content management system prefix) to fw_* (framework prefix)
 2. Merged developer version to version 2014.007
 3. Upgrade mod_identificator.php from version 2014.002 to 2014.007
 4. Add default libraries
