@@ -86,7 +86,7 @@ if(($_POST['user-new-pass']!==$_POST['user-rtp-pass'])&&(!empty($_POST['user-new
 					<tr><td><b>System:</b></td><td><?=$afterBootUp[0]->info['FWK'];?></td></tr>
 					<tr><td><b>By:</b></td><td><?=$afterBootUp[0]->info['CPY'];?></td></tr>
 					<tr><td><b>Homepage:</b></td><td><a href='http://www.opensencillo.com' target='_blank'>opensencillo.com</a></td></tr>
-					<tr><td><b>PHP:</b></td><td><?=$PHPversion[0].".".$PHPversion[1];=?></td></tr>
+					<tr><td><b>PHP:</b></td><td><?=$PHPversion[0].".".$PHPversion[1];?></td></tr>
 					<tr><td><b>DB charset:</b></td><td>UTF-8</td></tr>
 					<tr><td><b>System charset:</b></td><td>UTF-8</td></tr>
 					<tr><td><b>Installer status:</b></td><td><?=($ini['installer']['testcheck']=="true"?"OK":"Error");?></td></tr>
@@ -116,7 +116,7 @@ if(($_POST['user-new-pass']!==$_POST['user-rtp-pass'])&&(!empty($_POST['user-new
 							<?=$outcachelist;?>
 						</select>
 					</td></tr>
-					<tr><td></td><td><input class='btn btn-success' type='submit' value='Install'></td></tr>");
+					<tr><td></td><td><input class='btn btn-success' type='submit' value='Install'></td></tr>
 				</table>
 			</form>
 			<?elseif($endstatus===1):?>
