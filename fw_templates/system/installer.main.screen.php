@@ -20,7 +20,7 @@ foreach($ini['layout'] as $key=>$val)
 {
 	$style.="$key:$val;";
 }
-$action="http://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']."?install={$ini['installer']['initialize']}"
+$action="http://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']."?install={$ini['installer']['initialize']}";
 if(($_GET['install']!=$ini['installer']['initialize'])||($_POST['user-new-pass']!=$_POST['user-rtp-pass'])||(empty($_POST['user-new-pass'])))
 {
 	if((floatval($PHPversion[0].'.'.$PHPversion[1]))>=floatval($ini['installer']['minimalphp']))
