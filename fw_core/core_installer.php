@@ -2,7 +2,7 @@
 /**
  * Core installer
  * @name OpenSencillo SQL Installer
- * @version 2015.109
+ * @version 2016.106
  * @category core
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth

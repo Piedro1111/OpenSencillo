@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------.
 |  Software: Sencillo Default Theme                                         |
-|   Version: 2015.109                                                       |
+|   Version: 2016.106                                                       |
 |   Contact: ph@mastery.sk                                                  |
 | ------------------------------------------------------------------------- |
 |    Author: Bc. Peter Horváth (original founder)                           |

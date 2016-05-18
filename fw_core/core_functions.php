@@ -2,7 +2,7 @@
 /**
  * Core information
  * @name Sencillo Core - coreSencillo
- * @version 2015.109
+ * @version 2016.106
  * @category core
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth
@@ -24,9 +24,9 @@ class coreSencillo implements coreInterface
 	 */
 	public function __construct($sum=null)
 	{
-		$version = '2015';
+		$version = '2016';
 		$layout	 = '1';
-		$build	 = '09';
+		$build	 = '06';
 		$this->info=array(	'CMS'=>'OpenSencillo',
 							'NME'=>'OpenSencillo',
 							'VSN'=>$version.'.'.$layout.$build,
