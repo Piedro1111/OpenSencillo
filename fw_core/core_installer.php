@@ -8,8 +8,33 @@
  * @author Bc. Peter Horváth
  * @license Distributed under the General Public License (GPL) http://www.gnu.org/copyleft/gpl.html This program is distributed in the hope that it will be useful - WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
+error_reporting(E_ERROR|E_PARSE);
+class testingMysql
+{
+	public function __construct($DBHost=null,$DBName=null,$DBUser=null,$DBPass=null)
+	{
+		if(!empty($DBHost))
+		{
+			$this->DBHost = $DBHost;
+			$this->DBName = $DBName;
+			$this->DBUser = $DBUser;
+			$this->DBPass = $DBPass;
+			
+			if(($this->DBHost!='')&&($this->DBUser!='')&&($this->DBPass!='')&&($this->DBName!=''))
+			{
+				$this->checksum=md5($this->DBHost.$this->DBUser.$this->DBPass.$this->DBName);
+			}
+			$this->con = mysql_connect($this->DBHost, $this->DBUser, $this->DBPass);
+			if(! $this->con)
+			{
+				die("<b>core_installer: MySQL connection failed!</b> ".mysql_error());
+			}
+			mysql_select_db($this->DBName, $this->con);
+		}
+	}
+}
+
 $ini = parse_ini_file('../fw_headers/install.ini',true);
-error_reporting(E_ERROR | E_PARSE);
 foreach($ini['bootstrap_paths']['require'] as $val)
 {
 	require_once("$val");
@@ -46,6 +71,7 @@ if(($_GET['install']==$ini['installer']['initialize'])&&((floatval($PHPversion[0
 	if((($_POST['host']!="")&&($_POST['user']!="")&&($_POST['name']!="")&&($_POST['pass']!=""))||((defined('DB_USER'))&&(defined('DB_NAME'))&&(defined('DB_PASS'))&&(defined('DB_HOST'))))
 	{
 		$hash = md5($_SERVER['SERVER_NAME'].$_SERVER['SERVER_ADDR'].$_POST['host'].$_POST['user'].$_POST['type']);
+		$mysqlTest = new testingMysql((isset($_POST['host'])?$_POST['host']:DB_HOST),(isset($_POST['name'])?$_POST['name']:DB_NAME),(isset($_POST['user'])?$_POST['user']:DB_USER),(isset($_POST['pass'])?$_POST['pass']:DB_PASS));
 		$file = new fileSystem($ini['new_file_paths']['mysqlconfig']);
 		$file->write('<?php
 /*~ mysql-config.php
@@ -185,10 +211,17 @@ Deny from all
 	chmod("../fw_libraries/", 0700);
 	chmod("../fw_script/", 0700);
 	chmod("../", 0700);
-	foreach($ini['bootstrap_middle_paths']['require'] as $val)
-	{
-		require_once("$val");
+	try{
+		foreach($ini['bootstrap_middle_paths']['require'] as $val)
+		{
+			require_once("$val");
+		}
+	}catch(Exception $e){
+		echo 'ERR: '.$e->getMessage().PHP_EOL;
+		die('core_installer: Permission error - FATAL ERROR!');
 	}
+	
+	
 	
 	if(!defined('DB_USER'))
 	{

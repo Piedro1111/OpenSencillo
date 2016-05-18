@@ -76,6 +76,10 @@ if(($_POST['user-new-pass']!==$_POST['user-rtp-pass'])&&(!empty($_POST['user-new
 {
 	$endstatus=3;
 }
+if(0777!==(fileperms('../fw_headers/') & 0777))
+{
+	$endstatus=4;
+}
 ?>
 	<body>
 		<div class='container' style='<?=$style;?>'>
@@ -137,6 +141,8 @@ if(($_POST['user-new-pass']!==$_POST['user-rtp-pass'])&&(!empty($_POST['user-new
 			<p class='bg-danger'><span class='glyphicons glyphicons-warning-sign'></span>PHP must be in version >= <mark>5.3</mark>!</p>
 			<?elseif($endstatus===3):?>
 			<p class='bg-danger'><span class='glyphicons glyphicons-warning-sign'></span><?=$ini['modal']['message'];?></p>
+			<?elseif($endstatus===4):?>
+			<p class='bg-danger'><span class='glyphicons glyphicons-warning-sign'></span><?=$ini['modal']['perm_message'];?></p>
 			<?endif;?>
 		</div>
 	</body>
