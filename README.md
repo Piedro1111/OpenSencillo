@@ -12,27 +12,31 @@
 > * Type: Framework;
 > * Category: OpenSource;
 > * Language: PHP 5.3+, JQUERY, HTML5
-> * Year: 2015;
-> * Build: 109;
-> * Rev: 2015.109;
+> * Year: 2016;
+> * Build: 106;
+> * Rev: 2016.106;
 > * By: [Bc. Peter Horváth](http://phorvath.com);
 > * Homepage: [Open Sencillo](http://opensencillo.com);
 > * Features: File management, File Convertors, Database management, SEO, Session & Cookies management, Hash subsystem, Translates JSON file, Unit Testing, Htaccess generator, Simple image tool ...
 
+
 ##How to Install
 ============
-Check: http://www.opensencillo.com/installation/
+1. [Download](https://github.com/Piedro1111/OpenSencillo/archive/master.zip) OpenSencillo.
+2. Upload sencillo to the webroot directory on your server.
+3. Go to [www.example.com/fw_core/core_installer.php](www.example.com/fw_core/core_installer.php) and show you install guide as in the picture:
+![Installation screen](http://www.opensencillo.com/wp-content/uploads/2015/02/install-e1424023344141.png)
+4. After installation you can see default welcome screen with information about OpenSencillo.
+5. Now you can write code in yourcode.php and create profesional website.
+
+Check: http://www.opensencillo.com/installation-2015-003/
 
 ##Examples
 ============
-Check: http://www.opensencillo.com/sencillo-php-examples/
+Check: http://www.opensencillo.com/category/examples/
 
-##Module types
-###Name structure
-In version >= 2015.003
-> [type]_[module-name].php
 
-####Types:
+##Module types:
 * module
 * info
 * install
@@ -43,16 +47,20 @@ It is special modules contains system´s classes.
 
 ##Changes log
 ============
-###ON BUILD 2016.105
+###2016.106
 1. Update welcome screen
 2. Update install.ini
 3. Readme update
+4. Installer bug fix
+5. Prepare alternate template - not ready for use at this time
 
 ###2015.109
 1. Created SAMS - Sencillo As Module Subsystem
 2. Add __DIR__ for SAMS
+3. Add Gentenela free theme
+4. Modify new theme
 
-###2015.108
+###2015.108 (only developers)
 1. Created class startInfo
 2. Add mail.generator.mailgen.php
 3. Add minify css library named minify.css.mincss.php
@@ -60,9 +68,7 @@ It is special modules contains system´s classes.
 5. Fix config generator problem
 
 ###2015.107
-###2015.106 (only developers)
-###2015.105 (only developers)
-###2015.005 (only developers)
+###2015.005 - 106 (only developers)
 
 1. New welcome page
 2. Fix #17 database foreign key problem
@@ -157,9 +163,7 @@ It is special modules contains system´s classes.
 3. Add prebuild path to jquery
 4. Add translate library
 
-###2014.010
-###2014.009
-###2014.008
+###2014.008 - 010
 
 1. Add back compatible mode
 2. Upgrade installer from version 2014.005 to 2014.008
@@ -173,7 +177,7 @@ It is special modules contains system´s classes.
 
 ###2014.007
 
-1. Rename folders cms_* to fw_*
+1. Rename folders cms_* (content management system prefix) to fw_* (framework prefix)
 2. Merged developer version to version 2014.007
 3. Upgrade mod_identificator.php from version 2014.002 to 2014.007
 4. Add default libraries

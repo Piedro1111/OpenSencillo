@@ -107,6 +107,15 @@ switch($ajax['atype'])
 			$email->send();
 		}
 		break;
+	case 'install::first_info':
+	break;
+	case 'install::automatic_validation':
+	break;
+	case 'install::create_fs':
+	break;
+	case 'install::create_db':
+	break;
+	
 	default:
 		$status['status'] = 'not acceptable';
 		$status['code'] = 405;
