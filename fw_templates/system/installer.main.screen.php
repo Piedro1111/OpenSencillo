@@ -25,6 +25,10 @@ if(($_GET['install']!=$ini['installer']['initialize'])||($_POST['user-new-pass']
 {
 	if((floatval($PHPversion[0].'.'.$PHPversion[1]))>=floatval($ini['installer']['minimalphp']))
 	{
+		if(!testingPHP::test_mods('mod_rewrite'))
+		{
+			$pretty_url=': <b>mod_rewrite</b> not found!';
+		}
 		foreach($ini['perm_options_list'] as $key=>$val)
 		{
 			if($key==="default")
@@ -93,7 +97,7 @@ if(0777!==(fileperms('../fw_headers/') & 0777))
 					<tr><td><b>PHP:</b></td><td><?=$PHPversion[0].".".$PHPversion[1];?></td></tr>
 					<tr><td><b>DB charset:</b></td><td>UTF-8</td></tr>
 					<tr><td><b>System charset:</b></td><td>UTF-8</td></tr>
-					<tr><td><b>Installer status:</b></td><td><?=($ini['installer']['testcheck']=="true"?"OK":"Error");?></td></tr>
+					<tr><td><b>Installer status:</b></td><td><?=($ini['installer']['testcheck']=="true"?"OK{$pretty_url}":"Error{$pretty_url}");?></td></tr>
 					
 					<tr><td><span class='glyphicons glyphicons-old-man'></span><kbd>Superuser</kbd></td><td></td></tr>
 					<tr><td><b>User:</b></td><td><input type='text' value='<?=$_POST['user-new-name'];?>' name='user-new-name' required></td></tr>
