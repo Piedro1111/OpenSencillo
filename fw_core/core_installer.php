@@ -37,7 +37,7 @@ class testingPHP
 {
 	public function test_mods($mod_name)
 	{
-		return in_array($mod_name, get_loaded_extensions());
+		return in_array($mod_name, apache_get_modules());
 	}
 }
 
