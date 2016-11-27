@@ -662,6 +662,7 @@ class mysqlInterface extends mysqlEdit
 	{
 		$this->config();
 		$this->connect = new mysqli($this->mysqli['dbhost'], $this->mysqli['dbuser'], $this->mysqli['dbpass'], $this->mysqli['dbname']);
+		$this->connect->set_charset("utf8");
 		if($this->connect->connect_errno)
 		{
 			$this->mysqli['dberror']['message'] = "Failed to connect to MySQL: (" . $this->connect->connect_errno . ") " . $this->connect->connect_error;
