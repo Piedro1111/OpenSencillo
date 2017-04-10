@@ -3,7 +3,7 @@
  * Url extension
  * @todo continue creating new method for manipulate with URL
  * @name url
- * @version 2015.005
+ * @version 2017.104
  * @category Sencillo Library
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth

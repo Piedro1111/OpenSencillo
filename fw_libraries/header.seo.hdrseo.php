@@ -2,7 +2,7 @@
 /**
  * Main extend for file system
  * @name Sencillo Lib - headerSeo
- * @version 2017.102
+ * @version 2017.104
  * @category core
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth

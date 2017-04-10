@@ -2,7 +2,7 @@
 /**
  * Core installer
  * @name OpenSencillo SQL Installer
- * @version 2016.106
+ * @version 2017.104
  * @category core
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth
@@ -24,12 +24,12 @@ class testingMysql
 			{
 				$this->checksum=md5($this->DBHost.$this->DBUser.$this->DBPass.$this->DBName);
 			}
-			$this->con = mysql_connect($this->DBHost, $this->DBUser, $this->DBPass);
+			$this->con = mysqli_connect($this->DBHost, $this->DBUser, $this->DBPass);
 			if(! $this->con)
 			{
-				die("<b>core_installer: MySQL connection failed!</b> ".mysql_error());
+				die("<b>core_installer: MySQL connection failed!</b> ".mysqli_error());
 			}
-			mysql_select_db($this->DBName, $this->con);
+			mysqli_select_db($this->DBName, $this->con);
 		}
 	}
 }
@@ -84,7 +84,7 @@ if(($_GET['install']==$ini['installer']['initialize'])&&((floatval($PHPversion[0
 /*~ mysql-config.php
 .---------------------------------------------------------------------------.
 |  Software: '.$afterBootUp[0]->info['NME'].' SQL Config                                        |
-|   Version: '.$afterBootUp[0]->info['VSN'].'                                                       |
+|   Version: 2017.104BootUp[0]->info['VSN'].'                                                       |
 |   Contact: mail@phorvath.com                                              |
 | ------------------------------------------------------------------------- |
 |    Author: Bc. Peter Horváth (original founder)                           |

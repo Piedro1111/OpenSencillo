@@ -47,6 +47,14 @@ It is special modules contains system´s classes.
 
 ##Changes log
 ============
+###2017.104
+1. Update welcome screen
+2. Update install.ini
+3. Readme update
+4. Installer bug fix
+5. Change to PHP7 support
+6. Fix UTF-8 DB problems
+
 ###2016.106
 1. Update welcome screen
 2. Update install.ini

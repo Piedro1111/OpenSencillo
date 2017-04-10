@@ -2,7 +2,7 @@
 /**
  * Menu generator
  * @name menuGen
- * @version 2015.005
+ * @version 2017.104
  * @category Sencillo Library
  * @see http://www.opensencillo.com
  * @author Radoslav Ambrózy, Bc. Peter Horváth
@@ -32,7 +32,7 @@ class menuGen
 		
 		$this->maxLevelQuery = $this->mysqlObject->query("SELECT MAX(`level_id`) AS maxlevel FROM `categories` LIMIT 1");
 		
-		while($data = mysql_fetch_assoc($this->maxLevelQuery)){
+		while($data = mysqli_fetch_assoc($this->maxLevelQuery)){
 			$this->maxLevel[] = $data;
 		}
 	}
@@ -119,7 +119,7 @@ class menuGen
 		$db = $this->name;
 		$query = $this->mysqlObject->query("SELECT menu.category_id, menu.category_name, menu.category_href, menu.sort, menu.lang, menu.perm, Deriv1.count FROM " . "`" .$db. "`" . " menu  LEFT OUTER JOIN (SELECT subcategory_id, COUNT(*) AS count FROM ". "`" .$db. "`". " GROUP BY subcategory_id) Deriv1 ON menu.category_id = Deriv1.subcategory_id WHERE menu.subcategory_id=".$subcategory." AND menu.lang=".$this->language." AND menu.perm=".$this->perm." ORDER BY menu.sort ASC");
 		$arr[] = "<ul class='menu-ul-level-".$level."'>";
-		while($data = mysql_fetch_assoc($query))
+		while($data = mysqli_fetch_assoc($query))
 		{
 			$this->href = $this->protocol.'://'.$_SERVER['SERVER_NAME']."/".$data['category_href'];
 			//if there are subcategories
@@ -160,7 +160,7 @@ class menuGen
 			$level_1_query = $this->mysqlObject->query("SELECT * FROM "."`".$db."`"." WHERE `level_id` = 1 ORDER BY sort");
 			
 			$arr[] = "<ul>";
-				while ($data = mysql_fetch_assoc($level_1_query)){
+				while ($data = mysqli_fetch_assoc($level_1_query)){
 					$arr[] = "<li><div class='fin-categories-img'></div><a class='fin-transition-2' href=".'http://'.$_SERVER['SERVER_NAME']."/produkty/".$data['category_href']."/".$limit.">".$data['category_name']."</a></li>";
 				}
 			$arr[] = "</ul>";
@@ -173,14 +173,14 @@ class menuGen
 			$level_1_query = $this->mysqlObject->query("SELECT * FROM "."`".$db."`"." WHERE `level_id` = 1 ORDER BY sort");
 			
 			$arr[] = "<ul>";
-				while ($level_1 = mysql_fetch_assoc($level_1_query)){
+				while ($level_1 = mysqli_fetch_assoc($level_1_query)){
 					$level_2_query = $this->mysqlObject->query("SELECT * FROM "."`".$db."`"." WHERE `subcategory_id` = ".$level_1['category_id']." ORDER BY sort");
 
 					//level 1 page selected
 					if($level_1['category_href'] == $page[1]){
 						$arr[] = "<li><div class='fin-categories-img'></div><a class='fin-transition-2' href=".'http://'.$_SERVER['SERVER_NAME']."/produkty/".$level_1['category_href']."/".$limit."><b>".$level_1['category_name']."</b></a>";
 						
-						while ($level_2 = mysql_fetch_assoc($level_2_query)){
+						while ($level_2 = mysqli_fetch_assoc($level_2_query)){
 							$arr[] = "<ul>";
 								//level 1 page selected has subcategories
 								if($level_2['category_href'].substr($page[1])){
@@ -204,14 +204,14 @@ class menuGen
 			$level_1_query = $this->mysqlObject->query("SELECT * FROM "."`".$db."`"." WHERE `level_id` = 1 ORDER BY sort");
 			
 			$arr[] = "<ul>";
-				while ($level_1 = mysql_fetch_assoc($level_1_query)){
+				while ($level_1 = mysqli_fetch_assoc($level_1_query)){
 					$level_2_query = $this->mysqlObject->query("SELECT * FROM "."`".$db."`"." WHERE `subcategory_id` = ".$level_1['category_id']." ORDER BY sort");
 
 					//level 1 page selected
 					if($level_1['category_href'] == $page[1]){
 						$arr[] = "<li><div class='fin-categories-img'></div><a class='fin-transition-2' href=".'http://'.$_SERVER['SERVER_NAME']."/produkty/".$level_1['category_href']."/".$limit."><b>".$level_1['category_name']."</b></a>";
 						
-						while ($level_2 = mysql_fetch_assoc($level_2_query)){
+						while ($level_2 = mysqli_fetch_assoc($level_2_query)){
 							$arr[] = "<ul>";
 								//level 1 page selected has subcategories
 								if($level_2['category_href'].substr($page[1])){
@@ -221,7 +221,7 @@ class menuGen
 									if($level_2['category_href'] == $page[1]."/".$page[2]){		
 										$arr[] = "<li><div class='fin-categories-img'></div><a class='fin-transition-2' href=".'http://'.$_SERVER['SERVER_NAME']."/produkty/".$level_2['category_href']."/".$limit."><b>".$level_2['category_name']."</b></a>";
 										
-										while ($level_3 = mysql_fetch_assoc($level_3_query)){
+										while ($level_3 = mysqli_fetch_assoc($level_3_query)){
 											
 											$arr[] = "<ul>";
 												//level 2 page selected has subcategories
@@ -252,14 +252,14 @@ class menuGen
 			$level_1_query = $this->mysqlObject->query("SELECT * FROM "."`".$db."`"." WHERE `level_id` = 1 ORDER BY sort");
 			
 			$arr[] = "<ul>";
-				while ($level_1 = mysql_fetch_assoc($level_1_query)){
+				while ($level_1 = mysqli_fetch_assoc($level_1_query)){
 					$level_2_query = $this->mysqlObject->query("SELECT * FROM "."`".$db."`"." WHERE `subcategory_id` = ".$level_1['category_id']." ORDER BY sort");
 
 					//level 1 page selected
 					if($level_1['category_href'] == $page[1]){
 						$arr[] = "<li><div class='fin-categories-img'></div><a class='fin-transition-2' href=".'http://'.$_SERVER['SERVER_NAME']."/produkty/".$level_1['category_href']."/".$limit."><b>".$level_1['category_name']."</b></a>";
 						
-						while ($level_2 = mysql_fetch_assoc($level_2_query)){
+						while ($level_2 = mysqli_fetch_assoc($level_2_query)){
 							$arr[] = "<ul>";
 								//level 1 page selected has subcategories
 								if($level_2['category_href'].substr($page[1])){
@@ -269,7 +269,7 @@ class menuGen
 									if($level_2['category_href'] == $page[1]."/".$page[2]){		
 										$arr[] = "<li><div class='fin-categories-img'></div><a class='fin-transition-2' href=".'http://'.$_SERVER['SERVER_NAME']."/produkty/".$level_2['category_href']."/".$limit."><b>".$level_2['category_name']."</b></a>";
 										
-										while ($level_3 = mysql_fetch_assoc($level_3_query)){
+										while ($level_3 = mysqli_fetch_assoc($level_3_query)){
 											
 											$arr[] = "<ul>";
 												//level 2 page selected has subcategories
@@ -280,7 +280,7 @@ class menuGen
 													if($level_3['category_href'] == $page[1]."/".$page[2]."/".$page[3]){		
 														$arr[] = "<li><div class='fin-categories-img'></div><a class='fin-transition-2' href=".'http://'.$_SERVER['SERVER_NAME']."/produkty/".$level_3['category_href']."/".$limit."><b>".$level_3['category_name']."</b></a>";
 														
-														while ($level_4 = mysql_fetch_assoc($level_4_query)){
+														while ($level_4 = mysqli_fetch_assoc($level_4_query)){
 															
 															$arr[] = "<ul>";
 																//level 3 page selected has subcategories
@@ -318,14 +318,14 @@ class menuGen
 			$level_1_query = $this->mysqlObject->query("SELECT * FROM "."`".$db."`"." WHERE `level_id` = 1 ORDER BY sort");
 			
 			$arr[] = "<ul>";
-				while ($level_1 = mysql_fetch_assoc($level_1_query)){
+				while ($level_1 = mysqli_fetch_assoc($level_1_query)){
 					$level_2_query = $this->mysqlObject->query("SELECT * FROM "."`".$db."`"." WHERE `subcategory_id` = ".$level_1['category_id']." ORDER BY sort");
 
 					//level 1 page selected
 					if($level_1['category_href'] == $page[1]){
 						$arr[] = "<li><div class='fin-categories-img'></div><a class='fin-transition-2' href=".'http://'.$_SERVER['SERVER_NAME']."/produkty/".$level_1['category_href']."/".$limit."><b>".$level_1['category_name']."</b></a>";
 						
-						while ($level_2 = mysql_fetch_assoc($level_2_query)){
+						while ($level_2 = mysqli_fetch_assoc($level_2_query)){
 							$arr[] = "<ul>";
 								//level 1 page selected has subcategories
 								if($level_2['category_href'].substr($page[1])){
@@ -335,7 +335,7 @@ class menuGen
 									if($level_2['category_href'] == $page[1]."/".$page[2]){		
 										$arr[] = "<li><div class='fin-categories-img'></div><a class='fin-transition-2' href=".'http://'.$_SERVER['SERVER_NAME']."/produkty/".$level_2['category_href']."/".$limit."><b>".$level_2['category_name']."</b></a>";
 										
-										while ($level_3 = mysql_fetch_assoc($level_3_query)){
+										while ($level_3 = mysqli_fetch_assoc($level_3_query)){
 											
 											$arr[] = "<ul>";
 												//level 2 page selected has subcategories
@@ -346,7 +346,7 @@ class menuGen
 													if($level_3['category_href'] == $page[1]."/".$page[2]."/".$page[3]){		
 														$arr[] = "<li><div class='fin-categories-img'></div><a class='fin-transition-2' href=".'http://'.$_SERVER['SERVER_NAME']."/produkty/".$level_3['category_href']."/".$limit."><b>".$level_3['category_name']."</b></a>";
 														
-														while ($level_4 = mysql_fetch_assoc($level_4_query)){
+														while ($level_4 = mysqli_fetch_assoc($level_4_query)){
 															
 															$arr[] = "<ul>";
 																//level 3 page selected has subcategories
@@ -357,7 +357,7 @@ class menuGen
 																	if($level_4['category_href'] == $page[1]."/".$page[2]."/".$page[3]."/".$page[4]){		
 																		$arr[] = "<li><div class='fin-categories-img'></div><a class='fin-transition-2' href=".'http://'.$_SERVER['SERVER_NAME']."/produkty/".$level_4['category_href']."/".$limit."><b>".$level_4['category_name']."</b></a>";
 																		
-																		while ($level_5 = mysql_fetch_assoc($level_5_query)){
+																		while ($level_5 = mysqli_fetch_assoc($level_5_query)){
 																			
 																			$arr[] = "<ul>";
 																				//level 4 page selected has subcategories
@@ -402,14 +402,14 @@ class menuGen
 			$level_1_query = $this->mysqlObject->query("SELECT * FROM "."`".$db."`"." WHERE `level_id` = 1 ORDER BY sort");
 			
 			$arr[] = "<ul>";
-				while ($level_1 = mysql_fetch_assoc($level_1_query)){
+				while ($level_1 = mysqli_fetch_assoc($level_1_query)){
 					$level_2_query = $this->mysqlObject->query("SELECT * FROM "."`".$db."`"." WHERE `subcategory_id` = ".$level_1['category_id']." ORDER BY sort");
 
 					//level 1 page selected
 					if($level_1['category_href'] == $page[1]){
 						$arr[] = "<li><div class='fin-categories-img'></div><a class='fin-transition-2' href=".'http://'.$_SERVER['SERVER_NAME']."/produkty/".$level_1['category_href']."/".$limit."><b>".$level_1['category_name']."</b></a>";
 						
-						while ($level_2 = mysql_fetch_assoc($level_2_query)){
+						while ($level_2 = mysqli_fetch_assoc($level_2_query)){
 							$arr[] = "<ul>";
 								//level 1 page selected has subcategories
 								if($level_2['category_href'].substr($page[1])){
@@ -419,7 +419,7 @@ class menuGen
 									if($level_2['category_href'] == $page[1]."/".$page[2]){		
 										$arr[] = "<li><div class='fin-categories-img'></div><a class='fin-transition-2' href=".'http://'.$_SERVER['SERVER_NAME']."/produkty/".$level_2['category_href']."/".$limit."><b>".$level_2['category_name']."</b></a>";
 										
-										while ($level_3 = mysql_fetch_assoc($level_3_query)){
+										while ($level_3 = mysqli_fetch_assoc($level_3_query)){
 											
 											$arr[] = "<ul>";
 												//level 2 page selected has subcategories
@@ -430,7 +430,7 @@ class menuGen
 													if($level_3['category_href'] == $page[1]."/".$page[2]."/".$page[3]){		
 														$arr[] = "<li><div class='fin-categories-img'></div><a class='fin-transition-2' href=".'http://'.$_SERVER['SERVER_NAME']."/produkty/".$level_3['category_href']."/".$limit."><b>".$level_3['category_name']."</b></a>";
 														
-														while ($level_4 = mysql_fetch_assoc($level_4_query)){
+														while ($level_4 = mysqli_fetch_assoc($level_4_query)){
 															
 															$arr[] = "<ul>";
 																//level 3 page selected has subcategories
@@ -441,7 +441,7 @@ class menuGen
 																	if($level_4['category_href'] == $page[1]."/".$page[2]."/".$page[3]."/".$page[4]){		
 																		$arr[] = "<li><div class='fin-categories-img'></div><a class='fin-transition-2' href=".'http://'.$_SERVER['SERVER_NAME']."/produkty/".$level_4['category_href']."/".$limit."><b>".$level_4['category_name']."</b></a>";
 																		
-																		while ($level_5 = mysql_fetch_assoc($level_5_query)){
+																		while ($level_5 = mysqli_fetch_assoc($level_5_query)){
 																			
 																			$arr[] = "<ul>";
 																				//level 4 page selected has subcategories
@@ -452,7 +452,7 @@ class menuGen
 																					if($level_5['category_href'] == $page[1]."/".$page[2]."/".$page[3]."/".$page[4]."/".$page[5]){		
 																						$arr[] = "<li><div class='fin-categories-img'></div><a class='fin-transition-2' href=".'http://'.$_SERVER['SERVER_NAME']."/produkty/".$level_5['category_href']."/".$limit."><b>".$level_5['category_name']."</b></a>";
 																						
-																						while ($level_6 = mysql_fetch_assoc($level_6_query)){
+																						while ($level_6 = mysqli_fetch_assoc($level_6_query)){
 																							
 																							$arr[] = "<ul>";
 																								//level 5 page selected has subcategories
@@ -504,14 +504,14 @@ class menuGen
 			$level_1_query = $this->mysqlObject->query("SELECT * FROM "."`".$db."`"." WHERE `level_id` = 1 ORDER BY sort");
 			
 			$arr[] = "<ul>";
-				while ($level_1 = mysql_fetch_assoc($level_1_query)){
+				while ($level_1 = mysqli_fetch_assoc($level_1_query)){
 					$level_2_query = $this->mysqlObject->query("SELECT * FROM "."`".$db."`"." WHERE `subcategory_id` = ".$level_1['category_id']." ORDER BY sort");
 
 					//level 1 page selected
 					if($level_1['category_href'] == $page[1]){
 						$arr[] = "<li><div class='fin-categories-img'></div><a class='fin-transition-2' href=".'http://'.$_SERVER['SERVER_NAME']."/produkty/".$level_1['category_href']."/".$limit."><b>".$level_1['category_name']."</b></a>";
 						
-						while ($level_2 = mysql_fetch_assoc($level_2_query)){
+						while ($level_2 = mysqli_fetch_assoc($level_2_query)){
 							$arr[] = "<ul>";
 								//level 1 page selected has subcategories
 								if($level_2['category_href'].substr($page[1])){
@@ -521,7 +521,7 @@ class menuGen
 									if($level_2['category_href'] == $page[1]."/".$page[2]){		
 										$arr[] = "<li><div class='fin-categories-img'></div><a class='fin-transition-2' href=".'http://'.$_SERVER['SERVER_NAME']."/produkty/".$level_2['category_href']."/".$limit."><b>".$level_2['category_name']."</b></a>";
 										
-										while ($level_3 = mysql_fetch_assoc($level_3_query)){
+										while ($level_3 = mysqli_fetch_assoc($level_3_query)){
 											
 											$arr[] = "<ul>";
 												//level 2 page selected has subcategories
@@ -532,7 +532,7 @@ class menuGen
 													if($level_3['category_href'] == $page[1]."/".$page[2]."/".$page[3]){		
 														$arr[] = "<li><div class='fin-categories-img'></div><a class='fin-transition-2' href=".'http://'.$_SERVER['SERVER_NAME']."/produkty/".$level_3['category_href']."/".$limit."><b>".$level_3['category_name']."</b></a>";
 														
-														while ($level_4 = mysql_fetch_assoc($level_4_query)){
+														while ($level_4 = mysqli_fetch_assoc($level_4_query)){
 															
 															$arr[] = "<ul>";
 																//level 3 page selected has subcategories
@@ -543,7 +543,7 @@ class menuGen
 																	if($level_4['category_href'] == $page[1]."/".$page[2]."/".$page[3]."/".$page[4]){		
 																		$arr[] = "<li><div class='fin-categories-img'></div><a class='fin-transition-2' href=".'http://'.$_SERVER['SERVER_NAME']."/produkty/".$level_4['category_href']."/".$limit."><b>".$level_4['category_name']."</b></a>";
 																		
-																		while ($level_5 = mysql_fetch_assoc($level_5_query)){
+																		while ($level_5 = mysqli_fetch_assoc($level_5_query)){
 																			
 																			$arr[] = "<ul>";
 																				//level 4 page selected has subcategories
@@ -554,7 +554,7 @@ class menuGen
 																					if($level_5['category_href'] == $page[1]."/".$page[2]."/".$page[3]."/".$page[4]."/".$page[5]){		
 																						$arr[] = "<li><div class='fin-categories-img'></div><a class='fin-transition-2' href=".'http://'.$_SERVER['SERVER_NAME']."/produkty/".$level_5['category_href']."/".$limit."><b>".$level_5['category_name']."</b></a>";
 																						
-																						while ($level_6 = mysql_fetch_assoc($level_6_query)){
+																						while ($level_6 = mysqli_fetch_assoc($level_6_query)){
 																							
 																							$arr[] = "<ul>";
 																								//level 5 page selected has subcategories
@@ -565,7 +565,7 @@ class menuGen
 																									if($level_6['category_href'] == $page[1]."/".$page[2]."/".$page[3]."/".$page[4]."/".$page[5]."/".$page[6]){		
 																										$arr[] = "<li><div class='fin-categories-img'></div><a class='fin-transition-2' href=".'http://'.$_SERVER['SERVER_NAME']."/produkty/".$level_6['category_href']."/".$limit."><b>".$level_6['category_name']."</b></a>";
 																										
-																										while ($level_7 = mysql_fetch_assoc($level_7_query)){
+																										while ($level_7 = mysqli_fetch_assoc($level_7_query)){
 																											
 																											$arr[] = "<ul>";
 																												//level 6 page selected has subcategories

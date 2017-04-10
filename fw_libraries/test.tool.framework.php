@@ -2,7 +2,7 @@
 /**
  * Error Log class
  * @name log
- * @version 2015.003
+ * @version 2017.104
  * @category Sencillo Library
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth
@@ -123,7 +123,7 @@ class log
 /**
  * Testing tool - unit testing extension
  * @name unitTest
- * @version 2015.003
+ * @version 2017.104
  * @category Sencillo Library
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth

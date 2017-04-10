@@ -2,7 +2,7 @@
 /**
  * Main mysql functions
  * @name Sencillo Core - SQL support
- * @version 2014.012
+ * @version 2017.104
  * @category core
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth
@@ -37,12 +37,12 @@ class mysql
 			{
 				$this->checksum=md5($this->DBHost.$this->DBUser.$this->DBPass.$this->DBName);
 			}
-			$this->con = mysql_connect($this->DBHost, $this->DBUser, $this->DBPass);
+			$this->con = mysqli_connect($this->DBHost, $this->DBUser, $this->DBPass);
 			if(! $this->con)
 			{
-				die("<b>core_sql: MySQL connection failed!</b> ".mysql_error());
+				die("<b>core_sql: MySQL connection failed!</b> ".mysqli_error());
 			}
-			mysql_select_db($this->DBName, $this->con);
+			mysqli_select_db($this->DBName, $this->con);
 		}
 	}
 	
@@ -53,7 +53,7 @@ class mysql
 	 */
 	final public function query($sql)
 	{
-		return mysql_query($sql);
+		return mysqli_query($sql);
 	}
 	
 	/**
@@ -72,7 +72,7 @@ class mysql
 	 */
 	final public function close()
 	{
-		return mysql_close($this->con);
+		return mysqli_close($this->con);
 	}
 	
 	/**
@@ -85,7 +85,7 @@ class mysql
 		{
 			if(! $this->con)
 			{
-				return mysql_error();
+				return mysqli_error();
 			}
 			else
 			{
@@ -115,7 +115,7 @@ class mysql
 /**
  * Main mysql extend
  * @name Sencillo Core - mysqlEdit
- * @version 2015.002
+ * @version 2017.104
  * @category core
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth
@@ -183,11 +183,11 @@ class mysqlEdit extends mysql
 	{
 		$this->table = $name;
 		$this->sql="SHOW COLUMNS FROM ".$this->DBName.".".$this->table;
-		$this->con=mysql_connect($this->DBHost,$this->DBUser,$this->DBPass);
-		mysql_select_db($this->DBName, $this->con);
-		$this->result=mysql_query($this->sql);
+		$this->con=mysqli_connect($this->DBHost,$this->DBUser,$this->DBPass);
+		mysqli_select_db($this->DBName, $this->con);
+		$this->result=mysqli_query($this->sql);
 		$this->column=null;
-		while($row=mysql_fetch_array($this->result))
+		while($row=mysqli_fetch_array($this->result))
 		{
 			$this->column.='`'.$row['Field'].'`,';
 		}
@@ -259,15 +259,15 @@ class mysqlEdit extends mysql
 	public function output($if="`id`>0",$order="`id` ASC",$limit=1000)
 	{
 		$this->sql="SELECT * FROM `".$this->table."` WHERE ".$if." ORDER BY ".$order." LIMIT ".$limit.";";
-		$this->con=mysql_connect($this->DBHost,$this->DBUser,$this->DBPass);
-		mysql_select_db($this->DBName, $this->con);
-		$this->result=mysql_query($this->sql);
+		$this->con=mysqli_connect($this->DBHost,$this->DBUser,$this->DBPass);
+		mysqli_select_db($this->DBName, $this->con);
+		$this->result=mysqli_query($this->sql);
 		$this->colout=explode(",",str_replace("`","",substr($this->column, 0, -1)));
 		$i=0;
 		$j=0;
 		$this->out = array('header'=>$this->colout,'line'=>array(array()));
 		$this->csum = md5($this->con);
-		while($row=mysql_fetch_array($this->result))
+		while($row=mysqli_fetch_array($this->result))
 		{
 			$i=0;
 			$j++;

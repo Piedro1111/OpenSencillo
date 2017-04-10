@@ -2,7 +2,7 @@
 /*~ cookies.php
 .---------------------------------------------------------------------------.
 |  Software: Sencillo Cookies                                        		|
-|   Version: 2015.003                                                       |
+|   Version: 2017.104                                                       |
 |   Contact: ph@mastery.sk                                                  |
 | ------------------------------------------------------------------------- |
 |    Author: Bc. Peter Horváth (original founder)                           |
@@ -18,7 +18,7 @@
 /**
  * Cookies manipulation class
  * @name Sencillo Cookies
- * @version 2015.002
+ * @version 2017.104
  * @category accessories
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth
