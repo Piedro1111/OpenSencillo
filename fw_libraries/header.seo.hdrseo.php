@@ -17,6 +17,7 @@ class headerSeo
 	private $body;
 	private $lang;
 	private $oginfo;
+	private $script2end=false;
 
 	/**
 	 * Create default status for page
@@ -123,9 +124,9 @@ class headerSeo
 	 * Add custom code to header
 	 * @param string $code
 	 */
-	public function custom($code)
+	public function custom($code,$type='custom')
 	{
-		$this->header['custom'][] = $code;
+		$this->header[$type][] = $code;
 	}
 	
 	/**
@@ -135,7 +136,7 @@ class headerSeo
 	 */
 	public function script($code)
 	{
-		$this->custom('<script type="text/javascript" src="'.$code.'"></script>');
+		$this->header['script'][] = '<script type="text/javascript" src="'.$code.'"></script>';
 	}
 	
 	/**
@@ -156,6 +157,13 @@ class headerSeo
 		$this->css($link);
 	}
 	
+	/**
+	* Set render SCRIPTs to end of document (to body)
+	*/
+	public function script2end()
+	{
+		$this->script2end=true;
+	}
 	/**
 	 * Save SEO and generate header content
 	 * @return string
@@ -191,9 +199,29 @@ class headerSeo
 			$this->seo .= $val.PHP_EOL;
 			$this->info['head'][] = $key;
 		}
+		if($this->script2end===false)
+		{
+			foreach($this->header['script'] as $key => $val)
+			{
+				$this->seo .= $val.PHP_EOL;
+				$this->info['head'][] = $key;
+			}
+		}
 		
 		$this->seo .= $this->body;
 		return $this->seo;
+	}
+	
+	/**
+	* Render script calls to body
+	* @return string
+	*/
+	public function saveScript()
+	{
+		if($this->script2end)
+		{
+			return implode(PHP_EOL,$this->header['script']);
+		}
 	}
 	
 	/**
