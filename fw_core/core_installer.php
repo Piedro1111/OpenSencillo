@@ -33,6 +33,13 @@ class testingMysql
 		}
 	}
 }
+class testingPHP
+{
+	public function test_mods($mod_name)
+	{
+		return in_array($mod_name, apache_get_modules());
+	}
+}
 
 $ini = parse_ini_file('../fw_headers/install.ini',true);
 foreach($ini['bootstrap_paths']['require'] as $val)
