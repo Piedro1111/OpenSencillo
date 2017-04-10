@@ -2,7 +2,7 @@
 /**
  * Main class for file system
  * @name Sencillo Lib - fileSystem
- * @version 2015.109
+ * @version 2017.104
  * @category libraries
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth
@@ -53,7 +53,7 @@ class fileSystem
 /**
  * Main extend for file system
  * @name Sencillo Lib - file
- * @version 2014.008
+ * @version 2017.104
  * @category librariries
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth
@@ -94,7 +94,7 @@ class file extends fileSystem
 /**
  * Convert data
  * @name Sencillo Lib - Convert
- * @version 2015.109
+ * @version 2017.104
  * @category core
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth

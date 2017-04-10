@@ -2,7 +2,7 @@
 /**
  * Menu or structure generator
  * @name Sencillo Structgen
- * @version 2015.005
+ * @version 2017.104
  * @category libraries
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth

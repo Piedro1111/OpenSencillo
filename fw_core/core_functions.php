@@ -2,7 +2,7 @@
 /**
  * Core information
  * @name Sencillo Core - coreSencillo
- * @version 2016.106
+ * @version 2017.104
  * @category core
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth
@@ -221,7 +221,7 @@ class coreSencillo implements coreInterface
 /**
  * Core boot up sequention
  * @name Sencillo Core - bootUp
- * @version 2015.005
+ * @version 2017.104
  * @category core
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth

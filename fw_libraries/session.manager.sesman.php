@@ -2,7 +2,7 @@
 /*~ session.php
 .---------------------------------------------------------------------------.
 |  Software: Sencillo Session                                               |
-|   Version: 2015.003                                                       |
+|   Version: 2017.104                                                       |
 |   Contact: ph@mastery.sk                                                  |
 | ------------------------------------------------------------------------- |
 |    Author: Bc. Peter Horváth (original founder)                           |
@@ -18,7 +18,7 @@
 /**
  * Cookies manipulation class
  * @name Sencillo Session
- * @version 2015.003
+ * @version 2017.104
  * @category accessories
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth
@@ -73,7 +73,7 @@ class sessionManager
  * Cookies manipulation class
  * @todo Delete all non objective code and implement it to this class
  * @name Sencillo Session
- * @version 2014.002
+ * @version 2017.104
  * @category accessories
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth

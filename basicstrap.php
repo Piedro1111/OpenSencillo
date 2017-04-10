@@ -2,7 +2,7 @@
 /*~ basicstrap.php
 .---------------------------------------------------------------------------.
 |  Software: OpenSencillo Basic Bootstrap                                   |
-|   Version: 2015.109                                                       |
+|   Version: 2017.104                                                       |
 |   Contact: mail@phorvath.com                                              |
 | ------------------------------------------------------------------------- |
 |    Author: Bc. Peter Horváth (original founder)                           |

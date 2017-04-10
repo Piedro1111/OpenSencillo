@@ -2,7 +2,7 @@
 /*~ cache.php
 .---------------------------------------------------------------------------.
 |  Software: SencilloCache                                                  |
-|   Version: 2015.003                                                       |
+|   Version: 2017.104                                                       |
 |   Contact: ph@mastery.sk                                                  |
 | ------------------------------------------------------------------------- |
 |    Author: Bc. Peter Horváth (original founder)                           |

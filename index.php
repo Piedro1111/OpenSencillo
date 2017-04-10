@@ -2,7 +2,7 @@
 /*~ index.php
 .---------------------------------------------------------------------------.
 |  Software: OpenSencillo Index                                             |
-|   Version: 2015.109                                                       |
+|   Version: 2017.104                                                       |
 |   Contact: info@opensencillo.com                                          |
 | ------------------------------------------------------------------------- |
 |    Author: Bc. Peter Horváth (original founder)                           |

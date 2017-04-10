@@ -2,7 +2,7 @@
 /**
  * Create connection to library
  * @name modules and library loader
- * @version 2015.109
+ * @version 2017.104
  * @category Sencillo Library
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth

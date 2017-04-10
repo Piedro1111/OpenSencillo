@@ -3,7 +3,7 @@
  * Rewrite input to valid state
  * @author Bc. Peter Horváth
  * @category library
- * @version 2015.004
+ * @version 2017.104
  * @see http://opensencillo.com
  */
 class inputRewrite

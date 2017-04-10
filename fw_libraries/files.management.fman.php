@@ -2,7 +2,7 @@
 /**
  * Simple file manager
  * @name filesList
- * @version 2015.002
+ * @version 2017.104
  * @category Sencillo Library
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth

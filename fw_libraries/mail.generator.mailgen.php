@@ -2,7 +2,7 @@
 /**
  * Send and construct mail
  * @name mailgen
- * @version 2015.108
+ * @version 2017.104
  * @category Sencillo Library
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth
