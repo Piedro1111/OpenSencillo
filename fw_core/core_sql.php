@@ -2,7 +2,7 @@
 /**
  * Main mysql functions
  * @name Sencillo Core - SQL support
- * @version 2017.104
+ * @version 2018.101
  * @category core
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth
