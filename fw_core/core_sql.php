@@ -2,7 +2,7 @@
 /**
  * Main mysql functions
  * @name Sencillo Core - SQL support
- * @version 2017.104
+ * @version 2018.106
  * @category core
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth
@@ -53,7 +53,7 @@ class mysql
 	 */
 	final public function query($sql)
 	{
-		return mysqli_query($sql);
+		return mysqli_query($this->con,$sql);
 	}
 	
 	/**
@@ -115,7 +115,7 @@ class mysql
 /**
  * Main mysql extend
  * @name Sencillo Core - mysqlEdit
- * @version 2017.104
+ * @version 2018.106
  * @category core
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth
@@ -260,23 +260,36 @@ class mysqlEdit extends mysql
 	{
 		$this->sql="SELECT * FROM `".$this->table."` WHERE ".$if." ORDER BY ".$order." LIMIT ".$limit.";";
 		$this->con=mysqli_connect($this->DBHost,$this->DBUser,$this->DBPass);
-		mysqli_select_db($this->DBName, $this->con);
-		$this->result=mysqli_query($this->sql);
-		$this->colout=explode(",",str_replace("`","",substr($this->column, 0, -1)));
+		mysqli_select_db($this->con,$this->DBName);
+		
+		$this->result=mysqli_query($this->con,$this->sql);
+		
+		/*$this->colout=explode(",",str_replace("`","",substr($this->column, 0, -1)));
 		$i=0;
 		$j=0;
 		$this->out = array('header'=>$this->colout,'line'=>array(array()));
-		$this->csum = md5($this->con);
+		$this->csum = md5($this->con);*/
+		$i=1;
 		while($row=mysqli_fetch_array($this->result))
 		{
-			$i=0;
-			$j++;
-			foreach($this->colout as $val)
-			{
-				$this->out['line'][$j][$i++]=$row[$val];
-			}
+			$this->out['line'][$i++]=$row;
 		}
 		return $this->out;
+	}
+	
+	public function testout()
+	{
+		$sql="SELECT * FROM `users`;";
+		$con=mysqli_connect($this->DBHost,$this->DBUser,$this->DBPass);
+		mysqli_select_db($con,$this->DBName);
+		
+		$result=mysqli_query($con,$sql);
+		$i=0;
+		while($row=mysqli_fetch_array($result))
+		{
+			$out['line'][$i++]=$row;
+		}
+		return $out;
 	}
 }
 
