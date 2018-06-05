@@ -24,7 +24,7 @@ class coreSencillo implements coreInterface
 	 */
 	public function __construct($sum=null)
 	{
-		$version = '2018';
+		$version = '2018';//merge
 		$layout	 = '1';
 		$build	 = '06';
 		$this->info=array(	'CMS'=>'OpenSencillo',
