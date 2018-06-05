@@ -234,11 +234,12 @@ class logMan extends mysqlEdit
 		$this->openTable('users');
 	    if(filter_var($ajax['email'],FILTER_VALIDATE_EMAIL))
 	    {
-	    	if($this->output("`login`='".strtolower($ajax['email'])."' AND `pass`=MD5('".$ajax['pass']."')","`id` ASC",1)!=false)
+			$this->status['user']=$this->output("`login`='".strtolower($ajax['email'])."' AND `pass`=MD5('".$ajax['pass']."')","`id` ASC",1);
+	    	if(($this->status['user']['line'][1][8])>1000)
     	    {
+				$this->createSession();
     	        $this->status['status']='authorized';
     	        $this->status['code']=202;
-    	        $this->status['user']=$this->output("`login`='".strtolower($ajax['email'])."' AND `pass`=MD5('".$ajax['pass']."')","`id` ASC",1);
     	        
     	        $this->addSessionData('userid',$this->status['user']['line'][1][0]);
     	        $this->addSessionData('login',$this->status['user']['line'][1][3]);
@@ -283,7 +284,7 @@ class logMan extends mysqlEdit
 		$this->openTable('users');
 		$browser = ($this->getSessionData('sessionid') ? array("code"=>200) : $this->login($_POST));
 		$server  = $this->output("`id`=".$this->getSessionData('userid'));
-		
+
 		if(!$signal)
 		{
 			return (($server['line'][1][1]===$this->getSessionData('sessionid'))&&($browser["code"]<300)&&($server['line'][1][8]===$this->getSessionData('perm')) ? true : false);
