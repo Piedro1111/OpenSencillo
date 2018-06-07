@@ -47,7 +47,7 @@ It is special modules contains system´s classes.
 
 ##Changes log
 ============
-###2017.104
+###2018.106
 1. Update welcome screen
 2. Update install.ini
 3. Readme update
