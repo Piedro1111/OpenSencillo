@@ -12,9 +12,9 @@
 > * Type: Framework;
 > * Category: OpenSource;
 > * Language: PHP 5.3+, JQUERY, HTML5
-> * Year: 2016;
+> * Year: 2018;
 > * Build: 106;
-> * Rev: 2016.106;
+> * Rev: 2018.106;
 > * By: [Bc. Peter Horváth](http://phorvath.com);
 > * Homepage: [Open Sencillo](http://opensencillo.com);
 > * Features: File management, File Convertors, Database management, SEO, Session & Cookies management, Hash subsystem, Translates JSON file, Unit Testing, Htaccess generator, Simple image tool ...
@@ -47,6 +47,14 @@ It is special modules contains system´s classes.
 
 ##Changes log
 ============
+###2017.104
+1. Update welcome screen
+2. Update install.ini
+3. Readme update
+4. Installer bug fix
+5. Change to PHP7.1 support
+6. Version info update
+
 ###2017.104
 1. Update welcome screen
 2. Update install.ini
