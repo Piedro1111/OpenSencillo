@@ -1,0 +1,8 @@
+title: OpenSencillo
+description: OpenSencillo PHP framework
+google_analytics: UA-58298323-2
+show_downloads: true
+theme: jekyll-theme-leap-day
+
+gems:
+  - jekyll-mentions
