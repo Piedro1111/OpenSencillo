@@ -8,7 +8,25 @@
  * @author Bc. Peter Horváth
  * @license Distributed under the General Public License (GPL) http://www.gnu.org/copyleft/gpl.html This program is distributed in the hope that it will be useful - WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
-class mysql
+class gdprLayer
+{
+	private $checklog = array();
+	private $iCtrGdprLyr = 0;
+	
+	public function sqlEventLog($eventType,$type,$sql)
+	{
+		
+		$this->checklog[$this->iCtrGdprLyr]['sql'] = $sql;
+		$this->checklog[$this->iCtrGdprLyr]['event'] = $eventType;
+		$this->checklog[$this->iCtrGdprLyr]['type'] = $type;
+		
+		$this->iCtrGdprLyr++;
+		
+		return true;
+	}
+}
+
+class mysql extends gdprLayer
 {
 	public  $DBHost;
 	public  $DBName;
@@ -51,8 +69,9 @@ class mysql
 	 * @param string $sql
 	 * @return mixed resources
 	 */
-	final public function query($sql)
+	final public function query($sql,$source=null)
 	{
+		$this->sqlEventLog('query('.$source.')','write',$sql);
 		return mysqli_query($this->con,$sql);
 	}
 	
@@ -61,9 +80,10 @@ class mysql
 	 * @param string $sql
 	 * @return mixed resources
 	 */
-	final public function write($sql)
+	final public function write($sql,$source=null)
 	{
-		return $this->query($sql);
+		$source='write('.$source.')';
+		return $this->query($sql,$source);
 	}
 	
 	/**
@@ -171,7 +191,7 @@ class mysqlEdit extends mysql
 	public function createTable($name)
 	{
 		$this->table = $name;
-		$this->query('CREATE TABLE IF NOT EXISTS `'.$name.'` ( `id` INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(`id`)'.$this->construct.');');
+		$this->query('CREATE TABLE IF NOT EXISTS `'.$name.'` ( `id` INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(`id`)'.$this->construct.');','core:sql:'.__FUNCTION__);
 		$this->construct = null;
 	}
 	
@@ -200,7 +220,7 @@ class mysqlEdit extends mysql
 	 */
 	public function insert($values)
 	{
-		$this->query('INSERT INTO '.$this->table.' ('.substr($this->column, 0, -1).') VALUES (null,'.$values.');');
+		$this->query('INSERT INTO '.$this->table.' ('.substr($this->column, 0, -1).') VALUES (null,'.$values.');','core:sql:'.__FUNCTION__);
 	}
 	
 	/**
@@ -228,7 +248,7 @@ class mysqlEdit extends mysql
 	 */
 	public function update($if,$sets=null)
 	{
-		$this->query('UPDATE '.$this->table.' SET '.substr($this->setupdate, 0, -1).$sets.' WHERE '.$if.';');
+		$this->query('UPDATE '.$this->table.' SET '.substr($this->setupdate, 0, -1).$sets.' WHERE '.$if.';','core:sql:'.__FUNCTION__);
 	}
 	
 	/**
@@ -241,11 +261,11 @@ class mysqlEdit extends mysql
 	{
 		if($if=="all")
 		{
-			$this->query('DELETE FROM `'.$this->table.'` WHERE `id`>0;');
+			$this->query('DELETE FROM `'.$this->table.'` WHERE `id`>0;','core:sql:'.__FUNCTION__);
 		}
 		else
 		{
-			$this->query('DELETE FROM `'.$this->table.'` WHERE '.$if.';');
+			$this->query('DELETE FROM `'.$this->table.'` WHERE '.$if.';','core:sql:'.__FUNCTION__);
 		}
 	}
 	
@@ -625,12 +645,20 @@ class mysqlInterface extends mysqlEdit
 					break;
 				}
 			}
+			if($update)
+			{
+				$eventType = 'update';
+			}
+			else
+			{
+				$eventType = 'select';
+			}
+			$this->sqlEventLog($eventType.'('.$source.')','pending',$sql);
 			$this->save.=(isset($data_set)?' SET '.substr($data_set,0,-1):'').$data_join.$data_condition.$data_like.$data_sort.(isset($data_limit_max)? ' LIMIT '.$data_limit_start.$data_limit_max : '').';';
 		}
 		/**
 		 * @TODO out - addcode
 		 */
-		
 		return $this->save;
 	}
 	
@@ -638,8 +666,9 @@ class mysqlInterface extends mysqlEdit
 	 * Add SQL query
 	 * @param string $sql
 	 */
-	public function addQuery($sql)
+	public function addQuery($sql,$source=null)
 	{
+		$this->sqlEventLog('addQuery('.$source.')','pending',$sql);
 		$this->save.=$sql;
 	}
 	
