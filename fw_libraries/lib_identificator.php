@@ -157,7 +157,7 @@ class library
 	{
 		$this->createStructure();
 		$this->openFiles();
-		//$this->openModules();
+		$this->openModules();
 	}
 	
 	/**
