@@ -1,4 +1,5 @@
 <?php
+$ExtHDD = null;
 $CondensationSTS = null;
 $CondensationLVL = null;
 $err = null;
@@ -25,6 +26,7 @@ class pihome
 	{
 		error_reporting(E_ERROR | E_PARSE);
 		session_start();
+		echo "ok";
 		$_SESSION['count']++;
 		
 		$this->protocol = 'http'; 
@@ -114,9 +116,9 @@ class pihome
 	{
 		if($this->logman->checkSession())
 		{
+			$this->getExtHDDstatus();
 			$this->getCondensation();
 			$this->getTemperatures();
-			
 			
 			$this->url->addUrl('','dashboard_pi_page.html.php');
 			$this->url->addUrl('gpio','gpio_pi_page.html.php');
@@ -126,10 +128,32 @@ class pihome
 		}
 		else
 		{
-			$this->url->addUrl('','login_page.html.php');
+			$url->addUrl('','login_page.html.php');
+			$url->addUrl('exthdd','login_page.html.php');
+			$url->addUrl('gpio','login_page.html.php');
+			$url->addUrl('shutdown','login_page.html.php');
 		}
 	}
-	
+	final private function getExtHDDstatus()
+	{
+		//ExtHDD status parser
+		try
+		{
+			$ExtHDD = file_get_contents('./switchexthdd', true);
+			$ExtHDD = json_decode($ExtHDD,true);
+			$ExtHDDcontent = fopen ("http://".$ExtHDD['ip'], "r");
+			if (!$ExtHDDcontent) {
+				exit;
+			}
+			$ExtHDDcontent = stream_get_contents($ExtHDDcontent);
+		}
+		catch(Exception $e)
+		{
+			$err=$e->getMessage();
+		}
+		
+		return $ExtHDD;
+	}
 	final private function getCondensation()
 	{
 		//condensation level parser
