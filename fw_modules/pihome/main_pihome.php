@@ -1,13 +1,4 @@
 <?php
-$ExtHDD = null;
-$CondensationSTS = null;
-$CondensationLVL = null;
-$err = null;
-$CPUtemperature = null;
-$playerCPUtemperature = null;
-$pcstatus = null;
-$pcstatusjson = null;
-
 class pihome
 {
 	private $url;
@@ -22,11 +13,21 @@ class pihome
 	private $logman;
 	private $template;
 	
+	public $ExtHDD;
+	public $CondensationSTS;
+	public $CondensationLVL;
+	public $err;
+	public $CPUtemperature;
+	public $playerCPUtemperature;
+	public $pcstatus;
+	public $pcstatusjson;
+	
+	
 	final public function __construct()
 	{
 		error_reporting(E_ERROR | E_PARSE);
 		session_start();
-		echo "ok";
+		
 		$_SESSION['count']++;
 		
 		$this->protocol = 'http'; 
@@ -38,16 +39,16 @@ class pihome
 		$this->js = $this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->url.'/fw_templates/additional/rpi/production';
 		$this->stn = $this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->url.'/shutdown';
 		
-		$tihs->seo = new headerSeo;
-		$tihs->linkmngr = new url;
-		$tihs->logman = new logMan;
+		$this->seo = new headerSeo;
+		$this->linkmngr = new url;
+		$this->logman = new logMan;
 		
 		//main
 		$this->seoGenerator();
 		$this->defaultHead(PAGE);
 		$this->mainLogic();
 	}
-	
+
 	final private function seoGenerator()
 	{
 		$this->seo->encode();
@@ -120,39 +121,41 @@ class pihome
 			$this->getCondensation();
 			$this->getTemperatures();
 			
-			$this->url->addUrl('','dashboard_pi_page.html.php');
-			$this->url->addUrl('gpio','gpio_pi_page.html.php');
-			$this->url->addUrl('shutdown','_');
-			$this->url->addUrl('phpinfo','_');
-			//$this->url->addUrl('logout','_');
+			$this->linkmngr->addUrl('','dashboard_pi_page.html.php');
+			$this->linkmngr->addUrl('exthdd','exthdd_pi_page.html.php');
+			$this->linkmngr->addUrl('gpio','gpio_pi_page.html.php');
+			$this->linkmngr->addUrl('shutdown','_');
+			$this->linkmngr->addUrl('phpinfo','_');
+			//$this->linkmngr->addUrl('logout','_');
 		}
 		else
 		{
-			$url->addUrl('','login_page.html.php');
-			$url->addUrl('exthdd','login_page.html.php');
-			$url->addUrl('gpio','login_page.html.php');
-			$url->addUrl('shutdown','login_page.html.php');
+			$this->linkmngr->addUrl('','login_page.html.php');
+			$this->linkmngr->addUrl('exthdd','login_page.html.php');
+			$this->linkmngr->addUrl('gpio','login_page.html.php');
+			$this->linkmngr->addUrl('shutdown','login_page.html.php');
 		}
+		$this->render();
 	}
 	final private function getExtHDDstatus()
 	{
 		//ExtHDD status parser
 		try
 		{
-			$ExtHDD = file_get_contents('./switchexthdd', true);
-			$ExtHDD = json_decode($ExtHDD,true);
-			$ExtHDDcontent = fopen ("http://".$ExtHDD['ip'], "r");
-			if (!$ExtHDDcontent) {
+			$this->ExtHDD = file_get_contents('./switchexthdd', true);
+			$this->ExtHDD = json_decode($this->ExtHDD,true);
+			$this->ExtHDDcontent = fopen ("http://".$this->ExtHDD['ip'], "r");
+			if (!$this->ExtHDDcontent) {
 				exit;
 			}
-			$ExtHDDcontent = stream_get_contents($ExtHDDcontent);
+			$this->ExtHDDcontent = stream_get_contents($this->ExtHDDcontent);
 		}
 		catch(Exception $e)
 		{
-			$err=$e->getMessage();
+			$this->err=$e->getMessage();
 		}
 		
-		return $ExtHDD;
+		return $this->ExtHDD;
 	}
 	final private function getCondensation()
 	{
@@ -161,13 +164,13 @@ class pihome
 		{
 			$Condensation = file_get_contents('./watercondensator', true);
 			$Condensation = json_decode($Condensation,true);
-			$CondensationSTS = $Condensation['msg'];
-			$CondensationLVL = $Condensation['water'];
+			$this->CondensationSTS = $Condensation['msg'];
+			$this->CondensationLVL = $Condensation['water'];
 		}
 		catch(Exception $e)
 		{
-			$err=$e->getMessage();
-			$CondensationSTS = 'ERROR';
+			$this->err=$e->getMessage();
+			$this->CondensationSTS = 'ERROR';
 		}
 		
 		return $Condensation;
@@ -176,48 +179,53 @@ class pihome
 	final private function getTemperatures()
 	{
 		//CPU temperature
-		$playerCPUtemperature = file_get_contents('./piplayertemperature', true);
+		$this->playerCPUtemperature = file_get_contents('./piplayertemperature', true);
 		
-		$CPUtemperature = file_get_contents('./temperature', true);
-		$CPUtemperature = explode('=',$CPUtemperature);
-		$CPUtemperature = substr($CPUtemperature[1], 0, -3);
+		$this->CPUtemperature = file_get_contents('./temperature', true);
+		$this->CPUtemperature = explode('=',$this->CPUtemperature);
+		$this->CPUtemperature = substr($this->CPUtemperature[1], 0, -3);
 		try
 		{
-			$playerCPUtemperature=json_decode($playerCPUtemperature,true);
+			$this->playerCPUtemperature=json_decode($this->playerCPUtemperature,true);
 			
 			$pcjson = file_get_contents('./maincomputer', true);
-			$pcstatusjson=json_decode($pcjson,true);
-			if($pcstatusjson['status']==200)
+			$this->pcstatusjson=json_decode($pcjson,true);
+			if($this->pcstatusjson['status']==200)
 			{
-				$pcstatus=true;
+				$this->pcstatus=true;
 			}
 			else
 			{
-				$pcstatus=false;
+				$this->pcstatus=false;
 			}
 		}
 		catch(Exception $e)
 		{
 			$e->getMessage();
-			$pcstatus=false;
+			$this->pcstatus=false;
 		}
 	}
 	
-	final private function __destruct()
+	final private function render()
 	{
+		$logman = $this->logman;
 		require_once('.'.$this->template.'/menu_block.html.php');
-		if(file_exists('.'.$this->template.'/'.$this->url->getPage(PAGE)))
+		if(file_exists('.'.$this->template.'/'.$this->linkmngr->getPage(PAGE)))
 		{
-			require_once('.'.$this->template.'/'.$this->url->getPage(PAGE));
+			require_once('.'.$this->template.'/'.$this->linkmngr->getPage(PAGE));
+		}
+		else
+		{
+			echo "Err 404";
 		}
 		
-		unset($CondensationSTS);
-		unset($CondensationLVL);
-		unset($err);
-		unset($CPUtemperature);
-		unset($playerCPUtemperature);
-		unset($pcstatus);
-		unset($pcstatusjson);
+		unset($this->CondensationSTS);
+		unset($this->CondensationLVL);
+		unset($this->err);
+		unset($this->CPUtemperature);
+		unset($this->playerCPUtemperature);
+		unset($this->pcstatus);
+		unset($this->pcstatusjson);
 	}
 }
 ?>
