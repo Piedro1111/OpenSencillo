@@ -227,5 +227,10 @@ class pihome
 		unset($this->pcstatus);
 		unset($this->pcstatusjson);
 	}
+	
+	final public function ajax()
+	{
+		require_once('./fw_modules/pihome/ajax_pihome.php');
+	}
 }
 ?>
