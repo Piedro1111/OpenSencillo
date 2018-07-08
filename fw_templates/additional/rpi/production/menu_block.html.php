@@ -14,7 +14,7 @@
 							</div>
 							<?if($logman->checkSession()):?>
 							<div class="profile_info">
-								<span><?=$USERtype;?></span>
+								<span><?=$this->usertype;?></span>
 								<h2><?=$_SESSION['login'];?></h2>
 							</div>
 							<?endif;?>
@@ -27,13 +27,14 @@
 							<div class="menu_section">
 								<h3>Main Menu</h3>
 								<ul class="nav side-menu">
-									<?if($_SESSION['perm']>=1100):?>
-									<li><a href="<?='http://'.$_SERVER['SERVER_NAME'].$this->port.'/pihome/';?>"><i class="fa fa-tachometer"></i> Dashboard</a>
-									</li>
-									<?endif;?>
+<?php
+foreach($this->mainmenu as $menuitem)
+{
+	echo '<li><a href="'.$this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->urlprefix.'/'.$menuitem['link'].'"><i class="'.$menuitem['icon'].'"></i> '.$menuitem['name'].'</a>
+		</li>';
+}
+?>
 									<?if($_SESSION['perm']>=1110):?>
-									<li><a href="<?='http://'.$_SERVER['SERVER_NAME'].$this->port.'/pihome/exthdd';?>"><i class="fa fa-cloud"></i> Ext HDD</a>
-									</li>
 									<li><a><i class="fa fa-home"></i> GPIO <span class="fa fa-chevron-down"></span></a>
 										<ul class="nav child_menu" style="display: none">
 											<li><a href="<?='http://'.$_SERVER['SERVER_NAME'].$this->port.'/pihome/gpio';?>">Config</a>
@@ -43,7 +44,7 @@
 										</ul>
 									</li>
 									<?endif;?>
-								<ul>
+								</ul>
 							</div>
 						</div>
 						<!-- /sidebar menu -->
@@ -140,14 +141,14 @@
 						<div class="left"></div>
 						<div class="right">
 						  <span class="count_top"><i class="fa fa-tint"></i> Condensation</span>
-						  <div class="count"><span class="<?=(($this->CondensationLVL==0)?' green':' red');?>"><?=$this->CondensationSTS;?></span></div>
+						  <div class="count"><span class="<?=((($this->CondensationLVL==0)&&($this->Condensation['date']==date('Y-m-d')))?' green':' red');?>"><?=(($this->Condensation['date']==date('Y-m-d'))?$this->CondensationSTS:'Error');?></span></div>
 						</div>
 					  </div>
 					  <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
 						<div class="left"></div>
 						<div class="right">
 						  <span class="count_top"><i class="fa fa-cloud"></i> Ext HDD</span>
-						  <div class="count"><span id="exthddstatus" class="<?=(($this->ExtHDDcontent==0)?' green':' red');?>"><?=(($this->ExtHDDcontent==0)?'OFF':'ON');?></span></div>
+						  <div class="count"><span id="exthddstatus" class="<?=(($this->ExtHDDcontent==0)?' green':' red');?>"><?=(($this->HDDerr==0)?(($this->ExtHDDcontent==0)?'OFF':'ON'):'Error');?></span></div>
 						</div>
 					  </div>
 					  <!--<div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">

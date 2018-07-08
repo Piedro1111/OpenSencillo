@@ -4,7 +4,7 @@
 							<div class="col-md-12 col-sm-12 col-xs-12">
 								<div class="x_panel">
 									<div class="x_title">
-										<h2>Login</h2>
+										<h2>Registration</h2>
 										<ul class="nav navbar-right panel_toolbox">
 										</ul>
 										<div class="clearfix"></div>
@@ -12,25 +12,41 @@
 									<div class="x_content">
 										<br>
 										<form class="form-horizontal form-label-left">
-											<div class="item form-group">
+											<div class="item form-group sencillo-email-group">
 												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">E-mail <span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 col-xs-12">
 													<input id="email" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="email" placeholder="" required="required" type="text">
+													<ul class="parsley-errors-list sencillo-errors-list filled" style="display:none">
+														<li class="parsley-required ereg-err-email">Email value is required.</li>
+													</ul>
 												</div>
 											</div>
-											<div class="item form-group">
-												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="pass">Pass <span class="required">*</span>
+											<div class="item form-group sencillo-pass-group">
+												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="pass">Password <span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 col-xs-12">
 													<input id="pass" type="password" name="pass" data-validate-length="6,25" required="required" class="form-control col-md-7 col-xs-12">
+													<ul class="parsley-errors-list sencillo-errors-list filled" style="display:none">
+														<li class="parsley-required ereg-err-pass">This value is required.</li>
+													</ul>
+												</div>
+											</div>
+											<div class="item form-group sencillo-rtp-group">
+												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="rtppass">Retype password <span class="required">*</span>
+												</label>
+												<div class="col-md-6 col-sm-6 col-xs-12">
+													<input id="rtppass" type="password" name="rtppass" data-validate-length="6,25" required="required" class="form-control col-md-7 col-xs-12">
+													<ul class="parsley-errors-list sencillo-errors-list filled" style="display:none">
+														<li class="parsley-required ereg-err-rtp">This value is required.</li>
+													</ul>
 												</div>
 											</div>
 											<div class="ln_solid"></div>
 											<div class="form-group">
 												<div class="col-md-6 col-md-offset-3">
-													<button id="send_login" type="button" class="btn btn-success">Submit</button>
-													<button type="button" data-url="registration" class="btn btn-link open-button">Registration</button>
+													<button id="send_ereg" type="button" class="btn btn-success">Submit</button>
+													<button type="button" data-url="" class="btn btn-link open-button">Login</button>
 												</div>
 											</div>
 										</form>

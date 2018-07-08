@@ -109,18 +109,16 @@
 						  <p><small>last response: <?=$this->playerCPUtemperature['date'];?> <?=$this->playerCPUtemperature['time'];?></small></p>
                         </li>
 						<?endif;?>
-						<?if($Condensation['date']==date('Y-m-d')):?>
+						<?if($this->Condensation['date']==date('Y-m-d')):?>
 						<li>
-                          <p>piHome AC condensator (<a href="http://<?=$Condensation['ip'];?>"><?=$Condensation['ip'];?></a>)</p>
-						  <p><small>last response: <?=$Condensation['date'];?> <?=$Condensation['time'];?></small></p>
+                          <p>piHome AC condensator (<a href="http://<?=$this->Condensation['ip'];?>"><?=$this->Condensation['ip'];?></a>)</p>
+						  <p><small>last response: <?=$this->Condensation['date'];?> <?=$this->Condensation['time'];?></small></p>
                         </li>
 						<?endif;?>
-						<?if($this->ExtHDD['date']==date('Y-m-d')):?>
 						<li>
                           <p>piHome ExtHDD (<a href="http://<?=$this->ExtHDD['ip'];?>"><?=$this->ExtHDD['ip'];?></a>)</p>
 						  <p><small>last start: <?=$this->ExtHDD['date'];?> <?=$this->ExtHDD['time'];?></small></p>
                         </li>
-						<?endif;?>
 						<?if($this->pcstatus===true):?>
                         <li>
                           <p>PC (<a href="http://213.160.166.179:8181">213.160.166.179:8181</a>)</p>

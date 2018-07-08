@@ -1,33 +1,27 @@
-	<body class="nav-md">
-		<div class="container body">
-			<div class="main_container">
-				<!-- page content -->
-				<div class="col-md-12">
-					<div class="col-middle">
-						<div class="text-center text-center">
-							<h1 class="error-number">404</h1>
-							<h2>Sorry but we couldnt find this page</h2>
-							<p>This page you are looking for does not exsist <a href="#">Report this?</a>
-							</p>
-							<div class="mid_center">
-								<h3>Search</h3>
-								<form>
-									<div class="col-xs-12 form-group pull-right top_search">
-										<div class="input-group">
-											<input type="text" class="form-control" placeholder="Search for...">
-											<span class="input-group-btn">
-												<button class="btn btn-default" type="button">Go!</button>
-											</span>
-										</div>
+					<div class="">
+						<div class="clearfix"></div>
+						<div class="row">
+							<div class="col-md-12 col-sm-12 col-xs-12">
+								<div class="x_panel">
+									<div>
+										<h2>Err 403 / 404</h2>
 									</div>
-								</form>
+								</div>
 							</div>
 						</div>
 					</div>
+					<!-- footer content -->
+					<footer>
+						<div class="copyright-info">
+							<p class="pull-right">piHome - powered by <a href="https://opensencillo.com">OpenSencillo</a>
+							</p>
+						</div>
+						<div class="clearfix"></div>
+					</footer>
+					<!-- /footer content -->
 				</div>
 				<!-- /page content -->
 			</div>
-			<!-- footer content -->
 		</div>
 		<div id="custom_notifications" class="custom-notifications dsp_none">
 			<ul class="list-unstyled notifications clearfix" data-tabbed_notifications="notif-group">
@@ -35,15 +29,14 @@
 			<div class="clearfix"></div>
 			<div id="notif-group" class="tabbed_notifications"></div>
 		</div>
-		<script src="<?=$this->js;?>js/bootstrap.min.js"></script>
+		<!--<script src="<?=$this->js;?>/js/bootstrap.min.js"></script>-->
 		<!-- bootstrap progress js -->
-		<script src="<?=$this->js;?>js/progressbar/bootstrap-progressbar.min.js"></script>
-		<script src="<?=$this->js;?>js/nicescroll/jquery.nicescroll.min.js"></script>
+		<script src="<?=$this->js;?>/js/progressbar/bootstrap-progressbar.min.js"></script>
+		<script src="<?=$this->js;?>/js/nicescroll/jquery.nicescroll.min.js"></script>
 		<!-- icheck -->
-		<script src="<?=$this->js;?>js/icheck/icheck.min.js"></script>
-		<script src="<?=$this->js;?>js/custom.js"></script>
+		<script src="<?=$this->js;?>/js/icheck/icheck.min.js"></script>
+		<script src="<?=$this->js;?>/js/custom.js"></script>
 		<!-- pace -->
-		<script src="<?=$this->js;?>js/pace/pace.min.js"></script>
-		<!-- /footer content -->
+		<script src="<?=$this->js;?>/js/pace/pace.min.js"></script>
 	</body>
 </html>
