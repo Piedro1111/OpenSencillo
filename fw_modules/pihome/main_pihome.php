@@ -13,15 +13,21 @@ class pihome
 	private $logman;
 	private $template;
 	
-	public $ExtHDD;
-	public $CondensationSTS;
-	public $CondensationLVL;
-	public $err;
-	public $CPUtemperature;
-	public $playerCPUtemperature;
-	public $pcstatus;
-	public $pcstatusjson;
+	private $ExtHDD;
+	private $HDDerr;
+	private $Condensation;
+	private $CondensationSTS;
+	private $CondensationLVL;
+	private $err;
+	private $CPUtemperature;
+	private $playerCPUtemperature;
+	private $pcstatus;
+	private $pcstatusjson;
 	
+	private $usertype;
+	private $mainmenu;
+	
+	private $mysqlinterface;
 	
 	final public function __construct()
 	{
@@ -46,13 +52,17 @@ class pihome
 		//main
 		$this->seoGenerator();
 		$this->defaultHead(PAGE);
+		$this->permDecode();
 		$this->mainLogic();
 	}
-
+	
+	/**
+	 * seoGenerator - create all data for meta tag
+	 */
 	final private function seoGenerator()
 	{
 		$this->seo->encode();
-		$this->seo->title($core->coreSencillo->info["FWK"]." - {$this->url}");
+		$this->seo->title("{$this->url}");
 		$this->seo->owner("Peter Horváth, phorvath.com");
 		$this->seo->custom("<script>var server_name='{$this->protocol}://{$_SERVER['SERVER_NAME']}{$this->port}/{$this->url}';</script>");
 		$this->seo->custom("<meta http-equiv='X-UA-Compatible' content='IE=edge'>");
@@ -74,35 +84,53 @@ class pihome
 		$this->seo->script("{$this->js}/js/extend_js/ext.js");
 	}
 	
-	final private function permDecode()
+	/**
+	 * permDecode - decode basic permission if parameter perm is integer.
+	 * 
+	 * @param int $perm example $this->permDecode(1100)
+	 * 
+	 * @return string
+	 */
+	final private function permDecode($perm=false)
 	{
-		switch($_SESSION['perm'])
+		if($perm===false)
+		{
+			$perm=$_SESSION['perm'];
+		}
+		switch($perm)
 		{
 			case '1000':
-				$USERtype = 'ban';
+				$this->usertype = 'ban';
 				break;
 			case '1100':
-				$USERtype = 'user';
+				$this->usertype = 'user';
 				break;
 			case '1110':
-				$USERtype = 'vip';
+				$this->usertype = 'vip';
 				break;
 			case '1111':
-				$USERtype = 'admin';
+				$this->usertype = 'admin';
 				break;
 			default:
-				$USERtype = 'unknown';
+				$this->usertype = 'unknown';
 		}
-		return $USERtype;
+		return $this->usertype;
 	}
 	
+	/**
+	 * setup different head on different pages
+	 * @param string $PAGE
+	 */ 
 	final private function defaultHead($PAGE)
 	{
 		switch($PAGE)
 		{
 			case 'phpinfo':
-				echo phpinfo();
-				die;
+				if(($this->logman->checkSession())&&($_SESSION['perm']>=1110))
+				{
+					echo phpinfo();
+					die;
+				}
 			break;
 			case 'logout':
 				$this->logman->destroySession();
@@ -113,59 +141,96 @@ class pihome
 		}
 	}
 	
+	/**
+	 * Main logic
+	 */ 
 	final private function mainLogic()
 	{
 		if($this->logman->checkSession())
 		{
-			$this->getExtHDDstatus();
-			$this->getCondensation();
-			$this->getTemperatures();
+			if($_SESSION['perm']>=1100)
+			{
+				$this->getExtHDDstatus();
+				$this->getCondensation();
+				$this->getTemperatures();
+				
+				$this->linkmngr->addUrl('','dashboard_pi_page.html.php');
+				$this->addMenuItem('Dashboard','','tachometer',1100);
+			}
 			
-			$this->linkmngr->addUrl('','dashboard_pi_page.html.php');
-			$this->linkmngr->addUrl('exthdd','exthdd_pi_page.html.php');
-			$this->linkmngr->addUrl('gpio','gpio_pi_page.html.php');
-			$this->linkmngr->addUrl('shutdown','_');
-			$this->linkmngr->addUrl('phpinfo','_');
+			if($_SESSION['perm']>=1110)
+			{
+				$this->linkmngr->addUrl('phpinfo','_');
+				$this->addMenuItem('PHP info','phpinfo','info',1110);
+			}
+			
+			if($_SESSION['perm']>=1111)
+			{
+				$this->linkmngr->addUrl('exthdd','exthdd_pi_page.html.php');
+				$this->addMenuItem('Ext HDD','exthdd','cloud',1111);
+				
+				$this->linkmngr->addUrl('users','users_page.html.php');
+				$this->addMenuItem('Users','users','users',1111);
+				
+				$this->linkmngr->addUrl('gpio','gpio_pi_page.html.php');
+				
+				$this->linkmngr->addUrl('shutdown','_');
+			}
 			//$this->linkmngr->addUrl('logout','_');
 		}
 		else
 		{
 			$this->linkmngr->addUrl('','login_page.html.php');
+			$this->linkmngr->addUrl('registration','ereg_page.html.php');
+			$this->linkmngr->addUrl('forgot','fgot_page.html.php');
+			$this->linkmngr->addUrl('forgot/password','newpass_page.html.php');
 			$this->linkmngr->addUrl('exthdd','login_page.html.php');
 			$this->linkmngr->addUrl('gpio','login_page.html.php');
 			$this->linkmngr->addUrl('shutdown','login_page.html.php');
 		}
+		$this->menu();
 		$this->render();
 	}
+	
+	/**
+	 * Check sensor - getExtHDD status
+	 * @return array
+	 */
 	final private function getExtHDDstatus()
 	{
 		//ExtHDD status parser
-		try
-		{
-			$this->ExtHDD = file_get_contents('./switchexthdd', true);
-			$this->ExtHDD = json_decode($this->ExtHDD,true);
-			$this->ExtHDDcontent = fopen ("http://".$this->ExtHDD['ip'], "r");
-			if (!$this->ExtHDDcontent) {
-				exit;
-			}
-			$this->ExtHDDcontent = stream_get_contents($this->ExtHDDcontent);
+		/*if($this->is_json($this->ExtHDD))
+		{*/
+		$this->ExtHDD = file_get_contents('./switchexthdd', true);
+		$this->ExtHDD = json_decode($this->ExtHDD,true);
+		$this->ExtHDDcontent = fopen ("http://".$this->ExtHDD['ip'], "r");
+		if (!$this->ExtHDDcontent) {
+			exit;
 		}
-		catch(Exception $e)
+		$this->ExtHDDcontent = stream_get_contents($this->ExtHDDcontent);
+		$this->HDDerr = 0;
+		/*}
+		else
 		{
-			$this->err=$e->getMessage();
-		}
-		
+			$this->ExtHDDcontent = 1;
+			$this->HDDerr = 1;
+		}*/
 		return $this->ExtHDD;
 	}
+	
+	/**
+	 * getCondensation status
+	 * @return array
+	 */
 	final private function getCondensation()
 	{
 		//condensation level parser
 		try
 		{
-			$Condensation = file_get_contents('./watercondensator', true);
-			$Condensation = json_decode($Condensation,true);
-			$this->CondensationSTS = $Condensation['msg'];
-			$this->CondensationLVL = $Condensation['water'];
+			$this->Condensation = file_get_contents('./watercondensator', true);
+			$this->Condensation = json_decode($this->Condensation,true);
+			$this->CondensationSTS = $this->Condensation['msg'];
+			$this->CondensationLVL = $this->Condensation['water'];
 		}
 		catch(Exception $e)
 		{
@@ -173,9 +238,12 @@ class pihome
 			$this->CondensationSTS = 'ERROR';
 		}
 		
-		return $Condensation;
+		return $this->Condensation;
 	}
 	
+	/**
+	 * getTemperatures - get temperatures from pihome player
+	 */
 	final private function getTemperatures()
 	{
 		//CPU temperature
@@ -206,17 +274,49 @@ class pihome
 		}
 	}
 	
-	final private function render()
+	/**
+	 * Add item to main menu
+	 * @param string $name - content name
+	 * @param string $ling - link URL
+	 * @param string $icon - icon class
+	 * @param string $perm - minimal menu item permission
+	 */ 
+	final private function addMenuItem($name,$link,$icon,$perm)
+	{
+		if($_SESSION['perm']>=$perm)
+		{
+			$this->mainmenu[] = array(
+				'name'=>$name,
+				'link'=>$link,
+				'icon'=>'fa fa-'.$icon,
+				'perm'=>$perm
+			);
+		}
+	}
+	
+	/**
+	 * Rendering menu template
+	 */
+	final private function menu()
 	{
 		$logman = $this->logman;
 		require_once('.'.$this->template.'/menu_block.html.php');
-		if(file_exists('.'.$this->template.'/'.$this->linkmngr->getPage(PAGE)))
+	}
+	
+	/**
+	 * Rendering page template
+	 */
+	final private function render()
+	{
+		$logman = $this->logman;
+		$paginator = $this->linkmngr->getPage(PAGE);
+		if((file_exists('.'.$this->template.'/'.$paginator))&&($paginator!=null))
 		{
-			require_once('.'.$this->template.'/'.$this->linkmngr->getPage(PAGE));
+			require_once('.'.$this->template.'/'.$paginator);
 		}
 		else
 		{
-			echo "Err 404";
+			require_once('.'.$this->template.'/page_404.html.php');
 		}
 		
 		unset($this->CondensationSTS);
@@ -228,9 +328,80 @@ class pihome
 		unset($this->pcstatusjson);
 	}
 	
+	/**
+	 * Ajax
+	 */
 	final public function ajax()
 	{
 		require_once('./fw_modules/pihome/ajax_pihome.php');
+	}
+	
+	/**
+	 * JSON check
+	 * 
+	 * @return mix
+	 */
+	final private function is_json($str)
+	{ 
+		return json_decode($str) != null;
+	}
+	
+	/**
+	 * Generate users list
+	 * 
+	 * @return array
+	 */
+	final private function usersList()
+	{
+		$this->mysqlinterface = new mysqlinterface;
+		$this->mysqlinterface->config();
+		$this->mysqlinterface->connect();
+		$this->mysqlinterface->select(array(
+			'users'=>array(
+				'condition'=>array('`id`>=0')
+			)
+		));
+		return $this->mysqlinterface->execute();
+	}
+	
+	/**
+	 * Generate users list table
+	 * 
+	 * structure:
+	 * 		tr
+	 * 			td = id
+	 * 			td = login
+	 * 			td = active
+	 * 			td = user type
+	 * 			td = time
+	 * 			td = action
+	 * 
+	 * @return string
+	 */
+	final public function usersLines()
+	{
+		$full = $this->usersList();
+		foreach($full as $v)
+		{
+			if($v['perm']<1111)
+			{
+				$noadmin = " | <a href='#remove-{$v['id']}' class='remove-user' data-user='{$v['id']}'>Remove</a>";
+			}
+			else
+			{
+				$noadmin = " | Remove";
+			}
+			$table .= "<tr class='even pointer'>
+                        <td class=''>{$v['id']}</td>
+                        <td class=''>{$v['login']}</td>
+                        <td class=''>{$v['active']}</td>
+                        <td class=''>".$this->permDecode($v['perm'])."</td>
+                        <td class=''>{$v['date']} {$v['time']}</td>
+                        <td class='last'><a href='#open-{$v['id']}'>View</a> | <a href='#edit-{$v['id']}'>Edit</a> | <a href='#kick-{$v['id']}' class='kill-session' data-user='{$v['id']}'>Kick</a>{$noadmin}
+                        </td>
+                      </tr>";
+		}
+		return $table;
 	}
 }
 ?>

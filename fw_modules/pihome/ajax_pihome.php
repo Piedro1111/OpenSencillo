@@ -219,6 +219,20 @@ switch($ajax['atype'])
 		$fsys=new fileSystem('switchexthdd');
 		$fsys->write(json_encode($status));
 	break;
+	case 'removeUser::action':
+		$status['code'] = 200;
+		$status['status'] = 'ok';
+		$mysql = new mysqlInterface;
+		$mysql->config();
+		$mysql->connect();
+		$mysql->delete(array('users'=>array(
+			'condition'=>array(
+				'`id`='.$ajax['user'],
+				'`perm`<1111'
+			)
+		)));
+		$status['debug'] = $mysql->execute();
+	break;
 	default:
 		$status['status'] = 'not acceptable';
 		$status['code'] = 405;

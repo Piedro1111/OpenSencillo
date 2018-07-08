@@ -24,9 +24,9 @@ class coreSencillo implements coreInterface
 	 */
 	public function __construct($sum=null)
 	{
-		$version = '2018';
+		$version = '2017';
 		$layout	 = '1';
-		$build	 = '06';
+		$build	 = '04';
 		$this->info=array(	'CMS'=>'OpenSencillo',
 							'NME'=>'OpenSencillo',
 							'VSN'=>$version.'.'.$layout.$build,
@@ -103,29 +103,29 @@ class coreSencillo implements coreInterface
 	{
 		if(!file_exists("key.pid"))
 		{
-			$json=json_decode(self::product(false),true);
-			$this->authorized($json['domains']);
+			$this->json=json_decode(self::product(false),true);
+			$this->authorized($this->json['domains']);
 			if($this->pid[$_SERVER['SERVER_NAME']]!==true)
 			{
 				die($this->info['PID']);
 			}
-			$this->info['product']=$json;
-			if(($json['sum']!='none')&&(!empty($this->info['SUM']))&&($json['sum']==$this->info['SUM']))
+			$this->info['product']=$this->json;
+			if(($this->json['sum']!='none')&&(!empty($this->info['SUM']))&&($this->json['sum']==$this->info['SUM']))
 			{
 				$write = new fileSystem('key.pid');
-				$json['expired']=md5(date('Ym'));
-				$write->write(json_encode($json));
+				$this->json['expired']=md5(date('Ym'));
+				$write->write(json_encode($this->json));
 			}
 		}
 		else
 		{
-			$json=json_decode(self::product(true),true);
-			$this->authorized($json['domains']);
-			if(($this->pid[$_SERVER['SERVER_NAME']]!==true)&&($json['sum']===$this->info['SUM']))
+			$this->json=json_decode(self::product(true),true);
+			$this->authorized($this->json['domains']);
+			if(($this->pid[$_SERVER['SERVER_NAME']]!==true)&&($this->json['sum']===$this->info['SUM']))
 			{
 				die($this->info['PID']);
 			}
-			$this->info['product']=$json;
+			$this->info['product']=$this->json;
 			if($this->info['product']['expired']!=md5(date('Ym')))
 			{
 				unlink('key.pid');

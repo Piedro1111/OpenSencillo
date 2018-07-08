@@ -2,31 +2,13 @@
 /**
  * Main mysql functions
  * @name Sencillo Core - SQL support
- * @version 2018.106
+ * @version 2017.104
  * @category core
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth
  * @license Distributed under the General Public License (GPL) http://www.gnu.org/copyleft/gpl.html This program is distributed in the hope that it will be useful - WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
-class gdprLayer
-{
-	private $checklog = array();
-	private $iCtrGdprLyr = 0;
-	
-	public function sqlEventLog($eventType,$type,$sql)
-	{
-		
-		$this->checklog[$this->iCtrGdprLyr]['sql'] = $sql;
-		$this->checklog[$this->iCtrGdprLyr]['event'] = $eventType;
-		$this->checklog[$this->iCtrGdprLyr]['type'] = $type;
-		
-		$this->iCtrGdprLyr++;
-		
-		return true;
-	}
-}
-
-class mysql extends gdprLayer
+class mysql
 {
 	public  $DBHost;
 	public  $DBName;
@@ -34,6 +16,7 @@ class mysql extends gdprLayer
 	public  $DBPass;
 	private $checksum;
 	public  $con;
+	public  $debug;
 
 	/**
 	 * Create connection
@@ -69,9 +52,8 @@ class mysql extends gdprLayer
 	 * @param string $sql
 	 * @return mixed resources
 	 */
-	final public function query($sql,$source=null)
+	final public function query($sql)
 	{
-		$this->sqlEventLog('query('.$source.')','write',$sql);
 		return mysqli_query($this->con,$sql);
 	}
 	
@@ -80,10 +62,9 @@ class mysql extends gdprLayer
 	 * @param string $sql
 	 * @return mixed resources
 	 */
-	final public function write($sql,$source=null)
+	final public function write($sql)
 	{
-		$source='write('.$source.')';
-		return $this->query($sql,$source);
+		return $this->query($sql);
 	}
 	
 	/**
@@ -135,7 +116,7 @@ class mysql extends gdprLayer
 /**
  * Main mysql extend
  * @name Sencillo Core - mysqlEdit
- * @version 2018.106
+ * @version 2017.104
  * @category core
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth
@@ -191,7 +172,7 @@ class mysqlEdit extends mysql
 	public function createTable($name)
 	{
 		$this->table = $name;
-		$this->query('CREATE TABLE IF NOT EXISTS `'.$name.'` ( `id` INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(`id`)'.$this->construct.');','core:sql:'.__FUNCTION__);
+		$this->query('CREATE TABLE IF NOT EXISTS `'.$name.'` ( `id` INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(`id`)'.$this->construct.');');
 		$this->construct = null;
 	}
 	
@@ -220,7 +201,7 @@ class mysqlEdit extends mysql
 	 */
 	public function insert($values)
 	{
-		$this->query('INSERT INTO '.$this->table.' ('.substr($this->column, 0, -1).') VALUES (null,'.$values.');','core:sql:'.__FUNCTION__);
+		$this->query('INSERT INTO '.$this->table.' ('.substr($this->column, 0, -1).') VALUES (null,'.$values.');');
 	}
 	
 	/**
@@ -248,7 +229,7 @@ class mysqlEdit extends mysql
 	 */
 	public function update($if,$sets=null)
 	{
-		$this->query('UPDATE '.$this->table.' SET '.substr($this->setupdate, 0, -1).$sets.' WHERE '.$if.';','core:sql:'.__FUNCTION__);
+		$this->query('UPDATE '.$this->table.' SET '.substr($this->setupdate, 0, -1).$sets.' WHERE '.$if.';');
 	}
 	
 	/**
@@ -261,12 +242,13 @@ class mysqlEdit extends mysql
 	{
 		if($if=="all")
 		{
-			$this->query('DELETE FROM `'.$this->table.'` WHERE `id`>0;','core:sql:'.__FUNCTION__);
+			$var = 'DELETE FROM `'.$this->table.'` WHERE `id`>0;';
 		}
 		else
 		{
-			$this->query('DELETE FROM `'.$this->table.'` WHERE '.$if.';','core:sql:'.__FUNCTION__);
+			$var = 'DELETE FROM `'.$this->table.'` WHERE '.$if.';';
 		}
+		$this->query($var);
 	}
 	
 	/**
@@ -645,30 +627,72 @@ class mysqlInterface extends mysqlEdit
 					break;
 				}
 			}
-			if($update)
-			{
-				$eventType = 'update';
-			}
-			else
-			{
-				$eventType = 'select';
-			}
-			$this->sqlEventLog($eventType.'('.$source.')','pending',$sql);
 			$this->save.=(isset($data_set)?' SET '.substr($data_set,0,-1):'').$data_join.$data_condition.$data_like.$data_sort.(isset($data_limit_max)? ' LIMIT '.$data_limit_start.$data_limit_max : '').';';
 		}
 		/**
 		 * @TODO out - addcode
 		 */
+		
 		return $this->save;
+	}
+	
+	/**
+	 * Delete specific or all data
+	 * @param string $if
+	 * @example $this->delete("all")
+	 * @example $this->delete(array)
+	 * @example array structure:
+	 * array(
+	 * 	'table'=>array(
+	 *		'condition'=>array(
+	 *			'`id`<4000',
+	 *			'`data`=1',
+	 * 			'or'=>'`data2`=2'
+	 *		)
+	 *	);
+	 */
+	public function delete($if)
+	{
+		$var = null;
+		foreach($if as $key=>$val)
+		{
+			foreach($val as $key_col=>$val_col)
+			{
+				switch(strtolower($key_col))
+				{
+					case 'if':
+					case 'where':
+					case 'condition':
+						$data_condition.=' WHERE ';
+						foreach($val_col as $key_att=>$val_att)
+						{
+							switch(strtolower($key_att))
+							{
+								case '0':
+									$data_condition.=$val_att;
+									break;
+								case 'or':
+									$data_condition.=' OR '.$val_att;
+									break;
+								default:
+									$data_condition.=' AND '.$val_att;
+									break;
+							}
+						}
+					break;
+				}
+			}
+			$var.= 'DELETE FROM `'.$key.'`'.$data_condition.';';
+		}
+		$this->save .= $var;
 	}
 	
 	/**
 	 * Add SQL query
 	 * @param string $sql
 	 */
-	public function addQuery($sql,$source=null)
+	public function addQuery($sql)
 	{
-		$this->sqlEventLog('addQuery('.$source.')','pending',$sql);
 		$this->save.=$sql;
 	}
 	
@@ -745,7 +769,7 @@ class mysqlInterface extends mysqlEdit
 	 */
 	public function debug()
 	{
-		return ($this->validator()? $this->connect->errno : 'Query is OK');
+		return ($this->validator()? 'QUERY:'.$this->save.' ERR:'.$this->connect->errno : 'Query is OK');
 	}
 	
 	/**
