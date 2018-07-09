@@ -177,6 +177,21 @@ $(document).ready(function(){
 			});
 		}
 	});
+	$('.ban-user').click(function(){
+		var userid = $(this).data('user');
+		var response = confirm("Ban user "+userid+"?");
+		if(response)
+		{
+			$.post(server_name+'/ajax.slot.php',{
+				atype:'banUser::action',
+				user:userid,
+				response:response
+			},function(data){
+				//checkServerStatus();
+				location.reload();
+			});
+		}
+	});
 });
 function checkServerStatus()
 {

@@ -220,18 +220,79 @@ switch($ajax['atype'])
 		$fsys->write(json_encode($status));
 	break;
 	case 'removeUser::action':
-		$status['code'] = 200;
-		$status['status'] = 'ok';
-		$mysql = new mysqlInterface;
-		$mysql->config();
-		$mysql->connect();
-		$mysql->delete(array('users'=>array(
-			'condition'=>array(
-				'`id`='.$ajax['user'],
-				'`perm`<1111'
-			)
-		)));
-		$status['debug'] = $mysql->execute();
+		if(($_SESSION['perm']>=1111)&&($logman->checkSession()))
+		{
+			$status['code'] = 200;
+			$status['status'] = 'ok';
+			$mysql = new mysqlInterface;
+			$mysql->config();
+			$mysql->connect();
+			$mysql->delete(array('users'=>array(
+				'condition'=>array(
+					'`id`='.$ajax['user'],
+					'`perm`<1111'
+				)
+			)));
+			$mysql->execute();
+		}
+		else
+		{
+			$status['code'] = 403;
+			$status['status'] = 'denied';
+		}
+	break;
+	case 'killSession::action':
+		if(($_SESSION['perm']>=1111)&&($logman->checkSession()))
+		{
+			$status['code'] = 200;
+			$status['status'] = 'ok';
+			$mysql = new mysqlInterface;
+			$mysql->config();
+			$mysql->connect();
+			$mysql->update(array('users'=>array(
+				'condition'=>array(
+					'`id`='.$ajax['user'],
+					'`perm`<1111'
+				),
+				'set'=>array(
+					'sign'=>'kicked'
+				)
+			)));
+			$mysql->execute();
+		}
+		else
+		{
+			$status['code'] = 403;
+			$status['status'] = 'denied';
+		}
+	break;
+	case 'banUser::action':
+		if(($_SESSION['perm']>=1111)&&($logman->checkSession()))
+		{
+			$status['code'] = 200;
+			$status['status'] = 'ok';
+			$mysql = new mysqlInterface;
+			$mysql->config();
+			$mysql->connect();
+			$mysql->update(array('users'=>array(
+				'condition'=>array(
+					'`id`='.$ajax['user'],
+					'`perm`<1111'
+				),
+				'set'=>array(
+					'sign'=>'banned',
+					'active'=>-1,
+					'perm'=>0,
+					
+				)
+			)));
+			$mysql->execute();
+		}
+		else
+		{
+			$status['code'] = 403;
+			$status['status'] = 'denied';
+		}
 	break;
 	default:
 		$status['status'] = 'not acceptable';

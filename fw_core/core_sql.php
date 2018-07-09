@@ -566,7 +566,10 @@ class mysqlInterface extends mysqlEdit
 						$data_condition.=' BETWEEN '.$key_att.' AND '.$val_att;
 					break;
 					case 'set':
-						$data_set.=$key_att.'='.$val_att.',';
+						foreach($val_col as $key_att=>$val_att)
+						{
+							$data_set.="`{$key_att}`='{$val_att}',";
+						}
 					break;
 					case 'sort':
 						$data_sort=' ORDER BY ';

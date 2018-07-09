@@ -49,6 +49,10 @@ class pihome
 		$this->linkmngr = new url;
 		$this->logman = new logMan;
 		
+		$this->mysqlinterface = new mysqlinterface;
+		$this->mysqlinterface->config();
+		$this->mysqlinterface->connect();
+		
 		//main
 		$this->seoGenerator();
 		$this->defaultHead(PAGE);
@@ -99,6 +103,8 @@ class pihome
 		}
 		switch($perm)
 		{
+			case '0':
+			case '0000':
 			case '1000':
 				$this->usertype = 'ban';
 				break;
@@ -133,6 +139,15 @@ class pihome
 				}
 			break;
 			case 'logout':
+				$this->mysqlinterface->update(array('users'=>array(
+					'condition'=>array(
+						'`id`='.$this->logman->getSessionData('userid'),
+					),
+					'set'=>array(
+						'sign'=>'logout'
+					)
+				)));
+				$this->mysqlinterface->execute();
 				$this->logman->destroySession();
 				header('Location: '.$this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->url.'/');
 			break;
@@ -353,9 +368,6 @@ class pihome
 	 */
 	final private function usersList()
 	{
-		$this->mysqlinterface = new mysqlinterface;
-		$this->mysqlinterface->config();
-		$this->mysqlinterface->connect();
 		$this->mysqlinterface->select(array(
 			'users'=>array(
 				'condition'=>array('`id`>=0')
@@ -385,20 +397,30 @@ class pihome
 		{
 			if($v['perm']<1111)
 			{
-				$noadmin = " | <a href='#remove-{$v['id']}' class='remove-user' data-user='{$v['id']}'>Remove</a>";
+				switch($v['sign'])
+				{
+					case 'kicked':
+						$noadmin = " | <a href='#ban-{$v['id']}' class='ban-user' data-user='{$v['id']}'>Ban</a> | <a href='#remove-{$v['id']}' class='remove-user' data-user='{$v['id']}'>Remove</a>";
+					break;
+					case 'banned':
+						$noadmin = " | <a href='#remove-{$v['id']}' class='remove-user' data-user='{$v['id']}'>Remove</a>";
+					break;
+					default:
+						$noadmin = " | <a href='#kick-{$v['id']}' class='kill-session' data-user='{$v['id']}'>Kick</a> | <a href='#ban-{$v['id']}' class='ban-user' data-user='{$v['id']}'>Ban</a> | <a href='#remove-{$v['id']}' class='remove-user' data-user='{$v['id']}'>Remove</a>";
+					break;
+				}
 			}
 			else
 			{
-				$noadmin = " | Remove";
+				$noadmin = "";
 			}
 			$table .= "<tr class='even pointer'>
                         <td class=''>{$v['id']}</td>
                         <td class=''>{$v['login']}</td>
                         <td class=''>{$v['active']}</td>
-                        <td class=''>".$this->permDecode($v['perm'])."</td>
+                        <td class=''>".($v['sign']=='kicked'?'kicked '.$this->permDecode($v['perm']):$this->permDecode($v['perm']))."</td>
                         <td class=''>{$v['date']} {$v['time']}</td>
-                        <td class='last'><a href='#open-{$v['id']}'>View</a> | <a href='#edit-{$v['id']}'>Edit</a> | <a href='#kick-{$v['id']}' class='kill-session' data-user='{$v['id']}'>Kick</a>{$noadmin}
-                        </td>
+                        <td class='last'><a href='#open-{$v['id']}'>View</a> | <a href='#edit-{$v['id']}'>Edit</a>{$noadmin}</td>
                       </tr>";
 		}
 		return $table;
