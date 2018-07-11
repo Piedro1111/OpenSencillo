@@ -189,6 +189,10 @@ class pihome
 				
 				$this->linkmngr->addUrl('gpio','gpio_pi_page.html.php');
 				
+				$this->linkmngr->addUrl('users/user','user_profile.html.php');
+				
+				$this->linkmngr->addUrl('users/view','view_profile.html.php');
+				
 				$this->linkmngr->addUrl('shutdown','_');
 			}
 			//$this->linkmngr->addUrl('logout','_');
@@ -377,6 +381,36 @@ class pihome
 	}
 	
 	/**
+	 * Generate user data list
+	 * 
+	 * @return array
+	 */
+	final private function userBasicProfile($id)
+	{
+		$this->mysqlinterface->select(array(
+			'users'=>array(
+				'condition'=>array('`id`='.($id?$id:'-1'))
+			)
+		));
+		return $this->mysqlinterface->execute();
+	}
+	
+	/**
+	 * Remove insecured data
+	 * 
+	 * @return string
+	 */
+	final public function profile($key)
+	{
+		$data = array();
+		$data = $this->userBasicProfile($_GET['u']);
+		unset($data['pass']);
+		unset($data['id']);
+		unset($data['sign']);
+		return $data[0][$key];
+	}
+	
+	/**
 	 * Generate users list table
 	 * 
 	 * structure:
@@ -420,7 +454,7 @@ class pihome
                         <td class=''>{$v['active']}</td>
                         <td class=''>".($v['sign']=='kicked'?'kicked '.$this->permDecode($v['perm']):$this->permDecode($v['perm']))."</td>
                         <td class=''>{$v['date']} {$v['time']}</td>
-                        <td class='last'><a href='#open-{$v['id']}'>View</a> | <a href='#edit-{$v['id']}'>Edit</a>{$noadmin}</td>
+                        <td class='last'><a href='./users/view?u={$v['id']}'>View</a> | <a href='./users/user?u={$v['id']}'>Edit</a>{$noadmin}</td>
                       </tr>";
 		}
 		return $table;
