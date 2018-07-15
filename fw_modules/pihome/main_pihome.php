@@ -129,6 +129,8 @@ class pihome
 	 */ 
 	final private function defaultHead($PAGE)
 	{
+		$filtered = explode('?',$PAGE);
+		$PAGE = $filtered[0];
 		switch($PAGE)
 		{
 			case 'phpinfo':
@@ -150,6 +152,22 @@ class pihome
 				$this->mysqlinterface->execute();
 				$this->logman->destroySession();
 				header('Location: '.$this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->url.'/');
+			break;
+			case 'users/user/save':
+			case 'profile/save':
+				$status = false;
+				if($_SESSION['perm']>=1111)
+				{
+					$this->profileUpdate($this->profile('login'));
+					$status = true;
+					header('Location: '.$this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->url.'/users/view?u='.$_GET['u']);
+				}
+				else
+				{
+					$this->profileUpdate($this->logman->getSessionData('login'));
+					$status = true;
+					header('Location: '.$this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->url.'/profile');
+				}
 			break;
 			default:
 				echo $this->seo->save();
@@ -383,6 +401,7 @@ class pihome
 	/**
 	 * Generate user data list
 	 * 
+	 * @param integer
 	 * @return array
 	 */
 	final private function userBasicProfile($id)
@@ -395,9 +414,104 @@ class pihome
 		return $this->mysqlinterface->execute();
 	}
 	
+	final private function profileUpdate($login)
+	{
+		$filtered_post = array();
+		foreach($_POST as $key=>$val)
+		{
+			if($key!='pass')
+			{
+				$filtered_post[$key] = str_ireplace(array(
+					"%",
+					"=",
+					"'",
+					'"',
+					"$",
+					"<",
+					">",
+					"`"
+				), array(
+					"",
+					"",
+					"",
+					"",
+					"",
+					"",
+					"",
+					""
+				), $val);
+			}
+			else
+			{
+				$filtered_post[$key] = $_POST[$key];
+			}
+		}
+		$filtered_name = explode(' ',$filtered_post['name']);
+		if($this->logman->getSessionData('perm')>=1111)
+		{
+			$update = array(
+				'email'=>$filtered_post['email'],
+				'fname'=>$filtered_name[0],
+				'lname'=>$filtered_name[1],
+				'perm'=>$filtered_post['perm'],
+				'ip'=>$_SERVER['REMOTE_ADDR'],
+				'agent'=>'admin',
+				'date'=>date('Y-m-d'),
+				'time'=>date('H:i:s')
+			);
+			if($filtered_post['perm']>=1100)
+			{
+				if($filtered_post['perm']<1111)
+				{
+					$update['sign'] = 'profile_changed_by_admin';
+				}
+				$update['active'] = $filtered_post['active'];
+			}
+			else
+			{
+				$update['sign'] = 'banned';
+				$update['active'] = '-1';
+			}
+			if(sizeof($filtered_post['password'])>5)
+			{
+				$update['pass'] = md5($filtered_post['password']);
+			}
+			$this->mysqlinterface->update(array('users'=>array(
+				'condition'=>array(
+					'`id`='.$_GET['u'],
+					'`login`="'.$login.'"'
+				),
+				'set'=>$update
+			)));
+		}
+		else
+		{
+			$this->mysqlinterface->update(array('users'=>array(
+				'condition'=>array(
+					'`login`='.$login,
+					'`perm`>=1000',
+					'`sign`!="kicked"',
+					'`sign`!="banned"',
+					'`active`>=1'
+				),
+				'set'=>array(
+					'pass'=>md5($filtered_post['password']),
+					'email'=>$filtered_post['email'],
+					'fname'=>$filtered_name[0],
+					'lname'=>$filtered_name[1],
+					'ip'=>$_SERVER['REMOTE_ADDR'],
+					'date'=>date('Y-m-d'),
+					'time'=>date('H:i:s')
+				)
+			)));
+		}
+		$this->mysqlinterface->execute();
+	}
+	
 	/**
 	 * Remove insecured data
 	 * 
+	 * @param key string
 	 * @return string
 	 */
 	final public function profile($key)
