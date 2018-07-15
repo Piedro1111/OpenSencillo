@@ -9,7 +9,7 @@
                 </div>
                 <div class="x_content">
 
-                  <form class="form-horizontal form-label-left" novalidate>
+                  <form action="<?=$this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->url.'/users/user/save?u='.$_GET['u'];?>" method="post" class="form-horizontal form-label-left" novalidate>
                     <span class="section">Personal Info</span>
 
                     <div class="item form-group">
@@ -33,23 +33,30 @@
                         <input type="email" id="email2" name="confirm_email" data-validate-linked="email" required="required" class="form-control col-md-7 col-xs-12" value="<?=$this->profile('email');?>">
                       </div>
                     </div>
+					<div class="item form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">Active <span class="required">*</span>
+                      </label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="number" id="active" name="active" required="required" data-validate-minmax="-9,9" class="form-control col-md-7 col-xs-12" value="<?=$this->profile('active');?>">
+                      </div>
+                    </div>
                     <div class="item form-group">
                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">Permission <span class="required">*</span>
                       </label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input type="number" id="number" name="number" required="required" data-validate-minmax="0,9999" class="form-control col-md-7 col-xs-12" value="<?=$this->profile('perm');?>">
+                        <input type="number" id="number" name="perm" required="required" data-validate-minmax="0,9999" class="form-control col-md-7 col-xs-12" value="<?=$this->profile('perm');?>">
                       </div>
                     </div>
                     <div class="item form-group">
                       <label for="password" class="control-label col-md-3">Password</label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input id="password" type="password" name="password" data-validate-length="6,8" class="form-control col-md-7 col-xs-12" required="required">
+                        <input id="password" type="password" name="password" data-validate-length="0,25" class="form-control col-md-7 col-xs-12">
                       </div>
                     </div>
                     <div class="item form-group">
                       <label for="password2" class="control-label col-md-3 col-sm-3 col-xs-12">Repeat Password</label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input id="password2" type="password" name="password2" data-validate-linked="password" class="form-control col-md-7 col-xs-12" required="required">
+                        <input id="password2" type="password" name="password2" data-validate-linked="password" class="form-control col-md-7 col-xs-12">
                       </div>
                     </div>
                     <div class="ln_solid"></div>
