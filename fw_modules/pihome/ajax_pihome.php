@@ -3,6 +3,10 @@ $logman=new logMan;
 $email=new mailGen;
 $emailhead=new headerSeo;
 
+$mysql = new mysqlInterface;
+$mysql->config();
+$mysql->connect();
+
 $log=$logman->getSignedUser();
 $status=array(
 	'called'=>$_POST['atype'],
@@ -178,6 +182,16 @@ switch($ajax['atype'])
 		$status['temp'] = $ajax['temp'];
 		$fsys=new fileSystem('piplayertemperature');
 		$fsys->write(json_encode($status));
+		$mysql->insert(array(
+			'sensors'=>array(
+				'id'=>'',
+				'sensor'=>$ajax['atype'],
+				'data'=>json_encode($status),
+				'date'=>$status['date'],
+				'time'=>$status['time'],
+			)
+		));
+		$mysql->execute();
 	break;
 	case 'waterCondensator':
 		$status['status'] = 'ok';
@@ -186,12 +200,23 @@ switch($ajax['atype'])
 		$status['msg'] = ($ajax['status']==1?'OK':'FULL');
 		$fsys=new fileSystem('watercondensator');
 		$fsys->write(json_encode($status));
+		$mysql->insert(array(
+			'sensors'=>array(
+				'id'=>'',
+				'sensor'=>$ajax['atype'],
+				'data'=>json_encode($status),
+				'date'=>$status['date'],
+				'time'=>$status['time'],
+			)
+		));
+		$mysql->execute();
 	break;
 	case 'switchExtHdd::action':
 		$ExtHDD = file_get_contents('./switchexthdd', true);
 		$ExtHDD = json_decode($ExtHDD,true);
 		if(($_SESSION['perm']>=1110)&&($logman->checkSession()))
 		{
+			ignore_user_abort(true);
 			if($ajax['action']==1)
 			{
 				$file = fopen ("http://".$ExtHDD['ip']."/zapnut", "r");
@@ -200,7 +225,6 @@ switch($ajax['atype'])
 				}
 				$status['code'] = 200;
 				$status['status'] = 'on::'.$ExtHDD['ip'];
-				sleep(10);
 			}
 			if($ajax['action']==0)
 			{
@@ -212,21 +236,38 @@ switch($ajax['atype'])
 				$status['code'] = 200;
 				$status['status'] = 'off::'.$ExtHDD['ip'];
 			}
+			$mysql->insert(array(
+				'sensors'=>array(
+					'id'=>'',
+					'sensor'=>$ajax['atype'],
+					'data'=>json_encode($status),
+					'date'=>$status['date'],
+					'time'=>$status['time'],
+				)
+			));
+			$mysql->execute();
 		}
 	break;
 	case 'switchExtHdd':
 		$status['code'] = 200;
 		$fsys=new fileSystem('switchexthdd');
 		$fsys->write(json_encode($status));
+		$mysql->insert(array(
+			'sensors'=>array(
+				'id'=>'',
+				'sensor'=>$ajax['atype'],
+				'data'=>json_encode($status),
+				'date'=>$status['date'],
+				'time'=>$status['time'],
+			)
+		));
+		$mysql->execute();
 	break;
 	case 'removeUser::action':
 		if(($_SESSION['perm']>=1111)&&($logman->checkSession()))
 		{
 			$status['code'] = 200;
 			$status['status'] = 'ok';
-			$mysql = new mysqlInterface;
-			$mysql->config();
-			$mysql->connect();
 			$mysql->delete(array('users'=>array(
 				'condition'=>array(
 					'`id`='.$ajax['user'],
@@ -246,9 +287,6 @@ switch($ajax['atype'])
 		{
 			$status['code'] = 200;
 			$status['status'] = 'ok';
-			$mysql = new mysqlInterface;
-			$mysql->config();
-			$mysql->connect();
 			$mysql->update(array('users'=>array(
 				'condition'=>array(
 					'`id`='.$ajax['user'],
@@ -271,9 +309,6 @@ switch($ajax['atype'])
 		{
 			$status['code'] = 200;
 			$status['status'] = 'ok';
-			$mysql = new mysqlInterface;
-			$mysql->config();
-			$mysql->connect();
 			$mysql->update(array('users'=>array(
 				'condition'=>array(
 					'`id`='.$ajax['user'],

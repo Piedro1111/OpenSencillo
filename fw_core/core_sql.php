@@ -571,6 +571,12 @@ class mysqlInterface extends mysqlEdit
 							$data_set.="`{$key_att}`='{$val_att}',";
 						}
 					break;
+					case 'set()':
+						foreach($val_col as $key_att=>$val_att)
+						{
+							$data_set.="`{$key_att}`={$val_att},";
+						}
+					break;
 					case 'sort':
 						$data_sort=' ORDER BY ';
 						$data_sort_arr=array();

@@ -472,16 +472,17 @@ class pihome
 				$update['sign'] = 'banned';
 				$update['active'] = '-1';
 			}
-			if(sizeof($filtered_post['password'])>5)
+			if($filtered_post['password']!='')
 			{
-				$update['pass'] = md5($filtered_post['password']);
+				$updatespecial['pass'] = "MD5({$filtered_post['password']})";
 			}
 			$this->mysqlinterface->update(array('users'=>array(
 				'condition'=>array(
 					'`id`='.$_GET['u'],
 					'`login`="'.$login.'"'
 				),
-				'set'=>$update
+				'set'=>$update,
+				'set()'=>$updatespecial
 			)));
 		}
 		else
