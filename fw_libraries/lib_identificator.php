@@ -11,7 +11,7 @@
 class library
 {
 	protected $all_data_sencillo;
-	protected $readsql;
+	private $mysql;
 	protected $files;
 	protected $modules;
 	
@@ -40,13 +40,66 @@ class library
 									   "right"=>array(),
 									   "foot"=>array(),
 									   "admin"=>array());
+	}
+	
+	/**
+	 * Create lib / mod list
+	 */
+	private function setupSencillo()
+	{
 		$this->files = scandir('./' . $this->config['lib_folder'] . '/');
-		//var_dump($this->config,$this->files);
+		
 		if(file_exists('./' . $this->config['mod_folder'] . '/'))
 		{
 			$this->modules = scandir('./' . $this->config['mod_folder'] . '/');
 		}
 	}
+	
+	private function loaderSencillo()
+	{
+		$this->mysql = new mysqlInterface();
+		$this->mysql->config();
+		$this->mysql->connect();
+		$this->mysql->select(array(
+			'virtual_system_config'=>array(
+				'condition'=>array(
+					'`id`>0',
+					'`module`!="#none"',
+					'`perm`>=0',
+					'`switch`=1',
+					'`function` LIKE "lib:%"'
+				)
+			)
+		));
+		$data = $this->mysql->execute();
+		
+		foreach($data as $val)
+		{
+			$this->files[] = $val['module'].'.php';
+		}
+		
+		$this->mysql->select(array(
+			'virtual_system_config'=>array(
+				'condition'=>array(
+					'`id`>0',
+					'`module`!="#none"',
+					'`perm`>=0',
+					'`switch`=1',
+					'`function` LIKE "mod:%"'
+				)
+			)
+		));
+		$data = $this->mysql->execute();
+		
+		foreach($data as $val)
+		{
+			$this->modules[] = $val['module'];
+		}
+		
+		//var_dump($this->modules);
+		//die;
+	}
+	
 	
 	/**
 	 * Open libraries
@@ -126,6 +179,7 @@ class library
 	public function install($ignored)
 	{
 		$this->createStructure();
+		$this->setupSencillo();
 		$this->files = array_diff(scandir('../' . $this->config['lib_folder'] . '/'),$ignored);
 		$this->openFiles();
 	}
@@ -156,6 +210,7 @@ class library
 	public function start()
 	{
 		$this->createStructure();
+		$this->loaderSencillo();
 		$this->openFiles();
 		$this->openModules();
 	}

@@ -27,6 +27,8 @@ class pihome
 	private $usertype;
 	private $mainmenu;
 	
+	private $libtype;
+	
 	private $mysqlinterface;
 	
 	final public function __construct()
@@ -193,6 +195,9 @@ class pihome
 			
 			if($_SESSION['perm']>=1110)
 			{
+				$this->linkmngr->addUrl('sensors','sensors_page.html.php');
+				$this->addMenuItem('Sensors','sensors','gears',1110);
+				
 				$this->linkmngr->addUrl('phpinfo','_');
 				$this->addMenuItem('PHP info','phpinfo','info',1110);
 			}
@@ -201,6 +206,9 @@ class pihome
 			{
 				$this->linkmngr->addUrl('exthdd','exthdd_pi_page.html.php');
 				$this->addMenuItem('Ext HDD','exthdd','cloud',1111);
+				
+				$this->linkmngr->addUrl('modules','modules_page.html.php');
+				$this->addMenuItem('Modules','modules','cubes',1100);
 				
 				$this->linkmngr->addUrl('users','users_page.html.php');
 				$this->addMenuItem('Users','users','users',1111);
@@ -381,6 +389,176 @@ class pihome
 	final private function is_json($str)
 	{ 
 		return json_decode($str) != null;
+	}
+	
+	/**
+	 * Generate sensors data list
+	 * 
+	 * @return array
+	 */
+	final private function sensorsDayList()
+	{
+		$this->mysqlinterface->select(array(
+			'sensors'=>array(
+				'condition'=>array(
+					'`date`="'.date('Y-m-d').'"'
+				)
+			)
+		));
+		return $this->mysqlinterface->execute();
+	}
+	
+	/**
+	 * Generate users list table
+	 * 
+	 * structure:
+	 * 		tr
+	 * 			td = id
+	 * 			td = sensor
+	 * 			td = data
+	 * 			td = date
+	 * 			td = time
+	 * 
+	 * @return string
+	 */
+	final public function sensorsLines()
+	{
+		$full = $this->sensorsDayList();
+		foreach($full as $v)
+		{
+			$data = json_decode($v['data'],true);
+			$table .= "<tr class='even pointer'>
+                        <td class=''>{$v['id']}</td>
+                        <td class=''>{$v['sensor']}</td>
+                        <td class=''>{$data['temp']} {$data['status']} {$data['msg']}</td>
+                        <td class=''>{$v['time']}</td>
+                      </tr>".PHP_EOL;
+		}
+		return $table;
+	}
+	
+	/**
+	 * Generate libraries and mods main files list
+	 * 
+	 * @return array
+	 */
+	final private function libList($status,$type)
+	{
+		$this->mysqlinterface->select(array(
+			'virtual_system_config'=>array(
+				'condition'=>array(
+					'`id`>0',
+					'`function` LIKE "'.$type.':%"',
+					'`switch`="'.$status.'"'
+				)
+			)
+		));
+		return $this->mysqlinterface->execute();
+	}
+	
+	/**
+	 * Generate library list table
+	 * 
+	 * @param $status int
+	 * 
+	 * structure:
+	 * 		tr
+	 * 			td = id
+	 * 			td = sensor
+	 * 			td = data
+	 * 			td = date
+	 * 			td = time
+	 * 
+	 * @return string
+	 */
+	final public function libLines($status)
+	{
+		$this->mysqlinterface->select(array(
+			'virtual_system_config'=>array(
+				'condition'=>array(
+					'`id`>0',
+					'`function`="bootup:dependency_id"',
+					'`perm`>=0',
+					'`switch`=1'
+				),
+				'limit'=>1
+			)
+		));
+		$securedlibs = $this->mysqlinterface->execute();
+		$securedlibs = explode(',',$securedlibs[0]['command']);
+		
+		$full = $this->libList($status,'lib');
+		foreach($full as $v)
+		{
+			if(!(in_array($v['id'],$securedlibs)))
+			{
+				$switch = ($v['switch']==1?"<a href='#disable-{$v['id']}' class='disable-lib' data-lib='{$v['id']}'>Disable</a>":"<a href='#disable-{$v['id']}' class='enable-lib' data-lib='{$v['id']}'>Enable</a>");
+			}
+			else
+			{
+				$switch = 'Locked';
+			}
+			$table .= "<tr class='even pointer'>
+                        <td class=''>{$v['id']}</td>
+                        <td class=''>{$v['module']}</td>
+                        <td class=''>{$v['perm']}</td>
+                        <td class=''>{$switch}</td>
+                      </tr>".PHP_EOL;
+		}
+		return $table;
+	}
+	
+	/**
+	 * Generate module list table
+	 * 
+	 * @param $status int
+	 * 
+	 * structure:
+	 * 		tr
+	 * 			td = id
+	 * 			td = sensor
+	 * 			td = data
+	 * 			td = date
+	 * 			td = time
+	 * 
+	 * @return string
+	 */
+	final public function modLines($status)
+	{
+		$this->mysqlinterface->select(array(
+			'virtual_system_config'=>array(
+				'condition'=>array(
+					'`id`>0',
+					'`function`="bootup:dependency_id"',
+					'`perm`>=0',
+					'`switch`=1'
+				),
+				'limit'=>1
+			)
+		));
+		$securedlibs = $this->mysqlinterface->execute();
+		$securedlibs = explode(',',$securedlibs[0]['command']);
+		
+		$full = $this->libList($status,'mod');
+		
+		foreach($full as $v)
+		{
+			if(!(in_array($v['id'],$securedlibs)))
+			{
+				$switch = ($v['switch']==1?"<a href='#disable-{$v['id']}' class='disable-mod' data-mod='{$v['id']}'>Disable</a>":"<a href='#disable-{$v['id']}' class='enable-mod' data-mod='{$v['id']}'>Enable</a>");
+			}
+			else
+			{
+				$switch = 'Locked';
+			}
+			$table .= "<tr class='even pointer'>
+                        <td class=''>{$v['id']}</td>
+                        <td class=''>{$v['module']}</td>
+                        <td class=''>{$v['perm']}</td>
+                        <td class=''>{$switch}</td>
+                      </tr>".PHP_EOL;
+		}
+		return $table;
 	}
 	
 	/**

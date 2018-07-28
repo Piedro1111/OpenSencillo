@@ -291,6 +291,9 @@ Deny from all
 	$delinsql='
 	CREATE TABLE IF NOT EXISTS `virtual_system_config` (
 	  `id` int(11) NOT NULL AUTO_INCREMENT,
+	  `module` varchar(255) NOT NULL,
+	  `perm` int(4) NOT NULL,
+	  `switch` boolean NOT NULL,
 	  `function` varchar(25) NOT NULL,
 	  `command` varchar(25) NOT NULL,
 	  `commander` int(11) NOT NULL,
@@ -320,6 +323,9 @@ Deny from all
 		$delinsql=array(
 		'virtual_system_config'=>array(
 			'id'=>"''",
+			'module'=>"'core'",
+			'perm'=>"'1111'",
+			'switch'=>1,
 			'function'=>'superuser',
 			'command'=>$_POST['user-new-name'],
 			'commander'=>0
@@ -329,6 +335,9 @@ Deny from all
 		$delinsql=array(
 		'virtual_system_config'=>array(
 			'id'=>"''",
+			'module'=>"'core'",
+			'perm'=>"'1111'",
+			'switch'=>1,
 			'function'=>'superpass',
 			'command'=>md5($_POST['user-new-pass']),
 			'commander'=>0
@@ -338,6 +347,9 @@ Deny from all
 		$delinsql=array(
 		'virtual_system_config'=>array(
 			'id'=>"''",
+			'module'=>"'core'",
+			'perm'=>"'1111'",
+			'switch'=>1,
 			'function'=>'supermail',
 			'command'=>$_POST['user-new-mail'],
 			'commander'=>0
@@ -356,6 +368,9 @@ Deny from all
 		$delinsql=array(
 		'virtual_system_config'=>array(
 			'id'=>"''",
+			'module'=>"'core'",
+			'perm'=>"'1111'",
+			'switch'=>1,
 			'function'=>'servername',
 			'command'=>$_SERVER['SERVER_NAME'],
 			'commander'=>0
@@ -365,6 +380,9 @@ Deny from all
 		$delinsql=array(
 		'virtual_system_config'=>array(
 			'id'=>"''",
+			'module'=>"'core'",
+			'perm'=>"'1111'",
+			'switch'=>1,
 			'function'=>'htaccess_config',
 			'command'=>'default',
 			'commander'=>0
@@ -376,6 +394,9 @@ Deny from all
 		$delinsql=array(
 		'virtual_system_config'=>array(
 			'id'=>"''",
+			'module'=>"'core'",
+			'perm'=>"'1111'",
+			'switch'=>1,
 			'function'=>'htaccess_config',
 			'command'=>'sams',
 			'commander'=>0
@@ -387,6 +408,9 @@ Deny from all
 	$delinsql=array(
 	'virtual_system_config'=>array(
 		'id'=>"''",
+		'module'=>"'core'",
+		'perm'=>"'1111'",
+		'switch'=>1,
 		'function'=>'phpversion',
 		'command'=>phpversion(),
 		'commander'=>0
@@ -403,6 +427,9 @@ Deny from all
 		$delinsql=array(
 		'virtual_system_config'=>array(
 			'id'=>"''",
+			'module'=>"'".str_ireplace('.php','',$val)."'",
+			'perm'=>0,
+			'switch'=>1,
 			'function'=>"lib:$key",
 			'command'=>"$val",
 			'commander'=>0
@@ -414,6 +441,9 @@ Deny from all
 	$delinsql=array(
 	'virtual_system_config'=>array(
 		'id'=>"''",
+		'module'=>"'core'",
+		'perm'=>"'1111'",
+		'switch'=>1,
 		'function'=>"lib_count",
 		'command'=>sizeof($scan),
 		'commander'=>0

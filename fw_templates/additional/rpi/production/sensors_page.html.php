@@ -4,25 +4,22 @@
           <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="x_panel">
                 <div class="x_title">
-                  <h2>Users <small>all</small></h2>
+                  <h2>Sensors <?=date('Y-m-d');?></h2>
                   <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
                   <table id="sencillo-user-table" class="table table-striped responsive-utilities jambo_table">
                     <thead>
                       <tr class="headings">
-                        <th>User ID </th>
-                        <th>User name </th>
-                        <th>Active </th>
-                        <th>Perm </th>
-                        <th>Last log </th>
-                        <th class=" no-link last"><span class="nobr">Action</span>
-                        </th>
+                        <th>Log ID</th>
+                        <th>Action</th>
+                        <th>Event</th>
+                        <th class=" no-link last">Time</th>
                       </tr>
                     </thead>
 
                     <tbody>
-                      <?=$this->usersLines();?>
+						<?=$this->sensorsLines();?>
                     </tbody>
 
                   </table>
@@ -76,11 +73,6 @@
         "oLanguage": {
           "sSearch": "Search all columns:"
         },
-        "aoColumnDefs": [{
-            'bSortable': false,
-            'aTargets': [5]
-          } //disables sorting for column one
-        ]
       });
       $("tfoot input").keyup(function() {
         /* Filter on the column based on the index of this element's parent <th> */

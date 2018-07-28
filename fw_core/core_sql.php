@@ -787,38 +787,45 @@ class mysqlInterface extends mysqlEdit
 	 */
 	public function execute()
 	{
-		if(!$this->connect->multi_query($this->save))
+		if($this->save)
 		{
-			$this->mysqli['dberror']['query']	= $this->save;
-			$this->mysqli['dberror']['message']	= "Multi query failed: (" . $this->connect->errno . ") " . $this->connect->error;
-			$this->mysqli['dberror']['code']	= 'mysqlInterface:002';
-			try 
+			if(!$this->connect->multi_query($this->save))
 			{
-				log::vd($this->mysqli);
-			} 
-			catch(Exception $e)
-			{
-				var_dump($this->mysqli);
-			}
-		}
-		else 
-		{
-			$this->save = null;
-		}
-		
-		$result=array();
-		do 
-		{
-			if($res = $this->connect->store_result())
-			{
-				while ($row = $res->fetch_array())
+				$this->mysqli['dberror']['query']	= $this->save;
+				$this->mysqli['dberror']['message']	= "Multi query failed: (" . $this->connect->errno . ") " . $this->connect->error;
+				$this->mysqli['dberror']['code']	= 'mysqlInterface:002';
+				try 
 				{
-					$result[] = $row;
+					log::vd($this->mysqli);
+				} 
+				catch(Exception $e)
+				{
+					var_dump($this->mysqli);
 				}
-				$res->free();
 			}
+			else 
+			{
+				$this->save = null;
+			}
+			
+			$result=array();
+			do 
+			{
+				if($res = $this->connect->store_result())
+				{
+					while ($row = $res->fetch_array())
+					{
+						$result[] = $row;
+					}
+					$res->free();
+				}
+			}
+			while($this->connect->more_results() && $this->connect->next_result());
 		}
-		while($this->connect->more_results() && $this->connect->next_result());
+		else
+		{
+			die('Unknown SQL');
+		}
 		
 		return $result;
 	}

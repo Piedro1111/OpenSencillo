@@ -237,17 +237,24 @@ class bootUp
 	
 	public function __construct($sum=false)
 	{
-		$this->headerSeo	= new headerSeo;
-		$this->fileSystem	= new fileSystem('firststart.json');
-		
-		if($sum)
+		if(class_exists('headerSeo') && class_exists('fileSystem'))
 		{
-			$this->coreSencillo = new coreSencillo(json_decode($this->fileSystem->read(),true));
-			$this->fileSystem->payLock();
+			$this->headerSeo	= new headerSeo;
+			$this->fileSystem	= new fileSystem('firststart.json');
+			
+			if($sum)
+			{
+				$this->coreSencillo = new coreSencillo(json_decode($this->fileSystem->read(),true));
+				$this->fileSystem->payLock();
+			}
+			else
+			{
+				$this->coreSencillo = new coreSencillo;
+			}
 		}
 		else
 		{
-			$this->coreSencillo = new coreSencillo;
+			die('bootUp core: Can not find supported classes! (headerSeo, fileSystem)');
 		}
 	}
 }

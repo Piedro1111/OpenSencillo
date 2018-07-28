@@ -16,7 +16,7 @@ $status=array(
 if($_POST['atype']!='')
 {
 	$ajax=$_POST;
-}else if(($_GET['atype']=='piplayer')||($_GET['atype']=='waterCondensator')||($_GET['atype']=='switchExtHdd')){
+}else if(($_GET['atype']=='piplayer')||($_GET['atype']=='waterCondensator')||($_GET['atype']=='switchExtHdd')||($_GET['atype']=='iftttweather')){
 	$ajax=$_GET;
 	$status=array(
 		'called'=>$_GET['atype'],
@@ -328,6 +328,64 @@ switch($ajax['atype'])
 			$status['code'] = 403;
 			$status['status'] = 'denied';
 		}
+	break;
+	case 'library::changestatus':
+		if(($_SESSION['perm']>=1111)&&($logman->checkSession()))
+		{
+			$status['code'] = 200;
+			$status['status'] = 'ok';
+			$mysql->update(array('virtual_system_config'=>array(
+				'condition'=>array(
+					'`id`='.$ajax['lib'],
+					'`perm`>=0'
+				),
+				'set'=>array(
+					'switch'=>$ajax['libstatus']
+				)
+			)));
+			$mysql->execute();
+		}
+		else
+		{
+			$status['code'] = 403;
+			$status['status'] = 'denied';
+		}
+	break;
+	case 'module::changestatus':
+		if(($_SESSION['perm']>=1111)&&($logman->checkSession()))
+		{
+			$status['code'] = 200;
+			$status['status'] = 'ok';
+			$mysql->update(array('virtual_system_config'=>array(
+				'condition'=>array(
+					'`id`='.$ajax['mod'],
+					'`perm`>=0'
+				),
+				'set'=>array(
+					'switch'=>$ajax['modstatus']
+				)
+			)));
+			$mysql->execute();
+		}
+		else
+		{
+			$status['code'] = 403;
+			$status['status'] = 'denied';
+		}
+	break;
+	case 'iftttweather':
+		$mysql->insert(array(
+			'sensors'=>array(
+				'id'=>'',
+				'sensor'=>$ajax['atype'],
+				'data'=>json_encode($_POST),
+				'date'=>$status['date'],
+				'time'=>$status['time'],
+			)
+		));
+		$mysql->execute();
+		$status['code'] = 200;
+		$status['status'] = 'ok';
 	break;
 	default:
 		$status['status'] = 'not acceptable';
