@@ -225,7 +225,7 @@
 		});
 		$('.enable-mod').click(function(){
 			var mod = $(this).data('mod');
-			var response = confirm("Enable module "+mod+"?");
+			var response = confirm(":-) Enable module "+mod+"?");
 			if(response)
 			{
 				$.post(server_name+'/ajax.slot.php',{

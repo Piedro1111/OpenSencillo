@@ -1,32 +1,56 @@
-<?php
-$pihome = new pihome;
-?>
 					<div class="">
 						<div class="clearfix"></div>
 						<div class="row">
 							<div class="col-md-12 col-sm-12 col-xs-12">
 								<div class="x_panel">
-									<div class="x_title">
-										<h2>Ext HDD switch</h2>
-										<div class="clearfix"></div>
-									</div>
-									<div class="x_content">
-										<br>
-										<form class="form-horizontal form-label-left">
-											<div class="row">
-												<div class="col-lg-6">
-													<div class="form-group">
-														<label class="control-label col-md-6 col-sm-6 col-xs-12">ExtHDD On/Off</label>
-														<div class="col-md-3 col-sm-6 col-xs-12">
-															<select id="exthdd" class="form-control">
-																<option <?=($pihome->ExtHDDcontent==1?'selected ':'');?>value="1">ON</option>
-																<option <?=($pihome->ExtHDDcontent==0?'selected ':'');?>value="0">OFF</option>
-															</select>
-														</div>
-													</div>
-												</div>
-											</div>
-										</form>
+									<div>
+										<style>
+										table {
+											width: 100%;
+											border: 1px solid #ccc;
+											background: #fff;
+											padding: 1px;
+										}
+										td, th {
+											border: 1px solid #FFF;
+											font-family: Verdana, sans-serif;
+											font-size: 12px;
+											padding:4px 8px;
+										}
+										.e, .v, .vr {
+											color: #333;
+											font-family: Verdana, Helvetica, sans-serif;
+											font-size: 11px;
+										}
+										.e {
+											background-color: #eee;
+										}
+										.h {
+											background-color: #0B5FB4;
+											color: #fff;
+										}
+										.v {
+											background-color: #F1F1F1;
+											-ms-word-break: break-all;
+											word-break: break-all;
+											word-break: break-word;
+											-webkit-hyphens: auto;
+											-moz-hyphens: auto;
+											hyphens: auto;
+										}
+										img {
+											display:none;
+										}
+										</style>
+										<?php
+										ob_start();
+										phpinfo();
+										$pinfo = ob_get_contents();
+										ob_end_clean();
+										 
+										$pinfo = preg_replace( '%^.*<body>(.*)</body>.*$%ms','$1',$pinfo);
+										echo $pinfo;
+										?>
 									</div>
 								</div>
 							</div>

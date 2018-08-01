@@ -1,3 +1,74 @@
+<?php
+$pihome = new pihome;
+?>
+		<?if($logman->checkSession()):?>
+		<!-- top tiles -->
+		<div class="row tile_count">
+		  <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
+			<div class="left"></div>
+			<div class="right">
+			  <span class="count_top"><i class="fa fa-fire"></i> piHome CPU temp.</span>
+			  <div class="count"><span class="<?=(($pihome->CPUtemperature<60)?' green':' red');?>"><?=$pihome->CPUtemperature;?></span>°C</div>
+			  <!--<span class="count_bottom"><i class="green">4% </i> From last Week</span>-->
+			</div>
+		  </div>
+		  <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
+			<div class="left"></div>
+			<div class="right">
+			  <span class="count_top"><i class="fa fa-fire"></i> piHome Media CPU temp.</span>
+			  <div class="count"><span class="<?=(($pihome->playerCPUtemperature['temp']<60)?' green':' red');?>"><?=$pihome->playerCPUtemperature['temp'];?></span>°C</div>
+			  <!--<span class="count_bottom"><i class="green">4% </i> From last Week</span>-->
+			</div>
+		  </div>
+		  <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
+			<div class="left"></div>
+			<div class="right">
+			  <span class="count_top"><i class="fa fa-tint"></i> Condensation</span>
+			  <div class="count"><span class="<?=((($pihome->CondensationLVL==0)&&($pihome->Condensation['date']==date('Y-m-d')))?' green':' red');?>"><?=(($pihome->Condensation['date']==date('Y-m-d'))?$pihome->CondensationSTS:'Error');?></span></div>
+			</div>
+		  </div>
+		  <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
+			<div class="left"></div>
+			<div class="right">
+			  <span class="count_top"><i class="fa fa-cloud"></i> Ext HDD</span>
+			  <div class="count"><span id="exthddstatus" class="<?=(($pihome->ExtHDDcontent==0)?' green':' red');?>"><?=(($pihome->HDDerr==0)?(($pihome->ExtHDDcontent==0)?'OFF':'ON'):'Error');?></span></div>
+			</div>
+		  </div>
+		  <!--<div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
+			<div class="left"></div>
+			<div class="right">
+			  <span class="count_top"><i class="fa fa-user"></i> Total Males</span>
+			  <div class="count green">2,500</div>
+			  <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
+			</div>
+		  </div>
+		  <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
+			<div class="left"></div>
+			<div class="right">
+			  <span class="count_top"><i class="fa fa-user"></i> Total Females</span>
+			  <div class="count">4,567</div>
+			  <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>12% </i> From last Week</span>
+			</div>
+		  </div>
+		  <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
+			<div class="left"></div>
+			<div class="right">
+			  <span class="count_top"><i class="fa fa-user"></i> Total Collections</span>
+			  <div class="count">2,315</div>
+			  <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
+			</div>
+		  </div>
+		  <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
+			<div class="left"></div>
+			<div class="right">
+			  <span class="count_top"><i class="fa fa-user"></i> Total Connections</span>
+			  <div class="count">7,325</div>
+			  <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
+			</div>
+		  </div>-->
+		</div>
+		<!-- /top tiles -->
+		<?endif;?>
         <div class="row">
           <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="dashboard_graph">
@@ -28,18 +99,18 @@
 
                 <div class="col-md-12 col-sm-12 col-xs-6">
                   <div>
-                    <p>piHome CPU: <?=$this->CPUtemperature;?><b>°C</b></p>
+                    <p>piHome CPU: <?=$pihome->CPUtemperature;?><b>°C</b></p>
                     <div class="">
                       <div class="progress progress_sm" style="width: 100%;">
-                        <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="<?=$this->CPUtemperature;?>"></div>
+                        <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="<?=$pihome->CPUtemperature;?>"></div>
                       </div>
                     </div>
                   </div>
 				  <div>
-                    <p>piHome Media CPU: <?=$this->playerCPUtemperature['temp'];?><b>°C</b></p>
+                    <p>piHome Media CPU: <?=$pihome->playerCPUtemperature['temp'];?><b>°C</b></p>
                     <div class="">
                       <div class="progress progress_sm" style="width: 100%;">
-                        <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="<?=$this->playerCPUtemperature['temp'];?>"></div>
+                        <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="<?=$pihome->playerCPUtemperature['temp'];?>"></div>
                       </div>
                     </div>
                   </div>
@@ -103,26 +174,26 @@
                         <li>
                           <p>piHome (<a href="http://213.160.166.179:8080/pihome/">213.160.166.179:8080</a>)</p>
                         </li>
-						<?if($this->playerCPUtemperature['date']==date('Y-m-d')):?>
+						<?if($pihome->playerCPUtemperature['date']==date('Y-m-d')):?>
 						<li>
-                          <p>piHome Media (<a href="http://<?=$this->playerCPUtemperature['ip'];?>"><?=$this->playerCPUtemperature['ip'];?></a>)</p>
-						  <p><small>last response: <?=$this->playerCPUtemperature['date'];?> <?=$this->playerCPUtemperature['time'];?></small></p>
+                          <p>piHome Media (<a href="http://<?=$pihome->playerCPUtemperature['ip'];?>"><?=$pihome->playerCPUtemperature['ip'];?></a>)</p>
+						  <p><small>last response: <?=$pihome->playerCPUtemperature['date'];?> <?=$pihome->playerCPUtemperature['time'];?></small></p>
                         </li>
 						<?endif;?>
-						<?if($this->Condensation['date']==date('Y-m-d')):?>
+						<?if($pihome->Condensation['date']==date('Y-m-d')):?>
 						<li>
-                          <p>piHome AC condensator (<a href="http://<?=$this->Condensation['ip'];?>"><?=$this->Condensation['ip'];?></a>)</p>
-						  <p><small>last response: <?=$this->Condensation['date'];?> <?=$this->Condensation['time'];?></small></p>
+                          <p>piHome AC condensator (<a href="http://<?=$pihome->Condensation['ip'];?>"><?=$pihome->Condensation['ip'];?></a>)</p>
+						  <p><small>last response: <?=$pihome->Condensation['date'];?> <?=$pihome->Condensation['time'];?></small></p>
                         </li>
 						<?endif;?>
 						<li>
-                          <p>piHome ExtHDD (<a href="http://<?=$this->ExtHDD['ip'];?>"><?=$this->ExtHDD['ip'];?></a>)</p>
-						  <p><small>last start: <?=$this->ExtHDD['date'];?> <?=$this->ExtHDD['time'];?></small></p>
+                          <p>piHome ExtHDD (<a href="http://<?=$pihome->ExtHDD['ip'];?>"><?=$pihome->ExtHDD['ip'];?></a>)</p>
+						  <p><small>last start: <?=$pihome->ExtHDD['date'];?> <?=$pihome->ExtHDD['time'];?></small></p>
                         </li>
-						<?if($this->pcstatus===true):?>
+						<?if($pihome->pcstatus===true):?>
                         <li>
                           <p>PC (<a href="http://213.160.166.179:8181">213.160.166.179:8181</a>)</p>
-						  <p><small>last response: <?=$this->pcstatusjson['date'];?> <?=$this->pcstatusjson['time'];?></small></p>
+						  <p><small>last response: <?=$pihome->pcstatusjson['date'];?> <?=$pihome->pcstatusjson['time'];?></small></p>
                         </li>
 						<?endif;?>
                       </ul>

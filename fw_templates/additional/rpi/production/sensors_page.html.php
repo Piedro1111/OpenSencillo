@@ -1,3 +1,6 @@
+<?php
+$pihome = new pihome;
+?>
         <div class="row">
 
 
@@ -19,7 +22,7 @@
                     </thead>
 
                     <tbody>
-						<?=$this->sensorsLines();?>
+						<?=$pihome->sensorsLines();?>
                     </tbody>
 
                   </table>
