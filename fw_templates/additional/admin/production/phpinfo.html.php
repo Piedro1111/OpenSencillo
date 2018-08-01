@@ -17,6 +17,9 @@
 											font-size: 12px;
 											padding:4px 8px;
 										}
+										th {
+											background-color: rgba(52, 73, 94, 0.94);
+										}
 										.e, .v, .vr {
 											color: #333;
 											font-family: Verdana, Helvetica, sans-serif;
@@ -26,7 +29,7 @@
 											background-color: #eee;
 										}
 										.h {
-											background-color: #0B5FB4;
+											background-color: rgba(52, 73, 94, 0.94);
 											color: #fff;
 										}
 										.v {
