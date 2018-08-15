@@ -56,9 +56,4 @@ foreach($paths as $val)
 }
 unset($paths);
 $core = new bootUp(false);
-
-if(PAGE=='admin')
-{
-	require_once(__DIR__ . "/fw_core/core_admin.php");
-}
 ?>

@@ -16,8 +16,8 @@ $pihome = new pihome;
 											<div class="row">
 												<div class="col-lg-6">
 													<div class="form-group">
-														<label class="control-label col-md-6 col-sm-6 col-xs-12">ExtHDD On/Off</label>
-														<div class="col-md-3 col-sm-6 col-xs-12">
+														<label class="control-label col-lg-6 col-md-6 col-sm-6 col-xs-12">Power</label>
+														<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
 															<select id="exthdd" class="form-control">
 																<option <?=($pihome->ExtHDDcontent==1?'selected ':'');?>value="1">ON</option>
 																<option <?=($pihome->ExtHDDcontent==0?'selected ':'');?>value="0">OFF</option>

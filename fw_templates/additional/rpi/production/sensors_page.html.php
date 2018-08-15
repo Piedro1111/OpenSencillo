@@ -76,6 +76,7 @@ $pihome = new pihome;
         "oLanguage": {
           "sSearch": "Search all columns:"
         },
+		"aaSorting": []
       });
       $("tfoot input").keyup(function() {
         /* Filter on the column based on the index of this element's parent <th> */

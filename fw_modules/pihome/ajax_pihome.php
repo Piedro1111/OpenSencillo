@@ -204,7 +204,7 @@ switch($ajax['atype'])
 			'sensors'=>array(
 				'id'=>'',
 				'sensor'=>$ajax['atype'],
-				'data'=>json_encode($_POST),
+				'data'=>json_encode($_REQUEST),
 				'date'=>$status['date'],
 				'time'=>$status['time'],
 			)

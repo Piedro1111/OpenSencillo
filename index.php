@@ -17,12 +17,18 @@
 ~*/
 if(file_exists('yourcode.php'))
 {
+	$lifetime=3600;
 	session_start();
+	setcookie(session_name(),session_id(),time()+$lifetime);
 	require(__DIR__ . '/basicstrap.php');
+	$core = new coreSencillo;
+	$data = $core->version_info();
+	
+	setcookie('OpenSencillo',$data['HPE'],time()+$lifetime);
 	require(__DIR__ . '/yourcode.php');
 }
 else 
 {
-	header('Location: http://'.$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'].'fw_core/core_installer.php');
+	header('Location: http://'.$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'].'install.php');
 }
 ?>

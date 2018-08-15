@@ -144,6 +144,9 @@ class pihome extends construct
 			'sensors'=>array(
 				'condition'=>array(
 					'`date`="'.date('Y-m-d').'"'
+				),
+				'sort'=>array(
+					'desc'=>'`id`'
 				)
 			)
 		));

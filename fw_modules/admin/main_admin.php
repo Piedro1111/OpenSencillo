@@ -717,13 +717,13 @@ class admin extends construct
 		$cfg = $this->readVSC($module);
 		$this->template = $cfg[2];
 		
-		if((file_exists('.'.$this->template.'/'.$paginator))&&($paginator!=null))
+		if((file_exists('.'.$this->template.'/'.$paginator))&&(('.'.$this->template.'/'.$paginator)!='./'))
 		{
 			require_once('.'.$this->template.'/'.$paginator);
 		}
 		else
 		{
-			require_once('.'.$this->template.'/page_404.html.php');
+			require_once('./fw_templates/additional/admin/production/page_404.html.php');
 		}
 	}
 }
