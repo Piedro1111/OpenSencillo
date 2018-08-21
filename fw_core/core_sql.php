@@ -797,6 +797,7 @@ class mysqlInterface extends mysqlEdit
 				try 
 				{
 					log::vd($this->mysqli);
+					die();
 				} 
 				catch(Exception $e)
 				{

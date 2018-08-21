@@ -24,6 +24,7 @@ class installer
 	private $jsonlog;
 	private $htaccess;
 	private $installsql;
+	private $storedsql;
 	private $insertsql;
 	private $post;
 	private $get;
@@ -93,6 +94,7 @@ class installer
 		//files completed
 		//read SQL configuration
 		$this->readSQLfile();
+		$this->installDB();
 	}
 	
 	/**
@@ -270,7 +272,19 @@ $QUICKCACHE_ON = database::cache;
 	*/
 	final private function readSQLfile()
 	{
-		$this->installsql->read();
+		$this->storedsql=$this->installsql->read();
+	}
+	
+	/**
+	* Install SQL data
+	*/
+	final private function installDB()
+	{
+		$mysql = new mysqlInterface($_POST['host'],$_POST['name'],$_POST['user'],$_POST['pass']);
+		$mysql->config();
+		$mysql->connect();
+		$mysql->addQuery($this->storedsql);
+		$mysql->execute();
 	}
 }
 

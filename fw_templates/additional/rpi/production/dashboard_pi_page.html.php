@@ -16,7 +16,7 @@ $pihome = new pihome;
 			<div class="left"></div>
 			<div class="right">
 			  <span class="count_top"><i class="fa fa-fire"></i> piHome Media CPU temp.</span>
-			  <div class="count"><span class="<?=(($pihome->playerCPUtemperature['temp']<60)?' green':' red');?>"><?=$pihome->playerCPUtemperature['temp'];?></span>°C</div>
+			  <div class="count"><span class="<?=(($pihome->playerCPUtemperature['temp']<60)?' green':' red');?>"><?=$pihome->playerCPUtemperature['temp'];?></span><?=((is_numeric($pihome->playerCPUtemperature['temp']))?'°C':'');?></div>
 			  <!--<span class="count_bottom"><i class="green">4% </i> From last Week</span>-->
 			</div>
 		  </div>
@@ -106,7 +106,7 @@ $pihome = new pihome;
                       </div>
                     </div>
                   </div>
-				  <div>
+				  <div<?=((is_numeric($pihome->playerCPUtemperature['temp']))?'':' style="display:none"');?>>
                     <p>piHome Media CPU: <?=$pihome->playerCPUtemperature['temp'];?><b>°C</b></p>
                     <div class="">
                       <div class="progress progress_sm" style="width: 100%;">

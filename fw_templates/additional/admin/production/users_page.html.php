@@ -26,6 +26,13 @@
                     </tbody>
 
                   </table>
+				  <br>
+				  <div class="ln_solid"></div>
+				  <div class="form-group">
+				    <div class="col-md-6">
+					  <button id="create_user" type="button" class="btn btn-default">Create user</button>
+				    </div>
+				  </div>
                 </div>
               </div>
             </div>

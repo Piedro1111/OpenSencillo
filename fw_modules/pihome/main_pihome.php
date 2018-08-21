@@ -103,10 +103,27 @@ class pihome extends construct
 		$this->CPUtemperature = file_get_contents('./temperature', true);
 		$this->CPUtemperature = explode('=',$this->CPUtemperature);
 		$this->CPUtemperature = substr($this->CPUtemperature[1], 0, -3);
+		
 		try
 		{
 			$this->playerCPUtemperature=json_decode($this->playerCPUtemperature,true);
-			
+			$date=explode('-',$this->playerCPUtemperature['date']);
+			if(($date[0].$date[1].$date[2])<date('Ymd'))
+			{
+				$this->playerCPUtemperature=array(
+					"status"=>"not found",
+					"code"=>404,
+					"temp"=>"OFF"
+				);
+			}
+		}
+		catch(Exception $e)
+		{
+			$e->getMessage();
+		}
+		
+		try
+		{
 			$pcjson = file_get_contents('./maincomputer', true);
 			$this->pcstatusjson=json_decode($pcjson,true);
 			if($this->pcstatusjson['status']==200)
@@ -131,6 +148,7 @@ class pihome extends construct
 	final public function ajax()
 	{
 		require_once('./fw_modules/pihome/ajax_pihome.php');
+		return $status;
 	}
 	
 	/**
@@ -172,14 +190,17 @@ class pihome extends construct
 		foreach($full as $v)
 		{
 			$data = json_decode($v['data'],true);
+			$temp = ((!isset($data['hitemp']))?$data['temp']:$data['lotemp'].'-'.$data['hitemp'].'°C');
+			$status = ($data['status']!=''?$data['status']:$data['tc']);
 			$table .= "<tr class='even pointer'>
                         <td class=''>{$v['id']}</td>
                         <td class=''>{$v['sensor']}</td>
-                        <td class=''>{$data['temp']} {$data['status']} {$data['msg']}</td>
+                        <td class=''>{$temp} {$status} {$data['msg']}</td>
                         <td class=''>{$v['time']}</td>
                       </tr>".PHP_EOL;
 		}
 		return $table;
 	}
+	/*IFTTT report: {"atype":"iftttweather","hitemp":"33","lotemp":"19","tc":"Sunny","url":"https://ifttt.com/images/weather/sunny.png"}*/
 }
 ?>

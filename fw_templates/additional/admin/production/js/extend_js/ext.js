@@ -133,6 +133,22 @@ $(document).ready(function(){
 			$('.sencillo-email-group .sencillo-errors-list').show();
 		}
     });
+	$("#create_user").click(function(){
+		$.post(server_name+"/ajax.slot.php",{
+			atype:'create::user'
+		},function(data){
+			var data = JSON.parse(data);
+			switch(data.code)
+			{
+				case 200:
+					alert('New user ID ' + data.enew + ' created.');
+					window.open(server_name+'/users/user?u='+data.unew,'_self');
+				break;
+				default:
+					alert('Error ' + data.code + ' when creating a user.');
+			}
+		});
+    });
 	$(".open-button").click(function(){
 		window.open(server_name+'/'+$(this).data('url'),'_self');
     });

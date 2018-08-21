@@ -367,6 +367,7 @@ class admin extends construct
 	final public function ajax()
 	{
 		require_once('./fw_modules/admin/ajax_admin.php');
+		return $status;
 	}
 	
 	/**
@@ -594,7 +595,7 @@ class admin extends construct
 			}
 			if($filtered_post['password']!='')
 			{
-				$updatespecial['pass'] = "MD5({$filtered_post['password']})";
+				$updatespecial['pass'] = "MD5('{$filtered_post['password']}')";
 			}
 			$this->mysqlinterface->update(array('users'=>array(
 				'condition'=>array(

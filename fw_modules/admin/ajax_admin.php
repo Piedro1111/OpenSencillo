@@ -13,6 +13,7 @@ $status=array(
 	'date'=>date('Y-m-d'),
 	'time'=>date('H:i:s')
 );
+
 if($_POST['atype']!='')
 {
 	$ajax=$_POST;
@@ -56,6 +57,59 @@ switch($ajax['atype'])
 			}
 		} else {
 			$status['status'] = 'invalid';
+			$status['code'] = 403;
+		}
+		break;
+	case 'create::user':
+		if(($_SESSION['perm']>=1111)&&($logman->checkSession()))
+		{
+			$email = date('yzHis')."@".$_SERVER['SERVER_NAME'];
+			try {
+				$name = explode(" ",'User User');
+				
+				$mysql->insert(array(
+				'users'=>array(
+					'id'=>'',
+					'sign'=>'first_use',
+					'active'=>0,
+					'login'=>strtolower($email),
+					'pass'=>'',
+					'email'=>strtolower($email),
+					'fname'=>'',
+					'lname'=>'',
+					'perm'=>1000,
+					'ip'=>$log['external_ip'] . ":" . $log['port'],
+					'agent'=>$log['agent'],
+					'date'=>date('Y-m-d'),
+					'time'=>date('H:i:s')
+				)));
+				$mysql->execute();
+				
+				$mysql->select(array(
+				'users'=>array(
+					'condition'=>array(
+						'`login`="'.$email.'"',
+						'`perm`=1000'
+					),
+					'sort'=>array(
+						'desc'=>'`id`'
+					),
+					'limit'=>1
+				)));
+				$id = $mysql->execute();
+
+				$status['unew'] = $id[0]['id'];
+				$status['enew'] = $email;
+				$status['status'] = 'ok';
+				$status['code'] = 200;
+			} catch (Exception $e) {
+				$status['status'] = 'failed';
+				$status['code'] = 417;
+			}
+		}
+		else
+		{
+			$status['status'] = 'perm: '.$_SESSION['perm'];
 			$status['code'] = 403;
 		}
 		break;
@@ -186,11 +240,6 @@ switch($ajax['atype'])
 			$status['status'] = 'denied';
 		}
 	break;
-	default:
-		$status['status'] = 'not acceptable';
-		$status['code'] = 405;
-		break;
 }
-//unset($status['user']);
-print json_encode($status);
+unset($status['user']);
 ?>

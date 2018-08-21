@@ -106,31 +106,31 @@
                       <form class="form-horizontal form-label-left">
                         <span class="section">SQL Database</span>
                         <div class="form-group">
-                          <label class="control-label col-md-3 col-sm-3" for="dbhost">Host <span class="required">*</span>
+                          <label class="control-label col-md-3 col-sm-3" for="host">Host <span class="required">*</span>
                           </label>
                           <div class="col-md-6 col-sm-6">
-                            <input type="text" id="dbhost" name="dbhost" required="required" class="form-control col-md-7 col-xs-12">
+                            <input type="text" id="host" name="host" required="required" class="form-control col-md-7 col-xs-12">
                           </div>
                         </div>
                         <div class="form-group">
                           <label class="control-label col-md-3 col-sm-3" for="dbname">Name <span class="required">*</span>
                           </label>
                           <div class="col-md-6 col-sm-6">
-                            <input type="text" id="dbname" name="dbname" required="required" class="form-control col-md-7 col-xs-12">
+                            <input type="text" id="name" name="name" required="required" class="form-control col-md-7 col-xs-12">
                           </div>
                         </div>
                         <div class="form-group">
-                          <label for="dbuser" class="control-label col-md-3 col-sm-3">User <span class="required">*</span>
+                          <label for="user" class="control-label col-md-3 col-sm-3">User <span class="required">*</span>
                           </label>
                           <div class="col-md-6 col-sm-6">
-                            <input id="dbuser" class="form-control col-md-7 col-xs-12" required="required" type="text" name="dbuser">
+                            <input type="text" id="user" name="user" class="form-control col-md-7 col-xs-12" required="required">
                           </div>
                         </div>
 						<div class="form-group">
                           <label for="dbpass" class="control-label col-md-3 col-sm-3">Password <span class="required">*</span>
                           </label>
                           <div class="col-md-6 col-sm-6">
-                            <input id="dbpass" class="form-control col-md-7 col-xs-12" required="required" type="password" name="dbpass">
+                            <input type="password" id="pass" name="pass" class="form-control col-md-7 col-xs-12" required="required">
                           </div>
                         </div>
                       </form>

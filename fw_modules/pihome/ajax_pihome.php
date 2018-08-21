@@ -13,6 +13,7 @@ $status=array(
 	'date'=>date('Y-m-d'),
 	'time'=>date('H:i:s')
 );
+
 if($_POST['atype']!='')
 {
 	$ajax=$_POST;
@@ -213,11 +214,6 @@ switch($ajax['atype'])
 		$status['code'] = 200;
 		$status['status'] = 'ok';
 	break;
-	default:
-		$status['status'] = 'not acceptable';
-		$status['code'] = 405;
-		break;
 }
-//unset($status['user']);
-print json_encode($status);
+unset($status['user']);
 ?>
