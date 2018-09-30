@@ -454,13 +454,21 @@ class mysqlInterface extends mysqlEdit
 	 * 	)
 	 * )
 	 */
-	public function filter($def)
+	public function filter($def,$simpleInput=false)
 	{
 		foreach($def as $key=>$val)
 		{
 			foreach($val as $sub_key=>$sub_val)
 			{
-				$this->default.=$val.'.'.$sub_val.',';
+				//$this->default.=$val.'.'.$sub_val.','; //orig
+				if($simpleInput)
+				{
+					$this->default.=$sub_val.',';
+				}
+				else
+				{
+					$this->default.=$key.'.'.$sub_val.','; //fix
+				}
 			}
 		}
 		$this->default=substr($this->default,0,-1);
@@ -641,6 +649,8 @@ class mysqlInterface extends mysqlEdit
 		/**
 		 * @TODO out - addcode
 		 */
+		$this->default=null;
+		unset($this->default);
 		
 		return $this->save;
 	}

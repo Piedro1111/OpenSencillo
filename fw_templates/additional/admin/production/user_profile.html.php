@@ -44,8 +44,19 @@
                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">Permission <span class="required">*</span>
                       </label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input type="number" id="number" name="perm" required="required" data-validate-minmax="0,9999" class="form-control col-md-7 col-xs-12" value="<?=$this->profile('perm');?>">
-                      </div>
+                        <!--<input type="number" id="number" name="perm" required="required" data-validate-minmax="0,9999" class="form-control col-md-7 col-xs-12" value="<?=$this->profile('perm');?>">-->
+                        <select class="form-control col-md-7 col-xs-12" name="perm" required="required">
+						<?php
+						$data = $this->permList();
+						$selectedId = $this->profile('perm');
+						foreach($data as $key=>$val)
+						{
+							$selected = (($selectedId==$val['perm'])?'selected ':'');
+							echo "<option {$selected}value='{$val['perm']}'>{$val['usertype']} ({$val['perm']})</option>".PHP_EOL;
+						}
+						?>
+						</select>
+					  </div>
                     </div>
                     <div class="item form-group">
                       <label for="password" class="control-label col-md-3">Password</label>
@@ -76,7 +87,7 @@
         <!-- footer content -->
 		<footer>
 			<div class="copyright-info">
-				<p class="pull-right">piHome - powered by <a href="https://opensencillo.com">OpenSencillo</a>
+				<p class="pull-right">Powered by <a href="https://opensencillo.com">OpenSencillo</a>
 				</p>
 			</div>
 			<div class="clearfix"></div>

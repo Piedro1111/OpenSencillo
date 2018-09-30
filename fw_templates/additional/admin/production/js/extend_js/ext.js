@@ -70,13 +70,28 @@ $(document).ready(function(){
 		var code_var = $('#code').val();
 		var pass_var = $('#pass').val();
 		var rtppass_var = $('#rtppass').val();
+		$('.sencillo-errors-list').hide();
         $.post(server_name+"/ajax.slot.php",{
 			atype:'newpass',
 			fgotcode:code_var,
 			eregpass:pass_var,
 			eregrtp:rtppass_var
 		},function(data){
-			window.open(server_name+'/forgot/password/success','_self');
+			var data = JSON.parse(data);
+			switch(data.code)
+			{
+				case 200:
+					window.open(server_name+'/forgot/password/success','_self');
+				break;
+				case 409.1:
+					$('.sencillo-rtp-group .sencillo-errors-list li').text('Passwords do not match.');
+					$('.sencillo-rtp-group .sencillo-errors-list').show();
+				break;
+				case 403:
+					$('.sencillo-code-group .sencillo-errors-list li').text('Invalid code.');
+					$('.sencillo-code-group .sencillo-errors-list').show();
+				break;
+			}
 		});
     });
 	$("#send_ereg").click(function(){
@@ -149,6 +164,86 @@ $(document).ready(function(){
 			}
 		});
     });
+	$("#create_menu_item").click(function(){
+		$.post(server_name+"/ajax.slot.php",{
+			atype:'create::menu::item'
+		},function(data){
+			var data = JSON.parse(data);
+			switch(data.code)
+			{
+				case 200:
+					alert('New item ID ' + data.inew + ' is created.');
+					window.open(server_name+'/menu-items/edit?i='+data.mnew,'_self');
+				break;
+				default:
+					alert('Error ' + data.code + ' when creating a item.');
+			}
+		});
+    });
+	$("#create_blank_page").click(function(){
+		$.post(server_name+"/ajax.slot.php",{
+			atype:'create::page::blank'
+		},function(data){
+			var data = JSON.parse(data);
+			switch(data.code)
+			{
+				case 200:
+					alert('New page ID ' + data.inew + ' is created.');
+					window.open(server_name+'/pages/edit?i='+data.mnew,'_self');
+				break;
+				default:
+					alert('Error ' + data.code + ' when creating a page.');
+			}
+		});
+    });
+	$("#create_blank_banner").click(function(){
+		$.post(server_name+"/ajax.slot.php",{
+			atype:'create::banner::blank'
+		},function(data){
+			var data = JSON.parse(data);
+			switch(data.code)
+			{
+				case 200:
+					alert('New banner ID ' + data.inew + ' is created.');
+					window.open(server_name+'/pages/banner?i='+data.mnew,'_self');
+				break;
+				default:
+					alert('Error ' + data.code + ' when creating a banner.');
+			}
+		});
+    });
+	$("#create_blank_form").click(function(){
+		$.post(server_name+"/ajax.slot.php",{
+			atype:'create::form::blank'
+		},function(data){
+			var data = JSON.parse(data);
+			switch(data.code)
+			{
+				case 200:
+					alert('New form ID ' + data.inew + ' is created.');
+					window.open(server_name+'/pages/form?i='+data.mnew,'_self');
+				break;
+				default:
+					alert('Error ' + data.code + ' when creating a form.');
+			}
+		});
+    });
+	$("#create_blank_permission").click(function(){
+		$.post(server_name+"/ajax.slot.php",{
+			atype:'create::perm::blank'
+		},function(data){
+			var data = JSON.parse(data);
+			switch(data.code)
+			{
+				case 200:
+					alert('New perm ID ' + data.inew + ' is created.');
+					window.open(server_name+'/perm/edit?i='+data.mnew,'_self');
+				break;
+				default:
+					alert('Error ' + data.code + ' when creating a perm.');
+			}
+		});
+    });
 	$(".open-button").click(function(){
 		window.open(server_name+'/'+$(this).data('url'),'_self');
     });
@@ -174,6 +269,48 @@ $(document).ready(function(){
 				response:response
 			},function(data){
 				//checkServerStatus();
+				location.reload();
+			});
+		}
+	});
+	$('.remove-menu-item').click(function(){
+		var id = $(this).data('id');
+		var response = confirm("Remove menu item ID "+id+"?");
+		if(response)
+		{
+			$.post(server_name+'/ajax.slot.php',{
+				atype:'removeItem::action',
+				item:id,
+				response:response
+			},function(data){
+				location.reload();
+			});
+		}
+	});
+	$('.remove-page').click(function(){
+		var id = $(this).data('id');
+		var response = confirm("Remove page ID "+id+"?");
+		if(response)
+		{
+			$.post(server_name+'/ajax.slot.php',{
+				atype:'removePage::action',
+				page_id:id,
+				response:response
+			},function(data){
+				location.reload();
+			});
+		}
+	});
+	$('.remove-perm').click(function(){
+		var id = $(this).data('id');
+		var response = confirm("Remove page ID "+id+"?");
+		if(response)
+		{
+			$.post(server_name+'/ajax.slot.php',{
+				atype:'removePerm::action',
+				perm_id:id,
+				response:response
+			},function(data){
 				location.reload();
 			});
 		}

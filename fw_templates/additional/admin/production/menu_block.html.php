@@ -30,7 +30,7 @@
 <?php
 foreach($this->mainmenu as $menuitem)
 {
-	echo '<li><a href="'.$this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->urlprefix.'/'.$menuitem['link'].'"><i class="'.$menuitem['icon'].'"></i> '.$menuitem['name'].'</a>
+	echo '<li><a href="'.$this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->urlprefix.(($this->urlprefix!='')?'/':'').$menuitem['link'].'"><i class="'.$menuitem['icon'].'"></i> '.$menuitem['name'].'</a>
 		</li>';
 }
 ?>
@@ -56,9 +56,9 @@ foreach($this->mainmenu as $menuitem)
 									</a>
 									<?if($logman->checkSession()):?>
 									<ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
-										<li><a href="http://<?=$_SERVER['SERVER_NAME'].$this->port;?>/pihome/profile?u=<?=$logman->getSessionData('userid');?>"><i class="fa fa-user pull-right"></i> Profile</a>
+										<li><a href="http://<?=$_SERVER['SERVER_NAME'].$this->port.'/'.$this->urlprefix.(($this->urlprefix!='')?'/':'');?>profile?u=<?=$logman->getSessionData('userid');?>"><i class="fa fa-user pull-right"></i> Profile</a>
 										</li>
-										<li><a href="http://<?=$_SERVER['SERVER_NAME'].$this->port;?>/pihome/logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+										<li><a href="http://<?=$_SERVER['SERVER_NAME'].$this->port.'/'.$this->urlprefix.(($this->urlprefix!='')?'/':'');?>logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
 										</li>
 									</ul>
 									<?endif;?>

@@ -47,6 +47,7 @@
 												<div class="col-md-6 col-md-offset-3">
 													<button id="send_ereg" type="button" class="btn btn-success">Submit</button>
 													<button type="button" data-url="" class="btn btn-link open-button">Login</button>
+													<button type="button" data-url="forgot" class="btn btn-link open-button">Forgot password</button>
 												</div>
 											</div>
 										</form>
@@ -58,7 +59,7 @@
 					<!-- footer content -->
 					<footer>
 						<div class="copyright-info">
-							<p class="pull-right">piHome - powered by <a href="https://opensencillo.com">OpenSencillo</a>
+							<p class="pull-right">Powered by <a href="https://opensencillo.com">OpenSencillo</a>
 							</p>
 						</div>
 						<div class="clearfix"></div>

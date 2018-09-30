@@ -30,7 +30,7 @@
 				  <div class="ln_solid"></div>
 				  <div class="form-group">
 				    <div class="col-md-6">
-					  <button id="create_user" type="button" class="btn btn-default">Create user</button>
+					  <button id="create_user" type="button" class="btn btn-primary">Create user</button>
 				    </div>
 				  </div>
                 </div>
@@ -42,7 +42,7 @@
         <!-- footer content -->
 		<footer>
 			<div class="copyright-info">
-				<p class="pull-right">piHome - powered by <a href="https://opensencillo.com">OpenSencillo</a>
+				<p class="pull-right">Powered by <a href="https://opensencillo.com">OpenSencillo</a>
 				</p>
 			</div>
 			<div class="clearfix"></div>

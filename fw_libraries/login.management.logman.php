@@ -508,10 +508,12 @@ class logMan extends mysqlEdit
         $this->mysqlInterface->delete('`expire`<NOW()');
         if($this->status['code']===200)
         {
-            $this->mysqlInterface->insert(array('usersPasswordCodes'=> array('user_id'  => $this->status['user_array'][0],
-                                                                             'code'     => $this->status['confirm-code'],
-                                                                             'param'    => 0,
-                                                                             'expire'   => date('Y-m-d H:i:s',strtotime('+1 hour')))),true);
+            $this->mysqlInterface->insert(array('usersPasswordCodes'=> array(
+				'id'  => '',
+				'user_id'  => $this->status['user_array'][0],
+                'code'     => $this->status['confirm-code'],
+                'param'    => 0,
+                'expire'   => date('Y-m-d H:i:s',strtotime('+1 hour')))),true);
             $this->mysqlInterface->execute();
         }
         return $this->status;

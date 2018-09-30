@@ -16,7 +16,7 @@
 												<label class="control-label col-md-3 col-sm-3 col-xs-12" for="code">Code <span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 col-xs-12">
-													<input id="code" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="email" placeholder="" required="required" type="text">
+													<input id="code" class="form-control col-md-7 col-xs-12" name="code" required="required" type="text">
 													<ul class="parsley-errors-list sencillo-errors-list filled" style="display:none">
 														<li class="parsley-required ereg-err-code">Code is required.</li>
 													</ul>
@@ -58,7 +58,7 @@
 					<!-- footer content -->
 					<footer>
 						<div class="copyright-info">
-							<p class="pull-right">piHome - powered by <a href="https://opensencillo.com">OpenSencillo</a>
+							<p class="pull-right">Powered by <a href="https://opensencillo.com">OpenSencillo</a>
 							</p>
 						</div>
 						<div class="clearfix"></div>

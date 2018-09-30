@@ -130,7 +130,7 @@
                           <label for="dbpass" class="control-label col-md-3 col-sm-3">Password <span class="required">*</span>
                           </label>
                           <div class="col-md-6 col-sm-6">
-                            <input type="password" id="pass" name="pass" class="form-control col-md-7 col-xs-12" required="required">
+                            <input type="password" id="dbpass" name="dbpass" class="form-control col-md-7 col-xs-12" required="required">
                           </div>
                         </div>
                       </form>
@@ -191,21 +191,27 @@
   <script src="<?=$init->path();?>js/pace/pace.min.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
-      // Smart Wizard
-      $('#wizard').smartWizard();
-
-      function onFinishCallback() {
-        $('#wizard').smartWizard('showMessage', 'Finish Clicked');
-        //alert('Finish Clicked');
-      }
-    });
-
-    $(document).ready(function() {
-      // Smart Wizard
-      $('#wizard_verticle').smartWizard({
-        transitionEffect: 'slide'
-      });
-
+		// Smart Wizard
+		$('#wizard_verticle').smartWizard({
+			onFinish: function() {
+				$.post('http://<?=$_SERVER['SERVER_NAME'];?>:<?=$_SERVER['SERVER_PORT'];?>/<?=$_SERVER['SCRIPT_NAME'];?>/install.php?ajax=true',{
+					atype:'install::step::all',
+					response:200,
+					dbhost:$('#host').val(),
+					dbname:$('#name').val(),
+					dbuser:$('#user').val(),
+					dbpass:$('#dbpass').val(),
+					ufname:$('#first-name2').val(),
+					ulname:$('#last-name2').val(),
+					uemail:$('#email').val(),
+					upassw:$('#pass').val(),
+					urtpsw:$('#rtp-pass').val(),
+				},function(data){
+					alert('test');
+				});
+			},
+			transitionEffect: 'slide'
+		});
     });
   </script>
 

@@ -35,7 +35,7 @@ $pihome = new pihome;
 					<!-- footer content -->
 					<footer>
 						<div class="copyright-info">
-							<p class="pull-right">piHome - powered by <a href="https://opensencillo.com">OpenSencillo</a>
+							<p class="pull-right">Powered by <a href="https://opensencillo.com">OpenSencillo</a>
 							</p>
 						</div>
 						<div class="clearfix"></div>

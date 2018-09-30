@@ -172,6 +172,29 @@ class pihome extends construct
 	}
 	
 	/**
+	 * Generate sensor IFTTT weather
+	 * 
+	 * @return array
+	 */
+	final public function sensorIFTTTweather()
+	{
+		$this->mysqlinterface->select(array(
+			'sensors'=>array(
+				'condition'=>array(
+					'(`sensor`="iftttweather")'
+				),
+				'sort'=>array(
+					'desc'=>'`id`'
+				),
+				'limit'=>1
+			)
+		));
+		$data = $this->mysqlinterface->execute();
+		$data = json_decode($data[0]['data'],true);
+		return $data;
+	}
+	
+	/**
 	 * Generate users list table
 	 * 
 	 * structure:

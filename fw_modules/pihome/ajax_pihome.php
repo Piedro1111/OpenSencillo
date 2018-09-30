@@ -17,7 +17,7 @@ $status=array(
 if($_POST['atype']!='')
 {
 	$ajax=$_POST;
-}else if(($_GET['atype']=='piplayer')||($_GET['atype']=='waterCondensator')||($_GET['atype']=='switchExtHdd')||($_GET['atype']=='iftttweather')){
+}else if($_GET['atype']!=''){
 	$ajax=$_GET;
 	$status=array(
 		'called'=>$_GET['atype'],
@@ -201,6 +201,9 @@ switch($ajax['atype'])
 		$mysql->execute();
 	break;
 	case 'iftttweather':
+	case 'iftttirobot':
+	case 'iftttacon':
+	case 'iftttacoff':
 		$mysql->insert(array(
 			'sensors'=>array(
 				'id'=>'',

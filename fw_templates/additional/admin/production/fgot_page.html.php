@@ -25,8 +25,9 @@
 											<div class="ln_solid"></div>
 											<div class="form-group">
 												<div class="col-md-6 col-md-offset-3">
-													<button id="send_fgot" type="button" class="btn btn-success">Forgot</button>
+													<button id="send_fgot" type="button" class="btn btn-success">Submit</button>
 													<button type="button" data-url="" class="btn btn-link open-button">Login</button>
+													<button type="button" data-url="registration" class="btn btn-link open-button">Registration</button>
 												</div>
 											</div>
 										</form>
@@ -38,7 +39,7 @@
 					<!-- footer content -->
 					<footer>
 						<div class="copyright-info">
-							<p class="pull-right">piHome - powered by <a href="https://opensencillo.com">OpenSencillo</a>
+							<p class="pull-right">Powered by <a href="https://opensencillo.com">OpenSencillo</a>
 							</p>
 						</div>
 						<div class="clearfix"></div>

@@ -2,14 +2,15 @@
 /**
  * Core installer
  * @name OpenSencillo SQL Installer
- * @version 2016.105
+ * @version 2018.209
  * @category core
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth
  * @license Distributed under the General Public License (GPL) http://www.gnu.org/copyleft/gpl.html This program is distributed in the hope that it will be useful - WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
 $ini = parse_ini_file('./fw_headers/install.ini',true);
-$t=$translate;
+
+$t=new translate('translate.json','EN');
 $afterBootUp=array();
 $afterBootUp[0]=$core->coreSencillo;
 ?>
@@ -27,6 +28,8 @@ $afterBootUp[0]=$core->coreSencillo;
 						<li><a href="<?=$ini['first_screen']['manual'];?>"><?=$t->translate('Installation');?></a></li>
 						<li><a href="<?=$ini['first_screen']['docs'];?>"><?=$t->translate('Documentation');?></a></li>
 						<li><a href="<?=$ini['first_screen']['github'];?>">GitHub</a></li>
+						<li><a href="<?=$ini['first_screen']['mastery'];?>">Mastery.sk</a></li>
+						<li><a href="http://<?=$_SERVER['SERVER_NAME'];?>:<?=$_SERVER['SERVER_PORT'];?>/<?=$_SERVER['REQUEST_URI'];?>?p=admin">Admin</a></li>
 					</ul>
 					<?endif;?>
 				</div>
@@ -46,9 +49,8 @@ $afterBootUp[0]=$core->coreSencillo;
 					<ul class="list-group">
 						<li class="list-group-item"><strong>Name:</strong> <?=$afterBootUp[0]->info['NME'];?></li>
 						<li class="list-group-item"><strong>Licence:</strong> GNU/GPL</li>
-						<li class="list-group-item"><strong>Type:</strong> Framework</li>
-						<li class="list-group-item"><strong>Category:</strong> OpenSource</li>
-						<li class="list-group-item"><strong>Language:</strong> PHP 5.3+, JQUERY, HTML5</li>
+						<li class="list-group-item"><strong>Type:</strong> CMS + Framework</li>
+						<li class="list-group-item"><strong>Language:</strong> PHP <?=phpversion();?>, JQUERY, HTML5</li>
 						<li class="list-group-item"><strong>Release:</strong> <?=$afterBootUp[0]->info['VSN'];?></li>
 						<li class="list-group-item"><strong>Build:</strong> <?=$afterBootUp[0]->info['DTC'];?></li>
 						<li class="list-group-item"><strong>By:</strong> <?=$afterBootUp[0]->info['CPY'];?></li>

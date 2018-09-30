@@ -1,5 +1,6 @@
 <?php
 $pihome = new pihome;
+$wth = $pihome->sensorIFTTTweather();
 ?>
 		<?if($logman->checkSession()):?>
 		<!-- top tiles -->
@@ -32,6 +33,13 @@ $pihome = new pihome;
 			<div class="right">
 			  <span class="count_top"><i class="fa fa-cloud"></i> Ext HDD</span>
 			  <div class="count"><span id="exthddstatus" class="<?=(($pihome->ExtHDDcontent==0)?' green':' red');?>"><?=(($pihome->HDDerr==0)?(($pihome->ExtHDDcontent==0)?'OFF':'ON'):'Error');?></span></div>
+			</div>
+		  </div>
+		  <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
+			<div class="left"></div>
+			<div class="right">
+			  <span class="count_top"> <?=$wth['lotemp'].'-'.$wth['hitemp'].'°C';?></span>
+			  <div class="count"><span class="green"><img src="<?=$wth['url'];?>" alt="weather" height="48px" width="48px"></span></div>
 			</div>
 		  </div>
 		  <!--<div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
@@ -221,7 +229,7 @@ $pihome = new pihome;
         <!-- footer content -->
 		<footer>
 			<div class="copyright-info">
-				<p class="pull-right">piHome - powered by <a href="https://opensencillo.com">OpenSencillo</a>
+				<p class="pull-right">Powered by <a href="https://opensencillo.com">OpenSencillo</a>
 				</p>
 			</div>
 			<div class="clearfix"></div>

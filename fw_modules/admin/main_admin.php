@@ -20,6 +20,9 @@ class construct
 	public $alltemplates;
 	
 	public $mysqlinterface;
+	public $page;
+	
+	public $server_url;
 	
 	final public function __construct()
 	{
@@ -103,6 +106,9 @@ class construct
 		return $cfg;
 	}
 	
+	/**
+	 * Configure mod
+	*/
 	final public function config_mod($protocol,$url,$template)
 	{
 		$this->protocol = $protocol; //'http'
@@ -111,38 +117,25 @@ class construct
 		$this->port = ':'.$_SERVER['SERVER_PORT'];
 		$this->template = $template; //'/fw_templates/additional/rpi/production'
 		$this->css = $this->urlprefix.$this->template;
-		$this->js = $this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->url.$this->template;
-		$this->stn = $this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->url.'/shutdown';
+		$this->js = $this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.(($this->url!='')?'/'.$this->url:$this->url).$this->template;
+		$this->server_url = $this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.(($this->url!='')?'/'.$this->url:$this->url);
+		$this->stn = $this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.(($this->url!='')?'/'.$this->url:$this->url).'/shutdown';
 	}
-}
-class admin extends construct
-{
+	
 	/**
-	 * seoGenerator - create all data for meta tag
+	 * Generate edit url universal
+	 * 
+	 * @return array
 	 */
-	final private function seoGenerator()
+	final public function urlEdit($key,$template)
 	{
-		$this->seo->encode();
-		$this->seo->title("OpenSencillo | ADMIN SYSTEM");
-		$this->seo->owner("Peter Horváth, phorvath.com");
-		$this->seo->custom("<script>var server_name='{$this->protocol}://{$_SERVER['SERVER_NAME']}{$this->port}/{$this->url}';</script>");
-		$this->seo->custom("<meta http-equiv='X-UA-Compatible' content='IE=edge'>");
-		$this->seo->custom("<meta http-equiv='cache-control' content='no-cache'>");
-		$this->seo->custom("<meta http-equiv='expires' content='-1'>");
-		$this->seo->custom("<meta http-equiv='pragma' content='no-cache'>");
-		$this->seo->bootstrapDefs();
-		$this->seo->style("{$this->protocol}://{$_SERVER['SERVER_NAME']}{$this->port}/{$this->css}/fonts/css/font-awesome.min.css");
-		$this->seo->style("{$this->protocol}://{$_SERVER['SERVER_NAME']}{$this->port}/{$this->css}/css/animate.min.css");
-		$this->seo->style("{$this->protocol}://{$_SERVER['SERVER_NAME']}{$this->port}/{$this->css}/css/custom.css");
-		$this->seo->style("{$this->protocol}://{$_SERVER['SERVER_NAME']}{$this->port}/{$this->css}/css/icheck/flat/green.css");
-		$this->seo->custom('
-		<!--[if lt IE 9]>
-			<script src="../assets/js/ie8-responsive-file-warning.js"></script>
-			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
-		');
-		$this->seo->script("{$this->js}/js/extend_js/ext.js");
+		$this->mysqlinterface->select(array(
+			'menu'=>array(
+				'condition'=>array('`template_file`="'.$template.'"')
+			)
+		));
+		$out = $this->mysqlinterface->execute();
+		return $out[0][$key];
 	}
 	
 	/**
@@ -158,26 +151,82 @@ class admin extends construct
 		{
 			$perm=$_SESSION['perm'];
 		}
-		switch($perm)
-		{
-			case '0':
-			case '0000':
-			case '1000':
-				$this->usertype = 'ban';
-				break;
-			case '1100':
-				$this->usertype = 'user';
-				break;
-			case '1110':
-				$this->usertype = 'vip';
-				break;
-			case '1111':
-				$this->usertype = 'admin';
-				break;
-			default:
-				$this->usertype = 'unknown';
-		}
+		$this->usertype = 'unknown';
+		
+		$this->mysqlinterface->select(array(
+			'perm_list'=>array(
+				'condition'=>array(
+					"`perm`='{$perm}'"
+				)
+			)
+		));
+		$permdata = $this->mysqlinterface->execute();
+		$this->usertype=$permdata[0]['usertype'];
+		
 		return $this->usertype;
+	}
+	
+	/**
+	 * Get full perm list
+	 */
+	final protected function permList()
+	{
+		$this->mysqlinterface->select(array(
+			'perm_list'=>array(
+				'condition'=>array(
+					"`id`>0"
+				),
+				'sort'=>array(
+					'asc'=>'perm'
+				)
+			)
+		));
+		$permlist = $this->mysqlinterface->execute();
+		return $permlist;
+	}
+}
+class admin extends construct
+{
+	/**
+	 * seoGenerator - create all data for meta tag
+	 */
+	final private function seoGenerator()
+	{
+		$this->mysqlinterface->select(array(
+			'virtual_seo_config'=>array(
+				'condition'=>array(
+					'(`module`="admin") AND ((`url`="'.PAGE.'") OR (`url`="%") OR (`url`="*"))',
+				)
+			)
+		));
+		$meta = $this->mysqlinterface->execute();
+		
+		foreach($meta as $key=>$val)
+		{
+			$metahtml[$val['meta']]=$val['content'];
+		}
+		
+		$this->seo->encode();
+		$this->seo->title($metahtml['title']);
+		$this->seo->owner($metahtml['owner']);
+		$this->seo->custom("<script>var server_name='{$this->server_url}';</script>");
+		$this->seo->custom("<meta http-equiv='X-UA-Compatible' content='{$metahtml['X-UA-Compatible']}'>");
+		$this->seo->custom("<meta http-equiv='cache-control' content='{$metahtml['cache-control']}'>");
+		$this->seo->custom("<meta http-equiv='expires' content='{$metahtml['expires']}'>");
+		$this->seo->custom("<meta http-equiv='pragma' content='{$metahtml['pragma']}'>");
+		$this->seo->bootstrapDefs();
+		$this->seo->style("{$this->protocol}://{$_SERVER['SERVER_NAME']}{$this->port}/{$this->css}/fonts/css/font-awesome.min.css");
+		$this->seo->style("{$this->protocol}://{$_SERVER['SERVER_NAME']}{$this->port}/{$this->css}/css/animate.min.css");
+		$this->seo->style("{$this->protocol}://{$_SERVER['SERVER_NAME']}{$this->port}/{$this->css}/css/custom.css");
+		$this->seo->style("{$this->protocol}://{$_SERVER['SERVER_NAME']}{$this->port}/{$this->css}/css/icheck/flat/green.css");
+		$this->seo->custom('
+		<!--[if lt IE 9]>
+			<script src="../assets/js/ie8-responsive-file-warning.js"></script>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		');
+		$this->seo->script("{$this->js}/js/extend_js/ext.js");
 	}
 	
 	/**
@@ -201,7 +250,7 @@ class admin extends construct
 				)));
 				$this->mysqlinterface->execute();
 				$this->logman->destroySession();
-				header('Location: '.$this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->url.'/');
+				header('Location: '.$this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->url.(($this->url!='')?'/':''));
 			break;
 			case 'users/user/save':
 			case 'profile/save':
@@ -210,13 +259,56 @@ class admin extends construct
 				{
 					$this->profileUpdate($this->profile('login'));
 					$status = true;
-					header('Location: '.$this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->url.'/users/view?u='.$_GET['u']);
+					header('Location: '.$this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->url.(($this->url!='')?'/':'').'users/view?u='.$_GET['u']);
 				}
 				else
 				{
 					$this->profileUpdate($this->logman->getSessionData('login'));
 					$status = true;
-					header('Location: '.$this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->url.'/profile');
+					header('Location: '.$this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->url.(($this->url!='')?'/':'').'profile');
+				}
+			break;
+			case $this->menuUrlEdit('url').'/save':
+				if($_SESSION['perm']>=1111)
+				{
+					$this->menuUpdate();
+					header('Location: '.$this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->url.(($this->url!='')?'/':'').'menu-items');
+				}
+			break;
+			case $this->urlEdit('url','page_edit.html.php').'/save':
+				if($_SESSION['perm']>=1111)
+				{
+					$this->pageUpdate();
+					header('Location: '.$this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->url.(($this->url!='')?'/':'').'pages');
+				}
+			break;
+			case $this->urlEdit('url','banner_edit.html.php').'/save':
+				if($_SESSION['perm']>=1111)
+				{
+					unset($_POST['article']);
+					foreach($_POST['url'] as $key=>$val)
+					{
+						if($_POST['url']!='')
+						{
+							$data[$key] = array(
+								'url'=>$val,
+								'maintext'=>$_POST['maintext'][$key],
+								'subtext'=>$_POST['subtext'][$key],
+								'actionurl'=>$_POST['actionurl'][$key],
+								'configdata'=>$_POST['configdata'][$key],
+							);
+						}
+					}
+					$_POST['article'] = json_encode($data);
+					$this->pageUpdate();
+					header('Location: '.$this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->url.(($this->url!='')?'/':'').'pages');
+				}
+			break;
+			case $this->urlEdit('url','perm_edit.html.php').'/save':
+				if($_SESSION['perm']>=1111)
+				{
+					$this->permUpdate();
+					header('Location: '.$this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->url.(($this->url!='')?'/':'').'perm');
 				}
 			break;
 			default:
@@ -265,7 +357,7 @@ class admin extends construct
 					'('.$outcond.')',
 					'`sort`>=0',
 					'`perm`<='.$perm,
-					'`view_parameter`='.$viewparam
+					'((`view_parameter`='.$viewparam.') OR (`view_parameter`=3))'
 				),
 				'sort'=>array(
 					'asc'=>'`sort`'
@@ -283,6 +375,8 @@ class admin extends construct
 	 */ 
 	final protected function mainLogic()
 	{
+		$this->page();
+		
 		$cfg = $this->readVSC('admin');
 		$menu = $this->readMenu();
 		
@@ -300,36 +394,10 @@ class admin extends construct
 			}
 		}
 		
-		/*if($this->logman->checkSession())
-		{
-			if($_SESSION['perm']>=1110)
-			{
-				$this->linkmngr->addUrl('phpinfo','_');
-				$this->addMenuItem('PHP info','phpinfo','info',1110);
-			}
-			
-			if($_SESSION['perm']>=1111)
-			{
-				$this->linkmngr->addUrl('modules','modules_page.html.php');
-				$this->addMenuItem('Modules','modules','cubes',1100);
-				
-				$this->linkmngr->addUrl('users','users_page.html.php');
-				$this->addMenuItem('Users','users','users',1111);
-				
-				$this->linkmngr->addUrl('users/user','user_profile.html.php');
-				
-				$this->linkmngr->addUrl('users/view','view_profile.html.php');
-			}
-		}
-		else
-		{
-			$this->linkmngr->addUrl('','login_page.html.php');
-			$this->linkmngr->addUrl('registration','ereg_page.html.php');
-			$this->linkmngr->addUrl('forgot','fgot_page.html.php');
-			$this->linkmngr->addUrl('forgot/password','newpass_page.html.php');
-		}*/
 		$this->menu();
+		
 		$this->render();
+		
 	}
 	
 	/**
@@ -345,7 +413,7 @@ class admin extends construct
 		{
 			$this->mainmenu[] = array(
 				'name'=>$name,
-				'link'=>$link,
+				'link'=>str_ireplace('//','/',$link),
 				'icon'=>'fa fa-'.$icon,
 				'perm'=>$perm
 			);
@@ -435,11 +503,11 @@ class admin extends construct
 		{
 			if(!(in_array($v['id'],$securedlibs)))
 			{
-				$switch = ($v['switch']==1?"<a href='#disable-{$v['id']}' class='disable-lib' data-lib='{$v['id']}'>Disable</a>":"<a href='#disable-{$v['id']}' class='enable-lib' data-lib='{$v['id']}'>Enable</a>");
+				$switch = ($v['switch']==1?"<a href='#disable-{$v['id']}' data-lib='{$v['id']}' class='btn btn-danger btn-xs disable-lib'>Disable</a>":"<a href='#disable-{$v['id']}' data-lib='{$v['id']}' class='btn btn-success btn-xs enable-lib'>Enable</a>");
 			}
 			else
 			{
-				$switch = 'Locked';
+				$switch = '<span class="btn btn-info btn-xs disabled">Locked</span>';
 			}
 			$table .= "<tr class='even pointer'>
                         <td class=''>{$v['id']}</td>
@@ -488,11 +556,11 @@ class admin extends construct
 		{
 			if(!(in_array($v['id'],$securedlibs)))
 			{
-				$switch = ($v['switch']==1?"<a href='#disable-{$v['id']}' class='disable-mod' data-mod='{$v['id']}'>Disable</a>":"<a href='#enable-{$v['id']}' class='enable-mod' data-mod='{$v['id']}'>Enable</a>");
+				$switch = ($v['switch']==1?"<a href='#disable-{$v['id']}' data-mod='{$v['id']}' class='btn btn-danger btn-xs disable-mod'>Disable</a>":"<a href='#enable-{$v['id']}' data-mod='{$v['id']}' class='btn btn-success btn-xs enable-mod'>Enable</a>");
 			}
 			else
 			{
-				$switch = 'Locked';
+				$switch = '<span class="btn btn-info btn-xs disabled">Locked</span>';
 			}
 			$table .= "<tr class='even pointer'>
                         <td class=''>{$v['id']}</td>
@@ -520,6 +588,94 @@ class admin extends construct
 	}
 	
 	/**
+	 * Generate menu list
+	 * 
+	 * @return array
+	 */
+	final private function menuList()
+	{
+		$this->mysqlinterface->select(array(
+			'menu'=>array(
+				'condition'=>array('`id`>=0')
+			),
+			'sort'=>array(
+				'asc'=>'`sort`'
+			)
+		));
+		return $this->mysqlinterface->execute();
+	}
+	
+	/**
+	 * Generate edit url for menu
+	 * 
+	 * @return array
+	 */
+	final private function menuUrlEdit($key)
+	{
+		$this->mysqlinterface->select(array(
+			'menu'=>array(
+				'condition'=>array('`template_file`="menu_edit.html.php"')
+			)
+		));
+		$out = $this->mysqlinterface->execute();
+		return $out[0][$key];
+	}
+	
+	/**
+	 * Generate pages list
+	 * 
+	 * @return array
+	 */
+	final private function pagesList()
+	{
+		$this->mysqlinterface->select(array(
+			'articles'=>array(
+				'condition'=>array(
+					'`id`>=0'
+				),
+				'sort'=>array(
+					'asc'=>'`sort`'
+				)
+			)
+		));
+		return $this->mysqlinterface->execute();
+	}
+	
+	/*
+	* Get page content by actual URL
+	*/
+	final public function getPageContentByUrl()
+	{
+		$perm = $this->logman->getSessionData('perm');
+		/*var_dump($perm);
+		die;*/
+		$this->mysqlinterface->select(array(
+			'menu'=>array(
+				'condition'=>array(
+					'`url`="'.PAGE.'"',
+					'`perm`<='.((((int)$perm)>0)?((int)$perm):0)
+				)
+			)
+		));
+		$menu = $this->mysqlinterface->execute();
+		$menu_url_id = $menu[0]['id'];
+		
+		$this->mysqlinterface->select(array(
+			'articles'=>array(
+				'condition'=>array(
+					'`url_id`='.$menu_url_id,
+					'`perm`<='.((((int)$perm)>0)?((int)$perm):0)
+				),
+				'sort'=>array(
+					'asc'=>'`sort`'
+				)
+			)
+		));
+		$page_data = $this->mysqlinterface->execute();
+		return $page_data;
+	}
+	
+	/**
 	 * Generate user data list
 	 * 
 	 * @param integer
@@ -535,6 +691,9 @@ class admin extends construct
 		return $this->mysqlinterface->execute();
 	}
 	
+	/**
+	 * Update profile
+	 */
 	final private function profileUpdate($login)
 	{
 		$filtered_post = array();
@@ -631,6 +790,147 @@ class admin extends construct
 	}
 	
 	/**
+	 * Update menu
+	 */
+	final private function menuUpdate()
+	{
+		$filtered_post = array();
+		foreach($_POST as $key=>$val)
+		{
+			if($key!='pass')
+			{
+				$filtered_post[$key] = str_ireplace(array(
+					"%",
+					"=",
+					"'",
+					'"',
+					"$",
+					"<",
+					">",
+					"`"
+				), array(
+					"",
+					"",
+					"",
+					"",
+					"",
+					"",
+					"",
+					""
+				), $val);
+			}
+			else
+			{
+				$filtered_post[$key] = $_POST[$key];
+			}
+		}
+		if($this->logman->getSessionData('perm')>=1111)
+		{
+			$update = array(
+				'item'=>$filtered_post['name'],
+				'icon'=>$filtered_post['icon'],
+				'module'=>$filtered_post['module'],
+				'template_file'=>$filtered_post['template'],
+				'sort'=>$filtered_post['sort'],
+				'url'=>$filtered_post['url'],
+				'perm'=>$filtered_post['permission'],
+				'view_parameter'=>$filtered_post['area'],
+				'parent_id'=>$filtered_post['parent']
+			);
+			$this->mysqlinterface->update(array('menu'=>array(
+				'condition'=>array(
+					'`id`='.$_GET['i']
+				),
+				'set'=>$update
+			)));
+			$this->mysqlinterface->execute();
+		}
+	}
+	
+	/**
+	 * Update pages
+	 */
+	final private function pageUpdate()
+	{
+		$filtered_post = $_POST;
+		
+		if($this->logman->getSessionData('perm')>=1111)
+		{
+			$update = array(
+				'url_id'=>$filtered_post['url_id'],
+				/*'category'=>$filtered_post['category'],
+				'tag'=>$filtered_post['tag'],*/
+				'name'=>$filtered_post['name'],
+				'article_sumary'=>$filtered_post['summary'],
+				'article'=>$filtered_post['article'],
+				'date'=>date('Y-m-d'),
+				'time'=>date('H:i:s'),
+				'author_user_id'=>$this->logman->getSessionData('userid'),
+				'perm'=>$filtered_post['perm'],
+				'sort'=>$filtered_post['sort']
+			);
+			$this->mysqlinterface->update(array('articles'=>array(
+				'condition'=>array(
+					'`id`='.$_GET['i']
+				),
+				'set'=>$update
+			)));
+			$this->mysqlinterface->execute();
+		}
+	}
+	
+	/**
+	 * Update perm
+	 */
+	final private function permUpdate()
+	{
+		$filtered_post = $_POST;
+		
+		if($this->logman->getSessionData('perm')>=1111)
+		{
+			$update = array(
+				'perm'=>$filtered_post['code'],
+				'usertype'=>$filtered_post['usertype'],
+			);
+			$this->mysqlinterface->update(array('perm_list'=>array(
+				'condition'=>array(
+					'`id`='.$_GET['i']
+				),
+				'set'=>$update
+			)));
+			$this->mysqlinterface->execute();
+		}
+	}
+	
+	/**
+	 * Get page info onload from db to RAM
+	 * 
+	 * @return array
+	 */
+	final private function page()
+	{
+		$this->mysqlinterface->select(array(
+			'articles'=>array(
+				'condition'=>array('`id`='.(isset($_GET['i'])?"'".$_GET['i']."'":0))
+			)
+		));
+		$this->page = $this->mysqlinterface->execute();
+	}
+	
+	/**
+	 * Get page info from RAM
+	 * 
+	 * @param $key string
+	 * @param $keyno integer
+	 *
+	 * @return array
+	 */
+	final private function getPageContent($key,$keyno)
+	{
+		return $this->page[$keyno][$key];
+	}
+	
+	/**
 	 * Remove insecured data
 	 * 
 	 * @param key string
@@ -670,13 +970,13 @@ class admin extends construct
 				switch($v['sign'])
 				{
 					case 'kicked':
-						$noadmin = " | <a href='#ban-{$v['id']}' class='ban-user' data-user='{$v['id']}'>Ban</a> | <a href='#remove-{$v['id']}' class='remove-user' data-user='{$v['id']}'>Remove</a>";
+						$noadmin = "<a href='#ban-{$v['id']}' class='ban-user btn btn-danger btn-xs' data-user='{$v['id']}'>Ban</a><a href='#remove-{$v['id']}' class='remove-user btn btn-danger btn-xs' data-user='{$v['id']}'>Remove</a>";
 					break;
 					case 'banned':
-						$noadmin = " | <a href='#remove-{$v['id']}' class='remove-user' data-user='{$v['id']}'>Remove</a>";
+						$noadmin = "<a href='#remove-{$v['id']}' class='remove-user btn btn-danger btn-xs' data-user='{$v['id']}'>Remove</a>";
 					break;
 					default:
-						$noadmin = " | <a href='#kick-{$v['id']}' class='kill-session' data-user='{$v['id']}'>Kick</a> | <a href='#ban-{$v['id']}' class='ban-user' data-user='{$v['id']}'>Ban</a> | <a href='#remove-{$v['id']}' class='remove-user' data-user='{$v['id']}'>Remove</a>";
+						$noadmin = "<a href='#kick-{$v['id']}' class='kill-session btn btn-info btn-xs' data-user='{$v['id']}'>Kick</a><a href='#ban-{$v['id']}' class='ban-user btn btn-danger btn-xs' data-user='{$v['id']}'>Ban</a><a href='#remove-{$v['id']}' class='remove-user btn btn-danger btn-xs' data-user='{$v['id']}'>Remove</a>";
 					break;
 				}
 			}
@@ -690,7 +990,148 @@ class admin extends construct
                         <td class=''>{$v['active']}</td>
                         <td class=''>".($v['sign']=='kicked'?'kicked '.$this->permDecode($v['perm']):$this->permDecode($v['perm']))."</td>
                         <td class=''>{$v['date']} {$v['time']}</td>
-                        <td class='last'><a href='./users/view?u={$v['id']}'>View</a> | <a href='./users/user?u={$v['id']}'>Edit</a>{$noadmin}</td>
+                        <td class='last'><a href='./users/view?u={$v['id']}' class='btn btn-primary btn-xs'>View</a><a href='./users/user?u={$v['id']}' class='btn btn-success btn-xs'>Edit</a>{$noadmin}</td>
+                      </tr>";
+		}
+		return $table;
+	}
+	
+	/**
+	 * Generate menu data list
+	 * 
+	 * @param integer
+	 * @return array
+	 */
+	final private function menuBasicItem($id)
+	{
+		$this->mysqlinterface->select(array(
+			'menu'=>array(
+				'condition'=>array('`id`='.($id?$id:'-1')),
+				'sort'=>array(
+					'asc'=>'`sort`'
+				)
+			)
+		));
+		return $this->mysqlinterface->execute();
+	}
+	
+	/**
+	 * Remove insecured data
+	 * 
+	 * @param key string
+	 * @return string
+	 */
+	final public function menuItem($key)
+	{
+		$data = array();
+		$data = $this->menuBasicItem($_GET['i']);
+		return $data[0][$key];
+	}
+	
+	/**
+	 * Generate users list table
+	 * 
+	 * @return string
+	 */
+	final public function menuLines()
+	{
+		$full = $this->menuList();
+		$editurl = $this->menuUrlEdit('url');
+		foreach($full as $v)
+		{
+			$table .= "<tr class='even pointer'>
+                        <td>{$v['id']}</td>
+                        <td>{$v['item']}</td>
+                        <td>{$v['icon']}</td>
+                        <td>{$v['module']}</td>
+                        <td>{$v['template_file']}</td>
+						<td>{$v['sort']}</td>
+						<td>{$v['url']}</td>
+						<td>{$v['perm']}</td>
+						<td>{$v['view_parameter']}</td>
+						<td>{$v['parent_id']}</td>
+						<td><a href='./{$editurl}?i={$v['id']}' data-id='{$v['id']}' class='btn btn-success btn-xs'>Edit</a><a href='#remove-menu-item-{$v['id']}' class='remove-menu-item btn btn-danger btn-xs' data-id='{$v['id']}'>Remove</a></td>
+                      </tr>";
+		}
+		return $table;
+	}
+	
+	/**
+	 * Get perm info
+	 * 
+	 * @param key string
+	 * @return string
+	 */
+	final public function groupItem($key)
+	{
+		$data = array();
+		$id = $_GET['i'];
+		$this->mysqlinterface->select(array(
+			'perm_list'=>array(
+				'condition'=>array('`id`='.($id?$id:'-1')),
+				'sort'=>array(
+					'asc'=>'`id`'
+				)
+			)
+		));
+		$data = $this->mysqlinterface->execute();
+		return $data[0][$key];
+	}
+	
+	/**
+	 * Generate users list table
+	 * 
+	 * @return string
+	 */
+	final public function pagesLines()
+	{
+		$full = $this->pagesList();
+		//$editurl = $this->menuUrlEdit('url');   --- edit for pages
+		
+		foreach($full as $v)
+		{
+			$editUrl = $this->urlEdit('url',$v['category'].'_edit.html.php');
+			
+			$table .= "<tr class='even pointer'>
+                        <td>{$v['id']}</td>
+                        <td>{$v['name']}</td>
+                        <td>{$v['article_sumary']}</td>
+                        <td>{$v['date']}</td>
+                        <td>{$v['time']}</td>
+						<td>{$v['perm']}</td>
+						<td>{$v['author_user_id']}</td>
+						<td><a href='./{$editUrl}?i={$v['id']}' data-id='{$v['id']}' class='btn btn-success btn-xs'>Edit</a><a href='#remove-page-{$v['id']}' class='remove-page btn btn-danger btn-xs' data-id='{$v['id']}'>Remove</a></td>
+                      </tr>";
+		}
+		return $table;
+	}
+	
+	/**
+	 * Generate perm list table
+	 * 
+	 * @return string
+	 */
+	final private function permLines()
+	{
+		$this->mysqlinterface->select(array(
+			'perm_list'=>array(
+				'condition'=>array('`id`>=0')
+			),
+			'sort'=>array(
+				'asc'=>'`perm`'
+			)
+		));
+		$full = $this->mysqlinterface->execute();
+		
+		foreach($full as $v)
+		{
+			$editUrl =  $this->urlEdit('url','perm_edit.html.php');
+			
+			$table .= "<tr class='even pointer'>
+                        <td>{$v['id']}</td>
+                        <td>{$v['perm']}</td>
+                        <td>{$v['usertype']}</td>
+                        <td><a href='./{$editUrl}?i={$v['id']}' data-id='{$v['id']}' class='btn btn-success btn-xs'>Edit</a><a href='#remove-perm-{$v['id']}' class='remove-perm btn btn-danger btn-xs' data-id='{$v['id']}'>Remove</a></td>
                       </tr>";
 		}
 		return $table;
@@ -724,8 +1165,36 @@ class admin extends construct
 		}
 		else
 		{
+			$responseCode = http_response_code();
+			if(($responseCode>=0)&&($responseCode<299))
+			{
+				http_response_code(404);
+			}
+			$this->error404Log();
 			require_once('./fw_templates/additional/admin/production/page_404.html.php');
 		}
+	}
+	
+	/**
+	 * Console error log
+	 */
+	final private function error404Log()
+	{
+		$url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+		$this->mysqlinterface->insert(array(
+		'console'=>array(
+			'id'=>'',
+			'time'=>date('Y-m-d H:i:s'),
+			'title'=>http_response_code()." {$url}",
+			'data'=>json_encode(array(
+				'url'=>$url,
+				'session_data'=>$_SESSION,
+				'server_data'=>$_SERVER,
+				'post'=>$_POST,
+				'get'=>$_GET
+			))
+		)));
+		$this->mysqlinterface->execute();
 	}
 }
 ?>

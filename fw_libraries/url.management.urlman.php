@@ -54,6 +54,7 @@ class url
 	 */
 	public function getPage($page)
 	{
+		//var_dump($this->data);
 		return $this->data['content'][$page];
 	}
 	
