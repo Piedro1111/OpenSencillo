@@ -2,7 +2,7 @@
 /**
  * Main mysql functions
  * @name Sencillo Core - SQL support
- * @version 2017.104
+ * @version 2018.111
  * @category core
  * @see http://www.opensencillo.com
  * @author Bc. Peter Horváth
@@ -442,6 +442,14 @@ class mysqlInterface extends mysqlEdit
 			$values=$values.')';
 			$this->save.=$col.$values.';';
 		}
+	}
+	
+	/**
+	 * Get all tables in DB
+	 */
+	public function showtables()
+	{
+		$this->save.='SHOW TABLES;';
 	}
 	
 	/**

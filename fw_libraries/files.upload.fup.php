@@ -33,7 +33,7 @@ class upload
 	 */
 	protected function mimeTest($mime)
 	{
-		if(($mime == $_FILES['FileInput']['type'])&&(isset($mime)&&(!empty($mime))))
+		if(($mime == $_FILES['file']['type'])&&(isset($mime)&&(!empty($mime))))
 		{
 			$this->mime=true;
 		}
@@ -160,7 +160,7 @@ class upload
 	public function upload()
 	{
 		$this->status = array();
-		if(isset($_FILES["FileInput"])/* && $_FILES["FileInput"]["error"]== UPLOAD_ERR_OK*/)
+		if(isset($_FILES["file"])/* && $_FILES["file"]["error"]== UPLOAD_ERR_OK*/)
 		{
 			$UploadDirectory = $this->uploadDirectory; //specify upload directory ends with / (slash)
 			 
@@ -189,16 +189,16 @@ class upload
                 }
                 
 				//Is file size is less than allowed size.
-				if ($_FILES["FileInput"]["size"] > $this->size) 
+				if ($_FILES["file"]["size"] > $this->size) 
 				{
 					$this->status['code']="413";
                     return $this->status;
 				}
 				 
 				//allowed file type Server side check
-                if(in_array(strtolower($_FILES['FileInput']['type']),$this->mime)===true)
+                if(in_array(strtolower($_FILES['file']['type']),$this->mime)===true)
                 {
-                    $this->status['mime']=$_FILES['FileInput']['type'];
+                    $this->status['mime']=$_FILES['file']['type'];
                 }
                 else
                 {
@@ -211,10 +211,11 @@ class upload
 				$this->status['mode']='simple';
 			}
 			 
-			$File_Name          = strtolower($_FILES['FileInput']['name']);
+			$File_Name          = strtolower($_FILES['file']['name']);
+			$File_Name_EXP      = explode('.',$File_Name);
 			$File_Ext           = substr($File_Name, strrpos($File_Name, '.')); //get file extention
-			$Random_Number      = rand(0, 9999999999).date('YmdHis'); //Random number to be added to name.
-			$NewFileName        = $Random_Number.$File_Ext; //new file name
+			$Random_Number      = date('YmdHis'); //Random number to be added to name.
+			$NewFileName        = $File_Name_EXP[0].'-'.$Random_Number.$File_Ext; //new file name
 			
 			$this->uploadInfo = array('oldName'=>$File_Name,
 									  'ext'=>$File_Ext,
@@ -226,7 +227,7 @@ class upload
 			{
 			    mkdir($UploadDirectory,0777);
 			}
-			if(move_uploaded_file($_FILES['FileInput']['tmp_name'], $UploadDirectory.$NewFileName))
+			if(move_uploaded_file($_FILES['file']['tmp_name'], $UploadDirectory.$NewFileName))
 			{
 				// do other stuff
 				$this->status['code']="200";
@@ -236,6 +237,8 @@ class upload
 			else
 			{
 				$this->status['code']="417";
+				$this->status['err_path']=$UploadDirectory.$NewFileName;
+				$this->status['err_msg']='Can not open directory!';
 			}
 			
 		}

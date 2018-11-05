@@ -25,25 +25,13 @@
 						</div>
 					</div>
 				</div>
-				<!-- /page content -->
-			</div>
-			<!-- footer content -->
-		</div>
-		<div id="custom_notifications" class="custom-notifications dsp_none">
-			<ul class="list-unstyled notifications clearfix" data-tabbed_notifications="notif-group">
-			</ul>
-			<div class="clearfix"></div>
-			<div id="notif-group" class="tabbed_notifications"></div>
-		</div>
-		<script src="<?=$this->js;?>js/bootstrap.min.js"></script>
-		<!-- bootstrap progress js -->
-		<script src="<?=$this->js;?>js/progressbar/bootstrap-progressbar.min.js"></script>
-		<script src="<?=$this->js;?>js/nicescroll/jquery.nicescroll.min.js"></script>
-		<!-- icheck -->
-		<script src="<?=$this->js;?>js/icheck/icheck.min.js"></script>
-		<script src="<?=$this->js;?>js/custom.js"></script>
-		<!-- pace -->
-		<script src="<?=$this->js;?>js/pace/pace.min.js"></script>
-		<!-- /footer content -->
-	</body>
-</html>
+				<script src="<?=$this->js;?>js/bootstrap.min.js"></script>
+				<!-- bootstrap progress js -->
+				<script src="<?=$this->js;?>js/progressbar/bootstrap-progressbar.min.js"></script>
+				<script src="<?=$this->js;?>js/nicescroll/jquery.nicescroll.min.js"></script>
+				<!-- icheck -->
+				<script src="<?=$this->js;?>js/icheck/icheck.min.js"></script>
+				<script src="<?=$this->js;?>js/custom.js"></script>
+				<!-- pace -->
+				<script src="<?=$this->js;?>js/pace/pace.min.js"></script>
+				<!-- /footer content -->

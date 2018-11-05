@@ -165,13 +165,20 @@ class headerSeo
 		$this->script2end=true;
 	}
 	/**
-	 * Save SEO and generate header content
+	 * Standard save SEO and generate header content (with HTML tag)
 	 * @return string
 	 */
 	public function save()
 	{
-		$this->seo = $this->header['doctype-def'].PHP_EOL;
-		$this->seo .= (isset($this->header['html-def-snippet'])?$this->header['html-def-snippet']:$this->header['html-def']).PHP_EOL;
+		$this->seo = $this->header['doctype-def'].PHP_EOL.(isset($this->header['html-def-snippet'])?$this->header['html-def-snippet']:$this->header['html-def']).PHP_EOL.$this->saveWithoutStructureTag().$this->body;
+		return $this->seo;
+	}
+	/**
+	 * Save SEO and generate header content (in minimal scope)
+	 * @return string
+	 */
+	public function saveWithoutStructureTag()
+	{
 		$this->seo .= $this->header['charset-def'].PHP_EOL;
 		$this->seo .= $this->header['responsive-def'].PHP_EOL;
 		$this->seo .= $this->header['title-def'].PHP_EOL;
@@ -207,8 +214,6 @@ class headerSeo
 				$this->info['head'][] = $key;
 			}
 		}
-		
-		$this->seo .= $this->body;
 		return $this->seo;
 	}
 	

@@ -33,6 +33,7 @@
 				    <div class="col-md-6">
 					  <button id="create_blank_page" type="button" class="btn btn-primary">Create page</button>
 					  <button id="create_blank_banner" type="button" class="btn btn-info">Create banner</button>
+					  <button id="create_blank_newsletter" type="button" class="btn btn-info">Create newsletter</button>
 				    </div>
 				  </div>
                 </div>
@@ -41,28 +42,7 @@
 
         </div>
 
-        <!-- footer content -->
-		<footer>
-			<div class="copyright-info">
-				<p class="pull-right">Powered by <a href="https://opensencillo.com">OpenSencillo</a>
-				</p>
-			</div>
-			<div class="clearfix"></div>
-		</footer>
-		<!-- /footer content -->
-      </div>
-      <!-- /page content -->
 
-    </div>
-
-  </div>
-
-  <div id="custom_notifications" class="custom-notifications dsp_none">
-    <ul class="list-unstyled notifications clearfix" data-tabbed_notifications="notif-group">
-    </ul>
-    <div class="clearfix"></div>
-    <div id="notif-group" class="tabbed_notifications"></div>
-  </div>
 
   <!--<script src="<?=$this->js;?>/js/bootstrap.min.js"></script>-->
 
@@ -108,6 +88,4 @@
       });
     });
   </script>
-</body>
 
-</html>

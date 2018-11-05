@@ -10,7 +10,7 @@
                 <div class="x_content">
 
                   <form action="<?=$this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->url.'/pages/edit/save?i='.$_GET['i'];?>" method="post" class="form-horizontal form-label-left" novalidate>
-                    <span class="section">Edit article</span>
+                    <span class="section">Edit <?=($_GET['newsleter']!=1?'article':'newsletter');?></span>
 
                     <div class="item form-group">
                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Main header <span class="required">*</span>
@@ -49,8 +49,8 @@
                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="article">Article<?=(($_GET['tinymce']=='0')?' source':' editor');?> <span class="required">*</span>
                       </label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
-                        <textarea name="article" class="form-control <?=(($_GET['tinymce']=='0')?'tinymce-disabled':'tinymce');?>" rows="10" placeholder=""><?=$this->getPageContent('article',0);?></textarea>
-                      </div>
+                        <textarea name="article" <?=(($_GET['tinymce']=='0')?'wrap="off" ':'');?>class="form-control <?=(($_GET['tinymce']=='0')?'tinymce-disabled':'tinymce');?>" rows="10" placeholder=""><?=$this->getPageContent('article',0);?></textarea>
+					  </div>
                     </div>
 					<div class="ln_solid"></div>
 					<div class="item form-group">
@@ -81,12 +81,19 @@
                     <div class="ln_solid"></div>
                     <div class="form-group">
                       <div class="col-md-6 col-md-offset-3">
-                        <button id="send" type="submit" class="btn btn-success">Submit</button>
-						<?if($_GET['tinymce']!='0'):?>
-					    <button id="send-reload-source" data-href="<?=$this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->url.'/pages/edit?i='.$_GET['i'].'&tinymce=0';?>" type="button" class="btn btn-default">Source Code</button>
+					    <?if($_GET['newsleter']!='1'):?>
+						<input type="hidden" name="newsletter" value="false">
+                        <button type="submit" class="btn btn-success">Save as Article</button>
 						<?else:?>
-						<button id="send-reload-tinymce" data-href="<?=$this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->url.'/pages/edit?i='.$_GET['i'];?>" type="button" class="btn btn-default">Editor</button>
+						<input type="hidden" name="newsletter" value="true">
+						<button type="submit" class="btn btn-primary">Save as Newsletter</button>
 						<?endif;?>
+						<?if($_GET['tinymce']!='0'):?>
+					    <button id="send-reload-source" data-href="<?=$this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->url.'/pages/edit?i='.$_GET['i'].'&tinymce=0&newsleter='.($_GET['newsleter']<=0?'0':$_GET['newsleter']);?>" type="button" class="btn btn-default">Source Code</button>
+						<?else:?>
+						<button id="send-reload-tinymce" data-href="<?=$this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->url.'/pages/edit?i='.$_GET['i'].'&tinymce=1&newsleter='.($_GET['newsleter']<=0?'0':$_GET['newsleter']);?>" type="button" class="btn btn-default">Editor</button>
+						<?endif;?>
+						<button id="send-reload-newsleter" data-href="<?=$this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->url.'/pages/edit?i='.$_GET['i'].'&tinymce='.($_GET['tinymce']==''?'1':$_GET['tinymce']).'&newsleter='.($_GET['newsleter']<=0?'1':'0');?>" type="button" class="btn btn-default"><?=($_GET['newsleter']<=0?'Newsleter':'Article');?></button>
                       </div>
                     </div>
                   </form>
@@ -97,28 +104,7 @@
 
         </div>
 
-        <!-- footer content -->
-		<footer>
-			<div class="copyright-info">
-				<p class="pull-right">Powered by <a href="https://opensencillo.com">OpenSencillo</a>
-				</p>
-			</div>
-			<div class="clearfix"></div>
-		</footer>
-		<!-- /footer content -->
-      </div>
-      <!-- /page content -->
 
-    </div>
-
-  </div>
-
-  <div id="custom_notifications" class="custom-notifications dsp_none">
-    <ul class="list-unstyled notifications clearfix" data-tabbed_notifications="notif-group">
-    </ul>
-    <div class="clearfix"></div>
-    <div id="notif-group" class="tabbed_notifications"></div>
-  </div>
 
   <!--<script src="<?=$this->js;?>/js/bootstrap.min.js"></script>-->
 
@@ -175,22 +161,24 @@
         $('form .alert').remove();
     }).prop('checked', false);*/
   </script>
+  <?if($_GET['tinymce']!='0'):?>
   <!-- form tinymce -->
   <script src="<?=$this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->url;?>/fw_templates/additional/admin/production/js/editor/tinymce/tinymce.min.js"></script>
   <script>
   $(document).ready(function(){
 	tinymce.init({
 		selector:'textarea.tinymce',
-		plugins: 'print preview fullpage powerpaste searchreplace autolink directionality advcode visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount tinymcespellchecker a11ychecker imagetools mediaembed  linkchecker contextmenu colorpicker textpattern help',
+		plugins: 'print preview fullpage searchreplace autolink directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount imagetools contextmenu colorpicker textpattern help',
 		toolbar1: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat',
 		image_advtab: true,
-		content_css: [
-			'//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
-			'//www.tinymce.com/css/codepen.min.css'
-		]
 	});
-	$('#send-reload-source,#send-reload-tinymce').click(function(){
-		var response = confirm("Changes are not saved, do you want to continue?");
+  });
+  </script>
+  <?endif;?>
+  <script>
+  $(document).ready(function(){
+	$('#send-reload-source,#send-reload-tinymce,#send-reload-newsleter,#send-reload-send-newsleter').click(function(){
+		var response = confirm("Please save changes before continue.\n\nDo you want to continue?");
 		if(response)
 		{
 			window.open($(this).data('href'),'_self');
@@ -199,6 +187,4 @@
   });
   </script>
 
-</body>
 
-</html>

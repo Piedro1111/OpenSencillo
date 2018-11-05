@@ -49,13 +49,27 @@ $(document).ready(function(){
 	$("#send_login").click(function(){
 		var email_var = $('#email').val();
 		var pass_var = $('#pass').val();
-        $.post(server_name+"/ajax.slot.php",{
-			atype:'login',
-			email:email_var,
-			pass:pass_var
-		},function(data){
-			location.reload();
-		});
+		var i = 0;
+		while(i<3)
+		{
+			$.post(server_name+"/ajax.slot.php",{
+				atype:'login',
+				email:email_var,
+				pass:pass_var,
+				datahttp:pass_var
+			},function(data){
+				var data = JSON.parse(data);
+				if(data.code<299)
+				{
+					location.reload();
+				}
+				else
+				{
+					alert('Error, try again.');
+				}
+			});
+			i++;
+		}
     });
     $("#send_fgot").click(function(){
 		var email_var = $('#email').val();
@@ -212,6 +226,22 @@ $(document).ready(function(){
 			}
 		});
     });
+	$("#create_blank_newsletter").click(function(){
+		$.post(server_name+"/ajax.slot.php",{
+			atype:'create::page::blank'
+		},function(data){
+			var data = JSON.parse(data);
+			switch(data.code)
+			{
+				case 200:
+					alert('New newsleter ID ' + data.inew + ' is created.');
+					window.open(server_name+'/pages/banner?i='+data.mnew+'&tinymce=1&newsleter=1','_self');
+				break;
+				default:
+					alert('Error ' + data.code + ' when creating a banner.');
+			}
+		});
+    });
 	$("#create_blank_form").click(function(){
 		$.post(server_name+"/ajax.slot.php",{
 			atype:'create::form::blank'
@@ -254,7 +284,7 @@ $(document).ready(function(){
 			response:200
 		},function(data){
 			//checkServerStatus();
-			location.reload();
+			//location.reload();
 			console.log(data);
 		});
 	});
@@ -344,6 +374,19 @@ $(document).ready(function(){
 				location.reload();
 			});
 		}
+	});
+	$('.tools a.remove-image').click(function(){
+		var removecode = $(this).data('remove');
+		var removepath = $(this).data('path');
+		$.post(server_name+'/ajax.slot.php',{
+			atype:'gallery::remove',
+			remove:removepath,
+			code:removecode
+		},function(data){
+			var data = JSON.parse(data);
+			console.log(data.removecode);
+			$('#'+data.removecode).remove();
+		});
 	});
 });
 function checkServerStatus()

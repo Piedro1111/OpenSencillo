@@ -74,6 +74,7 @@
                     <div class="form-group">
                       <div class="col-md-6 col-md-offset-3">
                         <button id="send" type="submit" class="btn btn-success">Submit</button>
+						<a href="?u=<?=$_GET['u'];?>&amp;gdpr=list" class="btn btn-info">Personal data</a>
                       </div>
                     </div>
                   </form>
@@ -83,29 +84,45 @@
             </div>
 
         </div>
+<?php
+$gdpr=new gdpr;
+$gdpr->getAllUserDataFromDB($this->profile('email'),$_GET['u']);
+?>
+		<?if($_GET['gdpr']=='list'):?>
+		<div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="x_panel">
+                <div class="x_title">
+                  <h2>Personal data <small>all</small></h2>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <table id="sencillo-gdpr-table" class="table table-striped responsive-utilities jambo_table">
+                    <thead>
+                      <tr class="headings">
+                        <th>Group </th>
+                        <th>Data </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <?=$gdpr->gdprtable();?>
+                    </tbody>
 
-        <!-- footer content -->
-		<footer>
-			<div class="copyright-info">
-				<p class="pull-right">Powered by <a href="https://opensencillo.com">OpenSencillo</a>
-				</p>
-			</div>
-			<div class="clearfix"></div>
-		</footer>
-		<!-- /footer content -->
-      </div>
-      <!-- /page content -->
+                  </table>
+				  <br>
+				  <div class="form-group">
+					  <div class="col-md-6 col-md-offset-3">
+						<a download href="<?=$this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->url.'/fw_media/gdpr/'.$gdpr->gdprfilename();?>" class="btn btn-info">Download raw data</a>
+						<a id="remove-profile" href="#remove_profile" class="btn btn-danger">Remove profile and all data</a>
+					  </div>
+				  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+		<?endif;?>
 
-    </div>
 
-  </div>
-
-  <div id="custom_notifications" class="custom-notifications dsp_none">
-    <ul class="list-unstyled notifications clearfix" data-tabbed_notifications="notif-group">
-    </ul>
-    <div class="clearfix"></div>
-    <div id="notif-group" class="tabbed_notifications"></div>
-  </div>
 
   <!--<script src="<?=$this->js;?>/js/bootstrap.min.js"></script>-->
 
@@ -163,6 +180,4 @@
     }).prop('checked', false);*/
   </script>
 
-</body>
 
-</html>

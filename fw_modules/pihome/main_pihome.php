@@ -49,23 +49,22 @@ class pihome extends construct
 	 */
 	final private function getExtHDDstatus()
 	{
-		//ExtHDD status parser
-		/*if($this->is_json($this->ExtHDD))
-		{*/
-		$this->ExtHDD = file_get_contents('./switchexthdd', true);
-		$this->ExtHDD = json_decode($this->ExtHDD,true);
+		$this->mysqlinterface->select(array(
+			'sensors'=>array(
+				'condition'=>array(
+					'`sensor`="switchExtHdd"'
+				),
+				'sort'=>array(
+					'desc'=>'`id`'
+				)
+			)
+		));
+		
+		$out = $this->mysqlinterface->execute();
+		$this->ExtHDD = json_decode($out[0]['data'],true);
 		$this->ExtHDDcontent = fopen ("http://".$this->ExtHDD['ip'], "r");
-		if (!$this->ExtHDDcontent) {
-			exit;
-		}
 		$this->ExtHDDcontent = stream_get_contents($this->ExtHDDcontent);
 		$this->HDDerr = 0;
-		/*}
-		else
-		{
-			$this->ExtHDDcontent = 1;
-			$this->HDDerr = 1;
-		}*/
 		return $this->ExtHDD;
 	}
 	
@@ -78,8 +77,19 @@ class pihome extends construct
 		//condensation level parser
 		try
 		{
-			$this->Condensation = file_get_contents('./watercondensator', true);
-			$this->Condensation = json_decode($this->Condensation,true);
+			$this->mysqlinterface->select(array(
+				'sensors'=>array(
+					'condition'=>array(
+						'`sensor`="waterCondensator"'
+					),
+					'sort'=>array(
+						'desc'=>'`id`'
+					)
+				)
+			));
+			
+			$out = $this->mysqlinterface->execute();
+			$this->Condensation = json_decode($out[0]['data'],true);
 			$this->CondensationSTS = $this->Condensation['msg'];
 			$this->CondensationLVL = $this->Condensation['water'];
 		}
@@ -98,7 +108,19 @@ class pihome extends construct
 	final private function getTemperatures()
 	{
 		//CPU temperature
-		$this->playerCPUtemperature = file_get_contents('./piplayertemperature', true);
+		$this->mysqlinterface->select(array(
+			'sensors'=>array(
+				'condition'=>array(
+					'`sensor`="piplayer"'
+				),
+				'sort'=>array(
+					'desc'=>'`id`'
+				)
+			)
+		));
+		
+		$out = $this->mysqlinterface->execute();
+		$this->playerCPUtemperature = $out[0]['data'];
 		
 		$this->CPUtemperature = file_get_contents('./temperature', true);
 		$this->CPUtemperature = explode('=',$this->CPUtemperature);

@@ -4,7 +4,18 @@
           <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="x_panel">
                 <div class="x_title">
-                  <h2>Menu items <small>all</small></h2>
+                  <h2>Menu items <small><?=(($_GET['filter']==false)?'All':'Only filled Item')?></small></h2>
+				  <ul class="nav navbar-right panel_toolbox">
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li<?=(($_GET['filter']==false)?' class="bg-info text-white"':'')?>><a href="<?=$this->fullpathwithoutget;?>#default">Filter disabled</a>
+                        </li>
+                        <li<?=(($_GET['filter']==true)?' class="bg-info text-white"':'')?>><a href="<?=$this->fullpathwithoutget;?>?filter=true&amp;item=filled#filter">Filter enabled</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
                   <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
@@ -43,28 +54,7 @@
 
         </div>
 
-        <!-- footer content -->
-		<footer>
-			<div class="copyright-info">
-				<p class="pull-right">Powered by <a href="https://opensencillo.com">OpenSencillo</a>
-				</p>
-			</div>
-			<div class="clearfix"></div>
-		</footer>
-		<!-- /footer content -->
-      </div>
-      <!-- /page content -->
 
-    </div>
-
-  </div>
-
-  <div id="custom_notifications" class="custom-notifications dsp_none">
-    <ul class="list-unstyled notifications clearfix" data-tabbed_notifications="notif-group">
-    </ul>
-    <div class="clearfix"></div>
-    <div id="notif-group" class="tabbed_notifications"></div>
-  </div>
 
   <!--<script src="<?=$this->js;?>/js/bootstrap.min.js"></script>-->
 
@@ -110,6 +100,4 @@
       });
     });
   </script>
-</body>
 
-</html>

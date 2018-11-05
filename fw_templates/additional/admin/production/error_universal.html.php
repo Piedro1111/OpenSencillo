@@ -1,4 +1,3 @@
-	<body class="nav-md">
 		<div class="container body">
 			<div class="main_container">
 				<!-- page content -->
@@ -29,12 +28,6 @@
 			</div>
 			<!-- footer content -->
 		</div>
-		<div id="custom_notifications" class="custom-notifications dsp_none">
-			<ul class="list-unstyled notifications clearfix" data-tabbed_notifications="notif-group">
-			</ul>
-			<div class="clearfix"></div>
-			<div id="notif-group" class="tabbed_notifications"></div>
-		</div>
 		<script src="<?=$template->path();?>js/bootstrap.min.js"></script>
 		<!-- bootstrap progress js -->
 		<script src="<?=$template->path();?>js/progressbar/bootstrap-progressbar.min.js"></script>
@@ -45,5 +38,3 @@
 		<!-- pace -->
 		<script src="<?=$template->path();?>js/pace/pace.min.js"></script>
 		<!-- /footer content -->
-	</body>
-</html>

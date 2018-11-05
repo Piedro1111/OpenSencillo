@@ -72,14 +72,21 @@ foreach($storedconfig as $key=>$val)
 			<strong>#".($key+1)." slide</strong> (<a href='#' onclick='removeDataGroup({$key});'>Remove</a>)
 		</div>
 		<div class='item form-group banner-group-{$key}' data-group='{$key}'>
-		  <label class='control-label col-md-3 col-sm-3 col-xs-12' for='url'>Banner
+		  <label class='control-label col-md-3 col-sm-3 col-xs-12'>Image
+		  </label>
+		  <div class='col-md-6 col-sm-6 col-xs-12'>
+			<img src='{$val['url']}' alt='{$val['maintext']}' style='width:100%;min-width:30px;min-height:30px;border:1px solid gray;background-color:gray;background-image: url({$val['url']});'>
+		  </div>
+		</div>
+		<div class='item form-group banner-group-{$key}' data-group='{$key}'>
+		  <label class='control-label col-md-3 col-sm-3 col-xs-12' for='url[]'>Banner
 		  </label>
 		  <div class='col-md-6 col-sm-6 col-xs-12'>
 			<input name='url[]' class='form-control col-md-7 col-xs-12' type='url' value='{$val['url']}' placeholder='URL'>
 		  </div>
 		</div>
 		<div class='item form-group banner-group-{$key}' data-group='{$key}'>
-		  <label class='control-label col-md-3 col-sm-3 col-xs-12' for='url'>Text
+		  <label class='control-label col-md-3 col-sm-3 col-xs-12' for='maintext[]'>Text
 		  </label>
 		  <div class='col-md-3 col-sm-3 col-xs-12'>
 			<input name='maintext[]' class='form-control col-md-7 col-xs-12' type='text' value='{$val['maintext']}' placeholder='Main text'>
@@ -89,14 +96,21 @@ foreach($storedconfig as $key=>$val)
 		  </div>
 		</div>
 		<div class='item form-group banner-group-{$key}' data-group='{$key}'>
-		  <label class='control-label col-md-3 col-sm-3 col-xs-12' for='url'>Action URL
+		  <label class='control-label col-md-3 col-sm-3 col-xs-12' for='actionurl[]'>Action URL
 		  </label>
 		  <div class='col-md-6 col-sm-6 col-xs-12'>
 			<input name='actionurl[]' class='form-control col-md-7 col-xs-12' type='text' value='{$val['actionurl']}' placeholder='Action URL'>
 		  </div>
 		</div>
 		<div class='item form-group banner-group-{$key}' data-group='{$key}'>
-		  <label class='control-label col-md-3 col-sm-3 col-xs-12' for='url'>Config data
+		  <label class='control-label col-md-3 col-sm-3 col-xs-12' for='button[]'>Button label
+		  </label>
+		  <div class='col-md-6 col-sm-6 col-xs-12'>
+			<input name='button[]' class='form-control col-md-7 col-xs-12' type='text' value='{$val['button']}' placeholder='Button label'>
+		  </div>
+		</div>
+		<div class='item form-group banner-group-{$key}' data-group='{$key}'>
+		  <label class='control-label col-md-3 col-sm-3 col-xs-12' for='configdata[]'>Overlay config
 		  </label>
 		  <div class='col-md-6 col-sm-6 col-xs-12'>
 			<input name='configdata[]' class='form-control col-md-7 col-xs-12' type='text' value='{$val['configdata']}' placeholder='Config data'>
@@ -150,28 +164,7 @@ foreach($storedconfig as $key=>$val)
 
         </div>
 
-        <!-- footer content -->
-		<footer>
-			<div class="copyright-info">
-				<p class="pull-right">Powered by <a href="https://opensencillo.com">OpenSencillo</a>
-				</p>
-			</div>
-			<div class="clearfix"></div>
-		</footer>
-		<!-- /footer content -->
-      </div>
-      <!-- /page content -->
 
-    </div>
-
-  </div>
-
-  <div id="custom_notifications" class="custom-notifications dsp_none">
-    <ul class="list-unstyled notifications clearfix" data-tabbed_notifications="notif-group">
-    </ul>
-    <div class="clearfix"></div>
-    <div id="notif-group" class="tabbed_notifications"></div>
-  </div>
 
   <!--<script src="<?=$this->js;?>/js/bootstrap.min.js"></script>-->
 
@@ -234,7 +227,7 @@ foreach($storedconfig as $key=>$val)
   $(document).ready(function(){
 	tinymce.init({
 		selector:'textarea.tinymce',
-		plugins: 'print preview fullpage powerpaste searchreplace autolink directionality advcode visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount tinymcespellchecker a11ychecker imagetools mediaembed  linkchecker contextmenu colorpicker textpattern help',
+		plugins: 'print preview fullpage searchreplace autolink directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount imagetools contextmenu colorpicker textpattern help',
 		toolbar1: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat',
 		image_advtab: true,
 		content_css: [
@@ -256,6 +249,4 @@ foreach($storedconfig as $key=>$val)
   }
   </script>
 
-</body>
 
-</html>

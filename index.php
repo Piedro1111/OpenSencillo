@@ -2,7 +2,7 @@
 /*~ index.php
 .---------------------------------------------------------------------------.
 |  Software: OpenSencillo Index                                             |
-|   Version: 2017.104                                                       |
+|   Version: 2018.110                                                       |
 |   Contact: info@opensencillo.com                                          |
 | ------------------------------------------------------------------------- |
 |    Author: Bc. Peter Horváth (original founder)                           |
@@ -15,20 +15,28 @@
 | FITNESS FOR A PARTICULAR PURPOSE.                                         |
 '---------------------------------------------------------------------------'
 ~*/
-if(file_exists('yourcode.php'))
+if((strpos($_GET['p'],"'")!==false)||(strpos($_GET['p'],'"')!==false))
 {
-	$lifetime=3600;
-	session_start();
-	setcookie(session_name(),session_id(),time()+$lifetime);
-	require(__DIR__ . '/basicstrap.php');
-	$core = new coreSencillo;
-	$data = $core->version_info();
-	
-	setcookie('OpenSencillo',$data['HPE'],time()+$lifetime);
-	require(__DIR__ . '/yourcode.php');
+	die('403 Incorrect URL');
 }
-else 
+else
 {
-	header('Location: http://'.$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'].'install.php');
+	if(file_exists('yourcode.php'))
+	{
+		$lifetime=3600*8;
+		session_start();
+		setcookie(session_name(),session_id(),time()+$lifetime);
+		require(__DIR__ . '/basicstrap.php');
+		$core = new coreSencillo;
+		$data = $core->version_info();
+		
+		setcookie('OpenSencillo',$data['HPE'],time()+$lifetime);
+		require(__DIR__ . '/yourcode.php');
+	}
+	else 
+	{
+		header('Location: http://'.$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'].'install.php');
+	}
 }
+
 ?>

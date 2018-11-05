@@ -1,3 +1,7 @@
+<?php
+echo $this->seo->save();
+$wmsg=$this->readMsgLog();
+?>
 	<body class="nav-md">
 		<div class="container body">
 			<div class="main_container">
@@ -30,8 +34,11 @@
 <?php
 foreach($this->mainmenu as $menuitem)
 {
-	echo '<li><a href="'.$this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->urlprefix.(($this->urlprefix!='')?'/':'').$menuitem['link'].'"><i class="'.$menuitem['icon'].'"></i> '.$menuitem['name'].'</a>
+	if($menuitem['perm']>1000)
+	{
+		echo '<li><a href="'.$this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->urlprefix.(($this->urlprefix!='')?'/':'').$menuitem['link'].'"><i class="'.$menuitem['icon'].'"></i> '.$menuitem['name'].'</a>
 		</li>';
+	}
 }
 ?>
 								</ul>
@@ -51,7 +58,7 @@ foreach($this->mainmenu as $menuitem)
 							<ul class="nav navbar-nav navbar-right">
 								<li class="">
 									<a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-										<img src="<?=$this->js;?>/images/pi2.png" alt=""><?=$_SESSION['login'];?>
+										<!--<img src="<?=$this->js;?>/images/pi2.png" alt="">--><?=$_SESSION['login'];?>
 										<?if($logman->checkSession()):?><span class=" fa fa-angle-down"></span><?endif;?>
 									</a>
 									<?if($logman->checkSession()):?>
@@ -67,24 +74,31 @@ foreach($this->mainmenu as $menuitem)
 								<li role="presentation" class="dropdown">
 									<a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
 										<i class="fa fa-envelope-o"></i>
-										<span class="badge bg-green">0</span>
+										<?if($wmsg['ctr'][0]['count']>0):?><span class="badge bg-green"><?=$wmsg['ctr'][0]['count'];?></span><?endif;?>
 									</a>
+									<?if($wmsg['ctr'][0]['count']>0):?>
 									<ul id="menu1" class="dropdown-menu list-unstyled msg_list animated fadeInDown" role="menu">
-										<li>
-											<a>
-												<!--<span class="image">
-													<img src="images/img.jpg" alt="Profile Image" />
-												</span>-->
-												<span>
-													<span>Welcome <?=$_SESSION['login'];?></span>
-													<span class="time"><?=$_SESSION['start'];?></span>
-												</span>
-												<span class="message">
-													No aditional data.
-												</span>
-											</a>
-										</li>
+<?php
+foreach($wmsg['data'] as $item)
+{
+	if($logman->checkSession())
+	{
+		echo '<li>
+			<a>
+				<span>
+					<span>Event #'.$item['id'].'</span>
+					<span class="time">'.$item['datetime'].'</span>
+				</span>
+				<span class="message">
+					'.$item['message'].'
+				</span>
+			</a>
+		</li>';
+	}
+}
+?>
 									</ul>
+									<?endif;?>
 								</li>
 								<?endif;?>
 							</ul>

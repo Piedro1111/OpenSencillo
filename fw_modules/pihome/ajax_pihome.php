@@ -149,7 +149,7 @@ switch($ajax['atype'])
 		$mysql->execute();
 	break;
 	case 'switchExtHdd::action':
-		$ExtHDD = file_get_contents('./switchexthdd', true);
+		$ExtHDD= file_get_contents('./switchexthdd', true);
 		$ExtHDD = json_decode($ExtHDD,true);
 		if(($_SESSION['perm']>=1110)&&($logman->checkSession()))
 		{

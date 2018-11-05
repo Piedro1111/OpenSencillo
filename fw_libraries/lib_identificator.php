@@ -1,5 +1,240 @@
 <?php
 /**
+ * Modules model
+ */
+class construct
+{
+	public $url;
+	public $urlprefix;
+	public $port;
+	public $css;
+	public $js;
+	public $stn;
+	public $protocol;
+	public $seo;
+	public $linkmngr;
+	public $logman;
+	public $template;
+	public $usertype;
+	public $mainmenu;
+	public $libtype;
+	public $alltemplates;
+	public $mysqlinterface;
+	public $page;
+	public $server_url;
+	public $server_clean;
+	public $email;
+	public $emailhead;
+	public $fullpath;
+	public $fullpathwithoutget;
+	
+	protected $mediapath;
+	protected $video;
+	protected $music;
+	protected $images;
+	
+	protected $defaultcfg;
+	
+	private $pageInURL;
+	
+	final public function __construct($page=false)
+	{
+		error_reporting(E_ERROR | E_PARSE);
+		//session_start();
+		
+		$this->mediapath = './fw_media/';
+		
+		if($page)
+		{
+			$this->setPage($page);
+		}
+		
+		$this->email = new mailGen;
+		$this->emailhead = new headerSeo;
+		
+		$_SESSION['count']++;
+		
+		if($this->getPage()!='ajax.slot.php')
+		{
+			$this->seo = new headerSeo;
+			$this->linkmngr = new url;
+		}
+		$this->logman = new logMan;
+		$this->mysqlinterface = new mysqlinterface;
+
+		$this->mysqlinterface->config();
+		$this->mysqlinterface->connect();
+		
+		//main
+		if($this->getPage()!='ajax.slot.php')
+		{
+			$this->mainLogic();
+		}
+	}
+	
+	/**
+	* Install basic configuration for mods
+	* @param mod modname string
+	* @param protocol 'http' or 'https' string
+	* @param template path string
+	*/
+	final public function install($mod,$protocol,$template)
+	{
+		$mysql->mysqlinterface->insert(array(
+			'virtual_system_config'=>array(
+				'id'=>'',
+				'module'=>$mod,
+				'perm'=>0,
+				'switch'=>1,
+				'function'=>'mod:'.$mod,
+				'command'=>$mod,
+				'commander'=>0
+			)
+		));
+		$mysql->mysqlinterface->insert(array(
+			'virtual_system_config'=>array(
+				'id'=>'',
+				'module'=>$mod,
+				'perm'=>0,
+				'switch'=>1,
+				'function'=>'cfg:'.$protocol.','.$mod.','.$template,
+				'command'=>$mod,
+				'commander'=>0
+			)
+		));
+		$mysql->mysqlinterface->execute();
+	}
+	
+	/**
+	 * Set and get pages
+	 */
+	final public function setPage($page)
+	{
+		$this->pageInURL = $page;
+	}
+	final public function getPage()
+	{
+		return $this->pageInURL;
+	}
+	
+	/**
+	 * Media list
+	 */
+	final public function setupGallery()
+	{
+		$this->video = scandir($this->mediapath.'media_videos/');
+		$this->images = scandir($this->mediapath.'media_imgs/');
+		$this->music = scandir($this->mediapath.'media_sounds/');
+	}
+	
+	/**
+	 * Read config data
+	 * 
+	 * @return array
+	 */
+	final public function readVSC($mod)
+	{
+		$this->mysqlinterface->select(array(
+			'virtual_system_config'=>array(
+				'condition'=>array(
+					'`module`="'.$mod.'"',
+					'`function` LIKE "cfg:%"',
+					'`command` LIKE "config_mod:%"',
+					'`switch`=1'
+				)
+			)
+		));
+		$cfg = $this->mysqlinterface->execute();
+		$cfg = explode(':',$cfg[0]['command']);
+		$cfg = explode(',',$cfg[1]);
+		
+		return $cfg;
+	}
+	
+	/**
+	 * Configure mod
+	*/
+	final public function config_mod($protocol,$url,$template)
+	{
+		$this->protocol = $protocol; //'http'
+		$this->url = $url; //'pihome'
+		$this->urlprefix = $this->url;
+		$this->port = ':'.$_SERVER['SERVER_PORT'];
+		$this->template = $template; //'/fw_templates/additional/rpi/production'
+		$this->css = $this->urlprefix.$this->template;
+		$this->js = $this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.(($this->url!='')?'/'.$this->url:$this->url).$this->template;
+		$this->server_url = $this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.(($this->url!='')?'/'.$this->url:$this->url);
+		$this->server_clean = $this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port;
+		$this->fullpath = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://{$_SERVER[HTTP_HOST]}{$_SERVER[REQUEST_URI]}";
+		$this->fullpathwithoutget = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://{$_SERVER[HTTP_HOST]}".strtok($_SERVER["REQUEST_URI"],'?');
+		$this->stn = $this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.(($this->url!='')?'/'.$this->url:$this->url).'/shutdown';
+	}
+	
+	/**
+	 * Generate edit url universal
+	 * 
+	 * @return array
+	 */
+	final public function urlEdit($key,$template)
+	{
+		$this->mysqlinterface->select(array(
+			'menu'=>array(
+				'condition'=>array('`template_file`="'.$template.'"')
+			)
+		));
+		$out = $this->mysqlinterface->execute();
+		return $out[0][$key];
+	}
+	
+	/**
+	 * permDecode - decode basic permission if parameter perm is integer.
+	 * 
+	 * @param int $perm example $this->permDecode(1100)
+	 * 
+	 * @return string
+	 */
+	final protected function permDecode($perm=false)
+	{
+		if($perm===false)
+		{
+			$perm=$_SESSION['perm'];
+		}
+		$this->usertype = 'unknown';
+		
+		$this->mysqlinterface->select(array(
+			'perm_list'=>array(
+				'condition'=>array(
+					"`perm`='{$perm}'"
+				)
+			)
+		));
+		$permdata = $this->mysqlinterface->execute();
+		$this->usertype=$permdata[0]['usertype'];
+		
+		return $this->usertype;
+	}
+	
+	/**
+	 * Get full perm list
+	 */
+	final protected function permList()
+	{
+		$this->mysqlinterface->select(array(
+			'perm_list'=>array(
+				'condition'=>array(
+					"`id`>0"
+				),
+				'sort'=>array(
+					'asc'=>'perm'
+				)
+			)
+		));
+		$permlist = $this->mysqlinterface->execute();
+		return $permlist;
+	}
+}
+
+/**
  * Create connection to library
  * @name modules and library loader
  * @version 2017.104
@@ -68,6 +303,9 @@ class library
 					'`perm`>=0',
 					'`switch`=1',
 					'`function` LIKE "lib:%"'
+				),
+				'sort'=>array(
+					'asc'=>'sort'
 				)
 			)
 		));
@@ -86,6 +324,9 @@ class library
 					'`perm`>=0',
 					'`switch`=1',
 					'`function` LIKE "mod:%"'
+				),
+				'sort'=>array(
+					'asc'=>'sort'
 				)
 			)
 		));

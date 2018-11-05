@@ -48,10 +48,10 @@
                       </div>
                     </div>
                     <div class="item form-group">
-                      <label for="url" class="control-label col-md-3">Item URL <span class="required">*</span>
+                      <label for="url" class="control-label col-md-3">Item URL <!--<span class="required">*</span>-->
 					  </label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input id="url" name="url" type="text" required="required" class="form-control col-md-7 col-xs-12" value="<?=$this->menuItem('url');?>">
+                        <input id="url" name="url" type="text" class="form-control col-md-7 col-xs-12" value="<?=$this->menuItem('url');?>">
                       </div>
                     </div>
                     <div class="item form-group">
@@ -125,28 +125,7 @@
 
         </div>
 
-        <!-- footer content -->
-		<footer>
-			<div class="copyright-info">
-				<p class="pull-right">Powered by <a href="https://opensencillo.com">OpenSencillo</a>
-				</p>
-			</div>
-			<div class="clearfix"></div>
-		</footer>
-		<!-- /footer content -->
-      </div>
-      <!-- /page content -->
 
-    </div>
-
-  </div>
-
-  <div id="custom_notifications" class="custom-notifications dsp_none">
-    <ul class="list-unstyled notifications clearfix" data-tabbed_notifications="notif-group">
-    </ul>
-    <div class="clearfix"></div>
-    <div id="notif-group" class="tabbed_notifications"></div>
-  </div>
 
   <!--<script src="<?=$this->js;?>/js/bootstrap.min.js"></script>-->
 
@@ -193,6 +172,4 @@
     });
   </script>
 
-</body>
 
-</html>

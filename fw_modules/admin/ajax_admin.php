@@ -1,13 +1,5 @@
 <?php
-$logman=new logMan;
-$email=new mailGen;
-$emailhead=new headerSeo;
-
-$mysql = new mysqlInterface;
-$mysql->config();
-$mysql->connect();
-
-$log=$logman->getSignedUser();
+$log=$this->logman->getSignedUser();
 $status=array(
 	'called'=>$_POST['atype'],
 	'date'=>date('Y-m-d'),
@@ -22,21 +14,26 @@ if($_POST['atype']!='')
 switch($ajax['atype'])
 {
 	case 'login':
-		$status = $logman->login($ajax);
-		//var_dump($logman->testout());
+		if(is_null($ajax['pass']))
+		{
+			$ajax['pass']=$ajax['datahttp'];
+		}
+		$status = $this->logman->login($ajax);
+		//var_dump($_POST);
 		break;
 	case 'ereg':
-		$logman->openTable('users');
+		$this->logman->openTable('users');
 		if(filter_var($_POST[$ajax['atype'].'email'], FILTER_VALIDATE_EMAIL))
 		{
 			if($_POST[$ajax['atype'].'pass']===$_POST[$ajax['atype'].'rtp'])
 			{
-				$status['user']=$logman->output("`login`='".strtolower($ajax[$ajax['atype'].'email'])."'","`id` ASC",1);
+				$status['user']=$this->logman->output("`login`='".strtolower($ajax[$ajax['atype'].'email'])."'","`id` ASC",1);
 				if(empty($status['user']['line'][1][0]))
 				{
 					try {
+						$this->msgLog('admin::'.$ajax['atype'],'User '.$_POST[$ajax['atype'].'email'].' registered.');
 						$name = explode(" ",$_POST[$ajax['atype'].'fullname']);
-						$logman->insert("'first_use',0,'" . strtolower($_POST[$ajax['atype'].'email']) . "',MD5('" . $_POST[$ajax['atype'].'pass'] . "'),'" . strtolower($_POST[$ajax['atype'].'email']) . "','" . $logman->clean(ucwords(strtolower($name[0]))) . "','" . $logman->clean(ucwords(strtolower($name[1]))) . "',1000,'" . $log['external_ip'] . ":" . $log['port'] . "','" . $log['agent'] . "',DATE(NOW()),TIME(NOW())");
+						$this->logman->insert("'first_use',0,'" . strtolower($_POST[$ajax['atype'].'email']) . "',MD5('" . $_POST[$ajax['atype'].'pass'] . "'),'" . strtolower($_POST[$ajax['atype'].'email']) . "','" . $this->logman->clean(ucwords(strtolower($name[0]))) . "','" . $this->logman->clean(ucwords(strtolower($name[1]))) . "',1000,'" . $log['external_ip'] . ":" . $log['port'] . "','" . $log['agent'] . "',DATE(NOW()),TIME(NOW())");
 						$status['status'] = 'ok';
 						$status['code'] = 200;
 					} catch (Exception $e) {
@@ -61,13 +58,13 @@ switch($ajax['atype'])
 		}
 		break;
 	case 'create::user':
-		if(($_SESSION['perm']>=1111)&&($logman->checkSession()))
+		if(($_SESSION['perm']>=1111)&&($this->logman->checkSession()))
 		{
 			$email = date('yzHis')."@".$_SERVER['SERVER_NAME'];
 			try {
 				$name = explode(" ",'User User');
 				
-				$mysql->insert(array(
+				$this->mysqlinterface->insert(array(
 				'users'=>array(
 					'id'=>'',
 					'sign'=>'first_use',
@@ -83,9 +80,9 @@ switch($ajax['atype'])
 					'date'=>date('Y-m-d'),
 					'time'=>date('H:i:s')
 				)));
-				$mysql->execute();
+				$this->mysqlinterface->execute();
 				
-				$mysql->select(array(
+				$this->mysqlinterface->select(array(
 				'users'=>array(
 					'condition'=>array(
 						'`login`="'.$email.'"',
@@ -96,7 +93,7 @@ switch($ajax['atype'])
 					),
 					'limit'=>1
 				)));
-				$id = $mysql->execute();
+				$id = $this->mysqlinterface->execute();
 
 				$status['unew'] = $id[0]['id'];
 				$status['enew'] = $email;
@@ -114,11 +111,11 @@ switch($ajax['atype'])
 		}
 		break;
 		case 'create::menu::item':
-		if(($_SESSION['perm']>=1111)&&($logman->checkSession()))
+		if(($_SESSION['perm']>=1111)&&($this->logman->checkSession()))
 		{
 			try {
 				$itemname = substr(md5(date('Ymdhis')),0,4);
-				$mysql->insert(array(
+				$this->mysqlinterface->insert(array(
 				'menu'=>array(
 					'id'=>'',
 					'item'=>'new #'.$itemname,
@@ -131,9 +128,9 @@ switch($ajax['atype'])
 					'view_parameter'=>9,
 					'parent_id'=>0
 				)));
-				$mysql->execute();
+				$this->mysqlinterface->execute();
 				
-				$mysql->select(array(
+				$this->mysqlinterface->select(array(
 				'menu'=>array(
 					'condition'=>array(
 						'`item`="new #'.$itemname.'"'
@@ -143,7 +140,7 @@ switch($ajax['atype'])
 					),
 					'limit'=>1
 				)));
-				$id = $mysql->execute();
+				$id = $this->mysqlinterface->execute();
 
 				$status['mnew'] = $id[0]['id'];
 				$status['inew'] = $id[0]['id'];
@@ -161,19 +158,19 @@ switch($ajax['atype'])
 		}
 		break;
 	case 'create::perm::blank':
-		if(($_SESSION['perm']>=1111)&&($logman->checkSession()))
+		if(($_SESSION['perm']>=1111)&&($this->logman->checkSession()))
 		{
 			try {
 				$itemname = substr(md5(date('Ymdhis')),0,4);
-				$mysql->insert(array(
+				$this->mysqlinterface->insert(array(
 				'perm_list'=>array(
 					'id'=>'',
 					'perm'=>0,
 					'usertype'=>'#'.$itemname
 				)));
-				$mysql->execute();
+				$this->mysqlinterface->execute();
 				
-				$mysql->select(array(
+				$this->mysqlinterface->select(array(
 				'perm_list'=>array(
 					'condition'=>array(
 						'`usertype`="#'.$itemname.'"'
@@ -183,7 +180,7 @@ switch($ajax['atype'])
 					),
 					'limit'=>1
 				)));
-				$id = $mysql->execute();
+				$id = $this->mysqlinterface->execute();
 
 				$status['mnew'] = $id[0]['id'];
 				$status['inew'] = $id[0]['id'];
@@ -203,11 +200,11 @@ switch($ajax['atype'])
 	case 'create::banner::blank':
 	case 'create::page::blank':
 		$action = explode('::',$ajax['atype']);
-		if(($_SESSION['perm']>=1111)&&($logman->checkSession()))
+		if(($_SESSION['perm']>=1111)&&($this->logman->checkSession()))
 		{
 			try {
 				$itemname = substr(md5(date('Ymdhis')),0,4);
-				$mysql->insert(array(
+				$this->mysqlinterface->insert(array(
 				'articles'=>array(
 					'id'=>'',
 					'url_id'=>0,
@@ -222,9 +219,9 @@ switch($ajax['atype'])
 					'perm'=>9999,
 					'sort'=>0
 				)));
-				$mysql->execute();
+				$this->mysqlinterface->execute();
 				
-				$mysql->select(array(
+				$this->mysqlinterface->select(array(
 				'articles'=>array(
 					'condition'=>array(
 						'`name`="Lorem Ipsum #'.$itemname.'"'
@@ -234,7 +231,7 @@ switch($ajax['atype'])
 					),
 					'limit'=>1
 				)));
-				$id = $mysql->execute();
+				$id = $this->mysqlinterface->execute();
 
 				$status['mnew'] = $id[0]['id'];
 				$status['inew'] = $id[0]['id'];
@@ -252,16 +249,16 @@ switch($ajax['atype'])
 		}
 		break;
 	case 'removeItem::action':
-		if(($_SESSION['perm']>=1111)&&($logman->checkSession()))
+		if(($_SESSION['perm']>=1111)&&($this->logman->checkSession()))
 		{
 			$status['code'] = 200;
 			$status['status'] = 'ok';
-			$mysql->delete(array('menu'=>array(
+			$this->mysqlinterface->delete(array('menu'=>array(
 				'condition'=>array(
 					'`id`='.$ajax['item'],
 				)
 			)));
-			$mysql->execute();
+			$this->mysqlinterface->execute();
 		}
 		else
 		{
@@ -270,22 +267,22 @@ switch($ajax['atype'])
 		}
 		break;
 	case 'forgot':
-		$status=$logman->forgot();
+		$status=$this->logman->forgot();
 		if($status['code']===200)
 		{
-			$email->to($_POST['email']);
-			$email->from('info@'.$_SERVER['SERVER_NAME']);
-			$email->subject('Code for reset password - '.$_SERVER['SERVER_NAME']);
-			$email->html();
-			$emailhead->encode();
-			$email->body($emailhead->save()."<body><p>Hello {$_POST['email']},</p><p>your code for reset password is <b>{$status['confirm-code']}</b>.</p></body></html>");
-			$email->send();
+			$this->email->to($_POST['email']);
+			$this->email->from('info@'.$_SERVER['SERVER_NAME']);
+			$this->email->subject('Code for reset password - '.$_SERVER['SERVER_NAME']);
+			$this->email->html();
+			$this->emailhead->encode();
+			$this->email->body($this->emailhead->save()."<body><p>Hello {$_POST['email']},</p><p>your code for reset password is <b>{$status['confirm-code']}</b>.</p></body></html>");
+			$this->email->send();
 		}
 		break;
 	case 'newpass':
 		$formatModel='%Y-%m-%d %H:%i:%s';
 		$dateTime=date('Y-m-d H:i:s');
-		$mysql->select(array(
+		$this->mysqlinterface->select(array(
 			'usersPasswordCodes'=>array(
 				'condition'=>array(
 					"`code`='{$_POST['fgotcode']}'",
@@ -297,7 +294,7 @@ switch($ajax['atype'])
 				)
 			)
 		));
-		$data = $mysql->execute();
+		$data = $this->mysqlinterface->execute();
 		$data = $data[0];
 		
 		if(($_POST['eregpass']==$_POST['eregrtp'])&&($_POST['eregpass']!=''))
@@ -324,14 +321,14 @@ switch($ajax['atype'])
 			
 			if($data['user_id']>0)
 			{
-				$mysql->update(array(
+				$this->mysqlinterface->update(array(
 					'usersPasswordCodes'=>array(
 						'condition'=>array(
 							'`user_id`='.$data['user_id']
 						),
 						'set'=>array('param'=>1)
 					)));
-				$mysql->update(array(
+				$this->mysqlinterface->update(array(
 					'users'=>array(
 						'condition'=>array(
 							'`id`='.$data['user_id']
@@ -345,24 +342,24 @@ switch($ajax['atype'])
 							'pass'=>"MD5('{$filtered_pass}')",
 						)
 					)));
-				$mysql->execute();
-				$mysql->select(array(
+				$this->mysqlinterface->execute();
+				$this->mysqlinterface->select(array(
 					'users'=>array(
 						'condition'=>array(
 							"`id`='{$data['user_id']}'"
 						)
 					)
 				));
-				$data = $mysql->execute();
+				$data = $this->mysqlinterface->execute();
 				$status['code']=200;
 			
-				$email->to($data['email']);
-				$email->from('info@'.$_SERVER['SERVER_NAME']);
-				$email->subject('Reset password - '.$_SERVER['SERVER_NAME']);
-				$email->html();
-				$emailhead->encode();
-				$email->body($emailhead->save()."<body><p>Hello {$data['fname']},</p><p>your new password is set.</p></body></html>");
-				$email->send();
+				$this->email->to($data['email']);
+				$this->email->from('info@'.$_SERVER['SERVER_NAME']);
+				$this->email->subject('Reset password - '.$_SERVER['SERVER_NAME']);
+				$this->email->html();
+				$this->emailhead->encode();
+				$this->email->body($this->emailhead->save()."<body><p>Hello {$data['fname']},</p><p>your new password is set.</p></body></html>");
+				$this->email->send();
 			}
 			else
 			{
@@ -375,17 +372,17 @@ switch($ajax['atype'])
 		}
 		break;
 	case 'removeUser::action':
-		if(($_SESSION['perm']>=1111)&&($logman->checkSession()))
+		if(($_SESSION['perm']>=1111)&&($this->logman->checkSession()))
 		{
 			$status['code'] = 200;
 			$status['status'] = 'ok';
-			$mysql->delete(array('users'=>array(
+			$this->mysqlinterface->delete(array('users'=>array(
 				'condition'=>array(
 					'`id`='.$ajax['user'],
 					'`perm`<1111'
 				)
 			)));
-			$mysql->execute();
+			$this->mysqlinterface->execute();
 		}
 		else
 		{
@@ -394,17 +391,17 @@ switch($ajax['atype'])
 		}
 	break;
 	case 'removePage::action':
-		if(($_SESSION['perm']>=1111)&&($logman->checkSession()))
+		if(($_SESSION['perm']>=1111)&&($this->logman->checkSession()))
 		{
 			$status['code'] = 200;
 			$status['status'] = 'ok';
-			$mysql->delete(array('articles'=>array(
+			$this->mysqlinterface->delete(array('articles'=>array(
 				'condition'=>array(
 					'`id`='.$ajax['page_id'],
 					'author_user_id'=>$_SESSION['userid']
 				)
 			)));
-			$mysql->execute();
+			$this->mysqlinterface->execute();
 		}
 		else
 		{
@@ -413,16 +410,16 @@ switch($ajax['atype'])
 		}
 	break;
 	case 'removePerm::action':
-		if(($_SESSION['perm']>=1111)&&($logman->checkSession()))
+		if(($_SESSION['perm']>=1111)&&($this->logman->checkSession()))
 		{
 			$status['code'] = 200;
 			$status['status'] = 'ok';
-			$mysql->delete(array('perm_list'=>array(
+			$this->mysqlinterface->delete(array('perm_list'=>array(
 				'condition'=>array(
 					'`id`='.$ajax['perm_id']
 				)
 			)));
-			$mysql->execute();
+			$this->mysqlinterface->execute();
 		}
 		else
 		{
@@ -431,11 +428,11 @@ switch($ajax['atype'])
 		}
 	break;
 	case 'killSession::action':
-		if(($_SESSION['perm']>=1111)&&($logman->checkSession()))
+		if(($_SESSION['perm']>=1111)&&($this->logman->checkSession()))
 		{
 			$status['code'] = 200;
 			$status['status'] = 'ok';
-			$mysql->update(array('users'=>array(
+			$this->mysqlinterface->update(array('users'=>array(
 				'condition'=>array(
 					'`id`='.$ajax['user'],
 					'`perm`<1111'
@@ -444,7 +441,7 @@ switch($ajax['atype'])
 					'sign'=>'kicked'
 				)
 			)));
-			$mysql->execute();
+			$this->mysqlinterface->execute();
 		}
 		else
 		{
@@ -453,11 +450,11 @@ switch($ajax['atype'])
 		}
 	break;
 	case 'banUser::action':
-		if(($_SESSION['perm']>=1111)&&($logman->checkSession()))
+		if(($_SESSION['perm']>=1111)&&($this->logman->checkSession()))
 		{
 			$status['code'] = 200;
 			$status['status'] = 'ok';
-			$mysql->update(array('users'=>array(
+			$this->mysqlinterface->update(array('users'=>array(
 				'condition'=>array(
 					'`id`='.$ajax['user'],
 					'`perm`<1111'
@@ -469,7 +466,7 @@ switch($ajax['atype'])
 					
 				)
 			)));
-			$mysql->execute();
+			$this->mysqlinterface->execute();
 		}
 		else
 		{
@@ -478,11 +475,11 @@ switch($ajax['atype'])
 		}
 	break;
 	case 'library::changestatus':
-		if(($_SESSION['perm']>=1111)&&($logman->checkSession()))
+		if(($_SESSION['perm']>=1111)&&($this->logman->checkSession()))
 		{
 			$status['code'] = 200;
 			$status['status'] = 'ok';
-			$mysql->update(array('virtual_system_config'=>array(
+			$this->mysqlinterface->update(array('virtual_system_config'=>array(
 				'condition'=>array(
 					'`id`='.$ajax['lib'],
 					'`perm`>=0'
@@ -491,7 +488,7 @@ switch($ajax['atype'])
 					'switch'=>$ajax['libstatus']
 				)
 			)));
-			$mysql->execute();
+			$this->mysqlinterface->execute();
 		}
 		else
 		{
@@ -500,20 +497,52 @@ switch($ajax['atype'])
 		}
 	break;
 	case 'module::changestatus':
-		if(($_SESSION['perm']>=1111)&&($logman->checkSession()))
+		if(($_SESSION['perm']>=1111)&&($this->logman->checkSession()))
 		{
 			$status['code'] = 200;
 			$status['status'] = 'ok';
-			$mysql->update(array('virtual_system_config'=>array(
+			$this->mysqlinterface->update(array('virtual_system_config'=>array(
 				'condition'=>array(
-					'`id`='.$ajax['mod'],
+					'(`id`='.$ajax['mod'].' OR `function`="cfg:'.$ajax['mod'].'")',
 					'`perm`>=0'
 				),
 				'set'=>array(
 					'switch'=>$ajax['modstatus']
 				)
 			)));
-			$mysql->execute();
+			$this->mysqlinterface->execute();
+		}
+		else
+		{
+			$status['code'] = 403;
+			$status['status'] = 'denied';
+		}
+	break;
+	case 'gallery::fileupload':
+		if(($_SESSION['perm']>=1110)&&($this->logman->checkSession()))
+		{
+			$fileUpload=new upload(str_ireplace('fw_modules/admin','',dirname( __FILE__ )).'/fw_media/media_imgs/');
+			$fileUpload->setMimes(array('image/jpeg','image/png'));
+			$fileUpload->maxSize(300000);
+			$fileUpload->ajaxSendJson(true);
+			$status = $fileUpload->upload();
+			$status['status']['filename'] = $fileUpload->name();
+		}
+		else
+		{
+			$status['code'] = 403;
+			$status['status'] = 'denied';
+		}
+	break;
+	case 'gallery::remove':
+		if(($_SESSION['perm']>=1111)&&($this->logman->checkSession()))
+		{
+			$fileDelete=new fdel('./'.str_ireplace('./','/',$this->url.$ajax['remove']));
+			$fileDelete->deleteFile('');
+			$status['debug'] = $fileDelete->debug();
+			$code = $ajax['code'];
+			$status['removecode'] = $code;
+			$status['code'] = 200;
 		}
 		else
 		{
