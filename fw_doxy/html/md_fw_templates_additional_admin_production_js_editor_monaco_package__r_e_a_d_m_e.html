@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>OpenSencillo: Monaco Editor</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">OpenSencillo
+   &#160;<span id="projectnumber">2018.111</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generované programom Doxygen 1.8.14 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','Hľadať');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Monaco Editor </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p>The Monaco Editor is the code editor that powers <a href="https://github.com/Microsoft/vscode">VS Code</a>, a good page describing the code editor's features is <a href="https://code.visualstudio.com/docs/editor/editingevolved">here</a>.</p>
+<div class="image">
+<img src="https://cloud.githubusercontent.com/assets/5047891/19600675/5eaae9e6-97a6-11e6-97ad-93903167d8ba.png" alt="image"/>
+</div>
+<h2>Try it out</h2>
+<p>See the editor in action <a href="https://microsoft.github.io/monaco-editor/index.html">on the website</a>.</p>
+<h2>Installing</h2>
+<div class="fragment"><div class="line">$ npm install monaco-editor</div></div><!-- fragment --><p>You will get:</p><ul>
+<li>inside <code>esm</code>: ESM version of the editor (compatible with e.g. webpack)</li>
+<li>inside <code>dev</code>: AMD bundled, not minified</li>
+<li>inside <code>min</code>: AMD bundled, and minified</li>
+<li>inside <code>min-maps</code>: source maps for <code>min</code></li>
+<li><code>monaco.d.ts</code>: this specifies the API of the editor (this is what is actually versioned, everything else is considered private and might break with any release).</li>
+</ul>
+<p>It is recommended to develop against the <code>dev</code> version, and in production to use the <code>min</code> version.</p>
+<h2>Documentation</h2>
+<ul>
+<li>Learn how to integrate the editor with these <a href="https://github.com/Microsoft/monaco-editor-samples/">complete samples</a>.<ul>
+<li>./docs/integrate-amd.md "Integrate the AMD version".</li>
+<li>./docs/integrate-amd-cross.md "Integrate the AMD version cross-domain"</li>
+<li>./docs/integrate-esm.md "Integrate the ESM version"</li>
+</ul>
+</li>
+<li>Learn how to use the editor API and try out your own customizations in the <a href="https://microsoft.github.io/monaco-editor/playground.html">playground</a>.</li>
+<li>Explore the <a href="https://microsoft.github.io/monaco-editor/api/index.html">API docs</a> or read them straight from <a href="https://github.com/Microsoft/monaco-editor/blob/master/website/playground/monaco.d.ts.txt"><code>monaco.d.ts</code></a>.</li>
+<li>Read <a href="https://github.com/Microsoft/monaco-editor/wiki/Accessibility-Guide-for-Integrators">this guide</a> to ensure the editor is accessible to all your users!</li>
+<li>Create a Monarch tokenizer for a new programming language <a href="https://microsoft.github.io/monaco-editor/monarch.html">in the Monarch playground</a>.</li>
+<li>Ask questions on <a href="https://stackoverflow.com/questions/tagged/monaco-editor">StackOverflow</a>!</li>
+<li>Search open and closed issues, there are a lot of tips in there!</li>
+</ul>
+<h2>Issues</h2>
+<p>Create issues in this repository for anything Monaco Editor related. Always mention <b>the version</b> of the editor when creating issues and <b>the browser</b> you're having trouble in. Please search for existing issues to avoid duplicates.</p>
+<h2>Known issues</h2>
+<p>In IE 11, the editor must be completely surrounded in the body element, otherwise the hit testing we do for mouse operations does not work. You can inspect this using F12 and clicking on the body element and confirm that visually it surrounds the editor.</p>
+<h2>FAQ</h2>
+<p>❓ <b>What is the relationship between VS Code and the Monaco Editor?</b></p>
+<p>The Monaco Editor is generated straight from VS Code's sources with some shims around services the code needs to make it run in a web browser outside of its home.</p>
+<p>❓ <b>What is the relationship between VS Code's version and the Monaco Editor's version?</b></p>
+<p>None. The Monaco Editor is a library and it reflects directly the source code.</p>
+<p>❓ <b>I've written an extension for VS Code, will it work on the Monaco Editor in a browser?</b></p>
+<p>No.</p>
+<blockquote class="doxtable">
+<p>Note: If the extension is fully based on the <a href="https://microsoft.github.io/language-server-protocol/">LSP</a> and if the language server is authored in JavaScript, then it would be possible. </p>
+</blockquote>
+<p>❓ <b>Why all these web workers and why should I care?</b></p>
+<p>Language services create web workers to compute heavy stuff outside the UI thread. They cost hardly anything in terms of resource overhead and you shouldn't worry too much about them, as long as you get them to work (see above the cross-domain case).</p>
+<p>❓ <b>What is this <code>loader.js</code>? Can I use <code>require.js</code>?</b></p>
+<p>It is an AMD loader that we use in VS Code. Yes.</p>
+<p>❓ <b>I see the warning "Could not create web worker". What should I do?</b></p>
+<p>HTML5 does not allow pages loaded on <code><a href="file://">file://</a></code> to create web workers. Please load the editor with a web server on <code><a href="http://">http://</a></code> or <code><a href="https://">https://</a></code> schemes. Please also see the cross domain case above.</p>
+<p>❓ <b>Is the editor supported in mobile browsers or mobile web app frameworks?</b></p>
+<p>No.</p>
+<p>❓ <b>Why doesn't the editor support TextMate grammars?</b></p>
+<ul>
+<li>all the regular expressions in TM grammars are based on <a href="https://github.com/kkos/oniguruma">oniguruma</a>, a regular expression library written in C.</li>
+<li>the only way to interpret the grammars and get anywhere near original fidelity is to use the exact same regular expression library (with its custom syntax constructs)</li>
+<li>in VSCode, our runtime is node.js and we can use a node native module that exposes the library to JavaScript</li>
+<li>in Monaco, we are constrained to a browser environment where we cannot do anything similar</li>
+<li>we have experimented with Emscripten to compile the C library to asm.js, but performance was very poor even in Firefox (10x slower) and extremely poor in Chrome (100x slower).</li>
+<li>we can revisit this once WebAssembly gets traction in the major browsers, but we will still need to consider the browser matrix we support. i.e. if we support IE11 and only Edge will add WebAssembly support, what will the experience be in IE11, etc.</li>
+</ul>
+<h2>Development setup</h2>
+<p>Please see ./CONTRIBUTING.md "CONTRIBUTING"</p>
+<h2>Code of Conduct</h2>
+<p>This project has adopted the <a href="https://opensource.microsoft.com/codeofconduct/">Microsoft Open Source Code of Conduct</a>. For more information see the <a href="https://opensource.microsoft.com/codeofconduct/faq/">Code of Conduct FAQ</a> or contact <a href="#" onclick="location.href='mai'+'lto:'+'ope'+'nc'+'ode'+'@m'+'icr'+'os'+'oft'+'.c'+'om'; return false;">opencode@microsoft.com</a> with any additional questions or comments.</p>
+<h2>License</h2>
+<p>https://github.com/Microsoft/monaco-editor/blob/master/LICENSE.md "MIT" </p>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generované programom &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

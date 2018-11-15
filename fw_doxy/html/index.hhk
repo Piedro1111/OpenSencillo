@@ -1,0 +1,1103 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML><HEAD></HEAD><BODY>
+<OBJECT type="text/site properties">
+<param name="FrameName" value="right">
+</OBJECT>
+<UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="md__r_e_a_d_m_e.html"><param name="Name" value="#OpenSencillo"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classupload.html#acf9b4eabceb162a0d757e5665fa38acb"><param name="Name" value="$ajax"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlibrary.html#ad2203e5674ffbd18d3fdbcf2cac19a38"><param name="Name" value="$all_data_sencillo"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a0673b9ec6eacb8984cbaae2a28634475"><param name="Name" value="$alltemplates"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classanalytics.html#a63bb4c41bc532baacf6a4976cfaa0feb"><param name="Name" value="$arr"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classstructgen.html#af28a2bf1bdf5c6f3ffeb459f2bba572b"><param name="Name" value="$baseCtr"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmail_gen.html#a26b9f9373f7bb79dfcf8a86dff086b45"><param name="Name" value="$body"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#a1d8d7fab9e2c2974919888f5b886295e"><param name="Name" value="$browserIdToName"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#a7958078b2a0013798f14838fa1fd40c1"><param name="Name" value="$browserIdToShortName"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#a81edf933083b5ac5b380385f59074a7d"><param name="Name" value="$browsers"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#ad0821f30ee48c49356b114884ad1c552"><param name="Name" value="$browserType"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmail_gen.html#af10158dd74b75f1d337e83102d6b82ce"><param name="Name" value="$charset"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql.html#a0debe10448ec56a57b5509648408a549"><param name="Name" value="$con"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classpihome.html#acc5a69f680047349fd4b881989ac8bc8"><param name="Name" value="$Condensation"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classpihome.html#a7e9763c2099766fc420c5617bdb93077"><param name="Name" value="$CondensationLVL"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classpihome.html#aa11e546ae93c211bf063ebb098c6fd5c"><param name="Name" value="$CondensationSTS"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_interface.html#a956617395b85e98d907df712f6d0d3f7"><param name="Name" value="$connect"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classboot_up.html#a4ca9ecfa22bed04c85e24326a037cfd0"><param name="Name" value="$coreSencillo"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classpihome.html#ac0a319078a95b3995f9ded413f97ca3c"><param name="Name" value="$CPUtemperature"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a5619065f778cf71da2d43cbc4c47a1c4"><param name="Name" value="$css"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classcss.html#a97e703767e90a0f6cfa9c627c15bcfe5"><param name="Name" value="$cssFiles"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmail_gen.html#a694a25441f5171ff6dc62820c5bc6676"><param name="Name" value="$ctype"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog.html#a2c4c58e377f6c66ca38c8ea97666fc5e"><param name="Name" value="$current"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classclist.html#a6efc15b5a2314dd4b5aaa556a375c6d6"><param name="Name" value="$data"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classclist.html#a6efc15b5a2314dd4b5aaa556a375c6d6"><param name="Name" value="clist"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classfdel.html#a6efc15b5a2314dd4b5aaa556a375c6d6"><param name="Name" value="fdel"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classstructgen.html#a6efc15b5a2314dd4b5aaa556a375c6d6"><param name="Name" value="structgen"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classurl.html#a6efc15b5a2314dd4b5aaa556a375c6d6"><param name="Name" value="url"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql.html#a1a881c28f710232dbf702d93c6a6e865"><param name="Name" value="$DBHost"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql.html#a3748d4d771a26c5411f1666a3a7a3cd8"><param name="Name" value="$DBName"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql.html#a8cf3718595a762c1974c4adfa331bc58"><param name="Name" value="$DBPass"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql.html#af107a7d38167b4ff8f65b395d856f7ab"><param name="Name" value="$DBUser"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql.html#a85ae3e64cd40e9564adceb010085e9dd"><param name="Name" value="$debug"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a1bef3405ec20ac00eac552967404eddc"><param name="Name" value="$defaultcfg"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#ad634f418b20382e2802f80532d76d3cd"><param name="Name" value="$email"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#aa37f0f7fd6f22ca7059c2fb7ce41951e"><param name="Name" value="$emailhead"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classunit_test.html#aa99ce9ae015e958eef5782267276fbb4"><param name="Name" value="$env"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_d_fto_j_p_g.html#aeba2ab722cedda53dbb7ec1a59f45550"><param name="Name" value="$error"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classpihome.html#ad2185bdec5aeedc29026f521c1297ccd"><param name="Name" value="$ExtHDD"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog.html#aa1bfbd27060176201b271918dff57e8f"><param name="Name" value="$file"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a0722441477f957078ee2437054556cbc"><param name="Name" value="$filename"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlibrary.html#a9590b15215a21e9b42eb546aeef79704"><param name="Name" value="$files"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classboot_up.html#a2b06fe777e2d4bac3ef970c8a984edaa"><param name="Name" value="$fileSystem"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classfiles_list.html#ae6c874521ea9958e89e89f1d4d6e01d5"><param name="Name" value="$folderlist"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classform_creator.html#a1a4fda4c28a9ee5f91102c023b9501f4"><param name="Name" value="$form"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmail_gen.html#a0bb7e2b3d541598cc9c9e3b11bee859c"><param name="Name" value="$from"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a9e3c21971e9e3ca69160006d5f5d668c"><param name="Name" value="$fullpath"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a654c0c51d37742f97bf32b263ce8785e"><param name="Name" value="$fullpathwithoutget"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classhtgen.html#a3fbefca2da7b7d4434ad26f7436c8ff2"><param name="Name" value="$gen"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classcore_sencillo.html#a6dba07cf5cb37f05ef89d2b9afacf046"><param name="Name" value="$get"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classpihome.html#a4c6a3b5af2c01a7797cb54a1f002912e"><param name="Name" value="$HDDerr"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmail_gen.html#a687ea7fcd78263867b5bd34ed56b6379"><param name="Name" value="$head"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classboot_up.html#a7281af4d471cc5f2e00d975905db660e"><param name="Name" value="$headerSeo"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a2c265bba1724371bb03e6901297c30b2"><param name="Name" value="$height"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmenu_gen.html#ae858fe52917aca7da3e5f64ac5bf665a"><param name="Name" value="$href"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#aac6146b4cdec66c94263ddb55afd5946"><param name="Name" value="$image"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#ab0c7013419fc5ee6238d17eff2554afe"><param name="Name" value="$images"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a3abffbc75cede9a7ba56156c8dec06c0"><param name="Name" value="$imagestring"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classcore_sencillo.html#ae19722790c6683980bbf0af8572f26ab"><param name="Name" value="$info"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classcore_sencillo.html#ae19722790c6683980bbf0af8572f26ab"><param name="Name" value="coreSencillo"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#ae19722790c6683980bbf0af8572f26ab"><param name="Name" value="headerSeo"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a747181e96d083c6396169e81e4d2056d"><param name="Name" value="$js"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classtranslate.html#a7714b111b644017933931ec69a154102"><param name="Name" value="$lang"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmenu_gen.html#a83170d318260a5a2e2a79dccdd371b10"><param name="Name" value="$language"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlibrary.html#a430f5ed50a4c2f3d6ddee6b54bc97eaa"><param name="Name" value="$lib"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#ad3527dd203fada41130c0376f3e671d5"><param name="Name" value="$libtype"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a0255f71ccc2457c0e7ac286ce091c104"><param name="Name" value="$linkmngr"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#a9a2cf15a653aee8be437f7ae474cd494"><param name="Name" value="$log"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a54c5415e207320983b42b6a68abcbce5"><param name="Name" value="$logman"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmail_gen.html#ac409786c163a1974d1e24a6767a95166"><param name="Name" value="$mail"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#aa5bfac54cd2770bdd52cdc4080cabdab"><param name="Name" value="$mainmenu"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmenu_gen.html#a3b6785d06028312e5e87edeb9363cdb1"><param name="Name" value="$maxLevel"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmenu_gen.html#ac98296e470680a8cf4239e4acb58c545"><param name="Name" value="$maxLevelQuery"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog.html#afae5850468ea69a528a75f3b18baae68"><param name="Name" value="$maxLine"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#ac0dbedf2030086b03c1ce5fe3fd4213d"><param name="Name" value="$mediapath"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classupload.html#a958cf7aca45cea5359ba0fa80ee2f2c1"><param name="Name" value="$mime"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classupload.html#a3aaf40baac36e278c7d7c9139df1750c"><param name="Name" value="$mode"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlibrary.html#a19e625c76c6796e995f33d323ee3aa84"><param name="Name" value="$modules"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#ae886f008e999d63cd581349083b28467"><param name="Name" value="$music"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_interface.html#a580989e8e3521433691a0351287f6315"><param name="Name" value="$mysqli"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#adcc4ef21180fb8043e5bf214393a2c8b"><param name="Name" value="$mysqlinterface"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#ade9ea0ea6705b82aabd91456d030ad48"><param name="Name" value="$mysqlInterface"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmenu_gen.html#aec66dec69450671d861a4f23e8348b09"><param name="Name" value="$mysqlObject"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classfile_system.html#ab2fc40d43824ea3e1ce5d86dee0d763b"><param name="Name" value="$name"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classfile_system.html#ab2fc40d43824ea3e1ce5d86dee0d763b"><param name="Name" value="fileSystem"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog.html#ab2fc40d43824ea3e1ce5d86dee0d763b"><param name="Name" value="log"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmenu_gen.html#ab2fc40d43824ea3e1ce5d86dee0d763b"><param name="Name" value="menuGen"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classstructgen.html#ab2fc40d43824ea3e1ce5d86dee0d763b"><param name="Name" value="structgen"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#a0f50a04746313e5adeaaa8fe0edcb115"><param name="Name" value="$omniWebVersions"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#a6c81c14f25de6a8b8206335eea724eb1"><param name="Name" value="$operatingSystems"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#ab68e07510370828435a3e86c320c7bdc"><param name="Name" value="$operatingSystemsIdToName"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#ada1762b34d38d7498838252118cca041"><param name="Name" value="$operatingSystemsIdToShortName"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#ab0f3ea69c9d9d311d11940fe4784a353"><param name="Name" value="$original_info"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classcore_sencillo.html#afc86bce95fea4d2f4bd9e481e66754ff"><param name="Name" value="$original_request"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#a35cddafe55870d08e38ce841e7902a4b"><param name="Name" value="$osType"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a0a44e6760141442bb439b1ab1395d8ff"><param name="Name" value="$page"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a0a44e6760141442bb439b1ab1395d8ff"><param name="Name" value="construct"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmenu_gen.html#a0a44e6760141442bb439b1ab1395d8ff"><param name="Name" value="menuGen"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classfiles_list.html#a0a4baf0b22973c07685c3981f0d17fc4"><param name="Name" value="$path"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classfiles_list.html#a0a4baf0b22973c07685c3981f0d17fc4"><param name="Name" value="filesList"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog.html#a0a4baf0b22973c07685c3981f0d17fc4"><param name="Name" value="log"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_d_fto_j_p_g.html#a0a4baf0b22973c07685c3981f0d17fc4"><param name="Name" value="PDFtoJPG"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classpihome.html#ab8bab29a3312f256f81d5e698c27f42b"><param name="Name" value="$pcstatus"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmenu_gen.html#a680d99dc393b3de7d233c61670bef29c"><param name="Name" value="$perm"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classpihome.html#a5a52c7928a97f4a6203ec17a094bb220"><param name="Name" value="$playerCPUtemperature"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#aa0787efab4b22e8a212882f3409d4c77"><param name="Name" value="$port"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classcore_sencillo.html#a53d6c7669d97392c407c4f959a5263db"><param name="Name" value="$post"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#ac01bf1cf041487498864d054b991f570"><param name="Name" value="$protocol"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#ac01bf1cf041487498864d054b991f570"><param name="Name" value="construct"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmenu_gen.html#ac01bf1cf041487498864d054b991f570"><param name="Name" value="menuGen"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a0e342ea32cccdc2c932ad23b9796a62a"><param name="Name" value="$quality"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classcore_sencillo.html#abb35c8495a232b510389fa6d7b15d38a"><param name="Name" value="$request"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#a3493595b0af2ff79e44fe73847a67688"><param name="Name" value="$safariVersions"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_interface.html#a00e6dff44e00c36820da5508c6d9aba3"><param name="Name" value="$save"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a8ec97217cd00453cdb17e5d6a18829ee"><param name="Name" value="$seo"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a8ec97217cd00453cdb17e5d6a18829ee"><param name="Name" value="construct"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#a8ec97217cd00453cdb17e5d6a18829ee"><param name="Name" value="headerSeo"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a8cae7a4cc608cbe17ffa675fc73cbe85"><param name="Name" value="$server_clean"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a6fc9ce28262124c9f56571793ff310b7"><param name="Name" value="$server_url"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classupload.html#af594986e4618a8d6a5d7566617f583c6"><param name="Name" value="$size"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classstructgen.html#a047170d6020a882807665812a27e2525"><param name="Name" value="$sql"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#a58391ea75f2d29d5d708d7050b641c33"><param name="Name" value="$status"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#a58391ea75f2d29d5d708d7050b641c33"><param name="Name" value="logMan"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classupload.html#a58391ea75f2d29d5d708d7050b641c33"><param name="Name" value="upload"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#aac99125dfcac5fbe248a5b5e4f986cef"><param name="Name" value="$stn"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog.html#a827b42f70d98e1bf51ff54dbbe771421"><param name="Name" value="$store"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classstructgen.html#a629dff33e6ad4aecc6c382d488cdcb08"><param name="Name" value="$subCtr"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmail_gen.html#afea90503726cd5ad2eb80baf0b6d217d"><param name="Name" value="$subject"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#aa3e9534005fd516d941f6a5569896e01"><param name="Name" value="$template"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmail_gen.html#ac19f839b525d6d99d063fe56bf2a6d3b"><param name="Name" value="$to"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classtranslate.html#a9a663ee008f29e190f7a56c35ae011db"><param name="Name" value="$tSource"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classupload.html#a0226b5fa357adcccf3ab459aaf3f8631"><param name="Name" value="$uploadDirectory"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classupload.html#a430a2c99398e101d3e3ed06a18480b87"><param name="Name" value="$uploadInfo"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#acf215f34a917d014776ce684a9ee8909"><param name="Name" value="$url"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a8995a009385b1ee7a696f4e8be9d4d93"><param name="Name" value="$urlprefix"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog.html#a9900990865c5a574470a0d9886825c56"><param name="Name" value="$useFile"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a7d031ef8e1b4a46ba034403acd178c76"><param name="Name" value="$usertype"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#af9a80827c3f37aaa84dc0aebec3b22b3"><param name="Name" value="$video"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a5795120b4b324bc4ca83f1e6fdce7d57"><param name="Name" value="$width"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#ae69773d7ae7457ff1524174317f6ad62"><param name="Name" value="__construct"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#ae69773d7ae7457ff1524174317f6ad62"><param name="Name" value="abeautifulsite::SimpleImage"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classboot_up.html#ab7f16f959f74a634ca046420bd58c74b"><param name="Name" value="bootUp"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a90a5c8971601b881867ac214801e3daa"><param name="Name" value="construct"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classcore_sencillo.html#a4fd5742704d00ae15f527894bcd8cfb9"><param name="Name" value="coreSencillo"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classfdel.html#af104a08d89a5bbf1f513b65fdc8bba1f"><param name="Name" value="fdel"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classfile.html#a4717bbfc70a40a57ee741ed70766c309"><param name="Name" value="file"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classfiles_list.html#a03853ceaa393e487835b287de58aba5a"><param name="Name" value="filesList"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classfile_system.html#a4717bbfc70a40a57ee741ed70766c309"><param name="Name" value="fileSystem"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classget_cookies.html#a095c5d389db211932136b53f25f39685"><param name="Name" value="getCookies"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#a095c5d389db211932136b53f25f39685"><param name="Name" value="headerSeo"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog.html#a8e1fbdd4def82189306a52735bd0c70a"><param name="Name" value="log"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlogin_manager.html#a095c5d389db211932136b53f25f39685"><param name="Name" value="loginManager"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmenu_gen.html#ab2aa38e2757698073a9287059cf6cdba"><param name="Name" value="menuGen"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql.html#a7af15455307c9b6a6c4d51d620014e7d"><param name="Name" value="mysql"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classsession_manager.html#a095c5d389db211932136b53f25f39685"><param name="Name" value="sessionManager"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classstructgen.html#a36878ba6be584b5b676f7bd98af20ee9"><param name="Name" value="structgen"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classtesting_mysql.html#a7af15455307c9b6a6c4d51d620014e7d"><param name="Name" value="testingMysql"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classtranslate.html#afa2489379aace6afacf1391038f04fed"><param name="Name" value="translate"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classupload.html#a03853ceaa393e487835b287de58aba5a"><param name="Name" value="upload"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a421831a265621325e1fdd19aace0c758"><param name="Name" value="__destruct"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a421831a265621325e1fdd19aace0c758"><param name="Name" value="abeautifulsite::SimpleImage"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classfile.html#a421831a265621325e1fdd19aace0c758"><param name="Name" value="file"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html"><param name="Name" value="abeautifulsite::SimpleImage"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a0722441477f957078ee2437054556cbc"><param name="Name" value="$filename"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a2c265bba1724371bb03e6901297c30b2"><param name="Name" value="$height"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#aac6146b4cdec66c94263ddb55afd5946"><param name="Name" value="$image"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a3abffbc75cede9a7ba56156c8dec06c0"><param name="Name" value="$imagestring"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#ab0f3ea69c9d9d311d11940fe4784a353"><param name="Name" value="$original_info"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a0e342ea32cccdc2c932ad23b9796a62a"><param name="Name" value="$quality"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a5795120b4b324bc4ca83f1e6fdce7d57"><param name="Name" value="$width"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#ae69773d7ae7457ff1524174317f6ad62"><param name="Name" value="__construct"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a421831a265621325e1fdd19aace0c758"><param name="Name" value="__destruct"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a1e67e72870ddf87f3d16b3010cd7d3f2"><param name="Name" value="adaptive_resize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a0ed80eb3d0f683447f8c163aba89cc84"><param name="Name" value="auto_orient"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#aaced3f2b7cc91ab8891d9248139338cf"><param name="Name" value="best_fit"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#acceb656aa24a210ff4c77f3f794d1073"><param name="Name" value="blur"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#af571c7cddbd8021822dc8a6c36bd4059"><param name="Name" value="brightness"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#ab133aa5541f0ae97c49d5729ace52c62"><param name="Name" value="colorize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a7af23605eb273c1084cbbf092bf69c50"><param name="Name" value="contrast"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#aae0bbd9a1af614db7c62fcfcdb906ecb"><param name="Name" value="create"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a4363bcc58d31e100cc126fafad73ef1a"><param name="Name" value="crop"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#aac9e0740c42741b5b9f2e61991a34112"><param name="Name" value="desaturate"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#aed0804dc7416329172ab55bcbf1d41b7"><param name="Name" value="edges"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#aabc8c1473621bfe3e064dd0a756c935e"><param name="Name" value="emboss"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#ae0e4ad34b7a0b6a4b7e582c4676bd60f"><param name="Name" value="file_ext"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a4eba8a8f083a5b330872b7bca05d09d3"><param name="Name" value="fill"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a8336e743a25f5301892696cd7c394f1f"><param name="Name" value="fit_to_height"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#ac94ed3e74548edbf50883dc09790ab16"><param name="Name" value="fit_to_width"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#afbed21df0630ae4d62c6ba38edd6f9d1"><param name="Name" value="flip"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a0acd49b80218568ea04e7a5886373c54"><param name="Name" value="get_height"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a6ed959330a006f41f6c48bcbb9aa2f86"><param name="Name" value="get_meta_data"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a6bb3cbd0b8cb4156b2521365fca79529"><param name="Name" value="get_orientation"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a2514a0242e2b19b8b5fcbd7a79db5527"><param name="Name" value="get_original_info"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#abb10ccd258503d273acaf265bf1b1535"><param name="Name" value="get_width"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a725590e68594a12d631830dfce494571"><param name="Name" value="imagecopymerge_alpha"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a70a743c63f97d5bbfdb2cdab7d186938"><param name="Name" value="invert"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a4b91068cc14980876d02cb4d51996c36"><param name="Name" value="keep_within"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a585c262d16bad21a05af8804df8372b2"><param name="Name" value="load"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a21c21cee2c0a9cd9e8965a684f50e8e8"><param name="Name" value="load_base64"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a4f2623f77a0eb2993c39668604b9d028"><param name="Name" value="mean_remove"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#aa0cce094a549fbed2a9e7288bd15221f"><param name="Name" value="normalize_color"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#add5b914f35ec96d98f9e3026693a627d"><param name="Name" value="opacity"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a1d8a0c4ee571db448e556caed12028d1"><param name="Name" value="output"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#acd08ab8d9a2213db91dc8a4cd533fedc"><param name="Name" value="output_base64"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a6f84503d7698b6d5ef56b6e6ba16f9ab"><param name="Name" value="overlay"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a682af070180fbd1f3734653757403139"><param name="Name" value="pixelate"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#aa22cf38c82a9f8234d99293ada1f70fa"><param name="Name" value="resize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#aa79f92a93704de1e68ede2dcda954862"><param name="Name" value="rotate"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a23cd0d0e54d1453a48d8d21ff9f65ae6"><param name="Name" value="save"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a4723159606519b101e408854bc65ee35"><param name="Name" value="sepia"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#afc92209cb2a19193d46a9338b13a3bb9"><param name="Name" value="sketch"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a7ebc6366f3da2bf2af1608663fdb7a09"><param name="Name" value="smooth"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#ae3f9353f4c082c6c3ec3c4dd80653434"><param name="Name" value="text"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a48003368138dcf4baf3e06f5e5599b8d"><param name="Name" value="thumbnail"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a1e67e72870ddf87f3d16b3010cd7d3f2"><param name="Name" value="adaptive_resize"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classcss.html#a7773e55ea870f456b03e0ece2abb7828"><param name="Name" value="add"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classcss.html#a7773e55ea870f456b03e0ece2abb7828"><param name="Name" value="css"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classstructgen.html#a68faa951ece5c70b42a9782bcfa3590a"><param name="Name" value="structgen"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classget_cookies.html#a5eb869c0c92e14a8e642183097d3667d"><param name="Name" value="addCookie"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmenu_gen.html#ac188b81651695587a07ab3942871b244"><param name="Name" value="addItemToMenu"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#a7f3e615305910cf5ea9f24692e9613f6"><param name="Name" value="addNewUser"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_interface.html#a4109b7b827c5edc34a23b5f980756153"><param name="Name" value="addQuery"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#a63e86500ba57ad327c3cfdc4777b2edc"><param name="Name" value="addSessionData"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#a64ac0e06faad327b014754e951dfe170"><param name="Name" value="addToMainArray"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classtranslate.html#a2df21f2e384deb0f4f0f42c0ecd069ba"><param name="Name" value="addTranslate"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classurl.html#ab302f269413f4e58217d5801cd52ca39"><param name="Name" value="addUrl"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classadmin.html"><param name="Name" value="admin"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classadmin.html#a73a8e42630137b1b11246d16d7cd23d5"><param name="Name" value="ajax"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classadmin.html#a3eb87c118cdf154681ee975ace463786"><param name="Name" value="defaultHead"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classadmin.html#afc1fd429de2352ee2f44529fda0a7256"><param name="Name" value="getPageContentByUrl"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classadmin.html#a961f0894dcabaeb4ad91ae3888342a95"><param name="Name" value="groupItem"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classadmin.html#a7e4427a2166702774d3c940c435f7555"><param name="Name" value="libLines"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classadmin.html#adfc302ebc2cbb202c9e688fd940628ea"><param name="Name" value="mainLogic"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classadmin.html#a00e54a66fb3719591ffc9c84ec0c46d2"><param name="Name" value="menuItem"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classadmin.html#af12e2dee8b65f00928e3beb5081251a7"><param name="Name" value="menuLines"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classadmin.html#a6dcd8b6c9a0087827abdd110c6926480"><param name="Name" value="modLines"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classadmin.html#a46b6792fb97cdb09c4733019052da1c6"><param name="Name" value="pagesLines"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classadmin.html#a452e7e5d61e69cfb1a2db0b7a8b03994"><param name="Name" value="profile"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classadmin.html#a05976cdb861d4da5227fd27eb77a7361"><param name="Name" value="usersLines"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#ab0912c8df7035bb6e9571a4333c0238a"><param name="Name" value="adminLogin"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classupload.html#a5703de110a95a505c2ffd20a1627da89"><param name="Name" value="advancedMode"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classadmin.html#a73a8e42630137b1b11246d16d7cd23d5"><param name="Name" value="ajax"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classadmin.html#a73a8e42630137b1b11246d16d7cd23d5"><param name="Name" value="admin"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classpihome.html#a73a8e42630137b1b11246d16d7cd23d5"><param name="Name" value="pihome"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classinstaller.html#a679ae15fcd10010553c3fb98d1e07215"><param name="Name" value="ajax_core"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classinstaller.html#ab8e780b1db814aafd203df17d3399d13"><param name="Name" value="ajax_main"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#a89196d2fcfb896306fe7e387f634a080"><param name="Name" value="ajaxSendJson"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#a89196d2fcfb896306fe7e387f634a080"><param name="Name" value="logMan"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classupload.html#ab22a9068029ed1bb11aa9e0cd62bc434"><param name="Name" value="upload"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classstatistics_template.html#a3067906ea3edfca03efcbbafcb6e327f"><param name="Name" value="allPackList"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classstatistics_template.html#a87714e5a88a034e7b1c7058bd0d67966"><param name="Name" value="allViews"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classanalytics.html"><param name="Name" value="analytics"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classanalytics.html#a63bb4c41bc532baacf6a4976cfaa0feb"><param name="Name" value="$arr"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classanalytics.html#a435e7d7525d4bcd0ed5e34a469f3adf6"><param name="Name" value="create"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classanalytics.html#a9be85fe710feedcbe1424b64b9dade9e"><param name="Name" value="gadefault"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classanalytics.html#ae87717e51772c9cbc91f0e87afc7d00e"><param name="Name" value="set"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classfiles_list.html#ab39d896ae81da27aff1c1611d2ec221e"><param name="Name" value="arrayToHtml"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classcore_sencillo.html#a2c7c8f0c4ae866f7c7f9956739d39696"><param name="Name" value="authorized"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a0ed80eb3d0f683447f8c163aba89cc84"><param name="Name" value="auto_orient"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#a9a30d68c9f462839242a462ca43f5753"><param name="Name" value="basicLogin"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#aaced3f2b7cc91ab8891d9248139338cf"><param name="Name" value="best_fit"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#acceb656aa24a210ff4c77f3f794d1073"><param name="Name" value="blur"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmail_gen.html#ab251e586f85b132f1b4bda22959ad664"><param name="Name" value="body"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#a861ffee5950974206ca24646eab7d39f"><param name="Name" value="bootstrapDefs"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classboot_up.html"><param name="Name" value="bootUp"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classboot_up.html#a4ca9ecfa22bed04c85e24326a037cfd0"><param name="Name" value="$coreSencillo"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classboot_up.html#a2b06fe777e2d4bac3ef970c8a984edaa"><param name="Name" value="$fileSystem"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classboot_up.html#a7281af4d471cc5f2e00d975905db660e"><param name="Name" value="$headerSeo"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classboot_up.html#ab7f16f959f74a634ca046420bd58c74b"><param name="Name" value="__construct"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classurl.html#ad78ae85a173fbd81e6668608a1c49106"><param name="Name" value="breadcrumb"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#af571c7cddbd8021822dc8a6c36bd4059"><param name="Name" value="brightness"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classhtgen.html#a1d6ceb16d5b8ea6fd0e63ed03fde08d6"><param name="Name" value="cache"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classcss.html#af15bc7e2f143b1c567b0cab96d8c57b2"><param name="Name" value="call"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#aa8dfc7c51361d8f550975be90ed2cf67"><param name="Name" value="checkSession"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#aff5b25c460fba7b1bce3e2a36fe702cf"><param name="Name" value="clean"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#add41e0ac3852ff63f876e5b04fedc069"><param name="Name" value="cleanupUserAgent"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classclist.html"><param name="Name" value="clist"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classclist.html#a6efc15b5a2314dd4b5aaa556a375c6d6"><param name="Name" value="$data"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classclist.html#aa10fd0ee87130ab7868db782f789a57d"><param name="Name" value="countryList"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classclist.html#ae34ce6f4a6d015926997a6a1b2a84e75"><param name="Name" value="getCountry"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql.html#aa69c8bf1f1dcf4e72552efff1fe3e87e"><param name="Name" value="close"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#ab133aa5541f0ae97c49d5729ace52c62"><param name="Name" value="colorize"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmail_gen.html#a3815e7c2e73f00c2ebffcf5b90eef3b1"><param name="Name" value="compile"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlibrary.html#a16b82871cdbd2ce703afba2bfbde7b68"><param name="Name" value="config"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlibrary.html#a16b82871cdbd2ce703afba2bfbde7b68"><param name="Name" value="library"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_interface.html#a8a549a19ec81f3aafb2b231aaa12e138"><param name="Name" value="mysqlInterface"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#ab64bc3c479b114bf2a4cf7b9e33cb17b"><param name="Name" value="config_mod"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_interface.html#a78572828d11dcdf2a498497d9001d557"><param name="Name" value="connect"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html"><param name="Name" value="construct"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a0673b9ec6eacb8984cbaae2a28634475"><param name="Name" value="$alltemplates"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a5619065f778cf71da2d43cbc4c47a1c4"><param name="Name" value="$css"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a1bef3405ec20ac00eac552967404eddc"><param name="Name" value="$defaultcfg"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#ad634f418b20382e2802f80532d76d3cd"><param name="Name" value="$email"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#aa37f0f7fd6f22ca7059c2fb7ce41951e"><param name="Name" value="$emailhead"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a9e3c21971e9e3ca69160006d5f5d668c"><param name="Name" value="$fullpath"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a654c0c51d37742f97bf32b263ce8785e"><param name="Name" value="$fullpathwithoutget"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#ab0c7013419fc5ee6238d17eff2554afe"><param name="Name" value="$images"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a747181e96d083c6396169e81e4d2056d"><param name="Name" value="$js"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#ad3527dd203fada41130c0376f3e671d5"><param name="Name" value="$libtype"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a0255f71ccc2457c0e7ac286ce091c104"><param name="Name" value="$linkmngr"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a54c5415e207320983b42b6a68abcbce5"><param name="Name" value="$logman"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#aa5bfac54cd2770bdd52cdc4080cabdab"><param name="Name" value="$mainmenu"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#ac0dbedf2030086b03c1ce5fe3fd4213d"><param name="Name" value="$mediapath"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#ae886f008e999d63cd581349083b28467"><param name="Name" value="$music"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#adcc4ef21180fb8043e5bf214393a2c8b"><param name="Name" value="$mysqlinterface"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a0a44e6760141442bb439b1ab1395d8ff"><param name="Name" value="$page"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#aa0787efab4b22e8a212882f3409d4c77"><param name="Name" value="$port"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#ac01bf1cf041487498864d054b991f570"><param name="Name" value="$protocol"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a8ec97217cd00453cdb17e5d6a18829ee"><param name="Name" value="$seo"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a8cae7a4cc608cbe17ffa675fc73cbe85"><param name="Name" value="$server_clean"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a6fc9ce28262124c9f56571793ff310b7"><param name="Name" value="$server_url"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#aac99125dfcac5fbe248a5b5e4f986cef"><param name="Name" value="$stn"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#aa3e9534005fd516d941f6a5569896e01"><param name="Name" value="$template"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#acf215f34a917d014776ce684a9ee8909"><param name="Name" value="$url"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a8995a009385b1ee7a696f4e8be9d4d93"><param name="Name" value="$urlprefix"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a7d031ef8e1b4a46ba034403acd178c76"><param name="Name" value="$usertype"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#af9a80827c3f37aaa84dc0aebec3b22b3"><param name="Name" value="$video"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a90a5c8971601b881867ac214801e3daa"><param name="Name" value="__construct"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#ab64bc3c479b114bf2a4cf7b9e33cb17b"><param name="Name" value="config_mod"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a12a549e25239c9219e66322cf6a1be68"><param name="Name" value="getPage"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a8600ec1c132a33b9d96cd857a17703ab"><param name="Name" value="install"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a72a49a9ddc990a1228acfd00b6467d69"><param name="Name" value="permDecode"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#ae20f8dd4e30107014830003069c78ada"><param name="Name" value="permList"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#aaeb7874c0191e7899707b35e1bc68534"><param name="Name" value="readVSC"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a2dffbdff8d3cad39021cb6d9b82192cb"><param name="Name" value="setPage"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#ac67f5f111c21e666f945eb5e5dbfeda9"><param name="Name" value="setupGallery"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a216114e70baca5314bebcd6351575430"><param name="Name" value="urlEdit"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a7af23605eb273c1084cbbf092bf69c50"><param name="Name" value="contrast"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconvert.html"><param name="Name" value="convert"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_d_fto_j_p_g.html#ac4a417ed69f33e594ad12eceb846174c"><param name="Name" value="PDFtoJPG"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconvert.html#a69b57a6fa2da17c7bbe292f84d0c3fe0"><param name="Name" value="stripHtml"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classinstaller.html#a6d740b9f9b8f704ff05318d6bbefc941"><param name="Name" value="core"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interfacecore_interface.html"><param name="Name" value="coreInterface"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interfacecore_interface.html#af4cf8181fcda31ba0ce060121795c5dc"><param name="Name" value="payLock"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interfacecore_interface.html#aa88fe4a9dd8795c065f2620947d450db"><param name="Name" value="product"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interfacecore_interface.html#a7664184e15f00825b54ecf378cd4174f"><param name="Name" value="version_info"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classcore_sencillo.html"><param name="Name" value="coreSencillo"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classcore_sencillo.html#a6dba07cf5cb37f05ef89d2b9afacf046"><param name="Name" value="$get"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classcore_sencillo.html#ae19722790c6683980bbf0af8572f26ab"><param name="Name" value="$info"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classcore_sencillo.html#afc86bce95fea4d2f4bd9e481e66754ff"><param name="Name" value="$original_request"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classcore_sencillo.html#a53d6c7669d97392c407c4f959a5263db"><param name="Name" value="$post"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classcore_sencillo.html#abb35c8495a232b510389fa6d7b15d38a"><param name="Name" value="$request"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classcore_sencillo.html#a4fd5742704d00ae15f527894bcd8cfb9"><param name="Name" value="__construct"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classcore_sencillo.html#a2c7c8f0c4ae866f7c7f9956739d39696"><param name="Name" value="authorized"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classcore_sencillo.html#af4cf8181fcda31ba0ce060121795c5dc"><param name="Name" value="payLock"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classcore_sencillo.html#a62e12d2cf1dbc3c01d867a76d26adf65"><param name="Name" value="product"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classcore_sencillo.html#af357eccac1f8e7e9df4c1491a92bd0f1"><param name="Name" value="upgrade"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classcore_sencillo.html#a7664184e15f00825b54ecf378cd4174f"><param name="Name" value="version_info"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classclist.html#aa10fd0ee87130ab7868db782f789a57d"><param name="Name" value="countryList"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#aae0bbd9a1af614db7c62fcfcdb906ecb"><param name="Name" value="create"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#aae0bbd9a1af614db7c62fcfcdb906ecb"><param name="Name" value="abeautifulsite::SimpleImage"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classanalytics.html#a435e7d7525d4bcd0ed5e34a469f3adf6"><param name="Name" value="analytics"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmenu_gen.html#ad93ad5cfde55e9828416fe8e2fdb7b74"><param name="Name" value="createMenu"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#ad0c5594c7e33c9821afd4305edaee0b9"><param name="Name" value="createSession"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classstructgen.html#a92f20c16db5c95fbd705777feacf8125"><param name="Name" value="createStructure"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#ae8162eecf899a411b0f91d013d16cda3"><param name="Name" value="createSuperUser"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_edit.html#a1fb0787af4bf5891a0ac1ee919bcda1f"><param name="Name" value="createTable"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a4363bcc58d31e100cc126fafad73ef1a"><param name="Name" value="crop"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classcss.html"><param name="Name" value="css"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classcss.html#a97e703767e90a0f6cfa9c627c15bcfe5"><param name="Name" value="$cssFiles"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classcss.html#a7773e55ea870f456b03e0ece2abb7828"><param name="Name" value="add"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classcss.html#af15bc7e2f143b1c567b0cab96d8c57b2"><param name="Name" value="call"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#a412a305a8a363639f9ad4498def23d5a"><param name="Name" value="headerSeo"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classcss.html#a9a9cca3c2da4a245ce28dd65b0e03ba9"><param name="Name" value="minify"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#a808498846b303c9a149bde9fecd94ebe"><param name="Name" value="custom"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classstatistics_template.html#a6f3d28e11d5e71ce9d96d32bf27c8fb0"><param name="Name" value="dailyViews"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_interface.html#ab8f860d15b6c8e90459cd3ee3a9a746b"><param name="Name" value="dbCreateTable"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classfdel.html#aaed74f7942d3fc56582e99324500e87b"><param name="Name" value="debug"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classfdel.html#aaed74f7942d3fc56582e99324500e87b"><param name="Name" value="fdel"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_interface.html#aaed74f7942d3fc56582e99324500e87b"><param name="Name" value="mysqlInterface"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classadmin.html#a3eb87c118cdf154681ee975ace463786"><param name="Name" value="defaultHead"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classdefault_structures.html"><param name="Name" value="defaultStructures"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_edit.html#a54cfa86a296a1717ecdc7c667d8d238e"><param name="Name" value="delete"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_edit.html#a54cfa86a296a1717ecdc7c667d8d238e"><param name="Name" value="mysqlEdit"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_interface.html#a54cfa86a296a1717ecdc7c667d8d238e"><param name="Name" value="mysqlInterface"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classfdel.html#a91e316c945c62d9fca01935263815b03"><param name="Name" value="deleteFile"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classfdel.html#acad5a617688373b7d8032baefa0dad1b"><param name="Name" value="deleteFolder"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classfdel.html#a45176edc5172bdb59f6a1fe0cd2235f4"><param name="Name" value="deleteOldFile"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#aac9e0740c42741b5b9f2e61991a34112"><param name="Name" value="desaturate"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#a9ac92a195c29bc1edc1475eef4923c72"><param name="Name" value="description"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#a9aea96aaeaf1efd5531eb1867ee67ca6"><param name="Name" value="destroySession"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classhtgen.html#a8acc8015c9cebee7ff40ff3b53f6360b"><param name="Name" value="directory"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classinput_rewrite.html#a1196e18ff5eb24e576a1f9043c5bdcf7"><param name="Name" value="dotVar"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#aed0804dc7416329172ab55bcbf1d41b7"><param name="Name" value="edges"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#a52a57cda7a4b849ed18d5c7133f75256"><param name="Name" value="editPerm"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#aabc8c1473621bfe3e064dd0a756c935e"><param name="Name" value="emboss"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#adf0fd8dd948e7622a113218888789b4c"><param name="Name" value="encode"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#a97d16655d22d0bd84fdfcc15f98f5dc6"><param name="Name" value="ereg"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_d_fto_j_p_g.html#aa4659cafa5751c6ad17aabc467ad7958"><param name="Name" value="errorList"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classhtgen.html#a450764950725de9284c7f909799e2c53"><param name="Name" value="errorPages"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_interface.html#a1909f4b7f8129c7790cb75de2ffbe1e4"><param name="Name" value="execute"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlibrary.html#a06412eb3b5af8cd7d978ac6eab667fbf"><param name="Name" value="export"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlibrary.html#a2e30710ad967fb842b8cc42452bb4e5e"><param name="Name" value="exportPath"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classfdel.html"><param name="Name" value="fdel"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classfdel.html#a6efc15b5a2314dd4b5aaa556a375c6d6"><param name="Name" value="$data"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classfdel.html#af104a08d89a5bbf1f513b65fdc8bba1f"><param name="Name" value="__construct"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classfdel.html#aaed74f7942d3fc56582e99324500e87b"><param name="Name" value="debug"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classfdel.html#a91e316c945c62d9fca01935263815b03"><param name="Name" value="deleteFile"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classfdel.html#acad5a617688373b7d8032baefa0dad1b"><param name="Name" value="deleteFolder"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classfdel.html#a45176edc5172bdb59f6a1fe0cd2235f4"><param name="Name" value="deleteOldFile"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classfile.html"><param name="Name" value="file"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classfile.html#a4717bbfc70a40a57ee741ed70766c309"><param name="Name" value="__construct"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classfile.html#a421831a265621325e1fdd19aace0c758"><param name="Name" value="__destruct"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#ae0e4ad34b7a0b6a4b7e582c4676bd60f"><param name="Name" value="file_ext"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classfiles_list.html"><param name="Name" value="filesList"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classfiles_list.html#ae6c874521ea9958e89e89f1d4d6e01d5"><param name="Name" value="$folderlist"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classfiles_list.html#a0a4baf0b22973c07685c3981f0d17fc4"><param name="Name" value="$path"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classfiles_list.html#a03853ceaa393e487835b287de58aba5a"><param name="Name" value="__construct"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classfiles_list.html#ab39d896ae81da27aff1c1611d2ec221e"><param name="Name" value="arrayToHtml"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classfiles_list.html#a7ccfe88b459f36381d83b8fd039999c8"><param name="Name" value="findFiles"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classfiles_list.html#ac08cf4a0b3b018e45d7d9eee5f6e1028"><param name="Name" value="findFilesStructure"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classfiles_list.html#a3593ec13e3e24737585badced66b43e1"><param name="Name" value="scanDir"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classfile_system.html"><param name="Name" value="fileSystem"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classfile_system.html#ab2fc40d43824ea3e1ce5d86dee0d763b"><param name="Name" value="$name"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classfile_system.html#a4717bbfc70a40a57ee741ed70766c309"><param name="Name" value="__construct"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classfile_system.html#a64571309bfb3238c65fd3c2898f92440"><param name="Name" value="read"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classfile_system.html#a85013b0dcf138f6997e2a05332ed0dd5"><param name="Name" value="write"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a4eba8a8f083a5b330872b7bca05d09d3"><param name="Name" value="fill"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_interface.html#a9f62a30876d7221d41ac746cfeae0d87"><param name="Name" value="filter"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classfiles_list.html#a7ccfe88b459f36381d83b8fd039999c8"><param name="Name" value="findFiles"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classfiles_list.html#ac08cf4a0b3b018e45d7d9eee5f6e1028"><param name="Name" value="findFilesStructure"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a8336e743a25f5301892696cd7c394f1f"><param name="Name" value="fit_to_height"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#ac94ed3e74548edbf50883dc09790ab16"><param name="Name" value="fit_to_width"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#afbed21df0630ae4d62c6ba38edd6f9d1"><param name="Name" value="flip"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#a760860eafd7560576c2c12824a800a6d"><param name="Name" value="forgot"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classform_creator.html"><param name="Name" value="formCreator"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classform_creator.html#a1a4fda4c28a9ee5f91102c023b9501f4"><param name="Name" value="$form"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classform_creator.html#ab09542cd5fe8c41321535f2586520e43"><param name="Name" value="getById"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classform_creator.html#aec79743fc2831bef599b86ad0226e7a7"><param name="Name" value="groupToLines"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classform_creator.html#abe54e45b5317341ce54aad4912e2867e"><param name="Name" value="newInputLine"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classstatistics_template.html#a985325fbe6bd18bd0b4bb7224a95a3f5"><param name="Name" value="formPackList"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmail_gen.html#a91f5f004ed8e2237a4decc5d23ac3457"><param name="Name" value="from"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classanalytics.html#a9be85fe710feedcbe1424b64b9dade9e"><param name="Name" value="gadefault"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmenu_gen.html#abebfe757962c5f97af6050764d680708"><param name="Name" value="generateMenu"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmenu_gen.html#ae1715ef46ba484bce82b56ccd723c230"><param name="Name" value="generateMenuAllLevels"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmenu_gen.html#a3c6b377051cfce54d0bc885ea61c7b7e"><param name="Name" value="generateMenuLevel"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#a3d46f2f84b0bf0de1921a0cb899bedff"><param name="Name" value="generator"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a0acd49b80218568ea04e7a5886373c54"><param name="Name" value="get_height"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a6ed959330a006f41f6c48bcbb9aa2f86"><param name="Name" value="get_meta_data"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a6bb3cbd0b8cb4156b2521365fca79529"><param name="Name" value="get_orientation"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a2514a0242e2b19b8b5fcbd7a79db5527"><param name="Name" value="get_original_info"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#abb10ccd258503d273acaf265bf1b1535"><param name="Name" value="get_width"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#a54038e0276f884046a26514fd9c262b0"><param name="Name" value="getBrowser"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#ada5bf3c372bdeafe45c06a5bca1a7cb3"><param name="Name" value="getBrowserFamilyFromId"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#a62a7a74fe088a35b3f233bf67df2012b"><param name="Name" value="getBrowserNameFromId"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#a5223fe564aa5f8872c1ad03e2c868b44"><param name="Name" value="getBrowserShortNameFromId"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classform_creator.html#ab09542cd5fe8c41321535f2586520e43"><param name="Name" value="getById"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classget_cookies.html#a1c999cd2e8d238603ef9a39a6d5dddb4"><param name="Name" value="getCookie"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classget_cookies.html"><param name="Name" value="getCookies"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classget_cookies.html#a095c5d389db211932136b53f25f39685"><param name="Name" value="__construct"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classget_cookies.html#a5eb869c0c92e14a8e642183097d3667d"><param name="Name" value="addCookie"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classget_cookies.html#a1c999cd2e8d238603ef9a39a6d5dddb4"><param name="Name" value="getCookie"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classget_cookies.html#a37ad70677fa7dfb0a03eb58bc0eead6d"><param name="Name" value="removeCookie"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classget_cookies.html#abc5ed2696aca517e302e8108fd40e5a6"><param name="Name" value="setExpiration"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classclist.html#ae34ce6f4a6d015926997a6a1b2a84e75"><param name="Name" value="getCountry"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog.html#af8283af3e7c972d9c276dc634eec0bdc"><param name="Name" value="getLog"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#ac435f3d1806cea069a6ca890ab1883c4"><param name="Name" value="getOperatingSystem"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#a7e5b3840ca6c0e2081ac3f41eece3c4e"><param name="Name" value="getOperatingSystemFamilyFromId"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#a4a677f5103ebf2631c940c06384adfe4"><param name="Name" value="getOperatingSystemIdFromName"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#a654d56eac9925308282304e98b6b981e"><param name="Name" value="getOperatingSystemNameFromId"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#a0def641c9d57aa4cb3b89672cde82884"><param name="Name" value="getOperatingSystemShortNameFromId"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a12a549e25239c9219e66322cf6a1be68"><param name="Name" value="getPage"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a12a549e25239c9219e66322cf6a1be68"><param name="Name" value="construct"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classurl.html#a259aafa22bfa702c4309ab5bbf975f78"><param name="Name" value="url"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classadmin.html#afc1fd429de2352ee2f44529fda0a7256"><param name="Name" value="getPageContentByUrl"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#a3884708300d256bc4e2aed3d425ec00a"><param name="Name" value="getPerm"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#a0055230648d2a2484c489013a475c3d7"><param name="Name" value="getSessionData"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#ae99d103123f211eb28e19c09f7fd134e"><param name="Name" value="getSignedUser"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#a7d18829341f798ff00342e4e7d96030a"><param name="Name" value="googleLoad"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classadmin.html#a961f0894dcabaeb4ad91ae3888342a95"><param name="Name" value="groupItem"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classform_creator.html#aec79743fc2831bef599b86ad0226e7a7"><param name="Name" value="groupToLines"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html"><param name="Name" value="headerSeo"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#ae19722790c6683980bbf0af8572f26ab"><param name="Name" value="$info"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#a8ec97217cd00453cdb17e5d6a18829ee"><param name="Name" value="$seo"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#a095c5d389db211932136b53f25f39685"><param name="Name" value="__construct"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#a861ffee5950974206ca24646eab7d39f"><param name="Name" value="bootstrapDefs"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#a412a305a8a363639f9ad4498def23d5a"><param name="Name" value="css"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#a808498846b303c9a149bde9fecd94ebe"><param name="Name" value="custom"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#a9ac92a195c29bc1edc1475eef4923c72"><param name="Name" value="description"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#adf0fd8dd948e7622a113218888789b4c"><param name="Name" value="encode"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#a3d46f2f84b0bf0de1921a0cb899bedff"><param name="Name" value="generator"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#a7d18829341f798ff00342e4e7d96030a"><param name="Name" value="googleLoad"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#a1b6489fdb8d3547f32072eb5a3abd514"><param name="Name" value="jquery"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#a6731160af6291e4d9f49bdf99e12eea8"><param name="Name" value="keywords"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#aa47df0e5b5191e604c711ede952a91fd"><param name="Name" value="lang"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#a450026fad0aad025cbcf4f2a0dcf6879"><param name="Name" value="nocache"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#a2dcb21be96d78f504583452f906e8ad1"><param name="Name" value="owner"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#abfdce57af88e3f1213816e5e6a6676e9"><param name="Name" value="responsive"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#a63237197ed5c8199150856dc71ec9e97"><param name="Name" value="robots"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#afc8a3c62679cf00ade9f15fb2a6d6132"><param name="Name" value="save"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#afc8757911dd63bee715578701eee1b91"><param name="Name" value="saveScript"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#a014ecbd1e7e58c10faf434a408ccb5ae"><param name="Name" value="saveWithoutStructureTag"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#a21fdbf37b0f5c645d980ba7a96fabf6e"><param name="Name" value="script"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#a32edfae2757c6b12dae9fb7738d5eca9"><param name="Name" value="script2end"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#ac49e736b6e84fc47561fcf0dfe4df35b"><param name="Name" value="socialTags"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#ab2e1fea7bdcb886e2734fb14d7631658"><param name="Name" value="style"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#a8a181ec2d8a26ba25144cad400ca3a87"><param name="Name" value="title"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classinstaller.html#a90b9564ec312cca9dd4e2a4bdd221b3d"><param name="Name" value="htaccess"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classhtgen.html"><param name="Name" value="htgen"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classhtgen.html#a3fbefca2da7b7d4434ad26f7436c8ff2"><param name="Name" value="$gen"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classhtgen.html#a1d6ceb16d5b8ea6fd0e63ed03fde08d6"><param name="Name" value="cache"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classhtgen.html#a8acc8015c9cebee7ff40ff3b53f6360b"><param name="Name" value="directory"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classhtgen.html#a450764950725de9284c7f909799e2c53"><param name="Name" value="errorPages"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classhtgen.html#a2a87f7fcb6240f637cceb37d72abc457"><param name="Name" value="installerScheme"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classhtgen.html#a8df2efbc6aa3369c95d10d2347dcc98f"><param name="Name" value="perm"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classhtgen.html#a9596f1635d3c078fa06ab0166bcbb11b"><param name="Name" value="prepare"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classhtgen.html#a76ebf2197f307abdb469a204fb24f21d"><param name="Name" value="prettyUrl"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classhtgen.html#aa332281d246627964c36fd68997f98dc"><param name="Name" value="preventDir"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classhtgen.html#a7652afa243aed18054692e9e88a7347b"><param name="Name" value="preventView"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classhtgen.html#a65662d62f9a7f5cd8bb3231aab42d948"><param name="Name" value="rewrite"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classhtgen.html#a0b653c241eea3d479e7db0464956cc6f"><param name="Name" value="toWww"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmail_gen.html#a17d9b02551cc82cfca7353d2db4fb87d"><param name="Name" value="html"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a725590e68594a12d631830dfce494571"><param name="Name" value="imagecopymerge_alpha"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="md_fw_templates_additional_admin_production_js_datatables_tools__readme.html"><param name="Name" value="Important - this is retired software"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classunit_test.html#ae333c4e62083e087bce97578113b2b17"><param name="Name" value="init"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classunit_test.html#ae333c4e62083e087bce97578113b2b17"><param name="Name" value="unitTest"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#a9f0be6ae273d3669e11c29910a0be338"><param name="Name" value="UserAgentParser"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_d_fto_j_p_g.html#a33a69510fb3e90f4f6064ca10d47fc84"><param name="Name" value="inPath"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classinput_rewrite.html"><param name="Name" value="inputRewrite"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classinput_rewrite.html#a1196e18ff5eb24e576a1f9043c5bdcf7"><param name="Name" value="dotVar"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classinput_rewrite.html#a2baa55b586a3cb2382a89588b5bff5f4"><param name="Name" value="parseFloat"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classinput_rewrite.html#a04e2dd5b1aa7de4db0d0e79ab0264162"><param name="Name" value="rewriteData"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_edit.html#ab76a899fa24ade276873e3bd1c34020c"><param name="Name" value="insert"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_edit.html#ab76a899fa24ade276873e3bd1c34020c"><param name="Name" value="mysqlEdit"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_interface.html#a083e6cc172b111ec9c7eac0c9fae8a7a"><param name="Name" value="mysqlInterface"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a8600ec1c132a33b9d96cd857a17703ab"><param name="Name" value="install"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a8600ec1c132a33b9d96cd857a17703ab"><param name="Name" value="construct"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlibrary.html#acfb4609a9793058adf313782ce9c9534"><param name="Name" value="library"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#aa966adc12c56a4cc70da92207fa50929"><param name="Name" value="logMan"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classinstaller.html"><param name="Name" value="installer"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classinstaller.html#a679ae15fcd10010553c3fb98d1e07215"><param name="Name" value="ajax_core"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classinstaller.html#ab8e780b1db814aafd203df17d3399d13"><param name="Name" value="ajax_main"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classinstaller.html#a6d740b9f9b8f704ff05318d6bbefc941"><param name="Name" value="core"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classinstaller.html#a90b9564ec312cca9dd4e2a4bdd221b3d"><param name="Name" value="htaccess"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classinstaller.html#af80b1696370adb5219d1f1cb2545f7f9"><param name="Name" value="loadIni"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classinstaller.html#a338e5cd43d6e036ec5d04455c66f09e5"><param name="Name" value="parseIniConfig"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classinstaller.html#a3b05eec13add53df44e232273d718ae4"><param name="Name" value="path"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classinstaller.html#a0b54c9d3801b331b75487ef78d98c06b"><param name="Name" value="template"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlibrary.html#a2da160546cc9648d461692f61e0eaa09"><param name="Name" value="installerPath"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classhtgen.html#a2a87f7fcb6240f637cceb37d72abc457"><param name="Name" value="installerScheme"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql.html#a2ddd43b5dd962bf0e23e9ce19e549ff3"><param name="Name" value="integrity"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a70a743c63f97d5bbfdb2cdab7d186938"><param name="Name" value="invert"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#a1b6489fdb8d3547f32072eb5a3abd514"><param name="Name" value="jquery"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a4b91068cc14980876d02cb4d51996c36"><param name="Name" value="keep_within"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#a6731160af6291e4d9f49bdf99e12eea8"><param name="Name" value="keywords"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#aa47df0e5b5191e604c711ede952a91fd"><param name="Name" value="lang"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classadmin.html#a7e4427a2166702774d3c940c435f7555"><param name="Name" value="libLines"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlibrary.html"><param name="Name" value="library"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlibrary.html#ad2203e5674ffbd18d3fdbcf2cac19a38"><param name="Name" value="$all_data_sencillo"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlibrary.html#a9590b15215a21e9b42eb546aeef79704"><param name="Name" value="$files"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlibrary.html#a430f5ed50a4c2f3d6ddee6b54bc97eaa"><param name="Name" value="$lib"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlibrary.html#a19e625c76c6796e995f33d323ee3aa84"><param name="Name" value="$modules"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlibrary.html#a16b82871cdbd2ce703afba2bfbde7b68"><param name="Name" value="config"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlibrary.html#a06412eb3b5af8cd7d978ac6eab667fbf"><param name="Name" value="export"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlibrary.html#a2e30710ad967fb842b8cc42452bb4e5e"><param name="Name" value="exportPath"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlibrary.html#acfb4609a9793058adf313782ce9c9534"><param name="Name" value="install"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlibrary.html#a2da160546cc9648d461692f61e0eaa09"><param name="Name" value="installerPath"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlibrary.html#af8fa59992209e36dccb3eefb0f75531f"><param name="Name" value="start"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlibrary.html#a19e49aea71e41a8bd6076bc45169e4a3"><param name="Name" value="status"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classstructgen.html#ad1e438322f50cf6f9cf6025c76ded250"><param name="Name" value="listBase"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classstructgen.html#abe862044c4d94459740b5b6563a4f870"><param name="Name" value="listStructure"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlogin_manager.html#a5c8c1321d130f39bede4104c968557e7"><param name="Name" value="lm_addUser"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlogin_manager.html#ad9c5d445e3844daf6a3547c192b14196"><param name="Name" value="lm_install"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a585c262d16bad21a05af8804df8372b2"><param name="Name" value="load"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a21c21cee2c0a9cd9e8965a684f50e8e8"><param name="Name" value="load_base64"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classinstaller.html#af80b1696370adb5219d1f1cb2545f7f9"><param name="Name" value="loadIni"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog.html"><param name="Name" value="log"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog.html#a2c4c58e377f6c66ca38c8ea97666fc5e"><param name="Name" value="$current"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog.html#aa1bfbd27060176201b271918dff57e8f"><param name="Name" value="$file"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog.html#afae5850468ea69a528a75f3b18baae68"><param name="Name" value="$maxLine"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog.html#ab2fc40d43824ea3e1ce5d86dee0d763b"><param name="Name" value="$name"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog.html#a0a4baf0b22973c07685c3981f0d17fc4"><param name="Name" value="$path"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog.html#a827b42f70d98e1bf51ff54dbbe771421"><param name="Name" value="$store"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog.html#a9900990865c5a574470a0d9886825c56"><param name="Name" value="$useFile"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog.html#a8e1fbdd4def82189306a52735bd0c70a"><param name="Name" value="__construct"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog.html#af8283af3e7c972d9c276dc634eec0bdc"><param name="Name" value="getLog"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog.html#ac4cd1cd9ecb5bdcbf0abfe30f276c430"><param name="Name" value="saveToLog"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog.html#ae34a906558f554ea9f61bb2f8f355191"><param name="Name" value="vd"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#a3b510811361c14194c4c54177f000f2d"><param name="Name" value="login"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlogin_manager.html"><param name="Name" value="loginManager"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlogin_manager.html#a095c5d389db211932136b53f25f39685"><param name="Name" value="__construct"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlogin_manager.html#a5c8c1321d130f39bede4104c968557e7"><param name="Name" value="lm_addUser"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlogin_manager.html#ad9c5d445e3844daf6a3547c192b14196"><param name="Name" value="lm_install"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html"><param name="Name" value="logMan"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#a9a2cf15a653aee8be437f7ae474cd494"><param name="Name" value="$log"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#ade9ea0ea6705b82aabd91456d030ad48"><param name="Name" value="$mysqlInterface"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#a58391ea75f2d29d5d708d7050b641c33"><param name="Name" value="$status"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#a7f3e615305910cf5ea9f24692e9613f6"><param name="Name" value="addNewUser"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#a63e86500ba57ad327c3cfdc4777b2edc"><param name="Name" value="addSessionData"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#a64ac0e06faad327b014754e951dfe170"><param name="Name" value="addToMainArray"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#ab0912c8df7035bb6e9571a4333c0238a"><param name="Name" value="adminLogin"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#a89196d2fcfb896306fe7e387f634a080"><param name="Name" value="ajaxSendJson"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#a9a30d68c9f462839242a462ca43f5753"><param name="Name" value="basicLogin"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#aa8dfc7c51361d8f550975be90ed2cf67"><param name="Name" value="checkSession"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#aff5b25c460fba7b1bce3e2a36fe702cf"><param name="Name" value="clean"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#ad0c5594c7e33c9821afd4305edaee0b9"><param name="Name" value="createSession"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#ae8162eecf899a411b0f91d013d16cda3"><param name="Name" value="createSuperUser"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#a9aea96aaeaf1efd5531eb1867ee67ca6"><param name="Name" value="destroySession"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#a52a57cda7a4b849ed18d5c7133f75256"><param name="Name" value="editPerm"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#a97d16655d22d0bd84fdfcc15f98f5dc6"><param name="Name" value="ereg"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#a760860eafd7560576c2c12824a800a6d"><param name="Name" value="forgot"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#a3884708300d256bc4e2aed3d425ec00a"><param name="Name" value="getPerm"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#a0055230648d2a2484c489013a475c3d7"><param name="Name" value="getSessionData"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#ae99d103123f211eb28e19c09f7fd134e"><param name="Name" value="getSignedUser"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#aa966adc12c56a4cc70da92207fa50929"><param name="Name" value="install"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#a3b510811361c14194c4c54177f000f2d"><param name="Name" value="login"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#a0bb131a01e8d92cdecdc9013ca808013"><param name="Name" value="signIn"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#af6b7cbde6eae6ee4d7825b1a9f202bf6"><param name="Name" value="signOut"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmail_gen.html"><param name="Name" value="mailGen"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmail_gen.html#a26b9f9373f7bb79dfcf8a86dff086b45"><param name="Name" value="$body"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmail_gen.html#af10158dd74b75f1d337e83102d6b82ce"><param name="Name" value="$charset"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmail_gen.html#a694a25441f5171ff6dc62820c5bc6676"><param name="Name" value="$ctype"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmail_gen.html#a0bb7e2b3d541598cc9c9e3b11bee859c"><param name="Name" value="$from"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmail_gen.html#a687ea7fcd78263867b5bd34ed56b6379"><param name="Name" value="$head"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmail_gen.html#ac409786c163a1974d1e24a6767a95166"><param name="Name" value="$mail"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmail_gen.html#afea90503726cd5ad2eb80baf0b6d217d"><param name="Name" value="$subject"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmail_gen.html#ac19f839b525d6d99d063fe56bf2a6d3b"><param name="Name" value="$to"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmail_gen.html#ab251e586f85b132f1b4bda22959ad664"><param name="Name" value="body"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmail_gen.html#a3815e7c2e73f00c2ebffcf5b90eef3b1"><param name="Name" value="compile"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmail_gen.html#a91f5f004ed8e2237a4decc5d23ac3457"><param name="Name" value="from"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmail_gen.html#a17d9b02551cc82cfca7353d2db4fb87d"><param name="Name" value="html"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmail_gen.html#a12bcef5130168b80d3d52dc82213f19a"><param name="Name" value="send"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmail_gen.html#aaa61b3aaa6cc4c90e26686e4bf41587a"><param name="Name" value="subject"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmail_gen.html#aa153432240eafa1bbac247a83fb148bb"><param name="Name" value="text"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmail_gen.html#a453e853778ae341e4fb165551d1ba1aa"><param name="Name" value="to"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classadmin.html#adfc302ebc2cbb202c9e688fd940628ea"><param name="Name" value="mainLogic"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classadmin.html#adfc302ebc2cbb202c9e688fd940628ea"><param name="Name" value="admin"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmodule__installer.html#adfc302ebc2cbb202c9e688fd940628ea"><param name="Name" value="module_installer"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classpihome.html#adfc302ebc2cbb202c9e688fd940628ea"><param name="Name" value="pihome"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classstatistics.html#adfc302ebc2cbb202c9e688fd940628ea"><param name="Name" value="statistics"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classstatistics_template.html#adfc302ebc2cbb202c9e688fd940628ea"><param name="Name" value="statisticsTemplate"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classupload.html#a8496ccdff0c6ca5869aa5cf6d0adf7fc"><param name="Name" value="maxSize"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a4f2623f77a0eb2993c39668604b9d028"><param name="Name" value="mean_remove"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmenu_gen.html"><param name="Name" value="menuGen"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmenu_gen.html#ae858fe52917aca7da3e5f64ac5bf665a"><param name="Name" value="$href"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmenu_gen.html#a83170d318260a5a2e2a79dccdd371b10"><param name="Name" value="$language"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmenu_gen.html#a3b6785d06028312e5e87edeb9363cdb1"><param name="Name" value="$maxLevel"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmenu_gen.html#ac98296e470680a8cf4239e4acb58c545"><param name="Name" value="$maxLevelQuery"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmenu_gen.html#aec66dec69450671d861a4f23e8348b09"><param name="Name" value="$mysqlObject"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmenu_gen.html#ab2fc40d43824ea3e1ce5d86dee0d763b"><param name="Name" value="$name"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmenu_gen.html#a0a44e6760141442bb439b1ab1395d8ff"><param name="Name" value="$page"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmenu_gen.html#a680d99dc393b3de7d233c61670bef29c"><param name="Name" value="$perm"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmenu_gen.html#ac01bf1cf041487498864d054b991f570"><param name="Name" value="$protocol"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmenu_gen.html#ab2aa38e2757698073a9287059cf6cdba"><param name="Name" value="__construct"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmenu_gen.html#ac188b81651695587a07ab3942871b244"><param name="Name" value="addItemToMenu"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmenu_gen.html#ad93ad5cfde55e9828416fe8e2fdb7b74"><param name="Name" value="createMenu"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmenu_gen.html#abebfe757962c5f97af6050764d680708"><param name="Name" value="generateMenu"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmenu_gen.html#ae1715ef46ba484bce82b56ccd723c230"><param name="Name" value="generateMenuAllLevels"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmenu_gen.html#a3c6b377051cfce54d0bc885ea61c7b7e"><param name="Name" value="generateMenuLevel"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmenu_gen.html#a4009d0ea1a4ab80c3f19cb41bd457023"><param name="Name" value="switchMenu"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classadmin.html#a00e54a66fb3719591ffc9c84ec0c46d2"><param name="Name" value="menuItem"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classadmin.html#af12e2dee8b65f00928e3beb5081251a7"><param name="Name" value="menuLines"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classupload.html#a186afde49d0e262c66f8f5bdefe42cb4"><param name="Name" value="mimeConfig"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classupload.html#aa9622d0f468253f04aa122505a089a86"><param name="Name" value="mimeTest"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classcss.html#a9a9cca3c2da4a245ce28dd65b0e03ba9"><param name="Name" value="minify"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classadmin.html#a6dcd8b6c9a0087827abdd110c6926480"><param name="Name" value="modLines"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmodule__installer.html"><param name="Name" value="module_installer"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmodule__installer.html#adfc302ebc2cbb202c9e688fd940628ea"><param name="Name" value="mainLogic"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="md_fw_templates_additional_admin_production_js_editor_monaco_package__r_e_a_d_m_e.html"><param name="Name" value="Monaco Editor"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="md_fw_templates_additional_admin_production_js_editor_monaco_package__c_h_a_n_g_e_l_o_g.html"><param name="Name" value="Monaco Editor Change log"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classstatistics_template.html#a594c0ae9983ac9598816a3fc8962fc10"><param name="Name" value="monthViews"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql.html"><param name="Name" value="mysql"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql.html#a0debe10448ec56a57b5509648408a549"><param name="Name" value="$con"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql.html#a1a881c28f710232dbf702d93c6a6e865"><param name="Name" value="$DBHost"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql.html#a3748d4d771a26c5411f1666a3a7a3cd8"><param name="Name" value="$DBName"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql.html#a8cf3718595a762c1974c4adfa331bc58"><param name="Name" value="$DBPass"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql.html#af107a7d38167b4ff8f65b395d856f7ab"><param name="Name" value="$DBUser"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql.html#a85ae3e64cd40e9564adceb010085e9dd"><param name="Name" value="$debug"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql.html#a7af15455307c9b6a6c4d51d620014e7d"><param name="Name" value="__construct"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql.html#aa69c8bf1f1dcf4e72552efff1fe3e87e"><param name="Name" value="close"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql.html#a2ddd43b5dd962bf0e23e9ce19e549ff3"><param name="Name" value="integrity"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql.html#a6b251c8058230359b2922377699c4f29"><param name="Name" value="query"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql.html#ad69dd4607977cae05ebe19d1ae604fb1"><param name="Name" value="test"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql.html#a5c41f7192b0b3b866e15f56c431ddc36"><param name="Name" value="write"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_edit.html"><param name="Name" value="mysqlEdit"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_edit.html#a1fb0787af4bf5891a0ac1ee919bcda1f"><param name="Name" value="createTable"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_edit.html#a54cfa86a296a1717ecdc7c667d8d238e"><param name="Name" value="delete"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_edit.html#ab76a899fa24ade276873e3bd1c34020c"><param name="Name" value="insert"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_edit.html#afb4a6a8508ccd874c0ebd19ea9c6d7a3"><param name="Name" value="newColumn"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_edit.html#a46db6a2a866e7edcd9655e57343bda8a"><param name="Name" value="openTable"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_edit.html#a273362ae49e939816659e808d6b8aadc"><param name="Name" value="output"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_edit.html#a20393378a29011bde0843665319c2ec7"><param name="Name" value="prepareTable"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_edit.html#a9c81290e60bed5bcac4f233f8315a02d"><param name="Name" value="set"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_edit.html#a3b6c7313483b6b625b773116e0b0123f"><param name="Name" value="testout"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_edit.html#af26ffcc175f4c1824af435ab0181fc47"><param name="Name" value="uniqueKey"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_edit.html#ab2da7078237b1fc56a1621426df94391"><param name="Name" value="update"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_interface.html"><param name="Name" value="mysqlInterface"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_interface.html#a956617395b85e98d907df712f6d0d3f7"><param name="Name" value="$connect"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_interface.html#a580989e8e3521433691a0351287f6315"><param name="Name" value="$mysqli"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_interface.html#a00e6dff44e00c36820da5508c6d9aba3"><param name="Name" value="$save"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_interface.html#a4109b7b827c5edc34a23b5f980756153"><param name="Name" value="addQuery"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_interface.html#a8a549a19ec81f3aafb2b231aaa12e138"><param name="Name" value="config"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_interface.html#a78572828d11dcdf2a498497d9001d557"><param name="Name" value="connect"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_interface.html#ab8f860d15b6c8e90459cd3ee3a9a746b"><param name="Name" value="dbCreateTable"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_interface.html#aaed74f7942d3fc56582e99324500e87b"><param name="Name" value="debug"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_interface.html#a54cfa86a296a1717ecdc7c667d8d238e"><param name="Name" value="delete"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_interface.html#a1909f4b7f8129c7790cb75de2ffbe1e4"><param name="Name" value="execute"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_interface.html#a9f62a30876d7221d41ac746cfeae0d87"><param name="Name" value="filter"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_interface.html#a083e6cc172b111ec9c7eac0c9fae8a7a"><param name="Name" value="insert"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_interface.html#a1a124f363344d55e5d89910dca1b0ac5"><param name="Name" value="select"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_interface.html#aa35f85a998cedba197344eb8bf4a9142"><param name="Name" value="showtables"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_interface.html#a3211e273c3ee674b966bab63d966c4b2"><param name="Name" value="update"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_interface.html#aba1c0c23ab9113d682823ea32a51332e"><param name="Name" value="validator"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classupload.html#a4b516aaa5fa38da4fed24ab6001627e2"><param name="Name" value="name"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_edit.html#afb4a6a8508ccd874c0ebd19ea9c6d7a3"><param name="Name" value="newColumn"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classform_creator.html#abe54e45b5317341ce54aad4912e2867e"><param name="Name" value="newInputLine"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#a450026fad0aad025cbcf4f2a0dcf6879"><param name="Name" value="nocache"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#aa0cce094a549fbed2a9e7288bd15221f"><param name="Name" value="normalize_color"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classstatistics_template.html#a96f28f2120f4fa5a5f35fc87adfe47b2"><param name="Name" value="noSystemFormPackList"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#add5b914f35ec96d98f9e3026693a627d"><param name="Name" value="opacity"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_edit.html#a46db6a2a866e7edcd9655e57343bda8a"><param name="Name" value="openTable"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_d_fto_j_p_g.html#a95fe4c5f4fb9d95bf52451a457870db9"><param name="Name" value="outPath"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a1d8a0c4ee571db448e556caed12028d1"><param name="Name" value="output"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a1d8a0c4ee571db448e556caed12028d1"><param name="Name" value="abeautifulsite::SimpleImage"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_edit.html#a273362ae49e939816659e808d6b8aadc"><param name="Name" value="mysqlEdit"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#acd08ab8d9a2213db91dc8a4cd533fedc"><param name="Name" value="output_base64"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a6f84503d7698b6d5ef56b6e6ba16f9ab"><param name="Name" value="overlay"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#a2dcb21be96d78f504583452f906e8ad1"><param name="Name" value="owner"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classstatistics_template.html#ab191e6a9e7990b8377ede3ff2c885b43"><param name="Name" value="packData"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classstatistics_template.html#ad8ece6b6afd9b95ca3b10fb130cdec32"><param name="Name" value="packEmailNo"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="string.html"><param name="Name" value="PAGE"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classadmin.html#a46b6792fb97cdb09c4733019052da1c6"><param name="Name" value="pagesLines"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classinput_rewrite.html#a2baa55b586a3cb2382a89588b5bff5f4"><param name="Name" value="parseFloat"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classinstaller.html#a338e5cd43d6e036ec5d04455c66f09e5"><param name="Name" value="parseIniConfig"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classinstaller.html#a3b05eec13add53df44e232273d718ae4"><param name="Name" value="path"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classinstaller.html#a3b05eec13add53df44e232273d718ae4"><param name="Name" value="installer"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classupload.html#a252353d1d7a5daf38f93859bc7dccccf"><param name="Name" value="upload"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interfacecore_interface.html#af4cf8181fcda31ba0ce060121795c5dc"><param name="Name" value="payLock"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interfacecore_interface.html#af4cf8181fcda31ba0ce060121795c5dc"><param name="Name" value="coreInterface"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classcore_sencillo.html#af4cf8181fcda31ba0ce060121795c5dc"><param name="Name" value="coreSencillo"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_d_fto_j_p_g.html#aa0a676d0c993727b170c6f7382d113d8"><param name="Name" value="pdfPathGenerator"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_d_fto_j_p_g.html"><param name="Name" value="PDFtoJPG"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_d_fto_j_p_g.html#aeba2ab722cedda53dbb7ec1a59f45550"><param name="Name" value="$error"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_d_fto_j_p_g.html#a0a4baf0b22973c07685c3981f0d17fc4"><param name="Name" value="$path"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_d_fto_j_p_g.html#ac4a417ed69f33e594ad12eceb846174c"><param name="Name" value="convert"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_d_fto_j_p_g.html#aa4659cafa5751c6ad17aabc467ad7958"><param name="Name" value="errorList"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_d_fto_j_p_g.html#a33a69510fb3e90f4f6064ca10d47fc84"><param name="Name" value="inPath"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_d_fto_j_p_g.html#a95fe4c5f4fb9d95bf52451a457870db9"><param name="Name" value="outPath"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_d_fto_j_p_g.html#aa0a676d0c993727b170c6f7382d113d8"><param name="Name" value="pdfPathGenerator"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_d_fto_j_p_g.html#aae3bfc864c34fb7c89abfbb0cbd5b296"><param name="Name" value="simulation"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classhtgen.html#a8df2efbc6aa3369c95d10d2347dcc98f"><param name="Name" value="perm"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a72a49a9ddc990a1228acfd00b6467d69"><param name="Name" value="permDecode"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#ae20f8dd4e30107014830003069c78ada"><param name="Name" value="permList"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classpihome.html"><param name="Name" value="pihome"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classpihome.html#acc5a69f680047349fd4b881989ac8bc8"><param name="Name" value="$Condensation"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classpihome.html#a7e9763c2099766fc420c5617bdb93077"><param name="Name" value="$CondensationLVL"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classpihome.html#aa11e546ae93c211bf063ebb098c6fd5c"><param name="Name" value="$CondensationSTS"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classpihome.html#ac0a319078a95b3995f9ded413f97ca3c"><param name="Name" value="$CPUtemperature"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classpihome.html#ad2185bdec5aeedc29026f521c1297ccd"><param name="Name" value="$ExtHDD"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classpihome.html#a4c6a3b5af2c01a7797cb54a1f002912e"><param name="Name" value="$HDDerr"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classpihome.html#ab8bab29a3312f256f81d5e698c27f42b"><param name="Name" value="$pcstatus"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classpihome.html#a5a52c7928a97f4a6203ec17a094bb220"><param name="Name" value="$playerCPUtemperature"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classpihome.html#a73a8e42630137b1b11246d16d7cd23d5"><param name="Name" value="ajax"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classpihome.html#adfc302ebc2cbb202c9e688fd940628ea"><param name="Name" value="mainLogic"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classpihome.html#aafccbaacd23bc8b472e66469fd9467df"><param name="Name" value="sensorIFTTTweather"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classpihome.html#a1cdacb6a3e14137cc5c5b5ef7168ecd8"><param name="Name" value="sensorsLines"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a682af070180fbd1f3734653757403139"><param name="Name" value="pixelate"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classhtgen.html#a9596f1635d3c078fa06ab0166bcbb11b"><param name="Name" value="prepare"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_edit.html#a20393378a29011bde0843665319c2ec7"><param name="Name" value="prepareTable"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classhtgen.html#a76ebf2197f307abdb469a204fb24f21d"><param name="Name" value="prettyUrl"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classhtgen.html#aa332281d246627964c36fd68997f98dc"><param name="Name" value="preventDir"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classhtgen.html#a7652afa243aed18054692e9e88a7347b"><param name="Name" value="preventView"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classunit_test.html#a2f7869c20ba14e4ccc0b4a70747626e7"><param name="Name" value="print_test"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classunit_test.html#a558679772c5cec30a0bb089041a0f430"><param name="Name" value="print_ut"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interfacecore_interface.html#aa88fe4a9dd8795c065f2620947d450db"><param name="Name" value="product"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interfacecore_interface.html#aa88fe4a9dd8795c065f2620947d450db"><param name="Name" value="coreInterface"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classcore_sencillo.html#a62e12d2cf1dbc3c01d867a76d26adf65"><param name="Name" value="coreSencillo"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classadmin.html#a452e7e5d61e69cfb1a2db0b7a8b03994"><param name="Name" value="profile"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql.html#a6b251c8058230359b2922377699c4f29"><param name="Name" value="query"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classfile_system.html#a64571309bfb3238c65fd3c2898f92440"><param name="Name" value="read"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="md_fw_templates_additional_admin_production_js_editor_tinymce_langs_readme.html"><param name="Name" value="readme"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#aaeb7874c0191e7899707b35e1bc68534"><param name="Name" value="readVSC"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classget_cookies.html#a37ad70677fa7dfb0a03eb58bc0eead6d"><param name="Name" value="removeCookie"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classurl.html#a3022830a582288c8216b5cbfaed1dec7"><param name="Name" value="removeUrl"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#aa22cf38c82a9f8234d99293ada1f70fa"><param name="Name" value="resize"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#abfdce57af88e3f1213816e5e6a6676e9"><param name="Name" value="responsive"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classhtgen.html#a65662d62f9a7f5cd8bb3231aab42d948"><param name="Name" value="rewrite"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classinput_rewrite.html#a04e2dd5b1aa7de4db0d0e79ab0264162"><param name="Name" value="rewriteData"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#a63237197ed5c8199150856dc71ec9e97"><param name="Name" value="robots"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#aa79f92a93704de1e68ede2dcda954862"><param name="Name" value="rotate"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a23cd0d0e54d1453a48d8d21ff9f65ae6"><param name="Name" value="save"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a23cd0d0e54d1453a48d8d21ff9f65ae6"><param name="Name" value="abeautifulsite::SimpleImage"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#afc8a3c62679cf00ade9f15fb2a6d6132"><param name="Name" value="headerSeo"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#afc8757911dd63bee715578701eee1b91"><param name="Name" value="saveScript"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog.html#ac4cd1cd9ecb5bdcbf0abfe30f276c430"><param name="Name" value="saveToLog"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#a014ecbd1e7e58c10faf434a408ccb5ae"><param name="Name" value="saveWithoutStructureTag"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classfiles_list.html#a3593ec13e3e24737585badced66b43e1"><param name="Name" value="scanDir"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#a32edfae2757c6b12dae9fb7738d5eca9"><param name="Name" value="script2end"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#a21fdbf37b0f5c645d980ba7a96fabf6e"><param name="Name" value="script"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_interface.html#a1a124f363344d55e5d89910dca1b0ac5"><param name="Name" value="select"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmail_gen.html#a12bcef5130168b80d3d52dc82213f19a"><param name="Name" value="send"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classpihome.html#aafccbaacd23bc8b472e66469fd9467df"><param name="Name" value="sensorIFTTTweather"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classpihome.html#a1cdacb6a3e14137cc5c5b5ef7168ecd8"><param name="Name" value="sensorsLines"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a4723159606519b101e408854bc65ee35"><param name="Name" value="sepia"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classsession_manager.html"><param name="Name" value="sessionManager"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classsession_manager.html#a095c5d389db211932136b53f25f39685"><param name="Name" value="__construct"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classsession_manager.html#a5aa4f941ff83651a35bb1f30afe415f9"><param name="Name" value="sm_destroy"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classsession_manager.html#aa0196c5f4e75779c2067d9e4a03336d1"><param name="Name" value="sm_get"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classanalytics.html#ae87717e51772c9cbc91f0e87afc7d00e"><param name="Name" value="set"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classanalytics.html#ae87717e51772c9cbc91f0e87afc7d00e"><param name="Name" value="analytics"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_edit.html#a9c81290e60bed5bcac4f233f8315a02d"><param name="Name" value="mysqlEdit"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classunit_test.html#a87d56f544f853dec06cbd953c3ede752"><param name="Name" value="setEnvironment"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classget_cookies.html#abc5ed2696aca517e302e8108fd40e5a6"><param name="Name" value="setExpiration"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classupload.html#a5908172fd6ef09cb9bc9543a3b83f8b6"><param name="Name" value="setMimes"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a2dffbdff8d3cad39021cb6d9b82192cb"><param name="Name" value="setPage"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#ac67f5f111c21e666f945eb5e5dbfeda9"><param name="Name" value="setupGallery"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_interface.html#aa35f85a998cedba197344eb8bf4a9142"><param name="Name" value="showtables"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#a0bb131a01e8d92cdecdc9013ca808013"><param name="Name" value="signIn"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog_man.html#af6b7cbde6eae6ee4d7825b1a9f202bf6"><param name="Name" value="signOut"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_simple_image.html"><param name="Name" value="SimpleImage"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_p_d_fto_j_p_g.html#aae3bfc864c34fb7c89abfbb0cbd5b296"><param name="Name" value="simulation"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#afc92209cb2a19193d46a9338b13a3bb9"><param name="Name" value="sketch"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classsession_manager.html#a5aa4f941ff83651a35bb1f30afe415f9"><param name="Name" value="sm_destroy"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classsession_manager.html#aa0196c5f4e75779c2067d9e4a03336d1"><param name="Name" value="sm_get"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a7ebc6366f3da2bf2af1608663fdb7a09"><param name="Name" value="smooth"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#ac49e736b6e84fc47561fcf0dfe4df35b"><param name="Name" value="socialTags"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlibrary.html#af8fa59992209e36dccb3eefb0f75531f"><param name="Name" value="start"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classstatistics.html"><param name="Name" value="statistics"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classstatistics.html#adfc302ebc2cbb202c9e688fd940628ea"><param name="Name" value="mainLogic"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classstatistics_template.html"><param name="Name" value="statisticsTemplate"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classstatistics_template.html#a3067906ea3edfca03efcbbafcb6e327f"><param name="Name" value="allPackList"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classstatistics_template.html#a87714e5a88a034e7b1c7058bd0d67966"><param name="Name" value="allViews"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classstatistics_template.html#a6f3d28e11d5e71ce9d96d32bf27c8fb0"><param name="Name" value="dailyViews"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classstatistics_template.html#a985325fbe6bd18bd0b4bb7224a95a3f5"><param name="Name" value="formPackList"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classstatistics_template.html#adfc302ebc2cbb202c9e688fd940628ea"><param name="Name" value="mainLogic"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classstatistics_template.html#a594c0ae9983ac9598816a3fc8962fc10"><param name="Name" value="monthViews"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classstatistics_template.html#a96f28f2120f4fa5a5f35fc87adfe47b2"><param name="Name" value="noSystemFormPackList"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classstatistics_template.html#ab191e6a9e7990b8377ede3ff2c885b43"><param name="Name" value="packData"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classstatistics_template.html#ad8ece6b6afd9b95ca3b10fb130cdec32"><param name="Name" value="packEmailNo"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classstatistics_template.html#a66504e537d4b9aeac26a81af35c3039f"><param name="Name" value="topPageList"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classstatistics_template.html#ab0401e00c82bcca60c61b8ce174c1d4e"><param name="Name" value="yearViews"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlibrary.html#a19e49aea71e41a8bd6076bc45169e4a3"><param name="Name" value="status"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconvert.html#a69b57a6fa2da17c7bbe292f84d0c3fe0"><param name="Name" value="stripHtml"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classstructgen.html"><param name="Name" value="structgen"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classstructgen.html#af28a2bf1bdf5c6f3ffeb459f2bba572b"><param name="Name" value="$baseCtr"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classstructgen.html#a6efc15b5a2314dd4b5aaa556a375c6d6"><param name="Name" value="$data"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classstructgen.html#ab2fc40d43824ea3e1ce5d86dee0d763b"><param name="Name" value="$name"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classstructgen.html#a047170d6020a882807665812a27e2525"><param name="Name" value="$sql"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classstructgen.html#a629dff33e6ad4aecc6c382d488cdcb08"><param name="Name" value="$subCtr"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classstructgen.html#a36878ba6be584b5b676f7bd98af20ee9"><param name="Name" value="__construct"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classstructgen.html#a68faa951ece5c70b42a9782bcfa3590a"><param name="Name" value="add"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classstructgen.html#a92f20c16db5c95fbd705777feacf8125"><param name="Name" value="createStructure"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classstructgen.html#ad1e438322f50cf6f9cf6025c76ded250"><param name="Name" value="listBase"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classstructgen.html#abe862044c4d94459740b5b6563a4f870"><param name="Name" value="listStructure"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classstructgen.html#a9ad9f4819f4914c8f0af701c5d5832e4"><param name="Name" value="switchStructure"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classstructgen.html#ade4889cf904248b04ad83fbe2f2e74f9"><param name="Name" value="uniStore"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#ab2e1fea7bdcb886e2734fb14d7631658"><param name="Name" value="style"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmail_gen.html#aaa61b3aaa6cc4c90e26686e4bf41587a"><param name="Name" value="subject"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmenu_gen.html#a4009d0ea1a4ab80c3f19cb41bd457023"><param name="Name" value="switchMenu"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classstructgen.html#a9ad9f4819f4914c8f0af701c5d5832e4"><param name="Name" value="switchStructure"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classinstaller.html#a0b54c9d3801b331b75487ef78d98c06b"><param name="Name" value="template"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql.html#ad69dd4607977cae05ebe19d1ae604fb1"><param name="Name" value="test"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classtesting_p_h_p.html#af26cefc040ebda78a6db7648c824e325"><param name="Name" value="test_mods"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classtesting_mysql.html"><param name="Name" value="testingMysql"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classtesting_mysql.html#a7af15455307c9b6a6c4d51d620014e7d"><param name="Name" value="__construct"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classtesting_p_h_p.html"><param name="Name" value="testingPHP"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classtesting_p_h_p.html#af26cefc040ebda78a6db7648c824e325"><param name="Name" value="test_mods"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_edit.html#a3b6c7313483b6b625b773116e0b0123f"><param name="Name" value="testout"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#ae3f9353f4c082c6c3ec3c4dd80653434"><param name="Name" value="text"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#ae3f9353f4c082c6c3ec3c4dd80653434"><param name="Name" value="abeautifulsite::SimpleImage"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmail_gen.html#aa153432240eafa1bbac247a83fb148bb"><param name="Name" value="mailGen"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classabeautifulsite_1_1_simple_image.html#a48003368138dcf4baf3e06f5e5599b8d"><param name="Name" value="thumbnail"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classheader_seo.html#a8a181ec2d8a26ba25144cad400ca3a87"><param name="Name" value="title"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmail_gen.html#a453e853778ae341e4fb165551d1ba1aa"><param name="Name" value="to"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classstatistics_template.html#a66504e537d4b9aeac26a81af35c3039f"><param name="Name" value="topPageList"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classhtgen.html#a0b653c241eea3d479e7db0464956cc6f"><param name="Name" value="toWww"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classtranslate.html"><param name="Name" value="translate"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classtranslate.html#a7714b111b644017933931ec69a154102"><param name="Name" value="$lang"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classtranslate.html#a9a663ee008f29e190f7a56c35ae011db"><param name="Name" value="$tSource"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classtranslate.html#afa2489379aace6afacf1391038f04fed"><param name="Name" value="__construct"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classtranslate.html#a2df21f2e384deb0f4f0f42c0ecd069ba"><param name="Name" value="addTranslate"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classtranslate.html#a413ddf994d1d740bb68c2fecfa47e68e"><param name="Name" value="translate"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_edit.html#af26ffcc175f4c1824af435ab0181fc47"><param name="Name" value="uniqueKey"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classstructgen.html#ade4889cf904248b04ad83fbe2f2e74f9"><param name="Name" value="uniStore"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classunit_test.html"><param name="Name" value="unitTest"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classunit_test.html#aa99ce9ae015e958eef5782267276fbb4"><param name="Name" value="$env"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classunit_test.html#ae333c4e62083e087bce97578113b2b17"><param name="Name" value="init"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classunit_test.html#a2f7869c20ba14e4ccc0b4a70747626e7"><param name="Name" value="print_test"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classunit_test.html#a558679772c5cec30a0bb089041a0f430"><param name="Name" value="print_ut"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classunit_test.html#a87d56f544f853dec06cbd953c3ede752"><param name="Name" value="setEnvironment"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_edit.html#ab2da7078237b1fc56a1621426df94391"><param name="Name" value="update"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_edit.html#ab2da7078237b1fc56a1621426df94391"><param name="Name" value="mysqlEdit"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_interface.html#a3211e273c3ee674b966bab63d966c4b2"><param name="Name" value="mysqlInterface"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classcore_sencillo.html#af357eccac1f8e7e9df4c1491a92bd0f1"><param name="Name" value="upgrade"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classupload.html"><param name="Name" value="upload"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classupload.html#acf9b4eabceb162a0d757e5665fa38acb"><param name="Name" value="$ajax"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classupload.html#a958cf7aca45cea5359ba0fa80ee2f2c1"><param name="Name" value="$mime"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classupload.html#a3aaf40baac36e278c7d7c9139df1750c"><param name="Name" value="$mode"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classupload.html#af594986e4618a8d6a5d7566617f583c6"><param name="Name" value="$size"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classupload.html#a58391ea75f2d29d5d708d7050b641c33"><param name="Name" value="$status"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classupload.html#a0226b5fa357adcccf3ab459aaf3f8631"><param name="Name" value="$uploadDirectory"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classupload.html#a430a2c99398e101d3e3ed06a18480b87"><param name="Name" value="$uploadInfo"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classupload.html#a03853ceaa393e487835b287de58aba5a"><param name="Name" value="__construct"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classupload.html#a5703de110a95a505c2ffd20a1627da89"><param name="Name" value="advancedMode"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classupload.html#ab22a9068029ed1bb11aa9e0cd62bc434"><param name="Name" value="ajaxSendJson"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classupload.html#a8496ccdff0c6ca5869aa5cf6d0adf7fc"><param name="Name" value="maxSize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classupload.html#a186afde49d0e262c66f8f5bdefe42cb4"><param name="Name" value="mimeConfig"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classupload.html#aa9622d0f468253f04aa122505a089a86"><param name="Name" value="mimeTest"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classupload.html#a4b516aaa5fa38da4fed24ab6001627e2"><param name="Name" value="name"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classupload.html#a252353d1d7a5daf38f93859bc7dccccf"><param name="Name" value="path"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classupload.html#a5908172fd6ef09cb9bc9543a3b83f8b6"><param name="Name" value="setMimes"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classupload.html#a160ae63d11b56d3190b172facb43a343"><param name="Name" value="upload"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classurl.html"><param name="Name" value="url"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classurl.html#a6efc15b5a2314dd4b5aaa556a375c6d6"><param name="Name" value="$data"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classurl.html#ab302f269413f4e58217d5801cd52ca39"><param name="Name" value="addUrl"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classurl.html#ad78ae85a173fbd81e6668608a1c49106"><param name="Name" value="breadcrumb"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classurl.html#a259aafa22bfa702c4309ab5bbf975f78"><param name="Name" value="getPage"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classurl.html#a3022830a582288c8216b5cbfaed1dec7"><param name="Name" value="removeUrl"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classurl.html#ac3ad0a893ce447a4b92b7bea59371f02"><param name="Name" value="url"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classconstruct.html#a216114e70baca5314bebcd6351575430"><param name="Name" value="urlEdit"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html"><param name="Name" value="UserAgentParser"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#a1d8d7fab9e2c2974919888f5b886295e"><param name="Name" value="$browserIdToName"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#a7958078b2a0013798f14838fa1fd40c1"><param name="Name" value="$browserIdToShortName"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#a81edf933083b5ac5b380385f59074a7d"><param name="Name" value="$browsers"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#ad0821f30ee48c49356b114884ad1c552"><param name="Name" value="$browserType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#a0f50a04746313e5adeaaa8fe0edcb115"><param name="Name" value="$omniWebVersions"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#a6c81c14f25de6a8b8206335eea724eb1"><param name="Name" value="$operatingSystems"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#ab68e07510370828435a3e86c320c7bdc"><param name="Name" value="$operatingSystemsIdToName"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#ada1762b34d38d7498838252118cca041"><param name="Name" value="$operatingSystemsIdToShortName"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#a35cddafe55870d08e38ce841e7902a4b"><param name="Name" value="$osType"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#a3493595b0af2ff79e44fe73847a67688"><param name="Name" value="$safariVersions"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#add41e0ac3852ff63f876e5b04fedc069"><param name="Name" value="cleanupUserAgent"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#a54038e0276f884046a26514fd9c262b0"><param name="Name" value="getBrowser"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#ada5bf3c372bdeafe45c06a5bca1a7cb3"><param name="Name" value="getBrowserFamilyFromId"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#a62a7a74fe088a35b3f233bf67df2012b"><param name="Name" value="getBrowserNameFromId"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#a5223fe564aa5f8872c1ad03e2c868b44"><param name="Name" value="getBrowserShortNameFromId"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#ac435f3d1806cea069a6ca890ab1883c4"><param name="Name" value="getOperatingSystem"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#a7e5b3840ca6c0e2081ac3f41eece3c4e"><param name="Name" value="getOperatingSystemFamilyFromId"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#a4a677f5103ebf2631c940c06384adfe4"><param name="Name" value="getOperatingSystemIdFromName"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#a654d56eac9925308282304e98b6b981e"><param name="Name" value="getOperatingSystemNameFromId"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#a0def641c9d57aa4cb3b89672cde82884"><param name="Name" value="getOperatingSystemShortNameFromId"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_user_agent_parser.html#a9f0be6ae273d3669e11c29910a0be338"><param name="Name" value="init"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classadmin.html#a05976cdb861d4da5227fd27eb77a7361"><param name="Name" value="usersLines"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql_interface.html#aba1c0c23ab9113d682823ea32a51332e"><param name="Name" value="validator"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classlog.html#ae34a906558f554ea9f61bb2f8f355191"><param name="Name" value="vd"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="interfacecore_interface.html#a7664184e15f00825b54ecf378cd4174f"><param name="Name" value="version_info"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="interfacecore_interface.html#a7664184e15f00825b54ecf378cd4174f"><param name="Name" value="coreInterface"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classcore_sencillo.html#a7664184e15f00825b54ecf378cd4174f"><param name="Name" value="coreSencillo"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classfile_system.html#a85013b0dcf138f6997e2a05332ed0dd5"><param name="Name" value="write"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classfile_system.html#a85013b0dcf138f6997e2a05332ed0dd5"><param name="Name" value="fileSystem"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmysql.html#a5c41f7192b0b3b866e15f56c431ddc36"><param name="Name" value="mysql"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classstatistics_template.html#ab0401e00c82bcca60c61b8ce174c1d4e"><param name="Name" value="yearViews"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="deprecated.html"><param name="Name" value="Zastarané metódy"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="todo.html"><param name="Name" value="Zoznam plánovaných úprav"></OBJECT>
+</UL>
+</BODY>
+</HTML>

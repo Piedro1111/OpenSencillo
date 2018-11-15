@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>OpenSencillo: Zdrojový súbor ajax.slot.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">OpenSencillo
+   &#160;<span id="projectnumber">2018.111</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generované programom Doxygen 1.8.14 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','Hľadať');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ajax.slot.php</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;error_reporting(E_ERROR | E_PARSE);</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;session_start();</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;require_once(<span class="stringliteral">&quot;./basicstrap.php&quot;</span>);</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;$status = <span class="keyword">new</span> <a class="code" href="classadmin.html">admin</a>(<span class="stringliteral">&#39;ajax.slot.php&#39;</span>);</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;$out = $status-&gt;ajax();</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keywordflow">if</span>(class_exists(<span class="stringliteral">&#39;pihome&#39;</span>)&amp;&amp;(!(isset($out[<span class="stringliteral">&#39;code&#39;</span>]))))</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    $out = <a class="code" href="classpihome.html#a73a8e42630137b1b11246d16d7cd23d5">pihome::ajax</a>();</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;print json_encode($out);</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;?&gt;</div><div class="ttc" id="classpihome_html_a73a8e42630137b1b11246d16d7cd23d5"><div class="ttname"><a href="classpihome.html#a73a8e42630137b1b11246d16d7cd23d5">pihome\ajax</a></div><div class="ttdeci">ajax()</div><div class="ttdef"><b>Definition:</b> <a href="main__pihome_8php_source.html#l00170">main_pihome.php:170</a></div></div>
+<div class="ttc" id="classadmin_html"><div class="ttname"><a href="classadmin.html">admin</a></div><div class="ttdef"><b>Definition:</b> <a href="main__admin_8php_source.html#l00002">main_admin.php:2</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generované programom &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>
