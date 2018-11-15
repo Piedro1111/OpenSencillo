@@ -1,65 +1,61 @@
+<?php
+$sts = new statisticsTemplate;
+$this->config_mod($this->protocol,$this->url,$this->defaultcfg[2]);
+?>
+		<div class="row tile_count">
+		  <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
+			<div class="left"></div>
+			<div class="right">
+			  <span class="count_top"><i class="fa fa-eye"></i> Today views</span>
+			  <div class="count"><span class=" green"><?=$sts->dailyViews();?></span></div>
+			  <!--<span class="count_bottom"><i class="green">4% </i> From last Week</span>-->
+			</div>
+		  </div>
+		  <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
+			<div class="left"></div>
+			<div class="right">
+			  <span class="count_top"><i class="fa fa-eye"></i> Month views</span>
+			  <div class="count"><span class=" green"><?=$sts->monthViews();?></span></div>
+			  <!--<span class="count_bottom"><i class="green">4% </i> From last Week</span>-->
+			</div>
+		  </div>
+		  <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
+			<div class="left"></div>
+			<div class="right">
+			  <span class="count_top"><i class="fa fa-eye"></i> Year views</span>
+			  <div class="count"><span class=" green"><?=$sts->yearViews();?></span></div>
+			  <!--<span class="count_bottom"><i class="green">4% </i> From last Week</span>-->
+			</div>
+		  </div>
+		  <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
+			<div class="left"></div>
+			<div class="right">
+			  <span class="count_top"><i class="fa fa-eye"></i> All views</span>
+			  <div class="count"><span class=" green"><?=$sts->allViews();?></span></div>
+			  <!--<span class="count_bottom"><i class="green">4% </i> From last Week</span>-->
+			</div>
+		  </div>
+		</div>
         <div class="row">
 
 
           <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="x_panel">
                 <div class="x_title">
-                  <h2>Newsletter <small>all</small></h2>
+                  <h2>Top page list</h2>
                   <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
-                  <table id="sencillo-newsletters-table" class="table table-striped responsive-utilities jambo_table">
+                  <table id="sencillo-menu-table" class="table table-striped responsive-utilities jambo_table">
                     <thead>
                       <tr class="headings">
-                        <th>ID </th>
-                        <th>Name </th>
-                        <th>Sumary </th>
-                        <th>Date </th>
-                        <th>Time </th>
-						<th>Action </th>
+                        <th>URL </th>
+                        <th>Views</th>
                       </tr>
                     </thead>
 
                     <tbody>
-                      <?=$this->newsletterLines();?>
-                    </tbody>
-
-                  </table>
-				  <br>
-				  <div class="ln_solid"></div>
-				  <div class="form-group">
-				    <div class="col-md-6">
-					  <button id="create_blank_newsletter" type="button" class="btn btn-info">Create newsletter</button>
-				    </div>
-				  </div>
-                </div>
-              </div>
-            </div>
-
-        </div>
-		
-		<div class="row">
-
-
-          <div class="col-md-12 col-sm-12 col-xs-12">
-              <div class="x_panel">
-                <div class="x_title">
-                  <h2>Mailing list <small>GDPR approved</small></h2>
-                  <div class="clearfix"></div>
-                </div>
-                <div class="x_content">
-                  <table id="sencillo-mailing-table" class="table table-striped responsive-utilities jambo_table">
-                    <thead>
-                      <tr class="headings">
-                        <th>ID </th>
-                        <th>Email </th>
-						<th>Approved from </th>
-						<th>Approved expiration </th>
-                      </tr>
-                    </thead>
-
-                    <tbody>
-                      <?=$this->newsletterRecipientsLines();?>
+                      <?=$sts->topPageList();?>
                     </tbody>
 
                   </table>
@@ -69,8 +65,6 @@
             </div>
 
         </div>
-
-
 
   <!--<script src="<?=$this->js;?>/js/bootstrap.min.js"></script>-->
 
@@ -89,17 +83,11 @@
   <script>
     var asInitVals = new Array();
     $(document).ready(function() {
-      var oTable = $('#sencillo-newsletters-table').dataTable({
+      var oTable = $('#sencillo-menu-table').dataTable({
         "oLanguage": {
           "sSearch": "Search all columns:"
         },
-		"order": [[ 0, "desc" ]]
-      });
-	  var oTable = $('#sencillo-mailing-table').dataTable({
-        "oLanguage": {
-          "sSearch": "Search all columns:"
-        },
-		"order": [[ 0, "desc" ]]
+		"order": [[ 1, "desc" ]]
       });
       $("tfoot input").keyup(function() {
         /* Filter on the column based on the index of this element's parent <th> */
@@ -122,4 +110,3 @@
       });
     });
   </script>
-

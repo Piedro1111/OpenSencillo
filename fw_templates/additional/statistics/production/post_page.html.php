@@ -1,76 +1,44 @@
+<?php
+$sts = new statisticsTemplate;
+$this->config_mod($this->protocol,$this->url,$this->defaultcfg[2]);
+?>
         <div class="row">
 
 
           <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="x_panel">
                 <div class="x_title">
-                  <h2>Newsletter <small>all</small></h2>
+                  <h2>Inbox</h2>
                   <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
-                  <table id="sencillo-newsletters-table" class="table table-striped responsive-utilities jambo_table">
+                  <table id="sencillo-menu-table" class="table table-striped responsive-utilities jambo_table">
                     <thead>
                       <tr class="headings">
-                        <th>ID </th>
-                        <th>Name </th>
-                        <th>Sumary </th>
-                        <th>Date </th>
-                        <th>Time </th>
+                        <th># </th>
+                        <th>URL </th>
+                        <th>Email </th>
+                        <th>Date and time </th>
 						<th>Action </th>
                       </tr>
                     </thead>
 
                     <tbody>
-                      <?=$this->newsletterLines();?>
+                      <?=$sts->noSystemFormPackList();?>
                     </tbody>
 
                   </table>
 				  <br>
-				  <div class="ln_solid"></div>
 				  <div class="form-group">
-				    <div class="col-md-6">
-					  <button id="create_blank_newsletter" type="button" class="btn btn-info">Create newsletter</button>
-				    </div>
+					  <div class="col-md-6">
+						<a id="all-as-read" href="#all-as-read" class="btn btn-danger">All as read</a>
+					  </div>
 				  </div>
                 </div>
               </div>
             </div>
 
         </div>
-		
-		<div class="row">
-
-
-          <div class="col-md-12 col-sm-12 col-xs-12">
-              <div class="x_panel">
-                <div class="x_title">
-                  <h2>Mailing list <small>GDPR approved</small></h2>
-                  <div class="clearfix"></div>
-                </div>
-                <div class="x_content">
-                  <table id="sencillo-mailing-table" class="table table-striped responsive-utilities jambo_table">
-                    <thead>
-                      <tr class="headings">
-                        <th>ID </th>
-                        <th>Email </th>
-						<th>Approved from </th>
-						<th>Approved expiration </th>
-                      </tr>
-                    </thead>
-
-                    <tbody>
-                      <?=$this->newsletterRecipientsLines();?>
-                    </tbody>
-
-                  </table>
-				  <br>
-                </div>
-              </div>
-            </div>
-
-        </div>
-
-
 
   <!--<script src="<?=$this->js;?>/js/bootstrap.min.js"></script>-->
 
@@ -89,13 +57,7 @@
   <script>
     var asInitVals = new Array();
     $(document).ready(function() {
-      var oTable = $('#sencillo-newsletters-table').dataTable({
-        "oLanguage": {
-          "sSearch": "Search all columns:"
-        },
-		"order": [[ 0, "desc" ]]
-      });
-	  var oTable = $('#sencillo-mailing-table').dataTable({
+      var oTable = $('#sencillo-menu-table').dataTable({
         "oLanguage": {
           "sSearch": "Search all columns:"
         },
@@ -122,4 +84,3 @@
       });
     });
   </script>
-

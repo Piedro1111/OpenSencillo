@@ -1,4 +1,24 @@
 #################
+## Custom
+#################
+
+fw_modules/happycompany/
+fw_modules/conference-loader/
+fw_media/gdpr/
+fw_media/media_imgs/
+fw_media/media_sounds/
+fw_media/media_videos/
+
+fw_templates/additional/gentelella/
+fw_templates/additional/happycompany/
+fw_templates/additional/konferencia2018/
+
+fw_headers/mysql-config.php
+
+firststart.json
+yourcode.php
+
+#################
 ## Eclipse
 #################
 

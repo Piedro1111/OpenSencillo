@@ -77,32 +77,36 @@ class construct
 	* @param mod modname string
 	* @param protocol 'http' or 'https' string
 	* @param template path string
+	* @param host path string
+	* @param other path string
 	*/
-	final public function install($mod,$protocol,$template)
+	final public function install($config_id,$host,$mod,$protocol,$template,$other)
 	{
-		$mysql->mysqlinterface->insert(array(
+		$this->mysqlinterface->insert(array(
+			'virtual_system_config'=>array(
+				'id'=>$config_id,
+				'module'=>$mod,
+				'perm'=>0,
+				'switch'=>0,
+				'function'=>'mod:'.$config_id,
+				'command'=>$mod,
+				'commander'=>$this->logman->getSessionData('userid'),
+				'sort'=>0
+			)
+		));
+		$this->mysqlinterface->insert(array(
 			'virtual_system_config'=>array(
 				'id'=>'',
 				'module'=>$mod,
 				'perm'=>0,
-				'switch'=>1,
-				'function'=>'mod:'.$mod,
-				'command'=>$mod,
-				'commander'=>0
+				'switch'=>0,
+				'function'=>'cfg:'.$config_id,
+				'command'=>'config_mod:'.$protocol.','.$host.','.$template.','.$other,
+				'commander'=>$this->logman->getSessionData('userid'),
+				'sort'=>0
 			)
 		));
-		$mysql->mysqlinterface->insert(array(
-			'virtual_system_config'=>array(
-				'id'=>'',
-				'module'=>$mod,
-				'perm'=>0,
-				'switch'=>1,
-				'function'=>'cfg:'.$protocol.','.$mod.','.$template,
-				'command'=>$mod,
-				'commander'=>0
-			)
-		));
-		$mysql->mysqlinterface->execute();
+		$this->mysqlinterface->execute();
 	}
 	
 	/**

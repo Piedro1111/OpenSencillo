@@ -4,7 +4,7 @@
           <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="x_panel">
                 <div class="x_title">
-                  <h2><?=$this->permDecode($this->profile('perm'));?> <small><?=$this->profile('login');?></small></h2>
+                  <h2><?=$decodePRM = $this->permDecode($this->profile('perm'));?> <small><?=$this->profile('login');?></small></h2>
                   <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
@@ -30,7 +30,7 @@
                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">Permission <span class="required">*</span>
                       </label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input type="number" required="required" class="form-control col-md-7 col-xs-12" disabled value="<?=$this->profile('perm');?>">
+                        <input type="text" required="required" class="form-control col-md-7 col-xs-12" disabled value="<?=$decodePRM;?>">
                       </div>
                     </div>
                   </form>

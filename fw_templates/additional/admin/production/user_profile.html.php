@@ -9,7 +9,7 @@
                 </div>
                 <div class="x_content">
 
-                  <form action="<?=$this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->url.'/users/user/save?u='.$_GET['u'];?>" method="post" class="form-horizontal form-label-left" novalidate>
+                  <form action="<?=$this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->url.'/users/user/save?u='.(($this->logman->getSessionData('perm')>=1111)?$_GET['u']:$this->logman->getSessionData('userid'));?>" data-user="<?=(($this->logman->getSessionData('perm')>=1111)?'low-lwl':'admin-lwl');?>" method="post" class="form-horizontal form-label-left" novalidate>
                     <span class="section">Personal Info</span>
 
                     <div class="item form-group">
@@ -33,6 +33,7 @@
                         <input type="email" id="email2" name="confirm_email" data-validate-linked="email" required="required" class="form-control col-md-7 col-xs-12" value="<?=$this->profile('email');?>">
                       </div>
                     </div>
+					<?if($this->logman->getSessionData('perm')>=1111):?>
 					<div class="item form-group">
                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">Active <span class="required">*</span>
                       </label>
@@ -58,6 +59,7 @@
 						</select>
 					  </div>
                     </div>
+					<?endif;?>
                     <div class="item form-group">
                       <label for="password" class="control-label col-md-3">Password</label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
@@ -74,7 +76,9 @@
                     <div class="form-group">
                       <div class="col-md-6 col-md-offset-3">
                         <button id="send" type="submit" class="btn btn-success">Submit</button>
-						<a href="?u=<?=$_GET['u'];?>&amp;gdpr=list" class="btn btn-info">Personal data</a>
+						<?if(class_exists('gdpr')):?>
+						<a href="?u=<?=(($this->logman->getSessionData('perm')>=1111)?$_GET['u']:$this->logman->getSessionData('userid'));?>&amp;gdpr=list" class="btn btn-info">Personal data</a>
+						<?endif;?>
                       </div>
                     </div>
                   </form>
@@ -85,10 +89,13 @@
 
         </div>
 <?php
-$gdpr=new gdpr;
-$gdpr->getAllUserDataFromDB($this->profile('email'),$_GET['u']);
+if(class_exists('gdpr'))
+{
+	$gdpr=new gdpr;
+	$gdpr->getAllUserDataFromDB($this->profile('email'),(($this->logman->getSessionData('perm')>=1111)?$_GET['u']:$this->logman->getSessionData('userid')));
+}
 ?>
-		<?if($_GET['gdpr']=='list'):?>
+		<?if(($_GET['gdpr']=='list')&&(class_exists('gdpr'))):?>
 		<div class="row">
           <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="x_panel">
@@ -102,6 +109,7 @@ $gdpr->getAllUserDataFromDB($this->profile('email'),$_GET['u']);
                       <tr class="headings">
                         <th>Group </th>
                         <th>Data </th>
+						<th>Date and time </th>
                       </tr>
                     </thead>
                     <tbody>
@@ -113,7 +121,7 @@ $gdpr->getAllUserDataFromDB($this->profile('email'),$_GET['u']);
 				  <div class="form-group">
 					  <div class="col-md-6 col-md-offset-3">
 						<a download href="<?=$this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->url.'/fw_media/gdpr/'.$gdpr->gdprfilename();?>" class="btn btn-info">Download raw data</a>
-						<a id="remove-profile" href="#remove_profile" class="btn btn-danger">Remove profile and all data</a>
+						<a id="remove-profile" data-user="<?=$this->profile('email');?>" data-code="<?=(($this->logman->getSessionData('perm')>=1111)?$_GET['u']:$this->logman->getSessionData('userid'));?>" href="#remove_profile" class="btn btn-danger">Remove profile and all data</a>
 					  </div>
 				  </div>
                 </div>

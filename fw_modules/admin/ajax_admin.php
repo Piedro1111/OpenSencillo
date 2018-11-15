@@ -550,6 +550,37 @@ switch($ajax['atype'])
 			$status['status'] = 'denied';
 		}
 	break;
+	case 'gdpr::remove_user':
+		if(($_SESSION['perm']>=1100)&&($this->logman->checkSession())&&(class_exists('gdpr'))&&($this->logman->getSessionData('userid')==$ajax['code']))
+		{
+			$gdpr=new gdpr;
+			$gdpr->removeAllUserDataFromDB($ajax['remove'],$ajax['code']);
+			$status['code'] = 200;
+			$status['status'] = 'User #'.$ajax['remove'].' removed.';
+		}
+		else
+		{
+			$status['code'] = 403;
+			$status['status'] = 'denied';
+		}
+	break;
+	case 'messages::all_as_read':
+		if(($_SESSION['perm']>=1110)&&($this->logman->checkSession())&&(class_exists('statistics')))
+		{
+			$status['code'] = 200;
+			$status['status'] = 'ok';
+			$this->mysqlinterface->update(array(
+			'waiting_msg'=>array(
+				'condition'=>array(
+					'`status`=0'
+				),
+				'set'=>array(
+					'status'=>1
+				)
+			)));
+			$this->mysqlinterface->execute();
+		}
+	break;
 }
 unset($status['user']);
 ?>

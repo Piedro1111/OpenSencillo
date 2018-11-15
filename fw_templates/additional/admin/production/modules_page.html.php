@@ -111,6 +111,50 @@
             </div>
 
         </div>
+		<div class="row">
+			<div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="x_panel">
+                <div class="x_title">
+                  <h2>Module installer</h2>
+<?php
+$module_installer=new module_installer;
+?>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+				  <form action="<?=$this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->url.'/modules';?>" method="post" class="form-horizontal form-label-left" validate>
+                    <div class="item form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="mod">Module ID <span class="required">*</span>
+                      </label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input id="mod" class="form-control col-md-7 col-xs-12" data-validate-length-range="3" name="mod" placeholder="admin" required="required" type="text" value="">
+                      </div>
+                    </div>
+					<div class="item form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="template_url">Template URL <span class="required">*</span>
+                      </label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input id="template_url" class="form-control col-md-7 col-xs-12" data-validate-length-range="3" name="template_url" placeholder="<?=$this->template;?>" required="required" type="text" value="<?=$this->getPageContent('name',0);?>">
+                      </div>
+                    </div>
+					<div class="item form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="other">Other configuration
+                      </label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input id="other" class="form-control col-md-7 col-xs-12" name="other" placeholder="log=true,test=true" type="text">
+                      </div>
+                    </div>
+					<div class="form-group">
+						<div class="col-md-6 col-md-offset-3">
+						  <input name="hidden_cake" type="hidden" value="install_mod">
+						  <button type="submit" class="btn btn-success">Install</button>
+						</div>
+					</div>
+				  </form>
+			    </div>
+			  </div>
+			</div>
+		</div>
 
 
 

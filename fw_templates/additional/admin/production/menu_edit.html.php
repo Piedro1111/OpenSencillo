@@ -30,7 +30,18 @@
                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="module">Module <span class="required">*</span>
                       </label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input id="module" name="module" type="text" required="required" class="form-control col-md-7 col-xs-12" value="<?=$this->menuItem('module');?>">
+                        <!--<input id="module" name="module" type="text" required="required" class="form-control col-md-7 col-xs-12" value="<?=$this->menuItem('module');?>">-->
+						<select id="module" name="module" class="form-control col-md-7 col-xs-12" name="permission" required="required">
+						<?php
+						$data = $this->modsEnabled();
+						$selectedName = $this->menuItem('module');
+						foreach($data as $key=>$val)
+						{
+							$selected = (($selectedName==$val['module'])?'selected ':'');
+							echo "<option {$selected}value='{$val['module']}'>{$val['module']}</option>".PHP_EOL;
+						}
+						?>
+						</select>
                       </div>
                     </div>
 					<div class="item form-group">

@@ -235,7 +235,7 @@ $(document).ready(function(){
 			{
 				case 200:
 					alert('New newsleter ID ' + data.inew + ' is created.');
-					window.open(server_name+'/pages/banner?i='+data.mnew+'&tinymce=1&newsleter=1','_self');
+					window.open(server_name+'/pages/edit?i='+data.mnew+'&tinymce=1&newsleter=1','_self');
 				break;
 				default:
 					alert('Error ' + data.code + ' when creating a banner.');
@@ -387,6 +387,34 @@ $(document).ready(function(){
 			console.log(data.removecode);
 			$('#'+data.removecode).remove();
 		});
+	});
+	$('#remove-profile').click(function(){
+		var user = $(this).data('user');
+		var code = $(this).data('code');
+		var response = confirm("Remove account "+user+" with all stored data?");
+		if(response)
+		{
+			$.post(server_name+'/ajax.slot.php',{
+				atype:'gdpr::remove_user',
+				remove:user,
+				code:code
+			},function(data){
+				var data = JSON.parse(data);
+				console.log(data.removecode);
+				window.open(server_name+'/logout','_self');
+			});
+		}
+	});
+	$('#all-as-read').click(function(){
+		var response = confirm("Set all messages as read?");
+		if(response)
+		{
+			$.post(server_name+'/ajax.slot.php',{
+				atype:'messages::all_as_read'
+			},function(data){
+				location.reload();
+			});
+		}
 	});
 });
 function checkServerStatus()

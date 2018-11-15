@@ -54,9 +54,10 @@ class admin extends construct
 		switch($PAGE)
 		{
 			case 'logout':
+				$user = $this->logman->getSessionData('userid');
 				$this->mysqlinterface->update(array('users'=>array(
 					'condition'=>array(
-						'`id`='.$this->logman->getSessionData('userid'),
+						"`id`='{$user}'",
 					),
 					'set'=>array(
 						'sign'=>'logout'
@@ -78,13 +79,13 @@ class admin extends construct
 				{
 					$this->profileUpdate($this->profile('login'));
 					$status = true;
-					header('Location: '.$this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->url.(($this->url!='')?'/':'').'users/view?u='.$_GET['u']);
+					header('Location: '.$this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->url.(($this->url!='')?'/':'').'users/view?u='.(($this->logman->getSessionData('perm')>=1111)?$_GET['u']:$this->logman->getSessionData('userid')));
 				}
 				else
 				{
 					$this->profileUpdate($this->logman->getSessionData('login'));
 					$status = true;
-					header('Location: '.$this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->url.(($this->url!='')?'/':'').'profile');
+					header('Location: '.$this->protocol.'://'.$_SERVER['SERVER_NAME'].$this->port.'/'.$this->url.(($this->url!='')?'/':'').'profile/view');
 				}
 			break;
 			case $this->menuUrlEdit('url').'/save':
@@ -860,7 +861,7 @@ class admin extends construct
 		{
 			$this->mysqlinterface->update(array('users'=>array(
 				'condition'=>array(
-					'`login`='.$login,
+					'`login`="'.$login.'"',
 					'`perm`>=1000',
 					'`sign`!="kicked"',
 					'`sign`!="banned"',
@@ -869,6 +870,7 @@ class admin extends construct
 				'set'=>array(
 					'pass'=>md5($filtered_post['password']),
 					'email'=>$filtered_post['email'],
+					'login'=>$filtered_post['email'],
 					'fname'=>$filtered_name[0],
 					'lname'=>$filtered_name[1],
 					'ip'=>$_SERVER['REMOTE_ADDR'],
@@ -1030,7 +1032,7 @@ class admin extends construct
 	final public function profile($key)
 	{
 		$data = array();
-		$data = $this->userBasicProfile($_GET['u']);
+		$data = $this->userBasicProfile((($this->logman->getSessionData('perm')>=1111)?$_GET['u']:$this->logman->getSessionData('userid')));
 		unset($data['pass']);
 		unset($data['id']);
 		unset($data['sign']);
@@ -1233,6 +1235,29 @@ class admin extends construct
                       </tr>";
 		}
 		return $table;
+	}
+	
+	/**
+	 * Get all active modules
+	 */
+	final private function modsEnabled()
+	{
+		$this->mysqlinterface->select(array(
+			'virtual_system_config'=>array(
+				'condition'=>array(
+					'`id`>0',
+					'`module`!="#none"',
+					'`perm`>=0',
+					'`switch`=1',
+					'`function` LIKE "mod:%"'
+				),
+				'sort'=>array(
+					'asc'=>'sort'
+				)
+			)
+		));
+		$data = $this->mysqlinterface->execute();
+		return $data;
 	}
 	
 	/**
