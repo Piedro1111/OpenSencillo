@@ -521,7 +521,7 @@ switch($ajax['atype'])
 	case 'gallery::fileupload':
 		if(($_SESSION['perm']>=1110)&&($this->logman->checkSession()))
 		{
-			$fileUpload=new upload(str_ireplace('fw_modules/admin','',dirname( __FILE__ )).'/fw_media/media_imgs/');
+			$fileUpload=new upload(str_ireplace('fw_modules/admin','',dirname( __FILE__ )).str_ireplace('./','/',$_POST['dirselector'].'/'));
 			$fileUpload->setMimes(array('image/jpeg','image/png'));
 			$fileUpload->maxSize(300000);
 			$fileUpload->ajaxSendJson(true);

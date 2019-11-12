@@ -1,6 +1,7 @@
 <?php
 class admin extends construct
 {
+	private $setid=0;
 	/**
 	 * seoGenerator - create all data for meta tag
 	 */
@@ -109,7 +110,7 @@ class admin extends construct
 							}
 						}
 					}
-					$_POST['article'] = json_encode($postJson);
+					$_POST['article'] = json_encode($postJson,JSON_UNESCAPED_UNICODE);
 				}
 			case $this->urlEdit('url','page_edit.html.php').'/save':
 				if($_SESSION['perm']>=1111)
@@ -681,6 +682,24 @@ class admin extends construct
 	}
 	
 	/**
+	 * Generate menu list (universal)
+	 * 
+	 * @return array
+	 */
+	final private function menuListFilter($filter)
+	{
+		$this->mysqlinterface->select(array(
+			'menu'=>array(
+				'condition'=>$filter
+			),
+			'sort'=>array(
+				'asc'=>'`sort`'
+			)
+		));
+		return $this->mysqlinterface->execute();
+	}
+	
+	/**
 	 * Generate edit url for menu
 	 * 
 	 * @return array
@@ -719,7 +738,7 @@ class admin extends construct
 	/*
 	* Get page content by actual URL
 	*/
-	final public function getPageContentByUrl()
+	final public function getPageContentByUrl($filename=null)
 	{
 		$perm = $this->logman->getSessionData('perm');
 		/*var_dump($perm);
@@ -737,16 +756,16 @@ class admin extends construct
 				'condition'=>array(
 					'`url`="'.PAGE.'"',
 					'`perm`<='.((((int)$perm)>0)?((int)$perm):0),
-					$view
+					$view.($filename?' AND template_file="'.basename($filename).'"':'')
 				)
 			)
 		));
-		/*echo $this->mysqlinterface->debug();
-		die;*/
+		//echo $this->mysqlinterface->debug();
+		//die;
 		$menu = $this->mysqlinterface->execute();
-		/*var_dump(((((int)$perm)>=0)?((int)$perm):0));
-		var_dump($view);
-		die;*/
+		/*var_dump(((((int)$perm)>=0)?((int)$perm):0));*/
+		//var_dump($view);
+		//die;
 		foreach($menu as $key=>$val)
 		{
 			$menu_url_id[]='`url_id`='.$val['id'];
@@ -1132,6 +1151,17 @@ class admin extends construct
 		{
 			$full = $this->menuListFilledName();
 		}
+		elseif(($_GET['filter']==true)&&($_GET['item']=='param'))
+		{
+			$filter = array(
+				'(`id`>0)',
+				'(`item` LIKE "%'.$_GET['item_name'].'%")',
+				'(`module` LIKE "%'.$_GET['module'].'%")',
+				'(`template_file` LIKE "%'.$_GET['template'].'%")',
+				'(`url` LIKE "%'.$_GET['target'].'%")',
+			);
+			$full = $this->menuListFilter($filter);
+		}
 		else
 		{
 			$full = $this->menuList();
@@ -1261,6 +1291,19 @@ class admin extends construct
 	}
 	
 	/**
+	 * Ignore maintenance mode
+	 * @param key string (module id)
+	 */
+	final private function ignoreMaintenanceMode($module)
+	{
+		$ignoreMaintenanceMode=array(
+			'admin'=>true,
+			'statistics'=>true,
+		);
+		return $ignoreMaintenanceMode[$module];
+	}
+	
+	/**
 	 * Rendering page template
 	 */
 	final private function render()
@@ -1270,7 +1313,7 @@ class admin extends construct
 		$this->mysqlinterface->select(array(
 			'menu'=>array(
 				'condition'=>array(
-					'`url`="'.PAGE.'"',
+					(class_exists('maintenance')?'`url`="'.maintenance::open().'"':'`url`="'.PAGE.'"'),
 					'`perm`<="'.$logman->getSessionData('perm').'"',
 					'`view_parameter`>='.($logman->checkSession()?2:1)
 				),
@@ -1288,6 +1331,7 @@ class admin extends construct
 		{
 			$sys404=false;
 			$paginator = $val['template_file'];
+			$this->pageRedirection($paginator);
 			$module = $val['module'];
 			$cfg = $this->readVSC($module);
 			$this->template = $cfg[2];
@@ -1299,15 +1343,17 @@ class admin extends construct
 			}
 			else
 			{
-				$this->template = $this->defaultcfg[2];
-				$this->config_mod($this->protocol,$this->url,$this->template);
-				$this->menu();
+				if(!class_exists('maintenance'))/*&&(!$this->ignoreMaintenanceMode($module)))*/
+				{
+					$this->template = $this->defaultcfg[2];
+					$this->config_mod($this->protocol,$this->url,$this->template);
+					$this->menu();
+				}
 			}
 			
 			$this->template = $cfg[2];
 			if((file_exists('.'.$this->template.'/'.$paginator))&&(('.'.$this->template.'/'.$paginator)!='./'))
 			{
-				//die('test');
 				$this->config_mod($this->protocol,$this->url,$this->template);
 				require_once('.'.$this->template.'/'.$paginator);
 			}
@@ -1317,20 +1363,36 @@ class admin extends construct
 			$this->render404();
 		}
 		//die('.'.$this->template.'/footer/footer.html.php');
-		require_once('.'.$this->template.'/footer/footer.html.php');
+		if(file_exists('.'.$this->template.'/footer/footer.html.php'))
+		{
+			require_once('.'.$this->template.'/footer/footer.html.php');
+		}
+		elseif(file_exists('.'.$this->template.'/footer.html.php'))
+		{
+			require_once('.'.$this->template.'/footer.html.php');
+		}
 	}
 	
 	final private function render404()
 	{
-		$cfg = $this->readVSC('admin');
+		$cfg = $this->readVSC((class_exists('maintenance')?'maintenance-mode':'admin'));
 		$this->template = $cfg[2];
 		$responseCode = http_response_code();
-		if(($responseCode>=0)&&($responseCode<299))
+		if(($responseCode>=0)&&($responseCode<299)&&(!class_exists('maintenance')))
 		{
 			http_response_code(404);
 			$this->error404Log();
 		}
-		require_once('.'.$this->template.'/page_404.html.php');
+		require_once('.'.$this->template.'/'.(class_exists('maintenance')?maintenance::open():'page_404').'.html.php');
+	}
+	
+	final private function pageRedirection($pageroute)
+	{
+		if(strpos($pageroute,'.html.php')<1)
+		{
+			//ignore_user_abort(true);
+			header("Location: ".$this->server_clean.'/'.$pageroute);
+		}
 	}
 	
 	/**
@@ -1419,6 +1481,16 @@ class admin extends construct
 			)
 		));
 		$this->mysqlinterface->execute();
+	}
+	
+	final private function nextId()
+	{
+		return $this->setid++;
+	}
+	
+	final private function getId()
+	{
+		return $this->setid;
 	}
 	
 	/*public function __destruct()

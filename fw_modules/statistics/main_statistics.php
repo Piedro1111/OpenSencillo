@@ -54,6 +54,11 @@ class statistics extends construct
 			}
 		}
 		$this->mysqlinterface->execute();
+		/*if($_POST['SCLO_redirect_url']!='')
+		{
+			$tgt=(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://{$_SERVER[HTTP_HOST]}{$_SERVER[REQUEST_URI]}{$_POST['redirect']}";
+			header("Location: ".$tgt);
+		}*/
 	}
 	
 	final private function msgLog($mod,$msg)
@@ -254,6 +259,28 @@ class statisticsTemplate extends construct
 	final public function topPageList()
 	{
 		$this->mysqlinterface->filter(array(
+			'menu'=>array(
+				'DISTINCT `url`',
+			)
+		),true);
+		$this->mysqlinterface->select(array(
+			'menu'=>array(
+				'condition'=>array(
+					'(`module`!="admin")',
+					'(`module`!="pihome")',
+					'(`module`!="statistics")',
+					'(`view_parameter`!=2)',
+					'(`perm`!=1111)',
+					'(`url`!="%w_template%")',
+				),
+				'sort'=>array(
+					'asc'=>'`id`'
+				)
+			)
+		));
+		$url = $this->mysqlinterface->execute();
+		
+		/*$this->mysqlinterface->filter(array(
 			'statistics'=>array(
 				'DISTINCT `url`',
 			)
@@ -262,14 +289,15 @@ class statisticsTemplate extends construct
 			'statistics'=>array(
 				'condition'=>array(
 					'`status`=200',
-					'`url` NOT LIKE "%w_template%"'
+					'`url` NOT LIKE "%w_template%"',
+					
 				),
 				'sort'=>array(
 					'asc'=>'`id`'
 				)
 			)
 		));
-		$url = $this->mysqlinterface->execute();
+		$url = $this->mysqlinterface->execute();*/
 		
 		$i=0;
 		foreach($url as $v)
@@ -282,7 +310,7 @@ class statisticsTemplate extends construct
 			$this->mysqlinterface->select(array(
 				'statistics'=>array(
 					'condition'=>array(
-						"`url`='{$v['url']}'",
+						"`url`='/{$v['url']}'",
 						'`url` NOT LIKE "%w_template%"'
 					),
 					'sort'=>array(
@@ -293,7 +321,7 @@ class statisticsTemplate extends construct
 			$count = $this->mysqlinterface->execute();
 			
 			$table .= "<tr class='even pointer'>
-                        <td><a href='{$this->server_url}{$v['url']}' target='_blank' class='btn-link btn-xs'>{$v['url']}</a></td>
+                        <td><a href='{$this->server_url}/{$v['url']}' target='_blank' class='btn-link btn-xs'>/{$v['url']}</a></td>
 						<td>{$count[0][0]}</td>
                       </tr>";
 		}

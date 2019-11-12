@@ -1,7 +1,5 @@
 <?php
 $logman=new logMan;
-$email=new mailGen;
-$emailhead=new headerSeo;
 
 $mysql = new mysqlInterface;
 $mysql->config();
@@ -117,24 +115,84 @@ switch($ajax['atype'])
 		$status['status'] = 'ok';
 		$status['code'] = 200;
 		$status['temp'] = $ajax['temp'];
-		$fsys=new fileSystem('piplayertemperature');
-		$fsys->write(json_encode($status));
-		$mysql->insert(array(
+		$status['exthdd'] = $ajax['exthdd'];
+		
+		$mysql->select(array(
 			'sensors'=>array(
-				'id'=>'',
-				'sensor'=>$ajax['atype'],
-				'data'=>json_encode($status),
-				'date'=>$status['date'],
-				'time'=>$status['time'],
+				'condition'=>array(
+					'(`sensor`="piplayer")'
+				),
+				'sort'=>array(
+					'desc'=>'`id`'
+				),
+				'limit'=>1
 			)
 		));
-		$mysql->execute();
+		$rawdata = $mysql->execute();
+		$data = json_decode($rawdata[0]['data'],true);
+		$oldpiplayerstatus= $data['temp'];
+		if($oldpiplayerstatus!=$ajax['temp'])
+		{
+			$mysql->insert(array(
+				'sensors'=>array(
+					'id'=>'',
+					'sensor'=>$ajax['atype'],
+					'data'=>json_encode($status),
+					'date'=>$status['date'],
+					'time'=>$status['time'],
+				)
+			));
+			$mysql->execute();
+		}
+		
+		$mysql->select(array(
+			'sensors'=>array(
+				'condition'=>array(
+					'(`sensor`="switchExtHdd::action")'
+				),
+				'sort'=>array(
+					'desc'=>'`id`'
+				),
+				'limit'=>1
+			)
+		));
+		$rawdata = $mysql->execute();
+		$data = json_decode($rawdata[0]['data'],true);
+		$check= explode('::',$data['status']);
+		$oldhddstatus = (($check[0]=='on')?1:0);
+		if($oldhddstatus<=0)
+		{
+			unset($status['status']);
+			unset($status['code']);
+			unset($status['temp']);
+			ignore_user_abort(true);
+			$ExtHDD= file_get_contents('./switchexthdd', true);
+			$ExtHDD = json_decode($ExtHDD,true);
+			$file = fopen ("http://".$ExtHDD['ip']."/zapnut", "r");
+			if (!$file) {
+				exit;
+			}
+			$status['code'] = 200;
+			$status['status'] = 'on::'.$ExtHDD['ip'];
+			$mysql->insert(array(
+				'sensors'=>array(
+					'id'=>'',
+					'sensor'=>'switchExtHdd::action',
+					'data'=>json_encode($status),
+					'date'=>$status['date'],
+					'time'=>$status['time'],
+				)
+			));
+			$mysql->execute();
+		}
 	break;
 	case 'waterCondensator':
 		$status['status'] = 'ok';
 		$status['code'] = 200;
 		$status['water'] = ($ajax['status']==1?0:1);
 		$status['msg'] = ($ajax['status']==1?'OK':'FULL');
+		$status['temperature'] = $ajax['sensorTemperature'];
+		$status['rawtemperature'] = $ajax['rawSensorTemperature'];
 		$fsys=new fileSystem('watercondensator');
 		$fsys->write(json_encode($status));
 		$mysql->insert(array(

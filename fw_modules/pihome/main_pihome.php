@@ -1,16 +1,22 @@
 <?php
 class pihome extends construct
 {
+	public $ServerStatus;
 	public $ExtHDD;
+	public $ExtHDDcontent;
+	public $ExtHDDtemp;
 	public $HDDerr;
 	public $Condensation;
 	public $CondensationSTS;
 	public $CondensationLVL;
-	private $err;
 	public $CPUtemperature;
 	public $playerCPUtemperature;
 	public $pcstatus;
+	public $CondensationTemp;
+	
 	private $pcstatusjson;
+	private $tempcorrection = 8.4;
+	private $err;
 	
 	final protected function mainLogic()
 	{
@@ -22,48 +28,58 @@ class pihome extends construct
 			$this->getExtHDDstatus();
 			$this->getCondensation();
 			$this->getTemperatures();
-			
-			/*$this->linkmngr->addUrl('','dashboard_pi_page.html.php');
-			$this->addMenuItem('Dashboard','','tachometer',1100);*/
+			for ($i=0; $i < 10; $i++) { 
+				$this->getServerIP($i);
+			}
 		}
-		/*if($_SESSION['perm']>=1110)
-		{
-			$this->linkmngr->addUrl('sensors','sensors_page.html.php');
-			$this->addMenuItem('Sensors','sensors','gears',1110);
-		}
-		if($_SESSION['perm']>=1111)
-		{
-			$this->linkmngr->addUrl('exthdd','exthdd_pi_page.html.php');
-			$this->addMenuItem('Ext HDD','exthdd','cloud',1111);
-			
-			$this->linkmngr->addUrl('gpio','gpio_pi_page.html.php');
-			
-			$this->linkmngr->addUrl('shutdown','_');
-		}*/
-		//$this->render();
 	}
-	
+
+	/**
+	 * Check sensor - IP save on server call
+	 * 
+	 * @return array
+	 */
+	final private function getServerIP($serverId)
+	{
+		$this->mysqlinterface->select(array(
+			'sensors'=>array(
+				'condition'=>array(
+					'`sensor`="server-mastery-'.$serverId.'"'
+				),
+				'sort'=>array(
+					'desc'=>'`id`'
+				),
+				'limit'=>1
+			)
+		));
+		$data = $this->mysqlinterface->execute();
+		if(stripos($data[0]['data'],'}')>0)
+		{
+			$this->ServerStatus[$serverId] = json_decode($data[0]['data'],true);
+			$this->ServerStatus[$serverId]['date'] = $data[0]['date'];
+			$this->ServerStatus[$serverId]['time'] = $data[0]['time'];
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
 	/**
 	 * Check sensor - getExtHDD status
 	 * @return array
 	 */
 	final private function getExtHDDstatus()
 	{
-		$this->mysqlinterface->select(array(
-			'sensors'=>array(
-				'condition'=>array(
-					'`sensor`="switchExtHdd"'
-				),
-				'sort'=>array(
-					'desc'=>'`id`'
-				)
-			)
-		));
-		
-		$out = $this->mysqlinterface->execute();
-		$this->ExtHDD = json_decode($out[0]['data'],true);
-		$this->ExtHDDcontent = fopen ("http://".$this->ExtHDD['ip'], "r");
-		$this->ExtHDDcontent = stream_get_contents($this->ExtHDDcontent);
+		$tempcorrection=$this->tempcorrection;
+		$ExtHDD= file_get_contents('./switchexthdd', true);
+		$ExtHDD = json_decode($ExtHDD,true);
+		$this->ExtHDD = $ExtHDD;
+		$this->ExtHDDcontent = fopen("http://".$this->ExtHDD['ip'], "r");
+		$this->ExtHDDcontent = intval(stream_get_contents($this->ExtHDDcontent));
+		$this->ExtHDDtemp = fopen("http://".$this->ExtHDD['ip']."/temperature", "r");
+		$this->ExtHDDtemp = round((floatval(stream_get_contents($this->ExtHDDtemp))-floatval($tempcorrection)),1,PHP_ROUND_HALF_UP);
 		$this->HDDerr = 0;
 		return $this->ExtHDD;
 	}
@@ -75,6 +91,7 @@ class pihome extends construct
 	final private function getCondensation()
 	{
 		//condensation level parser
+		$tempcorrection=$this->tempcorrection;//3.4||10 correction
 		try
 		{
 			$this->mysqlinterface->select(array(
@@ -84,7 +101,8 @@ class pihome extends construct
 					),
 					'sort'=>array(
 						'desc'=>'`id`'
-					)
+					),
+					'limit'=>1
 				)
 			));
 			
@@ -92,11 +110,13 @@ class pihome extends construct
 			$this->Condensation = json_decode($out[0]['data'],true);
 			$this->CondensationSTS = $this->Condensation['msg'];
 			$this->CondensationLVL = $this->Condensation['water'];
+			$this->CondensationTemp = round(($this->Condensation['temperature'] - $tempcorrection),1,PHP_ROUND_HALF_UP);
 		}
 		catch(Exception $e)
 		{
 			$this->err=$e->getMessage();
 			$this->CondensationSTS = 'ERROR';
+			$this->CondensationTemp = 'ERROR';
 		}
 		
 		return $this->Condensation;
@@ -115,7 +135,8 @@ class pihome extends construct
 				),
 				'sort'=>array(
 					'desc'=>'`id`'
-				)
+				),
+				'limit'=>1
 			)
 		));
 		
@@ -240,12 +261,40 @@ class pihome extends construct
 			$table .= "<tr class='even pointer'>
                         <td class=''>{$v['id']}</td>
                         <td class=''>{$v['sensor']}</td>
-                        <td class=''>{$temp} {$status} {$data['msg']}</td>
+                        <td class=''>{$temp} {$status} {$data['msg']} {$data['temperature']} {$data['rawtemperature']}</td>
                         <td class=''>{$v['time']}</td>
                       </tr>".PHP_EOL;
 		}
 		return $table;
 	}
 	/*IFTTT report: {"atype":"iftttweather","hitemp":"33","lotemp":"19","tc":"Sunny","url":"https://ifttt.com/images/weather/sunny.png"}*/
+	
+	/**
+	 * Generate robot event list
+	 */
+	final public function robotEventList()
+	{
+		$html = file_get_contents('http://'.$_GET['pirobot_ip']);
+		
+		//Create a new DOM document
+		$dom = new DOMDocument;
+		
+		//Parse the HTML. The @ is used to suppress any parsing errors
+		//that will be thrown if the $html string isn't valid XHTML.
+		@$dom->loadHTML($html);
+
+		//Get all links. You could also use any other tag name here,
+		//like 'img' or 'table', to extract other tags.
+		$links = $dom->getElementsByTagName('a');
+
+		//Iterate over the extracted links and display their URLs
+		foreach ($links as $link){
+			//Extract and show the "href" attribute.
+			//echo $link->nodeValue;
+			$linkHref[] = $link->getAttribute('href');
+		}
+		
+		return $linkHref;
+	}
 }
 ?>

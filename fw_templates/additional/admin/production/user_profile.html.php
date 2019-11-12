@@ -1,3 +1,9 @@
+<?php
+if(class_exists('iotboard'))
+{
+	$iotboard=new iotboard;
+}
+?>
         <div class="row">
 
 
@@ -33,6 +39,15 @@
                         <input type="email" id="email2" name="confirm_email" data-validate-linked="email" required="required" class="form-control col-md-7 col-xs-12" value="<?=$this->profile('email');?>">
                       </div>
                     </div>
+					<?if((class_exists('iotboard'))&&($_GET['u']==$this->logman->getSessionData('userid'))):?>
+					<div class="item form-group">
+					  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">API key <span class="required">*</span>
+                      </label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" id="iotkey" name="iotkey" required="required" readonly class="form-control col-md-7 col-xs-12" value="<?=$iotboard->showKey();?>">
+                      </div>
+					</div>
+					<?endif;?>
 					<?if($this->logman->getSessionData('perm')>=1111):?>
 					<div class="item form-group">
                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">Active <span class="required">*</span>
@@ -187,5 +202,3 @@ if(class_exists('gdpr'))
         $('form .alert').remove();
     }).prop('checked', false);*/
   </script>
-
-

@@ -39,10 +39,10 @@
                     </div>
 					<div class="ln_solid"></div>
                     <div class="item form-group">
-                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="summary">Summary <span class="required">*</span>
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="summary">Summary
                       </label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input id="summary" name="summary" class="form-control col-md-7 col-xs-12" data-validate-length-range="50" placeholder="" required="required" type="text" value="<?=$this->getPageContent('article_sumary',0);?>">
+                        <input id="summary" name="summary" class="form-control col-md-7 col-xs-12" data-validate-length-range="50" placeholder="" type="text" value="<?=$this->getPageContent('article_sumary',0);?>">
                       </div>
                     </div>
                     <div class="item form-group">
